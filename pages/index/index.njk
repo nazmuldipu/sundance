@@ -6,51 +6,25 @@ permalink: "build/index.html"
 permalinkBypassOutputDir: true
 nickname: "You Thing"
 ---
-{% from "videos.njk" import lazyvideo %}
 
-<article class="mb-96">
-    <section class="mb-96">
-        <h1>BYE BYE There {{ fake_name }} you {{ nickname }}</h1>
-        <h2 class="hover:text-indigo-900">YO Dane DUUDE</h2>
-        <p class="w-24 medium:w-32 large:w-64 text-xl text-purple-400 large:text-blue-500">TEST TEST TEST</p>
-    </section>
-    <section class="m-96"></section>
-    <section class="mb-96">
-        <video class="lazy" autoplay muted loop playsinline width="610" height="254" poster="images/ameswell_entrance.png">
-            <source data-src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" type="video/mp4">
-        </video>
-       {{ lazyvideo([{ src: "videos/ameswell_entrance.mp4", type: "video/mp4" }], "images/ameswell_entrance.png") }} 
-    </section>
-</article>
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from "atoms/a.njk" import a %}
 
-<div>
-<article class="mt-96 max-w-3xl">
-    <section class="max-w-screen-lg">
-    <random-list-adder>
-    <div id="test-slider" class="splide">
-        <div class="splide__arrows">
-            <button class="bg-rose-500 splide__arrow splide__arrow--prev">
-                Prev
-            </button>
-            <button class="bg-green-400 splide__arrow splide__arrow--next">
-                Next
-            </button>
-        </div>
-        <div class="splide__track">
-            <ul class="splide__list bg-yellow-500">
-                <li class="splide__slide">
-                    <img data-splide-lazy="https://burst.shopifycdn.com/photos/spinal-twist-yoga-wheel.jpg" alt="stuff">
-                </li>
-                <li class="splide__slide">
-                    <img data-splide-lazy="https://burst.shopifycdn.com/photos/dusty-rose.jpg" alt="dog">
-                </li>
-                <li class="splide__slide">
-                    <img data-splide-lazy="https://burst.shopifycdn.com/photos/berries-granola.jpg" alt="cat">
-                </li>
-            </ul>
-        </div>
-    </div>
-</random-list-adder>
-</section>
-</article>
-</div>
+<!--
+    A list of all HTML tags: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+-->
+
+{{ h1('Atoms') }}
+
+<strong>Anchor Tag:</strong>
+{{ a('http://example.com', 'Anchor Tag', [ 'button', 'button--primary' ], 'my-button', '_blank/') }}<br>
+<hr>
+
+<strong>Heading Tags:</strong>
+{{ h1('H1 Tag') }}
+{{ h2('H2 Tag') }}
+{{ h3('H3 Tag') }}
+{{ h4('H4 Tag') }}
+{{ h5('H5 Tag') }}
+{{ h6('H6 Tag') }}
+<hr>
