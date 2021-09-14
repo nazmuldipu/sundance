@@ -8,33 +8,23 @@ nickname: "You Thing"
 ---
 
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
-{% from "atoms/a.njk" import a, button_primary, button_secondary %}
+{% from "atoms/a.njk" import a %}
 
-<header>
-    {{ h1( copy='Atoms' ) }}
-</header>
-<section>
-    <header>
-        {{ h2( copy='Links' ) }}
-    </header>
-    <article>
-        {{ a( href='http://example.com', copy='Click Me', id='myLink-1', target='_blank') }}<br>
-        <br>
-        {{ button_primary( href='http://example.com', copy='Book a Class', id='myButton-1', target='_blank' ) }}<br>
-        <br>
-        {{ button_secondary( href='http://example.com', copy='Book a Class', id='myButton-2', target='_blank' ) }}<br>
-    </article>
-</section>
-<section>
-    <header>
-        {{ h2( copy='Heading Tags' ) }}
-    </header>
-    <article>
-        {{ h1( copy='H1 Tag' ) }}
-        {{ h2( copy='H2 Tag' ) }}
-        {{ h3( copy='H3 Tag' ) }}
-        {{ h4( copy='H4 Tag' ) }}
-        {{ h5( copy='H5 Tag' ) }}
-        {{ h6( copy='H6 Tag' ) }}
-    </article>
-</section>
+<!--
+    A list of all HTML tags: https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+-->
+
+{{ h1('Atoms') }}
+
+<strong>Anchor Tag:</strong>
+{{ a('http://example.com', 'Anchor Tag', [ 'button', 'button--primary' ], 'my-button', '_blank') }}<br>
+<hr>
+
+<strong>Heading Tags:</strong>
+{{ h1('H1 Tag') }}
+{{ h2('H2 Tag') }}
+{{ h3('H3 Tag') }}
+{{ h4('H4 Tag') }}
+{{ h5('H5 Tag') }}
+{{ h6('H6 Tag') }}
+<hr>
