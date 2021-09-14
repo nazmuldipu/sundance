@@ -6,9 +6,9 @@
     #   @return HTML H1 tag
     #   @author Alexander Khost
 #}
-{% macro h1( copy, classes, id )%}
+{% macro h1( copy, classes=['heading', 'heading--1'], id )%}
     <h1
-        {% if classes %} class="{% for class in classes %} {{ class }} {% endfor %}" {% endif %}
+        class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
     >
         {{ copy | safe }}
@@ -24,9 +24,9 @@
     #   @return HTML H2 tag
     #   @author Alexander Khost
 #}
-{% macro h2( copy, classes, id )%}
+{% macro h2( copy, classes=['heading', 'heading--2'], id )%}
     <h2
-        {% if classes %} class="{% for class in classes %} {{ class }} {% endfor %}" {% endif %}
+        class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
     >
         {{ copy | safe }}
@@ -42,9 +42,9 @@
     #   @return HTML H3 tag
     #   @author Alexander Khost
 #}
-{% macro h3( copy, classes, id )%}
+{% macro h3( copy, classes=['heading', 'heading--3'], id )%}
     <h3
-        {% if classes %} class="{% for class in classes %} {{ class }} {% endfor %}" {% endif %}
+        class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
     >
         {{ copy | safe }}
@@ -60,9 +60,9 @@
     #   @return HTML H4 tag
     #   @author Alexander Khost
 #}
-{% macro h4( copy, classes, id )%}
+{% macro h4( copy, classes=['heading', 'heading--4'], id )%}
     <h4
-        {% if classes %} class="{% for class in classes %} {{ class }} {% endfor %}" {% endif %}
+        class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
     >
         {{ copy | safe }}
@@ -78,9 +78,9 @@
     #   @return HTML H5 tag
     #   @author Alexander Khost
 #}
-{% macro h5( copy, classes, id )%}
+{% macro h5( copy, classes=['heading', 'heading--5'], id )%}
     <h5
-        {% if classes %} class="{% for class in classes %} {{ class }} {% endfor %}" {% endif %}
+        class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
     >
         {{ copy | safe }}
@@ -96,9 +96,9 @@
     #   @return HTML H6 tag
     #   @author Alexander Khost
 #}
-{% macro h6( copy, classes, id )%}
+{% macro h6( copy, classes=['heading', 'heading--6'], id )%}
     <h6
-        {% if classes %} class="{% for class in classes %} {{ class }} {% endfor %}" {% endif %}
+        class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
     >
         {{ copy | safe }}

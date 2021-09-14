@@ -8,10 +8,54 @@
     #   @return HTML anchor tag
     #   @author Alexander Khost
 #}
-{% macro a( href, copy, classes, id, target )%}
+{% macro a( href='#', copy, classes=['link', 'link--primary'], id, target )%}
     <a
         href="{{ href }}"
-        {% if classes %} class="{% for class in classes %} {{ class }} {% endfor %}" {% endif %}
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+        {% if target %} target="{{ target }}" {% endif %}
+    >
+        {{ copy | safe }}
+    </a>
+{% endmacro %}
+
+
+{#
+    #   @desc   a primary button
+    #   @param  href     string, link url
+    #   @param  copy     string, the HTML mark up that is linked
+    #   @param  classes  array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  target   string, the link target location (optional)
+    #   @return HTML primary button
+    #   @author Alexander Khost
+#}
+{% macro button_primary( href='#', copy, classes=['button', 'button--primary'], id, target )%}
+    <a
+        href="{{ href }}"
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+        {% if target %} target="{{ target }}" {% endif %}
+    >
+        {{ copy | safe }}
+    </a>
+{% endmacro %}
+
+
+{#
+    #   @desc   a secondary button
+    #   @param  href     string, link url
+    #   @param  copy     string, the HTML mark up that is linked
+    #   @param  classes  array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  target   string, the link target location (optional)
+    #   @return HTML secondary button
+    #   @author Alexander Khost
+#}
+{% macro button_secondary( href='#', copy, classes=['button', 'button--secondary'], id, target )%}
+    <a
+        href="{{ href }}"
+        class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
         {% if target %} target="{{ target }}" {% endif %}
     >
