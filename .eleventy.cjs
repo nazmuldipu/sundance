@@ -1,20 +1,28 @@
 'use strict';
 
 const htmlmin = require('html-minifier');
+const { basename } = require('path');
+const { getImgSizes, getSrcSet } = require('./tooling/eleventy.cjs');
 
-module.exports = function(eleventyConfig) {
-    eleventyConfig.addNunjucksShortcode('access', function(array, index) {
+module.exports = function (eleventyConfig) {
+    eleventyConfig.addNunjucksShortcode('access', function (array, index) {
         return array[index];
     });
 
-    eleventyConfig.addNunjucksFilter('slideImgSrcSet', function(slide, imgext="jpg") {
+    eleventyConfig.addNunjucksFilter('slideImgSrcSet', function (slide, imgext = "jpg") {
         const name = basename(slide.image);
         const sizes = getImgSizes(name);
         return getSrcSet(name, sizes, slide.intrinsicwidth, imgext);
     });
 
+    eleventyConfig.addNunjucksFilter('imgObjSrcSet', function (imgObj, imgext = "jpg") {
+        const name = basename(imgObj.src);
+        const sizes = getImgSizes(name);
+        return getSrcSet(name, sizes, imgObj.intrinsicwidth, imgext);
+    });
+
     eleventyConfig.addPassthroughCopy('videos');
-    
+
     eleventyConfig.addPassthroughCopy({ 'images/output': 'images' });
 
     eleventyConfig.addPassthroughCopy({ 'images/svg': 'images' });
@@ -25,9 +33,9 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('scripts');
 
     eleventyConfig.addPassthroughCopy('favicon.ico')
-    
-    eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
-        if(outputPath.endsWith('.html')) {
+
+    eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
+        if (outputPath.endsWith('.html')) {
             return htmlmin.minify(content, {
                 useShortDoctype: true,
                 collapseWhitespace: true,

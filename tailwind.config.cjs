@@ -15,7 +15,11 @@ module.exports = {
       screens: {
         'small': '640px',
         'medium': '1024px',
-        'large': '1280px'
+        'large': '1280px',
+        'desktop': '1440px'
+      },
+      maxWidth: {
+        "8xl":"1440px"
       },
       colors: {
         'rose': colors.rose

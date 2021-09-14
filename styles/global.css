@@ -8,10 +8,9 @@
 
 @layer base {
     body {
-        background-color: var(--color__secondary);
+        background-color: white;
         color: var(--color__primary);
         font-size: var(--base-font-size);
-        padding: 2em;
     }
     a {
         color: var(--color__anchor);
