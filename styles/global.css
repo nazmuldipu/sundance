@@ -2,48 +2,20 @@
 @import "./variables.css";
 /****  end imports  ********************************/
 
-@layer base {
-    body {
-        background-color: var(--color__secondary);
-        color: var(--color__primary);
-        font-size: var(--base-font-size);
-        padding: 2em;
-    }
-    a {
-        color: var(--color__anchor);
-        text-decoration: underline;
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        padding-bottom: 1em;
-    }
-    h1 {
-        font-size: 2.4rem;
-        line-height: 3.0rem;
-    }
-    h2 {
-        font-size: 2.2rem;
-        line-height: 2.8rem;
-    }
-    h3 {
-        font-size: 2.0rem;
-        line-height: 2.6rem;
-    }
-    h4 {
-        font-size: 1.8rem;
-        line-height: 2.4rem;
-    }
-    h5 {
-        font-size: 1.6rem;
-        line-height: 2.2rem;
-    }
-    h6 {
-        font-size: 1.4rem;
-        line-height: 2.0rem;
+
+/****  start base tags  ********************************/
+body {
+    background-color: var(--color__secondary);
+    color: var(--color__primary);
+    font-size: var(--base-font-size);
+    padding: 2em;
+}
+/****  end base tags  ********************************/
+
+
+/****  start atoms  ********************************/
+.link {
+    text-decoration: underline;
     }
 .link--primary {
     color: var(--color__anchor);
@@ -72,29 +44,29 @@
 .heading {
     padding-bottom: 1em;
 }
-.heading-1 {
-    font-size: 2.4rem;
-    line-height: 3.0rem;
+.heading--1 {
+    font-size: 3.0rem;
+    line-height: 3.6rem;
 }
-.heading-2 {
+.heading--2 {
+    font-size: 2.6rem;
+    line-height: 2.2rem;
+}
+.heading--3 {
     font-size: 2.2rem;
     line-height: 2.8rem;
 }
-.heading-3 {
-    font-size: 2.0rem;
-    line-height: 2.6rem;
-}
-.heading-4 {
+.heading--4 {
     font-size: 1.8rem;
     line-height: 2.4rem;
 }
-.heading-5 {
-    font-size: 1.6rem;
-    line-height: 2.2rem;
+.heading--5 {
+    font-size: 1.5rem;
+    line-height: 2.1rem;
 }
-.heading-6 {
-    font-size: 1.4rem;
-    line-height: 2.0rem;
+.heading--6 {
+    font-size: 1.3rem;
+    line-height: 1.9rem;
 }
 /****  end atoms  ********************************/
 
