@@ -1,0 +1,29 @@
+{# 
+    @desc   Form Fields 
+    @param  classPrefix Common class prefix
+    @param  classDate Style for Date input
+    @param  id  Unique ID (optional)    
+    @author Ashfaqur Rahman
+ #}
+
+{% macro form_fields( copy, classPrefix='form-field', classDate='form-field-date', id ) %}
+    <div class="{{ classPrefix }}-wrap">
+        <input 
+            type="email" 
+            placeholder="Email address"
+        >
+        <div 
+            class="{{ classPrefix }}-btn"
+            {% if href %} href="{{ href }}" {% endif %} 
+            {% if id %} id="{{ id }}" {% endif %}
+        >    
+            <span>{{ copy | safe }}</span>                                
+        </div> 
+    </div>
+    <div>Check IN</div>
+    <input
+        type="text"
+        placeholder="dd/dd/yyyy"
+        class="{{ classDate }}"
+    >    
+{% endmacro %}

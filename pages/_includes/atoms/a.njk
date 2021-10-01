@@ -62,3 +62,23 @@
         {{ copy | safe }}
     </a>
 {% endmacro %}
+
+{# 
+    @desc   View Details anchor tag
+    @param  href    string, link url
+    @param  target  string, the link target location (optional)
+    @return HTML anchor tag 
+    @author Ashfaqur Rahman
+ #}
+
+{% macro view_details( copy, href='#', target, classes='view-details' ) %}
+    <div class="{{ classes }}">
+        <img src="images/plus.svg">
+        <a 
+            {% if href %} href="{{ href }}" {% endif %} 
+            {% if target %} target="{{ target }}" {% endif %}
+        >
+            {{ copy | safe }}
+        </a>
+    </div>    
+{% endmacro %}
