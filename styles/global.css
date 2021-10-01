@@ -141,13 +141,19 @@ body {
 .form-field-wrap input:focus {
     outline: none;
 }
-.form-field-btn {
+.form-field-btn a {
+    color: #000;
     position: absolute;
     top: 0;
     right: 0;
     text-transform: uppercase;
     padding-right: 10px;
     cursor: pointer;
+    text-decoration: none;
+}
+.form-field-btn a:hover,
+.form-field-btn a:focus {
+    color: var(--sundance__primary1);
 }
 .form-field-date {
     background: var(--sundance__neutral4);
@@ -163,16 +169,6 @@ body {
     outline: none;
 }
 /* Tables */
-.table-container-wrap {
-    display: flex;
-    flex-flow: column nowrap;
-    background-color: white;
-    width: 80%;
-    margin: 0 auto;
-    border-radius: 4px;
-    border: 1px solid #DADADA;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, .08);
-}
 .table-row {
     display: flex;
     flex-flow: row nowrap;
@@ -200,6 +196,27 @@ body {
     .row-item-data {
         padding-left: 5px;
     }        
+}
+/* Box */
+.box-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:16px;
+    background: var(--sundance__neutral4);
+}
+.box-wrap h4 {
+    margin: 0px;
+}
+/* Text Container */
+.text-container h1 {
+    line-height: 0px;
+}
+@media screen and (max-width:767px) {
+    .text-container h1 {
+        font-size: 24px;
+    }
 }
 
 /****  end atoms  ********************************/

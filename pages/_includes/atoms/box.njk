@@ -1,0 +1,29 @@
+{# 
+    @desc   Small box
+    @param  copy    string
+    @author Ashfaqur Rahman
+ #}
+ {% macro box( copy ) %}
+    <div class="box-wrap">
+        <h4>{{ copy | safe }}</h4>
+        <span>$90</span>
+        <span>Upto 5 People</span>
+    </div>
+ {% endmacro %}
+
+ {# 
+    @desc   Text Container
+    @param  copy string
+    @author Ashfaqur Rahman
+  #}
+  {% macro text_container( copy, class='heading--1' ) %}
+    <div class="text-container">
+        <h1 
+            class="{{ class }}"
+        >
+        {{ copy | safe }}</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue  placerat tristique viverra eget sed. Rhoncus imperdiet</p>
+    </div>
+  {% endmacro %}
+

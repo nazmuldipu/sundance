@@ -12,6 +12,8 @@ nickname: "You Thing"
 {% from 'atoms/checkboxes.njk' import checkboxes %}
 {% from 'atoms/form-fields.njk' import form_fields %}
 {% from 'atoms/tables.njk' import tables %}
+{% from 'atoms/box.njk' import box %}
+{% from 'atoms/box.njk' import text_container %}
 
 <header>
     {{ h1( copy='Atoms' ) }}
@@ -62,7 +64,7 @@ nickname: "You Thing"
         {{ h3( copy='Form Fields' ) }}
     <header>
     <article>
-        {{ form_fields( copy='Join', id='join' ) }}
+        {{ form_fields( copy='Join', href='#', id='join' ) }}
     </article>
 </section>
 <section>
@@ -70,6 +72,22 @@ nickname: "You Thing"
         {{ h3( copy='Tables' ) }}
     </header>
     <article>
-        {{ tables(  ) }}
+        {{ tables() }}
+    </article>
+</section>
+<section>
+    <header>
+        {{ h3( copy='Box' ) }}
+    </header>
+    <article>
+        {{ box( copy='Clinic Guide' ) }}
+    </article>
+</section>
+<section>
+    <header>
+        {{ h3( copy='Text Container' ) }}
+    </header>
+    <article>
+        {{ text_container( copy='Let Creativity Flow' ) }}
     </article>
 </section>
