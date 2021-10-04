@@ -1,0 +1,27 @@
+
+{% macro accordion( copy, id, classes=['toggle', 'hidden'], name, toggleLabel='toggle--label' ) %}
+    <div class="accordion-container">
+        <ul>
+            <li>
+                <input 
+                    type="checkbox" 
+                    {% if id %} id="{{ id }}" {% endif %}
+                    class="{% for class in classes %} {{ class }} {% endfor %}"
+                    {% if name %} name="{{ name }}" {% endif %}
+                >
+                <label 
+                    {% if id %} for="{{ id }}" {% endif %} 
+                    class="{{ toggleLabel }}"
+                >                
+                    <h4>{{ copy | safe }}</h4>
+                </label>
+                <div class="toggle-details hidden">
+                    <h3>Let Creativity Flow</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue  placerat tristique viverra eget sed. Rhoncus imperdiet</p>
+                    <img src="https://via.placeholder.com/800x400.png" class="img-res">
+                </div>
+            </li> 
+        </ul>
+    </div>    
+{% endmacro %}
