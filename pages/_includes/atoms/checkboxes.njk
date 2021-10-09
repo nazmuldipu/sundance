@@ -1,7 +1,7 @@
 {# 
-    @desc   Custom Checkbox  
-    @param  id  Unique ID (optional)
-    @param  name    Checkbox Name (optional)
+    @desc   custom checkbox  
+    @param  id      unique ID (optional)
+    @param  name    checkbox name (optional)
     @author Ashfaqur Rahman
  #}
 {% macro checkboxes( copy, id, name, classPrefix='checkboxes-btn', checkBoxNumber ) %}
@@ -12,6 +12,9 @@
             {% if name %} name="{{ name }}" {% endif %}
         >
         <span class="{{ classPrefix }}__control"></span>
-        <span class="{{ classPrefix }}__label">{{ copy | safe }} {% if checkBoxNumber %} ({{ checkBoxNumber }}) {% endif %}</span>
+        <span class="{{ classPrefix }}__label">
+            {{ copy | safe }}
+            {% if checkBoxNumber %} ({{ checkBoxNumber }}) {% endif %}
+        </span>
     </label>    
 {% endmacro %}

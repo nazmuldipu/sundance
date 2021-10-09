@@ -16,7 +16,3 @@
     --sundance__semantic2: #1A7C18;
     --sundance__semantic3: #FFCE1F;
 }
-/* fonts */
-:root {
-    --base-font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1600 - 320))); /* 14px - 18px */
-}

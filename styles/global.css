@@ -3,7 +3,7 @@
 /****  end imports  ********************************/
 
 
-/****  start base tags  ********************************/
+/****  start base styles  ********************************/
 body {
     background-color: var(--sundance__neutral5);
     color: var(--sundance__neutral1);
@@ -16,10 +16,15 @@ section {
     margin: 25px 0px;
     padding: 20px;
 }
-/****  end base tags  ********************************/
+.hidden {
+    display: none;
+}
+/****  end base styles  ********************************/
 
 
 /****  start atoms  ********************************/
+
+/* links */
 .link {
     text-decoration: underline;
     }
@@ -27,6 +32,7 @@ section {
     color: var(--sundance__primary1);
 }
 
+/* buttons */
 .button {
     border: solid #000 1px;
     border-radius: 35px;
@@ -47,6 +53,7 @@ section {
     padding: 20px 70px;
 }
 
+/* headings */
 .heading {
     padding-bottom: 1em;
 }
@@ -74,51 +81,51 @@ section {
     font-size: 1.3rem;
     line-height: 1.9rem;
 }
+
 /* checkboxes */
 .checkboxes-btn {
     cursor: pointer;
 }
 .checkboxes-btn__input {
-    padding: 11px 23px;
-    border: 1px solid rgba(0,0,0,1);
-    border-radius: 0;
-    outline: 0;
     background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 0;
     opacity: 0;
+    outline: 0;
+    padding: 11px 23px;
     position: absolute;
 }
 .checkboxes-btn__control {
-    position: relative;
+    border: 2px solid #000;
+    border-radius: 0.188rem;
+    color: var(--sundance__secondary2);
     display: inline-block;
-    width: 0.792rem;
     height: 0.792rem;
     margin-right: 0.511rem;
-    border-radius: 0.188rem;
+    position: relative;
+    transform: scale(0.75);
     vertical-align: middle;
-    color: var(--sundance__secondary2);
-    border: 2px solid #000;
+    width: 0.792rem;
 }
-.checkboxes-btn__input:checked+.checkboxes-btn__control:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0.188rem;
-    left: 0.188rem;
-    width: 0.438rem;
-    height: 0.438rem;
-    background-color: var(--sundance__secondary2);
-}
-.checkboxes-btn__input:checked+.checkboxes-btn__control {
+.checkboxes-btn__input:checked + .checkboxes-btn__control {
     border-color: var(--sundance__secondary2);
 }
-.checkboxes-btn__control {
-  transform: scale(0.75);
+.checkboxes-btn__input:checked + .checkboxes-btn__control:after {
+    background-color: var(--sundance__secondary2);
+    content: '';
+    display: block;
+    height: 0.438rem;
+    left: 0.188rem;
+    position: absolute;
+    top: 0.188rem;
+    width: 0.438rem;
 }
-/* View Details */
+
+/* view details */
 .view-details img {
     display: inline;
-    vertical-align: middle;
     margin-right: 8px;
+    vertical-align: middle;
 }
 .view-details a {
     color: #000;
@@ -129,17 +136,18 @@ section {
 .view-details a:focus {
     color: var(--sundance__primary1);
 }
-/* Form Fields */
+
+/* form fields */
 .form-field-wrap {
-    position: relative;
-    border-bottom: 1px solid rgba(0,0,0,0.87);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.87);
     margin-bottom: 36px;
+    position: relative;
 }
 .form-field-wrap input {
-    width: 97%;
     border: 0;
     padding-bottom: 10px;
     padding-left: 10px;
+    width: 97%;
 }
 .form-field-wrap input::placeholder {
     color: #000;
@@ -149,13 +157,13 @@ section {
 }
 .form-field-btn a {
     color: #000;
-    position: absolute;
-    top: 0;
-    right: 0;
-    text-transform: uppercase;
-    padding-right: 10px;
     cursor: pointer;
+    padding-right: 10px;
+    position: absolute;
+    right: 0;
     text-decoration: none;
+    text-transform: uppercase;
+    top: 0;
 }
 .form-field-btn a:hover,
 .form-field-btn a:focus {
@@ -164,9 +172,9 @@ section {
 .form-field-date {
     background: var(--sundance__neutral4);
     border: none;
-    padding: 20px 45px 20px 15px;
     border-radius: 35px;
     margin-top: 10px;
+    padding: 20px 45px 20px 15px;
 }
 .form-field-date::placeholder {
     color: #000;
@@ -174,7 +182,8 @@ section {
 .form-field-date:focus {
     outline: none;
 }
-/* Tables */
+
+/* tables */
 .table-row {
     display: flex;
     flex-flow: row nowrap;
@@ -198,35 +207,37 @@ section {
 .row-item-data {
     background-color: var(--sundance__neutral5);
 }
-@media screen and (max-width:767px) {
+@media screen and ( max-width: 767px ) {
     .row-item-data {
         padding-left: 5px;
-    }        
+    }
 }
-/* Box */
+
+/* box */
 .box-wrap {
+    align-items: center;
+    background: var(--sundance__neutral4);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding:16px;
-    background: var(--sundance__neutral4);
+    padding: 16px;
 }
 .box-wrap h4 {
     margin: 0px;
 }
-/* Text Container */
+
+/* text container */
 .text-container h1 {
     line-height: 0px;
 }
-@media screen and (max-width:767px) {
+@media screen and ( max-width: 767px ) {
     .text-container h1 {
         font-size: 24px;
     }
 }
-/* Accordion */
+
+/* accordion */
 .accordion-container ul {
-    padding: 0;    
     background: var(--sundance__neutral4);
     padding: 17px;
 }
@@ -240,65 +251,51 @@ section {
 .accordion-container label {
     padding-right: 1rem;
 }
-.hidden {
-    display: none;
-}
+
+/* toggle */
 .toggle--label {
-    position: relative;
-    width: auto;
+    cursor: pointer;
     display: block;
     line-height: 2rem;
-    cursor: pointer;
+    position: relative;
+    width: auto;
 }
 .toggle--label:before {
-    position: absolute;
+    content: '';
     opacity: 1;
-    content: "";
+    position: absolute;
 }
 .toggle--label:after {
-    position: absolute;
+    content: '';
     opacity: 1;
-    content: "";
+    position: absolute;
 }
 .toggle--label:before {
+    border: 1px solid #000;
+    height: 0px;
     right: 0;
     top: 1rem;
-    height: 0px;
     width: 1rem;
-    border: 1px solid #000;
 }
 .toggle--label:after {
+    border: 1px solid #000;
+    height: 1rem;
     right: .5rem;
     top: 0.5rem;
-    height: 1rem;
     width: 0;
-    border: 1px solid #000;
 }
-.toggle:checked~.toggle-details {
+.toggle:checked ~ .toggle-details {
     display: grid;
 }
-.toggle:checked~.toggle--label:before {
+.toggle:checked ~ .toggle--label:before {
     transform: rotate(45deg);
 }
-.toggle:checked~.toggle--label:after {
+.toggle:checked ~ .toggle--label:after {
     transform: rotate(45deg);
 }
 .img-res {
-    max-width: 100%;
     height: auto;
+    max-width: 100%;
 }
 
 /****  end atoms  ********************************/
-
-
-
-
-
-
-
-
-
-
-
-
-

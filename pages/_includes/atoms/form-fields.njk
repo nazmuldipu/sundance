@@ -1,12 +1,13 @@
 {# 
-    @desc   Form Fields 
-    @param  classPrefix Common class prefix
-    @param  classDate Style for Date input
-    @param  id  Unique ID (optional) 
-    @param  string, link url   
+    @desc   form fields
+    @param copy             string
+    @param  classPrefix     common class prefix
+    @param  classDate       style for Date input
+    @param  href            url
+    @param  id              unique ID (optional)
     @author Ashfaqur Rahman
  #}
-{% macro form_fields( copy, classPrefix='form-field', classDate='form-field-date', href, id ) %}
+{% macro form_fields( copy, classPrefix='form-field', classDate='form-field-date', href="#", id ) %}
     <div class="{{ classPrefix }}-wrap">
         <input 
             type="email" 
