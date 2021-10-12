@@ -1,6 +1,27 @@
 {% from 'atoms/check-in.njk' import check_in %}
 
 {# 
+    @desc   custom checkbox  
+    @param  id      unique ID (optional)
+    @param  name    checkbox name (optional)
+    @author Ashfaqur Rahman
+ #}
+{% macro checkboxes( copy, id, name, classPrefix='checkboxes-btn', checkBoxNumber ) %}
+    <label class="{{ classPrefix }}">
+        <input type="checkbox" 
+            class="{{ classPrefix }}__input" 
+            {% if id %} id="{{ id }}" {% endif %}
+            {% if name %} name="{{ name }}" {% endif %}
+        >
+        <span class="{{ classPrefix }}__control"></span>
+        <span class="{{ classPrefix }}__label">
+            {{ copy | safe }}
+            {% if checkBoxNumber %} ({{ checkBoxNumber }}) {% endif %}
+        </span>
+    </label>    
+{% endmacro %}
+
+{# 
     @desc   form fields
     @param copy             string
     @param  classPrefix     common class prefix
