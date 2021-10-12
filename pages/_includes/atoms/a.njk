@@ -72,13 +72,11 @@
  #}
 
 {% macro view_details( copy, href='#', target, classes = ['view-details'] ) %}
-    <div class="{% for class in classes %} {{ class }} {% endfor %}">
-        <img src="images/plus.svg">
-        <a 
-            {% if href %} href="{{ href }}" {% endif %} 
-            {% if target %} target="{{ target }}" {% endif %}
-        >
-            {{ copy | safe }}
-        </a>
-    </div>    
+    <a 
+        {% if href %} href="{{ href }}" {% endif %} 
+        {% if target %} target="{{ target }}" {% endif %}
+         class="{% for class in classes %} {{ class }} {% endfor %}"
+    >
+        <span class="icon"></span>{{ copy | safe }}
+    </a>
 {% endmacro %}
