@@ -23,11 +23,13 @@ nickname: "You Thing"
         {{ h2( copy='Links' ) }}
     </header>
     <article>
-        {{ a( href='http://example.com', copy='Click Me', id='myLink-1', target='_blank') }}<br>
+        {{ a( id='myLink-1', copy='Click Me', href='http://example.com', target='_blank') }}<br>
         <br>
         {{ button_primary( href='http://example.com', copy='Book a Class', id='myButton-1', target='_blank' ) }}<br>
         <br>
         {{ button_secondary( href='http://example.com', copy='Book a Class', id='myButton-2', target='_blank' ) }}<br>
+        <br>
+        {{ view_details( copy='View Details', href='http://example.com', target='_blank' ) }}
     </article>
 </section>
 <section>
@@ -49,14 +51,6 @@ nickname: "You Thing"
     </header>
     <article>
         {{ checkboxes( copy='Mountain Homes', id='checkbox-1', name='checkbox', checkBoxNumber='13' ) }}
-    </article>
-</section>
-<section>
-    <header>
-        {{ h3( copy='View Details' ) }}
-    </header>
-    <article>
-        {{ view_details( copy='View Details', href='http://example.com', target='_blank' ) }}
     </article>
 </section>
 <section>
