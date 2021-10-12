@@ -58,28 +58,24 @@ section {
     padding-bottom: 1em;
 }
 .heading--1 {
-    font-size: 3.0rem;
-    line-height: 3.6rem;
+    font-size: 4.375rem;
+    line-height: 3.5rem;
 }
 .heading--2 {
-    font-size: 2.6rem;
-    line-height: 2.2rem;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
 }
 .heading--3 {
-    font-size: 2.2rem;
-    line-height: 2.8rem;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
 }
 .heading--4 {
-    font-size: 1.8rem;
-    line-height: 2.4rem;
+    font-size: 1.125rem;
+    line-height: 1.35rem;
 }
 .heading--5 {
-    font-size: 1.5rem;
-    line-height: 2.1rem;
-}
-.heading--6 {
-    font-size: 1.3rem;
-    line-height: 1.9rem;
+    font-size: 0.875rem;
+    line-height: 1.225rem;
 }
 
 /* checkboxes */

@@ -1,3 +1,5 @@
+{% from 'atoms/check-in.njk' import check_in %}
+
 {# 
     @desc   form fields
     @param copy             string
@@ -22,7 +24,9 @@
             </a>                                
         </div> 
     </div>
-    <div>Check IN</div>
+    <div>
+        {{ check_in( copy='Check IN' ) }}
+    </div>    
     <input
         type="text"
         placeholder="dd/dd/yyyy"
