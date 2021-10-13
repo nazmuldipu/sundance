@@ -19,6 +19,9 @@ section {
 .hidden {
     display: none;
 }
+.w-full {
+    width: 100%;
+}
 /****  end base styles  ********************************/
 
 
