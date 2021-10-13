@@ -54,3 +54,33 @@
         class="{{ classDate }}"
     >    
 {% endmacro %}
+
+{% macro form_input(
+    label = '', 
+    name = '', 
+    id, 
+    type="text", 
+    placeholder = '', 
+    onkeypress= '', 
+    pattern = '', 
+    maxlength = '', 
+    classes = ['form-input__style'], 
+    required = true) %}
+
+    <label class="form-label">
+        {% if label != "" %}
+            {{ label }}<br>
+        {% endif %}
+        <input 
+            type="{{ type }}" 
+            placeholder="{{ placeholder }}"
+            class="{% for class in classes %} {{ class }} {% endfor %}" 
+            aria-required="true"
+            {% if name != "" %} name="{{ name }}" {% endif %}
+            {% if id %} id="{{ id }}" {% endif %}
+            {% if onkeypress !== "" %} onkeypress="{{onkeypress}}" {% endif %}
+            {% if pattern !== "" %} pattern="{{ pattern }}" {% endif %} 
+            {% if maxlength !== "" %} maxlength="{{ maxlength }}" {% endif %}
+            {{ 'required' if (required == true) }}/>
+    </label>
+{% endmacro %}
