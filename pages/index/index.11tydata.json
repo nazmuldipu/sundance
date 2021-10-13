@@ -15,5 +15,20 @@
             },
             "image" : "https://via.placeholder.com/800x400.png"
         }
-    ]
+    ],
+    "tableData": {
+        "headers": [
+            "Class",
+            "Time",
+            "Cost"
+        ],
+        "bodies" : [
+            {
+                "datas" : ["Silversmithing", "10am, 1pm, 3pm", "$ 150"]
+            },
+            {
+                "datas" : ["Silversmithing", "10am, 1pm, 3pm", "$ 150"]
+            }
+        ]
+    }
 }
