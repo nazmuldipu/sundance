@@ -2,18 +2,21 @@
     "fake_name": "Person GUD",
     "accordions": [
         {
-            "title" : "Mountain Stone Massage",
-            "id" : "toggle-1",
-            "classes" : [ "toggle", "hidden"],
-            "name" : "First",
-            "article" : {
-                "heading" : "Let Creativity Flow",
-                "copy" : [
+            "title": "Mountain Stone Massage",
+            "id": "toggle-1",
+            "classes": [
+                "toggle",
+                "hidden"
+            ],
+            "name": "First",
+            "article": {
+                "heading": "Let Creativity Flow",
+                "copy": [
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque",
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque"
                 ]
             },
-            "image" : "https://via.placeholder.com/800x400.png"
+            "image": "https://via.placeholder.com/800x400.png"
         }
     ],
     "tableData": {
@@ -22,12 +25,20 @@
             "Time",
             "Cost"
         ],
-        "bodies" : [
+        "bodies": [
             {
-                "datas" : ["Silversmithing", "10am, 1pm, 3pm", "$ 150"]
+                "datas": [
+                    "Silversmithing",
+                    "10am, 1pm, 3pm",
+                    "$ 150"
+                ]
             },
             {
-                "datas" : ["Silversmithing", "10am, 1pm, 3pm", "$ 150"]
+                "datas": [
+                    "Silversmithing",
+                    "10am, 1pm, 3pm",
+                    "$ 150"
+                ]
             }
         ]
     }
