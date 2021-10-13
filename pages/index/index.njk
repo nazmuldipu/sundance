@@ -89,7 +89,9 @@ nickname: "You Thing"
     <header>
         {{ h3( copy='Accordion' ) }}
     </header>
-    <article>
-        {{ accordion( copy='Mountain Stone Massage', id='toggle-1', name='First' ) }}
-    </article>
+    <section>
+        {% for item in accordions %}
+            {{ accordion( item ) }}
+        {% endfor %}
+    </section>
 </section>
