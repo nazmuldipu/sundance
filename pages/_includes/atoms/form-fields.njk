@@ -50,32 +50,41 @@
     </div>    
 {% endmacro %}
 
-{% macro form_input(
-    label = '', 
-    name = '', 
-    id, 
-    type="text", 
-    placeholder = '', 
-    onkeypress= '', 
-    pattern = '', 
-    maxlength = '', 
-    classes = ['form-input__style'], 
-    required = true) %}
+{# 
+    @desc form input
+    @example object : {
+        label = '', 
+        name = '', 
+        id, 
+        type="text", 
+        placeholder = '', 
+        onkeypress= '', 
+        pattern = '', 
+        maxlength = '', 
+        classes = ['form-input__style'], 
+        required = true
+    } 
+    @param object 
+    @author Sarjis
+ #}
 
+{% macro form_input(obj = {}) %}
     <label class="form-label">
-        {% if label != "" %}
-            {{ label }}<br>
+        {% if obj.label != "" %}
+            {{ obj.label }}<br>
         {% endif %}
         <input 
-            type="{{ type }}" 
-            placeholder="{{ placeholder }}"
-            class="{% for class in classes %} {{ class }} {% endfor %}" 
+            type="{{ obj.type }}" 
+            placeholder="{{ obj.placeholder }}"
+            class="{% for class in obj.classes %} {{ class }} {% endfor %}" 
             aria-required="true"
-            {% if name != "" %} name="{{ name }}" {% endif %}
-            {% if id %} id="{{ id }}" {% endif %}
-            {% if onkeypress !== "" %} onkeypress="{{onkeypress}}" {% endif %}
-            {% if pattern !== "" %} pattern="{{ pattern }}" {% endif %} 
-            {% if maxlength !== "" %} maxlength="{{ maxlength }}" {% endif %}
-            {{ 'required' if (required == true) }}/>
+            aria-label="true"
+            aria-invalid="false"
+            {% if obj.name != "" %} name="{{ obj.name }}" {% endif %}
+            {% if obj.id %} id="{{ obj.id }}" {% endif %}
+            {% if obj.onkeypress !== "" %} onkeypress="{{ obj.onkeypress }}" {% endif %}
+            {% if obj.pattern !== "" %} pattern="{{ obj.pattern }}" {% endif %} 
+            {% if obj.maxlength !== "" %} maxlength="{{ obj.maxlength }}" {% endif %}
+            {{ 'required' if (obj.required == true) }}/>
     </label>
 {% endmacro %}

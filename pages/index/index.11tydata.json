@@ -41,5 +41,10 @@
                 ]
             }
         ]
+    },
+    "datePicker": {
+        "type" : "text", 
+        "placeholder" : "dd/dd/yyyy", 
+        "classes" : ["form-field-date"]
     }
 }
