@@ -22,32 +22,26 @@
 {% endmacro %}
 
 {# 
-    @desc   form fields
-    @param copy             string
+    @desc   form input has suffix
     @param  classPrefix     common class prefix
-    @param  classDate       style for Date input
+    @param obj             object
+    @param copy             string
     @param  href            url
     @param  id              unique ID (optional)
-    @author Ashfaqur Rahman
+    @author Ashfaqur Rahman, Sarjis
  #}
-{% macro form_fields( copy, classPrefix='form-field', classDate='form-field-date', href="#", id ) %}
+{% macro form_input_suffix( classPrefix = 'form-field', obj = {}, copy = '', href = '#', id = '' ) %}
     <div class="{{ classPrefix }}-wrap">
-        <input 
-            type="email" 
-            placeholder="Email address"
-        >
+        {{ form_input(obj = obj) }}
         <div class="{{ classPrefix }}-btn">    
             <a
-                {% if href %} href="{{ href }}" {% endif %} 
-                {% if id %} id="{{ id }}" {% endif %}
+                {% if href != '' %} href="{{ href }}" {% endif %} 
+                {% if id != '' %} id="{{ id }}" {% endif %}
             >
                 {{ copy | safe }}
             </a>                                
         </div> 
-    </div>
-    <div>
-        {{ check_in( copy='Check IN' ) }}
-    </div>    
+    </div>   
 {% endmacro %}
 
 {# 
@@ -70,7 +64,7 @@
 
 {% macro form_input(obj = {}) %}
     <label class="form-label">
-        {% if obj.label != "" %}
+        {% if obj.label %}
             {{ obj.label }}<br>
         {% endif %}
         <input 
@@ -80,11 +74,11 @@
             aria-required="true"
             aria-label="true"
             aria-invalid="false"
-            {% if obj.name != "" %} name="{{ obj.name }}" {% endif %}
+            {% if obj.name %} name="{{ obj.name }}" {% endif %}
             {% if obj.id %} id="{{ obj.id }}" {% endif %}
-            {% if obj.onkeypress !== "" %} onkeypress="{{ obj.onkeypress }}" {% endif %}
-            {% if obj.pattern !== "" %} pattern="{{ obj.pattern }}" {% endif %} 
-            {% if obj.maxlength !== "" %} maxlength="{{ obj.maxlength }}" {% endif %}
+            {% if obj.onkeypress %} onkeypress="{{ obj.onkeypress }}" {% endif %}
+            {% if obj.pattern %} pattern="{{ obj.pattern }}" {% endif %} 
+            {% if obj.maxlength %} maxlength="{{ obj.maxlength }}" {% endif %}
             {{ 'required' if (obj.required == true) }}/>
     </label>
 {% endmacro %}

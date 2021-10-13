@@ -46,5 +46,9 @@
         "type" : "text", 
         "placeholder" : "dd/dd/yyyy", 
         "classes" : ["form-field-date"]
+    },
+    "emailInput": {
+        "type" : "email", 
+        "placeholder" : "Email address"
     }
 }
