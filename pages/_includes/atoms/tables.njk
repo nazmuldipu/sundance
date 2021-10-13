@@ -1,23 +1,30 @@
 {# 
     @desc   Tables
-    @author Ashfaqur Rahman
+    @param   Object
+    @author Ashfaqur Rahman, Sarjis
  #}
-{% macro tables() %}
+{% macro tables( tableData = {} ) %}
 
     <table class="table-container w-full">
         <thead>
             <tr class="table-row table-header">
-                <th class="row-item">Class</th>
-                <th class="row-item">Time</th>
-                <th class="row-item">Cost</th>
+                {% for header in tableData.headers %}
+                    <th class="row-item">
+                        {{ header }}
+                    </th>
+                {% endfor %}
             </tr>
         </thead>
         <tbody>
-            <tr class="table-row">
-                <td class="row-item-data">Silversmithing</td>
-                <td class="row-item-data">10am, 1pm, 3pm</td>
-                <td class="row-item-data">$ 150</td>
-            </tr>
+            {% for body in tableData.bodies %}
+                <tr class="table-row">
+                    {% for data in body.datas %}
+                        <td class="row-item-data">
+                            {{ data }}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 {% endmacro %}
