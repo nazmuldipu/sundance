@@ -4,16 +4,20 @@
  #}
 {% macro tables() %}
 
-    <div class="table-container">
-        <div class="table-row table-header">
-            <div class="row-item">Class</div>
-            <div class="row-item">Time</div>
-            <div class="row-item">Cost</div>
-        </div>
-        <div class="table-row">
-            <div class="row-item-data">Silversmithing</div>
-            <div class="row-item-data">10am, 1pm, 3pm</div>
-            <div class="row-item-data">$ 150</div>
-        </div>
-    </div>
+    <table class="table-container w-full">
+        <thead>
+            <tr class="table-row table-header">
+                <th class="row-item">Class</th>
+                <th class="row-item">Time</th>
+                <th class="row-item">Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-row">
+                <td class="row-item-data">Silversmithing</td>
+                <td class="row-item-data">10am, 1pm, 3pm</td>
+                <td class="row-item-data">$ 150</td>
+            </tr>
+        </tbody>
+    </table>
 {% endmacro %}
