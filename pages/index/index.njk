@@ -75,7 +75,7 @@ nickname: "You Thing"
         {{ h3( copy='Box' ) }}
     </header>
     <article>
-        {{ box( copy='Clinic Guide' ) }}
+        {{ box( copy='Clinic Guide', amount = 90, limitCopy = 'Upto 5 People' ) }}
     </article>
 </section>
 <section>
@@ -83,7 +83,13 @@ nickname: "You Thing"
         {{ h3( copy='Text Container' ) }}
     </header>
     <article>
-        {{ text_container( copy='Let Creativity Flow' ) }}
+        {{ text_container( 
+            copy='Let Creativity Flow', 
+            texts = [
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque"
+            ] 
+        ) }}
     </article>
 </section>
 <section>
