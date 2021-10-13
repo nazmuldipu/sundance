@@ -1,31 +1,35 @@
 {# 
-    @desc   accordion
-    @param  classes     array, class names
-    @param  id          unique ID
-    @author Ashfaqur Rahman
+    @param  item     object
+    @author Ashfaqur Rahman, Sarjis
  #}
-{% macro accordion( copy, id, classes=['toggle', 'hidden'] ) %}
+{% macro accordion( item = {} ) %}
     <div class="accordion-container">
         <ul>
             <li>
                 <input 
                     type="checkbox" 
-                    {% if id %} id="{{ id }}" {% endif %}
-                    class="{% for class in classes %} {{ class }} {% endfor %}"
-                    {% if name %} name="{{ name }}" {% endif %}
+                    {% if item.id %} id="{{ item.id }}" {% endif %}
+                    class="{% for class in item.classes %} {{ class }} {% endfor %}"
+                    {% if item.name %} name="{{ item.name }}" {% endif %}
                 >
                 <label 
-                    {% if id %} for="{{ id }}" {% endif %} 
+                    {% if item.id %} for="{{ item.id }}" {% endif %} 
                     class="toggle--label"
                 >                
-                    <h4>{{ copy | safe }}</h4>
+                    <h4>{{ item.title | safe }}</h4>
                 </label>
-                <div class="toggle-details hidden">
-                    <h3>Let Creativity Flow</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue  placerat tristique viverra eget sed. Rhoncus imperdiet</p>
-                    <img src="https://via.placeholder.com/800x400.png" class="img-res">
-                </div>
+                <figure class="toggle-details hidden">
+                    {% set article = item.article %}
+                    <article>
+                        <h3> {{ article.heading }} </h3>
+                        {% for text in article.copy %}
+                            <p> {{ text | safe }} </p>
+                        {% endfor %}
+                    </article>
+                    <picture>
+                        <img src="{{ item.image }}" class="img-res">
+                    </picture>
+                </figure>
             </li> 
         </ul>
     </div>    
