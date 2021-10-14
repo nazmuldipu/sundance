@@ -2,9 +2,12 @@
 
 {# 
     @desc   custom checkbox  
+    @param  copy    string 
     @param  id      unique ID (optional)
     @param  name    checkbox name (optional)
-    @author Ashfaqur Rahman
+    @param  classPrefix    class prefix
+    @param  checkBoxNumber    check box number (optional)
+    @author Ashfaqur Rahman, Sarjis
  #}
 {% macro checkboxes( copy, id, name, classPrefix='checkboxes-btn', checkBoxNumber ) %}
     <label class="{{ classPrefix }}">
@@ -22,12 +25,12 @@
 {% endmacro %}
 
 {# 
-    @desc   form input has suffix
-    @param  classPrefix     common class prefix
+    @desc  form input with suffix
+    @param classPrefix     common class prefix
     @param obj             object
-    @param copy             string
-    @param  href            url
-    @param  id              unique ID (optional)
+    @param copy            string
+    @param href            url
+    @param id              unique ID (optional)
     @author Ashfaqur Rahman, Sarjis
  #}
 {% macro form_input_suffix( classPrefix = 'form-field', obj = {}, copy = '', href = '#', id = '' ) %}
@@ -44,9 +47,7 @@
     </div>   
 {% endmacro %}
 
-{# 
-    @desc form input
-    @example object : {
+{# @example object : {
         label = '', 
         name = '', 
         id, 
@@ -58,6 +59,7 @@
         classes = ['form-input__style'], 
         required = true
     } 
+    @desc form input
     @param object 
     @author Sarjis
  #}
