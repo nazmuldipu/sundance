@@ -1,13 +1,13 @@
 {% from 'atoms/check-in.njk' import check_in %}
 
 {# 
-    @desc   custom checkbox  
-    @param  copy    string 
-    @param  id      unique ID (optional)
-    @param  name    checkbox name (optional)
-    @param  classPrefix    class prefix
-    @param  checkBoxNumber    check box number (optional)
-    @author Ashfaqur Rahman, Sarjis
+    #   @desc   custom checkbox
+    #   @param  copy            string 
+    #   @param  id              unique ID (optional)
+    #   @param  name            checkbox name (optional)
+    #   @param  classPrefix     class prefix
+    #   @param  checkBoxNumber  check box number (optional)
+    #   @author Ashfaqur Rahman, Sarjis
  #}
 {% macro checkboxes( copy, id, name, classPrefix='checkboxes-btn', checkBoxNumber ) %}
     <label class="{{ classPrefix }}">
@@ -19,51 +19,55 @@
         <span class="{{ classPrefix }}__control"></span>
         <span class="{{ classPrefix }}__label">
             {{ copy | safe }}
-            {% if checkBoxNumber %} ({{ checkBoxNumber }}) {% endif %}
+            {% if checkBoxNumber %}
+                ({{ checkBoxNumber }})
+            {% endif %}
         </span>
-    </label>    
+    </label>
 {% endmacro %}
 
-{# 
-    @desc  form input with suffix
-    @param classPrefix     common class prefix
-    @param obj             object
-    @param copy            string
-    @param href            url
-    @param id              unique ID (optional)
-    @author Ashfaqur Rahman, Sarjis
+
+{#
+    #   @desc  form input with suffix
+    #   @param classPrefix     common class prefix
+    #   @param obj             object
+    #   @param copy            string
+    #   @param href            url
+    #   @param id              unique ID (optional)
+    #   @author Ashfaqur Rahman, Sarjis
  #}
 {% macro form_input_suffix( classPrefix = 'form-field', obj = {}, copy = '', href = '#', id = '' ) %}
     <div class="{{ classPrefix }}-wrap">
         {{ form_input(obj = obj) }}
-        <div class="{{ classPrefix }}-btn">    
+        <div class="{{ classPrefix }}-btn">
             <a
                 {% if href != '' %} href="{{ href }}" {% endif %} 
                 {% if id != '' %} id="{{ id }}" {% endif %}
             >
                 {{ copy | safe }}
-            </a>                                
+            </a>
         </div> 
     </div>   
 {% endmacro %}
 
-{# @example object : {
-        label = '', 
-        name = '', 
-        id, 
-        type="text", 
-        placeholder = '', 
-        onkeypress= '', 
-        pattern = '', 
-        maxlength = '', 
-        classes = ['form-input__style'], 
-        required = true
-    } 
-    @desc form input
-    @param object 
-    @author Sarjis
- #}
 
+{#
+    #   @desc form input
+    #   @param  object
+    #   @example object : {
+            label = '', 
+            name = '', 
+            id, 
+            type="text", 
+            placeholder = '', 
+            onkeypress= '', 
+            pattern = '', 
+            maxlength = '', 
+            classes = ['form-input__style'], 
+            required = true
+        }
+    #   @author Sarjis
+ #}
 {% macro form_input(obj = {}) %}
     <label class="form-label">
         {% if obj.label %}

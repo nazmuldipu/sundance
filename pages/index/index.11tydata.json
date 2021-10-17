@@ -43,8 +43,8 @@
         ]
     },
     "datePicker": {
-        "type" : "text", 
-        "placeholder" : "dd/dd/yyyy", 
+        "type" : "datetime", 
+        "placeholder" : "mm/dd/yyyy", 
         "classes" : ["form-field-date"]
     },
     "emailInput": {

@@ -1,36 +1,39 @@
 {# 
-    @param  item     object
-    @author Ashfaqur Rahman, Sarjis
+    #   @param  item     object
+    #   @author Ashfaqur Rahman, Sarjis
  #}
 {% macro accordion( item = {} ) %}
-    <div class="accordion-container">
-        <ul>
-            <li>
-                <input 
-                    type="checkbox" 
-                    {% if item.id %} id="{{ item.id }}" {% endif %}
-                    class="{% for class in item.classes %} {{ class }} {% endfor %}"
-                    {% if item.name %} name="{{ item.name }}" {% endif %}
-                >
-                <label 
-                    {% if item.id %} for="{{ item.id }}" {% endif %} 
-                    class="toggle--label"
-                >                
-                    <h4>{{ item.title | safe }}</h4>
-                </label>
-                <figure class="toggle-details hidden">
-                    {% set article = item.article %}
-                    <article>
-                        <h3> {{ article.heading }} </h3>
-                        {% for text in article.copy %}
-                            <p> {{ text | safe }} </p>
-                        {% endfor %}
-                    </article>
-                    <picture>
-                        <img src="{{ item.image }}" class="img-res">
-                    </picture>
-                </figure>
-            </li> 
-        </ul>
+    <div class="accordion">
+        <input 
+            type="checkbox" 
+            {% if item.id %} id="{{ item.id }}" {% endif %}
+            class="{% for class in item.classes %} {{ class }} {% endfor %}"
+            {% if item.name %} name="{{ item.name }}" {% endif %}
+        >
+        <label 
+            {% if item.id %} for="{{ item.id }}" {% endif %} 
+            class="accordion--label toggle--label"
+        >
+            <h2 class="accordion--title heading--4">
+                {{ item.title | safe }}
+            </h2>
+        </label>
+        <figure class="toggle-details hidden">
+            {% set article = item.article %}
+            <figcaption>
+                <h3>
+                    {{ article.heading }}
+                </h3>
+                {% for text in article.copy %}
+                    <p> {{ text | safe }} </p>
+                {% endfor %}
+            </figcaption>
+            {% if item.image %}
+                <!-- TODO add the image macro here -->
+                <picture>
+                    <img src="{{ item.image }}" class="img-res">
+                </picture>
+            {% endif %} 
+        </figure>
     </div>    
 {% endmacro %}
