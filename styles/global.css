@@ -328,66 +328,92 @@ section {
     height: auto;
     max-width: 100%;
 }
-.pos {
-    position: relative;
-    margin: 0 auto;
-  }
-  
-  .down-arrow {
-    height: 60px;
-    width: 60px;
-  }
-  
-  .down-arrow:before,
-  .down-arrow:after {
-    content: "";
-    position: absolute;
-    top: 18px;
-    width: 12px;
-    border: 1px solid #000;
-    background-color: black;
-  }
-  
-  .down-arrow:before {
-    transform: rotateZ(45deg);
-    -webkit-transform: rotateZ(45deg);
-    left: 9px;
-  }
-  .down-arrow:after {
-    transform: rotateZ(-45deg);
-    -webkit-transform: rotateZ(-45deg);
-    left: 18px;
-  }
-  .up-arrow {
-    height: 60px;
-    width: 60px;
-  }
-  .up-arrow:before,
-  .up-arrow:after {
+.arrow:before,
+.arrow:after {
     content: "";
     position: absolute;
     width: 12px;
     border: 1px solid #000;
     background-color: black;
-  }
-  .up-arrow:before {
-    transform: rotateZ(-45deg);
-    -webkit-transform: rotateZ(-45deg);
-    left: 9px;
-  }
-  .up-arrow:after {
-    transform: rotateZ(45deg);
-    -webkit-transform: rotateZ(45deg);
-    left: 18px;
-  }
-  .up-arrow::before {
-    top: 18px;
-  }
-  .up-arrow:after {
-    top: 18px;
-  }
+}
 
-  
+.down-arrow:before {
+    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    left: 9px;
+}
+.down-arrow:after {
+    transform: rotateZ(-45deg);
+    -webkit-transform: rotateZ(-45deg);
+    left: 18px;
+}
+
+.up-arrow:before {
+    transform: rotateZ(-45deg);
+    -webkit-transform: rotateZ(-45deg);
+    left: 9px;
+}
+.up-arrow:after {
+    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    left: 18px;
+}
+.up-arrow::before {
+    top: 18px;
+}
+.up-arrow:after {
+    top: 18px;
+}
+
+.rotate-45:before {
+    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+}
+.-rotate-45 {
+    transform: rotateZ(-45deg);
+    -webkit-transform: rotateZ(-45deg);
+}
+.right-arrow:after {
+    top: 11px;
+}
+.right-arrow:after {
+    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    left: 18px;
+}
+.right-arrow::before {
+    top: 20px;
+    bottom: 62px;
+}
+.right-arrow:before {
+    transform: rotateZ(-45deg);
+    -webkit-transform: rotateZ(-45deg);
+    left: 18px;
+} 
+.left-arrow:after {
+    top: 29px;
+}
+.left-arrow:after {
+    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    left: 16px;
+}
+.left-arrow::before {
+    top: 20px;
+    bottom: 62px;
+}
+.left-arrow:before {
+    transform: rotateZ(-45deg);
+    -webkit-transform: rotateZ(-45deg);
+    left: 16px;
+}
+
+.arrow {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #F7F7F7;
+  }
   
 
 /****  end atoms  ********************************/
