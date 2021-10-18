@@ -336,35 +336,35 @@ section {
     border: 1px solid #000;
     background-color: black;
 }
-
+/****  down arrow start ********************************/
 .down-arrow:before {
     transform: rotateZ(45deg);
     -webkit-transform: rotateZ(45deg);
-    left: 9px;
+    left: 13px;
+    top: 24px;
 }
 .down-arrow:after {
     transform: rotateZ(-45deg);
     -webkit-transform: rotateZ(-45deg);
-    left: 18px;
+    left: 22px;
+    top: 24px;
 }
+/****  down arrow end ********************************/
 
+/****  up arrow start ********************************/
 .up-arrow:before {
     transform: rotateZ(-45deg);
     -webkit-transform: rotateZ(-45deg);
-    left: 9px;
+    left: 14px;
+    top: 22px;
 }
 .up-arrow:after {
     transform: rotateZ(45deg);
     -webkit-transform: rotateZ(45deg);
-    left: 18px;
+    left: 23px;
+    top: 22px;
 }
-.up-arrow::before {
-    top: 18px;
-}
-.up-arrow:after {
-    top: 18px;
-}
-
+/****  up arrow end ********************************/
 .rotate-45:before {
     transform: rotateZ(45deg);
     -webkit-transform: rotateZ(45deg);
