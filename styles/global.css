@@ -336,6 +336,12 @@ section {
     border: 1px solid #000;
     background-color: black;
 }
+.arrow {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #F7F7F7;
+  }
 /****  down arrow start ********************************/
 .down-arrow:before {
     transform: rotateZ(45deg);
@@ -365,55 +371,30 @@ section {
     top: 22px;
 }
 /****  up arrow end ********************************/
-.rotate-45:before {
-    transform: rotateZ(45deg);
-    -webkit-transform: rotateZ(45deg);
-}
-.-rotate-45 {
-    transform: rotateZ(-45deg);
-    -webkit-transform: rotateZ(-45deg);
-}
-.right-arrow:after {
-    top: 11px;
-}
 .right-arrow:after {
     transform: rotateZ(45deg);
     -webkit-transform: rotateZ(45deg);
     left: 18px;
-}
-.right-arrow::before {
-    top: 20px;
-    bottom: 62px;
+    top: 18px;
 }
 .right-arrow:before {
     transform: rotateZ(-45deg);
     -webkit-transform: rotateZ(-45deg);
     left: 18px;
+    top: 27px;
 } 
-.left-arrow:after {
-    top: 29px;
-}
+
 .left-arrow:after {
     transform: rotateZ(45deg);
     -webkit-transform: rotateZ(45deg);
     left: 16px;
-}
-.left-arrow::before {
-    top: 20px;
-    bottom: 62px;
+    top: 29px;
 }
 .left-arrow:before {
     transform: rotateZ(-45deg);
     -webkit-transform: rotateZ(-45deg);
     left: 16px;
+    top: 20px;
 }
-
-.arrow {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: #F7F7F7;
-  }
-  
 
 /****  end atoms  ********************************/
