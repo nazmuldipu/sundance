@@ -26,31 +26,6 @@
     </label>
 {% endmacro %}
 
-
-{#
-    #   @desc  form input with suffix
-    #   @param classPrefix     common class prefix
-    #   @param obj             object
-    #   @param copy            string
-    #   @param href            url
-    #   @param id              unique ID (optional)
-    #   @author Ashfaqur Rahman, Sarjis
- #}
-{% macro form_input_suffix( classPrefix = 'form-field', obj = {}, copy = '', href = '#', id = '' ) %}
-    <div class="{{ classPrefix }}-wrap">
-        {{ form_input(obj = obj) }}
-        <div class="{{ classPrefix }}-btn">
-            <a
-                {% if href != '' %} href="{{ href }}" {% endif %} 
-                {% if id != '' %} id="{{ id }}" {% endif %}
-            >
-                {{ copy | safe }}
-            </a>
-        </div> 
-    </div>   
-{% endmacro %}
-
-
 {#
     #   @desc form input
     #   @param  object
@@ -68,8 +43,8 @@
         }
     #   @author Sarjis
  #}
-{% macro form_input(obj = {}) %}
-    <label class="form-label">
+{% macro form_input(obj = {}, suffix = false, classes = [], copy, href = '#', id) %}
+    <label class="{% for class in classes %} {{ class }} {% endfor %}">
         {% if obj.label %}
             {{ obj.label }}<br>
         {% endif %}
@@ -86,5 +61,15 @@
             {% if obj.pattern %} pattern="{{ obj.pattern }}" {% endif %} 
             {% if obj.maxlength %} maxlength="{{ obj.maxlength }}" {% endif %}
             {{ 'required' if (obj.required == true) }}/>
+
+            {% if suffix and copy %}
+                <a
+                    class="form-label__link"
+                    href="{{ href }}"
+                    {% if id %} id="{{ id }}" {% endif %}
+                >
+                    {{ copy | safe }}
+                </a>
+            {% endif %} 
     </label>
 {% endmacro %}
