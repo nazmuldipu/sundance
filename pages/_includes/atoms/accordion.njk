@@ -1,3 +1,4 @@
+{% from 'macros.njk' import scaled_image %}
 {# 
     #   @param  item     object
     #   @author Ashfaqur Rahman, Sarjis
@@ -29,10 +30,7 @@
                 {% endfor %}
             </figcaption>
             {% if item.image %}
-                <!-- TODO add the image macro here -->
-                <picture>
-                    <img src="{{ item.image }}" class="img-res">
-                </picture>
+                {{ scaled_image(imgObj = item.image) }}
             {% endif %} 
         </figure>
     </div>    

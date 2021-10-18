@@ -16,7 +16,29 @@
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque"
                 ]
             },
-            "image": "https://via.placeholder.com/800x400.png"
+            "image": {
+                "classes":"inline-block",
+                "artDirection": [
+                    {
+                        "media": "(min-width:900.1px)",
+                        "sizes": "100vw",
+                        "type": "png",
+                        "src": "images/ameswell_entrance",
+                        "alt": "The Placeholder Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "media": "(max-width:900px)",
+                        "sizes": "50vw",
+                        "type": "png",
+                        "src": "images/ameswell_entrance",
+                        "alt": "The Placeholder Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+            }
         }
     ],
     "tableData": {
@@ -50,5 +72,28 @@
     "emailInput": {
         "type" : "email", 
         "placeholder" : "Email address"
+    },
+    "exampleImage": {
+        "classes":"inline-block",
+        "artDirection": [
+            {
+                "media": "(min-width:900.1px)",
+                "sizes": "100vw",
+                "type": "png",
+                "src": "https://via.placeholder.com/800x400",
+                "alt": "The Placeholder Image",
+                "intrinsicwidth": "800",
+                "intrinsicheight": "400"
+            },
+            {
+                "media": "(max-width:900px)",
+                "sizes": "50vw",
+                "type": "png",
+                "src": "https://via.placeholder.com/800x400",
+                "alt": "The Placeholder Image",
+                "intrinsicwidth": "800",
+                "intrinsicheight": "400"
+            }
+        ]
     }
 }
