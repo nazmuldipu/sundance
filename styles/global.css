@@ -356,7 +356,6 @@ section {
     top: 24px;
 }
 /****  down arrow end ********************************/
-
 /****  up arrow start ********************************/
 .up-arrow:before {
     transform: rotateZ(-45deg);
@@ -371,6 +370,7 @@ section {
     top: 22px;
 }
 /****  up arrow end ********************************/
+/****  right arrow start ********************************/
 .right-arrow:after {
     transform: rotateZ(45deg);
     -webkit-transform: rotateZ(45deg);
@@ -383,7 +383,8 @@ section {
     left: 18px;
     top: 27px;
 } 
-
+/****  right arrow end ********************************/
+/****  left arrow start ********************************/
 .left-arrow:after {
     transform: rotateZ(45deg);
     -webkit-transform: rotateZ(45deg);
@@ -396,5 +397,5 @@ section {
     left: 16px;
     top: 20px;
 }
-
+/****  left arrow end ********************************/
 /****  end atoms  ********************************/
