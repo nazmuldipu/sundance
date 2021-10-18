@@ -1,0 +1,59 @@
+{#
+    #   @desc   img tag
+    #   @param  src,  image path
+    #   @return HTML image tag
+    #   @author Alexander Khost
+#}
+{% macro social_icon(src = '')%}
+    <img src="{{ src }}"></img>
+{% endmacro %}
+
+{#
+    #   @desc   facebook svg icon
+    #   @return facebook icon
+    #   @author Sarjis
+#}
+
+{% macro facebook() %}
+    {{ social_icon('images/facebook.svg') }}
+{% endmacro %}
+
+{#
+    #   @desc   twitter svg icon
+    #   @return twitter icon
+    #   @author Sarjis
+#}
+
+{% macro twitter() %}
+    {{ social_icon('images/twitter.svg') }}
+{% endmacro %}
+
+{#
+    #   @desc   instagram svg icon
+    #   @return instagram icon
+    #   @author Sarjis
+#}
+
+{% macro instagram() %}
+    {{ social_icon('images/instagram.svg') }}
+{% endmacro %}
+
+{#
+    #   @desc   youtube svg icon
+    #   @return youtube icon
+    #   @author Sarjis
+#}
+
+{% macro youtube() %}
+    {{ social_icon('images/youtube.svg') }}
+{% endmacro %}
+
+{#
+    #   @desc   tripAdvisor svg icon
+    #   @return tripAdvisor icon
+    #   @author Sarjis
+#}
+
+{% macro tripAdvisor() %}
+    {{ social_icon('images/tripAdvisor.svg') }}
+{% endmacro %}
