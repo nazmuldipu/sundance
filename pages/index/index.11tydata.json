@@ -65,6 +65,7 @@
         ]
     },
     "datePicker": {
+        "label" : "Check IN", 
         "type" : "datetime", 
         "placeholder" : "mm/dd/yyyy", 
         "classes" : ["form-field-date"]
