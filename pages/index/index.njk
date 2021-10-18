@@ -14,6 +14,7 @@ nickname: "You Thing"
 {% from 'atoms/box.njk' import box %}
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
+{% from 'atoms/icons.njk' import arrow_down, arrow_up %}
 
 <header>
     {{ h1( copy='Atoms' ) }}
@@ -98,4 +99,10 @@ nickname: "You Thing"
             {{ accordion( item ) }}
         {% endfor %}
     </section>
+</section>
+<section>
+    <header>
+        {{ arrow_down() }}
+        {{ arrow_up() }}
+    </header>
 </section>

@@ -25,6 +25,12 @@ section {
 .block {
     display: block;
 }
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
 /****  end base styles  ********************************/
 
 
@@ -322,5 +328,66 @@ section {
     height: auto;
     max-width: 100%;
 }
+.pos {
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .down-arrow {
+    height: 60px;
+    width: 60px;
+  }
+  
+  .down-arrow:before,
+  .down-arrow:after {
+    content: "";
+    position: absolute;
+    top: 18px;
+    width: 12px;
+    border: 1px solid #000;
+    background-color: black;
+  }
+  
+  .down-arrow:before {
+    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    left: 9px;
+  }
+  .down-arrow:after {
+    transform: rotateZ(-45deg);
+    -webkit-transform: rotateZ(-45deg);
+    left: 18px;
+  }
+  .up-arrow {
+    height: 60px;
+    width: 60px;
+  }
+  .up-arrow:before,
+  .up-arrow:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    border: 1px solid #000;
+    background-color: black;
+  }
+  .up-arrow:before {
+    transform: rotateZ(-45deg);
+    -webkit-transform: rotateZ(-45deg);
+    left: 9px;
+  }
+  .up-arrow:after {
+    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+    left: 18px;
+  }
+  .up-arrow::before {
+    top: 18px;
+  }
+  .up-arrow:after {
+    top: 18px;
+  }
+
+  
+  
 
 /****  end atoms  ********************************/
