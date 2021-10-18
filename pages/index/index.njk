@@ -59,11 +59,11 @@ nickname: "You Thing"
         {{ h3( copy='Form Fields' ) }}
     </header>
     <article>
-        {{ form_input_suffix( obj = emailInput, copy = 'Join', href = '#', id = 'join' ) }}
+        {{ form_input(obj = emailInput, suffix = true, classes = ['form-label', 'block'], copy = 'Join', href = '#', id = 'join') }}
         <div>
             {{ check_in( copy='Check IN' ) }}
         </div> 
-        {{ form_input(datePicker) }}
+        {{ form_input(obj = datePicker) }}
     </article>
 </section>
 <section>
