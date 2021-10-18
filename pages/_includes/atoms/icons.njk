@@ -4,7 +4,7 @@
     #   @return HTML image tag
     #   @author Alexander Khost
 #}
-{% macro social_icon(src = '')%}
+{% macro get_svg(src = '')%}
     <img src="{{ src }}"></img>
 {% endmacro %}
 
@@ -15,7 +15,7 @@
 #}
 
 {% macro facebook() %}
-    {{ social_icon('images/facebook.svg') }}
+    {{ get_svg('images/facebook.svg') }}
 {% endmacro %}
 
 {#
@@ -25,7 +25,7 @@
 #}
 
 {% macro twitter() %}
-    {{ social_icon('images/twitter.svg') }}
+    {{ get_svg('images/twitter.svg') }}
 {% endmacro %}
 
 {#
@@ -35,7 +35,7 @@
 #}
 
 {% macro instagram() %}
-    {{ social_icon('images/instagram.svg') }}
+    {{ get_svg('images/instagram.svg') }}
 {% endmacro %}
 
 {#
@@ -45,7 +45,7 @@
 #}
 
 {% macro youtube() %}
-    {{ social_icon('images/youtube.svg') }}
+    {{ get_svg('images/youtube.svg') }}
 {% endmacro %}
 
 {#
@@ -55,5 +55,85 @@
 #}
 
 {% macro tripAdvisor() %}
-    {{ social_icon('images/tripAdvisor.svg') }}
+    {{ get_svg('images/tripAdvisor.svg') }}
+{% endmacro %}
+
+{#
+    #   @desc   hotels svg icon
+    #   @return hotels icon
+    #   @author Sarjis
+#}
+
+{% macro hotels() %}
+    {{ get_svg('images/hotels.svg') }}
+{% endmacro %}
+
+{#
+    #   @desc   travelLeisure svg icon
+    #   @return travelLeisure icon
+    #   @author Sarjis
+#}
+
+{% macro travelLeisure() %}
+    {{ get_svg('images/travelLeisure.svg') }}
+{% endmacro %}
+
+{#
+    #   @desc   resourceRetreats svg icon
+    #   @return resourceRetreats icon
+    #   @author Sarjis
+#}
+
+{% macro resourceRetreats() %}
+    {{ get_svg('images/travelLeisure.svg') }}
+{% endmacro %}
+
+{#
+    #   @desc   openTable svg icon
+    #   @return openTable icon
+    #   @author Sarjis
+#}
+
+{% macro openTable() %}
+    {{ get_svg('images/openTable.svg') }}
+{% endmacro %}
+
+{#
+    #   @desc   forbes svg icon
+    #   @return forbes icon
+    #   @author Sarjis
+#}
+
+{% macro forbes() %}
+    {{ get_svg('images/forbes.svg') }}
+{% endmacro %}
+
+{#
+    #   @desc   condeNtravelerRC svg icon
+    #   @return condeNtravelerRC icon
+    #   @author Sarjis
+#}
+
+{% macro condeNtravelerRC() %}
+    {{ get_svg('images/condeNtravelerRC.svg') }}
+{% endmacro %}
+
+{#
+    #   @desc   condeNtraveler svg icon
+    #   @return condeNtraveler icon
+    #   @author Sarjis
+#}
+
+{% macro condeNtraveler() %}
+    {{ get_svg('images/condeNtraveler.svg') }}
+{% endmacro %}
+
+{#
+    #   @desc   liftopia svg icon
+    #   @return liftopia icon
+    #   @author Sarjis
+#}
+
+{% macro liftopia() %}
+    {{ get_svg('images/liftopia.svg') }}
 {% endmacro %}
