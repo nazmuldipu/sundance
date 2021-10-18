@@ -5,15 +5,17 @@
  #}
 {% macro tables( tableData = {} ) %}
     <table class="table w-full">
-        <thead class="table--header">
-            <tr class="table--row">
-                {% for header in tableData.headers %}
-                    <th class="table--row__head">
-                        {{ header }}
-                    </th>
-                {% endfor %}
-            </tr>
-        </thead>
+        {% if tableData.headers | length > 0 %}
+            <thead class="table--header">
+                <tr class="table--row">
+                    {% for header in tableData.headers %}
+                        <th class="table--row__head">
+                            {{ header }}
+                        </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+        {% endif %}        
         <tbody class="table--body">
             {% for body in tableData.bodies %}
                 <tr class="table--row">
