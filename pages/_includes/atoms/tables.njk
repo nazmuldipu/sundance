@@ -4,21 +4,21 @@
     #   @author Ashfaqur Rahman, Sarjis
  #}
 {% macro tables( tableData = {} ) %}
-    <table class="table-container w-full">
-        <thead>
-            <tr class="table-row table-header">
+    <table class="table w-full">
+        <thead class="table--header">
+            <tr class="table--row">
                 {% for header in tableData.headers %}
-                    <th class="row-item">
+                    <th class="table--row__head">
                         {{ header }}
                     </th>
                 {% endfor %}
             </tr>
         </thead>
-        <tbody>
+        <tbody class="table--body">
             {% for body in tableData.bodies %}
-                <tr class="table-row">
+                <tr class="table--row">
                     {% for data in body.datas %}
-                        <td class="row-item-data">
+                        <td class="table--row__data">
                             {{ data }}
                         </td>
                     {% endfor %}
