@@ -33,15 +33,11 @@
     #   @param  texts    array
     #   @author Ashfaqur Rahman, Sarjis
 #}
-{% macro text_container( classes = ['text-container'], copy, texts = [] ) %}
-    <section class="{% for class in classes %} {{ class }} {% endfor %}">
+{% macro text_container( classes = ['text-container'], title, copy ) %}
+    <article class="{% for class in classes %} {{ class }} {% endfor %}">
         <header>
-            {{ h1(copy = copy, classes = ['text-container--header', 'heading--1']) }}
+            {{ h1(copy = title, classes = ['text-container--header', 'heading--1']) }}
         </header>
-        <article>
-            {% for text in texts %}
-                <p>{{ text }}</p>
-            {% endfor %}
-        </article>
-    </section>
+        <p>{{ copy | safe }}</p>
+    </article>
 {% endmacro %}
