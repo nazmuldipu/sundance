@@ -57,9 +57,12 @@
             aria-invalid="false"
             {% if obj.name %} name="{{ obj.name }}" {% endif %}
             {% if obj.id %} id="{{ obj.id }}" {% endif %}
+            {% if obj.value %} value="{{ obj.value }}" {% endif %}
             {% if obj.onkeypress %} onkeypress="{{ obj.onkeypress }}" {% endif %}
             {% if obj.pattern %} pattern="{{ obj.pattern }}" {% endif %} 
             {% if obj.maxlength %} maxlength="{{ obj.maxlength }}" {% endif %}
+            {% if obj.minlength %} minlength="{{ obj.minlength }}" {% endif %}
+            {% if obj.size %} size="{{ obj.size }}" {% endif %}
             {{ 'required' if (obj.required == true) }}/>
 
             {% if suffix and copy %}
