@@ -4,8 +4,8 @@
     #   @return HTML image tag
     #   @author Alexander Khost
 #}
-{% macro get_svg(src = '')%}
-    <img src="{{ src }}"></img>
+{% macro get_svg(src = '', alt = 'The Sundance SVG', classes = [])%}
+    <img src="{{ src }}" alt="{{ alt }}" class="{% for class in classes %} {{ class }} {% endfor %}"></img>
 {% endmacro %}
 
 {#
@@ -59,83 +59,86 @@
 {% endmacro %}
 
 {#
-    #   @desc   hotels svg icon
-    #   @return hotels icon
+    #   @desc   hotels image
+    #   @return hotels image
     #   @author Sarjis
 #}
 
 {% macro hotels() %}
-    {{ get_svg('images/hotels.svg') }}
+    {{ get_svg('images/hotels.png') }}
+    {# {{ get_svg('images/hotels.svg') }} #}
 {% endmacro %}
 
 {#
-    #   @desc   travelLeisure svg icon
-    #   @return travelLeisure icon
+    #   @desc   travelLeisure image
+    #   @return travelLeisure image
     #   @author Sarjis
 #}
 
 {% macro travelLeisure() %}
-    {{ get_svg('images/travelLeisure.svg') }}
+    {{ get_svg('images/travel-leisure.png') }}
+    {# {{ get_svg('images/travelLeisure.svg') }} #}
 {% endmacro %}
 
 {#
-    #   @desc   resourceRetreats svg icon
-    #   @return resourceRetreats icon
+    #   @desc   resourceRetreats image
+    #   @return resourceRetreats image
     #   @author Sarjis
 #}
 
 {% macro resourceRetreats() %}
-    {{ get_svg('images/travelLeisure.svg') }}
+    {{ get_svg('images/resource-retreats.png') }}
+    {# {{ get_svg('images/resourceRetreats.svg') }} #}
 {% endmacro %}
 
 {#
-    #   @desc   openTable svg icon
-    #   @return openTable icon
+    #   @desc   openTable image
+    #   @return openTable image
     #   @author Sarjis
 #}
 
 {% macro openTable() %}
-    {{ get_svg('images/openTable.svg') }}
+    {{ get_svg('images/open-table.png') }}
 {% endmacro %}
 
 {#
-    #   @desc   forbes svg icon
-    #   @return forbes icon
+    #   @desc   forbes image
+    #   @return forbes image
     #   @author Sarjis
 #}
 
 {% macro forbes() %}
-    {{ get_svg('images/forbes.svg') }}
+    {{ get_svg('images/forbes.png') }}
 {% endmacro %}
 
 {#
-    #   @desc   condeNtravelerRC svg icon
-    #   @return condeNtravelerRC icon
+    #   @desc   condeNtravelerRC image
+    #   @return condeNtravelerRC image
     #   @author Sarjis
 #}
 
 {% macro condeNtravelerRC() %}
-    {{ get_svg('images/condeNtravelerRC.svg') }}
+    {{ get_svg('images/conde-nast-traveler-rc.png') }}
 {% endmacro %}
 
 {#
-    #   @desc   condeNtraveler svg icon
-    #   @return condeNtraveler icon
+    #   @desc   condeNtraveler image
+    #   @return condeNtraveler image
     #   @author Sarjis
 #}
 
 {% macro condeNtraveler() %}
-    {{ get_svg('images/condeNtraveler.svg') }}
+    {{ get_svg('images/conde-nast-traveler.png') }}
 {% endmacro %}
 
 {#
-    #   @desc   liftopia svg icon
-    #   @return liftopia icon
+    #   @desc   liftopia image
+    #   @return liftopia image
     #   @author Sarjis
 #}
 
 {% macro liftopia() %}
-    {{ get_svg('images/liftopia.svg') }}
+    {{ get_svg('images/liftopia.png') }}
 {% endmacro %}
 
 {#

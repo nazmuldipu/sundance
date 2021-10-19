@@ -14,7 +14,10 @@ nickname: "You Thing"
 {% from 'atoms/box.njk' import box %}
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
-{% from 'atoms/icons.njk' import filter_icon, plus_icon, arrow_down, arrow_up, arrow_right, arrow_left, hamburger_icon, cross_icon %}
+{% from 'atoms/icons.njk' import filter_icon, plus_icon, arrow_down, arrow_up, arrow_right, 
+arrow_left, hamburger_icon, cross_icon, facebook, twitter, instagram, youtube, tripAdvisor,
+travelLeisure, hotels, openTable, resourceRetreats, condeNtravelerRC, forbes, condeNtraveler, liftopia
+ %}
 
 <header>
     {{ h1( copy='Atoms' ) }}
@@ -101,7 +104,22 @@ nickname: "You Thing"
     </section>
 </section>
 <section>
-    <header class="flex align-items-center">
+    <header>
+        {{ h3(copy = 'Social Media') }}
+    </header>
+    <section class="flex align-items-center gap-x-2">
+        {{ facebook() }}
+        {{ twitter() }} 
+        {{ instagram() }} 
+        {{ youtube() }} 
+        {{ tripAdvisor() }}
+    </section>
+</section>
+<section>
+    <header>
+        {{ h3(copy = 'General') }}
+    </header>
+    <section class="flex align-items-center gap-x-2">
         {{ arrow_down() }}
         {{ arrow_up() }}
         {{ arrow_right() }}
@@ -111,5 +129,20 @@ nickname: "You Thing"
         {{ checkboxes( id = 'checkbox-2', name = 'checkbox' ) }}
         {{ plus_icon() }}
         {{ filter_icon() }}
+    </section>
+</section>
+<section>
+    <header>
+        {{ h3(copy = 'Magazine logos') }}
     </header>
+    <section class="flex align-items-center gap-x-2">
+        {{ travelLeisure() }} 
+        {{ hotels() }} 
+        {{ openTable() }} 
+        {{ resourceRetreats() }} 
+        {{ condeNtravelerRC() }} 
+        {{ forbes() }}
+        {{ condeNtraveler() }} 
+        {{ liftopia() }}
+    </section>
 </section>
