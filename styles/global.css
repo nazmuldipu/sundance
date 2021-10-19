@@ -411,6 +411,7 @@ section {
     top: 20px;
 }
 /****  left arrow end ********************************/
+/****  cross icon start ********************************/
 .cross-icon:after {
     left: 19px;
     top: 24px;
@@ -419,6 +420,8 @@ section {
     left: 19px;
     top: 24px;
 }
+/****  cross icon end ********************************/
+/****  plus icon start ********************************/
 .plus-icon:after {
     left: 19px;
     top: 24px;
@@ -427,35 +430,36 @@ section {
     left: 19px;
     top: 24px;
 }
+/****  plus icon end ********************************/
 /****  filter icon start  ********************************/
 .filter-icon {
-	width: 2rem;
-	height: 1.5rem;
 	display: block;
+    height: 1.5rem;
+	width: 2rem;
 	position: relative;
 }
 .filter-icon span {
-	display: block;
-	position: absolute;
-	height: 2px;
-	width: 100%;
-	background: #000000;
+    background: #000000;
 	border-radius: 2px;
-	opacity: 1;
+	display: block;
+    height: 2px;
+    opacity: 1;
+	position: absolute;
+	width: 100%;
 	z-index: 0;
 }
 .filter-icon span::after {
-	display: block;
-	position: absolute;
-	height: 0.25rem;
-	width: 0.25rem;
-	background: #ffffff;
+    background: #ffffff;
 	border-radius: 50%;
 	border: 2px solid #000000;
-	opacity: 1;
-	z-index: 5;
+    content: "";
+	display: block;
+    height: 0.25rem;
+    opacity: 1;
+	position: absolute;
 	top: -150%;
-	content: "";
+    width: 0.25rem;
+	z-index: 5;
 }
 .filter-icon span:nth-child(1) {
 	top: 0;
