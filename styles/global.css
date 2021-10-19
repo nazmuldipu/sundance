@@ -73,6 +73,21 @@ section {
     color: #000;
     padding: 20px 70px;
 }
+.dropdown::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    border: 1px solid #000;
+    background-color: white;
+}
+.dropdown:before {
+    left: 13px;
+    top: 24px;
+}
+.dropdown:after {
+    left: 22px;
+    top: 24px;
+}
 
 /* headings */
 .heading {
@@ -490,4 +505,98 @@ section {
 .filter-icon span:nth-child(3)::after {
 	left: 30%;
 }
+/* dropdown */
+
+  .headline{
+    color: #B15035;
+  }
+  
+  .select-box {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .select-box .options-container {
+    background: #F7F7F7;
+    color: #617C6A;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    border-radius: 4px;
+    overflow: hidden;
+    order: 1;
+  }
+  
+  .selected {
+    position: relative;
+    order: 0;
+  }
+  
+  .selected::after {
+    content: "";
+    background: url("/images/arrow-down.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  
+    position: absolute;
+    height: 100%;
+    width: 32px;
+    right: 10px;
+    top: 5px;
+  
+    transition: all 0.4s;
+  }
+  .options-container{
+      max-width: 400px;
+      border: 1px solid #617C6A;
+  }
+  
+  .select-box .options-container.active {
+    max-height: 50vh;
+    opacity: 1;
+    overflow-y: auto;
+  }
+  
+  .select-box .options-container.active + .selected::after {
+    transform: rotateX(180deg);
+    top: -6px;
+  }
+  
+  .select-box .options-container::-webkit-scrollbar {
+    width: 8px;
+    background: #F2E9E2;
+    border-radius: 0 8px 8px 0;
+  }
+  
+  .select-box .options-container::-webkit-scrollbar-thumb {
+    background: #B15035;
+    border-radius: 0 8px 8px 0;
+  }
+  
+  .select-box .option,
+  .selected {
+    padding: 20px 70px;
+  }
+    
+  .select-box label {
+      cursor: pointer;
+  }
+  .option {
+      border-top: 1px solid #617C6A;
+  }
+  .option:nth-child(1) {
+    border: 0;
+  }
+  
+  .select-box .option .radio {
+    display: none
+  }
+  .select-box{
+    position: relative;
+  }
+  .options-container{
+      position: absolute;
+      top: 50px;
+  }
 /****  end atoms  ********************************/

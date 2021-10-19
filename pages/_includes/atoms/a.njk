@@ -19,7 +19,6 @@
     </a>
 {% endmacro %}
 
-
 {#
     #   @desc   a primary button
     #   @param  classes  array, class names (optional)
@@ -40,7 +39,6 @@
         {{ copy | safe }}
     </a>
 {% endmacro %}
-
 
 {#
     #   @desc   a secondary button
@@ -81,4 +79,53 @@
     >
         <span class="icon"></span>{{ copy | safe }}
     </a>
+{% endmacro %}
+
+{#
+    #   @desc   a dropdown button
+    #   @param  classes  array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  copy     string, the HTML mark up that is linked
+    #   @param  href     string, link url
+    #   @param  target   string, the link target location (optional)
+    #   @return HTML primary button
+    #   @author Sarjis
+#}
+{# {% macro dropdown_primary( classes=['button', 'button--primary', 'relative', 'dropdown', 'down-arrow__rotate-45'], id, copy, href='#', target )%}
+    <a
+        href="{{ href }}"
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+        {% if target %} target="{{ target }}" {% endif %}
+        style="padding-left:30px"
+    >
+        {{ copy | safe }}
+        <span style=" background: white;
+    position: absolute;
+    top: 0;
+    height: 65px;
+    width: 1px;
+    margin-left: 30px;"></span>
+    </a>
+{% endmacro %} #}
+{% macro dropdown_primary( classes=['button', 'button--primary', 'relative', 'dropdown', 'down-arrow__rotate-45'], id, copy, href='#', target )%}
+    <article class="custom-select-container" style="display:inline-block">
+        <div class="select-box" style="padding:0">
+            <div class="options-container" style="padding-top:1.25rem">
+                <div class="option">
+                    <input type="radio" class="radio"id="class-1" name="category"/>
+                    <label for="class-1">Book a Class</label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" class="radio" id="class-2" name="category"/>
+                    <label for="class-1">Book a Class</label>
+                </div>
+            </div>
+
+            <div class="selected button button--primary">
+                Book a Class
+            </div>
+        </div>
+    </article>
 {% endmacro %}

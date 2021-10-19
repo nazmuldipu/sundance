@@ -8,7 +8,7 @@ nickname: "You Thing"
 ---
 
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
-{% from "atoms/a.njk" import a, button_primary, button_secondary, view_details %}
+{% from "atoms/a.njk" import a, button_primary, button_secondary, view_details, dropdown_primary %}
 {% from 'atoms/form-fields.njk' import checkboxes, form_input %}
 {% from 'atoms/tables.njk' import tables %}
 {% from 'atoms/box.njk' import box %}
@@ -34,6 +34,8 @@ travelLeisure, hotels, openTable, resourceRetreats, condeNtravelerRC, forbes, co
         {{ button_secondary( href='http://example.com', copy='Book a Class', id='myButton-2', target='_blank' ) }}<br>
         <br>
         {{ view_details( copy='View Details', href='http://example.com', target='_blank' ) }}
+        <br>
+        {{ dropdown_primary( id='dripdown-1', copy='Book a Class', href='http://example.com', target='_blank') }}<br>
     </article>
 </section>
 <section>
@@ -146,3 +148,17 @@ travelLeisure, hotels, openTable, resourceRetreats, condeNtravelerRC, forbes, co
         {{ liftopia() }}
     </section>
 </section>
+<script >
+const selected = document.querySelector(".selected");
+const optionsContainer = document.querySelector(".options-container");
+const optionsList = document.querySelectorAll(".option");
+selected.addEventListener("click", () => {
+  optionsContainer.classList.toggle("active");
+});
+optionsList.forEach(o => {
+  o.addEventListener("click", () => {
+    selected.innerHTML = o.querySelector("label").innerHTML;
+    optionsContainer.classList.remove("active");
+  });
+});
+</script>
