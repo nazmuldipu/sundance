@@ -333,12 +333,15 @@ section {
 .toggle:checked ~ .toggle--label:after {
     transform: rotate(45deg);
 }
-.img-res {
-    height: auto;
-    max-width: 100%;
-}
 .gap-x-2 {
     grid-column-gap: 0.5rem;
+}
+/* base arrow */
+.arrow {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: var(--sundance__neutral4);
 }
 .arrow:before,
 .arrow:after {
@@ -347,12 +350,6 @@ section {
     width: 12px;
     border: 1px solid #000;
     background-color: black;
-}
-.arrow {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: var(--sundance__neutral4);
 }
 .arrow__rotate-45:after{
     transform: rotateZ(45deg);
@@ -374,7 +371,8 @@ section {
     transform: rotateZ(90deg);
     -webkit-transform: rotateZ(90deg);
 }
-/****  down arrow start ********************************/
+
+/* down arrow */
 .arrow-down:before {
     left: 13px;
     top: 24px;
@@ -383,8 +381,8 @@ section {
     left: 22px;
     top: 24px;
 }
-/****  down arrow end ********************************/
-/****  up arrow start ********************************/
+
+/* up arrow */
 .arrow-up:before {
     left: 14px;
     top: 22px;
@@ -393,8 +391,8 @@ section {
     left: 23px;
     top: 22px;
 }
-/****  up arrow end ********************************/
-/****  right arrow start ********************************/
+
+/* right arrow */
 .arrow-right:after {
     left: 18px;
     top: 18px;
@@ -403,8 +401,8 @@ section {
     left: 18px;
     top: 27px;
 } 
-/****  right arrow end ********************************/
-/****  left arrow start ********************************/
+
+/* left arrow */
 .arrow-left:after {
     left: 16px;
     top: 29px;
@@ -413,8 +411,8 @@ section {
     left: 16px;
     top: 20px;
 }
-/****  left arrow end ********************************/
-/****  left arrow start ********************************/
+
+/* hamburger */
 .hamburger-icon:after {
     left: 18px;
     top: 29px;
@@ -423,8 +421,8 @@ section {
     left: 18px;
     top: 20px;
 }
-/****  left arrow end ********************************/
-/****  cross icon start ********************************/
+
+/* cross icon */
 .cross-icon:after {
     left: 19px;
     top: 24px;
@@ -433,8 +431,8 @@ section {
     left: 19px;
     top: 24px;
 }
-/****  cross icon end ********************************/
-/****  plus icon start ********************************/
+
+/* plus icon */
 .plus-icon:after {
     left: 19px;
     top: 24px;
@@ -443,8 +441,8 @@ section {
     left: 19px;
     top: 24px;
 }
-/****  plus icon end ********************************/
-/****  filter icon start  ********************************/
+
+/* filter icon */
 .filter-icon {
 	display: block;
     height: 1.5rem;
@@ -492,5 +490,4 @@ section {
 .filter-icon span:nth-child(3)::after {
 	left: 30%;
 }
-/****  filter icon end  ********************************/
 /****  end atoms  ********************************/
