@@ -145,7 +145,7 @@
 #}
 
 {% macro arrow_down() %}
-    <div class="relative down-arrow arrow down-arrow__rotate-45"></div>
+    <div class="relative arrow arrow-down down-arrow__rotate-45"></div>
 {% endmacro %}
 {#
     #   @desc   arrow up css design
@@ -154,7 +154,7 @@
 #}
 
 {% macro arrow_up() %}
-    <div class="relative up-arrow arrow arrow__rotate-45"></div>
+    <div class="relative arrow arrow-up arrow__rotate-45"></div>
 {% endmacro %}
 {#
     #   @desc   arrow right css design
@@ -163,7 +163,7 @@
 #}
 
 {% macro arrow_right() %}
-    <div class="relative right-arrow arrow arrow__rotate-45"></div>
+    <div class="relative arrow arrow-right arrow__rotate-45"></div>
 {% endmacro %}
 {#
     #   @desc   arrow left css design
@@ -172,6 +172,33 @@
 #}
 
 {% macro arrow_left() %}
-    <div class="relative left-arrow arrow arrow__rotate-45"></div>
+    <div class="relative arrow arrow-left arrow__rotate-45"></div>
+{% endmacro %}
+{#
+    #   @desc   arrow left css design
+    #   @return arrow left icon
+    #   @author Sarjis
+#}
+
+{% macro hamburger_icon() %}
+    <div class="relative arrow arrow-left"></div>
+{% endmacro %}
+{#
+    #   @desc   arrow left css design
+    #   @return arrow left icon
+    #   @author Sarjis
+#}
+
+{% macro cross_icon() %}
+    <div class="relative arrow cross-icon arrow__rotate-45"></div>
+{% endmacro %}
+{#
+    #   @desc   arrow left css design
+    #   @return arrow left icon
+    #   @author Sarjis
+#}
+
+{% macro plus_icon() %}
+    <div class="relative arrow plus-icon rotate-90"></div>
 {% endmacro %}
 

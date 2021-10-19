@@ -15,12 +15,14 @@
             {% if name %} name="{{ name }}" {% endif %}
         >
         <span class="{{ classPrefix }}__control"></span>
-        <span class="{{ classPrefix }}__label">
-            {{ copy | safe }}
-            {% if checkBoxNumber %}
-                ({{ checkBoxNumber }})
-            {% endif %}
-        </span>
+        {% if copy %}
+            <span class="{{ classPrefix }}__label">
+                {{ copy | safe }}
+                {% if checkBoxNumber %}
+                    ({{ checkBoxNumber }})
+                {% endif %}
+            </span>
+        {% endif %}
     </label>
 {% endmacro %}
 

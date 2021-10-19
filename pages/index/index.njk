@@ -14,7 +14,7 @@ nickname: "You Thing"
 {% from 'atoms/box.njk' import box %}
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
-{% from 'atoms/icons.njk' import arrow_down, arrow_up, arrow_right, arrow_left %}
+{% from 'atoms/icons.njk' import plus_icon, arrow_down, arrow_up, arrow_right, arrow_left, hamburger_icon, cross_icon %}
 
 <header>
     {{ h1( copy='Atoms' ) }}
@@ -101,10 +101,14 @@ nickname: "You Thing"
     </section>
 </section>
 <section>
-    <header>
+    <header class="flex align-items-center">
         {{ arrow_down() }}
         {{ arrow_up() }}
         {{ arrow_right() }}
         {{ arrow_left() }}
+        {{ hamburger_icon() }}
+        {{ cross_icon() }}
+        {{ checkboxes( id = 'checkbox-2', name = 'checkbox' ) }}
+        {{ plus_icon() }}
     </header>
 </section>

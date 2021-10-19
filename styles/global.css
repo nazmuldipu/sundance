@@ -25,6 +25,15 @@ section {
 .block {
     display: block;
 }
+.flex {
+    display: flex;
+}
+.justify-items-center {
+    justify-items: center;
+}
+.align-items-center {
+    align-items: center;
+}
 .relative {
     position: relative;
 }
@@ -358,44 +367,64 @@ section {
     transform: rotateZ(-45deg);
     -webkit-transform: rotateZ(-45deg);
 }
+.rotate-90:after{
+    transform: rotateZ(90deg);
+    -webkit-transform: rotateZ(90deg);
+}
 /****  down arrow start ********************************/
-.down-arrow:before {
+.arrow-down:before {
     left: 13px;
     top: 24px;
 }
-.down-arrow:after {
+.arrow-down:after {
     left: 22px;
     top: 24px;
 }
 /****  down arrow end ********************************/
 /****  up arrow start ********************************/
-.up-arrow:before {
+.arrow-up:before {
     left: 14px;
     top: 22px;
 }
-.up-arrow:after {
+.arrow-up:after {
     left: 23px;
     top: 22px;
 }
 /****  up arrow end ********************************/
 /****  right arrow start ********************************/
-.right-arrow:after {
+.arrow-right:after {
     left: 18px;
     top: 18px;
 }
-.right-arrow:before {
+.arrow-right:before {
     left: 18px;
     top: 27px;
 } 
 /****  right arrow end ********************************/
 /****  left arrow start ********************************/
-.left-arrow:after {
+.arrow-left:after {
     left: 16px;
     top: 29px;
 }
-.left-arrow:before {
+.arrow-left:before {
     left: 16px;
     top: 20px;
 }
 /****  left arrow end ********************************/
+.cross-icon:after {
+    left: 19px;
+    top: 24px;
+}
+.cross-icon:before {
+    left: 19px;
+    top: 24px;
+}
+.plus-icon:after {
+    left: 19px;
+    top: 24px;
+}
+.plus-icon:before {
+    left: 19px;
+    top: 24px;
+}
 /****  end atoms  ********************************/
