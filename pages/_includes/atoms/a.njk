@@ -93,21 +93,21 @@
 #}
 
 {% macro dropdown_primary( classes=['button', 'button--primary', 'relative', 'dropdown', 'down-arrow__rotate-45'], id, copy, href='#', target )%}
-    <article class="custom-dropdown-container">
-        <div class="select-box">
-            <div class="options-container">
+    <article class="dropdown-container">
+        <div class="dropdown--box">
+            <div class="dropdown--options">
                 <div class="option">
                     <input type="radio" class="radio"id="class-1" name="category"/>
-                    <label for="class-1">Book a Class</label>
+                    <label class="dropdown--label" for="class-1">Book a Class</label>
                 </div>
 
                 <div class="option">
                     <input type="radio" class="radio" id="class-2" name="category"/>
-                    <label for="class-2">Book a Class</label>
+                    <label class="dropdown--label" for="class-2">Book a Class</label>
                 </div>
             </div>
 
-            <div class="selected button button--primary cursor-pointer">
+            <div class="dropdown__selectable-item button button--primary cursor-pointer">
                 Book a Class
                 <span class="dropdown--icon relative dropdown down-arrow__rotate-45"></span>
             </div>

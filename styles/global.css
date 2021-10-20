@@ -509,17 +509,17 @@ section {
 	left: 30%;
 }
 /* dropdown */
-  .custom-dropdown-container {
+  .dropdown-container {
     display:inline-block; 
     word-wrap: break-word;
   }
-  .select-box {
+  .dropdown--box {
     display: flex;
     flex-direction: column;
     padding:0
   }
   
-  .select-box .options-container {
+  .dropdown--box .dropdown--options {
     background: #F7F7F7;
     color: #617C6A;
     max-height: 0;
@@ -531,7 +531,7 @@ section {
     order: 1;
   }
   
-  .selected {
+  .dropdown__selectable-item {
     position: relative;
     order: 0;
     display:inline-block;
@@ -546,22 +546,7 @@ section {
     width: 1px;
     margin-left: 35px;
   }
-  
-  .selected::after {
-    content: "";
-    background: url("/images/arrow-down.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-  
-    position: absolute;
-    height: 100%;
-    width: 32px;
-    right: 10px;
-    top: 5px;
-  
-    transition: all 0.4s;
-  }
-  .options-container{
+  .dropdown--options{
     max-width: 400px;
     border: 1px solid #617C6A;
     padding-top:1.25rem;
@@ -571,57 +556,40 @@ section {
     border-bottom-left-radius: 27px;
   }
   
-  .select-box .options-container.active {
+  .dropdown--box .dropdown--options.active {
     max-height: 50vh;
     opacity: 1;
     overflow-y: auto;
   }
   
-  .select-box .options-container.active + .selected::after {
-    transform: rotateX(180deg);
-    top: -6px;
-  }
-  
-  .select-box .options-container::-webkit-scrollbar {
-    width: 8px;
-    background: #F2E9E2;
-    border-radius: 0 8px 8px 0;
-  }
-  
-  .select-box .options-container::-webkit-scrollbar-thumb {
-    background: #B15035;
-    border-radius: 0 8px 8px 0;
-  }
-  
-  .select-box .option,
-  .selected {
+  .dropdown--box .option,
+  .dropdown__selectable-item {
     padding-left: 1rem;
     padding-right: 70px;
     padding-bottom: 20px;
     padding-top: 20px;
   }
     
-  .select-box label {
-      cursor: pointer;
+  .dropdown--label {
+    cursor: pointer;
   }
   .option {
-      border-top: 1px solid #617C6A;
-      padding-left: 1rem;
-      font-size: 14px;
+    border-top: 1px solid #617C6A;
+    padding-left: 1rem;
+    font-size: 14px;
   }
   .option:nth-child(1) {
     border: 0;
     margin-top: 9px;
   }
-  
-  .select-box .option .radio {
+  .dropdown--box .option .radio {
     display: none
   }
-  .select-box{
+  .dropdown--box{
     position: relative;
   }
-  .options-container{
-      position: absolute;
-      top: 50px;
+  .dropdown--options{
+    position: absolute;
+    top: 50px;
   }
 /****  end atoms  ********************************/
