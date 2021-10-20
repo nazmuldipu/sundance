@@ -562,7 +562,7 @@ section {
     overflow-y: auto;
   }
   
-  .dropdown--box .option,
+  .dropdown--box .dropdown--option,
   .dropdown__selectable-item {
     padding-left: 1rem;
     padding-right: 70px;
@@ -573,16 +573,16 @@ section {
   .dropdown--label {
     cursor: pointer;
   }
-  .option {
+  .dropdown--option {
     border-top: 1px solid #617C6A;
     padding-left: 1rem;
     font-size: 14px;
   }
-  .option:nth-child(1) {
+  .dropdown--option:nth-child(1) {
     border: 0;
     margin-top: 9px;
   }
-  .dropdown--box .option .radio {
+  .dropdown--box .dropdown--option .radio {
     display: none
   }
   .dropdown--box{
