@@ -157,6 +157,9 @@ const dropdownText = document.getElementById("dropdown--text");
 selected.addEventListener("click", () => {
   optionsContainer.classList.toggle("active");
 });
+selected.addEventListener("blur", () => {
+    optionsContainer.classList.remove("active")
+});
 optionsList.forEach(o => {
   o.addEventListener("click", () => {
     dropdownText.innerHTML = o.querySelector("label").innerHTML
