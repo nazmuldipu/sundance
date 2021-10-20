@@ -91,30 +91,11 @@
     #   @return HTML primary button
     #   @author Sarjis
 #}
-{# {% macro dropdown_primary( classes=['button', 'button--primary', 'relative', 'dropdown', 'down-arrow__rotate-45'], id, copy, href='#', target )%}
-    <a
-        href="{{ href }}"
-        class="{% for class in classes %} {{ class }} {% endfor %}"
-        {% if id %} id="{{ id }}" {% endif %}
-        {% if target %} target="{{ target }}" {% endif %}
-        style="padding-left:30px"
-    >
-        {{ copy | safe }}
-        <span style=" background: white;
-    position: absolute;
-    top: 0;
-    height: 65px;
-    width: 1px;
-    margin-left: 30px;"></span>
-    </a>
-{% endmacro %} #}
+
 {% macro dropdown_primary( classes=['button', 'button--primary', 'relative', 'dropdown', 'down-arrow__rotate-45'], id, copy, href='#', target )%}
-    
-    <article class="custom-select-container" style="display:inline-block; word-wrap: break-word;">
-        <div class="select-box" style="padding:0">
-            <div class="options-container" style="padding-top:1.25rem;margin-top: -13px;
-    box-sizing: border-box;border-bottom-right-radius: 27px;
-    border-bottom-left-radius: 27px;">
+    <article class="custom-dropdown-container">
+        <div class="select-box">
+            <div class="options-container">
                 <div class="option">
                     <input type="radio" class="radio"id="class-1" name="category"/>
                     <label for="class-1">Book a Class</label>
@@ -126,15 +107,9 @@
                 </div>
             </div>
 
-            <div class="selected button button--primary cursor-pointer" style="display:inline-block;padding-left: 35px;
-    padding-right: 100px;">
+            <div class="selected button button--primary cursor-pointer">
                 Book a Class
-                <span class="relative dropdown down-arrow__rotate-45" style="background: white;
-    position: absolute;
-    top: 0;
-    height: 65px;
-    width: 1px;
-    margin-left: 35px;"></span>
+                <span class="dropdown--icon relative dropdown down-arrow__rotate-45"></span>
             </div>
         </div>
     </article>
