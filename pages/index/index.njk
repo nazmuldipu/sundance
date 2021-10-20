@@ -152,18 +152,15 @@ travelLeisure, hotels, openTable, resourceRetreats, condeNtravelerRC, forbes, co
 const selected = document.querySelector(".dropdown__selectable-item");
 const optionsContainer = document.querySelector(".dropdown--options");
 const optionsList = document.querySelectorAll(".dropdown--option");
-const html = `<span class="relative dropdown down-arrow__rotate-45" style=" background: white;
-    position: absolute;
-    top: 0;
-    height: 65px;
-    width: 1px;
-    margin-left: 35px;"></span>`;
+const dropdownIcon = document.getElementById("dropdown--icon");
+const dropdownText = document.getElementById("dropdown--text");
 selected.addEventListener("click", () => {
   optionsContainer.classList.toggle("active");
 });
 optionsList.forEach(o => {
   o.addEventListener("click", () => {
-    selected.innerHTML = o.querySelector("label").innerHTML + html;
+    dropdownText.innerHTML = o.querySelector("label").innerHTML
+    selected.innerHTML = dropdownText.outerHTML + dropdownIcon.outerHTML;
     optionsContainer.classList.remove("active");
   });
 });
