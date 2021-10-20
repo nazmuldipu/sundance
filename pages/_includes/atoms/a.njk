@@ -109,9 +109,12 @@
     </a>
 {% endmacro %} #}
 {% macro dropdown_primary( classes=['button', 'button--primary', 'relative', 'dropdown', 'down-arrow__rotate-45'], id, copy, href='#', target )%}
-    <article class="custom-select-container" style="display:inline-block">
+    
+    <article class="custom-select-container" style="display:inline-block; word-wrap: break-word;">
         <div class="select-box" style="padding:0">
-            <div class="options-container" style="padding-top:1.25rem">
+            <div class="options-container" style="padding-top:1.25rem;margin-top: -13px;
+    box-sizing: border-box;border-bottom-right-radius: 27px;
+    border-bottom-left-radius: 27px;">
                 <div class="option">
                     <input type="radio" class="radio"id="class-1" name="category"/>
                     <label for="class-1">Book a Class</label>
@@ -119,12 +122,19 @@
 
                 <div class="option">
                     <input type="radio" class="radio" id="class-2" name="category"/>
-                    <label for="class-1">Book a Class</label>
+                    <label for="class-2">Book a Class</label>
                 </div>
             </div>
 
-            <div class="selected button button--primary">
+            <div class="selected button button--primary cursor-pointer" style="display:inline-block;padding-left: 35px;
+    padding-right: 100px;">
                 Book a Class
+                <span class="relative dropdown down-arrow__rotate-45" style="background: white;
+    position: absolute;
+    top: 0;
+    height: 65px;
+    width: 1px;
+    margin-left: 35px;"></span>
             </div>
         </div>
     </article>
