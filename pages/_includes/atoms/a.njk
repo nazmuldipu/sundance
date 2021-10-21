@@ -92,28 +92,28 @@
     #   @author Sarjis
 #}
 
-{% macro dropdown_primary( classes=['button', 'button--primary', 'relative', 'dropdown', 'down-arrow__rotate-45'], id, copy, href='#', target )%}
+{% macro dropdown_primary( bgColor = 'bg-sp-2', classes=['button', 'button--primary', 'relative', 'dropdown', 'down-arrow__rotate-45'], id, copy, href='#', target )%}
     <article class="dropdown">
-        <div class="dropdown--box">
-            <div class="dropdown--options">
-                <div class="dropdown--option">
+        <div class="dropdown--box dropdown--box__{{ id }}">
+            <div class="dropdown--options {{id}}--options" tabindex=0>
+                <div class="dropdown--option dropdown--option__{{id}}">
                     <input type="radio" class="radio"id="class-1" name="category"/>
                     <label class="dropdown--label" for="class-1">Book a Class</label>
                 </div>
 
-                <div class="dropdown--option">
+                <div class="dropdown--option dropdown--option__{{id}}">
                     <input type="radio" class="radio" id="class-2" name="category"/>
                     <label class="dropdown--label" for="class-2">Book a Class</label>
                 </div>
-                <div class="dropdown--option">
+                <div class="dropdown--option dropdown--option__{{id}}">
                     <input type="radio" class="radio" id="class-3" name="category"/>
                     <label class="dropdown--label" for="class-3">Book a Class</label>
                 </div>
             </div>
 
-            <div class="dropdown__selectable-item button button--primary cursor-pointer" tabindex=0>
-                <span id="dropdown--text" class="dropdown--text">Book A Class</span>
-                <span id="dropdown--icon" class="dropdown--icon relative dropdown down-arrow__rotate-45"></span>
+            <div id="{{ id }}" onclick="handleClick('{{ id }}')" onblur="handleBlur()" class="dropdown__selectable-item item__{{ id }} button button--primary cursor-pointer {{ bgColor }}" tabindex=0>
+                <span class="dropdown--text {{ id }}__text">Book A Class</span>
+                <span class="dropdown--icon {{ id }}__icon relative dropdown down-arrow__rotate-45  {{ bgColor }} dropdown--icon__border"></span>
             </div>
         </div>
     </article>
