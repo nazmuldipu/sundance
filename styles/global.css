@@ -43,6 +43,15 @@ section {
 .cursor-pointer {
     cursor: pointer;
 }
+.bg-sp-2 {
+    background-color: var(--sundance__primary2) !important;
+}
+.bg-sn-5 {
+    background-color: var(--sundance__neutral5) !important;
+}
+.bg-sn-6 {
+    background-color: var(--sundance__neutral6) !important;
+}
 /****  end base styles  ********************************/
 
 
@@ -506,10 +515,10 @@ section {
 
 .dropdown--box .dropdown--options {
     background: #F7F7F7;
-    color: #617C6A;
+    color: #a0aaa3;
     max-height: 0;
     width: 100%;
-    opacity: 0;
+    display: none;
     overflow: hidden;
     order: 1;
     width: 270px;
@@ -527,22 +536,26 @@ section {
     border: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    background-color: var(--sundance__primary2);
+    border: 1px solid green;
+    box-sizing: border-box;
+    height: 66px!important;
 }
 .dropdown--icon {
     background: white;
     position: absolute;
-    top: 0;
-    height: 65px;
+    top: -1px;
+    height: 66px;
     width: 1px;
     margin-left: 13px;
     min-width: 48px;
-    background-color: var(--sundance__primary2);
     border-left: 1px solid white;
     z-index: 1;
     border-top-right-radius: 35px;
     box-sizing: border-box;
     border-bottom-right-radius: 35px;
+}
+.dropdown--icon__border {
+    border: 1px solid #617C6A;
 }
 .dropdown--icon::after, .dropdown--icon:before {
     content: "";
@@ -579,7 +592,7 @@ section {
 
 .dropdown--box .dropdown--options.active {
     max-height: 50vh;
-    opacity: 1;
+    display: block;
     overflow-y: hidden;
 }
 
