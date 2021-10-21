@@ -36,6 +36,8 @@ travelLeisure, hotels, openTable, resourceRetreats, condeNtravelerRC, forbes, co
         {{ view_details( copy='View Details', href='http://example.com', target='_blank' ) }}
         <br>
         {{ dropdown_primary( id='dripdown-1', copy='Book a Class', href='http://example.com', target='_blank') }}<br>
+        {{ dropdown_primary( id='dripdown-2', copy='Book a Class', href='http://example.com', target='_blank') }}<br>
+        {{ dropdown_primary( id='dripdown-3', copy='Book a Class', href='http://example.com', target='_blank') }}<br>
     </article>
 </section>
 <section>
@@ -148,23 +150,3 @@ travelLeisure, hotels, openTable, resourceRetreats, condeNtravelerRC, forbes, co
         {{ liftopia() }}
     </section>
 </section>
-<script >
-const selected = document.querySelector(".dropdown__selectable-item");
-const optionsContainer = document.querySelector(".dropdown--options");
-const optionsList = document.querySelectorAll(".dropdown--option");
-const dropdownIcon = document.getElementById("dropdown--icon");
-const dropdownText = document.getElementById("dropdown--text");
-selected.addEventListener("click", () => {
-  optionsContainer.classList.toggle("active");
-});
-selected.addEventListener("blur", () => {
-    optionsContainer.classList.remove("active")
-});
-optionsList.forEach(o => {
-  o.addEventListener("click", () => {
-    dropdownText.innerHTML = o.querySelector("label").innerHTML
-    selected.innerHTML = dropdownText.outerHTML + dropdownIcon.outerHTML;
-    optionsContainer.classList.remove("active");
-  });
-});
-</script>

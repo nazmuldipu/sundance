@@ -1,4 +1,5 @@
 import {foo} from '../../scripts/sample';
+import '../../scripts/dropdown';
 import '../../components/random-adder.js';
 
 

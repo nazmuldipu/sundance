@@ -501,7 +501,7 @@ section {
 .dropdown--box {
     display: flex;
     flex-direction: column;
-    padding:0
+    padding:0;
 }
 
 .dropdown--box .dropdown--options {
@@ -552,11 +552,11 @@ section {
     background-color: white;
 }
 .dropdown--icon:before {
-    left: 13px;
+    left: 12px;
     top: 30px;
 }
 .dropdown--icon:after {
-    left: 22px;
+    left: 21px;
     top: 30px;
 }
 .dropdown--text {
