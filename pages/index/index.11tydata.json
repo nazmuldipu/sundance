@@ -96,5 +96,27 @@
                 "intrinsicheight": "400"
             }
         ]
-    }
+    },
+    "dropdownItems": [
+        {
+            "label": "Book a Class",
+            "id": "class-1",
+            "category": "Category"
+        },
+        {
+            "label": "Book a Class",
+            "id": "class-2",
+            "category": "Category"
+        },
+        {
+            "label": "Book a Class",
+            "id": "class-3",
+            "category": "Category"
+        },
+        {
+            "label": "Book a Class",
+            "id": "class-4",
+            "category": "Category"
+        }
+    ]
 }

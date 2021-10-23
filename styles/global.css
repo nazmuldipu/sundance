@@ -43,6 +43,66 @@ section {
 .cursor-pointer {
     cursor: pointer;
 }
+.bg-sp-2 {
+    background-color: var(--sundance__primary2) !important;
+}
+.bg-sn-5 {
+    background-color: var(--sundance__neutral5) !important;
+}
+.bg-sn-6 {
+    background-color: var(--sundance__neutral6) !important;
+}
+.border--color__sp-2 {
+    border-color: #617C6A !important;
+}
+.text--color__sp-2 {
+    color: #617C6A !important;
+}
+.border--color__sn-6 {
+    border-color: #000000;
+}
+.border-r--color__sn-6 {
+    border-right-color: #000000 !important;
+}
+.border-t--color__sn-6 {
+    border-top-color: #000000 !important;
+}
+.border-b--color__sn-6 {
+    border-bottom-color: #000000 !important;
+}
+.border--color__sn-5 {
+    border-color: #ffffff;
+}
+.border-l--color__sn-5 {
+    border-left-color: #ffffff !important;
+}
+.text--color__sp-6 {
+    color: #000000;
+}
+.border-1 {
+    border: 1px solid !important;
+}
+.border-l-1 {
+    border-left: 1px solid;
+}
+.border-r-1 {
+    border-right: 1px solid;
+}
+.border-t-1 {
+    border-top: 1px solid;
+}
+.border-b-1 {
+    border-bottom: 1px solid;
+}
+.border-none {
+    border: 0;
+}
+.border-0 {
+    border: 0;
+}
+.border-1-sp-2 {
+    border: 1px solid #617C6A !important;
+}
 /****  end base styles  ********************************/
 
 
@@ -76,22 +136,6 @@ section {
     color: #000;
     padding: 20px 70px;
 }
-.dropdown::after, .dropdown:before {
-    content: "";
-    position: absolute;
-    width: 12px;
-    border: 1px solid #fff;
-    background-color: white;
-}
-.dropdown:before {
-    left: 13px;
-    top: 30px;
-}
-.dropdown:after {
-    left: 22px;
-    top: 30px;
-}
-
 /* headings */
 .heading {
     padding-bottom: 1em;
@@ -509,7 +553,7 @@ section {
 	left: 30%;
 }
 /* dropdown */
-.dropdown-container {
+.dropdown {
     display:inline-block; 
     word-wrap: break-word;
     max-width: 224px;
@@ -517,7 +561,7 @@ section {
 .dropdown--box {
     display: flex;
     flex-direction: column;
-    padding:0
+    padding:0;
 }
 
 .dropdown--box .dropdown--options {
@@ -525,7 +569,7 @@ section {
     color: #617C6A;
     max-height: 0;
     width: 100%;
-    opacity: 0;
+    display: none;
     overflow: hidden;
     order: 1;
     width: 270px;
@@ -543,22 +587,54 @@ section {
     border: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-    background-color: var(--sundance__primary2);
+    box-sizing: border-box;
+    height: 66px!important;
 }
 .dropdown--icon {
     background: white;
     position: absolute;
-    top: 0;
-    height: 65px;
+    top: -1px;
+    height: 66px;
     width: 1px;
     margin-left: 13px;
     min-width: 48px;
-    background-color: var(--sundance__primary2);
-    border-left: 1px solid white;
+    border-left: 1px solid;
     z-index: 1;
     border-top-right-radius: 35px;
     box-sizing: border-box;
     border-bottom-right-radius: 35px;
+}
+.dropdown--border {
+    border: 1px solid black;
+}
+.dropdown--icon__border {
+    border: 1px solid;
+    border-left-color: white;
+    border-right-color: black;
+    border-top-color: black;
+    border-bottom-color: black;
+}
+.dropdown--icon__border-color:after,
+.dropdown--icon__border-color:before{
+    border-color: #617C6A;
+}
+.dropdown--font__color {
+    color: white;
+}
+.dropdown--icon::after, .dropdown--icon:before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    border: 1px solid;
+    background-color: white;
+}
+.dropdown--icon:before {
+    left: 12px;
+    top: 30px;
+}
+.dropdown--icon:after {
+    left: 21px;
+    top: 30px;
 }
 .dropdown--text {
     display:inline-block;
@@ -580,7 +656,7 @@ section {
 
 .dropdown--box .dropdown--options.active {
     max-height: 50vh;
-    opacity: 1;
+    display: block;
     overflow-y: hidden;
 }
 

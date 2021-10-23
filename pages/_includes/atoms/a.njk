@@ -82,38 +82,46 @@
 {% endmacro %}
 
 {#
-    #   @desc   a dropdown button
-    #   @param  classes  array, class names (optional)
+    #   @desc   a dropdown component
+    #   @param  bgColor  string
     #   @param  id       string, a unique ID (optional)
-    #   @param  copy     string, the HTML mark up that is linked
-    #   @param  href     string, link url
-    #   @param  target   string, the link target location (optional)
-    #   @return HTML primary button
+    #   @param  copy    string, the copy which will be shown to select item
+    #   @return HTML primary dropdown
     #   @author Sarjis
 #}
 
-{% macro dropdown_primary( classes=['button', 'button--primary', 'relative', 'dropdown', 'down-arrow__rotate-45'], id, copy, href='#', target )%}
-    <article class="dropdown-container">
-        <div class="dropdown--box">
-            <div class="dropdown--options">
-                <div class="dropdown--option">
-                    <input type="radio" class="radio"id="class-1" name="category"/>
-                    <label class="dropdown--label" for="class-1">Book a Class</label>
-                </div>
-
-                <div class="dropdown--option">
-                    <input type="radio" class="radio" id="class-2" name="category"/>
-                    <label class="dropdown--label" for="class-2">Book a Class</label>
-                </div>
-                <div class="dropdown--option">
-                    <input type="radio" class="radio" id="class-3" name="category"/>
-                    <label class="dropdown--label" for="class-3">Book a Class</label>
-                </div>
+{% macro dropdown_primary( bgColor = 'bg-sp-2', id, copy, items = [] )%}
+    <article class="dropdown">
+        <div class="dropdown--box dropdown--box__{{ id }}">
+            <div class="dropdown--options {{id}}--options">
+                {% for item in items %}
+                    <div class="dropdown--option dropdown--option__{{id}}">
+                        <input type="radio" class="radio"id="{{ item.id }}" name="{{ item.id }}"/>
+                        <label class="dropdown--label" for="{{ item.id }}">{{ item.label }}</label>
+                    </div>
+                {% endfor %}
             </div>
 
-            <div class="dropdown__selectable-item button button--primary cursor-pointer" tabindex=0>
-                <span id="dropdown--text" class="dropdown--text">Book A Class</span>
-                <span id="dropdown--icon" class="dropdown--icon relative dropdown down-arrow__rotate-45"></span>
+            <div id="{{ id }}" onclick="handleClick('{{ id }}')" onblur="handleBlur()" 
+                class="
+                {% if bgColor == 'bg-sn-6' %}
+                    border-1 border--color__sn-6
+                {% elif bgColor == 'bg-sp-2' %}
+                    border-1 border--color__sp-2
+                {% elif bgColor == 'bg-sn-5' %}
+                    border-1-sp-2 text--color__sp-2                    
+                {% endif %}
+                dropdown__selectable-item item__{{ id }} button button--primary cursor-pointer {{ bgColor }}" tabindex=0>
+                <span class="dropdown--text {{ id }}__text">{{ copy | safe }}</span>
+                <span class="dropdown--icon {{ id }}__icon relative dropdown down-arrow__rotate-45 
+                {% if bgColor == 'bg-sn-6' %}
+                    border-1 border-b--color__sn-6 border-r--color__sn-6 border-t--color__sn-6 border-l--color__sn-5
+                {% elif bgColor == 'bg-sp-2' %}
+                    border-1 border--color__sp-2
+                {% elif bgColor == 'bg-sn-5' %}
+                    border-1-sp-2                    
+                {% endif %}
+                {{ bgColor }}"></span>
             </div>
         </div>
     </article>
