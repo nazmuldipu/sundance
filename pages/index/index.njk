@@ -4,7 +4,6 @@ pagename: index
 meta_title: "The Index Page"
 permalink: "build/index.html"
 permalinkBypassOutputDir: true
-nickname: "You Thing"
 ---
 
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
@@ -14,10 +13,7 @@ nickname: "You Thing"
 {% from 'atoms/box.njk' import box %}
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
-{% from 'atoms/icons.njk' import filter_icon, plus_icon, arrow_down, arrow_up, arrow_right, 
-arrow_left, hamburger_icon, cross_icon, facebook, twitter, instagram, youtube, tripAdvisor,
-travelLeisure, hotels, openTable, resourceRetreats, condeNtravelerRC, forbes, condeNtraveler, liftopia
- %}
+{% from 'atoms/icons.njk' import iconImage, iconCSS %}
 
 <header>
     {{ h1( copy='Atoms' ) }}
@@ -114,11 +110,11 @@ travelLeisure, hotels, openTable, resourceRetreats, condeNtravelerRC, forbes, co
         {{ h3(copy = 'Social Media') }}
     </header>
     <section class="flex align-items-center gap-x-2">
-        {{ facebook() }}
-        {{ twitter() }} 
-        {{ instagram() }} 
-        {{ youtube() }} 
-        {{ tripAdvisor() }}
+        {{ iconImage( src='images/facebook.svg', alt='Facebook icon' ) }}<br>
+        {{ iconImage( src='images/twitter.svg', alt='Twitter icon' ) }}<br>
+        {{ iconImage( src='images/instagram.svg', alt='Instagram icon' ) }}<br>
+        {{ iconImage( src='images/youtube.svg', alt='YouTube icon' ) }}<br>
+        {{ iconImage( src='images/tripAdvisor.svg', alt='TripAdvisor icon' ) }}<br>
     </section>
 </section>
 <section>
@@ -126,15 +122,14 @@ travelLeisure, hotels, openTable, resourceRetreats, condeNtravelerRC, forbes, co
         {{ h3(copy = 'General') }}
     </header>
     <section class="flex align-items-center gap-x-2">
-        {{ arrow_down() }}
-        {{ arrow_up() }}
-        {{ arrow_right() }}
-        {{ arrow_left() }}
-        {{ hamburger_icon() }}
-        {{ cross_icon() }}
-        {{ checkboxes( id = 'checkbox-2', name = 'checkbox' ) }}
-        {{ plus_icon() }}
-        {{ filter_icon() }}
+        {{ iconCSS( classes=['icon-css', 'arrow-down', 'down-rotate-45'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'arrow-up', 'rotate-45'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'arrow-right', 'rotate-45'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'arrow-left', 'rotate-45'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'cross-icon', 'rotate-45'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'plus-icon', 'rotate-90'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'hamburger-icon'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'icon--filter'], copy='<span></span><span></span><span></span>' ) }}<br>
     </section>
 </section>
 <section>
@@ -142,13 +137,13 @@ travelLeisure, hotels, openTable, resourceRetreats, condeNtravelerRC, forbes, co
         {{ h3(copy = 'Magazine logos') }}
     </header>
     <section class="flex align-items-center gap-x-2">
-        {{ travelLeisure() }} 
-        {{ hotels() }} 
-        {{ openTable() }} 
-        {{ resourceRetreats() }} 
-        {{ condeNtravelerRC() }} 
-        {{ forbes() }}
-        {{ condeNtraveler() }} 
-        {{ liftopia() }}
+        {{ iconImage( src='images/hotels.png', alt='Hotels icon' ) }}<br>
+        {{ iconImage( src='images/travel-leisure.png', alt='Travel Leisure icon' ) }}<br>
+        {{ iconImage( src='images/resource-retreats.png', alt='Resource Retreats icon' ) }}<br>
+        {{ iconImage( src='images/open-table.png', alt='OpenTable icon' ) }}<br>
+        {{ iconImage( src='images/forbes.png', alt='Forbes icon' ) }}<br>
+        {{ iconImage( src='images/conde-nast-traveler-rc.png', alt='Conde Naste Traveler RC icon' ) }}<br>
+        {{ iconImage( src='images/conde-nast-traveler.png', alt='Conde Naste Traveler icon' ) }}<br>
+        {{ iconImage( src='images/liftopia.png', alt='Liftopia icon' ) }}<br>
     </section>
 </section>

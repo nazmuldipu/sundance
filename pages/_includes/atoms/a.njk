@@ -19,6 +19,7 @@
     </a>
 {% endmacro %}
 
+
 {#
     #   @desc   a primary button
     #   @param  classes  array, class names (optional)
@@ -39,6 +40,7 @@
         {{ copy | safe }}
     </a>
 {% endmacro %}
+
 
 {#
     #   @desc   a secondary button
@@ -61,6 +63,7 @@
     </a>
 {% endmacro %}
 
+
 {# 
     #   @desc   view details anchor tag
     #   @param  classes array, class names (optional)
@@ -80,6 +83,7 @@
         <span class="icon"></span>{{ copy | safe }}
     </a>
 {% endmacro %}
+
 
 {#
     #   @desc   a dropdown component
@@ -113,7 +117,7 @@
                 {% endif %}
                 dropdown__selectable-item item__{{ id }} button button--primary cursor-pointer {{ bgColor }}" tabindex=0>
                 <span class="dropdown--text {{ id }}__text">{{ copy | safe }}</span>
-                <span class="dropdown--icon {{ id }}__icon relative dropdown down-arrow__rotate-45 
+                <span class="dropdown--icon {{ id }}__icon relative dropdown down-rotate-45 
                 {% if bgColor == 'bg-sn-6' %}
                     border-1 border-b--color__sn-6 border-r--color__sn-6 border-t--color__sn-6 border-l--color__sn-5
                 {% elif bgColor == 'bg-sp-2' %}

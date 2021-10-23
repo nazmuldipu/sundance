@@ -26,21 +26,22 @@
     </label>
 {% endmacro %}
 
+
 {#
     #   @desc form input
     #   @param  object
     #   @example object : {
-            label = '', 
-            name = '', 
-            id, 
-            type="text", 
-            placeholder = '', 
-            onkeypress= '', 
-            pattern = '', 
-            maxlength = '', 
-            classes = ['form-input__style'], 
-            required = true
-        }
+    #       label = '', 
+    #       name = '', 
+    #       id, 
+    #       type="text", 
+    #       placeholder = '', 
+    #       onkeypress= '', 
+    #       pattern = '', 
+    #       maxlength = '', 
+    #       classes = ['form-input__style'], 
+    #       required = true
+    #   }
     #   @author Sarjis
  #}
 {% macro form_input(obj = {}, suffix = false, classes = [], copy, href = '#', id) %}

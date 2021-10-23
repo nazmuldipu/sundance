@@ -1,226 +1,40 @@
 {#
-    #   @desc   img tag
-    #   @param  src,  image path
-    #   @return HTML image tag
+    #   @desc   icon image builder
+    #   @param  classes array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  src,    image path
+    #   @param  alt     string, alternate text (optional)
+    #   @return HTML icon image
     #   @author Alexander Khost
 #}
-{% macro get_svg(src = '', alt = 'The Sundance SVG', classes = [])%}
-    <img src="{{ src }}" alt="{{ alt }}" class="{% for class in classes %} {{ class }} {% endfor %}"></img>
+{% macro iconImage( classes = ['icon'], id, src = '', alt = '' )%}
+    <figure
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+    >
+        <img
+            src="{{ src }}"
+            alt="{{ alt }}"
+        ></img>
+    </figure>
 {% endmacro %}
 
-{#
-    #   @desc   facebook svg icon
-    #   @return facebook icon
-    #   @author Sarjis
-#}
-
-{% macro facebook() %}
-    {{ get_svg('images/facebook.svg') }}
-{% endmacro %}
 
 {#
-    #   @desc   twitter svg icon
-    #   @return twitter icon
-    #   @author Sarjis
+    #   @desc   icon CSS builder
+    #   @param  classes  array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  copy     string (optional)
+    #   @return HTML icon using CSS
+    #   @author Alexander Khost
 #}
-
-{% macro twitter() %}
-    {{ get_svg('images/twitter.svg') }}
-{% endmacro %}
-
-{#
-    #   @desc   instagram svg icon
-    #   @return instagram icon
-    #   @author Sarjis
-#}
-
-{% macro instagram() %}
-    {{ get_svg('images/instagram.svg') }}
-{% endmacro %}
-
-{#
-    #   @desc   youtube svg icon
-    #   @return youtube icon
-    #   @author Sarjis
-#}
-
-{% macro youtube() %}
-    {{ get_svg('images/youtube.svg') }}
-{% endmacro %}
-
-{#
-    #   @desc   tripAdvisor svg icon
-    #   @return tripAdvisor icon
-    #   @author Sarjis
-#}
-
-{% macro tripAdvisor() %}
-    {{ get_svg('images/tripAdvisor.svg') }}
-{% endmacro %}
-
-{#
-    #   @desc   hotels image
-    #   @return hotels image
-    #   @author Sarjis
-#}
-
-{% macro hotels() %}
-    {{ get_svg('images/hotels.png') }}
-    {# {{ get_svg('images/hotels.svg') }} #}
-{% endmacro %}
-
-{#
-    #   @desc   travelLeisure image
-    #   @return travelLeisure image
-    #   @author Sarjis
-#}
-
-{% macro travelLeisure() %}
-    {{ get_svg('images/travel-leisure.png') }}
-    {# {{ get_svg('images/travelLeisure.svg') }} #}
-{% endmacro %}
-
-{#
-    #   @desc   resourceRetreats image
-    #   @return resourceRetreats image
-    #   @author Sarjis
-#}
-
-{% macro resourceRetreats() %}
-    {{ get_svg('images/resource-retreats.png') }}
-    {# {{ get_svg('images/resourceRetreats.svg') }} #}
-{% endmacro %}
-
-{#
-    #   @desc   openTable image
-    #   @return openTable image
-    #   @author Sarjis
-#}
-
-{% macro openTable() %}
-    {{ get_svg('images/open-table.png') }}
-{% endmacro %}
-
-{#
-    #   @desc   forbes image
-    #   @return forbes image
-    #   @author Sarjis
-#}
-
-{% macro forbes() %}
-    {{ get_svg('images/forbes.png') }}
-{% endmacro %}
-
-{#
-    #   @desc   condeNtravelerRC image
-    #   @return condeNtravelerRC image
-    #   @author Sarjis
-#}
-
-{% macro condeNtravelerRC() %}
-    {{ get_svg('images/conde-nast-traveler-rc.png') }}
-{% endmacro %}
-
-{#
-    #   @desc   condeNtraveler image
-    #   @return condeNtraveler image
-    #   @author Sarjis
-#}
-
-{% macro condeNtraveler() %}
-    {{ get_svg('images/conde-nast-traveler.png') }}
-{% endmacro %}
-
-{#
-    #   @desc   liftopia image
-    #   @return liftopia image
-    #   @author Sarjis
-#}
-
-{% macro liftopia() %}
-    {{ get_svg('images/liftopia.png') }}
-{% endmacro %}
-
-{#
-    #   @desc   arrow down css design
-    #   @return arrow down icon
-    #   @author Sarjis
-#}
-
-{% macro arrow_down() %}
-    <div class="relative arrow arrow-down down-arrow__rotate-45"></div>
-{% endmacro %}
-
-{#
-    #   @desc   arrow up css design
-    #   @return arrow up icon
-    #   @author Sarjis
-#}
-
-{% macro arrow_up() %}
-    <div class="relative arrow arrow-up arrow__rotate-45"></div>
-{% endmacro %}
-
-{#
-    #   @desc   arrow right css design
-    #   @return arrow right icon
-    #   @author Sarjis
-#}
-
-{% macro arrow_right() %}
-    <div class="relative arrow arrow-right arrow__rotate-45"></div>
-{% endmacro %}
-{#
-    #   @desc   arrow left css design
-    #   @return arrow left icon
-    #   @author Sarjis
-#}
-
-{% macro arrow_left() %}
-    <div class="relative arrow arrow-left arrow__rotate-45"></div>
-{% endmacro %}
-
-{#
-    #   @desc   hamburger icon css design
-    #   @return hamburger icon
-    #   @author Sarjis
-#}
-
-{% macro hamburger_icon() %}
-    <div class="relative arrow hamburger-icon"></div>
-{% endmacro %}
-
-{#
-    #   @desc   cross_icon css design
-    #   @return cross icon
-    #   @author Sarjis
-#}
-
-{% macro cross_icon() %}
-    <div class="relative arrow cross-icon arrow__rotate-45"></div>
-{% endmacro %}
-
-{#
-    #   @desc   plus_icon css design
-    #   @return plus icon
-    #   @author Sarjis
-#}
-
-{% macro plus_icon() %}
-    <div class="relative arrow plus-icon rotate-90"></div>
-{% endmacro %}
-
-{#
-    #   @desc   filter_icon css design
-    #   @return filter icon
-    #   @author Sarjis
-#}
-
-{% macro filter_icon() %}
-    <div class="filter-icon">
-		<span></span>
-		<span></span>
-		<span></span>
+{% macro iconCSS( classes=['icon'], id, copy ) %}
+    <div
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+    >
+        {% if copy %}
+            {{ copy | safe }}
+        {% endif %}
     </div>
 {% endmacro %}
-
