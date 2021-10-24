@@ -31,11 +31,12 @@ permalinkBypassOutputDir: true
         <br>
         {{ view_details( copy='View Details', href='http://example.com', target='_blank' ) }}
         <br>
-        {{ dropdown( copy='Book A Class', labelId='dropdown-1', items=dropdownItems1 ) }}
+        <!-- unfortunately, the dropdown buttons rely on z-index to dropdown above content below, and so, stacking dropdowns require an explicit z-index set on the former buttons -Alex Oct 24, 2021 -->
+        <div style="position: relative; z-index: 2;">
+            {{ dropdown( copy='Book A Class', labelId='dropdown-1', items=dropdownItems1 ) }}
+        </div>
         {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button'], copy='Book Another Class', labelId='dropdown-2', items=dropdownItems2 ) }}
         {{ dropdown( classes=['dropdown-container--primary2'], labelClasses=['button--primary2', 'button'], copy='Book Another Class', labelId='dropdown-3', items=dropdownItems1 ) }}
-
-
         <br>
     </article>
 </section>
