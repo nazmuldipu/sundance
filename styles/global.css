@@ -666,6 +666,7 @@ strong {
 .dropdown-container--primary .dropdown-list li:not(:last-child) {
     border-color: #000;
 }
+.dropdown-container--primary .dropdown-button,
 .dropdown-container--primary .dropdown-button__arrow {
     border-color: #fff;
 }
@@ -674,6 +675,7 @@ strong {
 }
 
 /* secondary dropdown button styling */
+.dropdown-container--secondary .dropdown-button,
 .dropdown-container--secondary .dropdown-list,
 .dropdown-container--secondary .dropdown-list li:not(:last-child) {
     border-color: #000;
@@ -690,6 +692,7 @@ strong {
 .dropdown-container--primary2 .dropdown-list li:not(:last-child) {
     border-color: var(--sundance__primary2);
 }
+.dropdown-container--primary2 .dropdown-button,
 .dropdown-container--primary2 .dropdown-button__arrow {
     border-color: #fff;
 }
