@@ -7,7 +7,7 @@ permalinkBypassOutputDir: true
 ---
 
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
-{% from "atoms/a.njk" import a, button_primary, button_secondary, view_details, dropdown_primary %}
+{% from "atoms/a.njk" import a, button_primary, button_secondary, view_details, dropdown %}
 {% from 'atoms/form-fields.njk' import checkboxes, form_input %}
 {% from 'atoms/tables.njk' import tables %}
 {% from 'atoms/box.njk' import box %}
@@ -31,11 +31,12 @@ permalinkBypassOutputDir: true
         <br>
         {{ view_details( copy='View Details', href='http://example.com', target='_blank' ) }}
         <br>
-        {{ dropdown_primary( bgColor = 'bg-sp-2', id='dripdown-1', copy='Book A Class', items = dropdownItems) }}<br>
-        <br><br>
-        {{ dropdown_primary( bgColor = 'bg-sn-5', id='dripdown-2', copy='Book A Class', items = dropdownItems) }}<br>
-        <br><br>
-        {{ dropdown_primary( bgColor = 'bg-sn-6', id='dripdown-3', copy='Book A Class', items = dropdownItems) }}<br>
+        {{ dropdown( copy='Book A Class', labelId='dropdown-1', items=dropdownItems1 ) }}
+        {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button'], copy='Book Another Class', labelId='dropdown-2', items=dropdownItems2 ) }}
+        {{ dropdown( classes=['dropdown-container--primary2'], labelClasses=['button--primary2', 'button'], copy='Book Another Class', labelId='dropdown-3', items=dropdownItems1 ) }}
+
+
+        <br>
     </article>
 </section>
 <section>

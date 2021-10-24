@@ -97,26 +97,43 @@
             }
         ]
     },
-    "dropdownItems": [
+    "dropdownItems1": [
         {
-            "label": "Book a Class",
-            "id": "class-1",
-            "category": "Category"
+            "copy": "Book A Class 1",
+            "url": "http://example.com/",
+            "target": "_self"
         },
         {
-            "label": "Book a Class",
-            "id": "class-2",
-            "category": "Category"
+            "copy": "Book A Class <strong>two</strong> Book A Class Book A Class Book A Class ",
+            "url": "http://example.com/",
+            "target": "_blank"
         },
         {
-            "label": "Book a Class",
-            "id": "class-3",
-            "category": "Category"
+            "copy": "Book A Class 3",
+            "url": "http://example.com/",
+            "target": "_self"
+        }
+    ],
+     "dropdownItems2": [
+        {
+            "copy": "Book Another Class 2",
+            "url": "http://example.com/",
+            "target": "_self"
         },
         {
-            "label": "Book a Class",
-            "id": "class-4",
-            "category": "Category"
+            "copy": "Book Another Class <strong>three</strong> four five",
+            "url": "http://example.com/",
+            "target": "_blank"
+        },
+        {
+            "copy": "Book Another Another Class 3 4 5",
+            "url": "http://example.com/",
+            "target": "_self"
+        },
+        {
+            "copy": "Book",
+            "url": "http://example.com/",
+            "target": "_self"
         }
     ]
 }
