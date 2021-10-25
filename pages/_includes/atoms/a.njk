@@ -11,7 +11,7 @@
 {% macro a( classes=['link', 'link--primary'], id, copy, href='#', target )%}
     <a
         href="{{ href }}"
-        class="{% for class in classes %} {{ class }} {% endfor %} font-calibre"
+        class="{% for class in classes %} {{ class }} {% endfor %} font-calibre text-base"
         {% if id %} id="{{ id }}" {% endif %}
         {% if target %} target="{{ target }}" {% endif %}
     >
@@ -33,7 +33,7 @@
 {% macro button_primary( classes=['button', 'button--primary'], id, copy, href='#', target )%}
     <a
         href="{{ href }}"
-        class="{% for class in classes %} {{ class }} {% endfor %} font-calibre"
+        class="{% for class in classes %} {{ class }} {% endfor %} font-calibre text-base"
         {% if id %} id="{{ id }}" {% endif %}
         {% if target %} target="{{ target }}" {% endif %}
     >
@@ -55,7 +55,7 @@
 {% macro button_secondary( classes=['button', 'button--secondary'], id, copy, href='#', target )%}
     <a
         href="{{ href }}"
-        class="{% for class in classes %} {{ class }} {% endfor %} font-calibre"
+        class="{% for class in classes %} {{ class }} {% endfor %} font-calibre text-base"
         {% if id %} id="{{ id }}" {% endif %}
         {% if target %} target="{{ target }}" {% endif %}
     >
@@ -78,7 +78,7 @@
     <a 
         {% if href %} href="{{ href }}" {% endif %} 
         {% if target %} target="{{ target }}" {% endif %}
-        class="{% for class in classes %} {{ class }} {% endfor %} font-calibre"
+        class="{% for class in classes %} {{ class }} {% endfor %} font-calibre text-base"
         {% if id %} id="{{ id }}" {% endif %}
     >
         <span class="icon"></span>{{ copy | safe }}
