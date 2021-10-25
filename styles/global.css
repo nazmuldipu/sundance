@@ -13,7 +13,39 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 @font-face {
     font-display: swap;
     font-family: "Ivar Headline";
-    src: url("../fonts/SpaceMono-Regular.ttf") format("woff2"); /* will be Ivar Headline file url*/
+    src: url("../fonts/IvarHeadline-Regular.otf"); 
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+000-5FF;
+}
+@font-face {
+    font-display: swap;
+    font-family: "Ivar Headline";
+    src: url("../fonts/IvarHeadline-SemiBold.otf"); 
+    font-weight: 700;
+    font-style: normal;
+    unicode-range: U+000-5FF;
+}
+@font-face {
+    font-display: swap;
+    font-family: "Calibre";
+    src: url("../fonts/Calibre-BoldItalic.otf");
+    font-weight: 700;
+    font-style: italic;
+    unicode-range: U+000-5FF;
+}
+@font-face {
+    font-display: swap;
+    font-family: "Calibre";
+    src: url("../fonts/Calibre-Bold.otf");
+    font-weight: 700;
+    font-style: normal;
+    unicode-range: U+000-5FF;
+}
+@font-face {
+    font-display: swap;
+    font-family: "Calibre";
+    src: url("../fonts/Calibre-Regular.otf"); 
     font-weight: 400;
     font-style: normal;
     unicode-range: U+000-5FF;
@@ -21,9 +53,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 @font-face {
     font-display: swap;
     font-family: "Calibre";
-    src: url("../fonts/SpaceMono-Regular.ttf") format("woff2"); /* will be Calibre file url*/
+    src: url("../fonts/Calibre-RegularItalic.otf"); 
     font-weight: 400;
-    font-style: normal;
+    font-style: italic;
     unicode-range: U+000-5FF;
 }
 @font-face {
