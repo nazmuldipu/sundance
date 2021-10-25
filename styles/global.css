@@ -76,6 +76,7 @@ strong {
 .cursor-pointer {
     cursor: pointer;
 }
+/*  font classes */
 .font-ivar {
     font-family: 'Ivar Headline', Arial, Helvetica, sans-serif;
 }
@@ -84,6 +85,9 @@ strong {
 }
 .font-calibre {
     font-family: 'Calibre', Arial, Helvetica, sans-serif;
+}
+.text-base {
+    font-size: 16px !important;
 }
 
 /* text */
@@ -645,11 +649,11 @@ strong {
     top: 50%;
     transform: rotateZ(45deg);
     -webkit-transform: rotateZ(45deg);
-    width: 12px;
+    width: 13px;
 }
 .dropdown-button__arrow::after {
     animation: spin-right 0.5s linear forwards;
-    left: 23px;
+    left: 22px;
     transform: rotateZ(-45deg);
     -webkit-transform: rotateZ(-45deg);
 }

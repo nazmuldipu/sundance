@@ -97,7 +97,7 @@
     #   @return HTML primary dropdown
     #   @author Alexander Khost, Sarjis
 #}
-{% macro dropdown( classes=['dropdown-container--primary'], labelClasses=['button--primary', 'button'], id, copy, labelId='dropdown-1', items = [] )%}
+{% macro dropdown( classes=['dropdown-container--primary'], labelClasses=['button--primary', 'button', 'text-base'], id, copy, labelId='dropdown-1', items = [] )%}
     <div
         class="dropdown-container {% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
