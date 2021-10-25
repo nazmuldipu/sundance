@@ -624,6 +624,7 @@ strong {
     top: 0;
     left: 0;
     z-index: 1;
+    cursor: pointer;
 }
 .dropdown-button__arrow {
     border-left-width: 2px;
@@ -659,6 +660,7 @@ strong {
 }
 .dropdown-container__toggle:checked ~ .dropdown-button .dropdown-button__arrow::before {
     animation: spin-right 0.5s linear forwards;
+    left: 13px;
 }
 .dropdown-container__toggle:checked ~ .dropdown-button .dropdown-button__arrow::after {
     animation: spin-left 0.5s linear forwards;
