@@ -9,6 +9,31 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 
 /****  start base styles  ********************************/
+/* fonts */
+@font-face {
+    font-display: swap;
+    font-family: "Ivar Headline";
+    src: url("../fonts/SpaceMono-Regular.ttf") format("woff2"); /* will be Ivar Headline file url*/
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+000-5FF;
+}
+@font-face {
+    font-display: swap;
+    font-family: "Calibre";
+    src: url("../fonts/SpaceMono-Regular.ttf") format("woff2"); /* will be Calibre file url*/
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+000-5FF;
+}
+@font-face {
+    font-display: swap;
+    font-family: "Helvetica Neue";
+    src: url("../fonts/SpaceMono-Regular.ttf") format("woff2"); /* will be Helvetica Neue file url*/
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+000-5FF;
+}
 body {
     background-color: var(--sundance__neutral5);
     color: var(--sundance__neutral1);
@@ -50,6 +75,15 @@ strong {
 }
 .cursor-pointer {
     cursor: pointer;
+}
+.font-ivar {
+    font-family: 'Ivar Headline', Arial, Helvetica, sans-serif;
+}
+.font-helvetica {
+    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+.font-calibre {
+    font-family: 'Calibre', Arial, Helvetica, sans-serif;
 }
 
 /* text */
@@ -292,16 +326,21 @@ strong {
     margin-bottom: 36px;
     position: relative;
 }
-.form-label input {
+.form-label .form-input {
     border: 0;
     padding-bottom: 10px;
     padding-left: 10px;
     width: 97%;
 }
-.form-label input::placeholder {
+.form-label .form-input::placeholder {
     color: #000;
+    font-family: "Ivar Headline", Arial, Helvetica, sans-serif;;
 }
-.form-label input:focus {
+.form-label .form-input::-moz-placeholder {
+    color: #000;
+    font-family: "Ivar Headline", Arial, Helvetica, sans-serif;
+}
+.form-label .form-input:focus {
     outline: none;
 }
 .form-label__link {

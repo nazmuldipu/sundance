@@ -4,9 +4,9 @@
     #   @param  classes  array, class names (optional)
     #   @param  id       string, a unique ID (optional)
     #   @return HTML H1 tag
-    #   @author Alexander Khost
+    #   @author Alexander Khost, Sarjis
 #}
-{% macro h1( copy, classes=['heading', 'heading--1'], id )%}
+{% macro h1( copy, classes=['heading', 'heading--1', 'font-helvetica'], id )%}
     <h1
         class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
@@ -22,7 +22,7 @@
     #   @param  classes  array, class names (optional)
     #   @param  id       string, a unique ID (optional)
     #   @return HTML H2 tag
-    #   @author Alexander Khost
+    #   @author Alexander Khost, Sarjis
 #}
 {% macro h2( copy, classes=['heading', 'heading--2', 'font-helvetica'], id )%}
     <h2
@@ -40,7 +40,7 @@
     #   @param  classes  array, class names (optional)
     #   @param  id       string, a unique ID (optional)
     #   @return HTML H3 tag
-    #   @author Alexander Khost
+    #   @author Alexander Khost, Sarjis
 #}
 {% macro h3( copy, classes=['heading', 'heading--3', 'font-helvetica'], id )%}
     <h3
@@ -58,9 +58,9 @@
     #   @param  classes  array, class names (optional)
     #   @param  id       string, a unique ID (optional)
     #   @return HTML H4 tag
-    #   @author Alexander Khost
+    #   @author Alexander Khost, Sarjis
 #}
-{% macro h4( copy, classes=['heading', 'heading--4'], id )%}
+{% macro h4( copy, classes=['heading', 'heading--4', 'font-helvetica'], id )%}
     <h4
         class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
@@ -76,9 +76,9 @@
     #   @param  classes  array, class names (optional)
     #   @param  id       string, a unique ID (optional)
     #   @return HTML H5 tag
-    #   @author Alexander Khost
+    #   @author Alexander Khost, Sarjis
 #}
-{% macro h5( copy, classes=['heading', 'heading--5'], id )%}
+{% macro h5( copy, classes=['heading', 'heading--5', 'font-helvetica'], id )%}
     <h5
         class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
@@ -94,9 +94,9 @@
     #   @param  classes  array, class names (optional)
     #   @param  id       string, a unique ID (optional)
     #   @return HTML H6 tag
-    #   @author Alexander Khost
+    #   @author Alexander Khost, Sarjis
 #}
-{% macro h6( copy, classes=['heading', 'heading--6'], id )%}
+{% macro h6( copy, classes=['heading', 'heading--6', 'font-helvetica'], id )%}
     <h6
         class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
