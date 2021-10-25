@@ -6,12 +6,12 @@
     #   @param  href     string, link url
     #   @param  target   string, the link target location (optional)
     #   @return HTML anchor tag
-    #   @author Alexander Khost
+    #   @author Alexander Khost, Sarjis
 #}
 {% macro a( classes=['link', 'link--primary'], id, copy, href='#', target )%}
     <a
         href="{{ href }}"
-        class="{% for class in classes %} {{ class }} {% endfor %}"
+        class="{% for class in classes %} {{ class }} {% endfor %} font-calibre"
         {% if id %} id="{{ id }}" {% endif %}
         {% if target %} target="{{ target }}" {% endif %}
     >
@@ -28,12 +28,12 @@
     #   @param  href     string, link url
     #   @param  target   string, the link target location (optional)
     #   @return HTML primary button
-    #   @author Alexander Khost
+    #   @author Alexander Khost, Sarjis
 #}
 {% macro button_primary( classes=['button', 'button--primary'], id, copy, href='#', target )%}
     <a
         href="{{ href }}"
-        class="{% for class in classes %} {{ class }} {% endfor %}"
+        class="{% for class in classes %} {{ class }} {% endfor %} font-calibre"
         {% if id %} id="{{ id }}" {% endif %}
         {% if target %} target="{{ target }}" {% endif %}
     >
@@ -50,12 +50,12 @@
     #   @param  href     string, link url
     #   @param  target   string, the link target location (optional)
     #   @return HTML secondary button
-    #   @author Alexander Khost
+    #   @author Alexander Khost, Sarjis
 #}
 {% macro button_secondary( classes=['button', 'button--secondary'], id, copy, href='#', target )%}
     <a
         href="{{ href }}"
-        class="{% for class in classes %} {{ class }} {% endfor %}"
+        class="{% for class in classes %} {{ class }} {% endfor %} font-calibre"
         {% if id %} id="{{ id }}" {% endif %}
         {% if target %} target="{{ target }}" {% endif %}
     >
@@ -72,13 +72,13 @@
     #   @param  href    string, link url
     #   @param  target  string, the link target location (optional)
     #   @return HTML anchor tag 
-    #   @author Ashfaqur Rahman, Alexander Khost
+    #   @author Ashfaqur Rahman, Alexander Khost, Sarjis
  #}
 {% macro view_details( classes = ['view-details'], id, copy, href='#', target ) %}
     <a 
         {% if href %} href="{{ href }}" {% endif %} 
         {% if target %} target="{{ target }}" {% endif %}
-        class="{% for class in classes %} {{ class }} {% endfor %}"
+        class="{% for class in classes %} {{ class }} {% endfor %} font-calibre"
         {% if id %} id="{{ id }}" {% endif %}
     >
         <span class="icon"></span>{{ copy | safe }}
@@ -95,7 +95,7 @@
     #   @param  labelId         string, a unique label button ID
     #   @param  items           array, an array of dropdown links
     #   @return HTML primary dropdown
-    #   @author Alexander Khost
+    #   @author Alexander Khost, Sarjis
 #}
 {% macro dropdown( classes=['dropdown-container--primary'], labelClasses=['button--primary', 'button'], id, copy, labelId='dropdown-1', items = [] )%}
     <div
@@ -105,12 +105,12 @@
         <input type="checkbox" class="dropdown-container__toggle" id="{{ labelId }}">
         <label
             for="{{ labelId }}"
-            class="dropdown-button {% for class in labelClasses %} {{ class }} {% endfor %}"
+            class="dropdown-button font-calibre {% for class in labelClasses %} {{ class }} {% endfor %}"
         >
             {{ copy | safe }}
             <span class="dropdown-button__arrow"></span>
         </label>
-        <ul class="dropdown-list">
+        <ul class="dropdown-list font-ivar">
             {% for item in items %}
                 <li class="dropdown-list__list-item">
                     <a href="{{ item.url }}" target="{{ item.target }}" class="dropdown-list-item__anchor">

@@ -15,11 +15,11 @@
             {% if item.id %} for="{{ item.id }}" {% endif %} 
             class="accordion--label toggle--label"
         >
-            <h2 class="accordion--title heading--4">
+            <h2 class="accordion--title heading--4 font-calibre">
                 {{ item.title | safe }}
             </h2>
         </label>
-        <figure class="toggle-details hidden">
+        <figure class="toggle-details hidden font-ivar">
             {% set article = item.article %}
             <figcaption>
                 <h3>

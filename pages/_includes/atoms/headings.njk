@@ -24,7 +24,7 @@
     #   @return HTML H2 tag
     #   @author Alexander Khost
 #}
-{% macro h2( copy, classes=['heading', 'heading--2'], id )%}
+{% macro h2( copy, classes=['heading', 'heading--2', 'font-helvetica'], id )%}
     <h2
         class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
@@ -42,7 +42,7 @@
     #   @return HTML H3 tag
     #   @author Alexander Khost
 #}
-{% macro h3( copy, classes=['heading', 'heading--3'], id )%}
+{% macro h3( copy, classes=['heading', 'heading--3', 'font-helvetica'], id )%}
     <h3
         class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}

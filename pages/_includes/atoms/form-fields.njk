@@ -8,7 +8,7 @@
     #   @author Ashfaqur Rahman, Sarjis
  #}
 {% macro checkboxes( copy, id, name, classPrefix='checkboxes-btn', checkBoxNumber ) %}
-    <label class="{{ classPrefix }}">
+    <label class="{{ classPrefix }} font-ivar">
         <input type="checkbox" 
             class="{{ classPrefix }}__input" 
             {% if id %} id="{{ id }}" {% endif %}
@@ -45,7 +45,7 @@
     #   @author Sarjis
  #}
 {% macro form_input(obj = {}, suffix = false, classes = [], copy, href = '#', id) %}
-    <label class="{% for class in classes %} {{ class }} {% endfor %}">
+    <label class="{% for class in classes %} {{ class }} {% endfor %} font-calibre">
         {% if obj.label %}
             {{ obj.label }}<br>
         {% endif %}

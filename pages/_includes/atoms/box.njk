@@ -34,7 +34,7 @@
     #   @author Ashfaqur Rahman, Sarjis
 #}
 {% macro text_container( classes = ['text-container'], title, copy ) %}
-    <article class="{% for class in classes %} {{ class }} {% endfor %}">
+    <article class="{% for class in classes %} {{ class }} {% endfor %} font-ivar">
         <header>
             {{ h1(copy = title, classes = ['text-container--header', 'heading--1']) }}
         </header>
