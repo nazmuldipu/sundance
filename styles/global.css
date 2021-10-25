@@ -58,14 +58,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-style: italic;
     unicode-range: U+000-5FF;
 }
-@font-face {
-    font-display: swap;
-    font-family: "Helvetica Neue";
-    src: url("../fonts/SpaceMono-Regular.ttf") format("woff2"); /* will be Helvetica Neue file url*/
-    font-weight: 400;
-    font-style: normal;
-    unicode-range: U+000-5FF;
-}
 body {
     background-color: var(--sundance__neutral5);
     color: var(--sundance__neutral1);
@@ -113,7 +105,7 @@ strong {
     font-family: 'Ivar Headline', Arial, Helvetica, sans-serif;
 }
 .font-helvetica {
-    font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 .font-calibre {
     font-family: 'Calibre', Arial, Helvetica, sans-serif;
