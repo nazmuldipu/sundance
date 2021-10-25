@@ -68,11 +68,12 @@
         "label" : "Check IN", 
         "type" : "datetime", 
         "placeholder" : "mm/dd/yyyy", 
-        "classes" : ["form-field-date"]
+        "classes" : ["form-input", "form-field-date"]
     },
     "emailInput": {
         "type" : "email", 
-        "placeholder" : "Email address"
+        "placeholder" : "Email address",
+        "classes": ["form-input"]
     },
     "exampleImage": {
         "classes":"inline-block",
