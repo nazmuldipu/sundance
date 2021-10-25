@@ -102,13 +102,13 @@ strong {
 }
 /*  font classes */
 .font-ivar {
-    font-family: 'Ivar Headline', Arial, Helvetica, sans-serif;
+    font-family: 'Ivar Headline', Arial, sans-serif;
 }
 .font-helvetica {
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
 }
 .font-calibre {
-    font-family: 'Calibre', Arial, Helvetica, sans-serif;
+    font-family: 'Calibre', Arial, sans-serif;
 }
 .text-base {
     font-size: 16px !important;
