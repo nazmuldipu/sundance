@@ -1,0 +1,2 @@
+export S3_BUCKET_NAME=sundance-dev.skipperhospitality.com
+export CLOUDFRONT_DIST_ID=EA1XQD8QO0Q1W
