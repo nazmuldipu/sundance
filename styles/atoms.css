@@ -29,6 +29,12 @@
     color: #fff;
     padding: 20px 70px;
 }
+.button--primary3 {
+    background-color: var(--sundance__primary1);
+    border: solid var(--sundance__primary1) 1px;
+    color: #fff;
+    padding: 20px 70px;
+}
 .button--secondary {
     background-color: #fff;
     border: solid #000 1px;
