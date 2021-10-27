@@ -1,0 +1,24 @@
+{% from "atoms/a.njk" import a %}
+{% from "atoms/headings.njk" import h2 %}
+{% from 'atoms/icons.njk' import iconImage %}
+{# 
+    #   @desc   footer element
+    #   @param  footer       object (footer data from data.json)
+    #   @author Nazmul Alam
+ #}
+{% macro footer( footer ) %}
+    <footer class="footer-container">
+        {% for sec in footer.sections %}
+        <section class="footer-col">
+            {{ h2( classes=['heading', 'font-ivar', 'heading__foooter--2'], copy=sec.title ) }}
+            {% for link in sec.links %}                
+                {% if not link.icon %}
+                    <nav>{{ a( id='Winter', copy=link.label, href='http://example.com', classes=['footer-link']) }}</nav>
+                {% else %}
+                    {{ iconImage( src='images/facebook.svg', alt='Facebook icon' ) }}
+                {% endif %}
+            {% endfor %}
+        </section>
+        {% endfor %}
+    </footer>
+{% endmacro %}

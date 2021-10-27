@@ -1,9 +1,83 @@
 {
-    "ga_id": "FAKE_ID",
-    "preload_fonts": [
-        {
-            "href": "fonts/SpaceMono-Regular.ttf",
-            "type": "font/ttf"
-        }
+  "ga_id": "FAKE_ID",
+  "preload_fonts": [
+    {
+      "href": "fonts/SpaceMono-Regular.ttf",
+      "type": "font/ttf"
+    }
+  ],
+  "footer": {
+    "sections": [
+      {
+        "title": "Activities",
+        "links": [
+          { "label": "Winter", "url": "#" },
+          { "label": "Summer", "url": "#" },
+          { "label": "Year-Round", "url": "#" }
+        ]
+      },
+      {
+        "title": "Lodging",
+        "links": [
+          { "label": "Mountain Homes", "url": "#" },
+          { "label": "Rooms & Suites", "url": "#" },
+          { "label": "Special + Packages", "url": "#" },
+          { "label": "Book Your Stay", "url": "#" }          
+        ]
+      },
+      {
+        "title": "Dining",
+        "links": [
+          { "label": "Restaurants", "url": "#" },
+          { "label": "Fast Casuals", "url": "#" },
+          { "label": "Catering", "url": "#" }          
+        ]
+      },
+      {
+        "title": "Events",
+        "links": [
+          { "label": "Calender", "url": "#" },
+          { "label": "Summer Theater", "url": "#" },
+          { "label": "Author Series", "url": "#" },
+          { "label": "Music at Sundance", "url": "#" }
+        ]
+      },
+      {
+        "title": "Groups",
+        "links": [
+          { "label": "Meetings & Events", "url": "#" },
+          { "label": "Weddings", "url": "#" },
+          { "label": "Venues", "url": "#" }
+        ]
+      },
+      {
+        "title": "Shop",
+        "links": [
+          { "label": "The General Store", "url": "#" },
+          { "label": "SMO", "url": "#" },
+          { "label": "Shop Online", "url": "#" }
+        ]
+      },
+      {
+        "title": "About",
+        "links": [
+          { "label": "History of Sundance", "url": "#" },
+          { "label": "Conserve", "url": "#" },
+          { "label": "Safety", "url": "#" },
+          { "label": "Career", "url": "#" },
+          { "label": "Contacts", "url": "#" }
+        ]
+      },
+      {
+        "title": "Social",
+        "links": [
+          { "label": "Facebook icon", "url": "#", "icon":"images/facebook.svg" },
+          { "label": "Twitter icon", "url": "#", "icon":"images/twitter.svg" },
+          { "label": "Instagram icon", "url": "#", "icon":"images/instagram.svg" },
+          { "label": "YouTube icon", "url": "#", "icon":"images/youtube.svg" },
+          { "label": "TripAdvisor icon", "url": "#", "icon":"images/tripAdvisor.svg" }
+        ]
+      }
     ]
+  }
 }

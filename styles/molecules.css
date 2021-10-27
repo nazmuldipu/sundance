@@ -1,20 +1,64 @@
 /****  start molecules  ********************************/
 
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+}
+.footer-col{
+    margin-bottom: 4rem;
+}
+.footer-col .heading__foooter--2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 110%;
+    color: var(--sundance__neutral1);
+    padding-bottom: 24px;
+}
+
+.footer-link{
+    display: block;
+    text-decoration: none;
+    color: var(--sundance__neutral1);
+    line-height: 22px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
 /* Mobile (Screen size : 375 pts) */
 @media screen and (max-width: 375px) {
+    body {
+        padding-left: 24px;
+        padding-right: 23px;
+    }
+    .footer-container{
+        grid-template-columns: repeat(2, 1fr);
+    }        
 }
 
 /* Tab (Screen size : 1200 pts) */
 @media screen and (min-width: 376px) and (max-width: 1200px) {
+    body {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
 }
 
 
 /* Desktop (Screen size : 1440 pts) */
 @media screen and (min-width: 1201px) and (max-width: 1440px) {
+    body {
+        padding-left: 180px;
+        padding-right: 180px;
+    }
 }
 
 /* Desktop XXL (Screen size : 1920 pts) */
 @media screen and (min-width: 1441px) {
+    body {
+        padding-left: 90px;
+        padding-right: 90px;
+    }
 }
 
 /****  end molecules  ********************************/
