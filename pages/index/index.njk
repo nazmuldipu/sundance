@@ -14,7 +14,7 @@ permalinkBypassOutputDir: true
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
-
+{% from 'molecules/header.njk' import header__prefix, header__suffix %}
 <header>
     {{ h1( copy='Atoms' ) }}
 </header>
@@ -148,4 +148,14 @@ permalinkBypassOutputDir: true
         {{ iconImage( src='images/conde-nast-traveler.png', alt='Conde Naste Traveler icon' ) }}<br>
         {{ iconImage( src='images/liftopia.png', alt='Liftopia icon' ) }}<br>
     </section>
+</section>
+<section>
+    <header class="header">
+        {{ header__prefix() }}
+        <div style="text-align: center;">
+           {{ h2(copy='sundance') }}
+           {{ h4(copy='Mountain Resort') }}
+        </div>
+        {{ header__suffix() }}
+    </header>
 </section>

@@ -1,5 +1,30 @@
 /****  start molecules  ********************************/
-
+.header{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+}
+.header-prefix{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+.header .heading{
+    padding-bottom: 0em;
+}
+.header-prefix .heading{
+    padding-bottom: 0em;
+}
+.header-suffix .heading {
+    padding-bottom: 0em;
+}
+.header-suffix{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
 /* Mobile (Screen size : 375 pts) */
 @media screen and (max-width: 375px) {
 }

@@ -1,0 +1,29 @@
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from "atoms/a.njk" import button_primary %}
+{% from 'atoms/icons.njk' import iconImage %}
+
+{% macro header__prefix() %}
+    <section class="header-prefix">
+        {{ h4( copy='Activities' ) }}
+        {{ h4( copy='Lodging' ) }}
+        {{ h4( copy='Dining' ) }}
+        {{ h4( copy='Events' ) }}
+        {{ h4( copy='More' ) }}
+    </section>
+{% endmacro %}
+{% macro header__icon() %}
+    <section class="flex align-items-center gap-x-2">
+        {{ iconImage( src='images/location.svg', alt='Location icon' ) }}
+        {{ iconImage( src='images/playButton.svg', alt='Play Button icon' ) }}
+        {{ iconImage( src='images/temparature.svg', alt='Temparature icon' ) }}
+    </section>
+{% endmacro %}
+{% macro header__button() %}
+    {{ button_primary(classes=['button','button--primary3'], href='http://example.com', copy='Book Now', id='headerButton-1', target='_blank' ) }}
+{% endmacro %}
+{% macro header__suffix() %}
+    <section class="header-suffix">
+       {{ header__icon() }} 
+       {{ header__button() }}
+    </section>
+{% endmacro %}
