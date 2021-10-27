@@ -1,3 +1,20 @@
 /****  start molecules  ********************************/
 
+/* Mobile (Screen size : 375 pts) */
+@media screen and (max-width: 375px) {
+}
+
+/* Tab (Screen size : 1200 pts) */
+@media screen and (min-width: 376px) and (max-width: 1200px) {
+}
+
+
+/* Desktop (Screen size : 1440 pts) */
+@media screen and (min-width: 1201px) and (max-width: 1440px) {
+}
+
+/* Desktop XXL (Screen size : 1920 pts) */
+@media screen and (min-width: 1441px) {
+}
+
 /****  end molecules  ********************************/
