@@ -19,7 +19,9 @@
     </section>
 {% endmacro %}
 {% macro header__button() %}
-    {{ button_primary(classes=['button','button--primary3'], href='http://example.com', copy='Book Now', id='headerButton-1', target='_blank' ) }}
+    <section class="header-button">
+        {{ button_primary(classes=['button','button--primary3'], href='http://example.com', copy='Book Now', id='headerButton-1', target='_blank' ) }}
+    </section>
 {% endmacro %}
 {% macro header__suffix() %}
     <section class="header-suffix">
