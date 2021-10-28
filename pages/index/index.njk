@@ -14,7 +14,7 @@ permalinkBypassOutputDir: true
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
-{% from 'molecules/header.njk' import header__prefix, header__suffix %}
+{% from 'molecules/header.njk' import header__prefix, header__suffix, header__icon, header__button %}
 <header>
     {{ h1( copy='Atoms' ) }}
 </header>
@@ -134,7 +134,7 @@ permalinkBypassOutputDir: true
         {{ iconCSS( classes=['icon-css', 'icon--filter'], copy='<span></span><span></span><span></span>' ) }}<br>
     </section>
 </section>
-<section>
+{# <section>
     <header>
         {{ h3(copy = 'Magazine logos') }}
     </header>
@@ -148,14 +148,31 @@ permalinkBypassOutputDir: true
         {{ iconImage( src='images/conde-nast-traveler.png', alt='Conde Naste Traveler icon' ) }}<br>
         {{ iconImage( src='images/liftopia.png', alt='Liftopia icon' ) }}<br>
     </section>
-</section>
-<section>
+</section> #}
+<!--Desktop design-->
+<section class="desktop">
     <header class="header">
         {{ header__prefix() }}
-        <div style="text-align: center;">
-           {{ h2(copy='sundance') }}
-           {{ h4(copy='Mountain Resort') }}
-        </div>
+        {{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}
         {{ header__suffix() }}
     </header>
+</section>
+<!--tab design-->
+<section class="tab">
+    <header class="header">
+        {{ header__icon() }}
+        {{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}
+        {{ header__button() }}
+    </header>
+    <div style="background: var(--sundance__neutral4); padding-top:13px; padding-bottom:13px;">
+        {{header__prefix()}}
+    </div>    
+</section>
+<!--mobile design-->
+<section class="mobile">
+    <header class="header">
+        {{ iconCSS( classes=['icon-css', 'hamburger-icon'] ) }}
+        {{ header__icon() }}
+        {{ header__button() }}
+    </header>  
 </section>
