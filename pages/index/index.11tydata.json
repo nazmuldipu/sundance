@@ -136,5 +136,38 @@
             "url": "http://example.com/",
             "target": "_self"
         }
+    ],
+    "headerText":[
+        {
+            "title":"Activities",
+            "label":"Activities",
+            "href":"#",
+            "target":"_self"
+        },
+        {
+            "title":"Lodging",
+            "label":"Lodging",
+            "href":"www.facebook.com",
+            "target":"_blank"
+        },
+        {
+            "title":"Dining",
+            "label":"Dining",
+            "href":"#",
+            "target":"_self"
+        },
+        {
+            "title":"Events",
+            "label":"Events",
+            "href":"#",
+            "target":"_self"
+        },
+        {
+            "title":"More",
+            "label":"More",
+            "href":"#",
+            "target":"_self"
+        }
+        
     ]
 }
