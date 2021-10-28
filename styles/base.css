@@ -115,7 +115,13 @@ strong {
 .text--color__sp-2 {
     color: #617C6A !important;
 }
-
+/* text-decoration */
+.underline{
+    text-decoration: underline;
+}
+.no-underline{
+    text-decoration: none;
+}
 /* backgrounds */
 .bg-sp-2 {
     background-color: var(--sundance__primary2) !important;
