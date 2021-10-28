@@ -33,7 +33,7 @@
     background-color: var(--sundance__primary1);
     border: solid var(--sundance__primary1) 1px;
     color: #fff;
-    padding: 20px 70px;
+    padding: 10px 20px;
 }
 .button--secondary {
     background-color: #fff;

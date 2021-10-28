@@ -2,6 +2,7 @@
 .header{
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .5rem;
     align-items: center;
     text-align: center;
     padding-top: 15px;
@@ -32,12 +33,21 @@
     .desktop, .tab{
         display: none;
     }
+    .header {
+        grid-template-columns: repeat(3, minmax(auto, 1fr));
+    }
+    .header-icon{
+        gap: 4px;
+    }
 }
 
 /* Tab (Screen size : 1200 pts) */
 @media screen and (min-width: 376px) and (max-width: 1200px) {
     .desktop, .mobile{
         display: none;
+    }
+    .header-icon{
+        gap: 5px;
     }
 }
 
@@ -47,12 +57,18 @@
     .tab, .mobile{
         display: none;
     }
+    .header-icon{
+        gap: 8px;
+    }
 }
 
 /* Desktop XXL (Screen size : 1920 pts) */
 @media screen and (min-width: 1441px) {
     .tab, .mobile{
         display: none;
+    }
+    .header-icon{
+        gap: 8px;
     }
 }
 
