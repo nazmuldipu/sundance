@@ -3,6 +3,10 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: center;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: var(--sundance__neutral5);
 }
 .header-prefix{
     display: flex;
@@ -10,36 +14,46 @@
     align-items: center;
     gap: 32px;
 }
-.header .heading{
-    padding-bottom: 0em;
-}
-.header-prefix .heading{
-    padding-bottom: 0em;
-}
-.header-suffix .heading {
-    padding-bottom: 0em;
-}
 .header-suffix{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
 }
+.header-button{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.heading:not(.header-prefix):not(.header-suffix){
+    padding-bottom: 0em;
+}
 /* Mobile (Screen size : 375 pts) */
 @media screen and (max-width: 375px) {
+    .desktop, .tab{
+        display: none;
+    }
 }
 
 /* Tab (Screen size : 1200 pts) */
 @media screen and (min-width: 376px) and (max-width: 1200px) {
+    .desktop, .mobile{
+        display: none;
+    }
 }
 
 
 /* Desktop (Screen size : 1440 pts) */
 @media screen and (min-width: 1201px) and (max-width: 1440px) {
+    .tab, .mobile{
+        display: none;
+    }
 }
 
 /* Desktop XXL (Screen size : 1920 pts) */
 @media screen and (min-width: 1441px) {
+    .tab, .mobile{
+        display: none;
+    }
 }
 
 /****  end molecules  ********************************/
