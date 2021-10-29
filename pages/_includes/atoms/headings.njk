@@ -33,6 +33,23 @@
     </h2>
 {% endmacro %}
 
+{#
+    #   @desc   an ihh2 tag 
+    #   @param  copy     string, the HTML mark up that is linked
+    #   @param  classes  array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @return HTML H2 tag
+    #   @author Alexander Khost, Sarjis
+#}
+{% macro ihh1( copy, classes=['heading', 'ihh1', 'font-ivar'], id )%}
+    <h2
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+    >
+        {{ copy | safe }}
+    </h2>
+{% endmacro %}
+
 
 {#
     #   @desc   an H3 tag
