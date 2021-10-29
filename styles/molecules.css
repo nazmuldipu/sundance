@@ -1,12 +1,22 @@
 /****  start molecules  ********************************/
-
+footer{
+    position: relative;
+    border-top: 1px dotted black;
+    letter-spacing: 0.02em;
+}
+.icon{
+    display: inline;
+    width: 24px;
+    height: 24px;
+    padding-right: 19px;
+}
 .footer-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 6px;
 }
 .footer-col{
-    margin-bottom: 4rem;
+    margin-bottom: 4.5rem;
 }
 .footer-col .heading__foooter--2 {
     font-weight: 600;
@@ -17,47 +27,97 @@
 }
 
 .footer-link{
-    display: block;
+    display: inline-block;
     text-decoration: none;
     color: var(--sundance__neutral1);
     line-height: 22px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     cursor: pointer;
+}
+.footer-copy{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center ;
+    /* padding-bottom: 20px; */
+}
+.s_dot{
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
 }
 
 /* Mobile (Screen size : 375 pts) */
 @media screen and (max-width: 375px) {
-    body {
-        padding-left: 24px;
-        padding-right: 23px;
+    footer {
+        padding: 32px 36px 20px 36px;
     }
     .footer-container{
         grid-template-columns: repeat(2, 1fr);
     }        
+    .footer-copy{
+        padding-bottom: 100px;
+        flex-direction: column;
+    }
+    .footer-copy-image, .footer-copy-image img{
+        width: 100%;
+    }
+    .s_dot{
+        margin-top: -274px;
+        width: 207px;
+        height: 225px;
+        margin-bottom: 19px;
+    }
+    
 }
 
 /* Tab (Screen size : 1200 pts) */
 @media screen and (min-width: 376px) and (max-width: 1200px) {
-    body {
-        padding-left: 120px;
-        padding-right: 120px;
+    footer {
+        padding: 90px 38px 100px 38px;
+    }
+    .footer-col{
+        margin-bottom: 4rem;
+    }
+    .s_dot{
+        margin-top: -263px;
+        width: 263px;
+        height: 264px;
     }
 }
 
 
 /* Desktop (Screen size : 1440 pts) */
 @media screen and (min-width: 1201px) and (max-width: 1440px) {
-    body {
-        padding-left: 180px;
-        padding-right: 180px;
+    footer {
+        padding: 32px 172px 20px 172px;
+    }
+    .s_dot{
+        margin-top: -263px;
+        width: 263px;
+        height: 264px;
     }
 }
 
 /* Desktop XXL (Screen size : 1920 pts) */
 @media screen and (min-width: 1441px) {
-    body {
-        padding-left: 90px;
-        padding-right: 90px;
+    footer {
+        padding: 152px 316px 123px 316px;
+    }
+    .footer-col .heading__foooter--2 {
+        font-size: 32px;
+        line-height: 38px;
+        padding-bottom: 32px;
+    }
+    .footer-link.text-base{
+        font-size: 24px !important;
+        padding-bottom: 12px;
+    }
+    .s_dot{
+        margin-top: -384px;
+        width: 400px;
+        height: 384px;
     }
 }
 

@@ -6,19 +6,30 @@
     #   @param  footer       object (footer data from data.json)
     #   @author Nazmul Alam
  #}
-{% macro footer( footer ) %}
-    <footer class="footer-container">
-        {% for sec in footer.sections %}
-        <section class="footer-col">
-            {{ h2( classes=['heading', 'font-ivar', 'heading__foooter--2'], copy=sec.title ) }}
-            {% for link in sec.links %}                
-                {% if not link.icon %}
-                    <nav>{{ a( id='Winter', copy=link.label, href='http://example.com', classes=['footer-link']) }}</nav>
-                {% else %}
-                    {{ iconImage( src='images/facebook.svg', alt='Facebook icon' ) }}
-                {% endif %}
+{% macro footer(footer) %}
+    <footer>
+        <article class="footer-container">
+            {% for sec in footer.sections %}
+                <section class="footer-col">
+                    {{ h2( classes=['heading', 'font-ivar', 'heading__foooter--2'], copy=sec.title ) }}
+                    {% for link in sec.links %}
+                        {% set trg = '_blank' if link.external %}
+                        {% if not link.icon %}
+                            <nav>{{ a( id=link.label, copy=link.label, href=link.url, classes=['footer-link'], target=trg) }}</nav>
+                        {% else %}
+                            {{ a( id=link.label, copy=iconImage( src=link.icon, alt=link.label ), href=link.url, classes=['footer-link'], target=trg) }}
+                        {% endif %}
+                    {% endfor %}
+                </section>
             {% endfor %}
-        </section>
-        {% endfor %}
+        </article>
+        <article class="footer-copy font-calibre">
+            <section class="footer-copy-image">
+                {{ iconImage( src=footer.bottom.image, alt='Hotels icon' ) }}
+            </section>
+            <section>{{footer.bottom.label | safe}}</section>
+        </article>
+        <img class="s_dot" src={{footer['static_image']}} alt="S dot logo">
     </footer>
+
 {% endmacro %}

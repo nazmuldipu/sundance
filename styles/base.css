@@ -56,7 +56,7 @@ body {
     background-color: var(--sundance__neutral5);
     color: var(--sundance__neutral1);
     font-size: var(--base-font-size);
-    padding: 2em;
+    /* padding: 2em; */
 }
 /* section {
     border: 1px dashed #ccc;
