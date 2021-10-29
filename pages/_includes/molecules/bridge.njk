@@ -1,0 +1,34 @@
+{% from "atoms/headings.njk" import h4,
+ihh1 %}
+{% from 'atoms/icons.njk' import iconCSS %}
+{#
+    #   @desc   a basic bridge molecules
+    #   @param  classes  array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  copy     string, the HTML mark up that is linked
+    #   @param  href     string, link url
+    #   @param  target   string, the link target location (optional)
+    #   @return HTML anchor tag
+    #   @author Alexander Khost, Sarjis
+#}
+{% macro bridge(  )%}
+    <section class="bridge">
+        <article class="bridge-top-frame">
+            <header>{{ihh1('Explore Your Creativity',classes = ['ihh1', 'font-ivar', 'pb-4', 'pt-6'])}}</header>
+            {{h4('EXPLORE GALLERY', classes=['heading', 'heading--4', 'font-calibre', 'tracking-wider', 'font-medium' ])}}
+        </article>
+        <article class="bridge-container">
+            <div class="bridge-box-container">
+                <div class="bridge-box"></div>
+                <div class="bridge-box"></div>
+                <div class="bridge-box no-mob"></div>
+                <div class="bridge-box no-mob"></div>
+            </div>
+            <nav class="bridge-nav">
+                {{ iconCSS( classes=['bridge-nav-icon', 'arrow-left', 'rotate-45'] ) }}
+                {{ iconCSS( classes=['bridge-nav-icon', 'arrow-right', 'rotate-45'] ) }}
+            </nav>
+        </article>
+
+    </section>
+{% endmacro %}
