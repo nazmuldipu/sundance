@@ -1,11 +1,55 @@
 /****  start molecules  ********************************/
-
+.card-container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.card-image{
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+.card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 80px;
+    padding-right: 80px;
+}
 /* Mobile (Screen size : 375 pts) */
 @media screen and (max-width: 375px) {
+    .card-container{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .card-container:nth-child(even) .card-image{
+       order: 1;
+    }
+    .card-container:nth-child(odd) .card-text{
+        order: 2;
+    }
+    .card-text{
+        text-align: center;
+        align-items: center;
+        padding: 40px 40px;
+    }
 }
 
 /* Tab (Screen size : 1200 pts) */
 @media screen and (min-width: 376px) and (max-width: 1200px) {
+    .card-container{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .card-container:nth-child(even) .card-image{
+       order: 1;
+    }
+    .card-container:nth-child(odd) .card-text{
+        order: 2;
+    }
+    .card-text{
+        text-align: center;
+        align-items: center;
+        padding: 40px 40px;
+    }
 }
 
 

@@ -1,0 +1,33 @@
+{% from 'macros.njk' import scaled_image %}
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from "atoms/a.njk" import view_details %}
+{% macro card(id = '', items, containerBackground = '', figureClass = '', figcaptionClass = '') %}
+   <section class="{% if containerBackground %} containerBackground {% endif %}">
+         {% for item in items %}
+            <section class="card-container">        
+                <figure class="card-image {{ figureClass }}
+                    {% if item.imageOrientation == 'left' %}
+                        order-1
+                    {% elif item.imageOrientation == 'right' %}
+                        order-2
+                    {% endif %}" 
+                    {% if id %} id="{{ id }}" {% endif %} 
+                >
+                    <img src={{item.image}}/>
+                </figure>
+                <figcaption class="card-text {{ figcaptionClass }}
+                    {% if item.imageOrientation == 'left' %}
+                        order-2
+                    {% elif item.imageOrientation == 'right' %}
+                        order-1
+                    {% endif %}"
+                    {% if id %} id="{{ id }}" {% endif %}
+                >
+                    {{ h2(copy = item.title) }}
+                    {{ h4(copy = item.description) }}
+                    {{ view_details( copy='View Details', href='http://example.com', target='_blank' ) }}
+                </figcaption>
+            </section>
+        {% endfor %}
+   </section>
+{% endmacro %}
