@@ -1,0 +1,43 @@
+{% from "atoms/headings.njk" import h1 %}
+{# 
+    #   @desc   small box
+    #   @param  classes      array
+    #   @param  copy         string
+    #   @param  amount       number
+    #   @param  limitCopy    string
+    #   @author Ashfaqur Rahman, Sarjis
+ #}
+{% macro box( classes = ['box-wrap'], copy = '', amount = 0, limitCopy = '' ) %}
+    <section class="{% for class in classes %} {{ class }} {% endfor %}">
+        <header>
+            <h2 class="box-wrap--header heading--4">
+                {{ copy | safe }}
+            </h2>
+        </header>
+        <article>
+            <span>
+                ${{ amount }}
+            </span>
+            <span>
+                {{ limitCopy }}
+            </span>
+        </article>
+    </section>
+{% endmacro %}
+
+
+{# 
+    #   @desc   classes container
+    #   @param  classes array (optional)
+    #   @param  copy    string
+    #   @param  texts    array
+    #   @author Ashfaqur Rahman, Sarjis
+#}
+{% macro text_container( classes = ['text-container', font-ivar], title, copy ) %}
+    <article class="{% for class in classes %} {{ class }} {% endfor %}">
+        <header>
+            {{ h1(copy = title, classes = ['text-container--header', 'heading--1']) }}
+        </header>
+        <p>{{ copy | safe }}</p>
+    </article>
+{% endmacro %}

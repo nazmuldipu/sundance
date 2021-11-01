@@ -1,10 +1,19 @@
 /* colors */
 :root {
-    --color__primary: #333;
-    --color__secondary: #efefef;
-    --color__anchor: #0099ff;
-}
-/* fonts */
-:root {
-    --base-font-size: calc(14px + (18 - 14) * ((100vw - 320px) / (1600 - 320))); /* 14px - 18px */
+    --sundance__primary1: #458691;
+    --sundance__primary2: #617C6A;
+    --sundance__primary3: #C3982D;
+    --sundance__secondary1: #042F36;
+    --sundance__secondary2: #314C39;
+    --sundance__secondary3: #C1C5B7;
+    --sundance__secondary4: #E2CBA5;
+    --sundance__neutral1: #202020;
+    --sundance__neutral2: #757575;
+    --sundance__neutral3: #9E9E9E;
+    --sundance__neutral4: #F7F7F7;
+    --sundance__neutral5: #FFFFFF;
+    --sundance__neutral6: #000000;
+    --sundance__semantic1: #7C2F18;
+    --sundance__semantic2: #1A7C18;
+    --sundance__semantic3: #FFCE1F;
 }

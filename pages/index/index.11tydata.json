@@ -1,3 +1,140 @@
 {
-    "fake_name": "Person GUD"
+    "fake_name": "Person GUD",
+    "accordions": [
+        {
+            "title": "Mountain Stone Massage",
+            "id": "toggle-1",
+            "classes": [
+                "toggle",
+                "hidden"
+            ],
+            "name": "First",
+            "article": {
+                "heading": "Let Creativity Flow",
+                "copy": [
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque"
+                ]
+            },
+            "image": {
+                "classes":"inline-block",
+                "artDirection": [
+                    {
+                        "media": "(min-width:900.1px)",
+                        "sizes": "100vw",
+                        "type": "png",
+                        "src": "images/ameswell_entrance",
+                        "alt": "The Placeholder Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "media": "(max-width:900px)",
+                        "sizes": "50vw",
+                        "type": "png",
+                        "src": "images/ameswell_entrance",
+                        "alt": "The Placeholder Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+            }
+        }
+    ],
+    "tableData": {
+        "headers": [
+            "Class",
+            "Time",
+            "Cost"
+        ],
+        "bodies": [
+            {
+                "datas": [
+                    "Silversmithing",
+                    "10am, 1pm, 3pm",
+                    "$ 150"
+                ]
+            },
+            {
+                "datas": [
+                    "Silversmithing",
+                    "10am, 1pm, 3pm",
+                    "$ 150"
+                ]
+            }
+        ]
+    },
+    "datePicker": {
+        "label" : "Check IN", 
+        "type" : "datetime", 
+        "placeholder" : "mm/dd/yyyy", 
+        "classes" : ["form-input", "form-field-date"]
+    },
+    "emailInput": {
+        "type" : "email", 
+        "placeholder" : "Email address",
+        "classes": ["form-input"]
+    },
+    "exampleImage": {
+        "classes":"inline-block",
+        "artDirection": [
+            {
+                "media": "(min-width:900.1px)",
+                "sizes": "100vw",
+                "type": "png",
+                "src": "https://via.placeholder.com/800x400",
+                "alt": "The Placeholder Image",
+                "intrinsicwidth": "800",
+                "intrinsicheight": "400"
+            },
+            {
+                "media": "(max-width:900px)",
+                "sizes": "50vw",
+                "type": "png",
+                "src": "https://via.placeholder.com/800x400",
+                "alt": "The Placeholder Image",
+                "intrinsicwidth": "800",
+                "intrinsicheight": "400"
+            }
+        ]
+    },
+    "dropdownItems1": [
+        {
+            "copy": "Book A Class 1",
+            "url": "http://example.com/",
+            "target": "_self"
+        },
+        {
+            "copy": "Book A Class <strong>two</strong> Book A Class Book A Class Book A Class ",
+            "url": "http://example.com/",
+            "target": "_blank"
+        },
+        {
+            "copy": "Book A Class 3",
+            "url": "http://example.com/",
+            "target": "_self"
+        }
+    ],
+     "dropdownItems2": [
+        {
+            "copy": "Book Another Class 2",
+            "url": "http://example.com/",
+            "target": "_self"
+        },
+        {
+            "copy": "Book Another Class <strong>three</strong> four five",
+            "url": "http://example.com/",
+            "target": "_blank"
+        },
+        {
+            "copy": "Book Another Another Class 3 4 5",
+            "url": "http://example.com/",
+            "target": "_self"
+        },
+        {
+            "copy": "Book",
+            "url": "http://example.com/",
+            "target": "_self"
+        }
+    ]
 }

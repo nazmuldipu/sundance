@@ -1,0 +1,198 @@
+/****  start base styles  ********************************/
+
+/* Eric Meyer CSS Reset v2.0 | 20110126, http://meyerweb.com/eric/tools/css/reset/  */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; } article, aside, details, figcaption, figure,  footer, header, hgroup, menu, nav, section { display: block; } body { line-height: 1; } ol, ul { list-style: none; } blockquote, q { quotes: none; } blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; } table { border-collapse: collapse; border-spacing: 0; }
+
+/* fonts */
+@font-face {
+    font-display: swap;
+    font-family: "Ivar Headline";
+    src: url("../fonts/IvarHeadline-Regular.otf"); 
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+000-5FF;
+}
+@font-face {
+    font-display: swap;
+    font-family: "Ivar Headline";
+    src: url("../fonts/IvarHeadline-SemiBold.otf"); 
+    font-weight: 700;
+    font-style: normal;
+    unicode-range: U+000-5FF;
+}
+@font-face {
+    font-display: swap;
+    font-family: "Calibre";
+    src: url("../fonts/Calibre-BoldItalic.otf");
+    font-weight: 700;
+    font-style: italic;
+    unicode-range: U+000-5FF;
+}
+@font-face {
+    font-display: swap;
+    font-family: "Calibre";
+    src: url("../fonts/Calibre-Bold.otf");
+    font-weight: 700;
+    font-style: normal;
+    unicode-range: U+000-5FF;
+}
+@font-face {
+    font-display: swap;
+    font-family: "Calibre";
+    src: url("../fonts/Calibre-Regular.otf"); 
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+000-5FF;
+}
+@font-face {
+    font-display: swap;
+    font-family: "Calibre";
+    src: url("../fonts/Calibre-RegularItalic.otf"); 
+    font-weight: 400;
+    font-style: italic;
+    unicode-range: U+000-5FF;
+}
+body {
+    background-color: var(--sundance__neutral5);
+    color: var(--sundance__neutral1);
+    font-size: var(--base-font-size);
+    padding: 2em;
+}
+section {
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+    margin: 25px 0px;
+    padding: 20px;
+}
+strong {
+    font-weight: 700;
+}
+.hidden {
+    display: none;
+}
+.w-full {
+    width: 100%;
+}
+.block {
+    display: block;
+}
+.flex {
+    display: flex;
+}
+.justify-items-center {
+    justify-items: center;
+}
+.align-items-center {
+    align-items: center;
+}
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+/*  font classes */
+.font-ivar {
+    font-family: 'Ivar Headline', Arial, sans-serif;
+}
+.font-helvetica {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+.font-calibre {
+    font-family: 'Calibre', Arial, sans-serif;
+}
+.text-base {
+    font-size: 16px !important;
+}
+
+/* text */
+.text--color__sp-6 {
+    color: #000;
+}
+.text--color__sp-2 {
+    color: #617C6A !important;
+}
+
+/* backgrounds */
+.bg-sp-2 {
+    background-color: var(--sundance__primary2) !important;
+}
+.bg-sn-5 {
+    background-color: var(--sundance__neutral5) !important;
+}
+.bg-sn-6 {
+    background-color: var(--sundance__neutral6) !important;
+}
+
+/* borders */
+.border--color__sp-2 {
+    border-color: #617C6A !important;
+}
+.border--color__sn-6 {
+    border-color: #000;
+}
+.border-r--color__sn-6 {
+    border-right-color: #000 !important;
+}
+.border-t--color__sn-6 {
+    border-top-color: #000 !important;
+}
+.border-b--color__sn-6 {
+    border-bottom-color: #000 !important;
+}
+.border--color__sn-5 {
+    border-color: #fff;
+}
+.border-l--color__sn-5 {
+    border-left-color: #fff !important;
+}
+.border-1 {
+    border: 1px solid !important;
+}
+.border-l-1 {
+    border-left: 1px solid;
+}
+.border-r-1 {
+    border-right: 1px solid;
+}
+.border-t-1 {
+    border-top: 1px solid;
+}
+.border-b-1 {
+    border-bottom: 1px solid;
+}
+.border-none {
+    border: 0;
+}
+.border-0 {
+    border: 0;
+}
+.border-1-sp-2 {
+    border: 1px solid #617C6A !important;
+}
+
+/* rotation */
+.rotate-90:after{
+    transform: rotateZ(90deg);
+    -webkit-transform: rotateZ(90deg);
+}
+.rotate-45:after{
+    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+}
+.rotate-45:before{
+    transform: rotateZ(-45deg);
+    -webkit-transform: rotateZ(-45deg);
+}
+.down-rotate-45:before{
+    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+}
+.down-rotate-45:after{
+    transform: rotateZ(-45deg);
+    -webkit-transform: rotateZ(-45deg);
+}
+/****  end base styles  ********************************/

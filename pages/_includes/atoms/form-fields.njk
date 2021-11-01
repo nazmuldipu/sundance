@@ -1,0 +1,85 @@
+{# 
+    #   @desc   custom checkbox
+    #   @param  copy            string 
+    #   @param  classes  array, class names (optional)
+    #   @param  id              unique ID (optional)
+    #   @param  name            checkbox name (optional)
+    #   @param  classPrefix     class prefix
+    #   @param  checkBoxNumber  check box number (optional)
+    #   @author Ashfaqur Rahman, Sarjis
+ #}
+{% macro checkboxes( classes = ['font-ivar'], id, copy, name, classPrefix='checkboxes-btn', checkBoxNumber ) %}
+    <label class="{{ classPrefix }} {% for class in classes %} {{ class }} {% endfor %}">
+        <input type="checkbox" 
+            class="{{ classPrefix }}__input" 
+            {% if id %} id="{{ id }}" {% endif %}
+            {% if name %} name="{{ name }}" {% endif %}
+        >
+        <span class="{{ classPrefix }}__control"></span>
+        {% if copy %}
+            <span class="{{ classPrefix }}__label">
+                {{ copy | safe }}
+                {% if checkBoxNumber %}
+                    ({{ checkBoxNumber }})
+                {% endif %}
+            </span>
+        {% endif %}
+    </label>
+{% endmacro %}
+
+
+{#
+    #   @desc form input
+    #   @param  object
+    #   @example object : {
+    #       label = '', 
+    #       name = '', 
+    #       id, 
+    #       type="text", 
+    #       placeholder = '', 
+    #       onkeypress= '', 
+    #       pattern = '', 
+    #       maxlength = '', 
+    #       classes = ['form-input__style'], 
+    #       required = true
+    #   }
+    #   @param  suffix
+    #   @param  classes  array, class names (optional)
+    #   @param  copy
+    #   @param  href
+    #   @param  id
+    #   @author Sarjis
+ #}
+{% macro form_input(obj = {}, suffix = false, classes = ['font-calibre'], id, copy, href = '#') %}
+    <label class="{% for class in classes %} {{ class }} {% endfor %}">
+        {% if obj.label %}
+            {{ obj.label }}<br>
+        {% endif %}
+        <input 
+            type="{{ obj.type }}" 
+            placeholder="{{ obj.placeholder }}"
+            class="{% for class in obj.classes %} {{ class }} {% endfor %}" 
+            aria-required="true"
+            aria-label="true"
+            aria-invalid="false"
+            {% if obj.name %} name="{{ obj.name }}" {% endif %}
+            {% if obj.id %} id="{{ obj.id }}" {% endif %}
+            {% if obj.value %} value="{{ obj.value }}" {% endif %}
+            {% if obj.onkeypress %} onkeypress="{{ obj.onkeypress }}" {% endif %}
+            {% if obj.pattern %} pattern="{{ obj.pattern }}" {% endif %} 
+            {% if obj.maxlength %} maxlength="{{ obj.maxlength }}" {% endif %}
+            {% if obj.minlength %} minlength="{{ obj.minlength }}" {% endif %}
+            {% if obj.size %} size="{{ obj.size }}" {% endif %}
+            {{ 'required' if (obj.required == true) }}/>
+
+            {% if suffix and copy %}
+                <a
+                    class="form-label__link"
+                    href="{{ href }}"
+                    {% if id %} id="{{ id }}" {% endif %}
+                >
+                    {{ copy | safe }}
+                </a>
+            {% endif %} 
+    </label>
+{% endmacro %}

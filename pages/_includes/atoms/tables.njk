@@ -1,0 +1,32 @@
+{# 
+    #   @desc tables
+    #   @param  classes  array, class names (optional)
+    #   @param  object
+    #   @author Ashfaqur Rahman, Sarjis
+ #}
+{% macro tables( classes = ['table', 'w-full', 'font-ivar'], tableData = {} ) %}
+    <table class="{% for class in classes %} {{ class }} {% endfor %}">
+        {% if tableData.headers | length > 0 %}
+            <thead class="table--header">
+                <tr class="table--row">
+                    {% for header in tableData.headers %}
+                        <th class="table--row__head">
+                            {{ header }}
+                        </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+        {% endif %}        
+        <tbody class="table--body">
+            {% for body in tableData.bodies %}
+                <tr class="table--row">
+                    {% for data in body.datas %}
+                        <td class="table--row__data">
+                            {{ data }}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endmacro %}

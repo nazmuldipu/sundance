@@ -1,0 +1,40 @@
+{#
+    #   @desc   icon image builder
+    #   @param  classes array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  src,    image path
+    #   @param  alt     string, alternate text (optional)
+    #   @return HTML icon image
+    #   @author Alexander Khost
+#}
+{% macro iconImage( classes = ['icon'], id, src = '', alt = '' )%}
+    <figure
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+    >
+        <img
+            src="{{ src }}"
+            alt="{{ alt }}"
+        ></img>
+    </figure>
+{% endmacro %}
+
+
+{#
+    #   @desc   icon CSS builder
+    #   @param  classes  array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  copy     string (optional)
+    #   @return HTML icon using CSS
+    #   @author Alexander Khost
+#}
+{% macro iconCSS( classes=['icon'], id, copy ) %}
+    <div
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+    >
+        {% if copy %}
+            {{ copy | safe }}
+        {% endif %}
+    </div>
+{% endmacro %}

@@ -4,25 +4,40 @@ pagename: index
 meta_title: "The Index Page"
 permalink: "build/index.html"
 permalinkBypassOutputDir: true
-nickname: "You Thing"
 ---
 
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
-{% from "atoms/a.njk" import a, button_primary, button_secondary %}
+{% from "atoms/a.njk" import a, button_primary, button_secondary, view_details, dropdown %}
+{% from 'atoms/form-fields.njk' import checkboxes, form_input %}
+{% from 'atoms/tables.njk' import tables %}
+{% from 'atoms/box.njk' import box %}
+{% from 'atoms/box.njk' import text_container %}
+{% from 'atoms/accordion.njk' import accordion %}
+{% from 'atoms/icons.njk' import iconImage, iconCSS %}
 
 <header>
     {{ h1( copy='Atoms' ) }}
 </header>
 <section>
     <header>
-        {{ h2( copy='Links' ) }}
+        {{ h2( copy='Buttons' ) }}
     </header>
     <article>
-        {{ a( href='http://example.com', copy='Click Me', id='myLink-1', target='_blank') }}<br>
+        {{ a( id='myLink-1', copy='Click Me', href='http://example.com', target='_blank') }}<br>
         <br>
         {{ button_primary( href='http://example.com', copy='Book a Class', id='myButton-1', target='_blank' ) }}<br>
         <br>
         {{ button_secondary( href='http://example.com', copy='Book a Class', id='myButton-2', target='_blank' ) }}<br>
+        <br>
+        {{ view_details( copy='View Details', href='http://example.com', target='_blank' ) }}
+        <br>
+        <!-- unfortunately, the dropdown buttons rely on z-index to dropdown above content below, and so, stacking dropdowns require an explicit z-index set on the former buttons -Alex Oct 24, 2021 -->
+        <div style="position: relative; z-index: 2;">
+            {{ dropdown( copy='Book A Class', labelId='dropdown-1', items=dropdownItems1 ) }}
+        </div>
+        {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base'], copy='Book Another Class', labelId='dropdown-2', items=dropdownItems2 ) }}
+        {{ dropdown( classes=['dropdown-container--primary2'], labelClasses=['button--primary2', 'button', 'text-base'], copy='Book Another Class', labelId='dropdown-3', items=dropdownItems1 ) }}
+        <br>
     </article>
 </section>
 <section>
@@ -37,4 +52,100 @@ nickname: "You Thing"
         {{ h5( copy='H5 Tag' ) }}
         {{ h6( copy='H6 Tag' ) }}
     </article>
+</section>
+<section>
+    <header>
+        {{ h3( copy='Checkboxes' ) }}
+    </header>
+    <article>
+        {{ checkboxes( copy='Mountain Homes', id='checkbox-1', name='checkbox', checkBoxNumber='13' ) }}
+    </article>
+</section>
+<section>
+    <header>
+        {{ h3( copy='Form Fields' ) }}
+    </header>
+    <article>
+        {{ form_input(obj = emailInput, suffix = true, classes = ['form-label', 'block'], copy = 'Join', href = '#', id = 'join') }}
+        {{ form_input(obj = datePicker) }}
+    </article>
+</section>
+<section>
+    <header>
+        {{ h3( copy='Tables' ) }}
+    </header>
+    <article>
+        {{ tables(tableData = tableData) }}
+    </article>
+</section>
+<section>
+    <header>
+        {{ h3( copy='Box' ) }}
+    </header>
+    <article>
+        {{ box( copy='Clinic Guide', amount = 90, limitCopy = 'Upto 5 People' ) }}
+    </article>
+</section>
+<section>
+    <header>
+        {{ h3( copy='Text Container' ) }}
+    </header>
+    <section>
+        {{ text_container( 
+            title = 'Let Creativity Flow', 
+            copy = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque' 
+        ) }}
+    </section>
+</section>
+<section>
+    <header>
+        {{ h3( copy='Accordion' ) }}
+    </header>
+    <section>
+        {% for item in accordions %}
+            {{ accordion( item ) }}
+        {% endfor %}
+    </section>
+</section>
+<section>
+    <header>
+        {{ h3(copy = 'Social Media') }}
+    </header>
+    <section class="flex align-items-center gap-x-2">
+        {{ iconImage( src='images/facebook.svg', alt='Facebook icon' ) }}<br>
+        {{ iconImage( src='images/twitter.svg', alt='Twitter icon' ) }}<br>
+        {{ iconImage( src='images/instagram.svg', alt='Instagram icon' ) }}<br>
+        {{ iconImage( src='images/youtube.svg', alt='YouTube icon' ) }}<br>
+        {{ iconImage( src='images/tripAdvisor.svg', alt='TripAdvisor icon' ) }}<br>
+    </section>
+</section>
+<section>
+    <header>
+        {{ h3(copy = 'General') }}
+    </header>
+    <section class="flex align-items-center gap-x-2">
+        {{ iconCSS( classes=['icon-css', 'arrow-down', 'down-rotate-45'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'arrow-up', 'rotate-45'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'arrow-right', 'rotate-45'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'arrow-left', 'rotate-45'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'cross-icon', 'rotate-45'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'plus-icon', 'rotate-90'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'hamburger-icon'] ) }}<br>
+        {{ iconCSS( classes=['icon-css', 'icon--filter'], copy='<span></span><span></span><span></span>' ) }}<br>
+    </section>
+</section>
+<section>
+    <header>
+        {{ h3(copy = 'Magazine logos') }}
+    </header>
+    <section class="flex align-items-center gap-x-2">
+        {{ iconImage( src='images/hotels.png', alt='Hotels icon' ) }}<br>
+        {{ iconImage( src='images/travel-leisure.png', alt='Travel Leisure icon' ) }}<br>
+        {{ iconImage( src='images/resource-retreats.png', alt='Resource Retreats icon' ) }}<br>
+        {{ iconImage( src='images/open-table.png', alt='OpenTable icon' ) }}<br>
+        {{ iconImage( src='images/forbes.png', alt='Forbes icon' ) }}<br>
+        {{ iconImage( src='images/conde-nast-traveler-rc.png', alt='Conde Naste Traveler RC icon' ) }}<br>
+        {{ iconImage( src='images/conde-nast-traveler.png', alt='Conde Naste Traveler icon' ) }}<br>
+        {{ iconImage( src='images/liftopia.png', alt='Liftopia icon' ) }}<br>
+    </section>
 </section>

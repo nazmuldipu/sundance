@@ -1,0 +1,39 @@
+{% from 'macros.njk' import scaled_image %}
+{# 
+    #   @param  detailsClasses  array, class names (optional)
+    #   @param  titleClasses  array, class names (optional)
+    #   @param  item     object
+    #   @author Ashfaqur Rahman, Sarjis
+ #}
+{% macro accordion( detailsClasses = ['font-ivar'], titleClasses = ['font-ivar'], item = {} ) %}
+    <div class="accordion">
+        <input 
+            type="checkbox" 
+            {% if item.id %} id="{{ item.id }}" {% endif %}
+            class="{% for class in item.classes %} {{ class }} {% endfor %}"
+            {% if item.name %} name="{{ item.name }}" {% endif %}
+        >
+        <label 
+            {% if item.id %} for="{{ item.id }}" {% endif %} 
+            class="accordion--label toggle--label"
+        >
+            <h2 class="accordion--title heading--4 {% for class in titleClasses %} {{ class }} {% endfor %}">
+                {{ item.title | safe }}
+            </h2>
+        </label>
+        <figure class="toggle-details hidden {% for class in detailsClasses %} {{ class }} {% endfor %}">
+            {% set article = item.article %}
+            <figcaption>
+                <h3>
+                    {{ article.heading }}
+                </h3>
+                {% for text in article.copy %}
+                    <p> {{ text | safe }} </p>
+                {% endfor %}
+            </figcaption>
+            {% if item.image %}
+                {{ scaled_image(imgObj = item.image) }}
+            {% endif %} 
+        </figure>
+    </div>    
+{% endmacro %}

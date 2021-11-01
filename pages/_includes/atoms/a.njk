@@ -1,14 +1,14 @@
 {#
     #   @desc   a basic anchor tag
-    #   @param  href     string, link url
-    #   @param  copy     string, the HTML mark up that is linked
     #   @param  classes  array, class names (optional)
     #   @param  id       string, a unique ID (optional)
+    #   @param  copy     string, the HTML mark up that is linked
+    #   @param  href     string, link url
     #   @param  target   string, the link target location (optional)
     #   @return HTML anchor tag
-    #   @author Alexander Khost
+    #   @author Alexander Khost, Sarjis
 #}
-{% macro a( href='#', copy, classes=['link', 'link--primary'], id, target )%}
+{% macro a( classes=['link', 'link--primary', 'font-calibre', 'text-base'], id, copy, href='#', target )%}
     <a
         href="{{ href }}"
         class="{% for class in classes %} {{ class }} {% endfor %}"
@@ -22,15 +22,15 @@
 
 {#
     #   @desc   a primary button
-    #   @param  href     string, link url
-    #   @param  copy     string, the HTML mark up that is linked
     #   @param  classes  array, class names (optional)
     #   @param  id       string, a unique ID (optional)
+    #   @param  copy     string, the HTML mark up that is linked
+    #   @param  href     string, link url
     #   @param  target   string, the link target location (optional)
     #   @return HTML primary button
-    #   @author Alexander Khost
+    #   @author Alexander Khost, Sarjis
 #}
-{% macro button_primary( href='#', copy, classes=['button', 'button--primary'], id, target )%}
+{% macro button_primary( classes=['button', 'button--primary', 'font-calibre', 'text-base'], id, copy, href='#', target )%}
     <a
         href="{{ href }}"
         class="{% for class in classes %} {{ class }} {% endfor %}"
@@ -44,15 +44,15 @@
 
 {#
     #   @desc   a secondary button
-    #   @param  href     string, link url
-    #   @param  copy     string, the HTML mark up that is linked
     #   @param  classes  array, class names (optional)
     #   @param  id       string, a unique ID (optional)
+    #   @param  copy     string, the HTML mark up that is linked
+    #   @param  href     string, link url
     #   @param  target   string, the link target location (optional)
     #   @return HTML secondary button
-    #   @author Alexander Khost
+    #   @author Alexander Khost, Sarjis
 #}
-{% macro button_secondary( href='#', copy, classes=['button', 'button--secondary'], id, target )%}
+{% macro button_secondary( classes=['button', 'button--secondary', 'font-calibre', 'text-base'], id, copy, href='#', target )%}
     <a
         href="{{ href }}"
         class="{% for class in classes %} {{ class }} {% endfor %}"
@@ -61,4 +61,63 @@
     >
         {{ copy | safe }}
     </a>
+{% endmacro %}
+
+
+{# 
+    #   @desc   view details anchor tag
+    #   @param  classes array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  copy    string, the HTML mark up that is linked
+    #   @param  href    string, link url
+    #   @param  target  string, the link target location (optional)
+    #   @return HTML anchor tag 
+    #   @author Ashfaqur Rahman, Alexander Khost, Sarjis
+ #}
+{% macro view_details( classes = ['view-details', 'font-calibre', 'text-base'], id, copy, href='#', target ) %}
+    <a 
+        {% if href %} href="{{ href }}" {% endif %} 
+        {% if target %} target="{{ target }}" {% endif %}
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+    >
+        <span class="icon"></span>{{ copy | safe }}
+    </a>
+{% endmacro %}
+
+
+{#
+    #   @desc   a dropdown button with a list of links
+    #   @param  classes         array, class names (optional)
+    #   @param  id              string, a unique ID (optional)
+    #   @param  copy            string, the dropdown copy
+    #   @param  labelClasses    array, label class names (optional)
+    #   @param  labelId         string, a unique label button ID
+    #   @param  items           array, an array of dropdown links
+    #   @return HTML primary dropdown
+    #   @author Alexander Khost, Sarjis
+#}
+{% macro dropdown( classes=['dropdown-container--primary'], labelClasses=['button--primary', 'button', 'font-calibre', 'text-base'], listClasses = ['font-ivar'], id, copy, labelId='dropdown-1', items = [] )%}
+    <div
+        class="dropdown-container {% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+    >
+        <input type="checkbox" class="dropdown-container__toggle" id="{{ labelId }}">
+        <label
+            for="{{ labelId }}"
+            class="dropdown-button {% for class in labelClasses %} {{ class }} {% endfor %}"
+        >
+            {{ copy | safe }}
+            <span class="dropdown-button__arrow"></span>
+        </label>
+        <ul class="dropdown-list {% for class in listClasses %} {{ class }} {% endfor %}">
+            {% for item in items %}
+                <li class="dropdown-list__list-item">
+                    <a href="{{ item.url }}" target="{{ item.target }}" class="dropdown-list-item__anchor">
+                        {{ item.copy | safe }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endmacro %}
