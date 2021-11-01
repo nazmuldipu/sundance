@@ -97,7 +97,7 @@
     #   @return HTML primary dropdown
     #   @author Alexander Khost, Sarjis
 #}
-{% macro dropdown( classes=['dropdown-container--primary'], labelClasses=['button--primary', 'button', 'font-calibre', 'text-base'], id, copy, labelId='dropdown-1', items = [] )%}
+{% macro dropdown( classes=['dropdown-container--primary'], labelClasses=['button--primary', 'button', 'font-calibre', 'text-base'], listClasses = ['font-ivar'], id, copy, labelId='dropdown-1', items = [] )%}
     <div
         class="dropdown-container {% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}
@@ -110,7 +110,7 @@
             {{ copy | safe }}
             <span class="dropdown-button__arrow"></span>
         </label>
-        <ul class="dropdown-list font-ivar">
+        <ul class="dropdown-list {% for class in listClasses %} {{ class }} {% endfor %}">
             {% for item in items %}
                 <li class="dropdown-list__list-item">
                     <a href="{{ item.url }}" target="{{ item.target }}" class="dropdown-list-item__anchor">
