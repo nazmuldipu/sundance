@@ -137,7 +137,7 @@
             "target": "_self"
         }
     ],
-    "cardImage": [
+    "horizontalCardImage": [
         {
             "id":"card-1",
             "title":"Visiting Artist Program",
