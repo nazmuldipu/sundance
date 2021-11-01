@@ -1,14 +1,15 @@
 {# 
     #   @desc   custom checkbox
     #   @param  copy            string 
+    #   @param  classes  array, class names (optional)
     #   @param  id              unique ID (optional)
     #   @param  name            checkbox name (optional)
     #   @param  classPrefix     class prefix
     #   @param  checkBoxNumber  check box number (optional)
     #   @author Ashfaqur Rahman, Sarjis
  #}
-{% macro checkboxes( copy, id, name, classPrefix='checkboxes-btn', checkBoxNumber ) %}
-    <label class="{{ classPrefix }} font-ivar">
+{% macro checkboxes( classes = ['font-ivar'], copy, id, name, classPrefix='checkboxes-btn', checkBoxNumber ) %}
+    <label class="{{ classPrefix }} {% for class in classes %} {{ class }} {% endfor %}">
         <input type="checkbox" 
             class="{{ classPrefix }}__input" 
             {% if id %} id="{{ id }}" {% endif %}
@@ -42,10 +43,15 @@
     #       classes = ['form-input__style'], 
     #       required = true
     #   }
+    #   @param  suffix
+    #   @param  classes  array, class names (optional)
+    #   @param  copy
+    #   @param  href
+    #   @param  id
     #   @author Sarjis
  #}
-{% macro form_input(obj = {}, suffix = false, classes = [], copy, href = '#', id) %}
-    <label class="{% for class in classes %} {{ class }} {% endfor %} font-calibre">
+{% macro form_input(obj = {}, suffix = false, classes = ['font-calibre'], copy, href = '#', id) %}
+    <label class="{% for class in classes %} {{ class }} {% endfor %}">
         {% if obj.label %}
             {{ obj.label }}<br>
         {% endif %}
