@@ -8,7 +8,7 @@
     #   @param  checkBoxNumber  check box number (optional)
     #   @author Ashfaqur Rahman, Sarjis
  #}
-{% macro checkboxes( classes = ['font-ivar'], copy, id, name, classPrefix='checkboxes-btn', checkBoxNumber ) %}
+{% macro checkboxes( classes = ['font-ivar'], id, copy, name, classPrefix='checkboxes-btn', checkBoxNumber ) %}
     <label class="{{ classPrefix }} {% for class in classes %} {{ class }} {% endfor %}">
         <input type="checkbox" 
             class="{{ classPrefix }}__input" 
@@ -50,7 +50,7 @@
     #   @param  id
     #   @author Sarjis
  #}
-{% macro form_input(obj = {}, suffix = false, classes = ['font-calibre'], copy, href = '#', id) %}
+{% macro form_input(obj = {}, suffix = false, classes = ['font-calibre'], id, copy, href = '#') %}
     <label class="{% for class in classes %} {{ class }} {% endfor %}">
         {% if obj.label %}
             {{ obj.label }}<br>
