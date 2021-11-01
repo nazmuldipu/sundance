@@ -1,15 +1,15 @@
 /****  start molecules  ********************************/
-.card-container{
+.horizontal__card-container{
     display: grid;
     width: 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-.card-image{
+.horizontal__card-image{
     overflow: hidden;
     object-fit: cover;
     object-position: center;
 }
-.card-text{
+.horizontal__card-text{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,16 +18,16 @@
 }
 /* Mobile (Screen size : 375 pts) */
 @media screen and (max-width: 375px) {
-    .card-container{
+    .horizontal__card-container{
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
-    .card-container:nth-child(even) .card-image{
+    .horizontal__card-container:nth-child(even) .horizontal__card-image{
        order: 1;
     }
-    .card-container:nth-child(odd) .card-text{
+    .horizontal__card-container:nth-child(odd) .horizontal__card-text{
         order: 2;
     }
-    .card-text{
+    .horizontal__card-text{
         text-align: center;
         align-items: center;
         padding: 40px 40px;
@@ -36,16 +36,16 @@
 
 /* Tab (Screen size : 1200 pts) */
 @media screen and (min-width: 376px) and (max-width: 1200px) {
-    .card-container{
+    .horizontal__card-container{
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
-    .card-container:nth-child(even) .card-image{
+    .horizontal__card-container:nth-child(even) .horizontal__card-image{
        order: 1;
     }
-    .card-container:nth-child(odd) .card-text{
+    .horizontal__card-container:nth-child(odd) .horizontal__card-text{
         order: 2;
     }
-    .card-text{
+    .horizontal__card-text{
         text-align: center;
         align-items: center;
         padding: 40px 40px;

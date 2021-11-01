@@ -1,11 +1,11 @@
 {% from 'macros.njk' import scaled_image %}
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from "atoms/a.njk" import view_details %}
-{% macro card(id = '', items, containerBackground = '', figureClass = '', figcaptionClass = '') %}
+{% macro horrizontalCard(id = '', items, containerBackground = '', figureClass = '', figcaptionClass = '') %}
    <section class="{% if containerBackground %} containerBackground {% endif %}">
          {% for item in items %}
-            <section class="card-container">        
-                <figure class="card-image {{ figureClass }}
+            <section class="horizontal__card-container">        
+                <figure class="horizontal__card-image w-full {{ figureClass }}
                     {% if item.imageOrientation == 'left' %}
                         order-1
                     {% elif item.imageOrientation == 'right' %}
@@ -15,7 +15,7 @@
                 >
                     <img src={{item.image}}/>
                 </figure>
-                <figcaption class="card-text {{ figcaptionClass }}
+                <figcaption class="horizontal__card-text {{ figcaptionClass }}
                     {% if item.imageOrientation == 'left' %}
                         order-2
                     {% elif item.imageOrientation == 'right' %}

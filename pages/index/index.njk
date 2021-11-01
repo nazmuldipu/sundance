@@ -14,7 +14,7 @@ permalinkBypassOutputDir: true
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
-{% from 'molecules/card.njk' import card %}
+{% from 'molecules/card.njk' import horrizontalCard %}
 
 <header>
     {{ h1( copy='Atoms' ) }}
@@ -155,7 +155,7 @@ permalinkBypassOutputDir: true
 </section>
 
 <section>
-    {{ card(cardImage) }}
+    {{ horrizontalCard(cardImage) }}
 </section>
 
 <section style="padding-bottom:3rem">
