@@ -16,6 +16,25 @@
     padding-left: 80px;
     padding-right: 80px;
 }
+.card-container{
+    display: grid;
+    max-width: 328px;
+    text-align: center;
+    background-color: var(--sundance__neutral5);
+    --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.card-image{
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+}
+.card-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 32px;
+}
 /* Mobile (Screen size : 375 pts) */
 @media screen and (max-width: 375px) {
     .horizontal__card-container{
