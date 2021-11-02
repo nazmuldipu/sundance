@@ -1,0 +1,63 @@
+{% macro dump_data(env,globalCMS,pageCMS) %}
+        <!-- begin GraphQL data dump -->
+    {% if env == 'local' %}
+    <style>
+    #data-dump-view-toggle{
+        height: 15px;
+        padding: 5px;
+        position: fixed;
+        color: black !important;
+        bottom: 10px !important;
+        background-color: yellow;
+        border: 1px solid black;
+        border-radius: 4px;
+    }
+    #data-dump-root{
+        width: 97%;
+        top: 5px;
+        bottom: 70px;
+        position: fixed;
+        z-index: 99999;
+    }
+    </style>
+        <div id="data-dump-view-toggle" class="inline-block cursor-pointer px-4 py-1 bg-mar-main-2 text-sm text-white uppercase tracking-wider fixed bottom-4 left-4">Data Toggle</div>
+        <pre id="data-dump-root" class="fixed inset-0 text-sm text-mono overflow-y-scroll p-1 pb-4 border-4 border-mar-main-2 bg-mar-main-5 m-16 sm:m-32" style="display: none"></pre>
+        <span id="data-dump-underlay" class="fixed inset-0 bg-black bg-opacity-25" style="display: none; z-index: 999998"></span>
+        {# <style>#data-dump-view-toggle { z-index: 1000000 } #data-dump-root { display: none; z-index: 999999 } #data-dump-root .string { color: gray; } #data-dump-root .number { color: darkorange; } #data-dump-root .boolean { color: blue; } #data-dump-root .null { color: magenta; } #data-dump-root .key { color: coral; }</style> #}
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.0.0/jsoneditor.css" rel="stylesheet" type="text/css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.0.0/jsoneditor.min.js"></script>
+
+        <script>
+            const editor = new JSONEditor(
+                document.getElementById('data-dump-root'),
+                {
+                    modes: ['code', 'tree'],
+                    mode: 'code',
+                    ace: ace
+                }
+            )
+
+            editor.set({
+                globalCMS: {{globalCMS|json|safe}},
+                pageCMS: {{pageCMS|json|safe}}
+            })
+
+            // get json
+            const updatedJson = editor.get();
+            (function() {
+                document.getElementById('data-dump-view-toggle').addEventListener("click", function(){
+                    let el = document.getElementById('data-dump-root');
+                    let el2 = document.getElementById('data-dump-underlay');
+                    el2.style.display = (el.style.display === "none") ? "block" : "none";
+                    el.style.display = (el.style.display === "none") ? "block" : "none";
+                })
+            })();
+            console.log({
+                globalCMS: {{globalCMS|json|safe}},
+                pageCMS: {{pageCMS|json|safe}}
+            })
+    </script>
+    {% endif %}
+    <!-- end GraphQL data dump-->
+{% endmacro %}

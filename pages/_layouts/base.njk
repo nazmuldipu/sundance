@@ -3,9 +3,16 @@ pagename: base
 meta_title: Skipper
 meta_description: Some description here
 ---
+
+{% from "dump_data.njk" import dump_data %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
+    <!-- begin GraphQL data dump -->
+    {{ dump_data(meta.env,globalCMS,pageCMS) }}
+    <!-- end GraphQL data dump-->
+
 <!-- start Google Analytics -->
         {% if ga_id %}
             <script async src="https://www.googletagmanager.com/gtag/js?id={{ga_id}}"></script>

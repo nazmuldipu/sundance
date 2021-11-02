@@ -3,6 +3,7 @@
 const htmlmin = require('html-minifier');
 const { basename } = require('path');
 const { getImgSizes, getSrcSet, buildOutputDir } = require('./tooling/eleventy.cjs');
+const util = require('util');
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addNunjucksShortcode('access', function(array, index) {
@@ -29,6 +30,12 @@ module.exports = function(eleventyConfig) {
                 return type;
         }
     });
+
+    // dump object data.
+    eleventyConfig.addNunjucksFilter( 'json', function ( value ) {
+        let str =  util.inspect(value,{depth: null});
+        return str
+    } )
 
     eleventyConfig.addPassthroughCopy('videos');
     

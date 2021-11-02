@@ -1,0 +1,12 @@
+{% macro seo_tags(page,sdatas) %}
+    {% set pageSdata = sdatas[page] if sdatas[page].length else sdatas['global-cms'] %}
+    
+    {% for sdata in pageSdata %}
+        {% if sdata.type == 'title' %}
+            <title>{{sdata.content}}</title>
+        {% elif sdata.type == 'meta' %}
+            <meta name="{{sdata.name}}" content="{{sdata.content}}">
+        {% endif %}
+    {% endfor %}
+    
+{% endmacro %}
