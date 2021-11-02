@@ -5,5 +5,22 @@
             "href": "fonts/SpaceMono-Regular.ttf",
             "type": "font/ttf"
         }
+    ],
+    "dropdownItems1": [
+        {
+            "copy": "Book A Class 1",
+            "url": "http://example.com/",
+            "target": "_self"
+        },
+        {
+            "copy": "Book A Class <strong>two</strong> Book A Class Book A Class Book A Class ",
+            "url": "http://example.com/",
+            "target": "_blank"
+        },
+        {
+            "copy": "Book A Class 3",
+            "url": "http://example.com/",
+            "target": "_self"
+        }
     ]
 }
