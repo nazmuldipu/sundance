@@ -1,5 +1,9 @@
 @import "./variables.css";
 /****  start molecules  ********************************/
+.details-widget {
+    margin-left: 8px;
+    margin-right: 8px;
+}
 .details-widget--text__small {
     max-width: 504px;
     padding: 1rem;
@@ -9,7 +13,7 @@
 .details-widget--text__large {
     max-width: 576px;
     margin-top: 1.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     line-height: 27px;
 }
 .details-widget--actions {
@@ -42,6 +46,10 @@
 .details-widget--heading {
     padding-bottom: 1rem;
     font-size: 24px;
+}
+.details-widget--text__colored {
+    display: block;
+    margin-bottom: 1.5rem;
 }
 .newsletter {
   text-align: center;
@@ -271,6 +279,9 @@
 
 /* Desktop to large */
 @media screen and (min-width: 1280px) {
+    .details-widget {
+        margin: 0;
+    }
     .details-widget--actions {
         display: flex;
     }
@@ -291,6 +302,12 @@
     .details-widget--breadcrumbs-title {
         padding-top: 3rem;
         padding-bottom: 3rem;
+    }
+    .details-widget--text__colored {
+        display: none;
+    }
+    .details-widget--text__large {
+        margin-bottom: 2.5rem;
     }
 }
 

@@ -155,6 +155,9 @@ strong {
 .text--color__sp-2 {
     color: #617C6A !important;
 }
+.text--color__sp-1 {
+    color: #458691 !important;
+}
 .text-white{
     color: white;
 }

@@ -47,6 +47,7 @@
         "heading": '<span class="bold">Tree Room</span>',
         "p1": 'Some hiking trails from the lift are temporarily closed for the safety of our guests during lift line construction.',
         "p2": 'Enjoy the romantic atmosphere of candlelight and soft illumination accenting beautiful Native American art from Robert Redford’s private collection as you savor fresh, seasonal mountain cuisine.',
+        "p3": "Children under 12 not permitted.",
         "criteria_items": [
         {
             "title": "Hours",
@@ -125,6 +126,11 @@
         <p class="details-widget--text__large mx-auto font-ivar">
             {{ detailsData2.p2 }}
         </p>
+        {% if detailsData2.p3 %}
+            <p class="details-widget--text__colored font-ivar text--color__sp-1">
+                {{ detailsData2.p3 }}
+            </p>
+        {% endif %}
         <div class="details-widget--actions justify-content-center gap-x-1">
             <div class="details-widget--actions__item">
                 {{ dropdown( copy='Book Now', labelId='details-widget-dropdown-3', items = dropdownItems1 ) }}
