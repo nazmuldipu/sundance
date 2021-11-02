@@ -153,6 +153,10 @@
       align-items: center;
       padding: 40px 40px;
   }
+  .card-sample__example{
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    margin-bottom: 2rem;
+  }
   .newsletter {
     padding: 80px 29px;
   }
