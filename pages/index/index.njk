@@ -15,6 +15,7 @@ permalinkBypassOutputDir: true
 {% from 'atoms/accordion.njk' import accordion %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
 {% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/bridge.njk' import bridge %}
 
 <header>
     {{ h1( copy='Atoms' ) }}
@@ -104,7 +105,7 @@ permalinkBypassOutputDir: true
     </header>
     <section>
         {% for item in accordions %}
-            {{ accordion( item ) }}
+            {{ accordion( item = item ) }}
         {% endfor %}
     </section>
 </section>
@@ -151,5 +152,7 @@ permalinkBypassOutputDir: true
     </section>
 </section> #}
 
-
 {{newsletter()}}
+
+{{bridge()}}
+
