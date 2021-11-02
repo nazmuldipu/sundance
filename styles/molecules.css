@@ -1,66 +1,103 @@
 /****  start molecules  ********************************/
-.newsletter{
-    text-align: center;
-    display: block;
-    background-color: var(--sundance__secondary3);
+.newsletter {
+  text-align: center;
+  display: block;
+  background-color: var(--sundance__secondary3);
 }
-.heading--newsletter{
-    font-weight: 600;
-    line-height: 110%;
+.heading--newsletter {
+  font-weight: 600;
+  line-height: 110%;
 }
-.btn-newsletter{
+.btn-newsletter {
+  width: 180px;
+  height: 54px;
+  font-size: 16px;
+  line-height: 140%;
+  border: none;
+  border-radius: 27px;
+  padding-top: 8px;
+}
+.newnletter-input {
+  width: 392px;
+  text-align: center;
+  margin-bottom: 16px;
+  padding: 19px 16px 19px 16px;
+  font-size: 16px;
+  line-height: 140%;
+  border: none;
+  border-radius: 35px;
+  background: var(--sundance__neutral4);
+}
+/* Mobile (Screen size : 375 pts) */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .newsletter {
+    padding: 80px 29px;
+  }
+  .heading--newsletter {
+    font-size: 35px;
+    padding-bottom: 33px;
+  }
+  .btn-newsletter {
     width: 240px;
     height: 72px;
     font-size: 25px;
     line-height: 30px;
-    border: none;
     border-radius: 36px;
     padding-top: 10px;
-}
-/* Mobile (Screen size : 375 pts) */
-@media screen and (min-width: 320px) and (max-width: 767px) {
-    .newsletter{
-        padding: 80px 29px;
-    }
-    .heading--newsletter{
-        font-size: 35px;
-        padding-bottom: 33px;
-    }
+  }
+  .newnletter-input {
+    max-width: 90%;
+    width: 302px;
+    margin-bottom: 15px;
+    font-size: 25px;
+  }
 }
 
 /* Tab (Screen size : 1200 pts) */
 @media screen and (min-width: 768px) and (max-width: 1279px) {
-    .newsletter{
-        padding: 89px 0;
-    }
-    .heading--newsletter{
-        font-size: 42px;
-        padding-bottom: 40px;
-    }
+  .newsletter {
+    padding: 89px 0;
+  }
+  .heading--newsletter {
+    font-size: 42px;
+    padding-bottom: 40px;
+  }
 }
-
 
 /* Desktop (Screen size : 1440 pts) */
 @media screen and (min-width: 1280px) and (max-width: 1919px) {
-    .newsletter{
-        padding: 89px 0;
-    }
-    .heading--newsletter{
-        font-size: 42px;
-        padding-bottom: 40px;
-    }
+  .newsletter {
+    padding: 89px 0;
+  }
+  .heading--newsletter {
+    font-size: 42px;
+    padding-bottom: 40px;
+  }
 }
 
 /* Desktop XXL (Screen size : 1920 pts) */
 @media screen and (min-width: 1920px) {
-    .newsletter{
-        padding-top: 281px;
-        padding-bottom: 158px;
-    }
-    .heading--newsletter{
-        font-size: 50px;
-        padding-bottom: 62px;
-    }
+  .newsletter {
+    padding-top: 281px;
+    padding-bottom: 158px;
+  }
+  .heading--newsletter {
+    font-size: 50px;
+    padding-bottom: 62px;
+  }
+  .btn-newsletter {
+    width: 240px;
+    height: 72px;
+    font-size: 25px;
+    line-height: 30px;
+    border-radius: 36px;
+    padding-top: 10px;
+  }
+  .newnletter-input {
+    width: 533px;
+    margin-bottom: 23px;
+    font-size: 25px;
+  }
 }
 
 /****  end molecules  ********************************/
