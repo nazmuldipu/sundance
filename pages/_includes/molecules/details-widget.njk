@@ -1,24 +1,51 @@
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
-{% from "atoms/a.njk" import dropdown %}
+{% from "atoms/a.njk" import a, dropdown %}
+{% set criteria_items = [
+    {
+        "title": "Hours",
+        "url": "View Hours"
+    },
+    {
+        "title": "Map",
+        "url": "View Map"
+    },
+    {
+        "title": "Waiver",
+        "url": "Sign"
+    },
+    {
+        "title": "Safety",
+        "url": "Review"
+    }
+] %}
 {% macro details_widget_desktop() %}
-    <article>
+    <article class="details-widget">
         <header>
-            {% set smallHeading = 'Homepage | Summer Activities | Mountain Bike Lift Rides'%}
-            {% set largeHeading = 'Over 25 Miles of Beautiful Single-track'%}
-            {{ h6(copy = smallHeading) }}
-            {{ h1(copy = largeHeading) }}
+            {% set topHeading1 = 'Homepage | Summer Activities | <span class="bold">Mountain Bike Lift Rides</span>'%}
+            {% set topHeading2 = '<span class="bold">Over 25 Miles of Beautiful Single-track</span>'%}
+            {{ h6(copy = topHeading1, classes = ['details-widget--top-heading-1','font-calibre', 'text-sm']) }}
+            {{ h2(copy = topHeading2, classes = ['details-widget--top-heading-2','heading--2', 'font-ivar']) }}
         </header>
-        <p class="details-widget--text__small bg-ss-4">
+        <p class="details-widget--text__small mx-auto bg-ss-4 font-calibre">
             Certain bike trails may close at any time due to mountain construction projects. Please abide by any closures.
         </p>
-        <p class="details-widget--text__large">
+        <p class="details-widget--text__large mx-auto text-lg-2 font-ivar">
             Sundance offers 25+ miles of lift-serviced, single-track mountain biking with exciting terrain and breathtaking vistas.
         </p>
-        <div class="flex align-items-center">
+        <div class="flex justify-content-center gap-x-1">
             <div style="position: relative; z-index: 2;">
-                {{ dropdown( copy='Book A Class', labelId='dropdown-1', items = data.dropdownItems1 ) }}
+                {{ dropdown( copy='Book A Class', labelId='details-widget-dropdown-1', items = data.dropdownItems1 ) }}
             </div>
-            {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base'], copy='Book A Class', labelId='dropdown-2', items = data.dropdownItems1 ) }}
+            {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base', 'font-calibre'], copy='Book A Class', labelId='details-widget-dropdown-2', items = data.dropdownItems1 ) }}
         </div>
+        <ul class="details-widget--criteria-list mx-auto">
+            {% set class = 'flex details-widget--criteria-list__item border-b-1 border--color__sp-4' %}
+            {% for item in criteria_items %}
+                <li class="{{ class }}">
+                    <div class="font-ivar">{{ item.title }}</div>
+                    <div class="font-calibre">{{ a(copy = item.url) }}</div>
+                </li>
+            {% endfor %}
+        </ul>
     </article>
 {% endmacro %}

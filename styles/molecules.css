@@ -1,5 +1,38 @@
 /****  start molecules  ********************************/
-
+.details-widget--text__small {
+    max-width: 504px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+}
+.details-widget--text__large {
+    max-width: 576px;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+.details-widget--criteria-list {
+   max-width: 376px; 
+}
+.details-widget--criteria-list__item {
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.details-widget--criteria-list__item:nth-child(1) {
+    padding-top: 0 !important;
+    margin-top: 2.5rem;
+}
+.details-widget--criteria-list__item:last-child {
+    margin-bottom: 3rem;
+}
+.details-widget--top-heading-1 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.details-widget--top-heading-2 {
+    padding-bottom: 1.5rem;
+}
 /* Mobile (Screen size : 375 pts) */
 @media screen and (min-width: 320px) and (max-width: 767px) {
 }
