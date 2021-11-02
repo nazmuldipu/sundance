@@ -152,6 +152,47 @@
             "image":"https://via.placeholder.com/800x400",
             "imageOrientation":"right"
         }
+    ],
+    "cardImage":[
+        {
+            "id":"card-1",
+            "secondaryHeading":"SuitEs & Rooms",
+            "title":"Room Type",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image":"https://via.placeholder.com/800x400",
+            "criterias":[
+                {
+                  "p": "SLEEPS 2-4 / 1-2 BR"
+                }
+            ],
+            "buttons":[
+                {
+                    "copy": "view details",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                }
+            ]
+        }
+    ],
+    "cardImage2":[
+        {
+            "id":"card-1",
+            "secondaryHeading":"SuitEs & Rooms",
+            "title":"Room Type",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image":"https://via.placeholder.com/800x400",
+            "criterias":[
+                {
+                  "p": "SLEEPS 2-4 / 1-2 BR"
+                }
+            ],
+            "button":
+                {
+                    "copy": "Book Now",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                }
+        }
     ]
 
 }
