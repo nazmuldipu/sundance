@@ -1,10 +1,11 @@
 {# 
     #   @desc tables
+    #   @param  classes  array, class names (optional)
     #   @param  object
     #   @author Ashfaqur Rahman, Sarjis
  #}
-{% macro tables( tableData = {} ) %}
-    <table class="table w-full font-ivar">
+{% macro tables( classes = ['table', 'w-full', 'font-ivar'], tableData = {} ) %}
+    <table class="{% for class in classes %} {{ class }} {% endfor %}">
         {% if tableData.headers | length > 0 %}
             <thead class="table--header">
                 <tr class="table--row">
