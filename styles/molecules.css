@@ -1,13 +1,151 @@
 /****  start molecules  ********************************/
+.bridge {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-bottom: 100px; /* TODO: need to remove later */
+}
+.bridge-top-frame {
+  width: 100%;
+  height: 360px;
+  color: var(--sundance__neutral5);
+  background-color: var(--sundance__primary3);
+  text-align: center;
+  margin: 0 auto;
+}
+.bridge-header{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 110%;
+  padding-bottom: 32px;
+  padding-top: 48px;
+}
+.bridge-text{
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding-bottom: 32px;
+}
+.bridge-container {
+  margin: 0 auto;
+  margin-top: -180px;
+  max-width: 1084px;
+  overflow: hidden;
+  padding-bottom: 44px;
+  position: relative;
+}
+.swiper-slide{
+  width: auto !important;
+}
+
+.bridge-box {
+  height: 264px;
+  width: 264px;
+  background-color: var(--sundance__secondary3);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.06), 0px 4px 24px rgba(0, 0, 0, 0.06);
+}
+.bridge-nav {
+  width: 100%;
+  z-index: 10;
+  position: absolute;
+  top: 108px;
+  display: flex;
+  justify-content: space-between; 
+}
+.bridge-nav-icon {
+  cursor: pointer;
+  position: relative;
+  margin: 0 16px;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  background-color: var(--sundance__neutral3);
+}
+.bridge-nav-icon:before,
+.bridge-nav-icon:after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  border: 1px solid #fff;
+  background-color: white;
+}
+/* 
+.pb-4 {
+  padding-bottom: 32px;
+}
+.pt-6 {
+  padding-top: 48px;
+}
+.tracking-wider {
+  
+}
+.font-medium {
+  font-weight: 500;
+} */
 
 /* Mobile (Screen size : 375 pts) */
 @media screen and (min-width: 320px) and (max-width: 767px) {
+  .bridge-top-frame {
+    height: 216px;
+  }
+  .bridge-header{
+    font-size: 24px;
+    padding-top: 32px;
+    padding-bottom: 16px;
+  }
+  .bridge-text{
+    font-size: 14px;
+    padding-bottom: 16px;
+  }
+  .bridge-container {
+    margin-top: -106px;
+    max-width: 296px;
+    padding-bottom: 36px;
+  }
+  .bridge-box-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bridge-box {
+    height: 144px;
+    width: 144px;
+  }
+  .bridge-nav {
+    top: 56px;
+  }
+  .no-mob {
+    display: none;
+  }
+
+  .bridge-nav-icon {
+    height: 32px;
+    width: 32px;
+  }
+  .bridge-nav-icon:before,
+  .bridge-nav-icon:after {
+    width: 11px;
+  }
+  .arrow-left:before {
+    left: 8px;
+    top: 11px;
+  }
+  .arrow-left:after {
+    left: 8px;
+    top: 20px;
+  }
+  .arrow-right:before {
+    left: 12px;
+    top: 20px;
+  }
+  .arrow-right:after {
+    left: 12px;
+    top: 11px;
+  }
 }
 
 /* Tab (Screen size : 1200 pts) */
 @media screen and (min-width: 768px) and (max-width: 1279px) {
 }
-
 
 /* Desktop (Screen size : 1440 pts) */
 @media screen and (min-width: 1280px) and (max-width: 1919px) {

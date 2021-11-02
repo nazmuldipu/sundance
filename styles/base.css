@@ -56,14 +56,14 @@ body {
     background-color: var(--sundance__neutral5);
     color: var(--sundance__neutral1);
     font-size: var(--base-font-size);
-    padding: 2em;
+    /* padding: 2em; */
 }
-section {
+/* section {
     border: 1px dashed #ccc;
     border-radius: 10px;
     margin: 25px 0px;
     padding: 20px;
-}
+} */
 strong {
     font-weight: 700;
 }
