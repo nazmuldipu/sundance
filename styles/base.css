@@ -56,7 +56,7 @@ body {
     background-color: var(--sundance__neutral5);
     color: var(--sundance__neutral1);
     font-size: var(--base-font-size);
-    padding: 2em;
+    /* padding: 2em; */
 }
 /* section {
     border: 1px dashed #ccc;
@@ -181,6 +181,9 @@ strong {
 .text--color__sp-1 {
     color: #458691 !important;
 }
+.text-white{
+    color: white;
+}
 /* padding class */
 .pb-4{
     padding-bottom: 2rem !important;
@@ -195,7 +198,9 @@ strong {
 .bg-sn-6 {
     background-color: var(--sundance__neutral6) !important;
 }
-
+.bg-primary2{
+    background-color: var(--sundance__primary2);
+}
 /* borders */
 .border--color__sp-2 {
     border-color: #617C6A !important;

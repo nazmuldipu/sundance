@@ -3,7 +3,7 @@
 # Getting Started
 
 ## Development and Environment Prerequisites
-- node v14.x -- we recommend installing node and npm via Node Version Manager ([windows](https://github.com/coreybutler/nvm-windows)) ([unix](https://github.com/nvm-sh/nvm))
+- node v14.8+ -- we recommend installing node and npm via Node Version Manager ([windows](https://github.com/coreybutler/nvm-windows)) ([unix](https://github.com/nvm-sh/nvm))
 
 ## Some relevant technologies we use
 - [TailwindCSS](https://tailwindcss.com/docs) for a CSS Framework
