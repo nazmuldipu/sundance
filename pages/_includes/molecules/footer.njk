@@ -17,7 +17,7 @@
                         {% if not link.icon %}
                             <nav>{{ a( id=link.label, copy=link.label, href=link.url, classes=['footer-link'], target=trg) }}</nav>
                         {% else %}
-                            {{ a( id=link.label, copy=iconImage( src=link.icon, alt=link.label ), href=link.url, classes=['footer-link'], target=trg) }}
+                            {{ a( id=link.label, copy=iconImage( src=link.icon, alt=link.label, classes = ['footer-icon'] ), href=link.url, classes=['footer-link'], target=trg) }}
                         {% endif %}
                     {% endfor %}
                 </section>
