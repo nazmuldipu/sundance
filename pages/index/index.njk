@@ -17,6 +17,8 @@ permalinkBypassOutputDir: true
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/bridge.njk' import bridge %}
 
+{% from 'molecules/footer.njk' import footer %}
+
 <header>
     {{ h1( copy='Atoms' ) }}
 </header>
@@ -152,7 +154,12 @@ permalinkBypassOutputDir: true
     </section>
 </section> #}
 
-{{newsletter()}}
+<header>
+    {{ h1( copy='Molecules' ) }}
+</header>
 
 {{bridge()}}
 
+{{newsletter()}}
+
+{{footer(data.footer)}}

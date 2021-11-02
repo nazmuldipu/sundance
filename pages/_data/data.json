@@ -1,9 +1,85 @@
 {
-    "ga_id": "FAKE_ID",
-    "preload_fonts": [
-        {
-            "href": "fonts/SpaceMono-Regular.ttf",
-            "type": "font/ttf"
-        }
-    ]
+  "ga_id": "FAKE_ID",
+  "preload_fonts": [
+    {
+      "href": "fonts/SpaceMono-Regular.ttf",
+      "type": "font/ttf"
+    }
+  ],
+  "footer": {
+    "sections": [
+      {
+        "title": "Activities",
+        "links": [
+          { "label": "Winter", "url": "#", "external" : false, "icon":"" },
+          { "label": "Summer", "url": "#", "external" : false, "icon":"" },
+          { "label": "Year-Round", "url": "#", "external" : false, "icon":"" }
+        ]
+      },
+      {
+        "title": "Lodging",
+        "links": [
+          { "label": "Mountain Homes", "url": "#", "external" : false, "icon":"" },
+          { "label": "Rooms & Suites", "url": "#", "external" : false, "icon":"" },
+          { "label": "Special + Packages", "url": "#", "external" : false, "icon":"" },
+          { "label": "Book Your Stay", "url": "#", "external" : false, "icon":"" }          
+        ]
+      },
+      {
+        "title": "Dining",
+        "links": [
+          { "label": "Restaurants", "url": "#", "external" : false, "icon":"" },
+          { "label": "Fast Casuals", "url": "#", "external" : false, "icon":"" },
+          { "label": "Catering", "url": "#", "external" : false, "icon":"" }          
+        ]
+      },
+      {
+        "title": "Events",
+        "links": [
+          { "label": "Calender", "url": "#", "external" : false, "icon":"" },
+          { "label": "Summer Theater", "url": "#", "external" : false, "icon":"" },
+          { "label": "Author Series", "url": "#", "external" : false, "icon":"" },
+          { "label": "Music at Sundance", "url": "#", "external" : false, "icon":"" }
+        ]
+      },
+      {
+        "title": "Groups",
+        "links": [
+          { "label": "Meetings & Events", "url": "#", "external" : false, "icon":"" },
+          { "label": "Weddings", "url": "#", "external" : false, "icon":"" },
+          { "label": "Venues", "url": "#", "external" : false, "icon":"" }
+        ]
+      },
+      {
+        "title": "Shop",
+        "links": [
+          { "label": "The General Store", "url": "#", "external" : false, "icon":"" },
+          { "label": "SMO", "url": "#", "external" : false, "icon":"" },
+          { "label": "Shop Online", "url": "#", "external" : false, "icon":"" }
+        ]
+      },
+      {
+        "title": "About",
+        "links": [
+          { "label": "History of Sundance", "url": "#", "external" : false, "icon":"" },
+          { "label": "Conserve", "url": "#", "external" : false, "icon":"" },
+          { "label": "Safety", "url": "#", "external" : false, "icon":"" },
+          { "label": "Career", "url": "#", "external" : false, "icon":"" },
+          { "label": "Contacts", "url": "#", "external" : false, "icon":"" }
+        ]
+      },
+      {
+        "title": "Social",
+        "links": [
+          { "label": "Facebook icon", "url": "#", "external" : true, "icon":"images/facebook.svg" },
+          { "label": "Twitter icon", "url": "#", "external" : true, "icon":"images/twitter.svg" },
+          { "label": "TripAdvisor icon", "url": "#", "external" : true, "icon":"images/tripAdvisor.svg" },
+          { "label": "YouTube icon", "url": "#", "external" : true, "icon":"images/youtube.svg" },
+          { "label": "Instagram icon", "url": "#", "external" : true, "icon":"images/instagram.svg" }
+        ]
+      }
+    ],
+    "bottom":{"image":"images/footer_partners.png", "label":"&copy;2021 Sundance Mountain Resort"},
+    "static_image":"images/s_dot.png"
+  }
 }
