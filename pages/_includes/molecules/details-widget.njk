@@ -43,26 +43,26 @@
     }
 %}
 {% set detailsData2 = {
-        "title": 'Homepage | Summer Activities | <span class="bold">Mountain Bike Lift Rides</span>',
-        "heading": '<span class="bold">Over 25 Miles of Beautiful Single-track</span>',
-        "p1": 'Certain bike trails may close at any time due to mountain construction projects. Please abide by any closures.',
-        "p2": 'Sundance offers 25+ miles of lift-serviced, single-track mountain biking with exciting terrain and breathtaking vistas.',
+        "title": 'Homepage | Dining | <span class="bold">Tree Room</span>',
+        "heading": '<span class="bold">Tree Room</span>',
+        "p1": 'Some hiking trails from the lift are temporarily closed for the safety of our guests during lift line construction.',
+        "p2": 'Enjoy the romantic atmosphere of candlelight and soft illumination accenting beautiful Native American art from Robert Redford’s private collection as you savor fresh, seasonal mountain cuisine.',
         "criteria_items": [
         {
             "title": "Hours",
             "url": "View Hours"
         },
         {
-            "title": "Map",
-            "url": "View Map"
+            "title": "Contact",
+            "url": "Call Now"
         },
         {
-            "title": "Waiver",
-            "url": "Sign"
+            "title": "Menu",
+            "url": "View"
         },
         {
-            "title": "Safety",
-            "url": "Review"
+            "title": "Music",
+            "url": "View Lineup"
         }]
     }
 %}
@@ -70,16 +70,16 @@
     <article class="details-widget">
         <header>
             {{ h6(copy = detailsData2.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
-            {{ h2(copy = detailsData2.heading, classes = ['details-widget--top-heading-2','heading--2', 'font-ivar']) }}
+            {{ h2(copy = detailsData2.heading, classes = ['details-widget--heading', 'font-ivar']) }}
         </header>
-        <p class="details-widget--text__small mx-auto bg-ss-4 font-calibre">
+        <p class="details-widget--text__small mx-auto font-calibre">
             {{ detailsData2.p1 }}
         </p>
-        <p class="details-widget--text__large mx-auto text-lg-2 font-ivar">
+        <p class="details-widget--text__large mx-auto font-ivar">
             {{ detailsData2.p2 }}
         </p>
-        <div class="flex justify-content-center gap-x-1">
-            <div style="position: relative; z-index: 2;">
+        <div class="details-widget--actions justify-content-center gap-x-1">
+            <div class="details-widget--actions__item" style="position: relative; z-index: 2;">
                 {{ dropdown( copy='Book A Class', labelId='details-widget-dropdown-1', items = data.dropdownItems1 ) }}
             </div>
             {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base', 'font-calibre'], copy='Book A Class', labelId='details-widget-dropdown-2', items = data.dropdownItems1 ) }}
@@ -100,16 +100,16 @@
     <article class="details-widget">
         <header>
             {{ h6(copy = detailsData.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
-            {{ h2(copy = detailsData.heading, classes = ['details-widget--top-heading-2','heading--2', 'font-ivar']) }}
+            {{ h2(copy = detailsData.heading, classes = ['details-widget--heading','heading--2', 'font-ivar']) }}
         </header>
         <p class="details-widget--text__small mx-auto bg-ss-4 font-calibre">
             {{ detailsData.p1 }}
         </p>
-        <p class="details-widget--text__large mx-auto text-lg-2 font-ivar">
+        <p class="details-widget--text__large mx-auto font-ivar">
             {{ detailsData.p2 }}
         </p>
-        <div class="flex justify-content-center gap-x-1">
-            <div style="position: relative; z-index: 2;">
+        <div class="details-widget--actions justify-content-center gap-x-1">
+            <div class="details-widget--actions__item" style="position: relative; z-index: 2;">
                 {{ dropdown( copy='Book A Class', labelId='details-widget-dropdown-1', items = data.dropdownItems1 ) }}
             </div>
             {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base', 'font-calibre'], copy='Book A Class', labelId='details-widget-dropdown-2', items = data.dropdownItems1 ) }}
