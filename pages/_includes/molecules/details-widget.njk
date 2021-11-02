@@ -1,5 +1,5 @@
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
-{% from "atoms/a.njk" import a, dropdown %}
+{% from "atoms/a.njk" import a, dropdown, button_secondary %}
 {% set criteria_items = [
     {
         "title": "Hours",
@@ -66,27 +66,44 @@
         }]
     }
 %}
+{% set dropdownItems1 = [
+        {
+            "copy": "Book A Class 1",
+            "url": "http://example.com/",
+            "target": "_self"
+        },
+        {
+            "copy": "Book A Class <strong>two</strong> Book A Class Book A Class Book A Class ",
+            "url": "http://example.com/",
+            "target": "_blank"
+        },
+        {
+            "copy": "Book A Class 3",
+            "url": "http://example.com/",
+            "target": "_self"
+        }
+    ]%}
 {% macro details_widget_desktop() %}
     <article class="details-widget">
         <header>
-            {{ h6(copy = detailsData2.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
-            {{ h2(copy = detailsData2.heading, classes = ['details-widget--heading', 'font-ivar']) }}
+            {{ h6(copy = detailsData.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
+            {{ h2(copy = detailsData.heading, classes = ['details-widget--heading', 'font-ivar']) }}
         </header>
         <p class="details-widget--text__small mx-auto font-calibre">
-            {{ detailsData2.p1 }}
+            {{ detailsData.p1 }}
         </p>
         <p class="details-widget--text__large mx-auto font-ivar">
-            {{ detailsData2.p2 }}
+            {{ detailsData.p2 }}
         </p>
         <div class="details-widget--actions justify-content-center gap-x-1">
-            <div class="details-widget--actions__item" style="position: relative; z-index: 2;">
-                {{ dropdown( copy='Book A Class', labelId='details-widget-dropdown-1', items = data.dropdownItems1 ) }}
+            <div class="details-widget--actions__item">
+                {{ dropdown( copy='Book A Class', labelId='details-widget-dropdown-1', items = dropdownItems1 ) }}
             </div>
-            {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base', 'font-calibre'], copy='Book A Class', labelId='details-widget-dropdown-2', items = data.dropdownItems1 ) }}
+            {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base', 'font-calibre'], copy='Book A Class', labelId='details-widget-dropdown-2', items = dropdownItems1 ) }}
         </div>
         <ul class="details-widget--criteria-list mx-auto">
             {% set class = 'flex details-widget--criteria-list__item border-b-1 border--color__sp-4' %}
-            {% for item in detailsData2.criteria_items %}
+            {% for item in detailsData.criteria_items %}
                 <li class="{{ class }}">
                     <div class="font-ivar">{{ item.title }}</div>
                     <div class="font-calibre">{{ a(copy = item.url) }}</div>
@@ -99,24 +116,24 @@
 {% macro details_widget_mobile() %}
     <article class="details-widget">
         <header>
-            {{ h6(copy = detailsData.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
-            {{ h2(copy = detailsData.heading, classes = ['details-widget--heading','heading--2', 'font-ivar']) }}
+            {{ h6(copy = detailsData2.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
+            {{ h2(copy = detailsData2.heading, classes = ['details-widget--heading','heading--2', 'font-ivar']) }}
         </header>
         <p class="details-widget--text__small mx-auto bg-ss-4 font-calibre">
-            {{ detailsData.p1 }}
+            {{ detailsData2.p1 }}
         </p>
         <p class="details-widget--text__large mx-auto font-ivar">
-            {{ detailsData.p2 }}
+            {{ detailsData2.p2 }}
         </p>
         <div class="details-widget--actions justify-content-center gap-x-1">
-            <div class="details-widget--actions__item" style="position: relative; z-index: 2;">
-                {{ dropdown( copy='Book A Class', labelId='details-widget-dropdown-1', items = data.dropdownItems1 ) }}
+            <div class="details-widget--actions__item">
+                {{ dropdown( copy='Book Now', labelId='details-widget-dropdown-3', items = dropdownItems1 ) }}
             </div>
-            {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base', 'font-calibre'], copy='Book A Class', labelId='details-widget-dropdown-2', items = data.dropdownItems1 ) }}
+            {{ button_secondary( href='http://example.com', copy='Book Now', id='myButton-4', target='_blank', classes = ['button--secondary', 'button', 'text-base', 'font-calibre'] ) }}
         </div>
         <ul class="details-widget--criteria-list mx-auto">
             {% set class = 'flex details-widget--criteria-list__item border-b-1 border--color__sp-4' %}
-            {% for item in detailsData.criteria_items %}
+            {% for item in detailsData2.criteria_items %}
                 <li class="{{ class }}">
                     <div class="font-ivar">{{ item.title }}</div>
                     <div class="font-calibre">{{ a(copy = item.url) }}</div>

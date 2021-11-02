@@ -17,6 +17,8 @@
 }
 .details-widget--actions__item {
     margin-bottom: 1rem;
+    position: relative; 
+    z-index: 2;
 }
 .details-widget--criteria-list {
    max-width: 376px; 
