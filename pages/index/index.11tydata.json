@@ -168,7 +168,7 @@
     "cardImage":[
         {
             "id":"card-1",
-            "secondaryHeading":"SuitEs & Rooms",
+            "secondaryHeading":"Suites & Rooms",
             "title":"Room Type",
             "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
             "image":"https://via.placeholder.com/800x400",
@@ -189,7 +189,7 @@
     "cardImage2":[
         {
             "id":"card-2",
-            "secondaryHeading":"SuitEs & Rooms",
+            "secondaryHeading":"Suites & Rooms",
             "title":"Room Type",
             "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
             "image":"https://via.placeholder.com/800x400",
@@ -231,7 +231,7 @@
     "cardImage5":[
         {
             "id":"card-5",
-            "secondaryHeading":"SuitEs & Rooms",
+            "secondaryHeading":"Suites & Rooms",
             "title":"Room Type",
             "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
             "image":"https://via.placeholder.com/800x400",
@@ -245,7 +245,7 @@
     "cardImage6":[
         {
             "id":"card-6",
-            "secondaryHeading":"SuitEs & Rooms",
+            "secondaryHeading":"Suites & Rooms",
             "title":"Room Type",
             "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
             "image":"https://via.placeholder.com/800x400"
