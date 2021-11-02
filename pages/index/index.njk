@@ -13,14 +13,12 @@ permalinkBypassOutputDir: true
 {% from 'atoms/box.njk' import box %}
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
+{% from 'atoms/icons.njk' import iconImage, iconCSS %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/bridge.njk' import bridge %}
 {% from 'molecules/details-widget.njk' import details_widget_desktop, details_widget_mobile %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
-<section class="segment-outer">
-    <section class="segment-inner">
-        {{ details_widget_desktop() }}
-        {{ details_widget_mobile() }}
-    </section>
-</section>
+
 <header>
     {{ h1( copy='Atoms' ) }}
 </header>
@@ -140,7 +138,7 @@ permalinkBypassOutputDir: true
         {{ iconCSS( classes=['icon-css', 'icon--filter'], copy='<span></span><span></span><span></span>' ) }}<br>
     </section>
 </section>
-<section>
+{# <section>
     <header>
         {{ h3(copy = 'Magazine logos') }}
     </header>
@@ -154,4 +152,16 @@ permalinkBypassOutputDir: true
         {{ iconImage( src='images/conde-nast-traveler.png', alt='Conde Naste Traveler icon' ) }}<br>
         {{ iconImage( src='images/liftopia.png', alt='Liftopia icon' ) }}<br>
     </section>
+</section> #}
+
+<section class="segment-outer">
+    <section class="segment-inner">
+        {{ details_widget_desktop() }}
+        {{ details_widget_mobile() }}
+    </section>
 </section>
+
+{{newsletter()}}
+
+{{bridge()}}
+
