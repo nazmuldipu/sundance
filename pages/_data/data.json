@@ -22,5 +22,28 @@
             "url": "http://example.com/",
             "target": "_self"
         }
-    ]
+    ],
+    "detailsData": {
+        "title": "Homepage | Summer Activities | <span class='bold'>Mountain Bike Lift Rides</span>",
+        "heading": "<span class='bold'>Over 25 Miles of Beautiful Single-track</span>",
+        "p1": "Certain bike trails may close at any time due to mountain construction projects. Please abide by any closures.",
+        "p2": "Sundance offers 25+ miles of lift-serviced, single-track mountain biking with exciting terrain and breathtaking vistas.",
+        "criteria_items" : [
+        {
+            "title": "Hours",
+            "url": "View Hours"
+        },
+        {
+            "title": "Map",
+            "url": "View Map"
+        },
+        {
+            "title": "Waiver",
+            "url": "Sign"
+        },
+        {
+            "title": "Safety",
+            "url": "Review"
+        }]
+    }
 }
