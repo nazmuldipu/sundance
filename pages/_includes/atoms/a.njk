@@ -19,7 +19,6 @@
     </a>
 {% endmacro %}
 
-
 {#
     #   @desc   a primary button
     #   @param  classes  array, class names (optional)
@@ -40,7 +39,6 @@
         {{ copy | safe }}
     </a>
 {% endmacro %}
-
 
 {#
     #   @desc   a secondary button
@@ -63,7 +61,6 @@
     </a>
 {% endmacro %}
 
-
 {# 
     #   @desc   view details anchor tag
     #   @param  classes array, class names (optional)
@@ -85,6 +82,20 @@
     </a>
 {% endmacro %}
 
+{# 
+    #   @desc   button for click event
+    #   @param  classes array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  copy    string, the HTML mark up that is linked
+    #   @author Ashfaqur Rahman, Alexander Khost, Sarjis
+ #}
+{% macro Button( copy, classes = ['view-details', 'font-calibre', 'text-base'], type="button", id) %}
+    <button type="{{type}}" 
+        {% if id %} id="{{ id }}" {% endif %} 
+        class="{% for class in classes %} {{ class }} {% endfor %}" >
+            {{ copy | safe }}
+    </button>
+{% endmacro %}
 
 {#
     #   @desc   a dropdown button with a list of links

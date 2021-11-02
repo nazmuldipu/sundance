@@ -14,6 +14,7 @@ permalinkBypassOutputDir: true
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
+{% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/bridge.njk' import bridge %}
 
 <header>
@@ -151,4 +152,7 @@ permalinkBypassOutputDir: true
     </section>
 </section> #}
 
+{{newsletter()}}
+
 {{bridge()}}
+
