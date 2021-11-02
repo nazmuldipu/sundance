@@ -13,8 +13,13 @@ permalinkBypassOutputDir: true
 {% from 'atoms/box.njk' import box %}
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
+{% from 'molecules/details-widget.njk' import details_widget_desktop %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
-
+<section class="segment-outer">
+    <section class="segment-inner">
+        {{ details_widget_desktop() }}
+    </section>
+</section>
 <header>
     {{ h1( copy='Atoms' ) }}
 </header>
@@ -103,7 +108,7 @@ permalinkBypassOutputDir: true
     </header>
     <section>
         {% for item in accordions %}
-            {{ accordion( item ) }}
+            {{ accordion( item = item ) }}
         {% endfor %}
     </section>
 </section>
