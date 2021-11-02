@@ -1,0 +1,22 @@
+{% from "atoms/headings.njk" import h2 %}
+{% from "atoms/a.njk" import Button %}
+{% from "atoms/form-fields.njk" import form_input%}
+{#
+    #   @desc   newsletter form
+    #   @author Nazmul Alam
+#}
+{% macro newsletter( )%}
+   <section class="newsletter">
+        {{ h2( copy='Stay in the loop on exclusive deals & events.', classes=['heading--newsletter', 'font-ivar']) }}
+        {% set obj = {
+            "label" : "", 
+            "type" : "email", 
+            "placeholder" : "Email Address", 
+            "classes" : ['newnletter-input', 'font-calibre']
+        } %}
+        <div>
+            {{ form_input(obj = obj) }}
+        </div>
+        {{Button('Subscribe', classes=['bg-primary2', 'font-calibre', 'text-white', 'btn-newsletter'])}}
+   </section>
+{% endmacro %}

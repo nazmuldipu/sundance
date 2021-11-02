@@ -115,6 +115,9 @@ strong {
 .text--color__sp-2 {
     color: #617C6A !important;
 }
+.text-white{
+    color: white;
+}
 
 /* backgrounds */
 .bg-sp-2 {
@@ -126,7 +129,9 @@ strong {
 .bg-sn-6 {
     background-color: var(--sundance__neutral6) !important;
 }
-
+.bg-primary2{
+    background-color: var(--sundance__primary2);
+}
 /* borders */
 .border--color__sp-2 {
     border-color: #617C6A !important;
