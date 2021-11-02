@@ -45,31 +45,31 @@
         w-full
     {% endif %}
     ">
-    {% for direction in imgObj.artDirection %}
+    {% for artItem in imgObj.artDirection %}
       <source 
-          srcset="{{ direction | imgObjSrcSet('webp') }}"
-          {% if direction.intrinsicwidth %}
-            width="{{ direction.intrinsicwidth }}"
+          srcset="{{ artItem | imgObjSrcSet('webp') }}"
+          {% if artItem.intrinsicwidth %}
+            width="{{ artItem.intrinsicwidth }}"
           {% endif %}
-          {% if direction.intrinsicheight %}
-              height="{{ direction.intrinsicheight }}"
+          {% if artItem.intrinsicheight %}
+              height="{{ artItem.intrinsicheight }}"
           {% endif %}
-          media="{{ direction.media }}" 
-          sizes="{{ direction.sizes if direction.sizes else '75vw' }}"
+          media="{{ artItem.media }}" 
+          sizes="{{ artItem.sizes if artItem.sizes else '75vw' }}"
           type="image/webp">
       <source 
-          srcset="{{ direction | imgObjSrcSet(direction.type) }}"
-          {% if direction.intrinsicwidth %}
-            width="{{ direction.intrinsicwidth }}"
+          srcset="{{ artItem | imgObjSrcSet(artItem.type) }}"
+          {% if artItem.intrinsicwidth %}
+            width="{{ artItem.intrinsicwidth }}"
           {% endif %}
-          {% if direction.intrinsicheight %}
-              height="{{ direction.intrinsicheight }}"
+          {% if artItem.intrinsicheight %}
+              height="{{ artItem.intrinsicheight }}"
           {% endif %}
-          media="{{ direction.media }}" 
-          sizes="{{ direction.sizes if direction.sizes else '75vw' }}"
-          type="image/{{ direction.type | getImgSourceType }}">
+          media="{{ artItem.media }}" 
+          sizes="{{ artItem.sizes if artItem.sizes else '75vw' }}"
+          type="image/{{ artItem.type | getImgSourceType }}">
     {% endfor %}
-    {# we assume the first direction is the default to use #}
+    {# we assume the first artItem is the default to use #}
     {% set default = imgObj.artDirection | first %}
     <img 
       srcset="{{ default | imgObjSrcSet(default.type) }}"
