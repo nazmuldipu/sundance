@@ -1,0 +1,12 @@
+{% from "atoms/headings.njk" import h2 %}
+{% from "atoms/a.njk" import Button %}
+{#
+    #   @desc   newsletter form
+    #   @author Nazmul Alam
+#}
+{% macro newsletter( )%}
+   <section class="newsletter">
+        {{ h2( copy='Stay in the loop on exclusive deals & events.', classes=['heading--newsletter', 'font-ivar']) }}
+        {{Button('Subscribe', classes=['bg-primary2', 'font-calibre', 'text-white', 'btn-newsletter'])}}
+   </section>
+{% endmacro %}

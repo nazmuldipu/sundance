@@ -14,6 +14,7 @@ permalinkBypassOutputDir: true
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
+{% from 'molecules/newsletter.njk' import newsletter %}
 
 <header>
     {{ h1( copy='Atoms' ) }}
@@ -134,7 +135,7 @@ permalinkBypassOutputDir: true
         {{ iconCSS( classes=['icon-css', 'icon--filter'], copy='<span></span><span></span><span></span>' ) }}<br>
     </section>
 </section>
-<section>
+{# <section>
     <header>
         {{ h3(copy = 'Magazine logos') }}
     </header>
@@ -148,4 +149,7 @@ permalinkBypassOutputDir: true
         {{ iconImage( src='images/conde-nast-traveler.png', alt='Conde Naste Traveler icon' ) }}<br>
         {{ iconImage( src='images/liftopia.png', alt='Liftopia icon' ) }}<br>
     </section>
-</section>
+</section> #}
+
+
+{{newsletter()}}
