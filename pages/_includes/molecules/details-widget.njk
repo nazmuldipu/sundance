@@ -1,0 +1,24 @@
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from "atoms/a.njk" import dropdown %}
+{% macro details_widget_desktop() %}
+    <article>
+        <header>
+            {% set smallHeading = 'Homepage | Summer Activities | Mountain Bike Lift Rides'%}
+            {% set largeHeading = 'Over 25 Miles of Beautiful Single-track'%}
+            {{ h6(copy = smallHeading) }}
+            {{ h1(copy = largeHeading) }}
+        </header>
+        <p class="details-widget--text__small bg-ss-4">
+            Certain bike trails may close at any time due to mountain construction projects. Please abide by any closures.
+        </p>
+        <p class="details-widget--text__large">
+            Sundance offers 25+ miles of lift-serviced, single-track mountain biking with exciting terrain and breathtaking vistas.
+        </p>
+        <div class="flex align-items-center">
+            <div style="position: relative; z-index: 2;">
+                {{ dropdown( copy='Book A Class', labelId='dropdown-1', items = data.dropdownItems1 ) }}
+            </div>
+            {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base'], copy='Book A Class', labelId='dropdown-2', items = data.dropdownItems1 ) }}
+        </div>
+    </article>
+{% endmacro %}
