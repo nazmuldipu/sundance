@@ -2,7 +2,7 @@
 
 const htmlmin = require('html-minifier');
 const { basename } = require('path');
-const { getImgSizes, getSrcSet, buildOutputDir } = require('./tooling/eleventy.cjs');
+const { getImgSizes, getSrcSet, buildOutputDir, get_resized_image_url, getImageUrl  } = require('./tooling/eleventy.cjs');
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addNunjucksShortcode('access', function(array, index) {
@@ -21,6 +21,15 @@ module.exports = function(eleventyConfig) {
         return getSrcSet(name, sizes, imgObj.intrinsicwidth, imgext);
     });
 
+    eleventyConfig.addNunjucksFilter('cmsImgObjSrcSet', function(imgObj, type) {
+        const dimensions = [320, 600, 640, 900, 1200, 1280, 1536] ;
+        return get_resized_image_url(imgObj.src, dimensions, (type + "" ).trim());
+    });
+
+    eleventyConfig.addNunjucksFilter('theImgSrc', function(value) {
+        return getImageUrl(value)
+    });
+
     eleventyConfig.addNunjucksFilter('getImgSourceType', function(type='jpeg') {
         switch(type) {
             case 'jpg':
@@ -33,7 +42,7 @@ module.exports = function(eleventyConfig) {
     // dump object data.
     eleventyConfig.addNunjucksFilter( 'json', function ( value ) {
         let str = JSON.stringify(value)
-        return str.replace(/(<svg.*?<\/svg>)/g,"raw svg load from db")
+        return str?.replace(/(<svg.*?<\/svg>)/g,"raw svg load from db")
     } )
 
     eleventyConfig.addPassthroughCopy('videos');

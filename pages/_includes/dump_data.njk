@@ -1,6 +1,6 @@
-{% macro dump_data(env,globalCMS,pageCMS, seoData) %}
+{% macro dump_data(options={seoDump:false}) %}
         <!-- begin GraphQL data dump -->
-    {% if env == 'local' %}
+    {% if meta.env == 'local' %}
     <style>
     #data-dump-view-toggle{
         height: auto;
@@ -43,6 +43,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.0.0/jsoneditor.min.js"></script>
 
         <script>
+            let dumpData = {}
+            let showSeoDump = {{ options.seoDump }}
+
+            if(showSeoDump){
+                dumpData["seoData"] = {{seoData|json|safe}}
+            }
+
+            dumpData["globalCMS"] = {{globalCMS|json|safe}}
+            dumpData["pageCMS"] = {{pageCMS|json|safe}}
+
             const editor = new JSONEditor(
                 document.getElementById('data-dump-root'),
                 {
@@ -50,12 +60,7 @@
                     ace: ace
                 }
             )
-
-            editor.set({
-                seoData: {{seoData|json|safe}},
-                globalCMS: {{globalCMS|json|safe}},
-                pageCMS: {{pageCMS|json|safe}}
-            })
+            editor.set(dumpData)
 
             // get json
             const updatedJson = editor.get();

@@ -3,14 +3,14 @@ pagename: base
 ---
 
 {% from "seo_tags.njk" import seo_tags %}
-{% from "dump_data.njk" import dump_data %}
+{% from "dump_data.njk" import dump_data with context %}
 
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
     <!-- begin GraphQL data dump -->
-    {{ dump_data(meta.env,globalCMS,pageCMS,seoData) }}
+    {{ dump_data({seoDump: false}) }}
     <!-- end GraphQL data dump-->
 
 <!-- start Google Analytics -->
