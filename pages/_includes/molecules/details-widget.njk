@@ -3,8 +3,8 @@
 {# 
     #   @desc   details widget
     #   @param  detailsData       object (data from json file)
-    #   @param  dropdownItems1       object (data from json file)
-    #   @param  dropdownItems2       object (data from json file)
+    #   @param  dropdown1       object (data from json file)
+    #   @param  dropdown2       object (data from json file)
     #   @return HTML article
     #   @author Sarjis
  #}
@@ -55,7 +55,8 @@
 {# 
     #   @desc   details widget
     #   @param  detailsData       object (data from json file)
-    #   @param  dropdownItems       object (data from json file)
+    #   @param  dropdown       object (data from json file)
+    #   @param  cta       object (data from json file)
     #   @return HTML article
     #   @author Sarjis
  #}
@@ -85,7 +86,7 @@
                 {{ dropdown( 
                     copy=dropdown1.copy, 
                     labelId=dropdown1.labelId,  
-                    items = dropdown3.items ) 
+                    items = dropdown1.items ) 
                 }}
             </div>
             {{ button_secondary( 
