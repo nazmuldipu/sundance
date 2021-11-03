@@ -213,39 +213,245 @@
           "target": "_self"
         },
         {
-            "label": "Specials",
-            "copy": "View Specials",
-            "url": "/",
-            "target": "_self"
-          }
+          "label": "Specials",
+          "copy": "View Specials",
+          "url": "/",
+          "target": "_self"
+        }
       ]
     },
     {
-        "breadcrumbs": [
-          { "copy": "Homepage", "url": "/" },
-          { "copy": "Lodging", "url": "/" },
-          { "copy": "Cirque Crest", "url": "/" }
-        ],
-        "title": "Cirque Crest",
-        "description": "One of the largest homes available on the mountain, Cirque Crest is the combination of both the Dream Catcher and Owl Spirit cabins. It’s perfect for families and large groups needing extra space. Beautiful mountain views are complemented by vaulted ceilings, multiple hot tubs, kitchens and living areas with unique western art and design.",
-        "note": "",
-        "links": [
-          {
-            "copy": "Call to Book",
-            "url": "/",
-            "target": "_self",
-            "type": "primary"
-          }
-        ],
-        "dropdowns": [],
-        "navs": [
-          {
-            "label": "Amenities",
-            "copy": "View Amenities",
-            "url": "/",
-            "target": "_self"
-          }          
-        ]
-      }
+      "breadcrumbs": [
+        { "copy": "Homepage", "url": "/" },
+        { "copy": "Lodging", "url": "/" },
+        { "copy": "Cirque Crest", "url": "/" }
+      ],
+      "title": "Cirque Crest",
+      "description": "One of the largest homes available on the mountain, Cirque Crest is the combination of both the Dream Catcher and Owl Spirit cabins. It’s perfect for families and large groups needing extra space. Beautiful mountain views are complemented by vaulted ceilings, multiple hot tubs, kitchens and living areas with unique western art and design.",
+      "note": "",
+      "links": [
+        {
+          "copy": "Call to Book",
+          "url": "/",
+          "target": "_self",
+          "type": "primary"
+        }
+      ],
+      "dropdowns": [],
+      "navs": [
+        {
+          "label": "Amenities",
+          "copy": "View Amenities",
+          "url": "/",
+          "target": "_self"
+        }
+      ]
+    },
+    {
+      "breadcrumbs": [
+        { "copy": "Homepage", "url": "/" },
+        { "copy": "Lodging", "url": "/" },
+        { "copy": "Timp Ridge", "url": "/" }
+      ],
+      "title": "Timp Ridge",
+      "description": "Enjoy stunning, unobstructed views of Mount Timpanogos, along with unique views of Provo Canyon. This brand new home showcases the mountain, including unique views of ski runs during the winter season, and contemporary luxury all year round. With a hot tub, game room, on site-laundry, and picture frame windows throughout the entire home, Canyon View has it all.",
+      "note": "",
+      "links": [],
+      "dropdowns": [
+        {
+          "copy": "Book Now",
+          "slug": "lodging-dropdown-4",
+          "type": "primary",
+          "items": [
+            {
+              "copy": "Book Online",
+              "url": "http://google.com/",
+              "target": "_blank"
+            },
+            {
+              "copy": "Call to Book",
+              "url": "http://example.com/",
+              "target": "_self"
+            }
+          ]
+        }
+      ],
+      "navs": [
+        {
+          "label": "Amenities",
+          "copy": "View Amenities",
+          "url": "/",
+          "target": "_self"
+        }
+      ]
+    },
+    {
+      "breadcrumbs": [
+        { "copy": "Homepage", "url": "/" },
+        { "copy": "Lodging", "url": "/" },
+        { "copy": "Canyon View", "url": "/" }
+      ],
+      "title": "Canyon View",
+      "description": "Enjoy stunning, unobstructed views of Mount Timpanogos, along with unique views of Provo Canyon. This brand new home showcases the mountain, including unique views of ski runs during the winter season, and contemporary luxury all year round. With a hot tub, game room, on site-laundry, and picture frame windows throughout the entire home, Canyon View has it all.",
+      "note": "Some hiking trails from the lift are temporarily closed for the safety of our guests during lift line construction.",
+      "links": [],
+      "dropdowns": [
+        {
+          "copy": "Book Now",
+          "slug": "lodging-dropdown-5",
+          "type": "primary",
+          "items": [
+            {
+              "copy": "Book Online",
+              "url": "http://google.com/",
+              "target": "_blank"
+            },
+            {
+              "copy": "Call to Book",
+              "url": "http://example.com/",
+              "target": "_self"
+            }
+          ]
+        }
+      ],
+      "navs": [
+        {
+          "label": "Amenities",
+          "copy": "View Amenities",
+          "url": "/",
+          "target": "_self"
+        }
+      ]
+    },
+    {
+      "breadcrumbs": [
+        { "copy": "Homepage", "url": "/" },
+        { "copy": "Lodging", "url": "/" },
+        { "copy": "Wild West Lodge", "url": "/" }
+      ],
+      "title": "Wild West Lodge",
+      "description": "Escape to the forest surrounded by a seasonal stream and breath-taking view of resort ski slopes and Mt. Timpanogos in this elegant, beautiful lodge. Six bedrooms in this three-floor home provide space for any occasion. Two kitchens, dining areas, and multiple gathering rooms allow for cozy getaways or the perfect après ski relaxation.",
+      "note": "",
+      "links": [
+        {
+          "copy": "Call to Book",
+          "url": "/",
+          "target": "_self",
+          "type": "primary"
+        }
+      ],
+      "dropdowns": [],
+      "navs": [
+        {
+          "label": "Amenities",
+          "copy": "View Amenities",
+          "url": "/",
+          "target": "_self"
+        }
+      ]
+    },
+    {
+      "breadcrumbs": [
+        { "copy": "Homepage", "url": "/" },
+        { "copy": "Lodging", "url": "/" },
+        { "copy": "Turkey Ridge", "url": "/" }
+      ],
+      "title": "Turkey Ridge",
+      "description": "Located just minutes away from our Sundance Village, Turkey Ridge provides a one-of-a-kind experience. A spacious backyard and patio with a chair swing and beautiful mountain views make this six-bedroom home perfect for a family getaway. Unique features such as a baby grand piano, entertainment room, and sauna offer something for everyone.",
+      "note": "",
+      "links": [
+        {
+          "copy": "Call to Book",
+          "url": "/",
+          "target": "_self",
+          "type": "primary"
+        }
+      ],
+      "dropdowns": [],
+      "navs": [
+        {
+          "label": "Amenities",
+          "copy": "View Amenities",
+          "url": "/",
+          "target": "_self"
+        }
+      ]
+    },
+    {
+      "breadcrumbs": [
+        { "copy": "Homepage", "url": "/" },
+        { "copy": "Lodging", "url": "/" },
+        { "copy": "Cascade Ridge", "url": "/" }
+      ],
+      "title": "Cascade Ridge",
+      "description": "With jaw-dropping views of Mt. Timpanogos, this unique home makes for the perfect rustic mountain getaway. Cascade Ridge is equipped with state of the art amenities and a serene alpine setting that will leave a lasting impression.",
+      "note": "",
+      "links": [],
+      "dropdowns": [
+        {
+          "copy": "Book Now",
+          "slug": "lodging-dropdown-9",
+          "type": "primary",
+          "items": [
+            {
+              "copy": "Book Online",
+              "url": "http://google.com/",
+              "target": "_blank"
+            },
+            {
+              "copy": "Call to Book",
+              "url": "http://example.com/",
+              "target": "_self"
+            }
+          ]
+        }
+      ],
+      "navs": [
+        {
+          "label": "Amenities",
+          "copy": "View Amenities",
+          "url": "/",
+          "target": "_self"
+        }
+      ]
+    },
+    {
+      "breadcrumbs": [
+        { "copy": "Homepage", "url": "/" },
+        { "copy": "Lodging", "url": "/" },
+        { "copy": "Ponderosa", "url": "/" }
+      ],
+      "title": "Ponderosa",
+      "description": "Escape to the forests of the Wasatch mountains in Ponderosa, with expansive patio and balcony areas to enjoy the views. The unique layout of this home, including a separate mother-in-law apartment and a bonus nook space, accommodates many styles of families and friends alike.",
+      "note": "A home is being constructed next door to this Mountain Home. The level of construction varies day to day and may impact your stay. For this reason, the rate has been reduced accordingly.",
+      "links": [],
+      "dropdowns": [
+        {
+          "copy": "Book Now",
+          "slug": "lodging-dropdown-10",
+          "type": "primary",
+          "items": [
+            {
+              "copy": "Book Online",
+              "url": "http://google.com/",
+              "target": "_blank"
+            },
+            {
+              "copy": "Call to Book",
+              "url": "http://example.com/",
+              "target": "_self"
+            }
+          ]
+        }
+      ],
+      "navs": [
+        {
+          "label": "Amenities",
+          "copy": "View Amenities",
+          "url": "/",
+          "target": "_self"
+        }
+      ]
+    }
   ]
 }

@@ -335,12 +335,14 @@ footer {
   /* TODO: need to delete this class, as this is a class for index file */
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .widget-lodging {
   display: block;
   width: 280px;
   padding: 0 32px 42px 32px;
   border: 1px dotted #ccc; /* TODO: remove this line once completed */
+  margin-top: 10px; /* TODO: remove this line once completed */
 }
 .widget-lodging .lodging-breadcrumbs {
   padding: 8px 0;
