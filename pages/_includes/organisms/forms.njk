@@ -1,0 +1,30 @@
+{% from "atoms/headings.njk" import h2, h6 %}
+{% from 'atoms/form-fields.njk' import form_input %}
+{% from "atoms/a.njk" import a, button_primary %}
+{# 
+    #   @desc   details widget
+    #   @param  detailsData       object (data from json file)
+    #   @param  dropdown1       object (data from json file)
+    #   @param  dropdown2       object (data from json file)
+    #   @return HTML article
+    #   @author Sarjis
+ #}
+{% macro lodging_forms(
+    header = {}, 
+    formInputs = []) 
+%}
+    <article class="lodging-forms">
+        <header>
+            {{ h2(copy = 'Lodging at Sundance', classes = ['lodging-forms--heading', 'font-ivar']) }}
+            {{ h6(copy = 'Face Coverings are required when checking in at the front desk.', classes = ['lodging-forms--subheading', 'font-ivar']) }}
+        </header>
+        <section class="lodging-forms__field--container text-left justify-center gap-x-2">
+            {% for item in formInputs %}
+                <div class="lodging-forms__item">
+                    {{ form_input(obj = item) }}
+                </div>
+            {% endfor %}
+                {{ button_primary( classes = ['button', 'button--primary','font-calibre', 'text-base', 'align-self-end', 'line-h-1', 'lodging-form__cta'], href='http://example.com', copy='Book a Class', id='myButton-1', target='_blank' ) }}
+        </section>
+    </article>
+{% endmacro %}

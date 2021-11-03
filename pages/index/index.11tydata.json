@@ -397,6 +397,31 @@
                     "target": "_self"
                 }
         }
+    ],
+    "formInputs":[
+        {
+            "label" : "Check IN", 
+            "type" : "datetime", 
+            "placeholder" : "mm/dd/yyyy", 
+            "classes" : ["form-input", "lodging-form__input"]
+        },
+        {
+            "label" : "Check IN", 
+            "type" : "datetime", 
+            "placeholder" : "mm/dd/yyyy", 
+            "classes" : ["form-input", "lodging-form__input"]
+        },
+        {
+            "label" : "ROOMS", 
+            "type" : "text", 
+            "placeholder" : "1", 
+            "classes" : ["form-input", "lodging-form__input", "lodging-form__input--rooms"]
+        },
+        {
+            "label" : "Promo CODE", 
+            "type" : "text", 
+            "placeholder" : "", 
+            "classes" : ["form-input", "lodging-form__input"]
+        }
     ]
-
 }
