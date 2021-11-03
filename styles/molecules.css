@@ -247,7 +247,7 @@ footer{
 }
 
 /* Tab (Screen size : 1200 pts) */
-@media screen and (min-width: 768px) and (max-width: 1279px) {
+@media screen and (min-width: 768px) and (max-width: 1365px) {
   .newsletter {
     padding: 89px 0;
   }
@@ -269,7 +269,7 @@ footer{
 }
 
 /* Desktop (Screen size : 1440 pts) */
-@media screen and (min-width: 1280px) and (max-width: 1919px) {
+@media screen and (min-width: 1366px) and (max-width: 1919px) {
   footer {
     padding: 32px 172px 20px 172px;
   }
