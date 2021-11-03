@@ -1,72 +1,14 @@
 {% from "atoms/headings.njk" import h2, h6 %}
 {% from "atoms/a.njk" import a, dropdown, button_secondary %}
-{% set detailsData = {
-        "title": 'Homepage | Summer Activities | <span class="bold">Mountain Bike Lift Rides</span>',
-        "heading": '<span class="bold">Over 25 Miles of Beautiful Single-track</span>',
-        "p1": 'Certain bike trails may close at any time due to mountain construction projects. Please abide by any closures.',
-        "p2": 'Sundance offers 25+ miles of lift-serviced, single-track mountain biking with exciting terrain and breathtaking vistas.',
-        "criteria_items": [
-        {
-            "title": "Hours",
-            "url": "View Hours"
-        },
-        {
-            "title": "Map",
-            "url": "View Map"
-        },
-        {
-            "title": "Waiver",
-            "url": "Sign"
-        },
-        {
-            "title": "Safety",
-            "url": "Review"
-        }]
-    }
-%}
-{% set detailsData2 = {
-        "title": 'Homepage | Dining | <span class="bold">Tree Room</span>',
-        "heading": '<span class="bold">Tree Room</span>',
-        "p1": 'Some hiking trails from the lift are temporarily closed for the safety of our guests during lift line construction.',
-        "p2": 'Enjoy the romantic atmosphere of candlelight and soft illumination accenting beautiful Native American art from Robert Redford’s private collection as you savor fresh, seasonal mountain cuisine.',
-        "p3": "Children under 12 not permitted.",
-        "criteria_items": [
-        {
-            "title": "Hours",
-            "url": "View Hours"
-        },
-        {
-            "title": "Contact",
-            "url": "Call Now"
-        },
-        {
-            "title": "Menu",
-            "url": "View"
-        },
-        {
-            "title": "Music",
-            "url": "View Lineup"
-        }]
-    }
-%}
-{% set dropdownItems1 = [
-        {
-            "copy": "Book A Class 1",
-            "url": "http://example.com/",
-            "target": "_self"
-        },
-        {
-            "copy": "Book A Class <strong>two</strong> Book A Class Book A Class Book A Class ",
-            "url": "http://example.com/",
-            "target": "_blank"
-        },
-        {
-            "copy": "Book A Class 3",
-            "url": "http://example.com/",
-            "target": "_self"
-        }
-    ]%}
-{% macro details_widget_desktop() %}
+{# 
+    #   @desc   details widget
+    #   @param  detailsData       object (data from json file)
+    #   @param  dropdownItems1       object (data from json file)
+    #   @param  dropdownItems2       object (data from json file)
+    #   @return HTML article
+    #   @author Sarjis
+ #}
+{% macro details_widget_desktop(detailsData = {}, dropdownItems1 = {}, dropdownItems2 = {}) %}
     <article class="details-widget">
         <header>
             {{ h6(copy = detailsData.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
@@ -82,7 +24,7 @@
             <div class="details-widget--actions__item">
                 {{ dropdown( copy='Book A Class', labelId='details-widget-dropdown-1', items = dropdownItems1 ) }}
             </div>
-            {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base', 'font-calibre'], copy='Book A Class', labelId='details-widget-dropdown-2', items = dropdownItems1 ) }}
+            {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base', 'font-calibre'], copy='Book A Class', labelId='details-widget-dropdown-2', items = dropdownItems2 ) }}
         </div>
         <ul class="details-widget--criteria-list mx-auto">
             {% set class = 'flex details-widget--criteria-list__item border-b-1 border--color__sp-4' %}
@@ -96,32 +38,39 @@
     </article>
 {% endmacro %}
 
-{% macro details_widget_mobile() %}
+{# 
+    #   @desc   details widget
+    #   @param  detailsData       object (data from json file)
+    #   @param  dropdownItems       object (data from json file)
+    #   @return HTML article
+    #   @author Sarjis
+ #}
+{% macro details_widget_mobile(detailsData = {}, dropdownItems = {}) %}
     <article class="details-widget">
         <header>
-            {{ h6(copy = detailsData2.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
-            {{ h2(copy = detailsData2.heading, classes = ['details-widget--heading','heading--2', 'font-ivar']) }}
+            {{ h6(copy = detailsData.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
+            {{ h2(copy = detailsData.heading, classes = ['details-widget--heading','heading--2', 'font-ivar']) }}
         </header>
         <p class="details-widget--text__small mx-auto bg-ss-4 font-calibre">
-            {{ detailsData2.p1 }}
+            {{ detailsData.p1 }}
         </p>
         <p class="details-widget--text__large mx-auto font-ivar">
-            {{ detailsData2.p2 }}
+            {{ detailsData.p2 }}
         </p>
-        {% if detailsData2.p3 %}
+        {% if detailsData.p3 %}
             <p class="details-widget--text__colored font-ivar text--color__sp-1">
-                {{ detailsData2.p3 }}
+                {{ detailsData.p3 }}
             </p>
         {% endif %}
         <div class="details-widget--actions justify-content-center gap-x-1">
             <div class="details-widget--actions__item">
-                {{ dropdown( copy='Book Now', labelId='details-widget-dropdown-3', items = dropdownItems1 ) }}
+                {{ dropdown( copy='Book Now', labelId='details-widget-dropdown-3', items = dropdownItems ) }}
             </div>
             {{ button_secondary( href='http://example.com', copy='Book Now', id='myButton-4', target='_blank', classes = ['button--secondary', 'button', 'text-base', 'font-calibre'] ) }}
         </div>
         <ul class="details-widget--criteria-list mx-auto">
             {% set class = 'flex details-widget--criteria-list__item border-b-1 border--color__sp-4' %}
-            {% for item in detailsData2.criteria_items %}
+            {% for item in detailsData.criteria_items %}
                 <li class="{{ class }}">
                     <div class="font-ivar">{{ item.title }}</div>
                     <div class="font-calibre">{{ a(copy = item.url) }}</div>
