@@ -1,140 +1,251 @@
 {
-    "fake_name": "Person GUD",
-    "accordions": [
-        {
-            "title": "Mountain Stone Massage",
-            "id": "toggle-1",
-            "classes": [
-                "toggle",
-                "hidden"
-            ],
-            "name": "First",
-            "article": {
-                "heading": "Let Creativity Flow",
-                "copy": [
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque",
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque"
-                ]
-            },
-            "image": {
-                "classes":"inline-block",
-                "artDirection": [
-                    {
-                        "media": "(min-width:900.1px)",
-                        "sizes": "100vw",
-                        "type": "png",
-                        "src": "images/ameswell_entrance",
-                        "alt": "The Placeholder Image",
-                        "intrinsicwidth": "800",
-                        "intrinsicheight": "400"
-                    },
-                    {
-                        "media": "(max-width:900px)",
-                        "sizes": "50vw",
-                        "type": "png",
-                        "src": "images/ameswell_entrance",
-                        "alt": "The Placeholder Image",
-                        "intrinsicwidth": "800",
-                        "intrinsicheight": "400"
-                    }
-                ]
-            }
-        }
-    ],
-    "tableData": {
-        "headers": [
-            "Class",
-            "Time",
-            "Cost"
-        ],
-        "bodies": [
-            {
-                "datas": [
-                    "Silversmithing",
-                    "10am, 1pm, 3pm",
-                    "$ 150"
-                ]
-            },
-            {
-                "datas": [
-                    "Silversmithing",
-                    "10am, 1pm, 3pm",
-                    "$ 150"
-                ]
-            }
+  "fake_name": "Person GUD",
+  "accordions": [
+    {
+      "title": "Mountain Stone Massage",
+      "id": "toggle-1",
+      "classes": ["toggle", "hidden"],
+      "name": "First",
+      "article": {
+        "heading": "Let Creativity Flow",
+        "copy": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque",
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque"
         ]
-    },
-    "datePicker": {
-        "label" : "Check IN", 
-        "type" : "datetime", 
-        "placeholder" : "mm/dd/yyyy", 
-        "classes" : ["form-input", "form-field-date"]
-    },
-    "emailInput": {
-        "type" : "email", 
-        "placeholder" : "Email address",
-        "classes": ["form-input"]
-    },
-    "exampleImage": {
-        "classes":"inline-block",
+      },
+      "image": {
+        "classes": "inline-block",
         "artDirection": [
+          {
+            "media": "(min-width:900.1px)",
+            "sizes": "100vw",
+            "type": "png",
+            "src": "images/ameswell_entrance",
+            "alt": "The Placeholder Image",
+            "intrinsicwidth": "800",
+            "intrinsicheight": "400"
+          },
+          {
+            "media": "(max-width:900px)",
+            "sizes": "50vw",
+            "type": "png",
+            "src": "images/ameswell_entrance",
+            "alt": "The Placeholder Image",
+            "intrinsicwidth": "800",
+            "intrinsicheight": "400"
+          }
+        ]
+      }
+    }
+  ],
+  "tableData": {
+    "headers": ["Class", "Time", "Cost"],
+    "bodies": [
+      {
+        "datas": ["Silversmithing", "10am, 1pm, 3pm", "$ 150"]
+      },
+      {
+        "datas": ["Silversmithing", "10am, 1pm, 3pm", "$ 150"]
+      }
+    ]
+  },
+  "datePicker": {
+    "label": "Check IN",
+    "type": "datetime",
+    "placeholder": "mm/dd/yyyy",
+    "classes": ["form-input", "form-field-date"]
+  },
+  "emailInput": {
+    "type": "email",
+    "placeholder": "Email address",
+    "classes": ["form-input"]
+  },
+  "exampleImage": {
+    "classes": "inline-block",
+    "artDirection": [
+      {
+        "media": "(min-width:900.1px)",
+        "sizes": "100vw",
+        "type": "png",
+        "src": "https://via.placeholder.com/800x400",
+        "alt": "The Placeholder Image",
+        "intrinsicwidth": "800",
+        "intrinsicheight": "400"
+      },
+      {
+        "media": "(max-width:900px)",
+        "sizes": "50vw",
+        "type": "png",
+        "src": "https://via.placeholder.com/800x400",
+        "alt": "The Placeholder Image",
+        "intrinsicwidth": "800",
+        "intrinsicheight": "400"
+      }
+    ]
+  },
+  "dropdownItems1": [
+    {
+      "copy": "Book A Class 1",
+      "url": "http://example.com/",
+      "target": "_self"
+    },
+    {
+      "copy": "Book A Class <strong>two</strong> Book A Class Book A Class Book A Class ",
+      "url": "http://example.com/",
+      "target": "_blank"
+    },
+    {
+      "copy": "Book A Class 3",
+      "url": "http://example.com/",
+      "target": "_self"
+    }
+  ],
+  "dropdownItems2": [
+    {
+      "copy": "Book Another Class 2",
+      "url": "http://example.com/",
+      "target": "_self"
+    },
+    {
+      "copy": "Book Another Class <strong>three</strong> four five",
+      "url": "http://example.com/",
+      "target": "_blank"
+    },
+    {
+      "copy": "Book Another Another Class 3 4 5",
+      "url": "http://example.com/",
+      "target": "_self"
+    },
+    {
+      "copy": "Book",
+      "url": "http://example.com/",
+      "target": "_self"
+    }
+  ],
+  "lodginObject": [
+    {
+      "breadcrumbs": [
+        { "copy": "Homepage", "url": "/" },
+        { "copy": "Lodging", "url": "/" },
+        { "copy": "Canyon View", "url": "/" }
+      ],
+      "title": "Canyon View",
+      "description": "Enjoy stunning, unobstructed views of Mount Timpanogos, along with unique views of Provo Canyon. This brand new home showcases the mountain, including unique views of ski runs during the winter season, and contemporary luxury all year round. With a hot tub, game room, on site-laundry, and picture frame windows throughout the entire home, Canyon View has it all.",
+      "note": "Some hiking trails from the lift are temporarily closed for the safety of our guests during lift line construction.",
+      "links": [
+        {
+          "copy": "Book now",
+          "url": "/",
+          "target": "_blank",
+          "type": "primary"
+        },
+        {
+          "copy": "Call to Book",
+          "url": "/",
+          "target": "_self",
+          "type": "secondary"
+        }
+      ],
+      "dropdowns": [
+        {
+          "copy": "Book Now",
+          "slug": "lodging-dropdown-1",
+          "type": "primary",
+          "items": [
             {
-                "media": "(min-width:900.1px)",
-                "sizes": "100vw",
-                "type": "png",
-                "src": "https://via.placeholder.com/800x400",
-                "alt": "The Placeholder Image",
-                "intrinsicwidth": "800",
-                "intrinsicheight": "400"
+              "copy": "Book Online",
+              "url": "http://google.com/",
+              "target": "_blank"
             },
             {
-                "media": "(max-width:900px)",
-                "sizes": "50vw",
-                "type": "png",
-                "src": "https://via.placeholder.com/800x400",
-                "alt": "The Placeholder Image",
-                "intrinsicwidth": "800",
-                "intrinsicheight": "400"
+              "copy": "Call to Book",
+              "url": "http://example.com/",
+              "target": "_self"
             }
-        ]
+          ]
+        },
+        {
+          "copy": "Book Now",
+          "slug": "lodging-dropdown-2",
+          "type": "secondary",
+          "items": [
+            {
+              "copy": "Book Online",
+              "url": "http://google.com/",
+              "target": "_blank"
+            },
+            {
+              "copy": "Call to Book",
+              "url": "http://example.com/",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "copy": "Book Now",
+          "slug": "lodging-dropdown-3",
+          "type": "primary2",
+          "items": [
+            {
+              "copy": "Book Online",
+              "url": "http://google.com/",
+              "target": "_blank"
+            },
+            {
+              "copy": "Call to Book",
+              "url": "http://example.com/",
+              "target": "_self"
+            }
+          ]
+        }
+      ],
+      "navs": [
+        {
+          "label": "Amenities",
+          "copy": "View Amenities",
+          "url": "/",
+          "target": "_self"
+        },
+        {
+          "label": "Menu",
+          "copy": "View",
+          "url": "/",
+          "target": "_self"
+        },
+        {
+            "label": "Specials",
+            "copy": "View Specials",
+            "url": "/",
+            "target": "_self"
+          }
+      ]
     },
-    "dropdownItems1": [
-        {
-            "copy": "Book A Class 1",
-            "url": "http://example.com/",
+    {
+        "breadcrumbs": [
+          { "copy": "Homepage", "url": "/" },
+          { "copy": "Lodging", "url": "/" },
+          { "copy": "Cirque Crest", "url": "/" }
+        ],
+        "title": "Cirque Crest",
+        "description": "One of the largest homes available on the mountain, Cirque Crest is the combination of both the Dream Catcher and Owl Spirit cabins. It’s perfect for families and large groups needing extra space. Beautiful mountain views are complemented by vaulted ceilings, multiple hot tubs, kitchens and living areas with unique western art and design.",
+        "note": "",
+        "links": [
+          {
+            "copy": "Call to Book",
+            "url": "/",
+            "target": "_self",
+            "type": "primary"
+          }
+        ],
+        "dropdowns": [],
+        "navs": [
+          {
+            "label": "Amenities",
+            "copy": "View Amenities",
+            "url": "/",
             "target": "_self"
-        },
-        {
-            "copy": "Book A Class <strong>two</strong> Book A Class Book A Class Book A Class ",
-            "url": "http://example.com/",
-            "target": "_blank"
-        },
-        {
-            "copy": "Book A Class 3",
-            "url": "http://example.com/",
-            "target": "_self"
-        }
-    ],
-     "dropdownItems2": [
-        {
-            "copy": "Book Another Class 2",
-            "url": "http://example.com/",
-            "target": "_self"
-        },
-        {
-            "copy": "Book Another Class <strong>three</strong> four five",
-            "url": "http://example.com/",
-            "target": "_blank"
-        },
-        {
-            "copy": "Book Another Another Class 3 4 5",
-            "url": "http://example.com/",
-            "target": "_self"
-        },
-        {
-            "copy": "Book",
-            "url": "http://example.com/",
-            "target": "_self"
-        }
-    ]
+          }          
+        ]
+      }
+  ]
 }

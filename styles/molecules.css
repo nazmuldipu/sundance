@@ -1,51 +1,51 @@
 /****  start molecules  ********************************/
-footer{
-    position: relative;
-    border-top: 1px dotted black;
-    letter-spacing: 0.02em;
+footer {
+  position: relative;
+  border-top: 1px dotted black;
+  letter-spacing: 0.02em;
 }
-.footer-icon{
-    display: inline;
-    width: 24px;
-    height: 24px;
-    padding-right: 19px;
+.footer-icon {
+  display: inline;
+  width: 24px;
+  height: 24px;
+  padding-right: 19px;
 }
-.footer-container{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 6px;
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
 }
-.footer-col{
-    margin-bottom: 4.5rem;
+.footer-col {
+  margin-bottom: 4.5rem;
 }
 .footer-col .heading__foooter--2 {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 110%;
-    color: var(--sundance__neutral1);
-    padding-bottom: 24px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 110%;
+  color: var(--sundance__neutral1);
+  padding-bottom: 24px;
 }
 
-.footer-link{
-    display: inline-block;
-    text-decoration: none;
-    color: var(--sundance__neutral1);
-    line-height: 22px;
-    margin-bottom: 6px;
-    cursor: pointer;
+.footer-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--sundance__neutral1);
+  line-height: 22px;
+  margin-bottom: 6px;
+  cursor: pointer;
 }
-.footer-copy{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center ;
-    /* padding-bottom: 20px; */
+.footer-copy {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-bottom: 20px; */
 }
-.s_dot{
-    position: absolute;
-    z-index: -1;
-    right: 0;
-    bottom: 0;
+.s_dot {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
 }
 .newsletter {
   text-align: center;
@@ -90,7 +90,7 @@ footer{
   text-align: center;
   margin: 0 auto;
 }
-.bridge-header{
+.bridge-header {
   font-style: normal;
   font-weight: 600;
   font-size: 42px;
@@ -98,7 +98,7 @@ footer{
   padding-bottom: 32px;
   padding-top: 48px;
 }
-.bridge-text{
+.bridge-text {
   font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -112,7 +112,7 @@ footer{
   padding-bottom: 44px;
   position: relative;
 }
-.swiper-slide{
+.swiper-slide {
   width: auto !important;
 }
 
@@ -128,7 +128,7 @@ footer{
   position: absolute;
   top: 108px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 .bridge-nav-icon {
   cursor: pointer;
@@ -146,29 +146,30 @@ footer{
   width: 12px;
   border: 1px solid #fff;
   background-color: white;
-}  
+}
 /* Mobile (Screen size : 375 pts) */
 @media screen and (min-width: 320px) and (max-width: 767px) {
   footer {
-        padding: 32px 36px 20px 36px;
-    }
-    .footer-container{
-        grid-template-columns: repeat(2, 1fr);
-    }        
-    .footer-copy{
-        padding-bottom: 100px;
-        flex-direction: column;
-    }
-    .footer-copy-image, .footer-copy-image img{
-        width: 100%;
-    }
-    .s_dot{
-        margin-top: -274px;
-        width: 207px;
-        height: 225px;
-        margin-bottom: 19px;
-    }
-  
+    padding: 32px 36px 20px 36px;
+  }
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-copy {
+    padding-bottom: 100px;
+    flex-direction: column;
+  }
+  .footer-copy-image,
+  .footer-copy-image img {
+    width: 100%;
+  }
+  .s_dot {
+    margin-top: -274px;
+    width: 207px;
+    height: 225px;
+    margin-bottom: 19px;
+  }
+
   .newsletter {
     padding: 80px 29px;
   }
@@ -193,12 +194,12 @@ footer{
   .bridge-top-frame {
     height: 216px;
   }
-  .bridge-header{
+  .bridge-header {
     font-size: 24px;
     padding-top: 32px;
     padding-bottom: 16px;
   }
-  .bridge-text{
+  .bridge-text {
     font-size: 14px;
     padding-bottom: 16px;
   }
@@ -255,17 +256,17 @@ footer{
     font-size: 42px;
     padding-bottom: 40px;
   }
-   footer {
-        padding: 90px 38px 100px 38px;
-    }
-    .footer-col{
-        margin-bottom: 4rem;
-    }
-    .s_dot{
-        margin-top: -263px;
-        width: 263px;
-        height: 264px;
-    }
+  footer {
+    padding: 90px 38px 100px 38px;
+  }
+  .footer-col {
+    margin-bottom: 4rem;
+  }
+  .s_dot {
+    margin-top: -263px;
+    width: 263px;
+    height: 264px;
+  }
 }
 
 /* Desktop (Screen size : 1440 pts) */
@@ -273,10 +274,10 @@ footer{
   footer {
     padding: 32px 172px 20px 172px;
   }
-  .s_dot{
-        margin-top: -263px;
-        width: 263px;
-        height: 264px;
+  .s_dot {
+    margin-top: -263px;
+    width: 263px;
+    height: 264px;
   }
   .newsletter {
     padding: 89px 0;
@@ -290,22 +291,22 @@ footer{
 /* Desktop XXL (Screen size : 1920 pts) */
 @media screen and (min-width: 1920px) {
   footer {
-        padding: 152px 316px 123px 316px;
-    }
-    .footer-col .heading__foooter--2 {
-        font-size: 32px;
-        line-height: 38px;
-        padding-bottom: 32px;
-    }
-    .footer-link.text-base{
-        font-size: 24px !important;
-        padding-bottom: 12px;
-    }
-    .s_dot{
-        margin-top: -384px;
-        width: 400px;
-        height: 384px;
-    }
+    padding: 152px 316px 123px 316px;
+  }
+  .footer-col .heading__foooter--2 {
+    font-size: 32px;
+    line-height: 38px;
+    padding-bottom: 32px;
+  }
+  .footer-link.text-base {
+    font-size: 24px !important;
+    padding-bottom: 12px;
+  }
+  .s_dot {
+    margin-top: -384px;
+    width: 400px;
+    height: 384px;
+  }
   .newsletter {
     padding-top: 281px;
     padding-bottom: 158px;
@@ -328,5 +329,116 @@ footer{
     font-size: 25px;
   }
 }
+
+/****  details-widget-lodging molecules  ********************************/
+.lodgingWidget{
+  /* TODO: need to delete this class, as this is a class for index file */
+  display: flex;
+  flex-direction: row;
+}
+.widget-lodging {
+  display: block;
+  width: 280px;
+  padding: 0 32px 42px 32px;
+  border: 1px dotted #ccc; /* TODO: remove this line once completed */
+}
+.widget-lodging .lodging-breadcrumbs {
+  padding: 8px 0;
+}
+.widget-lodging .lodging-breadcrumbs .breadcrumbs-link {
+  text-decoration: none;
+  color: var(--sundance__neutral3);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0 8px;
+  border-right: 1px solid var(--sundance__neutral3);
+}
+.widget-lodging .lodging-breadcrumbs .breadcrumbs-link.breadcrumbs-last {
+  border: none !important;
+  color: var(--sundance__neutral1);
+}
+
+.lodging-widget-title {
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 110%;
+  padding: 24px 0;
+  color: var(--sundance__neutral1);
+}
+
+.lodging-widget-description {
+  padding: 8px 0;
+  font-size: 19px;
+  line-height: 140%;
+  letter-spacing: 0.04em;
+  color: var(--sundance__neutral1);
+}
+
+.lodging-widget-note {
+  padding: 8px 0;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.04em;
+  color: var(--sundance__primary1);
+}
+
+.widget-lodging-links {
+  display: block;
+  width: 100%;
+  margin: 16px 0;
+  padding: 22px 0 18px 0;
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+}
+.dropdown-container.widget-lodging-dropdown {
+  margin: 16px 0;
+}
+.dropdown-container__toggle:checked ~ .dropdown-list{
+  z-index: 9;
+}
+.dropdown-container__toggle:checked ~ .dropdown-button{
+  z-index: 10;
+}
+.dropdown-button.widget-lodging-dropdown-btn {
+  width: 230px;
+  padding: 20px 48px 20px 0px;
+  text-align: center;
+}
+.widget-lodging-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--sundance__neutral3);
+}
+.widget-lodging-nav label {
+  font-size: 16px;
+  line-height: 140%;
+}
+.widget-lodging-nav a{
+  font-weight: 500;
+  line-height: 19px;
+}
+
+/* Mobile (Screen size : 375 pts) */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+}
+
+/* Tab (Screen size : 1200 pts) */
+@media screen and (min-width: 768px) and (max-width: 1365px) {
+}
+
+/* Desktop (Screen size : 1440 pts) */
+@media screen and (min-width: 1366px) and (max-width: 1919px) {
+}
+
+/* Desktop XXL (Screen size : 1920 pts) */
+@media screen and (min-width: 1920px) {
+}
+
+/****  end details-widget-lodging molecules  ********************************/
 
 /****  end molecules  ********************************/

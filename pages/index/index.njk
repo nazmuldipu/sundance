@@ -16,6 +16,7 @@ permalinkBypassOutputDir: true
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/bridge.njk' import bridge %}
+{% from 'molecules/lodging-widget.njk' import lodgingWidget %}
 
 {% from 'molecules/footer.njk' import footer %}
 
@@ -157,6 +158,14 @@ permalinkBypassOutputDir: true
 <header>
     {{ h1( copy='Molecules' ) }}
 </header>
+
+<div class="lodgingWidget">
+{% for object in  lodginObject%}
+    <div>
+    {{lodgingWidget(object)}}
+    </div>
+{% endfor %}
+</div>
 
 {{bridge()}}
 
