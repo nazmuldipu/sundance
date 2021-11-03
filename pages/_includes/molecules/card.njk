@@ -1,0 +1,82 @@
+{% from 'macros.njk' import scaled_image %}
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from "atoms/a.njk" import button_primary, button_secondary, view_details %}
+{% macro horrizontalCard(id = '', items, containerBackground = '', figureClass = '', figcaptionClass = '') %}
+   <section class = "{% if containerBackground %} containerBackground {% endif %}">
+         {% for item in items %}
+            <section class="horizontal__card-container">        
+                <figure class="horizontal__card-image {{ figureClass }}
+                    {% if item.imageOrientation == 'left' %}
+                        order-1
+                    {% elif item.imageOrientation == 'right' %}
+                        order-2
+                    {% endif %}" 
+                    {% if id %} id="{{ id }}" {% endif %} 
+                >
+                    <img src={{item.image}} class = "w-full"/>
+                </figure>
+                <figcaption class="horizontal__card-text {{ figcaptionClass }}
+                    {% if item.imageOrientation == 'left' %}
+                        order-2
+                    {% elif item.imageOrientation == 'right' %}
+                        order-1
+                    {% endif %}"
+                    {% if id %} id="{{ id }}" {% endif %}
+                >
+                    {{ h2(copy = item.title, classes=['heading', 'heading--2', 'font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                    {{ h4(copy = item.description, classes=['heading', 'heading--4', 'font-ivar', 'font-normal', 'text-lg-2', 'text--color__sn-6']) }}
+                    {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = item.button.copy, href = item.button.url, target = item.button.target ) }}
+                </figcaption>
+            </section>
+        {% endfor %}
+   </section>
+{% endmacro %}
+
+{% macro card(id = '', items, containerBackground = '', figureClass = '', viewDetails = false, buttonPrimary = false, buttonSecondary = false, figcaptionClass = '') %}
+    <section class="{% if containerBackground %} containerBackground {% endif %}">
+         {% for item in items %}
+            <section class="card-container">        
+                <figure class="card-image {{ figureClass }}" 
+                    {% if id %} id="{{ id }}" {% endif %} 
+                >
+                    <img src={{item.image}} class="w-full"/>
+                </figure>
+                <figcaption class="card-text {{ figcaptionClass }}"
+                    {% if id %} id="{{ id }}" {% endif %}
+                >
+                    {% if item.secondaryHeading %}
+                        {{ h5(copy = item.secondaryHeading, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                    {% endif %}
+                    {% if item.title %}
+                        {{ h3(copy = item.title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
+                    {% endif %}
+                    {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+                    {% if item.criterias %}
+                        <div>
+                            {% for criteria in item.criterias %}
+                                {{ h5(copy = criteria.p, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    {% if viewDetails %}                        
+                        <div class="flex justify-center">
+                            {% for button in item.buttons %}
+                                {{ view_details(classes = ['view-details','font-calibre', 'font-medium', 'text-lg', 'text--color__sn-6'], copy = button.copy, href = button.url, target=button.target ) }}
+                            {% endfor %}
+                        </div>                         
+                    {% endif %}
+                    {% if buttonPrimary %}                        
+                        <div class="flex justify-center">
+                            {{ button_primary( href = item.button.url, copy = item.button.copy, id = item.id, target = item.button.target ) }}
+                        </div>                           
+                    {% endif %}
+                    {% if buttonSecondary %}
+                        <div class="flex justify-center">
+                            {{ button_secondary( href = item.button.url, copy = item.button.copy, id = item.id, target = item.button.target ) }}
+                        </div>
+                    {% endif %}
+                </figcaption>
+            </section>
+        {% endfor %}
+   </section>
+{% endmacro %}
