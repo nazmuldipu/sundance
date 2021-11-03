@@ -1,4 +1,6 @@
 /****  start molecules  ********************************/
+@import url("./details-widget-lodging.css");
+
 footer {
   position: relative;
   border-top: 1px dotted black;
@@ -330,117 +332,5 @@ footer {
   }
 }
 
-/****  details-widget-lodging molecules  ********************************/
-.lodgingWidget{
-  /* TODO: need to delete this class, as this is a class for index file */
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.widget-lodging {
-  display: block;
-  width: 280px;
-  padding: 0 32px 42px 32px;
-  border: 1px dotted #ccc; /* TODO: remove this line once completed */
-  margin-top: 10px; /* TODO: remove this line once completed */
-}
-.widget-lodging .lodging-breadcrumbs {
-  padding: 8px 0;
-}
-.widget-lodging .lodging-breadcrumbs .breadcrumbs-link {
-  text-decoration: none;
-  color: var(--sundance__neutral3);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 17px;
-  padding: 0 8px;
-  border-right: 1px solid var(--sundance__neutral3);
-}
-.widget-lodging .lodging-breadcrumbs .breadcrumbs-link.breadcrumbs-last {
-  border: none !important;
-  color: var(--sundance__neutral1);
-}
-
-.lodging-widget-title {
-  font-weight: 600;
-  font-size: 42px;
-  line-height: 110%;
-  padding: 24px 0;
-  color: var(--sundance__neutral1);
-}
-
-.lodging-widget-description {
-  padding: 8px 0;
-  font-size: 19px;
-  line-height: 140%;
-  letter-spacing: 0.04em;
-  color: var(--sundance__neutral1);
-}
-
-.lodging-widget-note {
-  padding: 8px 0;
-  font-size: 16px;
-  line-height: 140%;
-  letter-spacing: 0.04em;
-  color: var(--sundance__primary1);
-}
-
-.widget-lodging-links {
-  display: block;
-  width: 100%;
-  margin: 16px 0;
-  padding: 22px 0 18px 0;
-  text-align: center;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 140%;
-}
-.dropdown-container.widget-lodging-dropdown {
-  margin: 16px 0;
-}
-.dropdown-container__toggle:checked ~ .dropdown-list{
-  z-index: 9;
-}
-.dropdown-container__toggle:checked ~ .dropdown-button{
-  z-index: 10;
-}
-.dropdown-button.widget-lodging-dropdown-btn {
-  width: 230px;
-  padding: 20px 48px 20px 0px;
-  text-align: center;
-}
-.widget-lodging-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--sundance__neutral3);
-}
-.widget-lodging-nav label {
-  font-size: 16px;
-  line-height: 140%;
-}
-.widget-lodging-nav a{
-  font-weight: 500;
-  line-height: 19px;
-}
-
-/* Mobile (Screen size : 375 pts) */
-@media screen and (min-width: 320px) and (max-width: 767px) {
-}
-
-/* Tab (Screen size : 1200 pts) */
-@media screen and (min-width: 768px) and (max-width: 1365px) {
-}
-
-/* Desktop (Screen size : 1440 pts) */
-@media screen and (min-width: 1366px) and (max-width: 1919px) {
-}
-
-/* Desktop XXL (Screen size : 1920 pts) */
-@media screen and (min-width: 1920px) {
-}
-
-/****  end details-widget-lodging molecules  ********************************/
 
 /****  end molecules  ********************************/
