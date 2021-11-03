@@ -4,7 +4,7 @@
 {% macro header__prefix(headerText) %}
     <section class="header-prefix">
         {% for item in headerText %}
-           {{a(classes= ['text--color__sp-6', 'no-underline', 'font-ivar'],copy=item.title, target=item.target, href=item.href)}}
+           {{a(classes= ['text--color__sn-6', 'no-underline', 'font-ivar'],copy=item.title, target=item.target, href=item.href)}}
         {% endfor %}
     </section>
 {% endmacro %}
