@@ -366,7 +366,32 @@
     left: 18px;
     top: 20px;
 }
-
+/* burger icon */
+.burger-icon {
+    position: relative;
+    top: -10px;
+    width: 26px;
+    height: 1px;
+    background-color: var(--sundance__neutral6);
+  }
+  .burger-icon:before{
+    content: "";
+    position: absolute;
+    top:10px;
+    left: 0px;
+    width: 26px;
+    height: 1px;
+    background-color: var(--sundance__neutral6);
+  }
+  .burger-icon:after{
+    content: "";
+    position: absolute;
+    top:20px;
+    left: 0px;
+    width: 16px;
+    height: 1px;
+    background-color: var(--sundance__neutral6);
+  }
 /* cross icon */
 .cross-icon:after {
     left: 19px;
