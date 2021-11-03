@@ -1,0 +1,83 @@
+@import "./variables.css";
+/****  start header molecules  ********************************/
+.header{
+    display: grid;
+    grid-template-columns: min-content max-content min-content;
+    justify-content: space-between;
+    gap: .5rem;
+    align-items: center;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: var(--sundance__neutral5);
+}
+.header-prefix__container{
+    background: var(--sundance__neutral4);
+    padding-top:13px;
+    padding-bottom:13px;
+}
+.header-prefix{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+.header-suffix{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.header-button{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.heading:not(.header-prefix):not(.header-suffix){
+    padding-bottom: 0em;
+}
+/* Mobile (Screen size : 767 pts) */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .desktop, .tab{
+        display: none;
+    }
+    .header-icon{
+        gap: 4px;
+    }
+    .header-button .button--primary3{
+        padding: 15px 27px 11px 25px;
+    }
+}
+
+/* Tab (Screen size : 1200 pts) */
+@media screen and (min-width: 768px) and (max-width: 1365px) {
+    .desktop, .mobile{
+        display: none;
+    }
+    .header-icon{
+        gap: 5px;
+    }
+    .header-button .button--primary3{
+        padding: 13px 41px 13px 41px;
+    }
+}
+/* Desktop (Screen size : 1919 pts) */
+@media screen and (min-width: 1366px) and (max-width: 1919px) {
+    .tab, .mobile{
+        display: none;
+    }
+    .header-icon{
+        gap: 8px;
+    }
+}
+
+/* Desktop XXL (Screen size : 1920 pts) */
+@media screen and (min-width: 1920px) {
+    .tab, .mobile{
+        display: none;
+    }
+    .header-icon{
+        gap: 8px;
+    }
+}
+
+/****  end header molecules  ********************************/
