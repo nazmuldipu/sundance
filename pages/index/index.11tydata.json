@@ -183,5 +183,73 @@
             "title": "Music",
             "url": "View Lineup"
         }]
+    },
+    "detailsWidgetDropdown1": {
+        "copy": "Book A Class", 
+        "labelId": "details-widget-dropdown-1",
+        "items": [
+            {
+                "copy": "Book A Class 1",
+                "url": "http://example.com/",
+                "target": "_self"
+            },
+            {
+                "copy": "Book A Class <strong>two</strong> Book A Class Book A Class Book A Class ",
+                "url": "http://example.com/",
+                "target": "_blank"
+            },
+            {
+                "copy": "Book A Class 3",
+                "url": "http://example.com/",
+                "target": "_self"
+            }
+        ]
+    },
+    "detailsWidgetDropdown2": {
+        "copy": "Book A Class", 
+        "labelId": "details-widget-dropdown-2",
+        "items": [
+            {
+                "copy": "Book A Class 1",
+                "url": "http://example.com/",
+                "target": "_self"
+            },
+            {
+                "copy": "Book A Class <strong>two</strong> Book A Class Book A Class Book A Class ",
+                "url": "http://example.com/",
+                "target": "_blank"
+            },
+            {
+                "copy": "Book A Class 3",
+                "url": "http://example.com/",
+                "target": "_self"
+            }
+        ]
+    },
+    "detailsWidgetDropdown3": {
+        "copy": "Book Now", 
+        "labelId": "details-widget-dropdown-3",
+        "items": [
+            {
+                "copy": "Book A Class 1",
+                "url": "http://example.com/",
+                "target": "_self"
+            },
+            {
+                "copy": "Book A Class <strong>two</strong> Book A Class Book A Class Book A Class ",
+                "url": "http://example.com/",
+                "target": "_blank"
+            },
+            {
+                "copy": "Book A Class 3",
+                "url": "http://example.com/",
+                "target": "_self"
+            }
+        ]
+    },
+    "widgetCTA": {
+        "href": "Book Now", 
+        "id": "myButton-4", 
+        "copy": "Book Now"
     }
 }

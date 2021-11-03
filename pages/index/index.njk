@@ -164,11 +164,19 @@ permalinkBypassOutputDir: true
         <header>
             {{ h3( copy='Details Widget 1' ) }}
         </header>
-        {{ details_widget_desktop(detailsData = detailsObject, dropdownItems1 = dropdownItems1, dropdownItems2 = dropdownItems1) }}
+        {{ details_widget_desktop(
+            detailsData = detailsObject, 
+            dropdown1 = detailsWidgetDropdown1, 
+            dropdown2 = detailsWidgetDropdown2) 
+        }}
         <header>
             {{ h3( copy='Details Widget 2' ) }}
         </header>
-        {{ details_widget_mobile(detailsData = detailsObject2, dropdownItems = dropdownItems1) }}
+        {{ details_widget_mobile(
+            detailsData = detailsObject2,
+            dropdown1 = detailsWidgetDropdown3, 
+            cta = widgetCTA) 
+        }}
     </section>
 </section>
 {{bridge()}}

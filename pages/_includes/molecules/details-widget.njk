@@ -8,7 +8,11 @@
     #   @return HTML article
     #   @author Sarjis
  #}
-{% macro details_widget_desktop(detailsData = {}, dropdownItems1 = {}, dropdownItems2 = {}) %}
+{% macro details_widget_desktop(
+    detailsData = {}, 
+    dropdown1 = {}, 
+    dropdown2 = {}) 
+%}
     <article class="details-widget">
         <header>
             {{ h6(copy = detailsData.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
@@ -22,9 +26,19 @@
         </p>
         <div class="details-widget--actions justify-content-center gap-x-1">
             <div class="details-widget--actions__item">
-                {{ dropdown( copy='Book A Class', labelId='details-widget-dropdown-1', items = dropdownItems1 ) }}
+                {{ dropdown( 
+                    copy=dropdown1.copy, 
+                    labelId=dropdown1.labelId, 
+                    items = dropdown1.items ) 
+                }}
             </div>
-            {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base', 'font-calibre'], copy='Book A Class', labelId='details-widget-dropdown-2', items = dropdownItems2 ) }}
+            {{ dropdown( 
+                classes=['dropdown-container--secondary'], 
+                labelClasses=['button--secondary', 'button', 'text-base', 'font-calibre'], 
+                copy=dropdown2.copy, 
+                labelId=dropdown2.labelId,  
+                items = dropdown2.items ) 
+            }}
         </div>
         <ul class="details-widget--criteria-list mx-auto">
             {% set class = 'flex details-widget--criteria-list__item border-b-1 border--color__sp-4' %}
@@ -45,7 +59,11 @@
     #   @return HTML article
     #   @author Sarjis
  #}
-{% macro details_widget_mobile(detailsData = {}, dropdownItems = {}) %}
+{% macro details_widget_mobile(
+    detailsData = {}, 
+    dropdown1 = {}, 
+    cta = {}) 
+%}
     <article class="details-widget">
         <header>
             {{ h6(copy = detailsData.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
@@ -64,9 +82,19 @@
         {% endif %}
         <div class="details-widget--actions justify-content-center gap-x-1">
             <div class="details-widget--actions__item">
-                {{ dropdown( copy='Book Now', labelId='details-widget-dropdown-3', items = dropdownItems ) }}
+                {{ dropdown( 
+                    copy=dropdown1.copy, 
+                    labelId=dropdown1.labelId,  
+                    items = dropdown3.items ) 
+                }}
             </div>
-            {{ button_secondary( href='http://example.com', copy='Book Now', id='myButton-4', target='_blank', classes = ['button--secondary', 'button', 'text-base', 'font-calibre'] ) }}
+            {{ button_secondary( 
+                href=cta.href, 
+                copy=cta.copy, 
+                id=cta.id, 
+                target='_blank', 
+                classes = ['button--secondary', 'button', 'text-base', 'font-calibre'] ) 
+            }}
         </div>
         <ul class="details-widget--criteria-list mx-auto">
             {% set class = 'flex details-widget--criteria-list__item border-b-1 border--color__sp-4' %}
