@@ -15,6 +15,14 @@ permalinkBypassOutputDir: true
 {% from 'atoms/accordion.njk' import accordion %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
 {% from 'molecules/header.njk' import header__prefix, header__suffix, header__icon, header__button %}
+{% from 'molecules/card.njk' import horrizontalCard, card %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'molecules/details-widget.njk' import details_widget_desktop, details_widget_mobile %}
+{% from 'atoms/icons.njk' import iconImage, iconCSS %}
+
+{% from 'molecules/footer.njk' import footer %}
+
 <header>
     {{ h1( copy='Atoms' ) }}
 </header>
@@ -103,7 +111,7 @@ permalinkBypassOutputDir: true
     </header>
     <section>
         {% for item in accordions %}
-            {{ accordion( item ) }}
+            {{ accordion( item = item ) }}
         {% endfor %}
     </section>
 </section>
@@ -176,3 +184,55 @@ permalinkBypassOutputDir: true
         {{ header__button() }}
     </header>  
 </section>
+<section style="padding-top:3rem">
+    <div></div>
+</section>
+
+<section>
+    {{ horrizontalCard(horizontalCardImage) }}
+</section>
+
+<section style="padding-bottom:3rem">
+    <div></div>
+</section>
+
+<section class="card-sample__example grid grid-cols-3 gap-x-2 gap-y-2">
+    {{ card(cardImage, viewDetails = true) }}
+    {{ card(cardImage2, buttonSecondary = true) }}
+    {{ card(cardImage2, buttonPrimary = true) }}
+    {{ card(cardImage3) }}
+    {{ card(cardImage4, buttonPrimary = true) }}
+    {{ card(cardImage5) }}
+    {{ card(cardImage6) }}
+    {{ card(cardImage7) }}
+    {{ card(cardImage8, buttonSecondary = true) }}
+</section>
+
+<header>
+    {{ h1( copy='Molecules' ) }}
+</header>
+<section class="segment-outer">
+    <section class="segment-inner">
+        <header>
+            {{ h3( copy='Details Widget 1' ) }}
+        </header>
+        {{ details_widget_desktop(
+            detailsData = detailsObject, 
+            dropdown1 = detailsWidgetDropdown1, 
+            dropdown2 = detailsWidgetDropdown2) 
+        }}
+        <header>
+            {{ h3( copy='Details Widget 2' ) }}
+        </header>
+        {{ details_widget_mobile(
+            detailsData = detailsObject2,
+            dropdown1 = detailsWidgetDropdown3, 
+            cta = widgetCTA) 
+        }}
+    </section>
+</section>
+{{bridge()}}
+
+{{newsletter()}}
+
+{{footer(data.footer)}}

@@ -30,6 +30,8 @@ module.exports = function(eleventyConfig) {
         }
     });
 
+    eleventyConfig.addPassthroughCopy({ 'components/lib': 'lib' });
+
     eleventyConfig.addPassthroughCopy('videos');
     
     eleventyConfig.addPassthroughCopy({ 'images/output': 'images' });
