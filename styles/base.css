@@ -172,9 +172,6 @@ strong {
 .bg-sn-6 {
     background-color: var(--sundance__neutral6) !important;
 }
-.bg-ss-4 {
-    background-color: var(--sundance__secondary4) !important;
-}
 .bg-primary2{
     background-color: var(--sundance__primary2);
 }
