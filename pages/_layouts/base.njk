@@ -1,16 +1,16 @@
 ---
 pagename: base
-meta_title: Skipper
-meta_description: Some description here
 ---
 
+{% from "seo_tags.njk" import seo_tags %}
 {% from "dump_data.njk" import dump_data %}
+
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
     <!-- begin GraphQL data dump -->
-    {{ dump_data(meta.env,globalCMS,pageCMS) }}
+    {{ dump_data(meta.env,globalCMS,pageCMS,seoData) }}
     <!-- end GraphQL data dump-->
 
 <!-- start Google Analytics -->
@@ -25,12 +25,10 @@ meta_description: Some description here
         {% endif %}
 <!-- end Google Analytics -->
         <meta charset="utf-8" />
-        {% if meta_description %}
-            <meta name="description" content="{{meta_description}}">
-        {% endif %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{meta_title}}</title>
-        <link rel="icon" href="images/favicon.png">
+        <meta name="api_type" content="{{meta.api_type}}">
+        <link rel="icon" href="favicon.svg" type="image/svg+xml">
+        {{ seo_tags(pagename, seoData) }}
 <!-- start critical css -->
         {% if critical_css %}
         <style>

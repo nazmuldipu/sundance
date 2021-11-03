@@ -1,23 +1,37 @@
-{% macro dump_data(env,globalCMS,pageCMS) %}
+{% macro dump_data(env,globalCMS,pageCMS, seoData) %}
         <!-- begin GraphQL data dump -->
     {% if env == 'local' %}
     <style>
     #data-dump-view-toggle{
-        height: 15px;
-        padding: 5px;
+        height: auto;
         position: fixed;
-        color: black !important;
-        bottom: 10px !important;
-        background-color: yellow;
-        border: 1px solid black;
-        border-radius: 4px;
+        bottom: 40vh !important;
+        left: 25px !important;
+        padding: 8px;
+        border-radius: 0px 0px 2px 2px;
+        color: rgb(255, 255, 255);
+        background: rgb(61, 88, 102);
+        box-shadow: rgba(0, 0, 0, 0.3) -1px 1px 6px 0px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 12px;
+        letter-spacing: 0.45px;
+        cursor: pointer;
+        transform: rotate(-90deg);
+        transform-origin: left bottom;
+        width: auto;
+        overflow: hidden;
     }
     #data-dump-root{
-        width: 97%;
-        top: 5px;
-        bottom: 70px;
+        width: 98%;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
         position: fixed;
         z-index: 99999;
+        overflow: hidden;
     }
     </style>
         <div id="data-dump-view-toggle" class="inline-block cursor-pointer px-4 py-1 bg-mar-main-2 text-sm text-white uppercase tracking-wider fixed bottom-4 left-4">Data Toggle</div>
@@ -32,13 +46,13 @@
             const editor = new JSONEditor(
                 document.getElementById('data-dump-root'),
                 {
-                    modes: ['code', 'tree'],
                     mode: 'code',
                     ace: ace
                 }
             )
 
             editor.set({
+                seoData: {{seoData|json|safe}},
                 globalCMS: {{globalCMS|json|safe}},
                 pageCMS: {{pageCMS|json|safe}}
             })
@@ -53,10 +67,6 @@
                     el.style.display = (el.style.display === "none") ? "block" : "none";
                 })
             })();
-            console.log({
-                globalCMS: {{globalCMS|json|safe}},
-                pageCMS: {{pageCMS|json|safe}}
-            })
     </script>
     {% endif %}
     <!-- end GraphQL data dump-->
