@@ -397,6 +397,50 @@
                     "target": "_self"
                 }
         }
-    ]
-
+    ],
+    "amenitiesData": {
+        "heading": "Amenities",
+        "amenities": [
+            {
+                "features" : [
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    }
+                ]
+            },
+            {
+                "features" : [
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    }
+                ]
+            }
+        ]
+    }
 }
