@@ -6,7 +6,7 @@
         height: auto;
         position: fixed;
         bottom: 40vh !important;
-        left: 25px !important;
+        left: 20px !important;
         padding: 8px;
         border-radius: 0px 0px 2px 2px;
         color: rgb(255, 255, 255);
@@ -23,21 +23,26 @@
         transform-origin: left bottom;
         width: auto;
         overflow: hidden;
+        z-index: 9999
     }
     #data-dump-root{
-        width: 98%;
+        width: 100%;
         top: 0px;
         bottom: 0px;
         right: 0px;
         position: fixed;
-        z-index: 99999;
-        overflow: hidden;
+        z-index: 999;
+        border-color: rgb(61, 88, 102) !important;
     }
+    #data-dump-root .jsoneditor-menu {
+        background: rgb(61, 88, 102) !important;
+    }
+
     </style>
-        <div id="data-dump-view-toggle" class="inline-block cursor-pointer px-4 py-1 bg-mar-main-2 text-sm text-white uppercase tracking-wider fixed bottom-4 left-4">Data Toggle</div>
-        <pre id="data-dump-root" class="fixed inset-0 text-sm text-mono overflow-y-scroll p-1 pb-4 border-4 border-mar-main-2 bg-mar-main-5 m-16 sm:m-32" style="display: none"></pre>
-        <span id="data-dump-underlay" class="fixed inset-0 bg-black bg-opacity-25" style="display: none; z-index: 999998"></span>
-        {# <style>#data-dump-view-toggle { z-index: 1000000 } #data-dump-root { display: none; z-index: 999999 } #data-dump-root .string { color: gray; } #data-dump-root .number { color: darkorange; } #data-dump-root .boolean { color: blue; } #data-dump-root .null { color: magenta; } #data-dump-root .key { color: coral; }</style> #}
+        <div id="data-dump-view-toggle" >Data Toggle</div>
+        <pre id="data-dump-root" style="display: none"></pre>
+        <span id="data-dump-underlay" style="display: none; z-index: 999998"></span>
+        <style>#data-dump-view-toggle { z-index: 1000000 } #data-dump-root { display: none; z-index: 999999 } #data-dump-root .string { color: gray; } #data-dump-root .number { color: darkorange; } #data-dump-root .boolean { color: blue; } #data-dump-root .null { color: magenta; } #data-dump-root .key { color: coral; }</style>
 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.0.0/jsoneditor.css" rel="stylesheet" type="text/css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/9.0.0/jsoneditor.min.js"></script>
@@ -53,7 +58,7 @@
             dumpData["globalCMS"] = {{globalCMS|json|safe}}
             dumpData["pageCMS"] = {{pageCMS|json|safe}}
 
-            const editor = new JSONEditor(
+            let editor = new JSONEditor(
                 document.getElementById('data-dump-root'),
                 {
                     mode: 'code',
