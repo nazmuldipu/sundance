@@ -15,7 +15,7 @@
         {{ iconImage( src='images/temparature.svg', alt='Temparature icon' ) }}
     </section>
 {% endmacro %}
-{% macro header__button() %}
+{% macro headerButton() %}
     <section class="header-button">
         {{ button_primary(classes=['button','button--primary3', 'header__button--text-size', 'header-button__padding'], href='http://example.com', copy='Book Now', id='headerButton-1', target='_blank' ) }}
     </section>
@@ -23,7 +23,7 @@
 {% macro headerRight() %}
     <section class="header-right">
        {{ headerIcon() }} 
-       {{ header__button() }}
+       {{ headerButton() }}
     </section>
 {% endmacro %}
 
@@ -41,7 +41,7 @@
         <header class="header">
             {{ headerIcon() }}
             {{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}
-            {{ header__button() }}
+            {{ headerButton() }}
         </header>
         <div class="header-left__container">
             {{headerLeft(items)}}
@@ -52,7 +52,7 @@
         <header class="header">
             {{ iconCSS( classes=['burger-icon'] ) }}
             {{ headerIcon() }}
-            {{ header__button() }}
+            {{ headerButton() }}
         </header>  
     </section>
 {% endmacro %}
