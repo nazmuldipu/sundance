@@ -20,9 +20,8 @@ permalinkBypassOutputDir: true
 {% from 'molecules/lodging-widget.njk' import lodgingWidget %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'molecules/details-widget.njk' import details_widget_desktop, details_widget_mobile %}
-{% from 'atoms/icons.njk' import iconImage, iconCSS %}
-
 {% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/forms.njk' import lodging_form %}
 
 <header>
     {{ h1( copy='Atoms' ) }}
@@ -212,6 +211,14 @@ permalinkBypassOutputDir: true
             dropdown1 = detailsWidgetDropdown3, 
             cta = widgetCTA) 
         }}
+    </section>
+</section>
+<section class="segment-outer">
+    <section class="segment-inner">
+        <header>
+            {{ h3( copy='Lodging Forms' ) }}
+        </header>
+        {{ lodging_form(item = lodgingForm) }}
     </section>
 </section>
 
