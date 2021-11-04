@@ -4,6 +4,7 @@
 @import './molecules-newsletter.css';
 @import './molecules-bridge.css';
 @import url('./molecules-venues.css');
+@import './molecules-card.css';
 
 /*  start details widget molecules  */
 .details-widget {
