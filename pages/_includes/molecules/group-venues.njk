@@ -1,0 +1,42 @@
+{% from "atoms/headings.njk" import h2 %}
+{% from "atoms/a.njk" import a, Link, dropdown %}
+{#
+    #   @desc   group venues form
+    #   @author Nazmul Alam
+#}
+
+{% macro groupVenues(object)%}
+    <section class="group-venues">
+        <article class="group-venues__container">
+            <section class="group-venues__breadcrumbs font-calibre">
+                {% for breadcrumb in object.breadcrumbs %}
+                    <a class="group-venues__breadcrumbs__link {{ 'breadcrumbs-last' if loop.last}}" href="{{breadcrumb.url}}">{{breadcrumb.copy}}
+                    </a>
+                {% endfor %}
+            </section>
+            {{ h2( copy=object.title, classes=['group-venues__title','font-ivar'] ) }}
+
+            {% for des in object.descriptions %}
+                <p class="group-venues__description font-ivar">{{des}}</p>
+            {% endfor %}
+
+            <section class="group-venues__actions">
+                {% for action in object.actions %}
+                    {%if action.category == 'dropdown' %}
+                        {{ dropdown( classes=['dropdown-container--' + action.type, 'group-venues__dropdown'], labelClasses= [ 'button', 'button--' + action.type, 'group-venues__dropdown-btn', 'font-calibre', 'text-base'], labelId=action.slug, copy=action.copy, items=action.items ) }}
+                    {% elif action.category == 'link' %}
+                        {{ Link( href=action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}
+                    {% endif %}
+                {% endfor %}
+            </section>
+
+            {% for nav in object.navs %}
+                <div class="group-venues__nav">
+                    <label class="font-ivar">{{nav.label}}</label>
+                    {{ a( copy=nav.copy, href=nav.url, target=nav.target) }}
+                </div>
+            {% endfor %}
+
+        </article>
+    </section>
+{% endmacro %}

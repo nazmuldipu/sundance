@@ -18,6 +18,7 @@ permalinkBypassOutputDir: true
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'molecules/lodging-widget.njk' import lodgingWidget %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'molecules/details-widget.njk' import details_widget_desktop, details_widget_mobile %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/forms.njk' import lodging_form %}
@@ -220,6 +221,17 @@ permalinkBypassOutputDir: true
         {{ lodging_form(item = lodgingForm) }}
     </section>
 </section>
+
+{{ h2( copy='Group Venues' ) }}
+{% for event in groupVenue %}
+    <section class="group-section">
+        <div class="bridge__top-frame"></div>
+        <div class="group-container">
+            {{groupVenues(event)}}
+        <div>
+    </section>
+{% endfor %}
+
 {{bridge()}}
 
 {{newsletter()}}
