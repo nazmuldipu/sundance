@@ -39,6 +39,7 @@
         width: 82%;
     }
     .lodging-form__cta {
+        text-align: center;
         display: block !important;
         margin-bottom: 2.5rem;
     }
