@@ -1,0 +1,24 @@
+{% from "atoms/headings.njk" import h2, h3 %}
+{% from 'atoms/form-fields.njk' import checkboxes%}
+{# 
+    #   @desc   filter element
+    #   @param  filter
+    #   @author Nazmul Alam
+ #}
+{% macro filter(obj) %}
+    <section class="filter">
+        <header class="filter__header">
+            <span>18 Entries</span>
+            {{ h2(copy="Find a  place to stay", classes=['heading--2', 'font-calibre', 'font-medium']) }}
+            <span>Filter button</span>
+        </header>
+        <section class="filter__container">
+            {% for item in obj %}
+                <article>
+                    {{ h3( copy= item.title ) }}
+                    {{ checkboxes( copy='Mountain Homes', id='checkbox-1', name='checkbox', checkBoxNumber='13' ) }}
+                </article>
+            {% endfor %}
+        </section>
+    </section>
+{% endmacro %}

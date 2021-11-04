@@ -1,0 +1,15 @@
+.filter {
+    display: block;
+}
+.filter__header, .filter__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 16px;
+}
+.filter__container{
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--sundance__neutral1);
+}
