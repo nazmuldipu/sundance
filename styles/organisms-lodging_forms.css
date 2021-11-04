@@ -45,7 +45,7 @@
     }
 
     /* Xmed (Screen size : 1200 pts) */
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 1366px) {
         .lodging-forms {
             max-width: 100%;
             margin-left: 0;
