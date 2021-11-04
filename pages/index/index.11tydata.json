@@ -866,5 +866,16 @@
             "href": "http://example.com/",
             "target": "_blank"
         }
+    },
+  "bridgeItems":[
+    {
+      "id":"secondBridge-1",
+      "title":"Purchase a zip tour Gift Card",
+      "actions":{
+          "copy":"Buy Now",
+          "href":"#",
+          "target":"_self"
+        }
     }
+  ]
 }
