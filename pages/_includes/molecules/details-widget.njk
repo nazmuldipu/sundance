@@ -8,11 +8,7 @@
     #   @return HTML article
     #   @author Sarjis
  #}
-{% macro details_widget_desktop(
-    detailsData = {}, 
-    dropdown1 = {}, 
-    dropdown2 = {}) 
-%}
+{% macro details_widget_desktop(detailsData = {}, dropdown1 = {}, dropdown2 = {}) %}
     <article class="details-widget">
         <header>
             {{ h6(copy = detailsData.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
@@ -60,11 +56,7 @@
     #   @return HTML article
     #   @author Sarjis
  #}
-{% macro details_widget_mobile(
-    detailsData = {}, 
-    dropdown1 = {}, 
-    cta = {}) 
-%}
+{% macro details_widget_mobile( detailsData = {}, dropdown1 = {}, cta = {}) %}
     <article class="details-widget">
         <header>
             {{ h6(copy = detailsData.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
