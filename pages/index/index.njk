@@ -207,10 +207,7 @@ permalinkBypassOutputDir: true
         <header>
             {{ h3( copy='Lodging Forms' ) }}
         </header>
-        {{ lodging_forms(
-            detailsData = detailsObject, 
-            formInputs = formInputs) 
-        }}
+        {{ lodging_forms(item = lodgingForm) }}
     </section>
 </section>
 {{bridge()}}
