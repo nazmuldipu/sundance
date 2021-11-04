@@ -1,0 +1,16 @@
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from "atoms/a.njk" import button_primary %}
+{% macro secondBridge(items) %}
+    <section class="second-bridge">                
+        <article class="second-bridge__container">
+            {% for item in items %}
+                <header>
+                    {{ h3(copy = item.title, classes=['second-bridge__text--size', 'font-calibre', 'font-medium', 'text-white']) }}
+                </header>
+                <div>
+                    {{ button_primary(classes=['button', 'button--primary', 'second-bridge__button--size', 'font-calibre', 'font-medium', 'text-base'], id = item.id, copy = item.actions.copy, href = item.actions.href, target = item.actions.target ) }}
+                </div>
+            {% endfor %}
+        </article>
+    </section>
+{% endmacro %}
