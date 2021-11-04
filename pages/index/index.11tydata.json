@@ -136,5 +136,267 @@
             "url": "http://example.com/",
             "target": "_self"
         }
+    ],
+    "detailsObject": {
+        "title": "Homepage | Summer Activities | <span class='bold'>Mountain Bike Lift Rides</span>",
+        "heading": "<span class='bold'>Over 25 Miles of Beautiful Single-track</span>",
+        "p1": "Certain bike trails may close at any time due to mountain construction projects. Please abide by any closures.",
+        "p2": "Sundance offers 25+ miles of lift-serviced, single-track mountain biking with exciting terrain and breathtaking vistas.",
+        "criteria_items": [
+        {
+            "title": "Hours",
+            "url": "View Hours"
+        },
+        {
+            "title": "Map",
+            "url": "View Map"
+        },
+        {
+            "title": "Waiver",
+            "url": "Sign"
+        },
+        {
+            "title": "Safety",
+            "url": "Review"
+        }]
+    },
+    "detailsObject2":{
+        "title": "Homepage | Dining | <span class='bold'>Tree Room</span>",
+        "heading": "<span class='bold'>Tree Room</span>",
+        "p1": "Some hiking trails from the lift are temporarily closed for the safety of our guests during lift line construction.",
+        "p2": "Enjoy the romantic atmosphere of candlelight and soft illumination accenting beautiful Native American art from Robert Redford’s private collection as you savor fresh, seasonal mountain cuisine.",
+        "p3": "Children under 12 not permitted.",
+        "criteria_items": [
+        {
+            "title": "Hours",
+            "url": "View Hours"
+        },
+        {
+            "title": "Contact",
+            "url": "Call Now"
+        },
+        {
+            "title": "Menu",
+            "url": "View"
+        },
+        {
+            "title": "Music",
+            "url": "View Lineup"
+        }]
+    },
+    "detailsWidgetDropdown1": {
+        "copy": "Book A Class", 
+        "labelId": "details-widget-dropdown-1",
+        "items": [
+            {
+                "copy": "Book A Class 1",
+                "url": "http://example.com/",
+                "target": "_self"
+            },
+            {
+                "copy": "Book A Class <strong>two</strong> Book A Class Book A Class Book A Class ",
+                "url": "http://example.com/",
+                "target": "_blank"
+            },
+            {
+                "copy": "Book A Class 3",
+                "url": "http://example.com/",
+                "target": "_self"
+            }
+        ]
+    },
+    "detailsWidgetDropdown2": {
+        "copy": "Book A Class", 
+        "labelId": "details-widget-dropdown-2",
+        "items": [
+            {
+                "copy": "Book A Class 1",
+                "url": "http://example.com/",
+                "target": "_self"
+            },
+            {
+                "copy": "Book A Class <strong>two</strong> Book A Class Book A Class Book A Class ",
+                "url": "http://example.com/",
+                "target": "_blank"
+            },
+            {
+                "copy": "Book A Class 3",
+                "url": "http://example.com/",
+                "target": "_self"
+            }
+        ]
+    },
+    "detailsWidgetDropdown3": {
+        "copy": "Book Now", 
+        "labelId": "details-widget-dropdown-3",
+        "items": [
+            {
+                "copy": "Book A Class 1",
+                "url": "http://example.com/",
+                "target": "_self"
+            },
+            {
+                "copy": "Book A Class <strong>two</strong> Book A Class Book A Class Book A Class ",
+                "url": "http://example.com/",
+                "target": "_blank"
+            },
+            {
+                "copy": "Book A Class 3",
+                "url": "http://example.com/",
+                "target": "_self"
+            }
+        ]
+    },
+    "widgetCTA": {
+        "href": "Book Now", 
+        "id": "myButton-4", 
+        "copy": "Book Now"
+    },
+    "horizontalCardImage": [
+        {
+            "id":"card-1",
+            "title":"Visiting Artist Program",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image":"https://via.placeholder.com/800x400",
+            "imageOrientation":"left",
+            "button":
+                {
+                    "copy": "View Details",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                }
+        },
+        {
+            "id":"card-2",
+            "title":"Visiting Artist Program",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image":"https://via.placeholder.com/800x400",
+            "imageOrientation":"right",
+            "button":
+                {
+                    "copy": "View Details",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                }
+        }
+    ],
+    "cardImage":[
+        {
+            "id":"card-1",
+            "secondaryHeading":"Suites & Rooms",
+            "title":"Room Type",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image":"https://via.placeholder.com/800x400",
+            "criterias":[
+                {
+                  "p": "SLEEPS 2-4 / 1-2 BR"
+                }
+            ],
+            "buttons":[
+                {
+                    "copy": "view details",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                }
+            ]
+        }
+    ],
+    "cardImage2":[
+        {
+            "id":"card-2",
+            "secondaryHeading":"Suites & Rooms",
+            "title":"Room Type",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image":"https://via.placeholder.com/800x400",
+            "criterias":[
+                {
+                  "p": "SLEEPS 2-4 / 1-2 BR"
+                }
+            ],
+            "button":
+                {
+                    "copy": "Book Now",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                }
+        }
+    ],
+    "cardImage3":[
+        {
+            "id":"card-3",
+            "title":"Room Type",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image":"https://via.placeholder.com/800x400"
+        }
+    ],
+    "cardImage4":[
+        {
+            "id":"card-4",
+            "title":"Room Type",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image":"https://via.placeholder.com/800x400",
+            "button":
+                {
+                    "copy": "Book Now",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                }
+        }
+    ],
+    "cardImage5":[
+        {
+            "id":"card-5",
+            "secondaryHeading":"Suites & Rooms",
+            "title":"Room Type",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image":"https://via.placeholder.com/800x400",
+            "criterias":[
+                {
+                  "p": "SLEEPS 2-4 / 1-2 BR"
+                }
+            ]
+        }
+    ],
+    "cardImage6":[
+        {
+            "id":"card-6",
+            "secondaryHeading":"Suites & Rooms",
+            "title":"Room Type",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image":"https://via.placeholder.com/800x400"
+        }
+    ],
+    "cardImage7":[
+        {
+            "id":"card-7",
+            "title":"Room Type",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image":"https://via.placeholder.com/800x400",
+            "criterias":[
+                {
+                  "p": "SLEEPS 2-4 / 1-2 BR"
+                }
+            ]
+        }
+    ],
+    "cardImage8":[
+        {
+            "id":"card-8",
+            "title":"Room Type",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image":"https://via.placeholder.com/800x400",
+            "criterias":[
+                {
+                  "p": "SLEEPS 2-4 / 1-2 BR"
+                }
+            ],
+            "button":
+                {
+                    "copy": "Book Now",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                }
+        }
     ]
+
 }
