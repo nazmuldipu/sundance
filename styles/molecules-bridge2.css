@@ -1,17 +1,16 @@
 /****  start bridge molecules  ********************************/
 .second-bridge{
-    width: 100%;
+    background-color: var(--sundance__primary1);    
     text-align: center;
     padding-top: 48px;
     padding-bottom: 48px;
-    background-color: var(--sundance__primary1);
-}
-.second-bridge__container{
-    display: grid;
-    gap: 24px;
+    width: 100%;
 }
 .second-bridge__text--size{
     font-size: 28px;
+}
+.second-bridge__header--padding{
+    padding-bottom: 24px;
 }
 .second-bridge__button--size{
     padding: 20px 48px 12px 48px;
