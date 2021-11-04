@@ -34,7 +34,11 @@
 
 ## Doing Stuff
 - `npm install` to start
-- `npm run build` will build the site for production
-- `npm run watch` will build the site for development. You will see hot module reloads for changes to some files.
-- `npm run resize-images` will run the `tooling/images.js` script which takes images in `images/src` and resizes them and puts them into `images/output`
+- `npm run build-dev` will build the site for production (cms dev api)
+- `npm run build-stage` will build the site for production (cms stage api)
+- `npm run build-prod` will build the site for production (cms prod api)
+- `npm run watch-dev` will build the site for development(`cms dev api`). You will see hot module reloads for changes to some files.
+- `npm run watch-stage` will build the site for development(`cms stage api`). You will see hot module reloads for changes to some files.
+- `npm run watch-prod` will build the site for development(`cms prod api`). You will see hot module reloads for changes to some files.
+
 
