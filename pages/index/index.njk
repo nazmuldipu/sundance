@@ -22,7 +22,12 @@ permalinkBypassOutputDir: true
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
 
 {% from 'molecules/footer.njk' import footer %}
-
+<section>
+    {{ navMenu(navMenuLink) }}
+</section>
+<section style="padding-bottom:6rem">
+    
+</section>
 <header>
     {{ h1( copy='Atoms' ) }}
 </header>
@@ -157,9 +162,6 @@ permalinkBypassOutputDir: true
         {{ iconImage( src='images/liftopia.png', alt='Liftopia icon' ) }}<br>
     </section>
 </section> #}
-<section>
-    {{ navMenu(headerText) }}
-</section>
 <section style="padding-top:3rem">
     <div></div>
 </section>

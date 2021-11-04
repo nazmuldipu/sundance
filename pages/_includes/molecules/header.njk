@@ -1,12 +1,36 @@
 {% from "atoms/a.njk" import a, button_primary %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
 
-{% macro headerLeft(headerText) %}
+{% macro headerLeft(menuItems) %}
     <section class="header-left">
-        {% for item in headerText %}
-           {{a(classes= ['text--color__sn-6', 'no-underline', 'font-ivar'],copy=item.title, target=item.target, href=item.href)}}
+        {% for item in menuItems %}
+            <div class="">
+                {% set id = 'toggle-155'+ item.title%}
+                <input type="checkbox" id="{{id}}" class="toggle hidden" name="First">
+                <label onblur="myFunction('{{id}}')" tabindex="0" for="{{id}}" class="accordion--label" style="position:relative">
+                    <h2 class="accordion--title heading--4 font-ivar">
+                        {{ item.title }}
+                    </h2>
+                </label>
+                <ul class="toggle-details hidden font-ivar" style="position:absolute; gap:1rem; text-align:left; ">
+                    {% for linkItems in item.links %}
+                       <li>
+                            {{a(classes= ['text--color__sn-6', 'no-underline', 'font-ivar'], copy = linkItems.copy)}}
+                       </li> 
+                    {% endfor %}
+                </ul>
+            </div>
         {% endfor %}
     </section>
+    <script>
+window.myFunction =function(id) {
+    let el = document.getElementById(id);
+        if(el.checked){
+            el.checked = false;
+        }
+    }
+    
+</script>
 {% endmacro %}
 {% macro headerIcon() %}
     <section class="header-icon flex align-items-center">
@@ -27,32 +51,17 @@
     </section>
 {% endmacro %}
 
-{% macro navMenu(items) %}
+{% macro navMenu(menuItems) %}
     <!--Desktop design-->
-    <section class="desktop">
+    <section class="">
         <header class="header">
-            {{ headerLeft(items) }}
-            {{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}
-            {{ headerRight() }}
+            <div class="header__left">{{ headerLeft(menuItems) }}</div>
+            <div class="header__middle-1">{{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}</div>
+            <div class="header__middle-2">
+                {{ headerIcon() }}
+                {{ headerButton() }}
+            </div>
+            <div class="header__right">{{ headerButton() }}</div>
         </header>
-    </section>
-    <!--tab design-->
-    <section class="tab">
-        <header class="header">
-            {{ headerIcon() }}
-            {{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}
-            {{ headerButton() }}
-        </header>
-        <div class="header-left__container">
-            {{headerLeft(items)}}
-        </div>    
-    </section>
-    <!--mobile design-->
-    <section class="mobile">
-        <header class="header">
-            {{ iconCSS( classes=['burger-icon'] ) }}
-            {{ headerIcon() }}
-            {{ headerButton() }}
-        </header>  
     </section>
 {% endmacro %}
