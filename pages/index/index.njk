@@ -17,6 +17,7 @@ permalinkBypassOutputDir: true
 {% from 'molecules/card.njk' import horrizontalCard, card %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/bridge.njk' import bridge %}
+{% from 'molecules/lodging-widget.njk' import lodgingWidget %}
 {% from 'molecules/details-widget.njk' import details_widget_desktop, details_widget_mobile %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/forms.njk' import lodging_form %}
@@ -182,6 +183,15 @@ permalinkBypassOutputDir: true
 <header>
     {{ h1( copy='Molecules' ) }}
 </header>
+
+<div class="lodgingWidget">
+{% for object in  lodginObject%}
+    <div>
+    {{lodgingWidget(object)}}
+    </div>
+{% endfor %}
+</div>
+
 <section class="segment-outer">
     <section class="segment-inner">
         <header>

@@ -87,7 +87,7 @@
     #   @param  classes array, class names (optional)
     #   @param  id       string, a unique ID (optional)
     #   @param  copy    string, the HTML mark up that is linked
-    #   @author Ashfaqur Rahman, Alexander Khost, Sarjis
+    #   @author Nazmul Alam
  #}
 {% macro Button( copy, classes = ['view-details', 'font-calibre', 'text-base'], type="button", id) %}
     <button type="{{type}}" 
@@ -95,6 +95,27 @@
         class="{% for class in classes %} {{ class }} {% endfor %}" >
             {{ copy | safe }}
     </button>
+{% endmacro %}
+
+{#
+    #   @desc   Anchor tag for click event
+    #   @param  classes  array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  copy     string, the HTML mark up that is linked
+    #   @param  href     string, link url
+    #   @param  target   string, the link target location (optional)
+    #   @return HTML link
+    #   @author Nazmul Alam
+#}
+{% macro Link( classes=['button', 'button--primary', 'font-calibre', 'text-base'], id, copy, href='#', target )%}
+    <a
+        href="{{ href }}"
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+        {% if target %} target="{{ target }}" {% endif %}
+    >
+        {{ copy | safe }}
+    </a>
 {% endmacro %}
 
 {#
