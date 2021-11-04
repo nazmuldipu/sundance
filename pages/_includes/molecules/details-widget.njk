@@ -1,24 +1,102 @@
-{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
-{% from "atoms/a.njk" import dropdown %}
-{% macro details_widget_desktop() %}
-    <article>
+{% from "atoms/headings.njk" import h2, h6 %}
+{% from "atoms/a.njk" import a, dropdown, button_secondary %}
+{# 
+    #   @desc   details widget
+    #   @param  detailsData       object (data from json file)
+    #   @param  dropdown1       object (data from json file)
+    #   @param  dropdown2       object (data from json file)
+    #   @return HTML article
+    #   @author Sarjis
+ #}
+{% macro details_widget_desktop(detailsData = {}, dropdown1 = {}, dropdown2 = {}) %}
+    <article class="details-widget">
         <header>
-            {% set smallHeading = 'Homepage | Summer Activities | Mountain Bike Lift Rides'%}
-            {% set largeHeading = 'Over 25 Miles of Beautiful Single-track'%}
-            {{ h6(copy = smallHeading) }}
-            {{ h1(copy = largeHeading) }}
+            {{ h6(copy = detailsData.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
+            {{ h2(copy = detailsData.heading, classes = ['details-widget--heading', 'font-ivar']) }}
         </header>
-        <p class="details-widget--text__small bg-ss-4">
-            Certain bike trails may close at any time due to mountain construction projects. Please abide by any closures.
+        <p class="details-widget--text__small mx-auto font-calibre">
+            {{ detailsData.p1 }}
         </p>
-        <p class="details-widget--text__large">
-            Sundance offers 25+ miles of lift-serviced, single-track mountain biking with exciting terrain and breathtaking vistas.
+        <p class="details-widget--text__large mx-auto font-ivar">
+            {{ detailsData.p2 }}
         </p>
-        <div class="flex align-items-center">
-            <div style="position: relative; z-index: 2;">
-                {{ dropdown( copy='Book A Class', labelId='dropdown-1', items = data.dropdownItems1 ) }}
+        <div class="details-widget--actions justify-center gap-x-1">
+            <div class="details-widget--actions__item">
+                {{ dropdown( 
+                    copy=dropdown1.copy, 
+                    labelId=dropdown1.labelId, 
+                    items = dropdown1.items ) 
+                }}
             </div>
-            {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base'], copy='Book A Class', labelId='dropdown-2', items = data.dropdownItems1 ) }}
+            {{ dropdown( 
+                classes=['dropdown-container--secondary'], 
+                labelClasses=['button--secondary', 'button', 'text-base', 'font-calibre'], 
+                copy=dropdown2.copy, 
+                labelId=dropdown2.labelId,  
+                items = dropdown2.items ) 
+            }}
         </div>
+        <ul class="details-widget--criteria-list mx-auto">
+            {% set class = 'flex details-widget--criteria-list__item border-b-1 border--color__sp-4' %}
+            {% for item in detailsData.criteria_items %}
+                <li class="{{ class }}">
+                    <div class="font-ivar">{{ item.title }}</div>
+                    <div class="font-calibre">{{ a(copy = item.url) }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    </article>
+{% endmacro %}
+
+{# 
+    #   @desc   details widget
+    #   @param  detailsData       object (data from json file)
+    #   @param  dropdown       object (data from json file)
+    #   @param  cta       object (data from json file)
+    #   @return HTML article
+    #   @author Sarjis
+ #}
+{% macro details_widget_mobile( detailsData = {}, dropdown1 = {}, cta = {}) %}
+    <article class="details-widget">
+        <header>
+            {{ h6(copy = detailsData.title, classes = ['details-widget--breadcrumbs-title','font-calibre', 'text-sm']) }}
+            {{ h2(copy = detailsData.heading, classes = ['details-widget--heading','heading--2', 'font-ivar']) }}
+        </header>
+        <p class="details-widget--text__small mx-auto font-calibre">
+            {{ detailsData.p1 }}
+        </p>
+        <p class="details-widget--text__large mx-auto font-ivar">
+            {{ detailsData.p2 }}
+        </p>
+        {% if detailsData.p3 %}
+            <p class="details-widget--text__colored font-ivar text--color__sp-1">
+                {{ detailsData.p3 }}
+            </p>
+        {% endif %}
+        <div class="details-widget--actions justify-center gap-x-1">
+            <div class="details-widget--actions__item">
+                {{ dropdown( 
+                    copy=dropdown1.copy, 
+                    labelId=dropdown1.labelId,  
+                    items = dropdown1.items ) 
+                }}
+            </div>
+            {{ button_secondary( 
+                href=cta.href, 
+                copy=cta.copy, 
+                id=cta.id, 
+                target='_blank', 
+                classes = ['button--secondary', 'button', 'text-base', 'font-calibre'] ) 
+            }}
+        </div>
+        <ul class="details-widget--criteria-list mx-auto">
+            {% set class = 'flex details-widget--criteria-list__item border-b-1 border--color__sp-4' %}
+            {% for item in detailsData.criteria_items %}
+                <li class="{{ class }}">
+                    <div class="font-ivar">{{ item.title }}</div>
+                    <div class="font-calibre">{{ a(copy = item.url) }}</div>
+                </li>
+            {% endfor %}
+        </ul>
     </article>
 {% endmacro %}

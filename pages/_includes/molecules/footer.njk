@@ -8,28 +8,28 @@
  #}
 {% macro footer(footer) %}
     <footer>
-        <article class="footer-container">
+        <article class="footer__container">
             {% for sec in footer.sections %}
-                <section class="footer-col">
+                <section class="footer__col">
                     {{ h2( classes=['heading', 'font-ivar', 'heading__foooter--2'], copy=sec.title ) }}
                     {% for link in sec.links %}
                         {% set trg = '_blank' if link.external %}
                         {% if not link.icon %}
-                            <nav>{{ a( id=link.label, copy=link.label, href=link.url, classes=['footer-link'], target=trg) }}</nav>
+                            <nav>{{ a( id=link.label, copy=link.label, href=link.url, classes=['footer__link'], target=trg) }}</nav>
                         {% else %}
-                            {{ a( id=link.label, copy=iconImage( src=link.icon, alt=link.label, classes = ['footer-icon'] ), href=link.url, classes=['footer-link'], target=trg) }}
+                            {{ a( id=link.label, copy=iconImage( src=link.icon, alt=link.label, classes = ['footer__icon'] ), href=link.url, classes=['footer__link'], target=trg) }}
                         {% endif %}
                     {% endfor %}
                 </section>
             {% endfor %}
         </article>
-        <article class="footer-copy font-calibre">
-            <section class="footer-copy-image">
+        <article class="footer__copy font-calibre">
+            <section class="footer__copy__image">
                 {{ iconImage( src=footer.bottom.image, alt='Hotels icon' ) }}
             </section>
             <section>{{footer.bottom.label | safe}}</section>
         </article>
-        <img class="s_dot" src={{footer['static_image']}} alt="S dot logo">
+        <img class="footer__s_dot" src={{footer['static_image']}} alt="S dot logo">
     </footer>
 
 {% endmacro %}
