@@ -17,11 +17,12 @@ permalinkBypassOutputDir: true
 {% from 'molecules/card.njk' import horrizontalCard, card %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/bridge.njk' import bridge %}
+{% from 'molecules/lodging-widget.njk' import lodgingWidget %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'molecules/details-widget.njk' import details_widget_desktop, details_widget_mobile %}
-{% from 'atoms/icons.njk' import iconImage, iconCSS %}
-
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/amenities.njk' import amenities %}
+{% from 'organisms/forms.njk' import lodging_form %}
 
 <header>
     {{ h1( copy='Atoms' ) }}
@@ -184,6 +185,15 @@ permalinkBypassOutputDir: true
 <header>
     {{ h1( copy='Molecules' ) }}
 </header>
+
+<div class="lodgingWidget">
+{% for object in  lodginObject%}
+    <div>
+    {{lodgingWidget(object)}}
+    </div>
+{% endfor %}
+</div>
+
 <section class="segment-outer">
     <section class="segment-inner">
         <header>
@@ -206,9 +216,29 @@ permalinkBypassOutputDir: true
 </section>
 <section class="segment-outer">
     <section class="segment-inner">
+        <header>
+            {{ h3( copy='Lodging Forms' ) }}
+        </header>
+        {{ lodging_form(item = lodgingForm) }}
+    </section>
+</section>
+
+<section class="segment-outer">
+    <section class="segment-inner">
         {{ amenities(item = amenitiesData) }}
     </section>
 </section>
+
+{{ h2( copy='Group Venues' ) }}
+{% for event in groupVenue %}
+    <section class="group-section">
+        <div class="bridge__top-frame"></div>
+        <div class="group-container">
+            {{groupVenues(event)}}
+        <div>
+    </section>
+{% endfor %}
+
 {{bridge()}}
 
 {{newsletter()}}
