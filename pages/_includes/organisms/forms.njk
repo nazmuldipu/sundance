@@ -2,12 +2,12 @@
 {% from 'atoms/form-fields.njk' import form_input %}
 {% from "atoms/a.njk" import a, button_primary %}
 {# 
-    #   @desc   details widget
+    #   @desc   lodging form
     #   @param  item       object (data from json file)
     #   @return HTML article
     #   @author Sarjis
  #}
-{% macro lodging_forms(item = {}) %}
+{% macro lodging_form(item = {}) %}
     <article class="lodging-forms">
         <header>
             {{ h2(copy = item.heading, classes = ['lodging-forms--heading', 'font-ivar']) }}
