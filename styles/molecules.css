@@ -1,9 +1,9 @@
-@import "./variables.css";
 /****  start molecules  ********************************/
 @import url("./details-widget-lodging.css");
 @import './molecules-footer.css';
 @import './molecules-newsletter.css';
 @import './molecules-bridge.css';
+@import url('./molecules-venues.css');
 @import './molecules-card.css';
 
 /*  start details widget molecules  */
