@@ -14,7 +14,7 @@ permalinkBypassOutputDir: true
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
-{% from 'molecules/header.njk' import header__prefix, header__suffix, header__icon, header__button %}
+{% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/card.njk' import horrizontalCard, card %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/bridge.njk' import bridge %}
@@ -157,32 +157,8 @@ permalinkBypassOutputDir: true
         {{ iconImage( src='images/liftopia.png', alt='Liftopia icon' ) }}<br>
     </section>
 </section> #}
-<!--Desktop design-->
-<section class="desktop">
-    <header class="header">
-        {{ header__prefix(headerText) }}
-        {{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}
-        {{ header__suffix() }}
-    </header>
-</section>
-<!--tab design-->
-<section class="tab">
-    <header class="header">
-        {{ header__icon() }}
-        {{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}
-        {{ header__button() }}
-    </header>
-    <div class="header-prefix__container">
-        {{header__prefix(headerText)}}
-    </div>    
-</section>
-<!--mobile design-->
-<section class="mobile">
-    <header class="header">
-        {{ iconCSS( classes=['burger-icon'] ) }}
-        {{ header__icon() }}
-        {{ header__button() }}
-    </header>  
+<section>
+    {{ navMenu(headerText) }}
 </section>
 <section style="padding-top:3rem">
     <div></div>

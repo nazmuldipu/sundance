@@ -1,14 +1,14 @@
 {% from "atoms/a.njk" import a, button_primary %}
-{% from 'atoms/icons.njk' import iconImage %}
+{% from 'atoms/icons.njk' import iconImage, iconCSS %}
 
-{% macro header__prefix(headerText) %}
-    <section class="header-prefix">
+{% macro headerLeft(headerText) %}
+    <section class="header-left">
         {% for item in headerText %}
            {{a(classes= ['text--color__sn-6', 'no-underline', 'font-ivar'],copy=item.title, target=item.target, href=item.href)}}
         {% endfor %}
     </section>
 {% endmacro %}
-{% macro header__icon() %}
+{% macro headerIcon() %}
     <section class="header-icon flex align-items-center">
         {{ iconImage( src='images/location.svg', alt='Location icon' ) }}
         {{ iconImage( src='images/playButton.svg', alt='Play Button icon' ) }}
@@ -17,12 +17,42 @@
 {% endmacro %}
 {% macro header__button() %}
     <section class="header-button">
-        {{ button_primary(classes=['button','button--primary3'], href='http://example.com', copy='Book Now', id='headerButton-1', target='_blank' ) }}
+        {{ button_primary(classes=['button','button--primary3', 'header__button--text-size', 'header-button__padding'], href='http://example.com', copy='Book Now', id='headerButton-1', target='_blank' ) }}
     </section>
 {% endmacro %}
-{% macro header__suffix() %}
-    <section class="header-suffix">
-       {{ header__icon() }} 
+{% macro headerRight() %}
+    <section class="header-right">
+       {{ headerIcon() }} 
        {{ header__button() }}
+    </section>
+{% endmacro %}
+
+{% macro navMenu(items) %}
+    <!--Desktop design-->
+    <section class="desktop">
+        <header class="header">
+            {{ headerLeft(items) }}
+            {{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}
+            {{ headerRight() }}
+        </header>
+    </section>
+    <!--tab design-->
+    <section class="tab">
+        <header class="header">
+            {{ headerIcon() }}
+            {{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}
+            {{ header__button() }}
+        </header>
+        <div class="header-left__container">
+            {{headerLeft(items)}}
+        </div>    
+    </section>
+    <!--mobile design-->
+    <section class="mobile">
+        <header class="header">
+            {{ iconCSS( classes=['burger-icon'] ) }}
+            {{ headerIcon() }}
+            {{ header__button() }}
+        </header>  
     </section>
 {% endmacro %}

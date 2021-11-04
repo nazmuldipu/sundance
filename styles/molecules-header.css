@@ -4,25 +4,24 @@
     display: grid;
     grid-template-columns: min-content max-content min-content;
     justify-content: space-between;
-    gap: .5rem;
     align-items: center;
     text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 35px 90px;
     background: var(--sundance__neutral5);
 }
-.header-prefix__container{
+.header-left__container{
     background: var(--sundance__neutral4);
     padding-top:13px;
     padding-bottom:13px;
 }
-.header-prefix{
+.header-left{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 32px;
+    font-size: 20px;
 }
-.header-suffix{
+.header-right{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +31,7 @@
     display: flex;
     flex-direction: row-reverse;
 }
-.heading:not(.header-prefix):not(.header-suffix){
+.heading:not(.header-left):not(.header-right){
     padding-bottom: 0em;
 }
 /* Mobile (Screen size : 767 pts) */
@@ -40,10 +39,20 @@
     .desktop, .tab{
         display: none;
     }
+    .header{
+        padding: 16px 16px;
+    }
+    .header-left{
+        font-size: 34px;
+        font-weight: 600;
+    }
     .header-icon{
         gap: 4px;
     }
-    .header-button .button--primary3{
+    .header__button--text-size{
+        font-size: 18px;
+    }
+    .header__button--padding{
         padding: 15px 27px 11px 25px;
     }
 }
@@ -53,10 +62,19 @@
     .desktop, .mobile{
         display: none;
     }
+    .header{
+        padding: 15px 20px;
+    }
     .header-icon{
         gap: 5px;
     }
-    .header-button .button--primary3{
+    .header-left{
+        font-size: 18px;
+    }
+    .header__button--text-size{
+        font-size: 18px;
+    }
+    .header__button--padding{
         padding: 13px 41px 13px 41px;
     }
 }
@@ -65,8 +83,17 @@
     .tab, .mobile{
         display: none;
     }
+    .header{
+        padding: 35px 90px;
+    }
+    .header-left{
+        font-size: 19px;
+    }
     .header-icon{
         gap: 8px;
+    }
+    .header__button--text-size{
+        font-size: 16px;
     }
 }
 
@@ -75,8 +102,14 @@
     .tab, .mobile{
         display: none;
     }
+    .header{
+        padding: 35px 90px;
+    }
     .header-icon{
         gap: 8px;
+    }
+    .header__button--text-size{
+        font-size: 21px;
     }
 }
 
