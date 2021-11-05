@@ -911,5 +911,24 @@
                 ]
             }
         ]
-    }
+    },
+    "artInstructor":[
+      {
+        "id": "artstudio-1",
+        "title": "Visiting Artists",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+        "image": "https://via.placeholder.com/424x640",
+        "cta": {
+          "copy": "View Details",
+          "url": "http://example.com/",
+          "target": "_self"
+        }
+      },
+      {
+        "id": "artstudio-2",
+        "title": "Visiting Artists",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+        "image": "https://via.placeholder.com/424x640"
+      }
+    ]
 }
