@@ -1,0 +1,32 @@
+{% from "atoms/headings.njk" import h2, h6 %}
+{% from "atoms/a.njk" import view_details %}
+{# 
+    #   @desc   amenities
+    #   @param  item       object (data from json file)
+    #   @return HTML article
+    #   @author Sarjis
+ #}
+{% macro amenities( item = {}) %}
+    <article class="amenities">
+        <header>
+            {{ h2(copy = item.heading, classes = ['details-widget--heading', 'font-ivar']) }}
+        </header>
+        {% for data in item.amenities %}
+            <div class="amenities__features-container">
+                <header class="amenities__features--header">
+                    <h1> Features </h1>
+                </header>
+                <ul class="amenities__features--item-container grid-cols-2">
+                {% for object in data.features %}
+                    <li class="amenities__features--item">
+                        {{ view_details(
+                            copy=object.copy, 
+                            href=object.href
+                        ) }}
+                    </li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </article>
+{% endmacro %}

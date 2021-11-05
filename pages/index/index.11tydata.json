@@ -867,15 +867,60 @@
             "target": "_blank"
         }
     },
-  "bridgeItems":[
-    {
-      "id":"secondBridge-1",
-      "title":"Purchase a zip tour Gift Card",
-      "actions":{
-          "copy":"Buy Now",
-          "href":"#",
-          "target":"_self"
-        }
-    }
-  ]
+    "amenitiesData": {
+        "heading": "Amenities",
+        "amenities": [
+            {
+                "features" : [
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    }
+                ]
+            },
+            {
+                "features" : [
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    }
+                ]
+            }
+        ]
+    },
+    "bridgeItems":[
+      {
+        "id":"secondBridge-1",
+        "title":"Purchase a zip tour Gift Card",
+        "actions":{
+            "copy":"Buy Now",
+            "href":"#",
+            "target":"_self"
+          }
+      }
+    ]
 }
