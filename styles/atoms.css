@@ -140,9 +140,9 @@
     content: '';
     display: block;
     height: 16px;
-    left: 50%;
+    left: 48%;
     position: absolute;
-    top: 12px;
+    top: 10px;
     width: 0;
 }
 .view-details .icon::after {
@@ -150,9 +150,9 @@
     content: '';
     display: block;
     height: 0;
-    left: 13px;
+    left: 12px;
     position: absolute;
-    top: 50%;
+    top: 43%;
     width: 16px;
 }
 

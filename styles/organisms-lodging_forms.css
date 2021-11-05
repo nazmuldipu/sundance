@@ -1,0 +1,81 @@
+/*  start lodging forms organisms  */
+    .lodging-forms {
+        max-width: 375px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .lodging-forms__field--container {
+        display: block;
+    }
+    .lodging-forms__item {
+        margin-bottom: 1rem;
+    }
+    .lodging-forms--heading {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+        font-weight: bold;
+    }
+    .lodging-forms--subheading {
+        font-size: 14px;
+        padding-bottom: 2.5rem;
+    }
+    
+    .lodging-form__input::placeholder {
+        color: #000;
+    }
+    .lodging-form__input:focus {
+        outline: none;
+    }
+    .lodging-form__input {
+        background: var(--sundance__neutral4);
+        border: none;
+        border-radius: 35px;
+        margin-top: 10px;
+        padding: 20px 45px 20px 15px;
+        display: block;
+        width: 82%;
+    }
+    .lodging-form__cta {
+        text-align: center;
+        display: block !important;
+        margin-bottom: 2.5rem;
+    }
+
+    /* Xmed (Screen size : 1200 pts) */
+    @media screen and (min-width: 1366px) {
+        .lodging-forms {
+            max-width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 72px;
+        }
+        .lodging-forms--heading {
+            font-size: 42px;
+            margin-bottom: 24px;
+            margin-top: 2rem;
+        }
+        .lodging-forms--subheading {
+            font-size: 19px;
+            padding-bottom: 3.5rem;
+        }
+        .lodging-forms__field--container {
+            display: flex;
+        }
+        .lodging-form__input {
+            display: inline;
+            width: auto;
+        }
+        .lodging-form__input--rooms {
+            width: 112px;
+        }
+        .lodging-form__cta {
+            margin-bottom: 0;
+        }
+        .lodging-forms__item {
+            margin-bottom: 0;
+        }
+    }
+/*  end lodging forms organisms  */
