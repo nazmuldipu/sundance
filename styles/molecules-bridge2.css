@@ -6,10 +6,8 @@
     padding-bottom: 48px;
     width: 100%;
 }
-.second-bridge__text--size{
+.second-bridge__header{
     font-size: 28px;
-}
-.second-bridge__header--padding{
     padding-bottom: 24px;
 }
 .second-bridge__button--size{
@@ -18,7 +16,7 @@
 
 /* Mobile (Screen size : 767 pts) */
 @media screen and (min-width: 320px) and (max-width: 767px){
-    .second-bridge__text--size{
+    .second-bridge__header{
         font-size: 18px;
     }
     .second-bridge{
