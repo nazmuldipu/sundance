@@ -866,5 +866,50 @@
             "href": "http://example.com/",
             "target": "_blank"
         }
+    },
+    "amenitiesData": {
+        "heading": "Amenities",
+        "amenities": [
+            {
+                "features" : [
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    }
+                ]
+            },
+            {
+                "features" : [
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    }
+                ]
+            }
+        ]
     }
 }
