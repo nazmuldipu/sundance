@@ -1,6 +1,14 @@
 {% from 'macros.njk' import scaled_image %}
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from "atoms/a.njk" import button_primary, button_secondary, view_details %}
+{#
+    #   @desc   a Horrizontal Card
+    #   @param  figureClass     string, image class (optional)
+    #   @param  figcaptionClass string, caption class (optional)
+    #   @param  id              string, a unique ID (optional)
+    #   @param  items           json data file
+    #   @author Meherab
+#}
 {% macro horrizontalCard(id = '', items, containerBackground = '', figureClass = '', figcaptionClass = '') %}
    <section class = "{% if containerBackground %} containerBackground {% endif %}">
          {% for item in items %}
@@ -32,7 +40,7 @@
    </section>
 {% endmacro %}
 
-{% macro card(id = '', items, containerBackground = '', figureClass = '', viewDetails = false, buttonPrimary = false, buttonSecondary = false, figcaptionClass = '') %}
+{% macro card(id = '', items, containerBackground = '', figureClass = '', figcaptionClass = '') %}
     <section class="{% if containerBackground %} containerBackground {% endif %}">
          {% for item in items %}
             <section class="card-container">        
@@ -57,24 +65,18 @@
                                 {{ h5(copy = criteria.p, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
                             {% endfor %}
                         </div>
-                    {% endif %}
-                    {% if viewDetails %}                        
-                        <div class="flex justify-center">
-                            {% for button in item.buttons %}
-                                {{ view_details(classes = ['view-details','font-calibre', 'font-medium', 'text-lg', 'text--color__sn-6'], copy = button.copy, href = button.url, target=button.target ) }}
-                            {% endfor %}
-                        </div>                         
-                    {% endif %}
-                    {% if buttonPrimary %}                        
-                        <div class="flex justify-center">
-                            {{ button_primary( href = item.button.url, copy = item.button.copy, id = item.id, target = item.button.target ) }}
-                        </div>                           
-                    {% endif %}
-                    {% if buttonSecondary %}
-                        <div class="flex justify-center">
-                            {{ button_secondary( href = item.button.url, copy = item.button.copy, id = item.id, target = item.button.target ) }}
-                        </div>
-                    {% endif %}
+                    {% endif %}                                           
+                    <div class="flex justify-center gap-x-2">
+                        {% for action in item.actions %}
+                            {% if action.type == 'view-details' %}
+                                {{ view_details(classes = ['view-details','font-calibre', 'font-medium', 'text-lg', 'text--color__sn-6'], copy = action.copy, href = action.url, target=action.target ) }}
+                            {% elif action.type == 'primary' %}
+                                {{ button_primary(classes = ['button', 'button--primary', 'card-text__button--size', 'font-calibre', 'font-medium', 'text-base'], href = action.url, copy = action.copy, id = item.id, target = action.target ) }}
+                            {% elif action.type == 'secondary' %}    
+                                {{ button_secondary(classes = ['button', 'button--secondary', 'card-text__button--size', 'font-calibre', 'font-medium', 'text-base'], href = action.url, copy = action.copy, id = item.id, target = action.target ) }}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </figcaption>
             </section>
         {% endfor %}
