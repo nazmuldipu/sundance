@@ -1,3 +1,4 @@
+{% from 'atoms/icons.njk' import iconImage %}
 {#
     #   @desc   a basic anchor tag
     #   @param  classes  array, class names (optional)
@@ -124,6 +125,42 @@
         <ul class="dropdown-list {% for class in listClasses %} {{ class }} {% endfor %}">
             {% for item in items %}
                 <li class="dropdown-list__list-item">
+                    <a href="{{ item.url }}" target="{{ item.target }}" class="dropdown-list-item__anchor">
+                        {{ item.copy | safe }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endmacro %}
+{#
+    #   @desc   a dropdown button with a list of links
+    #   @param  classes         array, class names (optional)
+    #   @param  id              string, a unique ID (optional)
+    #   @param  copy            string, the dropdown copy
+    #   @param  labelClasses    array, label class names (optional)
+    #   @param  labelId         string, a unique label button ID
+    #   @param  items           array, an array of dropdown links
+    #   @return HTML primary dropdown
+    #   @author Sarjis
+#}
+{% macro dropdown2( classes=['dropdown-container--primary'], labelClasses=['button--primary', 'button', 'font-calibre', 'text-base'], listClasses = ['font-ivar'], id, copy, labelId='dropdown-1', items = [] )%}
+    <div
+        class="dropdown-container {% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+    >
+        <input type="checkbox" class="dropdown-container__toggle" id="{{ labelId }}">
+        <label
+            for="{{ labelId }}"
+            class="dropdown-button2 {% for class in labelClasses %} {{ class }} {% endfor %}"
+        >
+            {{ copy | safe }}
+        </label>
+        <ul class="dropdown-list2 {% for class in listClasses %} {{ class }} {% endfor %}">
+            {% for item in items %}
+                <li class="dropdown-list__list-item">
+                    {{ iconImage(src = 'images/ticket-and-passes.svg', alt = 'The SVG') }}
+                    
                     <a href="{{ item.url }}" target="{{ item.target }}" class="dropdown-list-item__anchor">
                         {{ item.copy | safe }}
                     </a>

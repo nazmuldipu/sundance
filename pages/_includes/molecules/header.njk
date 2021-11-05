@@ -1,6 +1,22 @@
-{% from "atoms/a.njk" import a, button_primary %}
+{% from "atoms/a.njk" import a, dropdown2 %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
-
+{% set dropdownItems1 = [
+        {
+            "copy": "Tickets & Passes",
+            "url": "http://example.com/",
+            "target": "_self"
+        },
+        {
+            "copy": "Book Your Stay",
+            "url": "http://example.com/",
+            "target": "_blank"
+        },
+        {
+            "copy": "Reserve a Table",
+            "url": "http://example.com/",
+            "target": "_self"
+        }
+    ]%}
 {% macro headerLeft(menuItems) %}
     <section class="header-left">
         {% for item in menuItems %}
@@ -31,34 +47,29 @@
         }
     </script>
 {% endmacro %}
-{% macro headerIcon() %}
+{% macro headerIcons() %}
     <section class="header-icon flex align-items-center">
         {{ iconImage( src='images/location.svg', alt='Location icon' ) }}
         {{ iconImage( src='images/playButton.svg', alt='Play Button icon' ) }}
         {{ iconImage( src='images/temparature.svg', alt='Temparature icon' ) }}
     </section>
 {% endmacro %}
-{% macro headerButton() %}
+{% macro headerCTA(id='dropdown-22') %}
     <section class="header-button">
-        {{ button_primary(classes=['button','button--primary3', 'header__button--text-size', 'header-button__padding'], href='http://example.com', copy='Book Now', id='headerButton-1', target='_blank' ) }}
+        {{ dropdown2( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base'], copy='Book Another Class', labelId=id, items=dropdownItems1 ) }}
     </section>
 {% endmacro %}
-{% macro headerRight() %}
-    <section class="header-right">
-       {{ headerIcon() }} 
-       {{ headerButton() }}
-    </section>
-{% endmacro %}
+
 
 {% macro navMenu(menuItems) %}
     <header class="header">
         <div class="header__burger-icon">{{ iconCSS( classes=['burger-icon'] ) }}</div>
-        <div class="header__left">{{ headerLeft(menuItems) }}</div>
-        <div class="header__middle-1">{{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}</div>
-        <div class="header__middle-2">
-            {{ headerIcon() }}
-            {{ headerButton() }}
+        <div class="header__menu-items--container">{{ headerLeft(menuItems) }}</div>
+        <div class="header__logo">{{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}</div>
+        <div class="header__icons__cta--container">
+            {{ headerIcons() }}
+            {{ headerCTA(id='dropdown-22') }}
         </div>
-        <div class="header__right">{{ headerButton() }}</div>
+        <div class="header__cta--container">{{ headerCTA(id='dropdown-222') }}</div>
     </header>
 {% endmacro %}
