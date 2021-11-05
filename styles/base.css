@@ -234,6 +234,9 @@ strong {
 .pb-4{
     padding-bottom: 2rem !important;
 }
+.mt-4 {
+    margin-top: 1rem;
+}
 /* backgrounds */
 .bg-sp-2 {
     background-color: var(--sundance__primary2) !important;

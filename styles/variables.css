@@ -17,4 +17,15 @@
     --sundance__semantic1: #7C2F18;
     --sundance__semantic2: #1A7C18;
     --sundance__semantic3: #FFCE1F;
+    --xs: 320px;
+    --sm: 767px;
+    --med: 768px;
+    --lg: 1365px;
+    --xl: 1366px;
+    --2xl: 1919px;
+    --3xl: 1919px;
+    /* 320px – 767px          (2xs, xs, sm breakpoints)
+768px – 1365px        (med, lg breakpoints)
+1366px – 1919px     (xl, 2xl breakpoints)
+1920px +                    (3xl, 4xl breakpoints) */
 }
