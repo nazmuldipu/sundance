@@ -840,10 +840,138 @@
                     "id": "bedrooms-filter-1",
                     "name": "bedrooms-filter",
                     "quantity": 2
+                },
+                {
+                    "copy": "1-2",
+                    "id": "bedrooms-filter-1-2",
+                    "name": "bedrooms-filter",
+                    "quantity": 2
+                },
+                {
+                    "copy": "2",
+                    "id": "bedrooms-filter-2",
+                    "name": "bedrooms-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "2-3",
+                    "id": "bedrooms-filter-2-3",
+                    "name": "bedrooms-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "3",
+                    "id": "bedrooms-filter-3",
+                    "name": "bedrooms-filter",
+                    "quantity": 5
+                },
+                {
+                    "copy": "4",
+                    "id": "bedrooms-filter-4",
+                    "name": "bedrooms-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "6",
+                    "id": "bedrooms-filter-6",
+                    "name": "bedrooms-filter",
+                    "quantity": 6
+                },
+                {
+                    "copy": "7",
+                    "id": "bedrooms-filter-7",
+                    "name": "bedrooms-filter",
+                    "quantity": 1
                 }
             ]
         },
-        { "title": "Sleeps" },
-        { "title": "Lodging Type" }
+        {
+            "title": "Sleeps",
+            "items": [
+                {
+                    "copy": "11",
+                    "id": "sleeps-filter-11",
+                    "name": "sleeps-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "12",
+                    "id": "sleeps-filter-12",
+                    "name": "sleeps-filter",
+                    "quantity": 2
+                },
+                {
+                    "copy": "14",
+                    "id": "sleeps-filter-14",
+                    "name": "sleeps-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "15",
+                    "id": "sleeps-filter-15",
+                    "name": "sleeps-filter",
+                    "quantity": 2
+                },
+                {
+                    "copy": "16",
+                    "id": "sleeps-filter-16",
+                    "name": "sleeps-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "2",
+                    "id": "sleeps-filter-2",
+                    "name": "sleeps-filter",
+                    "quantity": 2
+                },
+                {
+                    "copy": "2-4",
+                    "id": "sleeps-filter-2-4",
+                    "name": "sleeps-filter",
+                    "quantity": 2
+                },
+                {
+                    "copy": "4-6",
+                    "id": "sleeps-filter-4-6",
+                    "name": "sleeps-filter",
+                    "quantity": 2
+                },
+                {
+                    "copy": "6",
+                    "id": "sleeps-filter-6",
+                    "name": "sleeps-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "8",
+                    "id": "sleeps-filter-8",
+                    "name": "sleeps-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "9",
+                    "id": "sleeps-filter-9",
+                    "name": "sleeps-filter",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "title": "Lodging Type",
+            "items": [
+                {
+                    "copy": "Mountain Homes",
+                    "id": "lodging-filter-mountain-homes",
+                    "name": "lodging-filter",
+                    "quantity": 13
+                },
+                {
+                    "copy": "Rooms & Suites",
+                    "id": "lodging-filter-rooms-suites",
+                    "name": "lodging-filter",
+                    "quantity": 5
+                }
+            ]
+        }
     ]
 }

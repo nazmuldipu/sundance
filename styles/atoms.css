@@ -36,6 +36,14 @@
     padding: 20px 70px;
 }
 
+.icon-button{
+    display: flex;
+    flex-direction: row;
+    /* padding: 20px 37px; */
+    justify-content: center;
+    align-items: center;
+}
+
 /* headings */
 .heading {
     padding-bottom: 1em;
@@ -95,7 +103,7 @@
 .checkboxes-btn__input:checked + .checkboxes-btn__control {
     border-color: var(--sundance__secondary2);
 }
-.checkboxes-btn__input:checked + .checkboxes-btn__control:after {
+.checkboxes-btn__input:checked .checkboxes-btn__control:after {
     background-color: var(--sundance__secondary2);
     content: '';
     display: block;
