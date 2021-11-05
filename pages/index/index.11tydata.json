@@ -277,8 +277,9 @@
           "p": "SLEEPS 2-4 / 1-2 BR"
         }
       ],
-      "buttons": [
+      "actions": [
         {
+          "type":"view-details",
           "copy": "view details",
           "url": "http://example.com/",
           "target": "_self"
@@ -298,11 +299,14 @@
           "p": "SLEEPS 2-4 / 1-2 BR"
         }
       ],
-      "button": {
-        "copy": "Book Now",
-        "url": "http://example.com/",
-        "target": "_self"
-      }
+      "actions": [
+        {
+          "type":"primary",
+          "copy": "Book Now",
+          "url": "http://example.com/",
+          "target": "_self"
+        }
+      ]
     }
   ],
   "cardImage3": [
@@ -319,11 +323,14 @@
       "title": "Room Type",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
       "image": "https://via.placeholder.com/800x400",
-      "button": {
-        "copy": "Book Now",
-        "url": "http://example.com/",
-        "target": "_self"
-      }
+      "actions": [
+        {
+          "type":"secondary",
+          "copy": "Book Now",
+          "url": "http://example.com/",
+          "target": "_self"
+        }
+      ]
     }
   ],
   "cardImage5": [
@@ -373,11 +380,58 @@
           "p": "SLEEPS 2-4 / 1-2 BR"
         }
       ],
-      "button": {
-        "copy": "Book Now",
-        "url": "http://example.com/",
-        "target": "_self"
-      }
+      "actions": [
+        {
+          "type":"secondary",
+          "copy": "Book Now",
+          "url": "http://example.com/",
+          "target": "_self"
+        }
+      ]      
+    }
+  ],
+  "cardImage9": [
+    {
+      "id": "card-4",
+      "title": "Room Type",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+      "image": "https://via.placeholder.com/800x400",
+      "actions": [
+        {
+          "type":"primary",
+          "copy": "Book Now",
+          "url": "http://example.com/",
+          "target": "_self"
+        }
+      ]
+    }
+  ],
+  "cardImage10": [
+    {
+      "id": "card-9",
+      "secondaryHeading": "Suites & Rooms",
+      "title": "Room Type",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+      "image": "https://via.placeholder.com/800x400",
+      "criterias": [
+        {
+          "p": "SLEEPS 2-4 / 1-2 BR"
+        }
+      ],
+      "actions": [
+        {
+          "type":"primary",
+          "copy": "Book Now",
+          "url": "http://example.com/",
+          "target": "_self"
+        },
+        {
+          "type":"secondary",
+          "copy": "Book Now",
+          "url": "http://example.com/",
+          "target": "_blank"
+        }
+      ]
     }
   ],
   "lodginObject": [
