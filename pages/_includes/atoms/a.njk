@@ -159,9 +159,9 @@
         <ul class="dropdown-list2 {% for class in listClasses %} {{ class }} {% endfor %}">
             {% for item in items %}
                 <li class="dropdown-list__list-item">
-                    {{ iconImage(src = 'images/ticket-and-passes.png', alt = 'The Logo', classes = ['icon', 'dropdown-list__list-item--icon']) }}
+                    {{ iconImage(src = 'images/'+item.logo+'.png', alt = 'The Logo', classes = ['icon', 'dropdown-list__list-item--icon']) }}
                     
-                    <a href="{{ item.url }}" target="{{ item.target }}" class="dropdown-list-item__anchor">
+                    <a href="{{ item.url }}" target="{{ item.target }}" class="dropdown-list2-item__anchor">
                         {{ item.copy | safe }}
                     </a>
                 </li>

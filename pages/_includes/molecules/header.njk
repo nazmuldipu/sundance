@@ -3,16 +3,19 @@
 {% from 'atoms/form-fields.njk' import form_input %}
 {% set dropdownItems1 = [
         {
+            "logo": "ticket-and-passes",
             "copy": "Tickets & Passes",
             "url": "http://example.com/",
             "target": "_self"
         },
         {
+            "logo": "book-your-stay",
             "copy": "Book Your Stay",
             "url": "http://example.com/",
             "target": "_blank"
         },
         {
+            "logo": "reserve-a-table",
             "copy": "Reserve a Table",
             "url": "http://example.com/",
             "target": "_self"
@@ -95,7 +98,7 @@
             <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
                 {{ iconCSS( classes=['burger-icon'] ) }}
             </label>
-            <div class="toggle-details hidden font-ivar w-screen h-screen align-baseline">
+            <div class="toggle-details hidden font-ivar w-screen h-screen align-baseline overflow-y-auto">
                 {{ headerLeft(menuItems, id = 'toggle-156') }}               
             </div>
         </div>

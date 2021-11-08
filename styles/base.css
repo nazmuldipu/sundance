@@ -143,6 +143,10 @@ strong {
     grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
+/* overflow classes */
+.overflow-y-auto {
+    overflow-y: auto;
+}
 /* order classes */
 .order-1{
     order: 1;
