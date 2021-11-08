@@ -21,6 +21,7 @@ permalinkBypassOutputDir: true
 {% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'molecules/details-widget.njk' import details_widget_desktop, details_widget_mobile %}
 {% from 'molecules/footer.njk' import footer %}
+{% from 'molecules/art-studio.njk' import artStudio %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'organisms/forms.njk' import lodging_form %}
@@ -184,6 +185,12 @@ permalinkBypassOutputDir: true
 </section>
 <section>
     {{ secondBridge(bridgeItems) }}
+</section>
+<section style="padding-bottom:3rem">
+    <div></div>
+</section>
+<section>
+    {{ artStudio(artInstructor) }}
 </section>
 <header>
     {{ h1( copy='Molecules' ) }}
