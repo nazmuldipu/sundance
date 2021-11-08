@@ -29,11 +29,23 @@
     color: #fff;
     padding: 20px 70px;
 }
+.button--primary3 {
+    background-color: var(--sundance__primary1);
+    border: solid var(--sundance__primary1) 1px;
+    color: #fff;
+    padding: 15px 29px 16px 32px;
+}
 .button--secondary {
     background-color: #fff;
     border: solid #000 1px;
     color: #000;
     padding: 20px 70px;
+}
+.button--secondary2 {
+    background: #458691;
+    color: #000;
+    padding: 13px 41px;
+    color: white;
 }
 
 .icon-button{
@@ -263,6 +275,16 @@
 .accordion--label {
     padding-right: 1rem;
 }
+.header__burger-icon--label {
+    padding-right: 1rem;
+}
+.header__burger-icon--toggle-label {
+    cursor: pointer;
+    display: block;
+    line-height: 2rem;
+    position: relative;
+    width: auto;
+}
 
 /* toggle */
 .toggle--label {
@@ -377,7 +399,32 @@
     left: 18px;
     top: 20px;
 }
-
+/* burger icon */
+.burger-icon {
+    position: relative;
+    top: -10px;
+    width: 26px;
+    height: 1px;
+    background-color: var(--sundance__neutral6);
+  }
+  .burger-icon:before{
+    content: "";
+    position: absolute;
+    top:10px;
+    left: 0px;
+    width: 26px;
+    height: 1px;
+    background-color: var(--sundance__neutral6);
+  }
+  .burger-icon:after{
+    content: "";
+    position: absolute;
+    top:20px;
+    left: 0px;
+    width: 16px;
+    height: 1px;
+    background-color: var(--sundance__neutral6);
+  }
 /* cross icon */
 .cross-icon:after {
     left: 19px;
@@ -461,6 +508,15 @@
     z-index: 1;
     cursor: pointer;
 }
+.dropdown-button2 {
+    padding-left: 45px;
+    padding-right: 45px;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+}
 .dropdown-button__arrow {
     border-left-width: 2px;
     border-style: solid;
@@ -529,6 +585,14 @@
 .dropdown-container__toggle:checked ~ .dropdown-list {
     max-height: 100vh;
     transition: max-height 0.75s linear;
+}
+.dropdown-container__toggle:checked ~ .dropdown-list2 {
+    display: block;
+    max-height: 100vh;
+    transition: max-height 0.75s linear;
+}
+.dropdown-list__list-item {
+    display: flex;
 }
 .dropdown-list li:not(:last-child) {
     border-style: solid;

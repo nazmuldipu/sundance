@@ -13,6 +13,7 @@ permalinkBypassOutputDir: true
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
+{% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/card.njk' import horrizontalCard, card %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/bridge.njk' import bridge %}
@@ -26,6 +27,11 @@ permalinkBypassOutputDir: true
 {% from 'molecules/accommodation-feature.njk' import accommodationFeature %}
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'organisms/forms.njk' import lodging_form %}
+<section class="segement-outer">
+    <section class="segment-inner">
+        {{ navMenu(navMenuLink) }}
+    </section>
+</section>
 <header>
     {{ h1( copy='Atoms' ) }}
 </header>
