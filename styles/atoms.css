@@ -260,6 +260,10 @@
     padding-bottom: 24px;
     text-align: center;
 }
+.accordion--text__padding:last-child{
+    padding-bottom: 24px;
+}
+
 .accordion--label {
     padding-right: 1rem;
 }
