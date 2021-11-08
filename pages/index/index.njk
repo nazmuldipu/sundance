@@ -23,6 +23,7 @@ permalinkBypassOutputDir: true
 {% from 'molecules/footer.njk' import footer %}
 {% from 'molecules/art-studio.njk' import artStudio %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
+{% from 'molecules/accommodation-feature.njk' import accommodationFeature %}
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'organisms/forms.njk' import lodging_form %}
 <header>
@@ -188,6 +189,10 @@ permalinkBypassOutputDir: true
 </section>
 <section style="padding-bottom:3rem">
     <div></div>
+</section>
+<section>
+<section>
+    {{accommodationFeature(features)}}
 </section>
 <section>
     {{ artStudio(artInstructor) }}

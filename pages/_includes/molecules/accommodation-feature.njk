@@ -1,0 +1,25 @@
+{% from 'atoms/icons.njk' import iconImage, iconCSS %}
+{#
+    #   @desc   a accommodation Feature
+    #   @param  classes  array, class names (optional)
+    #   @json file items inside...
+    #   @json  id       string, a unique ID (optional)
+    #   @json  type, caption     string, the HTML mark up that is linked
+    #   @json  href     string, link url
+    #   @json  target   string, the link target location (optional)
+    #   @author Meherab
+#}
+{% macro accommodationFeature(items, classes = ['no-underline']) %}
+    {% for item in items %}
+        <a 
+            {% if item.href %} href="{{ item.href }}" {% endif %} 
+            {% if item.target %} target="{{ item.target }}" {% endif %}
+            class="accommodation-feature {% for class in classes %} {{ class }} {% endfor %}"
+            {% if item.id %} id="{{ item.id }}" {% endif %}
+        >
+            {{ iconCSS( classes=['icon-css', 'plus-icon', 'rotate-90', 'justify-self-center', 'bg-sn-5'] ) }}        
+            <p class = "accommodation-feature__type--style">{{ item.type | safe }}</p>
+            <p class = "accommodation-feature__text--style">{{ item.caption | safe }}</p>
+        </a>
+    {% endfor %}
+{% endmacro %}
