@@ -41,6 +41,12 @@
     color: #000;
     padding: 20px 70px;
 }
+.button--secondary2 {
+    background: #458691;
+    color: #000;
+    padding: 13px 41px;
+    color: white;
+}
 
 /* headings */
 .heading {
@@ -259,6 +265,16 @@
 }
 .accordion--label {
     padding-right: 1rem;
+}
+.header__burger-icon--label {
+    padding-right: 1rem;
+}
+.header__burger-icon--toggle-label {
+    cursor: pointer;
+    display: block;
+    line-height: 2rem;
+    position: relative;
+    width: auto;
 }
 
 /* toggle */

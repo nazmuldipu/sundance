@@ -91,6 +91,9 @@ strong {
 .align-items-center {
     align-items: center;
 }
+.align-baseline {
+    align-items: baseline;
+}
 .relative {
     position: relative;
 }
@@ -298,6 +301,12 @@ strong {
 }
 .border-1-sp-2 {
     border: 1px solid #617C6A !important;
+}
+.w-screen {
+    width: 100vw;
+}
+.h-screen {
+    height: 100vh;
 }
 
 /* rotation */
