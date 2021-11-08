@@ -10,6 +10,7 @@
     padding-bottom: 35px;
     position: fixed;
     width: 100%;
+    box-sizing: border-box;
     background: var(--sundance__neutral5);
     z-index: 11;
 }
@@ -63,6 +64,32 @@
     line-height: 41px;
 }
 
+.dropdown-list__list-item--icon {
+    margin-left: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.dropdown-list__list-item {
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    background-color: white;
+    font-weight: bold;
+}
+.dropdown-list2 {
+    display: none;
+    max-height: 0;
+    right: 0;
+    overflow: hidden;
+    position: absolute;
+    transition: max-height 0.4s linear;
+    top: 67px;
+    right: 0;
+    z-index: 0;
+    width: 95vw;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
 /* Mobile (Screen size : 767 pts) */
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .header__logo {
@@ -74,6 +101,9 @@
     .header{
         padding-top: 15px;
         padding-bottom: 15px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        box-sizing: border-box;
         grid-template-columns: min-content max-content;
     }
     .header-left {
@@ -93,10 +123,14 @@
     .header-left__menu {
         flex-direction: column;
         font-size: 34px;
+        margin-bottom: 23px;
     }
     .header__link {
         font-size: 27px;
         font-weight: normal;
+    }
+    .header__link:nth-child(1) {
+        margin-top: 10px;
     }
     .header__menu-items--container {
         display: none;
@@ -135,6 +169,17 @@
     .toggle:checked + .header__burger-icon--toggle-label {
         display: none;
     }
+    .dropdown-button2 {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .header--label {
+        position: static;
+    }
+    .dropdown-list__list-item {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        margin-bottom: 0.5rem;
+    }
 }
 
 /* Tab (Screen size : 1200 pts) */
@@ -144,6 +189,16 @@
     }
     .menu__cross-btn {
         display: none;
+    }
+    .header--label {
+        position: relative;
+    }
+    .dropdown-list2 {
+        width: 381px;
+    }
+    .dropdown-list__list-item {
+        font-size: 23px;
+        font-weight: bold;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 1365px) {
@@ -237,22 +292,6 @@
     .menu__label--header {
         font-size: 1.125rem;
         line-height: 1.35rem;
-    }
-}
-
-/* Desktop XXL (Screen size : 1920 pts) */
-@media screen and (min-width: 1920px) {
-    .tab, .mobile{
-        display: none;
-    }
-    .header{
-        padding: 35px 90px;
-    }
-    .header-icon{
-        gap: 8px;
-    }
-    .header__button--text-size{
-        font-size: 21px;
     }
 }
 

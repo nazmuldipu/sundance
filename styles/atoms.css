@@ -573,19 +573,6 @@
     width: calc(100% - 4px);
     z-index: 0;
 }
-.dropdown-list2 {
-    display: none;
-    background: linear-gradient(180deg, rgba(38, 38, 36, 0) 0%, rgba(38, 38, 36, 0.25) 100%);
-    max-height: 0;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    transition: max-height 0.4s linear;
-    top: 71px;
-    right: 0;
-    width: calc(100% - 4px);
-    z-index: 0;
-}
 .dropdown-container__toggle:checked ~ .dropdown-list {
     max-height: 100vh;
     transition: max-height 0.75s linear;
