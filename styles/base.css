@@ -88,6 +88,9 @@ strong {
 .justify-center{
     justify-content: center;
 }
+.justify-self-center{
+    justify-self: center;
+}
 .align-self-end {
     align-self: end;
 }
@@ -245,6 +248,12 @@ strong {
 }
 .text-white{
     color: white;
+}
+.underline{
+    text-decoration: underline;
+}
+.no-underline{
+    text-decoration: none;
 }
 /* padding class */
 .pb-4{
