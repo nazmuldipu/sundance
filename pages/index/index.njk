@@ -22,6 +22,7 @@ permalinkBypassOutputDir: true
 {% from 'molecules/details-widget.njk' import details_widget_desktop, details_widget_mobile %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
+{% from 'molecules/accommodation-feature.njk' import accommodationFeature %}
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'organisms/forms.njk' import lodging_form %}
 <header>
@@ -185,6 +186,12 @@ permalinkBypassOutputDir: true
 <section>
     {{ secondBridge(bridgeItems) }}
 </section>
+<section style="padding-bottom:3rem">
+    <div></div>
+</section>
+<section>
+    {{accommodationFeature(features)}}
+<section>
 <header>
     {{ h1( copy='Molecules' ) }}
 </header>

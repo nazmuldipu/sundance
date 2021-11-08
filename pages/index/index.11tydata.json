@@ -976,5 +976,14 @@
             "target":"_self"
           }
       }
+    ],
+    "features":[
+      {
+        "id":"features-1",
+        "type":"type",
+        "caption":"Mountain Home",
+        "href":"#",
+        "target":"_self"
+      }
     ]
 }
