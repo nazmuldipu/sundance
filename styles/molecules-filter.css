@@ -1,0 +1,107 @@
+.filter {
+    display: block;
+}
+.filter__header {
+    align-items: flex-end;
+}
+.filter__header,
+.filter__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+.filter__container {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--sundance__neutral1);
+}
+.filter__item {
+    font-size: 12px;
+    line-height: 140%;
+    letter-spacing: 0.12em;
+    margin-bottom: 11px;
+}
+.filter__toggle {
+    display: none;
+}
+.filter__container-toggle {
+    visibility: visible;
+    animation: closeFilter 0.5s forwards;
+    /* display: block;
+    z-index: -1;
+    opacity: 0;
+    max-height: 0;
+    transition: max-height 0.3s ease-out; */
+    /* animation: fadeInFromNone 0.5s ease-out; */
+}
+.filter__toggle:checked ~ .filter__container-toggle {
+    visibility: visible;
+    animation: openFilter 0.75s forwards;
+    /* z-index: 1;
+    opacity: 1;
+    max-height: 800px;
+    transition: max-height 0.35s ease-in; */
+}
+
+.filter__toggle__label {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 38px;
+    border-radius: 45px;
+    background-color: var(--sundance__neutral4);
+    /* border: 1px dotted var(--sundance__neutral1); */
+}
+.filter__toggle__label .icon--filter {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.5rem;
+}
+.filter__toggle__label .icon-css.icon--filter:before,
+.filter__toggle__label .icon-css.icon--filter:after {
+    content: none;
+}
+.filter__toggle__label .icon--filter span:nth-child(2) {
+    top: 7px;
+}
+.filter__toggle__label .icon--filter span:nth-child(1)::after {
+    left: 7%;
+}
+.filter__toggle__label .icon--filter span:nth-child(2)::after {
+    left: 42%;
+}
+.filter__toggle__label .icon--filter span:nth-child(3)::after {
+    left: 7%;
+}
+
+
+@keyframes openFilter {
+    0% {
+        z-index: -1;
+        opacity: 0;
+        max-height: 0;
+    }
+    50% {
+        opacity: 1;        
+    }
+    100% {
+        z-index: 1;
+        opacity: 1;
+        max-height: 800px;
+    }
+}
+@keyframes closeFilter {
+    0% {
+        z-index: 1;
+        opacity: 1;
+        max-height: 800px;
+    }
+    50% {
+        z-index: -1;        
+    }
+    100% {
+        z-index: -1;
+        opacity: 0;
+        max-height: 0;
+    }
+}

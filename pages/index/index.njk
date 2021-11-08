@@ -19,6 +19,7 @@ permalinkBypassOutputDir: true
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'molecules/lodging-widget.njk' import lodgingWidget %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/filter.njk' import filter %}
 {% from 'molecules/details-widget.njk' import details_widget_desktop, details_widget_mobile %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'molecules/art-studio.njk' import artStudio %}
@@ -248,6 +249,9 @@ permalinkBypassOutputDir: true
         <div>
     </section>
 {% endfor %}
+
+{{ h2( copy='Filters' ) }}
+{{filter(filters)}}
 
 {{bridge()}}
 
