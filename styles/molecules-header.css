@@ -10,7 +10,11 @@
     padding-bottom: 35px;
     position: fixed;
     width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     box-sizing: border-box;
+    max-width: 1440px;
+    margin: auto;
     background: var(--sundance__neutral5);
     z-index: 11;
 }
