@@ -1,0 +1,41 @@
+/****  start bridge molecules  ********************************/
+.second-bridge{
+    background-color: var(--sundance__primary1);    
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    width: 100%;
+}
+.second-bridge__header{
+    font-size: 28px;
+    padding-bottom: 24px;
+}
+.second-bridge__button--size{
+    padding: 20px 48px 12px 48px;
+}
+
+/* Mobile (Screen size : 767 pts) */
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .second-bridge__header{
+        font-size: 18px;
+    }
+    .second-bridge{
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+}
+/* Tab (Screen size : 1200 pts) */
+@media screen and (min-width: 768px) and (max-width: 1365px) {
+    
+}
+/* Desktop (Screen size : 1919 pts) */
+@media screen and (min-width: 1366px) and (max-width: 1919px) {
+    
+}
+
+/* Desktop XXL (Screen size : 1920 pts) */
+@media screen and (min-width: 1920px) {
+   
+}
+
+/****  end bridge molecules  ********************************/

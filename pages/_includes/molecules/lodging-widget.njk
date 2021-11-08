@@ -1,0 +1,35 @@
+{% from "atoms/headings.njk" import h2 %}
+{% from "atoms/a.njk" import a, Link, dropdown %}
+{#
+    #   @desc   Lodging Widget 
+    #   @author Nazmul Alam
+#}
+{% macro lodgingWidget(object)%}
+    <section class="widget-lodging">
+        <section class="widget-lodging__breadcrumbs font-calibre">
+            {% for breadcrumb in object.breadcrumbs %}
+                <a class="widget-lodging__breadcrumbs__link {{ 'breadcrumbs-last' if loop.last}}" href="{{breadcrumb.url}}">{{breadcrumb.copy}}
+                </a>
+            {% endfor %}
+        </section>
+        {{ h2( copy=object.title, classes=['widget-lodging__title','font-ivar'] ) }}
+        <p class="widget-lodging__description font-ivar">{{object.description}}</p>
+        <p class="widget-lodging__note font-ivar">{{object.note}}</p>
+
+        {% for link in object.links %}
+            {{ Link( href=link.url, copy=link.copy, target=link.target, classes=['button', 'button--' + link.type, 'font-calibre', 'widget-lodging__links'] ) }}
+        {% endfor %}
+
+        {% for btn in object.dropdowns %}
+            {{ dropdown( classes=['dropdown-container--' + btn.type, 'widget-lodging__dropdown'], labelClasses= [ 'button', 'button--' + btn.type, 'widget-lodging__dropdown-btn', 'font-calibre', 'text-base'], labelId=btn.slug, copy=btn.copy, items=btn.items ) }}
+        {% endfor %}
+
+        {% for nav in object.navs %}
+            <div class="widget-lodging__nav">
+                <label class="font-ivar">{{nav.label}}</label>
+                 {{ a( copy=nav.copy, href=nav.url, target=nav.target) }}
+            </div>
+        {% endfor %}
+
+    </section>
+{% endmacro %}
