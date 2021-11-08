@@ -1,7 +1,6 @@
 ---
 layout: base.njk
 pagename: index
-meta_title: "The Index Page"
 permalink: "build/index.html"
 permalinkBypassOutputDir: true
 ---
@@ -18,17 +17,20 @@ permalinkBypassOutputDir: true
 {% from 'molecules/card.njk' import horrizontalCard, card %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/bridge.njk' import bridge %}
+{% from 'molecules/lodging-widget.njk' import lodgingWidget %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/filter.njk' import filter %}
 {% from 'molecules/details-widget.njk' import details_widget_desktop, details_widget_mobile %}
-{% from 'atoms/icons.njk' import iconImage, iconCSS %}
-
 {% from 'molecules/footer.njk' import footer %}
+{% from 'molecules/art-studio.njk' import artStudio %}
+{% from 'molecules/bridge-2.njk' import secondBridge %}
+{% from 'molecules/accommodation-feature.njk' import accommodationFeature %}
+{% from 'organisms/amenities.njk' import amenities %}
+{% from 'organisms/forms.njk' import lodging_form %}
 <section class="segement-outer">
     <section class="segment-inner">
         {{ navMenu(navMenuLink) }}
     </section>
-</section>
-<section style="padding-bottom:6rem">
-    
 </section>
 <header>
     {{ h1( copy='Atoms' ) }}
@@ -38,7 +40,7 @@ permalinkBypassOutputDir: true
         {{ h2( copy='Buttons' ) }}
     </header>
     <article>
-        {{ a( id='myLink-1', copy='Click Me', href='http://example.com', target='_blank') }}<br>
+        {{ a( id='myLink-1', copy='sample page', href='/sample', target='_blank') }}<br>
         <br>
         {{ button_primary( href='http://example.com', copy='Book a Class', id='myButton-1', target='_blank' ) }}<br>
         <br>
@@ -177,20 +179,42 @@ permalinkBypassOutputDir: true
 </section>
 
 <section class="card-sample__example grid grid-cols-3 gap-x-2 gap-y-2">
-    {{ card(cardImage, viewDetails = true) }}
-    {{ card(cardImage2, buttonSecondary = true) }}
-    {{ card(cardImage2, buttonPrimary = true) }}
+    {{ card(cardImage) }}
+    {{ card(cardImage2) }}
     {{ card(cardImage3) }}
-    {{ card(cardImage4, buttonPrimary = true) }}
+    {{ card(cardImage4) }}
     {{ card(cardImage5) }}
     {{ card(cardImage6) }}
     {{ card(cardImage7) }}
-    {{ card(cardImage8, buttonSecondary = true) }}
+    {{ card(cardImage8) }}
+    {{ card(cardImage9) }}
+    {{ card(cardImage10) }}
 </section>
-
+<section>
+    {{ secondBridge(bridgeItems) }}
+</section>
+<section style="padding-bottom:3rem">
+    <div></div>
+</section>
+<section>
+<section>
+    {{accommodationFeature(features)}}
+</section>
+<section>
+    {{ artStudio(artInstructor) }}
+</section>
 <header>
     {{ h1( copy='Molecules' ) }}
 </header>
+
+<div class="lodgingWidget">
+{% for object in  lodginObject%}
+    <div>
+    {{lodgingWidget(object)}}
+    </div>
+{% endfor %}
+</div>
+
 <section class="segment-outer">
     <section class="segment-inner">
         <header>
@@ -211,6 +235,34 @@ permalinkBypassOutputDir: true
         }}
     </section>
 </section>
+<section class="segment-outer">
+    <section class="segment-inner">
+        <header>
+            {{ h3( copy='Lodging Forms' ) }}
+        </header>
+        {{ lodging_form(item = lodgingForm) }}
+    </section>
+</section>
+
+<section class="segment-outer">
+    <section class="segment-inner">
+        {{ amenities(item = amenitiesData) }}
+    </section>
+</section>
+
+{{ h2( copy='Group Venues' ) }}
+{% for event in groupVenue %}
+    <section class="group-section">
+        <div class="bridge__top-frame"></div>
+        <div class="group-container">
+            {{groupVenues(event)}}
+        <div>
+    </section>
+{% endfor %}
+
+{{ h2( copy='Filters' ) }}
+{{filter(filters)}}
+
 {{bridge()}}
 
 {{newsletter()}}

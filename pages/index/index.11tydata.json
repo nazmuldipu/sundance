@@ -4,10 +4,7 @@
         {
             "title": "Mountain Stone Massage",
             "id": "toggle-1",
-            "classes": [
-                "toggle",
-                "hidden"
-            ],
+            "classes": ["toggle", "hidden"],
             "name": "First",
             "article": {
                 "heading": "Let Creativity Flow",
@@ -17,7 +14,7 @@
                 ]
             },
             "image": {
-                "classes":"inline-block",
+                "classes": "inline-block",
                 "artDirection": [
                     {
                         "media": "(min-width:900.1px)",
@@ -42,41 +39,29 @@
         }
     ],
     "tableData": {
-        "headers": [
-            "Class",
-            "Time",
-            "Cost"
-        ],
+        "headers": ["Class", "Time", "Cost"],
         "bodies": [
             {
-                "datas": [
-                    "Silversmithing",
-                    "10am, 1pm, 3pm",
-                    "$ 150"
-                ]
+                "datas": ["Silversmithing", "10am, 1pm, 3pm", "$ 150"]
             },
             {
-                "datas": [
-                    "Silversmithing",
-                    "10am, 1pm, 3pm",
-                    "$ 150"
-                ]
+                "datas": ["Silversmithing", "10am, 1pm, 3pm", "$ 150"]
             }
         ]
     },
     "datePicker": {
-        "label" : "Check IN", 
-        "type" : "datetime", 
-        "placeholder" : "mm/dd/yyyy", 
-        "classes" : ["form-input", "form-field-date"]
+        "label": "Check IN",
+        "type": "datetime",
+        "placeholder": "mm/dd/yyyy",
+        "classes": ["form-input", "form-field-date"]
     },
     "emailInput": {
-        "type" : "email", 
-        "placeholder" : "Email address",
+        "type": "email",
+        "placeholder": "Email address",
         "classes": ["form-input"]
     },
     "exampleImage": {
-        "classes":"inline-block",
+        "classes": "inline-block",
         "artDirection": [
             {
                 "media": "(min-width:900.1px)",
@@ -115,7 +100,7 @@
             "target": "_self"
         }
     ],
-     "dropdownItems2": [
+    "dropdownItems2": [
         {
             "copy": "Book Another Class 2",
             "url": "http://example.com/",
@@ -205,49 +190,51 @@
         "p1": "Certain bike trails may close at any time due to mountain construction projects. Please abide by any closures.",
         "p2": "Sundance offers 25+ miles of lift-serviced, single-track mountain biking with exciting terrain and breathtaking vistas.",
         "criteria_items": [
-        {
-            "title": "Hours",
-            "url": "View Hours"
-        },
-        {
-            "title": "Map",
-            "url": "View Map"
-        },
-        {
-            "title": "Waiver",
-            "url": "Sign"
-        },
-        {
-            "title": "Safety",
-            "url": "Review"
-        }]
+            {
+                "title": "Hours",
+                "url": "View Hours"
+            },
+            {
+                "title": "Map",
+                "url": "View Map"
+            },
+            {
+                "title": "Waiver",
+                "url": "Sign"
+            },
+            {
+                "title": "Safety",
+                "url": "Review"
+            }
+        ]
     },
-    "detailsObject2":{
+    "detailsObject2": {
         "title": "Homepage | Dining | <span class='bold'>Tree Room</span>",
         "heading": "<span class='bold'>Tree Room</span>",
         "p1": "Some hiking trails from the lift are temporarily closed for the safety of our guests during lift line construction.",
         "p2": "Enjoy the romantic atmosphere of candlelight and soft illumination accenting beautiful Native American art from Robert Redford’s private collection as you savor fresh, seasonal mountain cuisine.",
         "p3": "Children under 12 not permitted.",
         "criteria_items": [
-        {
-            "title": "Hours",
-            "url": "View Hours"
-        },
-        {
-            "title": "Contact",
-            "url": "Call Now"
-        },
-        {
-            "title": "Menu",
-            "url": "View"
-        },
-        {
-            "title": "Music",
-            "url": "View Lineup"
-        }]
+            {
+                "title": "Hours",
+                "url": "View Hours"
+            },
+            {
+                "title": "Contact",
+                "url": "Call Now"
+            },
+            {
+                "title": "Menu",
+                "url": "View"
+            },
+            {
+                "title": "Music",
+                "url": "View Lineup"
+            }
+        ]
     },
     "detailsWidgetDropdown1": {
-        "copy": "Book A Class", 
+        "copy": "Book A Class",
         "labelId": "details-widget-dropdown-1",
         "items": [
             {
@@ -268,7 +255,7 @@
         ]
     },
     "detailsWidgetDropdown2": {
-        "copy": "Book A Class", 
+        "copy": "Book A Class",
         "labelId": "details-widget-dropdown-2",
         "items": [
             {
@@ -289,7 +276,7 @@
         ]
     },
     "detailsWidgetDropdown3": {
-        "copy": "Book Now", 
+        "copy": "Book Now",
         "labelId": "details-widget-dropdown-3",
         "items": [
             {
@@ -310,52 +297,51 @@
         ]
     },
     "widgetCTA": {
-        "href": "Book Now", 
-        "id": "myButton-4", 
+        "href": "Book Now",
+        "id": "myButton-4",
         "copy": "Book Now"
     },
     "horizontalCardImage": [
         {
-            "id":"card-1",
-            "title":"Visiting Artist Program",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image":"https://via.placeholder.com/800x400",
-            "imageOrientation":"left",
-            "button":
-                {
-                    "copy": "View Details",
-                    "url": "http://example.com/",
-                    "target": "_self"
-                }
+            "id": "card-1",
+            "title": "Visiting Artist Program",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/800x400",
+            "imageOrientation": "left",
+            "button": {
+                "copy": "View Details",
+                "url": "http://example.com/",
+                "target": "_self"
+            }
         },
         {
-            "id":"card-2",
-            "title":"Visiting Artist Program",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image":"https://via.placeholder.com/800x400",
-            "imageOrientation":"right",
-            "button":
-                {
-                    "copy": "View Details",
-                    "url": "http://example.com/",
-                    "target": "_self"
-                }
+            "id": "card-2",
+            "title": "Visiting Artist Program",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/800x400",
+            "imageOrientation": "right",
+            "button": {
+                "copy": "View Details",
+                "url": "http://example.com/",
+                "target": "_self"
+            }
         }
     ],
-    "cardImage":[
+    "cardImage": [
         {
-            "id":"card-1",
-            "secondaryHeading":"Suites & Rooms",
-            "title":"Room Type",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image":"https://via.placeholder.com/800x400",
-            "criterias":[
+            "id": "card-1",
+            "secondaryHeading": "Suites & Rooms",
+            "title": "Room Type",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/800x400",
+            "criterias": [
                 {
-                  "p": "SLEEPS 2-4 / 1-2 BR"
+                    "p": "SLEEPS 2-4 / 1-2 BR"
                 }
             ],
-            "buttons":[
+            "actions": [
                 {
+                    "type": "view-details",
                     "copy": "view details",
                     "url": "http://example.com/",
                     "target": "_self"
@@ -363,102 +349,869 @@
             ]
         }
     ],
-    "cardImage2":[
+    "cardImage2": [
         {
-            "id":"card-2",
-            "secondaryHeading":"Suites & Rooms",
-            "title":"Room Type",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image":"https://via.placeholder.com/800x400",
-            "criterias":[
+            "id": "card-2",
+            "secondaryHeading": "Suites & Rooms",
+            "title": "Room Type",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/800x400",
+            "criterias": [
                 {
-                  "p": "SLEEPS 2-4 / 1-2 BR"
+                    "p": "SLEEPS 2-4 / 1-2 BR"
                 }
             ],
-            "button":
+            "actions": [
                 {
+                    "type": "primary",
                     "copy": "Book Now",
                     "url": "http://example.com/",
                     "target": "_self"
-                }
-        }
-    ],
-    "cardImage3":[
-        {
-            "id":"card-3",
-            "title":"Room Type",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image":"https://via.placeholder.com/800x400"
-        }
-    ],
-    "cardImage4":[
-        {
-            "id":"card-4",
-            "title":"Room Type",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image":"https://via.placeholder.com/800x400",
-            "button":
-                {
-                    "copy": "Book Now",
-                    "url": "http://example.com/",
-                    "target": "_self"
-                }
-        }
-    ],
-    "cardImage5":[
-        {
-            "id":"card-5",
-            "secondaryHeading":"Suites & Rooms",
-            "title":"Room Type",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image":"https://via.placeholder.com/800x400",
-            "criterias":[
-                {
-                  "p": "SLEEPS 2-4 / 1-2 BR"
                 }
             ]
         }
     ],
-    "cardImage6":[
+    "cardImage3": [
         {
-            "id":"card-6",
-            "secondaryHeading":"Suites & Rooms",
-            "title":"Room Type",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image":"https://via.placeholder.com/800x400"
+            "id": "card-3",
+            "title": "Room Type",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/800x400"
         }
     ],
-    "cardImage7":[
+    "cardImage4": [
         {
-            "id":"card-7",
-            "title":"Room Type",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image":"https://via.placeholder.com/800x400",
-            "criterias":[
+            "id": "card-4",
+            "title": "Room Type",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/800x400",
+            "actions": [
                 {
-                  "p": "SLEEPS 2-4 / 1-2 BR"
-                }
-            ]
-        }
-    ],
-    "cardImage8":[
-        {
-            "id":"card-8",
-            "title":"Room Type",
-            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image":"https://via.placeholder.com/800x400",
-            "criterias":[
-                {
-                  "p": "SLEEPS 2-4 / 1-2 BR"
-                }
-            ],
-            "button":
-                {
+                    "type": "secondary",
                     "copy": "Book Now",
                     "url": "http://example.com/",
                     "target": "_self"
                 }
+            ]
+        }
+    ],
+    "cardImage5": [
+        {
+            "id": "card-5",
+            "secondaryHeading": "Suites & Rooms",
+            "title": "Room Type",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/800x400",
+            "criterias": [
+                {
+                    "p": "SLEEPS 2-4 / 1-2 BR"
+                }
+            ]
+        }
+    ],
+    "cardImage6": [
+        {
+            "id": "card-6",
+            "secondaryHeading": "Suites & Rooms",
+            "title": "Room Type",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/800x400"
+        }
+    ],
+    "cardImage7": [
+        {
+            "id": "card-7",
+            "title": "Room Type",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/800x400",
+            "criterias": [
+                {
+                    "p": "SLEEPS 2-4 / 1-2 BR"
+                }
+            ]
+        }
+    ],
+    "cardImage8": [
+        {
+            "id": "card-8",
+            "title": "Room Type",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/800x400",
+            "criterias": [
+                {
+                    "p": "SLEEPS 2-4 / 1-2 BR"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "secondary",
+                    "copy": "Book Now",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                }
+            ]
+        }
+    ],
+    "cardImage9": [
+        {
+            "id": "card-4",
+            "title": "Room Type",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/800x400",
+            "actions": [
+                {
+                    "type": "primary",
+                    "copy": "Book Now",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                }
+            ]
+        }
+    ],
+    "cardImage10": [
+        {
+            "id": "card-9",
+            "secondaryHeading": "Suites & Rooms",
+            "title": "Room Type",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/800x400",
+            "criterias": [
+                {
+                    "p": "SLEEPS 2-4 / 1-2 BR"
+                }
+            ],
+            "actions": [
+                {
+                    "type": "primary",
+                    "copy": "Book Now",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                },
+                {
+                    "type": "secondary",
+                    "copy": "Book Now",
+                    "url": "http://example.com/",
+                    "target": "_blank"
+                }
+            ]
+        }
+    ],
+    "lodginObject": [
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Lodging", "url": "/" },
+                { "copy": "Canyon View", "url": "/" }
+            ],
+            "title": "Canyon View",
+            "description": "Enjoy stunning, unobstructed views of Mount Timpanogos, along with unique views of Provo Canyon. This brand new home showcases the mountain, including unique views of ski runs during the winter season, and contemporary luxury all year round. With a hot tub, game room, on site-laundry, and picture frame windows throughout the entire home, Canyon View has it all.",
+            "note": "Some hiking trails from the lift are temporarily closed for the safety of our guests during lift line construction.",
+            "links": [
+                {
+                    "copy": "Book now",
+                    "url": "/",
+                    "target": "_blank",
+                    "type": "primary"
+                },
+                {
+                    "copy": "Call to Book",
+                    "url": "/",
+                    "target": "_self",
+                    "type": "secondary"
+                }
+            ],
+            "dropdowns": [
+                {
+                    "copy": "Book Now",
+                    "slug": "lodging-dropdown-1",
+                    "type": "primary",
+                    "items": [
+                        {
+                            "copy": "Book Online",
+                            "url": "http://google.com/",
+                            "target": "_blank"
+                        },
+                        {
+                            "copy": "Call to Book",
+                            "url": "http://example.com/",
+                            "target": "_self"
+                        }
+                    ]
+                },
+                {
+                    "copy": "Book Now",
+                    "slug": "lodging-dropdown-2",
+                    "type": "secondary",
+                    "items": [
+                        {
+                            "copy": "Book Online",
+                            "url": "http://google.com/",
+                            "target": "_blank"
+                        },
+                        {
+                            "copy": "Call to Book",
+                            "url": "http://example.com/",
+                            "target": "_self"
+                        }
+                    ]
+                },
+                {
+                    "copy": "Book Now",
+                    "slug": "lodging-dropdown-3",
+                    "type": "primary2",
+                    "items": [
+                        {
+                            "copy": "Book Online",
+                            "url": "http://google.com/",
+                            "target": "_blank"
+                        },
+                        {
+                            "copy": "Call to Book",
+                            "url": "http://example.com/",
+                            "target": "_self"
+                        }
+                    ]
+                }
+            ],
+            "navs": [
+                {
+                    "label": "Amenities",
+                    "copy": "View Amenities",
+                    "url": "/",
+                    "target": "_self"
+                },
+                {
+                    "label": "Menu",
+                    "copy": "View",
+                    "url": "/",
+                    "target": "_self"
+                },
+                {
+                    "label": "Specials",
+                    "copy": "View Specials",
+                    "url": "/",
+                    "target": "_self"
+                }
+            ]
+        },
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Lodging", "url": "/" },
+                { "copy": "Cirque Crest", "url": "/" }
+            ],
+            "title": "Cirque Crest",
+            "description": "One of the largest homes available on the mountain, Cirque Crest is the combination of both the Dream Catcher and Owl Spirit cabins. It’s perfect for families and large groups needing extra space. Beautiful mountain views are complemented by vaulted ceilings, multiple hot tubs, kitchens and living areas with unique western art and design.",
+            "note": "",
+            "links": [
+                {
+                    "copy": "Call to Book",
+                    "url": "/",
+                    "target": "_self",
+                    "type": "primary"
+                }
+            ],
+            "dropdowns": [],
+            "navs": [
+                {
+                    "label": "Amenities",
+                    "copy": "View Amenities",
+                    "url": "/",
+                    "target": "_self"
+                }
+            ]
+        },
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Lodging", "url": "/" },
+                { "copy": "Timp Ridge", "url": "/" }
+            ],
+            "title": "Timp Ridge",
+            "description": "Enjoy stunning, unobstructed views of Mount Timpanogos, along with unique views of Provo Canyon. This brand new home showcases the mountain, including unique views of ski runs during the winter season, and contemporary luxury all year round. With a hot tub, game room, on site-laundry, and picture frame windows throughout the entire home, Canyon View has it all.",
+            "note": "",
+            "links": [],
+            "dropdowns": [
+                {
+                    "copy": "Book Now",
+                    "slug": "lodging-dropdown-4",
+                    "type": "primary",
+                    "items": [
+                        {
+                            "copy": "Book Online",
+                            "url": "http://google.com/",
+                            "target": "_blank"
+                        },
+                        {
+                            "copy": "Call to Book",
+                            "url": "http://example.com/",
+                            "target": "_self"
+                        }
+                    ]
+                }
+            ],
+            "navs": [
+                {
+                    "label": "Amenities",
+                    "copy": "View Amenities",
+                    "url": "/",
+                    "target": "_self"
+                }
+            ]
+        },
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Lodging", "url": "/" },
+                { "copy": "Canyon View", "url": "/" }
+            ],
+            "title": "Canyon View",
+            "description": "Enjoy stunning, unobstructed views of Mount Timpanogos, along with unique views of Provo Canyon. This brand new home showcases the mountain, including unique views of ski runs during the winter season, and contemporary luxury all year round. With a hot tub, game room, on site-laundry, and picture frame windows throughout the entire home, Canyon View has it all.",
+            "note": "Some hiking trails from the lift are temporarily closed for the safety of our guests during lift line construction.",
+            "links": [],
+            "dropdowns": [
+                {
+                    "copy": "Book Now",
+                    "slug": "lodging-dropdown-5",
+                    "type": "primary",
+                    "items": [
+                        {
+                            "copy": "Book Online",
+                            "url": "http://google.com/",
+                            "target": "_blank"
+                        },
+                        {
+                            "copy": "Call to Book",
+                            "url": "http://example.com/",
+                            "target": "_self"
+                        }
+                    ]
+                }
+            ],
+            "navs": [
+                {
+                    "label": "Amenities",
+                    "copy": "View Amenities",
+                    "url": "/",
+                    "target": "_self"
+                }
+            ]
+        },
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Lodging", "url": "/" },
+                { "copy": "Wild West Lodge", "url": "/" }
+            ],
+            "title": "Wild West Lodge",
+            "description": "Escape to the forest surrounded by a seasonal stream and breath-taking view of resort ski slopes and Mt. Timpanogos in this elegant, beautiful lodge. Six bedrooms in this three-floor home provide space for any occasion. Two kitchens, dining areas, and multiple gathering rooms allow for cozy getaways or the perfect après ski relaxation.",
+            "note": "",
+            "links": [
+                {
+                    "copy": "Call to Book",
+                    "url": "/",
+                    "target": "_self",
+                    "type": "primary"
+                }
+            ],
+            "dropdowns": [],
+            "navs": [
+                {
+                    "label": "Amenities",
+                    "copy": "View Amenities",
+                    "url": "/",
+                    "target": "_self"
+                }
+            ]
+        },
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Lodging", "url": "/" },
+                { "copy": "Turkey Ridge", "url": "/" }
+            ],
+            "title": "Turkey Ridge",
+            "description": "Located just minutes away from our Sundance Village, Turkey Ridge provides a one-of-a-kind experience. A spacious backyard and patio with a chair swing and beautiful mountain views make this six-bedroom home perfect for a family getaway. Unique features such as a baby grand piano, entertainment room, and sauna offer something for everyone.",
+            "note": "",
+            "links": [
+                {
+                    "copy": "Call to Book",
+                    "url": "/",
+                    "target": "_self",
+                    "type": "primary"
+                }
+            ],
+            "dropdowns": [],
+            "navs": [
+                {
+                    "label": "Amenities",
+                    "copy": "View Amenities",
+                    "url": "/",
+                    "target": "_self"
+                }
+            ]
+        },
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Lodging", "url": "/" },
+                { "copy": "Cascade Ridge", "url": "/" }
+            ],
+            "title": "Cascade Ridge",
+            "description": "With jaw-dropping views of Mt. Timpanogos, this unique home makes for the perfect rustic mountain getaway. Cascade Ridge is equipped with state of the art amenities and a serene alpine setting that will leave a lasting impression.",
+            "note": "",
+            "links": [],
+            "dropdowns": [
+                {
+                    "copy": "Book Now",
+                    "slug": "lodging-dropdown-9",
+                    "type": "primary",
+                    "items": [
+                        {
+                            "copy": "Book Online",
+                            "url": "http://google.com/",
+                            "target": "_blank"
+                        },
+                        {
+                            "copy": "Call to Book",
+                            "url": "http://example.com/",
+                            "target": "_self"
+                        }
+                    ]
+                }
+            ],
+            "navs": [
+                {
+                    "label": "Amenities",
+                    "copy": "View Amenities",
+                    "url": "/",
+                    "target": "_self"
+                }
+            ]
+        },
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Lodging", "url": "/" },
+                { "copy": "Ponderosa", "url": "/" }
+            ],
+            "title": "Ponderosa",
+            "description": "Escape to the forests of the Wasatch mountains in Ponderosa, with expansive patio and balcony areas to enjoy the views. The unique layout of this home, including a separate mother-in-law apartment and a bonus nook space, accommodates many styles of families and friends alike.",
+            "note": "A home is being constructed next door to this Mountain Home. The level of construction varies day to day and may impact your stay. For this reason, the rate has been reduced accordingly.",
+            "links": [],
+            "dropdowns": [
+                {
+                    "copy": "Book Now",
+                    "slug": "lodging-dropdown-10",
+                    "type": "primary",
+                    "items": [
+                        {
+                            "copy": "Book Online",
+                            "url": "http://google.com/",
+                            "target": "_blank"
+                        },
+                        {
+                            "copy": "Call to Book",
+                            "url": "http://example.com/",
+                            "target": "_self"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "groupVenue": [
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Redford Conference Center", "url": "/" }
+            ],
+            "title": "Rustic Elegance",
+            "descriptions": [
+                "Set amidst a grove of spruce and pine trees, the Redford Conference Center is a place that integrates artistic expression, environmental responsibility and successful commerce.",
+                "This environmentally-friendly building provides nearly 3,500 square feet of meeting space. The Reception area wraps around the building which provides a smooth transition from the outdoors to the inner meeting room. The large fireplace in the reception area not only provides warmth and comfort but the design elements are consistent with Sundance’s style of rustic elegance."
+            ],
+            "actions": [
+                {
+                    "copy": "Book Now",
+                    "slug": "group-venues-1",
+                    "type": "primary",
+                    "category": "dropdown",
+                    "items": [
+                        {
+                            "copy": "Meetings & Events",
+                            "url": "http://google.com/",
+                            "target": "_blank"
+                        },
+                        {
+                            "copy": "Weddings",
+                            "url": "http://example.com/",
+                            "target": "_self"
+                        }
+                    ]
+                },
+                {
+                    "copy": "View Floor Plan",
+                    "url": "/",
+                    "target": "_blank",
+                    "type": "secondary",
+                    "category": "link"
+                }
+            ],
+            "navs": [
+                {
+                    "label": "Contact",
+                    "copy": "Call Now",
+                    "url": "/",
+                    "target": "_self"
+                }
+            ]
+        },
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Rehearsal Hall", "url": "/" }
+            ],
+            "title": "Make your functions memorable",
+            "descriptions": [
+                "Sundance’s largest indoor function space, the Rehearsal Hall boasts 17-foot ceilings and sliding barn-style glass doors. This space overlooks the Sundance pond and Allan Hauser’s masterful bronze sculpture “Morning Prayer."
+            ],
+            "actions": [
+                {
+                    "copy": "Book Now",
+                    "slug": "group-venues-2",
+                    "type": "primary2",
+                    "category": "dropdown",
+                    "items": [
+                        {
+                            "copy": "Meetings & Events",
+                            "url": "http://google.com/",
+                            "target": "_blank"
+                        },
+                        {
+                            "copy": "Weddings",
+                            "url": "http://example.com/",
+                            "target": "_self"
+                        }
+                    ]
+                },
+                {
+                    "copy": "View Floor Plan",
+                    "url": "/",
+                    "target": "_blank",
+                    "type": "secondary",
+                    "category": "link"
+                }
+            ],
+            "navs": [
+                {
+                    "label": "Contact",
+                    "copy": "Call Now",
+                    "url": "/",
+                    "target": "_self"
+                }
+            ]
+        },
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Screening Room", "url": "/" }
+            ],
+            "title": "Great For Screenings",
+            "descriptions": [
+                "The Sundance Screening Room was built in 1987 as a place to showcase the work of the Sundance Institute Lab and Sundance Film Festival. The 1,100 square-foot lobby features stone floors, a fireplace and sliding glass doors that open onto a lawn overlooking the waterfall and pond. The 144-seat state-of-the-art theater can easily be incorporated into events or a private movie night."
+            ],
+            "actions": [
+                {
+                    "copy": "Book Meetings & Events",
+                    "url": "/",
+                    "target": "_blank",
+                    "type": "primary",
+                    "category": "link"
+                },
+                {
+                    "copy": "View Floor Plan",
+                    "url": "/",
+                    "target": "_blank",
+                    "type": "secondary",
+                    "category": "link"
+                }
+            ],
+            "navs": [
+                {
+                    "label": "Contact",
+                    "copy": "Call Now",
+                    "url": "/",
+                    "target": "_self"
+                }
+            ]
+        }
+    ],
+    "filters": [
+        {
+            "title": "Bedrooms",
+            "items": [
+                {
+                    "copy": "1",
+                    "id": "bedrooms-filter-1",
+                    "name": "bedrooms-filter",
+                    "quantity": 2
+                },
+                {
+                    "copy": "1-2",
+                    "id": "bedrooms-filter-1-2",
+                    "name": "bedrooms-filter",
+                    "quantity": 2
+                },
+                {
+                    "copy": "2",
+                    "id": "bedrooms-filter-2",
+                    "name": "bedrooms-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "2-3",
+                    "id": "bedrooms-filter-2-3",
+                    "name": "bedrooms-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "3",
+                    "id": "bedrooms-filter-3",
+                    "name": "bedrooms-filter",
+                    "quantity": 5
+                },
+                {
+                    "copy": "4",
+                    "id": "bedrooms-filter-4",
+                    "name": "bedrooms-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "6",
+                    "id": "bedrooms-filter-6",
+                    "name": "bedrooms-filter",
+                    "quantity": 6
+                },
+                {
+                    "copy": "7",
+                    "id": "bedrooms-filter-7",
+                    "name": "bedrooms-filter",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "title": "Sleeps",
+            "items": [
+                {
+                    "copy": "11",
+                    "id": "sleeps-filter-11",
+                    "name": "sleeps-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "12",
+                    "id": "sleeps-filter-12",
+                    "name": "sleeps-filter",
+                    "quantity": 2
+                },
+                {
+                    "copy": "14",
+                    "id": "sleeps-filter-14",
+                    "name": "sleeps-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "15",
+                    "id": "sleeps-filter-15",
+                    "name": "sleeps-filter",
+                    "quantity": 2
+                },
+                {
+                    "copy": "16",
+                    "id": "sleeps-filter-16",
+                    "name": "sleeps-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "2",
+                    "id": "sleeps-filter-2",
+                    "name": "sleeps-filter",
+                    "quantity": 2
+                },
+                {
+                    "copy": "2-4",
+                    "id": "sleeps-filter-2-4",
+                    "name": "sleeps-filter",
+                    "quantity": 2
+                },
+                {
+                    "copy": "4-6",
+                    "id": "sleeps-filter-4-6",
+                    "name": "sleeps-filter",
+                    "quantity": 2
+                },
+                {
+                    "copy": "6",
+                    "id": "sleeps-filter-6",
+                    "name": "sleeps-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "8",
+                    "id": "sleeps-filter-8",
+                    "name": "sleeps-filter",
+                    "quantity": 1
+                },
+                {
+                    "copy": "9",
+                    "id": "sleeps-filter-9",
+                    "name": "sleeps-filter",
+                    "quantity": 1
+                }
+            ]
+        },
+        {
+            "title": "Lodging Type",
+            "items": [
+                {
+                    "copy": "Mountain Homes",
+                    "id": "lodging-filter-mountain-homes",
+                    "name": "lodging-filter",
+                    "quantity": 13
+                },
+                {
+                    "copy": "Rooms & Suites",
+                    "id": "lodging-filter-rooms-suites",
+                    "name": "lodging-filter",
+                    "quantity": 5
+                }
+            ]
+        }
+    ],
+    "lodgingForm": {
+        "heading": "Lodging at Sundance",
+        "subheading": "Face Coverings are required when checking in at the front desk.",
+        "formInputs": [
+            {
+                "label": "Check IN",
+                "type": "datetime",
+                "placeholder": "mm/dd/yyyy",
+                "classes": ["form-input", "lodging-form__input"]
+            },
+            {
+                "label": "Check IN",
+                "type": "datetime",
+                "placeholder": "mm/dd/yyyy",
+                "classes": ["form-input", "lodging-form__input"]
+            },
+            {
+                "label": "ROOMS",
+                "type": "text",
+                "placeholder": "1",
+                "classes": [
+                    "form-input",
+                    "lodging-form__input",
+                    "lodging-form__input--rooms"
+                ]
+            },
+            {
+                "label": "Promo CODE",
+                "type": "text",
+                "placeholder": "",
+                "classes": ["form-input", "lodging-form__input"]
+            }
+        ],
+        "cta": {
+            "copy": "Book Now",
+            "id": "lodging-form-cta",
+            "href": "http://example.com/",
+            "target": "_blank"
+        }
+    },
+    "amenitiesData": {
+        "heading": "Amenities",
+        "amenities": [
+            {
+                "features": [
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    }
+                ]
+            },
+            {
+                "features": [
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "2 Story Home",
+                        "href": "#"
+                    }
+                ]
+            }
+        ]
+    },
+    "features":[
+      {
+        "id":"features-1",
+        "type":"type",
+        "caption":"Mountain Home",
+        "href":"#",
+        "target":"_self"
+      }
+    ],  
+    "artInstructor": [
+        {
+            "id": "artstudio-1",
+            "title": "Visiting Artists",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/424x640",
+            "cta": {
+                "copy": "View Details",
+                "url": "http://example.com/",
+                "target": "_self"
+            }
+        },
+        {
+            "id": "artstudio-2",
+            "title": "Visiting Artists",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": "https://via.placeholder.com/424x640"
+        }
+    ],
+    "bridgeItems": [
+        {
+            "id": "secondBridge-1",
+            "title": "Purchase a zip tour Gift Card",
+            "actions": {
+                "copy": "Buy Now",
+                "href": "#",
+                "target": "_self"
+            }
         }
     ]
-
 }
