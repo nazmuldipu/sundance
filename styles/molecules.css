@@ -1,11 +1,13 @@
 /****  start molecules  ********************************/
 @import url("./details-widget-lodging.css");
-@import './molecules-footer.css';
-@import './molecules-newsletter.css';
-@import './molecules-bridge.css';
+@import url('./molecules-footer.css');
+@import url('./molecules-newsletter.css');
+@import url('./molecules-bridge.css');
 @import url('./molecules-venues.css');
-@import './molecules-card.css';
+@import url('./molecules-card.css');
+@import url('./molecules-filter.css');
 @import url("./details-widget-lodging.css");
 @import "./molecules-details_widget.css";
 @import './molecules-bridge2.css';
 @import './molecules-accommodation_feature.css';
+@import "./molecules-art_studio.css";

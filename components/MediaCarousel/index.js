@@ -22,7 +22,6 @@ export default class MediaCarousel extends ProgressiveElement {
     if (entries.some((entry) => entry.isIntersecting)) {
       super._onLoad(moduleId).then(( res ) => {
         const mod = res[1];
-        console.log(mod.defaultConfig);
         if (mod.Swiper) {
           this.swiperInstance = new mod.Swiper(
             this.getElementsByClassName("swiper-container")?.[0],

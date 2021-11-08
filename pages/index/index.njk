@@ -1,7 +1,6 @@
 ---
 layout: base.njk
 pagename: index
-meta_title: "The Index Page"
 permalink: "build/index.html"
 permalinkBypassOutputDir: true
 ---
@@ -19,8 +18,10 @@ permalinkBypassOutputDir: true
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'molecules/lodging-widget.njk' import lodgingWidget %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/filter.njk' import filter %}
 {% from 'molecules/details-widget.njk' import details_widget_desktop, details_widget_mobile %}
 {% from 'molecules/footer.njk' import footer %}
+{% from 'molecules/art-studio.njk' import artStudio %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
 {% from 'molecules/accommodation-feature.njk' import accommodationFeature %}
 {% from 'organisms/amenities.njk' import amenities %}
@@ -33,7 +34,7 @@ permalinkBypassOutputDir: true
         {{ h2( copy='Buttons' ) }}
     </header>
     <article>
-        {{ a( id='myLink-1', copy='Click Me', href='http://example.com', target='_blank') }}<br>
+        {{ a( id='myLink-1', copy='sample page', href='/sample', target='_blank') }}<br>
         <br>
         {{ button_primary( href='http://example.com', copy='Book a Class', id='myButton-1', target='_blank' ) }}<br>
         <br>
@@ -190,8 +191,12 @@ permalinkBypassOutputDir: true
     <div></div>
 </section>
 <section>
-    {{accommodationFeature(features)}}
 <section>
+    {{accommodationFeature(features)}}
+</section>
+<section>
+    {{ artStudio(artInstructor) }}
+</section>
 <header>
     {{ h1( copy='Molecules' ) }}
 </header>
@@ -248,6 +253,9 @@ permalinkBypassOutputDir: true
         <div>
     </section>
 {% endfor %}
+
+{{ h2( copy='Filters' ) }}
+{{filter(filters)}}
 
 {{bridge()}}
 

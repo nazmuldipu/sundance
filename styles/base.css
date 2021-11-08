@@ -256,6 +256,9 @@ strong {
     text-decoration: none;
 }
 /* padding class */
+.pb-2{
+    padding-bottom: 1rem;
+}
 .pb-4{
     padding-bottom: 2rem !important;
 }
