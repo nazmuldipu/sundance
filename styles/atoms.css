@@ -257,6 +257,7 @@
 }
 .accordion--title {
     margin: 0;
+    padding-bottom: 24px;
     text-align: center;
 }
 .accordion--label {
