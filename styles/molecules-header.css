@@ -65,7 +65,7 @@
         display: flex;
     }
     .header{
-        padding: 15px 20px;
+        /* padding: 15px 20px; */
     }
     .header-left{
         display: none;
@@ -139,6 +139,10 @@
     .header__button--padding{
         padding: 13px 41px 13px 41px;
     }
+    .header__links {
+        top: 100%;
+        background: white;
+    }
 }
 /* Desktop (Screen size : 1919 pts) */
 @media screen and (min-width: 1366px) {
@@ -171,6 +175,10 @@
     }
     .header__button--text-size{
         font-size: 16px;
+    }
+    .header__links {
+        top: 100px;
+        background: white;
     }
 }
 
