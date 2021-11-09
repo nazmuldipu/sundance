@@ -12,7 +12,7 @@
     border-radius: 35px;
     display: inline-block;
     font-size: 1.6rem;
-    line-height: 1.6rem;
+    line-height: 1rem;
     text-decoration: none;
     white-space: nowrap;
 }
@@ -20,13 +20,13 @@
     background-color: #000;
     border: solid #000 1px;
     color: #fff;
-    padding: 20px 70px;
+    padding: 25px 70px 20px 70px;
 }
 .button--primary2 {
     background-color: var(--sundance__primary2);
     border: solid var(--sundance__primary2) 1px;
     color: #fff;
-    padding: 20px 70px;
+    padding: 25px 70px 20px 70px;
 }
 .button--primary3 {
     background-color: var(--sundance__primary1);
@@ -38,7 +38,7 @@
     background-color: #fff;
     border: solid #000 1px;
     color: #000;
-    padding: 20px 70px;
+    padding: 25px 70px 20px 70px;
 }
 .button--secondary2 {
     background: #458691;
