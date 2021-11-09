@@ -83,8 +83,8 @@
    </section>
 {% endmacro %}
 
-{% macro singleCard(id = '', item, figureClass = '', figcaptionClass = '') %}
-    <section class="text-left card-container">        
+{% macro singleCard(classes = ['card-container'], id = '', item, figureClass = '', figcaptionClass = '') %}
+    <section class="{% for class in classes %} {{ class }} {% endfor %}">        
         <figure class="card-image {{ figureClass }}" 
             {% if id %} id="{{ id }}" {% endif %} 
         >

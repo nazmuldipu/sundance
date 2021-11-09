@@ -28,7 +28,7 @@ nickname: "lodging-accommodation"
             {{ filter(filters) }}
             <section class="lodging-accomodation__card">
                 {% for item in cards %}
-                    {{ singleCard(item = item, card_container = ['card-container', 'text-left']) }}
+                    {{ singleCard(item = item, classes = ['card-container', 'text-left']) }}
                 {% endfor %}
             </section>
             {{newsletter()}}
