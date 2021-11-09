@@ -1,5 +1,4 @@
 /****  start atoms  ********************************/
-
 /* links */
 .link {
     text-decoration: underline;
@@ -13,7 +12,7 @@
     border-radius: 35px;
     display: inline-block;
     font-size: 1.6rem;
-    line-height: 1.6rem;
+    line-height: 1rem;
     text-decoration: none;
     white-space: nowrap;
 }
@@ -21,19 +20,31 @@
     background-color: #000;
     border: solid #000 1px;
     color: #fff;
-    padding: 20px 70px;
+    padding: 25px 70px 20px 70px;
 }
 .button--primary2 {
     background-color: var(--sundance__primary2);
     border: solid var(--sundance__primary2) 1px;
     color: #fff;
-    padding: 20px 70px;
+    padding: 25px 70px 20px 70px;
+}
+.button--primary3 {
+    background-color: var(--sundance__primary1);
+    border: solid var(--sundance__primary1) 1px;
+    color: #fff;
+    padding: 15px 29px 16px 32px;
 }
 .button--secondary {
     background-color: #fff;
     border: solid #000 1px;
     color: #000;
-    padding: 20px 70px;
+    padding: 25px 70px 20px 70px;
+}
+.button--secondary2 {
+    background: #458691;
+    color: #000;
+    padding: 13px 41px;
+    color: white;
 }
 
 .icon-button{
@@ -167,6 +178,8 @@
     padding-bottom: 10px;
     padding-left: 10px;
     width: 97%;
+    font-size: 12px;
+    line-height: 16.8px;
 }
 .form-label .form-input::placeholder {
     color: #000;
@@ -257,10 +270,25 @@
 }
 .accordion--title {
     margin: 0;
+    padding-bottom: 24px;
     text-align: center;
 }
+.accordion--text__padding:last-child{
+    padding-bottom: 24px;
+}
+
 .accordion--label {
     padding-right: 1rem;
+}
+.header__burger-icon--label {
+    padding-right: 1rem;
+}
+.header__burger-icon--toggle-label {
+    cursor: pointer;
+    display: block;
+    line-height: 2rem;
+    position: relative;
+    width: auto;
 }
 
 /* toggle */
@@ -376,7 +404,32 @@
     left: 18px;
     top: 20px;
 }
-
+/* burger icon */
+.burger-icon {
+    position: relative;
+    top: -10px;
+    width: 26px;
+    height: 1px;
+    background-color: var(--sundance__neutral6);
+  }
+  .burger-icon:before{
+    content: "";
+    position: absolute;
+    top:10px;
+    left: 0px;
+    width: 26px;
+    height: 1px;
+    background-color: var(--sundance__neutral6);
+  }
+  .burger-icon:after{
+    content: "";
+    position: absolute;
+    top:20px;
+    left: 0px;
+    width: 16px;
+    height: 1px;
+    background-color: var(--sundance__neutral6);
+  }
 /* cross icon */
 .cross-icon:after {
     left: 19px;
@@ -460,6 +513,15 @@
     z-index: 1;
     cursor: pointer;
 }
+.dropdown-button2 {
+    padding-left: 45px;
+    padding-right: 45px;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+}
 .dropdown-button__arrow {
     border-left-width: 2px;
     border-style: solid;
@@ -474,14 +536,14 @@
 .dropdown-button__arrow::after {
     animation: spin-left 0.5s linear forwards;
     border-color: inherit;
-    border-width: 2px 0 0 0;
+    border-width: 1px 0 0 0;
     border-style: solid;
     content: '';
     display: block;
     height: 1px;
-    left: 15px;
+    left: 14px;
     position: absolute;
-    top: 50%;
+    top: 48%;
     transform: rotateZ(45deg);
     -webkit-transform: rotateZ(45deg);
     width: 13px;
@@ -495,9 +557,12 @@
 .dropdown-container__toggle:checked ~ .dropdown-button .dropdown-button__arrow::before {
     animation: spin-right 0.5s linear forwards;
     left: 13px;
+    width: 14px;
 }
 .dropdown-container__toggle:checked ~ .dropdown-button .dropdown-button__arrow::after {
     animation: spin-left 0.5s linear forwards;
+    left: 23px;
+    width: 14px;
 }
 @keyframes spin-right {
     0% { transform: rotate(45deg); }
@@ -528,6 +593,14 @@
 .dropdown-container__toggle:checked ~ .dropdown-list {
     max-height: 100vh;
     transition: max-height 0.75s linear;
+}
+.dropdown-container__toggle:checked ~ .dropdown-list2 {
+    display: block;
+    max-height: 100vh;
+    transition: max-height 0.75s linear;
+}
+.dropdown-list__list-item {
+    display: flex;
 }
 .dropdown-list li:not(:last-child) {
     border-style: solid;
@@ -578,5 +651,20 @@
 .dropdown-container--primary2 .dropdown-list-item__anchor {
     color: var(--sundance__primary2);
 }
-
+/* text container header */
+.text-container__header{
+    font-size: 42px;
+    font-weight: 600;
+    padding-bottom: 24px;
+    text-align: center;
+}
+.text-container__copy{
+    font-size: 19px;
+}
+/* Mobile (Screen size : 767 pts) */
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .text-container__header{
+        font-size: 24px;
+    }
+}
 /****  end atoms  ********************************/
