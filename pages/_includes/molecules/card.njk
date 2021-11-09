@@ -43,7 +43,7 @@
 {% macro card(id = '', items, containerBackground = '', figureClass = '', figcaptionClass = '') %}
     <section class="{% if containerBackground %} containerBackground {% endif %}">
          {% for item in items %}
-            <section class="text-left card-container">        
+            <section class="card-container">        
                 <figure class="card-image {{ figureClass }}" 
                     {% if id %} id="{{ id }}" {% endif %} 
                 >
