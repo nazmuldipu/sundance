@@ -39,6 +39,10 @@ module.exports = function(eleventyConfig) {
         }
     });
 
+    eleventyConfig.addNunjucksFilter('isString', function(value) {
+        return typeof value == 'string';
+    });
+
     eleventyConfig.addPassthroughCopy({ 'components/lib': 'lib' });
     // dump object data.
     eleventyConfig.addNunjucksFilter( 'json', function ( value ) {

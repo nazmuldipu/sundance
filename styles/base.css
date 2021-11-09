@@ -188,10 +188,10 @@ strong {
 }
 /* text alignments */
 .text-left {
-    text-align: left;
+    text-align: left !important;
 }
 .text-center {
-    text-align: center;
+    text-align: center !important;
 }
 /* text size */
 .text-sm {
@@ -283,6 +283,9 @@ strong {
 /* backgrounds */
 .bg-sp-2 {
     background-color: var(--sundance__primary2) !important;
+}
+.bg-sn-4 {
+    background-color: var(--sundance__neutral4) !important;
 }
 .bg-sn-5 {
     background-color: var(--sundance__neutral5) !important;

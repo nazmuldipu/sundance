@@ -1,0 +1,32 @@
+---
+layout: base.njk
+pagename: lodging-accommodation
+permalink: "build/lodging-accommodation.html"
+permalinkBypassOutputDir: true
+nickname: "lodging-accommodation"
+---
+{% from 'molecules/filter.njk' import filter %}
+{% from 'organisms/forms.njk' import lodging_form %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/card.njk' import singleCard %}
+
+<section class="segment-outer">
+    <section class="segment-inner">
+
+        {{ navMenu(navMenuLink) }}
+
+        {{ lodging_form(item = lodgingForm) }}
+
+        {{ filter(filters) }}
+
+        <section class="lodging-accomodation__card">
+            {% for item in cards %}
+                {{ singleCard(item = item, card_container = ['card-container', 'text-left']) }}
+            {% endfor %}
+        </section>
+        {{newsletter()}}
+    </section>
+</section>
+
+{{footer(data.footer)}}
