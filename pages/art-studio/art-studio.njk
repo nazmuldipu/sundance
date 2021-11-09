@@ -1,0 +1,33 @@
+---
+layout: base.njk
+pagename: art-studio
+permalink: "build/art-studio.html"
+permalinkBypassOutputDir: true
+nickname: "Art Studio"
+---
+
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from "atoms/a.njk" import a, button_primary, button_secondary, view_details, dropdown %}
+{% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'molecules/art-studio.njk' import artStudio %}
+{% from 'molecules/bridge-2.njk' import secondBridge %}
+{{ h2(copy = titleHead.title, classes = ['pb-10', 'ihh1', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+<section>
+    <section class = "segment-inner">
+        {{ horrizontalCard(horrizontalCardItems, containerBackground = 'bg-sn-4', horizontal_card_container = ['horizontal__card-container', 'mb-4']) }}
+    </section>
+</section>
+<section class = "segment-outer bg-sn-4">
+    <section clsass = "segment-inner art-studio__container grid-cols-3">
+        {% for item in artStudioCardItems %}
+            {{ verticalCard(item = item) }}
+        {% endfor %}
+    </section>
+</section>
+
+
+{{newsletter()}}
+
+{{footer(data.footer)}}
