@@ -306,7 +306,32 @@
             "id": "card-1",
             "title": "Visiting Artist Program",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": "https://via.placeholder.com/800x400",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+                
+            },
             "imageOrientation": "left",
             "button": {
                 "copy": "View Details",
@@ -318,7 +343,31 @@
             "id": "card-2",
             "title": "Visiting Artist Program",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": "https://via.placeholder.com/800x400",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+            },
             "imageOrientation": "right",
             "button": {
                 "copy": "View Details",
@@ -333,7 +382,31 @@
             "secondaryHeading": "Suites & Rooms",
             "title": "Room Type",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": "https://via.placeholder.com/800x400",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+            },
             "criterias": [
                 {
                     "p": "SLEEPS 2-4 / 1-2 BR"
@@ -355,7 +428,31 @@
             "secondaryHeading": "Suites & Rooms",
             "title": "Room Type",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": "https://via.placeholder.com/800x400",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+            },
             "criterias": [
                 {
                     "p": "SLEEPS 2-4 / 1-2 BR"
@@ -376,7 +473,31 @@
             "id": "card-3",
             "title": "Room Type",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": "https://via.placeholder.com/800x400"
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+            }
         }
     ],
     "cardImage4": [
@@ -384,7 +505,31 @@
             "id": "card-4",
             "title": "Room Type",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": "https://via.placeholder.com/800x400",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+            },
             "actions": [
                 {
                     "type": "secondary",
@@ -401,7 +546,31 @@
             "secondaryHeading": "Suites & Rooms",
             "title": "Room Type",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": "https://via.placeholder.com/800x400",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+            },
             "criterias": [
                 {
                     "p": "SLEEPS 2-4 / 1-2 BR"
@@ -415,7 +584,31 @@
             "secondaryHeading": "Suites & Rooms",
             "title": "Room Type",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": "https://via.placeholder.com/800x400"
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+            }
         }
     ],
     "cardImage7": [
@@ -423,7 +616,31 @@
             "id": "card-7",
             "title": "Room Type",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": "https://via.placeholder.com/800x400",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+            },
             "criterias": [
                 {
                     "p": "SLEEPS 2-4 / 1-2 BR"
@@ -436,7 +653,31 @@
             "id": "card-8",
             "title": "Room Type",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": "https://via.placeholder.com/800x400",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+            },
             "criterias": [
                 {
                     "p": "SLEEPS 2-4 / 1-2 BR"
@@ -457,7 +698,31 @@
             "id": "card-4",
             "title": "Room Type",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": "https://via.placeholder.com/800x400",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+            },
             "actions": [
                 {
                     "type": "primary",
@@ -474,7 +739,31 @@
             "secondaryHeading": "Suites & Rooms",
             "title": "Room Type",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": "https://via.placeholder.com/800x400",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
+                ]
+            },
             "criterias": [
                 {
                     "p": "SLEEPS 2-4 / 1-2 BR"
