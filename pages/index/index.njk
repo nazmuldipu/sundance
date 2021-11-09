@@ -25,6 +25,7 @@ permalinkBypassOutputDir: true
 {% from 'molecules/bridge-2.njk' import secondBridge %}
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'organisms/forms.njk' import lodging_form %}
+{% from 'organisms/thumbnail_slider.njk' import thumbnail_slider %}
 <header>
     {{ h1( copy='Atoms' ) }}
 </header>
@@ -251,6 +252,8 @@ permalinkBypassOutputDir: true
 
 {{ h2( copy='Filters' ) }}
 {{filter(filters)}}
+
+{{ thumbnail_slider() }}
 
 {{bridge()}}
 
