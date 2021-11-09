@@ -185,8 +185,8 @@
     "cards": [
         {
             "id": "card-1",
-            "secondaryHeading": "Suites & Rooms",
-            "title": "Room Type",
+            "title": "Suites & Rooms",
+            "sub_title": "Room Type",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
             "image": {
                 "classes": "",

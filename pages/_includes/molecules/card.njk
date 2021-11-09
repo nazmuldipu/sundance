@@ -47,7 +47,7 @@
                 <figure class="card-image {{ figureClass }}" 
                     {% if id %} id="{{ id }}" {% endif %} 
                 >
-                    {{ scaled_image(item.image) }}
+                    <img src={{item.image}} class="w-full"/>
                 </figure>
                 <figcaption class="card-text {{ figcaptionClass }}"
                     {% if id %} id="{{ id }}" {% endif %}
@@ -88,12 +88,7 @@
         <figure class="card-image {{ figureClass }}" 
             {% if id %} id="{{ id }}" {% endif %} 
         >
-            {% if item.image | isString %}
-                <img src={{item.image}} class="w-full"/>
-            {% else %}
-                {{ scaled_image(item.image) }}
-            {% endif %}
-            
+            {{ scaled_image(item.image) }}
         </figure>
         <figcaption class="card-text {{ figcaptionClass }}"
             {% if id %} id="{{ id }}" {% endif %}
@@ -108,7 +103,7 @@
             {% if item.criterias %}
                 <div>
                     {% for criteria in item.criterias %}
-                        {{ h5(copy = criteria.p, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                        {{ h5(copy = criteria.p, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6', 'bold']) }}
                     {% endfor %}
                 </div>
             {% endif %}                                           

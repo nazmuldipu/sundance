@@ -125,7 +125,7 @@ strong {
     margin-right: auto;
 }
 .bold {
-    font-weight: bold;
+    font-weight: bold !important;
 }
 .gap-x-4 {
     column-gap: 1rem;
