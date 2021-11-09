@@ -108,7 +108,7 @@ strong {
     text-align: center;
 }
 .segment-inner {
-    max-width: 1440px;
+    max-width: 1080px;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
@@ -250,12 +250,22 @@ strong {
 .pb-2{
     padding-bottom: 1rem;
 }
-.pb-4{
+.pb-8{
     padding-bottom: 2rem !important;
+}
+.pb-10{
+    padding-bottom: 2.5rem;
+}
+/* margin class */
+.mb-4{
+    margin-bottom: 2rem;
 }
 /* backgrounds */
 .bg-sp-2 {
     background-color: var(--sundance__primary2) !important;
+}
+.bg-sn-4 {
+    background-color: var(--sundance__neutral4) !important;
 }
 .bg-sn-5 {
     background-color: var(--sundance__neutral5) !important;
