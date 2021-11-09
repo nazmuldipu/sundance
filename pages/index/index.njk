@@ -28,8 +28,8 @@ permalinkBypassOutputDir: true
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'organisms/forms.njk' import lodging_form %}
 {% from 'organisms/global-image.njk' import global_image %}
+{% from 'organisms/thumbnail_slider.njk' import thumbnail_slider %}
 
-=======
 <section class="segement-outer">
     <section class="segment-inner">
         {{ navMenu(navMenuLink) }}
@@ -271,6 +271,8 @@ permalinkBypassOutputDir: true
 
 {{ h2( copy='Filters' ) }}
 {{filter(filters)}}
+
+{{ thumbnail_slider() }}
 
 {{bridge()}}
 
