@@ -534,14 +534,14 @@
 .dropdown-button__arrow::after {
     animation: spin-left 0.5s linear forwards;
     border-color: inherit;
-    border-width: 2px 0 0 0;
+    border-width: 1px 0 0 0;
     border-style: solid;
     content: '';
     display: block;
     height: 1px;
-    left: 15px;
+    left: 14px;
     position: absolute;
-    top: 50%;
+    top: 48%;
     transform: rotateZ(45deg);
     -webkit-transform: rotateZ(45deg);
     width: 13px;
@@ -555,9 +555,12 @@
 .dropdown-container__toggle:checked ~ .dropdown-button .dropdown-button__arrow::before {
     animation: spin-right 0.5s linear forwards;
     left: 13px;
+    width: 14px;
 }
 .dropdown-container__toggle:checked ~ .dropdown-button .dropdown-button__arrow::after {
     animation: spin-left 0.5s linear forwards;
+    left: 23px;
+    width: 14px;
 }
 @keyframes spin-right {
     0% { transform: rotate(45deg); }
