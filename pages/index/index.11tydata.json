@@ -53,12 +53,12 @@
         "label": "Check IN",
         "type": "datetime",
         "placeholder": "mm/dd/yyyy",
-        "classes": ["form-input", "form-field-date"]
+        "classes": ["form-input", "form-field-date", "font-ivar"]
     },
     "emailInput": {
         "type": "email",
         "placeholder": "Email address",
-        "classes": ["form-input"]
+        "classes": ["form-input", "font-ivar"]
     },
     "exampleImage": {
         "classes": "inline-block",

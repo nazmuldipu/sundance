@@ -1,4 +1,8 @@
 {% macro seo_tags(page,sdatas) %}
+
+    <meta name="generator-cms" content="skipper platform">
+    <meta name="api_type" content="{{meta.api_type}}">
+
     {% set pageSdata = sdatas[page] if sdatas[page].length else sdatas['global-cms'] %}
     
     {% for sdata in pageSdata %}
