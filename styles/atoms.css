@@ -178,6 +178,8 @@
     padding-bottom: 10px;
     padding-left: 10px;
     width: 97%;
+    font-size: 12px;
+    line-height: 16.8px;
 }
 .form-label .form-input::placeholder {
     color: #000;
