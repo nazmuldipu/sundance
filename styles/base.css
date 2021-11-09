@@ -280,6 +280,9 @@ strong {
 .mt-4 {
     margin-top: 1rem;
 }
+.mt-40 {
+    margin-top: 10rem;
+}
 /* backgrounds */
 .bg-sp-2 {
     background-color: var(--sundance__primary2) !important;

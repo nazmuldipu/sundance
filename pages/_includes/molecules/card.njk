@@ -103,11 +103,11 @@
         <figcaption class="card-text {{ figcaptionClass }}"
             {% if id %} id="{{ id }}" {% endif %}
         >
-            {% if item.secondaryHeading %}
-                {{ h5(copy = item.secondaryHeading, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
-            {% endif %}
             {% if item.title %}
-                {{ h3(copy = item.title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
+                {{ h5(copy = item.title, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
+            {% endif %}
+            {% if item.sub_title %}
+                {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
             {% endif %}
             {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
             {% if item.criterias %}

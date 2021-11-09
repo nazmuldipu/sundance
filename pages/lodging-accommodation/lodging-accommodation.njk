@@ -14,19 +14,25 @@ nickname: "lodging-accommodation"
 
 <section class="segment-outer">
     <section class="segment-inner">
-
-        {{ navMenu(navMenuLink) }}
-
+        {{ navMenu(data.navMenuLink) }}
+    </section>
+</section>
+<section class="segment-outer mt-40">
+    <section class="segment-inner">
         {{ lodging_form(item = lodgingForm) }}
-
-        {{ filter(filters) }}
-
-        <section class="lodging-accomodation__card">
-            {% for item in cards %}
-                {{ singleCard(item = item, card_container = ['card-container', 'text-left']) }}
-            {% endfor %}
-        </section>
-        {{newsletter()}}
+    </section>
+</section>
+<section class="segment-outer">
+    <section class="segment-inner">
+        <div class="bg-sn-4">
+            {{ filter(filters) }}
+            <section class="lodging-accomodation__card">
+                {% for item in cards %}
+                    {{ singleCard(item = item, card_container = ['card-container', 'text-left']) }}
+                {% endfor %}
+            </section>
+            {{newsletter()}}
+        </div>
     </section>
 </section>
 
