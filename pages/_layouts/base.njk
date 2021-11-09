@@ -2,7 +2,7 @@
 pagename: base
 ---
 
-{% from "seo_tags.njk" import seo_tags %}
+{% from "seo_tags.njk" import seo_tags with context %}
 {% from "dump_data.njk" import dump_data with context %}
 
 
@@ -26,7 +26,6 @@ pagename: base
 <!-- end Google Analytics -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="api_type" content="{{meta.api_type}}">
         <link rel="icon" href="favicon.svg" type="image/svg+xml">
         {{ seo_tags(pagename, seoData) }}
 <!-- start critical css -->
