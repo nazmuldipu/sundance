@@ -1,0 +1,31 @@
+{% from "atoms/headings.njk" import h2, h6 %}
+{% from 'atoms/form-fields.njk' import form_input %}
+{% from "atoms/a.njk" import a, button_primary %}
+{# 
+    #   @desc   lodging form
+    #   @param  item       object (data from json file)
+    #   @return HTML article
+    #   @author Sarjis
+ #}
+{% macro lodging_form(item = {}) %}
+    <article class="lodging-forms">
+        <header>
+            {{ h2(copy = item.heading, classes = ['lodging-forms--heading', 'font-ivar']) }}
+            {{ h6(copy = item.subheading, classes = ['lodging-forms--subheading', 'font-ivar']) }}
+        </header>
+        <section class="lodging-forms__field--container text-left justify-center gap-x-2">
+            {% for item in item.formInputs %}
+                <div class="lodging-forms__item">
+                    {{ form_input(obj = item) }}
+                </div>
+            {% endfor %}
+            {{ button_primary( 
+                classes = ['button', 'button--primary','font-calibre', 'text-base', 'align-self-end', 'line-h-1', 'lodging-form__cta'], 
+                href=item.cta.href, 
+                copy=item.cta.copy, 
+                id=item.cta.id, 
+                target=item.cta.target ) 
+            }}
+        </section>
+    </article>
+{% endmacro %}

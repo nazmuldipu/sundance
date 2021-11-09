@@ -1,0 +1,120 @@
+footer {
+  position: relative;
+  border-top: 1px dotted black;
+  letter-spacing: 0.02em;
+}
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+.footer__col {
+  margin-bottom: 4.5rem;
+}
+.footer__col .heading__foooter--2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 110%;
+  color: var(--sundance__neutral1);
+  padding-bottom: 24px;
+}
+
+.footer__link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--sundance__neutral1);
+  line-height: 22px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+.footer__icon {
+  display: inline;
+  width: 24px;
+  height: 24px;
+  padding-right: 19px;
+}
+.footer__copy {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-bottom: 20px; */
+}
+.footer__s_dot {
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+}
+
+/* Mobile (Screen size : 375 pts) */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  footer {
+    padding: 32px 36px 20px 36px;
+  }
+  .footer__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer__copy {
+    padding-bottom: 100px;
+    flex-direction: column;
+  }
+  .footer__copy__image,
+  .footer__copy__image img {
+    width: 100%;
+  }
+  .footer__s_dot {
+    margin-top: -274px;
+    width: 207px;
+    height: 225px;
+    margin-bottom: 19px;
+  }
+}
+
+/* Tab (Screen size : 1200 pts) */
+@media screen and (min-width: 768px) and (max-width: 1365px) {
+  footer {
+    padding: 90px 38px 100px 38px;
+  }
+  .footer__col {
+    margin-bottom: 4rem;
+  }
+  .footer__s_dot {
+    margin-top: -263px;
+    width: 263px;
+    height: 264px;
+  }
+}
+
+/* Desktop (Screen size : 1440 pts) */
+@media screen and (min-width: 1366px) and (max-width: 1919px) {
+  footer {
+    padding: 32px 172px 20px 172px;
+  }
+  .footer__s_dot {
+    margin-top: -263px;
+    width: 263px;
+    height: 264px;
+  }
+}
+
+/* Desktop XXL (Screen size : 1920 pts) */
+@media screen and (min-width: 1920px) {
+  footer {
+    padding: 152px 316px 123px 316px;
+  }
+  .footer__col .heading__foooter--2 {
+    font-size: 32px;
+    line-height: 38px;
+    padding-bottom: 32px;
+  }
+  .footer__link.text-base {
+    font-size: 24px !important;
+    padding-bottom: 12px;
+  }
+  .footer__s_dot {
+    margin-top: -384px;
+    width: 400px;
+    height: 384px;
+  }
+}

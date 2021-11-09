@@ -1,0 +1,36 @@
+{% from "atoms/headings.njk" import h2, h3 %}
+{% from 'atoms/form-fields.njk' import checkboxes%}
+{% from 'atoms/icons.njk' import iconCSS %}
+{% from "atoms/a.njk" import IconButton %}
+{# 
+    #   @desc   filter element
+    #   @param  filter
+    #   @author Nazmul Alam
+ #}
+{% macro filter(obj) %}
+    <section class="filter">
+        <input type="checkbox" id="filter_btn" class="filter__toggle" name="filter" >
+        <header class="filter__header">
+            <span>18 Entries</span>
+            {{ h2(copy="Find a  place to stay", classes=['heading--2', 'font-calibre', 'font-medium']) }}
+            <div>
+                <label for="filter_btn" class="filter__toggle__label font-calibre font-medium" >{{ iconCSS( classes=['icon-css', 'icon--filter'], copy='<span></span><span></span><span></span>' ) }} Filter </label>
+            <div>
+        </header>
+        <section class="filter__container-toggle">
+            <section class="filter__container">
+                {% for flt in obj %}
+                    <article>
+                        {{ h3( copy= flt.title, classes=['heading--3', 'font-calibre', 'font-medium', 'pb-2'] ) }}
+                        {% for item in flt.items%}
+                            <div class="filter__item">                            
+                                {{ checkboxes( classes = ['font-ivar'], copy=item.copy, id=item.id, name=item.name, checkBoxNumber=item.quantity ) }}
+                            </div>
+                        {% endfor %}
+                    </article>
+                {% endfor %}
+            </section>
+        </section>
+        {#  #}
+    </section>
+{% endmacro %}

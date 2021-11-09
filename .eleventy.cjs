@@ -39,6 +39,7 @@ module.exports = function(eleventyConfig) {
         }
     });
 
+    eleventyConfig.addPassthroughCopy({ 'components/lib': 'lib' });
     // dump object data.
     eleventyConfig.addNunjucksFilter( 'json', function ( value ) {
         let str = JSON.stringify(value)

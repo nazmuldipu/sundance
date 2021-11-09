@@ -8,7 +8,6 @@ export default class ProgressiveElement extends HTMLElement {
             link.rel = 'stylesheet';
             link.onload = function() { 
                 resolve(link);
-                console.log('style has loaded'); 
             };
             link.href = cssPath;
         
@@ -18,7 +17,6 @@ export default class ProgressiveElement extends HTMLElement {
     } 
 
     constructor(modules) {
-        console.log('progressive le constructor', performance.now())
         super();
         // load each module.path on module.trigger (some sort of Listener interface)
         this._moduleMap = new Map();

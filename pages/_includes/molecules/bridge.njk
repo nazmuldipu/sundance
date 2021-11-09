@@ -1,0 +1,59 @@
+{% from "atoms/headings.njk" import h4,
+ihh1 %}
+{% from 'atoms/icons.njk' import iconCSS %}
+{#
+    #   @desc   a basic bridge/carousel molecules
+    #   @return HTML anchor tag
+    #   @author Nazmul Alam
+#}
+{% macro bridge(  )%}
+    <section class="bridge">
+        <article class="bridge__top-frame">
+            <header>{{ihh1('Explore Your Creativity',classes = ['bridge__header', 'font-ivar'])}}</header>
+            {{h4(copy='EXPLORE GALLERY', classes=['bridge__text', 'font-calibre'])}}
+        </article>
+
+        <article class="bridge__container">
+            <media-carousel>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="bridge__box">a</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bridge__box">b</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bridge__box">c</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bridge__box">d</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bridge__box">e</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bridge__box">f</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bridge__box">g</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bridge__box">h</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="bridge__box">i</div>
+                        </div>
+                    </div>
+                    <nav class="bridge__nav">
+                        {{ iconCSS( classes=['carousel-button-prev', 'bridge__nav-icon', 'arrow-left', 'rotate-45'] ) }}
+                        {{ iconCSS( classes=['carousel-button-next', 'bridge__nav-icon', 'arrow-right', 'rotate-45'] ) }}
+                    </nav>
+
+                </div>
+            </media-carousel>
+
+        </article>
+
+    </section>
+{% endmacro %}
