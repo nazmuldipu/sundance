@@ -95,7 +95,7 @@
             "title": "Art Studio Classes",
             "description": "Spend two hours in an Art Studio workshop and take away a lasting memory of your Sundance visit. Choose from single-session workshops in jewelry making, wheel-thrown pottery, journal making, watercolor, acrylic or oil painting, printmaking or drawing.",
             "image": {
-                "classes": "",
+                "classes": "h-full w-full",
                 "artDirection": [
                     {
                         "classes": "",
@@ -131,7 +131,7 @@
             "title": "Visiting Artist Program",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
             "image": {
-                "classes": "",
+                "classes": "h-full w-full",
                 "artDirection": [
                     {
                         "classes": "",
