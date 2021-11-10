@@ -25,6 +25,12 @@ permalinkBypassOutputDir: true
 {% from 'molecules/bridge-2.njk' import secondBridge %}
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'organisms/forms.njk' import lodging_form %}
+{% from 'organisms/global-image.njk' import global_image %}
+<header>
+    {{ h1( copy='Image' ) }}
+</header>
+{{global_image(pageCMS['test-image'].global_image, classes='happenings_1 inline-block xmed:border-1 border-mar-main-3 w-full')}}
+
 <header>
     {{ h1( copy='Atoms' ) }}
 </header>
