@@ -1,8 +1,40 @@
 /****  start imports  ********************************/
 @import "../../styles/global.css";
 /****  end imports  ********************************/
-.art-studio__container{
+.art-studio__section-outer{
+    width: 100%;
+}
+.art-studio__section-inner{
+    max-width: 1080px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+.art-studio__header{
+    font-weight: 600;
+    font-size: 2.625rem;
+    padding-bottom: 2.5rem;
+}
+.art-studio__card{
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 3rem;
+    padding-top: 4.75rem;
+    padding-bottom: 4.5rem;
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .art-studio__header{
+        font-size: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    .art-studio__card{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding-top: 0.25rem;
+        padding-bottom: 0rem;
+    }
+    .art-studio__section-inner{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }    
 }

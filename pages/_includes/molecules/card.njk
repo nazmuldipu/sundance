@@ -9,37 +9,35 @@
     #   @param  items           json data file
     #   @author Meherab
 #}
-{% macro horrizontalCard(id = '', items, containerBackground = '', horizontal_card_container = ['horizontal__card-container'], figureClass = '', figcaptionClass = '') %}
-   <section class = "{% if containerBackground %} containerBackground {% endif %}">
-         {% for item in items %}
-            <section class="{% for class in horizontal_card_container %} {{ class }} {% endfor %}">        
-                <figure class="horizontal__card-image {{ figureClass }}
-                    {% if item.imageOrientation == 'left' %}
-                        order-1
-                    {% elif item.imageOrientation == 'right' %}
-                        order-2
-                    {% endif %}" 
-                    {% if id %} id="{{ id }}" {% endif %} 
-                >
-                    {% if item.image %}
-                        {{ scaled_image(item.image)}}
-                    {% endif %}
-                </figure>
-                <figcaption class="horizontal__card-text {{ figcaptionClass }}
-                    {% if item.imageOrientation == 'left' %}
-                        order-2
-                    {% elif item.imageOrientation == 'right' %}
-                        order-1
-                    {% endif %}"
-                    {% if id %} id="{{ id }}" {% endif %}
-                >
-                    {{ h2(copy = item.title, classes=['heading', 'heading--2', 'font-calibre', 'font-medium', 'text--color__sn-6']) }}
-                    {{ h4(copy = item.description, classes=['heading', 'heading--4', 'font-ivar', 'font-normal', 'text-lg-2', 'text--color__sn-6']) }}
-                    {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = item.button.copy, href = item.button.url, target = item.button.target ) }}
-                </figcaption>
-            </section>
-        {% endfor %}
-   </section>
+{% macro horrizontalCard(id = '', items, horizontal_card_container = ['horizontal__card-container'], figureClass = '', figcaptionClass = '') %}
+    {% for item in items %}
+        <section class="{% for class in horizontal_card_container %} {{ class }} {% endfor %}">        
+            <figure class="horizontal__card-image {{ figureClass }}
+                {% if item.imageOrientation == 'left' %}
+                    order-1
+                {% elif item.imageOrientation == 'right' %}
+                    order-2
+                {% endif %}" 
+                {% if id %} id="{{ id }}" {% endif %} 
+            >
+                {% if item.image %}
+                    {{ scaled_image(item.image)}}
+                {% endif %}
+            </figure>
+            <figcaption class="horizontal__card-text {{ figcaptionClass }}
+                {% if item.imageOrientation == 'left' %}
+                    order-2
+                {% elif item.imageOrientation == 'right' %}
+                    order-1
+                {% endif %}"
+                {% if id %} id="{{ id }}" {% endif %}
+            >
+                {{ h2(copy = item.title, classes=['heading', 'heading--2', 'font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                {{ h4(copy = item.description, classes=['heading', 'heading--4', 'font-ivar', 'font-normal', 'text-lg-2', 'text--color__sn-6']) }}
+                {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = item.button.copy, href = item.button.url, target = item.button.target ) }}
+            </figcaption>
+        </section>
+    {% endfor %}
 {% endmacro %}
 
 {% macro card(items, figureClass = [], figcaptionClass = []) %}
