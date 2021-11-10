@@ -1,4 +1,5 @@
 /****  start molecules  ********************************/
+@import url("./molecules-global-image.css");
 @import url("./details-widget-lodging.css");
 @import url('./molecules-footer.css');
 @import url('./molecules-newsletter.css');
