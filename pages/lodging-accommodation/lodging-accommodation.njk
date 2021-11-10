@@ -11,12 +11,8 @@ nickname: "lodging-accommodation"
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/card.njk' import singleCard %}
 {% from 'molecules/header.njk' import navMenu %}
-
-<section class="segment-outer">
-    <section class="segment-inner">
-        {{ navMenu(data.navMenuLink) }}
-    </section>
-</section>
+---
+{{ navMenu(data.navMenuLink) }}
 <section class="segment-outer segment-outer__margin">
     <section class="segment-inner">
         {{ lodging_form(item = lodgingForm) }}
@@ -27,9 +23,9 @@ nickname: "lodging-accommodation"
         {{ filter(filters) }}
     </section>
 </section>
-<section class="segment-outer bg-sn-4">
+<section class="segment-outer bg-sn-4 px-4 pb-4">
     <section class="segment-inner">
-        <section class="lodging-accommodation__card">
+        <section class="lodging-accomodation__cards">
             {% for item in cards %}
                 {{ singleCard(item = item, classes = ['card-container', 'text-left', 'lodging-accommodation__single-card']) }}
             {% endfor %}
