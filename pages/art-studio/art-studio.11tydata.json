@@ -1,4 +1,18 @@
 {
+    "heroCornerBlock":{
+        "title":"The Sundance Art Studio",
+        "subtitle":"Classes by appointment only. Guests are recommended to wear face coverings in the Art Studio.",
+        "description":"Nestled underneath Mount Timpanogos, the Sundance Art Studio provides a great escape from the mundane with a wide array of activities and classes.",
+        "actions":[
+           {
+            "type":"view-details",
+            "copy":"View Details",
+            "href":"#",
+            "target":"_self",
+            "label":"Details"
+           }
+        ]
+    },
     "navMenuLink":[
         {
             "title": "Activities",

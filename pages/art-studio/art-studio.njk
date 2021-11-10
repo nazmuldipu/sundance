@@ -15,7 +15,30 @@ nickname: "Art Studio"
 {% from 'molecules/art-studio.njk' import artStudio %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
 {% from 'macros.njk' import scaled_image %}
-
+{% macro top_banner_right_bottom_container() %}
+  <section>
+	<header class="hero__corner--block">
+		{{ h2(copy = heroCornerBlock.title, classes=['heading', 'hero__corner--block__title']) }}
+		{% if heroCornerBlock.subtitle %}
+			<p class="hero__corner--block__subtitle">{{ heroCornerBlock.subtitle }}</p>
+		{% endif %}
+		{% if heroCornerBlock.description %}
+			<p class="hero__corner--block__description">{{ heroCornerBlock.description }}</p>
+		{% endif %}
+		{% for action in heroCornerBlock.actions %}
+            {% if action.type == "view-details" %}
+            <div class="hero__corner--block__cta">
+                {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = action.copy, href = action.href, target = action.target ) }}
+            </div>
+            {% endif %}
+            <div class="hero__corner--block__nav">
+                <label class="font-ivar">{{action.label}}</label>
+                {{ a( copy=action.copy, classes=['link', 'link--primary', 'font-calibre', 'font-medium', 'text-base'] href=action.href, target=action.target) }}
+            </div>
+        {% endfor %}
+	</header>
+  </section>
+{% endmacro %}
 {{ navMenu(navMenuLink) }}
 
 <section>
@@ -37,7 +60,7 @@ nickname: "Art Studio"
     </section>
 </section>
 
-
+{{ top_banner_right_bottom_container() }}
 {{newsletter()}}
 
 {{footer(data.footer)}}
