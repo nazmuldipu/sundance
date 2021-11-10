@@ -28,7 +28,7 @@
                     {{ article.heading }}
                 </h3>
                 {% for text in article.copy %}
-                    <p> {{ text | safe }} </p>
+                    <p class="accordion--text__padding"> {{ text | safe }} </p>
                 {% endfor %}
             </figcaption>
             {% if item.image %}

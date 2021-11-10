@@ -13,6 +13,7 @@ permalinkBypassOutputDir: true
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
 {% from 'atoms/icons.njk' import iconImage, iconCSS %}
+{% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/card.njk' import horrizontalCard, card %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/bridge.njk' import bridge %}
@@ -23,8 +24,14 @@ permalinkBypassOutputDir: true
 {% from 'molecules/footer.njk' import footer %}
 {% from 'molecules/art-studio.njk' import artStudio %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
+{% from 'molecules/accommodation-feature.njk' import accommodationFeature %}
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'organisms/forms.njk' import lodging_form %}
+<section class="segement-outer">
+    <section class="segment-inner">
+        {{ navMenu(navMenuLink) }}
+    </section>
+</section>
 <header>
     {{ h1( copy='Atoms' ) }}
 </header>
@@ -45,8 +52,8 @@ permalinkBypassOutputDir: true
         <div style="position: relative; z-index: 2;">
             {{ dropdown( copy='Book A Class', labelId='dropdown-1', items=dropdownItems1 ) }}
         </div>
-        {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base'], copy='Book Another Class', labelId='dropdown-2', items=dropdownItems2 ) }}
-        {{ dropdown( classes=['dropdown-container--primary2'], labelClasses=['button--primary2', 'button', 'text-base'], copy='Book Another Class', labelId='dropdown-3', items=dropdownItems1 ) }}
+        {{ dropdown( classes=['dropdown-container--secondary'], labelClasses=['button--secondary', 'button', 'text-base', 'font-calibre'], copy='Book Another Class', labelId='dropdown-2', items=dropdownItems2 ) }}
+        {{ dropdown( classes=['dropdown-container--primary2'], labelClasses=['button--primary2', 'button', 'text-base', 'font-calibre'], copy='Book Another Class', labelId='dropdown-3', items=dropdownItems1 ) }}
         <br>
     </article>
 </section>
@@ -188,6 +195,10 @@ permalinkBypassOutputDir: true
 </section>
 <section style="padding-bottom:3rem">
     <div></div>
+</section>
+<section>
+<section>
+    {{accommodationFeature(features)}}
 </section>
 <section>
     {{ artStudio(artInstructor) }}

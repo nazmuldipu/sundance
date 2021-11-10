@@ -31,13 +31,13 @@
     #   @param  classes array (optional)
     #   @param  copy    string
     #   @param  texts    array
-    #   @author Ashfaqur Rahman, Sarjis
+    #   @author Ashfaqur Rahman, Sarjis, Meherab
 #}
-{% macro text_container( classes = ['text-container', font-ivar], title, copy ) %}
+{% macro text_container( classes = ['text-container', 'font-ivar'], title, copy ) %}
     <article class="{% for class in classes %} {{ class }} {% endfor %}">
         <header>
-            {{ h1(copy = title, classes = ['text-container--header', 'heading--1']) }}
+            {{ h1(copy = title, classes = ['text-container__header', 'heading--2']) }}
         </header>
-        <p>{{ copy | safe }}</p>
+        <p class = "text-container__copy">{{ copy | safe }}</p>
     </article>
 {% endmacro %}
