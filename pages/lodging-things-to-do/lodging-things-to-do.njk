@@ -1,0 +1,37 @@
+---
+layout: base.njk
+pagename: lodging-things-to-do
+permalink: "build/lodging-things-to-do/index.html"
+permalinkBypassOutputDir: true
+nickname: "lodging-things-to-do"
+---
+{% from 'molecules/filter.njk' import filter %}
+{% from 'organisms/forms.njk' import lodging_form %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/card.njk' import singleCard %}
+{% from 'molecules/header.njk' import navMenu %}
+---
+{{ navMenu(data.navMenuLink) }}
+{% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
+<section class="segment-outer segment-outer__margin">
+    <section class="segment-inner">
+        {{ lodging_form(item = lodgingForm) }}
+    </section>
+</section>
+<section class="segment-outer bg-sn-4">
+    <section class="segment-inner">
+        {{ filter(filters) }}
+    </section>
+</section>
+<section class="segment-outer bg-sn-4 px-4 pb-4">
+    <section class="segment-inner">
+        <section class="lodging-things-to-do__cards">
+            {% for item in cardAllData %}
+                {{ singleCard(item = item.vertical_card, classes = ['card-container', 'lodging-things-to-do__single-card']) }}
+            {% endfor %}
+        </section>
+    </section>
+</section>
+{{newsletter()}}
+{{footer(data.footer)}}
