@@ -1,11 +1,53 @@
+{% from 'organisms/global-image.njk' import global_image %}
 {#
     #   @desc   thumbnail_slider
     #   @param  object       object (data from json file)
     #   @return HTML section
     #   @author Nazmul Alam
  #}
-{% macro thumbnail_slider( item = {}) %}
-    <section>
-        thumbnail_slider
+{% macro thumbnail_slider(images = []) %}
+    <section class="thumbnail-slider grid grid-cols-3">
+        <article class="thumbnail-slider_texts order-1">a</article>
+        <article class="thumbnail-slider_images col-span-2 order-2 grid">
+            <section>Image</section>
+            <section class="thumbnail-slider__slides">
+                <media-carousel>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            {% for item in images %}
+                                <div class="swiper-slide">
+                                    <div class="thumbnail-slider__slides__box">
+                                        {{ global_image(item.image.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
+                                    </div>
+                                    <header class="font-calibre">{{item.title}}</header>
+                                    <summary>{{item.sub_title}}</summary>
+                                </div>
+                            {% endfor %}
+                            <div class="swiper-slide">
+                                <div class="bridge__box">b</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bridge__box">c</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bridge__box">d</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bridge__box">e</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bridge__box">f</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bridge__box">g</div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="bridge__box">h</div>
+                            </div>
+                        </div>
+                    </div>
+                </media-carousel>
+            </section>
+        </article>
     </section>
 {% endmacro %}

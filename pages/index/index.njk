@@ -40,7 +40,7 @@ permalinkBypassOutputDir: true
 <header>
     {{ h1( copy='Image' ) }}
 </header>
-{{global_image(pageCMS['test-image'].global_image, classes='image_frame sm:9:16 lg:4:3 2xl:16:9 4xl:9:16')}}
+{{ global_image(pageCMS['test-image'].global_image, classes='image_frame sm:9:16 lg:4:3 2xl:16:9 4xl:9:16') }}
 
 <header>
     {{ h1( copy='Atoms' ) }}
@@ -118,9 +118,9 @@ permalinkBypassOutputDir: true
         {{ h3( copy='Text Container' ) }}
     </header>
     <section>
-        {{ text_container( 
-            title = 'Let Creativity Flow', 
-            copy = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque' 
+        {{ text_container(
+            title = 'Let Creativity Flow',
+            copy = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor sagittis nulla congue placerat tristique viverra eget sed. Rhoncus imperdiet amet, feugiat neque, vitae scelerisque'
         ) }}
     </section>
 </section>
@@ -203,12 +203,9 @@ permalinkBypassOutputDir: true
 <section>
     {{ secondBridge(bridgeItems) }}
 </section>
-<section style="padding-bottom:3rem">
-    <div></div>
-</section>
+
 <section>
-<section>
-    {{accommodationFeature(features)}}
+    {{ accommodationFeature(features) }}
 </section>
 <section>
     {{ artStudio(artInstructor) }}
@@ -218,11 +215,11 @@ permalinkBypassOutputDir: true
 </header>
 
 <div class="lodgingWidget">
-{% for object in  lodginObject%}
-    <div>
-    {{lodgingWidget(object)}}
-    </div>
-{% endfor %}
+    {% for object in  lodginObject %}
+        <div>
+            {{ lodgingWidget(object) }}
+        </div>
+    {% endfor %}
 </div>
 
 <section class="segment-outer">
@@ -231,18 +228,16 @@ permalinkBypassOutputDir: true
             {{ h3( copy='Details Widget 1' ) }}
         </header>
         {{ details_widget_desktop(
-            detailsData = detailsObject, 
-            dropdown1 = detailsWidgetDropdown1, 
-            dropdown2 = detailsWidgetDropdown2) 
-        }}
+            detailsData = detailsObject,
+            dropdown1 = detailsWidgetDropdown1,
+            dropdown2 = detailsWidgetDropdown2) }}
         <header>
             {{ h3( copy='Details Widget 2' ) }}
         </header>
         {{ details_widget_mobile(
             detailsData = detailsObject2,
-            dropdown1 = detailsWidgetDropdown3, 
-            cta = widgetCTA) 
-        }}
+            dropdown1 = detailsWidgetDropdown3,
+            cta = widgetCTA) }}
     </section>
 </section>
 <section class="segment-outer">
@@ -261,22 +256,23 @@ permalinkBypassOutputDir: true
 </section>
 
 {{ h2( copy='Group Venues' ) }}
-{% for event in groupVenue %}
-    <section class="group-section">
-        <div class="bridge__top-frame"></div>
-        <div class="group-container">
-            {{groupVenues(event)}}
-        <div>
-    </section>
-{% endfor %}
+    {% for event in groupVenue %}
+        <section class="group-section">
+            <div class="bridge__top-frame"></div>
+            <div class="group-container">
+                {{ groupVenues(event) }}
+            </div>
+        </section>
+    {% endfor %}
+
+{{ thumbnail_slider(pageCMS['lodging-slider'].thumbnail_slider.images) }}
 
 {{ h2( copy='Filters' ) }}
-{{filter(filters)}}
+{{ filter(filters) }}
 
-{{ thumbnail_slider() }}
 
-{{bridge()}}
+{{ bridge() }}
 
-{{newsletter()}}
+{{ newsletter() }}
 
-{{footer(data.footer)}}
+{{ footer(data.footer) }}
