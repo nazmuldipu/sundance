@@ -1,3 +1,3 @@
 const getAllData = require('../../scripts/utils/get-page-data.cjs')
 
-module.exports  = getAllData('/sample')
+module.exports  = getAllData('/lodging-accommodation')

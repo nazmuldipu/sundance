@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 pagename: lodging-accommodation
-permalink: "build/lodging-accommodation.html"
+permalink: "build/lodging-accommodation/index.html"
 permalinkBypassOutputDir: true
 nickname: "lodging-accommodation"
 ---
@@ -13,6 +13,7 @@ nickname: "lodging-accommodation"
 {% from 'molecules/header.njk' import navMenu %}
 ---
 {{ navMenu(data.navMenuLink) }}
+{% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
 <section class="segment-outer segment-outer__margin">
     <section class="segment-inner">
         {{ lodging_form(item = lodgingForm) }}
@@ -26,8 +27,8 @@ nickname: "lodging-accommodation"
 <section class="segment-outer bg-sn-4 px-4 pb-4">
     <section class="segment-inner">
         <section class="lodging-accomodation__cards">
-            {% for item in cards %}
-                {{ singleCard(item = item, classes = ['card-container', 'text-left', 'lodging-accommodation__single-card']) }}
+            {% for item in cardAllData %}
+                {{ singleCard(item = item.vertical_card, classes = ['card-container', 'text-left', 'lodging-accommodation__single-card']) }}
             {% endfor %}
         </section>
     </section>
