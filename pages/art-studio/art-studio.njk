@@ -10,14 +10,25 @@ nickname: "Art Studio"
 {% from "atoms/a.njk" import a, button_primary, button_secondary, view_details, dropdown %}
 {% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'molecules/art-studio.njk' import artStudio %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
-{{ h2(copy = titleHead.title, classes = ['pb-10', 'ihh1', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
-<section>
-    <section class = "segment-inner">
-        {{ horrizontalCard(horrizontalCardItems, containerBackground = 'bg-sn-4', horizontal_card_container = ['horizontal__card-container', 'mb-4']) }}
+{% from 'macros.njk' import scaled_image %}
+<section class="segment-outer">
+    <section class="segment-inner">
+        {{ navMenu(navMenuLink) }}
     </section>
+</section>
+
+<section>
+    {{scaled_image(banner_image)}}
+</section>
+
+{{ h2(copy = titleHead.title, classes = ['pb-10', 'ihh1', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+
+<section class = "segment-inner">
+    {{ horrizontalCard(horrizontalCardItems, containerBackground = 'bg-sn-4', horizontal_card_container = ['horizontal__card-container', 'mb-4']) }}
 </section>
 <section class = "segment-outer bg-sn-4">
     <section clsass = "segment-inner art-studio__container grid-cols-3">
