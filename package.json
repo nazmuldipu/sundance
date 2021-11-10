@@ -18,7 +18,8 @@
     "watch-stage": "cross-env NODE_ENV=development THE_ENV=local ACTIVE_API_URI=STAGE node tooling/dev.js",
     "watch-prod": "cross-env NODE_ENV=development THE_ENV=local ACTIVE_API_URI=PROD node tooling/dev.js",
     "resize-images": "node tooling/images.js",
-    "snapshots": "percy exec -- node snapshots.js"
+    "snapshots": "percy exec -- node snapshots.js",
+    "create-page": "cross-env NODE_ENV=production node tooling/cli"
   },
   "repository": {
     "type": "git",
@@ -50,6 +51,7 @@
     "postcss-import": "^14.0.0",
     "postcss-nesting": "^7.0.1",
     "sharp": "^0.28.2",
-    "tailwindcss": "^2.1.0"
+    "tailwindcss": "^2.1.0",
+    "yargs": "^17.2.1"
   }
 }

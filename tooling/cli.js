@@ -44,6 +44,10 @@ function createFiles(path, name) {
     });
   }
 }
+/* yargs will be used for better command line interface
 const parsedArguments = yargs(hideBin(process.argv)).argv;
-const fileName = parsedArguments._[0];
+console.log(parsedArguments);
+*/
+const fileName = process.argv[2];
 console.log(`Creating new file: ${fileName}`);
+
