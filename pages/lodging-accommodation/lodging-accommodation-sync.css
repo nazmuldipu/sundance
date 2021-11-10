@@ -1,8 +1,12 @@
 /****  start imports  ********************************/
 @import "../../styles/global.css";
 /****  end imports  ********************************/
-.lodging-accomodation__card {
+.lodging-accomodation__cards {
+    max-width: 1080px;
     display: block;
+}
+.lodging-accomodation__single-card {
+    width: 328px;
 }
 .segment-outer__margin {
     margin-top: 4rem;
@@ -11,9 +15,10 @@
     .segment-outer__margin {
         margin-top: 10rem;
     }
-    .lodging-accomodation__card {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    .lodging-accomodation__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         grid-column-gap: 3rem;
         grid-row-gap: 40px;
     }
