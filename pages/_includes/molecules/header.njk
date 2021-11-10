@@ -92,22 +92,24 @@
 
 
 {% macro navMenu(menuItems) %}
-    <header class="header">
-        <div class="header__burger-icon">
-            <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
-            <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
-                {{ iconCSS( classes=['burger-icon'] ) }}
-            </label>
-            <div class="toggle-details hidden font-ivar w-screen h-screen align-baseline overflow-y-auto">
-                {{ headerLeft(menuItems, id = 'toggle-156') }}               
+    <nav class="header__nav">
+        <header class="header">
+            <div class="header__burger-icon">
+                <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
+                <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
+                    {{ iconCSS( classes=['burger-icon'] ) }}
+                </label>
+                <div class="toggle-details hidden font-ivar w-screen h-screen align-baseline overflow-y-auto">
+                    {{ headerLeft(menuItems, id = 'toggle-156') }}               
+                </div>
             </div>
-        </div>
-        <div class="header__menu-items--container">{{ headerLeft(menuItems, id = 'toggle-155') }}</div>
-        <div class="header__logo">{{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}</div>
-        <div class="header__icons__cta--container">
-            {{ headerIcons() }}
-            {{ headerCTA(id='dropdown-22') }}
-        </div>
-        <div class="header__cta--container">{{ headerCTA(id='dropdown-222') }}</div>
-    </header>
+            <div class="header__menu-items--container">{{ headerLeft(menuItems, id = 'toggle-155') }}</div>
+            <div class="header__logo">{{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}</div>
+            <div class="header__icons__cta--container">
+                {{ headerIcons() }}
+                {{ headerCTA(id='dropdown-22') }}
+            </div>
+            <div class="header__cta--container">{{ headerCTA(id='dropdown-222') }}</div>
+        </header>
+    </nav>
 {% endmacro %}
