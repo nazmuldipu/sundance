@@ -1,50 +1,44 @@
 {% from 'organisms/global-image.njk' import global_image %}
+{% from 'atoms/icons.njk' import iconCSS %}
 {#
     #   @desc   thumbnail_slider
     #   @param  object       object (data from json file)
     #   @return HTML section
     #   @author Nazmul Alam
  #}
-{% macro thumbnail_slider(images = []) %}
+{% macro thumbnail_slider(obj = {}) %}
+    {{ obj | json}}
     <section class="thumbnail-slider grid grid-cols-3">
-        <article class="thumbnail-slider_texts order-1">a</article>
-        <article class="thumbnail-slider_images col-span-2 order-2 grid">
-            <section>Image</section>
+        <article class="self-center order-1">
+            <div class="thumbnail-slider__texts">
+                <h2 class="thumbnail-slider__title">{{ obj.title }}</h2>
+                <p class="thumbnail-slider__description">{{ obj.description }}</p>
+            </div>
+        </article>
+        <article class="thumbnail-slider__images col-span-2 order-2 grid">
+            <section id="thumbnail-slider__image__frame">
+                {{ global_image(obj.images[0].image.global_image, classes='image_frame sm:15:8 lg:15:8 2xl:15:8 4xl:15:8') }}
+            </section>
             <section class="thumbnail-slider__slides">
                 <media-carousel>
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            {% for item in images %}
+                            {% for item in obj.images %}
                                 <div class="swiper-slide">
                                     <div class="thumbnail-slider__slides__box">
                                         {{ global_image(item.image.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
                                     </div>
                                     <header class="font-calibre">{{item.title}}</header>
-                                    <summary>{{item.sub_title}}</summary>
+                                    <summary class="font-calibre">{{item.sub_title}}</summary>
                                 </div>
                             {% endfor %}
-                            <div class="swiper-slide">
-                                <div class="bridge__box">b</div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="bridge__box">c</div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="bridge__box">d</div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="bridge__box">e</div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="bridge__box">f</div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="bridge__box">g</div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="bridge__box">h</div>
-                            </div>
                         </div>
+                        <nav class="flex flex-row-reverse -mt-22 -mr-1">
+                            <div class="flex p-2 bg-sn-5 z-10 thumbnail-slider__navs">
+                                {{ iconCSS( classes=['carousel-button', 'carousel-button-prev', 'icon-css', 'arrow-left', 'rotate-45'] ) }}
+                                {{ iconCSS( classes=['carousel-button', 'carousel-button-next', 'icon-css', 'arrow-right', 'rotate-45'] ) }}
+                            </div>
+                        </nav>
                     </div>
                 </media-carousel>
             </section>

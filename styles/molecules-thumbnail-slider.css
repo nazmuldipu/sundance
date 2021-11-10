@@ -2,10 +2,17 @@
     margin: 90px;
     gap: 20px;
 }
+.thumbnail-slider__texts{
+    padding-left: 100px;
+}
+#thumbnail-slider__image__frame{
+    margin-bottom: 20px;
+}
 .thumbnail-slider__slides {
     width: 100%;
     text-align: center;
     overflow: hidden;
+    position: relative;
 }
 
 .thumbnail-slider__slides__box {
@@ -15,13 +22,28 @@
 }
 
 .thumbnail-slider__slides header {
-    padding-top: 25px;
+    padding-top: 7px;
     font-size: 16px;
     font-weight: 500;
     line-height: 19px;
     text-align: center;
 }
 
+
+.thumbnail-slider__slides summary {
+    padding-top: 3px;
+    font-size: 13px;
+    line-height: 14px;
+    font-weight: 500;
+    color: var(--sundance__neutral3);
+    max-width: 122px;
+    text-align: center;
+}
+.icon-css{
+    margin: 0 4px;
+    cursor: pointer;
+    background-color: var(--sundance__secondary4);
+}
 /* Mobile (Screen size : 375 pts) */
 @media screen and (min-width: 320px) and (max-width: 767px) {
 }
@@ -31,6 +53,16 @@
     .thumbnail-slider__slides__box {
         width: 200px;
         height: 200px;
+    }  
+    .thumbnail-slider__slides header {
+        padding-top: 20px;
+        font-size: 27px;
+        line-height: 32px;
+    }
+    .thumbnail-slider__slides summary {
+        font-size: 20px;
+        line-height: 24px;
+        max-width: 200px;
     }
 }
 
@@ -40,6 +72,16 @@
         width: 220px;
         height: 220px;
     }
+    .thumbnail-slider__slides header {
+        padding-top: 20px;
+        font-size: 27px;
+        line-height: 32px;
+    }
+    .thumbnail-slider__slides summary {
+        font-size: 20px;
+        line-height: 24px;
+        max-width: 220px;
+    }
 }
 
 /* Desktop XXL (Screen size : 1920 pts) */
@@ -47,5 +89,15 @@
     .thumbnail-slider__slides__box {
         width: 285px;
         height: 285px;
+    }
+    .thumbnail-slider__slides header {
+        padding-top: 20px;
+        font-size: 27px;
+        line-height: 32px;
+    }
+    .thumbnail-slider__slides summary {
+        font-size: 20px;
+        line-height: 24px;
+        max-width: 285px;
     }
 }
