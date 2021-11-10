@@ -27,11 +27,20 @@ permalinkBypassOutputDir: true
 {% from 'molecules/accommodation-feature.njk' import accommodationFeature %}
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'organisms/forms.njk' import lodging_form %}
+{% from 'organisms/global-image.njk' import global_image %}
+
+=======
 <section class="segement-outer">
     <section class="segment-inner">
         {{ navMenu(navMenuLink) }}
     </section>
 </section>
+
+<header>
+    {{ h1( copy='Image' ) }}
+</header>
+{{global_image(pageCMS['test-image'].global_image, classes='image_frame sm:9:16 lg:4:3 2xl:16:9 4xl:9:16')}}
+
 <header>
     {{ h1( copy='Atoms' ) }}
 </header>
