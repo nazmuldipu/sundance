@@ -1,0 +1,7 @@
+{
+    "module_js":  "./sample-module.js",
+    "defer_js":  "./sample-defer.js",
+    "async_js":  "./sampele-async.js",
+    "sync_js":   "./sample-sync.js",
+    "sync_css":  "./sample-sync.css"
+}
