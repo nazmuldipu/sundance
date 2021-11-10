@@ -1,4 +1,5 @@
 {% from 'macros.njk' import scaled_image %}
+{% from 'organisms/global-image.njk' import global_image %}
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from "atoms/a.njk" import button_primary, button_secondary, view_details %}
 {#
@@ -68,6 +69,47 @@
                 <div>
                     {% for criteria in item.criterias %}
                         {{ h5(copy = criteria.p, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                    {% endfor %}
+                </div>
+            {% endif %}                                           
+            <div class="flex justify-center gap-x-2">
+                {% for action in item.actions %}
+                    {% if action.type == 'view-details' %}
+                        {{ view_details(classes = ['view-details','font-calibre', 'font-medium', 'text-lg', 'text--color__sn-6'], copy = action.copy, href = action.url, target=action.target ) }}
+                    {% elif action.type == 'primary' %}
+                        {{ button_primary(classes = ['button', 'button--primary', 'card-text__button--size', 'font-calibre', 'font-medium', 'text-base'], href = action.url, copy = action.copy, id = item.id, target = action.target ) }}
+                    {% elif action.type == 'secondary' %}    
+                        {{ button_secondary(classes = ['button', 'button--secondary', 'card-text__button--size', 'font-calibre', 'font-medium', 'text-base'], href = action.url, copy = action.copy, id = item.id, target = action.target ) }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </figcaption>
+    </section>
+{% endmacro %}
+
+{% macro singleCard(classes = ['card-container'], id = '', item, figureClass = '', figcaptionClass = '') %}
+    <section class="{% for class in classes %} {{ class }} {% endfor %}">        
+        <figure class="card-image {{ figureClass }}" 
+            {% if id %} id="{{ id }}" {% endif %} 
+        >
+            {{global_image(item.image.global_image, classes='image_frame sm:4:3 lg:4:3 2xl:4:3 4xl:4:3')}}
+        </figure>
+        <figcaption class="card-text {{ figcaptionClass }}"
+            {% if id %} id="{{ id }}" {% endif %}
+        >
+            {% if item.title %}
+                {{ h5(copy = item.title, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
+            {% endif %}
+            {% if item.sub_title %}
+                {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
+            {% endif %}
+            <p class="font-ivar text-sm">
+                {{ item.description }}
+            </p>
+            {% if item.criterias %}
+                <div>
+                    {% for criteria in item.criterias %}
+                        {{ h5(copy = criteria.p, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6', 'bold']) }}
                     {% endfor %}
                 </div>
             {% endif %}                                           

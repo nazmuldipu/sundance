@@ -284,6 +284,9 @@ strong {
 .bg-sp-2 {
     background-color: var(--sundance__primary2) !important;
 }
+.bg-sn-4 {
+    background-color: var(--sundance__neutral4) !important;
+}
 .bg-sn-5 {
     background-color: var(--sundance__neutral5) !important;
 }
