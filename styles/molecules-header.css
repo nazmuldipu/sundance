@@ -58,9 +58,6 @@
     margin: 0;
     text-align: center;
 }
-.heading:not(.header-left):not(.header-right){
-    padding-bottom: 0em;
-}
 .header__burger-icon {
     display: none;
 }
