@@ -7,6 +7,11 @@ permalinkBypassOutputDir: true
 {% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
+{% from 'hero-carousel.njk' import heroCarousel %}
+{% from 'macros.njk' import events %}
+
+
+
 =======
 {{ navMenu(navMenuLink) }}
 
@@ -17,6 +22,9 @@ permalinkBypassOutputDir: true
 <div>Hello world!</div>
 <div>Hello world!</div>
 
+{{heroCarousel()}}
+
+{{events()}}
 
 {{newsletter()}}
 
