@@ -19,7 +19,7 @@ nickname: "lodging-accommodation"
         {{ lodging_form(item = lodgingForm) }}
     </section>
 </section>
-<section class="segment-outer bg-sn-4">
+<section class="segment-outer bg-sn-4 text-left lodging-accommodation__filter">
     <section class="segment-inner">
         {{ filter(filters) }}
     </section>
@@ -31,6 +31,9 @@ nickname: "lodging-accommodation"
                 {{ singleCard(item = item.vertical_card, classes = ['card-container', 'text-left', 'lodging-accommodation__single-card']) }}
             {% endfor %}
         </section>
+        <div class="font-ivar text-sm card-footer-caption">
+            {{ pageCMS['card-footer-caption'].simple_article.description | safe }}
+        </div>
     </section>
 </section>
 {{newsletter()}}
