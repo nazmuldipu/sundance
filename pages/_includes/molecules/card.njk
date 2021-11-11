@@ -87,6 +87,14 @@
     </section>
 {% endmacro %}
 
+{#
+    #   @desc   a single vertical card
+    #   @param  figureClass     string, image class (optional)
+    #   @param  figcaptionClass string, caption class (optional)
+    #   @param  id              string, a unique ID (optional)
+    #   @param  items           json data file
+    #   @author Sarjis
+#}
 {% macro singleCard(classes = ['card-container'], id = '', item, figureClass = '', figcaptionClass = '') %}
     <section class="{% for class in classes %} {{ class }} {% endfor %}">        
         <figure class="card-image {{ figureClass }}" 
@@ -103,9 +111,9 @@
             {% if item.sub_title %}
                 {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
             {% endif %}
-            <p class="font-ivar text-sm">
+            <div class="font-ivar text-lg-2 text--color__sn-6 mb-8">
                 {{ item.description }}
-            </p>
+            </div>
             {% if item.criterias %}
                 <div>
                     {% for criteria in item.criterias %}
