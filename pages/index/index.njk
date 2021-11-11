@@ -31,11 +31,7 @@ permalinkBypassOutputDir: true
 {% from 'organisms/thumbnail_slider.njk' import thumbnail_slider %}
 {% from 'organisms/thumbnail_slider.njk' import thumbnail_slider %}
 
-<section class="segement-outer">
-    <section class="segment-inner">
-        {{ navMenu(navMenuLink) }}
-    </section>
-</section>
+{{ navMenu(navMenuLink) }}
 
 <header>
     {{ h1( copy='Image' ) }}
@@ -180,9 +176,9 @@ permalinkBypassOutputDir: true
     <div></div>
 </section>
 
-<section>
-    {{ horrizontalCard(horizontalCardImage) }}
-</section>
+
+{{ horrizontalCard(horizontalCardImage) }}
+
 
 <section style="padding-bottom:3rem">
     <div></div>
