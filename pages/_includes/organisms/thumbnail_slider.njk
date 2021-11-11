@@ -1,5 +1,7 @@
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'atoms/icons.njk' import iconCSS %}
+{% from "atoms/headings.njk" import h1 %}
+{% from "atoms/a.njk" import Link %}
 {#
     #   @desc   thumbnail_slider
     #   @param  object       object (data from json file)
@@ -7,17 +9,18 @@
     #   @author Nazmul Alam
  #}
 {% macro thumbnail_slider(obj = {}) %}
-    {{ obj | json}}
     <section class="thumbnail-slider grid grid-cols-3">
-        <article class="self-center order-1">
-            <div class="thumbnail-slider__texts">
-                <h2 class="thumbnail-slider__title">{{ obj.title }}</h2>
-                <p class="thumbnail-slider__description">{{ obj.description }}</p>
+        <article class="thumbnail-slider__texts self-center order-1">
+            <div class="">
+                {{ h1( copy=obj.title ,  classes=['thumbnail-slider__title', 'font-ivar', 'font-semibold']) }}
+                <p class="thumbnail-slider__description font-calibre">{{ obj.description }}</p>
+                {{ Link( href=obj.action.href, copy=obj.action.copy, classes=['button', 'button--primary2', 'font-calibre', 'thumbnail-slider__action'] ) }}
             </div>
         </article>
-        <article class="thumbnail-slider__images col-span-2 order-2 grid">
+        <article class="thumbnail-slider__images order-2 grid">
             <section id="thumbnail-slider__image__frame">
                 {{ global_image(obj.images[0].image.global_image, classes='image_frame sm:15:8 lg:15:8 2xl:15:8 4xl:15:8') }}
+                {{ h1( copy=obj.title ,  classes=['thumbnail-slider__mobile__title', 'font-ivar', 'font-semibold']) }}
             </section>
             <section class="thumbnail-slider__slides">
                 <media-carousel>
@@ -33,8 +36,8 @@
                                 </div>
                             {% endfor %}
                         </div>
-                        <nav class="flex flex-row-reverse -mt-22 -mr-1">
-                            <div class="flex p-2 bg-sn-5 z-10 thumbnail-slider__navs">
+                        <nav class="thumbnail-slider__navs flex">
+                            <div class="flex p-2 z-10">
                                 {{ iconCSS( classes=['carousel-button', 'carousel-button-prev', 'icon-css', 'arrow-left', 'rotate-45'] ) }}
                                 {{ iconCSS( classes=['carousel-button', 'carousel-button-next', 'icon-css', 'arrow-right', 'rotate-45'] ) }}
                             </div>
