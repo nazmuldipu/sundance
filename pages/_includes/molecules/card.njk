@@ -33,7 +33,7 @@
                 {% endif %}"
                 {% if id %} id="{{ id }}" {% endif %}
             >
-                {{ h2(copy = item.sub_title, classes=['heading', 'heading--2', 'font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                {{ h2(copy = item.title, classes=['heading', 'heading--2', 'font-calibre', 'font-medium', 'text--color__sn-6']) }}
                 <div class="font-ivar text-lg-2 text--color__sn-6 mb-8">
                     {{ item.description | safe }}
                 </div>
@@ -62,11 +62,11 @@
         <figcaption class="card-text {% for class in figcaptionClass %} {{ class }} {% endfor %}"
             {% if id %} id="{{ id }}" {% endif %}
         >
-            {% if item.sub_title %}
-                {{ h5(copy = item.sub_title, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
-            {% endif %}
             {% if item.title %}
-                {{ h3(copy = item.title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
+                {{ h5(copy = item.title, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
+            {% endif %}
+            {% if item.sub_title %}
+                {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
             {% endif %}
             {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'min-h-120', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
             {% if item.criterias %}
