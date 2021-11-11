@@ -14,14 +14,10 @@ nickname: "lodging-things-to-do"
 ---
 {{ navMenu(data.navMenuLink) }}
 {% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
+{# {% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %} #}
 <section class="segment-outer segment-outer__margin">
     <section class="segment-inner">
-        {{ lodging_form(item = lodgingForm) }}
-    </section>
-</section>
-<section class="segment-outer bg-sn-4">
-    <section class="segment-inner">
-        {{ filter(filters) }}
+        {# {{ top_banner_right_bottom_container() }} TODO, will add it here when macro is created by Meherab, Sarjis 11/11/2021 #}
     </section>
 </section>
 <section class="segment-outer bg-sn-4 px-4 pb-4">

@@ -104,7 +104,7 @@
                 {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
             {% endif %}
             <p class="font-ivar text-sm">
-                {{ item.description }}
+                {{ item.description | safe }}
             </p>
             {% if item.criterias %}
                 <div>
@@ -113,10 +113,10 @@
                     {% endfor %}
                 </div>
             {% endif %}                                           
-            <div class="flex justify-center gap-x-2">
+            <div class="flex justify-center gap-x-2 {% if  item.criterias | length < 1 %} mt-10 {% endif %}">
                 {% for action in item.actions %}
                     {% if action.type == 'view-details' %}
-                        {{ view_details(classes = ['view-details','font-calibre', 'font-medium', 'text-lg', 'text--color__sn-6'], copy = action.copy, href = action.url, target=action.target ) }}
+                        {{ view_details(classes = ['view-details','font-calibre', 'font-medium', 'text-lg', 'text--color__sn-6', 'cursor-pointer'], copy = action.copy, href = action.url, target=action.target ) }}
                     {% elif action.type == 'primary' %}
                         {{ button_primary(classes = ['button', 'button--primary', 'card-text__button--size', 'font-calibre', 'font-medium', 'text-base'], href = action.url, copy = action.copy, id = item.id, target = action.target ) }}
                     {% elif action.type == 'secondary' %}    
