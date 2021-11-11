@@ -11,7 +11,6 @@
 }
 .lodging-accommodation__single-card {
     margin-bottom: 32px;
-    width: 328px;
 }
 .segment-outer__margin {
     margin-top: 2rem;
@@ -39,6 +38,7 @@
     }
     .lodging-accommodation__single-card {
         margin: 0;
+        width: 328px;
     }
     .card-footer-caption {
         padding-top: 40px;
