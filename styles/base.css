@@ -280,6 +280,12 @@ strong {
 .mt-4 {
     margin-top: 1rem;
 }
+.mb-8{
+    margin-bottom: 2rem;
+}
+.min-h-120{
+    min-height: 120px;
+}
 /* backgrounds */
 .bg-sp-2 {
     background-color: var(--sundance__primary2) !important;
