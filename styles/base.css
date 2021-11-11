@@ -112,7 +112,6 @@ strong {
 }
 .segment-outer {
     width: 100%;
-    text-align: center;
 }
 .segment-inner {
     max-width: 1440px;
@@ -277,11 +276,20 @@ strong {
 .pb-4{
     padding-bottom: 2rem !important;
 }
+.pt-24 {
+    padding-top: 6rem;
+}
+.pb-28 {
+    padding-bottom: 7rem;
+}
 .mt-4 {
     margin-top: 1rem;
 }
 .mt-10 {
     margin-top: 2.5rem;
+}
+.mb-8 {
+    margin-bottom: 2rem;
 }
 /* backgrounds */
 .bg-sp-2 {

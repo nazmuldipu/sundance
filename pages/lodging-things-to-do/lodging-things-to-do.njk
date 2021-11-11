@@ -9,15 +9,22 @@ nickname: "lodging-things-to-do"
 {% from 'organisms/forms.njk' import lodging_form %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'molecules/newsletter.njk' import newsletter %}
-{% from 'molecules/card.njk' import singleCard %}
+{% from 'molecules/card.njk' import singleCard, horrizontalCard %}
 {% from 'molecules/header.njk' import navMenu %}
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 ---
 {{ navMenu(data.navMenuLink) }}
 {% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
-{# {% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %} #}
+{% set horizontal_card_list = pageCMS['horizontal-cards'].horizontal_card_list %}
 <section class="segment-outer segment-outer__margin">
     <section class="segment-inner">
         {# {{ top_banner_right_bottom_container() }} TODO, will add it here when macro is created by Meherab, Sarjis 11/11/2021 #}
+    </section>
+</section>
+<section class="segment-outer bg-sn-4 px-4 lodging-things-to-do__horizontal-cards">
+    <section class="segment-inner">
+        {{ h2(classes=['heading', 'heading--2', 'font-ivar', 'text-center'], copy = 'Things to do at Sundance') }}
+        {{ horrizontalCard(items = horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
     </section>
 </section>
 <section class="segment-outer bg-sn-4 px-4 pb-4">

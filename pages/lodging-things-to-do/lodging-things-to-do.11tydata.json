@@ -142,87 +142,47 @@
             ]
         }
     ],
-    "lodgingForm": {
-        "heading": "Lodging at Sundance",
-        "subheading": "Face Coverings are required when checking in at the front desk.",
-        "formInputs": [
-            {
-                "label": "Check IN",
-                "type": "datetime",
-                "placeholder": "mm/dd/yyyy",
-                "classes": ["form-input", "lodging-form__input"]
-            },
-            {
-                "label": "Check IN",
-                "type": "datetime",
-                "placeholder": "mm/dd/yyyy",
-                "classes": ["form-input", "lodging-form__input"]
-            },
-            {
-                "label": "ROOMS",
-                "type": "text",
-                "placeholder": "1",
-                "classes": [
-                    "form-input",
-                    "lodging-form__input",
-                    "lodging-form__input--rooms"
+    "horizontalCardImage": [
+        {
+            "id": "card-1",
+            "title": "Visiting Artist Program",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
+                    }
                 ]
+                
             },
-            {
-                "label": "Promo CODE",
-                "type": "text",
-                "placeholder": "",
-                "classes": ["form-input", "lodging-form__input"]
+            "imageOrientation": "left",
+            "button": {
+                "copy": "View Details",
+                "url": "http://example.com/",
+                "target": "_self"
             }
-        ],
-        "cta": {
-            "copy": "Book Now",
-            "id": "lodging-form-cta",
-            "href": "http://example.com/",
-            "target": "_blank"
-        }
-    },
-    "cards": [
-        {
-            "id": "card-1",
-            "title": "Suites & Rooms",
-            "sub_title": "Room Type",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": {
-                "classes": "",
-                "artDirection": [
-                    {
-                        "classes": "",
-                        "media": "(min-width:900.1px)",
-                        "sizes": "30vw",
-                        "type": "jpg",
-                        "src": "images/lodging-accomo-card-1",
-                        "alt": "The Lodging accommodation Image",
-                        "intrinsicwidth": "328",
-                        "intrinsicheight": "202"
-                    },
-                    {
-                        "classes": "",
-                        "media": "(max-width:900px)",
-                        "sizes": "90vw",
-                        "type": "jpg",
-                        "src": "images/lodging-accomo-card-1",
-                        "alt": "The Lodging accommodation Image",
-                        "intrinsicwidth": "328",
-                        "intrinsicheight": "202"
-                    }
-                ]
-            },
-            "criterias": [
-                {
-                    "p": "SLEEPS 2-4 / 1-2 BR"
-                }
-            ]
         },
         {
-            "id": "card-1",
-            "title": "Suites & Rooms",
-            "sub_title": "Room Type",
+            "id": "card-2",
+            "title": "Visiting Artist Program",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
             "image": {
                 "classes": "",
@@ -232,64 +192,29 @@
                         "media": "(min-width:900.1px)",
                         "sizes": "30vw",
                         "type": "jpg",
-                        "src": "images/lodging-accomo-card-1",
-                        "alt": "The Lodging accommodation Image",
-                        "intrinsicwidth": "328",
-                        "intrinsicheight": "202"
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
                     },
                     {
                         "classes": "",
                         "media": "(max-width:900px)",
                         "sizes": "90vw",
                         "type": "jpg",
-                        "src": "images/lodging-accomo-card-1",
-                        "alt": "The Lodging accommodation Image",
-                        "intrinsicwidth": "328",
-                        "intrinsicheight": "202"
+                        "src": "images/card",
+                        "alt": "The Lodging Accomodation Image",
+                        "intrinsicwidth": "800",
+                        "intrinsicheight": "400"
                     }
                 ]
             },
-            "criterias": [
-                {
-                    "p": "SLEEPS 2-4 / 1-2 BR"
-                }
-            ]
-        },
-        {
-            "id": "card-1",
-            "title": "Suites & Rooms",
-            "sub_title": "Room Type",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
-            "image": {
-                "classes": "",
-                "artDirection": [
-                    {
-                        "classes": "",
-                        "media": "(min-width:900.1px)",
-                        "sizes": "30vw",
-                        "type": "jpg",
-                        "src": "images/lodging-accomo-card-1",
-                        "alt": "The Lodging accommodation Image",
-                        "intrinsicwidth": "328",
-                        "intrinsicheight": "202"
-                    },
-                    {
-                        "classes": "",
-                        "media": "(max-width:900px)",
-                        "sizes": "90vw",
-                        "type": "jpg",
-                        "src": "images/lodging-accomo-card-1",
-                        "alt": "The Lodging accommodation Image",
-                        "intrinsicwidth": "328",
-                        "intrinsicheight": "202"
-                    }
-                ]
-            },
-            "criterias": [
-                {
-                    "p": "SLEEPS 2-4 / 1-2 BR"
-                }
-            ]
+            "imageOrientation": "right",
+            "button": {
+                "copy": "View Details",
+                "url": "http://example.com/",
+                "target": "_self"
+            }
         }
     ]
 }
