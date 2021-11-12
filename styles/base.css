@@ -283,7 +283,10 @@ strong {
 /* margin class */
 .mb-4{
     margin-bottom: 2rem;
-}    
+}
+.mb-8{
+    margin-bottom: 2rem;
+}  
 .mt-4 {
     margin-top: 1rem;
 }

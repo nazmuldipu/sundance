@@ -16,7 +16,9 @@ nickname: "Art Studio"
 {% from 'molecules/bridge-2.njk' import secondBridge %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
-
+{% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
+{% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
+{# {% set card_title= pageCMS['card-title'].simple_article %} #}
 {{ navMenu(navMenuLink) }}
 
 <section>
@@ -28,13 +30,13 @@ nickname: "Art Studio"
 
 <section class="bg-sn-4 art-studio__section-outer">
     <section class="art-studio__section-inner">
-        {{ horrizontalCard(horrizontalCardItems,  horizontal_card_container = ['horizontal__card-container', 'mb-4']) }}
+        {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-4']) }}
     </section>
 </section>
 <section class="bg-sn-4 art-studio__section-outer">
     <section class="art-studio__section-inner art-studio__card">
-        {% for item in artStudioCardItems %}
-            {{ verticalCard(item = item, card_container = ['card-container', 'mb-4']) }}
+        {% for item in vertical_card_list %}
+            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-4']) }}
         {% endfor %}
     </section>
 </section>
