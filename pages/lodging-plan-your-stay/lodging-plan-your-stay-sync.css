@@ -5,13 +5,12 @@
     padding: 0 1rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     margin-bottom: 40px;
     margin: 0 auto;
 }
 .lodging-plan-your-stay__single-card {
     margin-bottom: 32px;
-    width: 328px;
+   
 }
 .segment-outer__margin {
     margin-top: 2rem;
@@ -31,6 +30,7 @@
     }
     .lodging-plan-your-stay__single-card {
         margin: 0;
+        width: 328px;
     }
 }
 @media screen and (min-width: 1365px){

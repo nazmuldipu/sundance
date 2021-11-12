@@ -16,16 +16,12 @@ nickname: "lodging-plan-your-stay"
 {% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
 <section class="segment-outer segment-outer__margin">
     <section class="segment-inner">
-        {{ lodging_form(item = lodgingForm) }}
+        {# {{ lodging_form(item = lodgingForm) }} #}
     </section>
 </section>
-<section class="segment-outer bg-sn-4">
-    <section class="segment-inner">
-        {{ filter(filters) }}
-    </section>
-</section>
+
 <section class="segment-outer bg-sn-4 px-4 pb-4">
-    <section class="segment-inner">
+    <section class="segment-inner text-center">
         <section class="lodging-plan-your-stay__cards">
             {% for item in cardAllData %}
                 {{ singleCard(item = item.vertical_card, classes = ['card-container', 'lodging-plan-your-stay__single-card']) }}
