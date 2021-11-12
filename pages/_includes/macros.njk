@@ -99,12 +99,16 @@ Link %}
                 <article class="sundance-events__carousel">
                   <header class="sundance-events__carousel_title font-ivar">{{sprint.title}}</header>
                   {% for eve in sprint.event_list%}
-                    <div class="sundance-events__events grid ">
+                    <div class="sundance-events__events ">
                       <div class="sundance-events__events__date">{{eve.sundance_event.date}}</div>
                       <div class="sundance-events__events__title font-calibre">
                         {{eve.sundance_event.title}}
                         <br/>
-                        <span>{{ a( copy=eve.sundance_event.action.action.copy, href=eve.sundance_event.action.action.url, target='_self') }}<br></span>
+                        <span class="link">{{ a( copy=eve.sundance_event.action.action.copy, href=eve.sundance_event.action.action.url, target='_self') }}</span>
+                        <span class="time">{{eve.sundance_event.time}}</span>
+                      </div>
+                      <div class="sundance-events__events__action">
+                      {{ Link( href=eve.sundance_event.action.action.url, copy=eve.sundance_event.action.action.copy, target='_self', classes=['button', 'button--' + eve.sundance_event.action.action.type, 'font-calibre', 'sundance-events__links'] ) }}
                       </div>
                     </div>
                   {% endfor %}
@@ -113,8 +117,8 @@ Link %}
             {% endfor %}
           </div>
           <nav class="sundance-events__nav">
-            {{ iconCSS( classes=['carousel-button-prev','icon-css', 'arrow-left', 'rotate-45'] ) }}
-            {{ iconCSS( classes=['carousel-button-next', 'icon-css', 'arrow-right', 'rotate-45'] ) }}
+            {{ iconCSS( classes=['carousel-button-prev','icon-css', 'arrow-left', 'mx-1', 'rotate-45'] ) }}
+            {{ iconCSS( classes=['carousel-button-next', 'icon-css', 'arrow-right', 'mx-1', 'rotate-45'] ) }}
           </nav>
         </div>
       </media-carousel>

@@ -4,6 +4,8 @@ pagename: index
 permalink: "build/index.html"
 permalinkBypassOutputDir: true
 ---
+{% from "atoms/a.njk" import Link %}
+{% from "atoms/headings.njk" import h2 %}
 {% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
@@ -25,6 +27,29 @@ permalinkBypassOutputDir: true
 {{heroCarousel()}}
 
 {{events(pageCMS['events'].sundance_events )}}
+
+<section class="segment-outer">
+    <section class="segment-inner horizontal-card">
+        {% set cardObj = pageCMS['horizontal-card'].horizontal_card%}
+        <header class="horizontal-card__header font-horizon">{{cardObj.header}}</header>
+        <div class="horizontal-card__container">
+            <div class="horizontal-card__text">
+                {{ h2( copy=cardObj.title, classes=['heading', 'horizontal-card__title', 'font-ivar'] ) }}
+                <div class="horizontal-card__description font-calibre"> {{cardObj.description | safe}} </div>
+                <div class="flex">
+                {% for item in cardObj.actions%}
+                    <div class="horizontal-card__breadcrumb font-calibre {{'last' if loop.last}}">
+                        {{ Link( href=item.action.url, copy=item.action.copy, target='_self', classes=['button', 'button--' + item.action.type, 'font-calibre'] ) }}
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="horizontal-card__image">
+                image
+            </div>
+        </div>
+    </section>
+</section>
 
 {{newsletter()}}
 

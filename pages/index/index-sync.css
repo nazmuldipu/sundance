@@ -1,8 +1,11 @@
 /****  start imports  ********************************/
 @import "../../styles/global.css";
 /****  end imports  ********************************/
+
+/* -------------------------- Events Styles ------------------------------ */
 .sundance-events {
     padding: 20px;
+    max-width: 335px;
 }
 .sundance-events__header {
     padding: 20px;
@@ -14,23 +17,23 @@
     line-height: 36px;
     margin-bottom: 102px;
 }
-.sundance-events__carousel{
+.sundance-events__carousel {
     width: 100%;
 }
-.sundance-events__nav{
+.sundance-events__nav {
     display: flex;
-    position:absolute;
-    top: 0;
+    position: absolute;
+    width: calc(100% - 40px);
+    top: 220px;
     align-items: center;
     justify-content: center;
-    margin-bottom: -100px;
-    margin-top: 100px;
     z-index: 10;
 }
-.sundance-events__events{
+.sundance-events__events {
     text-align: left;
     display: grid;
     grid-auto-flow: column;
+    /* grid-auto-columns: max-content; */
     margin-bottom: 25px;
 }
 .sundance-events__events__date {
@@ -40,14 +43,107 @@
     line-height: 30px;
     padding-right: 16px;
     margin-right: 14px;
+    justify-self: start;
     border-right: 1px solid var(--sundance__secondary3);
 }
-.sundance-events__events__title{
+.sundance-events__events__title {
     font-size: 20px;
     line-height: 24px;
 }
 
-.sundance-events__events__title > span > a{
+.sundance-events__events__title > span > a {
     color: var(--sundance__primary2);
     font-weight: 500;
+}
+.sundance-events__events__title > span.time,
+.sundance-events__events__action {
+    display: none;
+}
+/* -------------------------- End Events Styles ------------------------------ */
+
+.horizontal-card {
+    text-align: left;
+    padding: 30px;
+}
+.horizontal-card__header {
+    font-size: 180px;
+    line-height: 80px;
+    text-align: center;
+    color: var(--sundance__secondary3);
+    padding-bottom: 60px;
+}
+.horizontal-card__container {
+    display: grid;
+}
+.horizontal-card__title {
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 42px;
+}
+.horizontal-card__description {
+    font-size: 25px;
+    line-height: 40px;
+}
+.horizontal-card__breadcrumb {
+    padding-right: 20px;
+    margin: 24px 20px 70px 0;
+    border-right: 1px solid var(--sundance__secondary3);
+}
+.horizontal-card__breadcrumb.last{
+    border-right: none;
+}
+.horizontal-card__breadcrumb > a {
+    font-size: 23px;
+    text-decoration: underline;
+    line-height: 24px;
+    color: var(--sundance__primary2);
+}
+/* Desktop screen (Screen size : > 767 pts) */
+@media screen and (min-width: 768px) {
+    .sundance-events {
+        padding: 20px;
+        max-width: 1440px;
+    }
+    .sundance-events__carousel {
+        max-width: 1048px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+    .sundance-events__events {
+        grid-template-columns: 260px 1fr 161px;
+    }
+    .sundance-events__events__date {
+        width: 130px;
+        font-size: 40px;
+        line-height: 48px;
+        padding-right: 70px;
+        margin-right: 60px;
+    }
+    .sundance-events__events__title {
+        font-size: 30px;
+        line-height: 36px;
+    }
+    .sundance-events__events__title > span > a {
+        display: none;
+    }
+    .button--secondary {
+        padding: 17px 45px 15px 45px;
+    }
+    .sundance-events__events__title > span.time {
+        display: block;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .sundance-events__events__action {
+        display: block;
+    }
+    .sundance-events__nav {
+        top: 185px;
+    }
+    .carousel-button-prev,
+    .carousel-button-next {
+        margin: 0 140px;
+    }
 }

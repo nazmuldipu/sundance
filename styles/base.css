@@ -52,6 +52,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     font-style: italic;
     unicode-range: U+000-5FF;
 }
+@font-face {
+    font-display: swap;
+    font-family: "Horizon";
+    src: url("../fonts/Horizon-Regular.otf"); 
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+000-5FF;
+}
 body {
     background-color: var(--sundance__neutral5);
     color: var(--sundance__neutral1);
@@ -124,6 +132,10 @@ strong {
     margin-left: auto;
     margin-right: auto;
 }
+.mx-1{
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
 .bold {
     font-weight: bold;
 }
@@ -188,6 +200,9 @@ strong {
 }
 .font-calibre {
     font-family: 'Calibre', Arial, sans-serif;
+}
+.font-horizon {
+    font-family: 'Horizon', Arial, sans-serif;
 }
 /* text alignments */
 .text-left {
