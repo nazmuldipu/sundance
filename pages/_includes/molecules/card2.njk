@@ -14,32 +14,28 @@
     {% for item in items %}
         <section class="{% for class in horizontal_card_container %} {{ class }} {% endfor %}">        
             <figure class="horizontal__card-image {{ figureClass }}
-                {% if item.left_image == true %}
+                {% if item.imageOrientation == 'left' %}
                     order-1
-                {% else %}
+                {% elif item.imageOrientation == 'right' %}
                     order-2
                 {% endif %}" 
                 {% if id %} id="{{ id }}" {% endif %} 
             >
                 {% if item.image %}
-                    {{global_image(item.image.global_image, classes='h-full w-full image_frame sm:4:3 lg:4:3 2xl:4:3 4xl:4:3')}}
+                    {{ scaled_image(item.image)}}
                 {% endif %}
             </figure>
             <figcaption class="horizontal__card-text {{ figcaptionClass }}
-                {% if item.left_image == true %}
+                {% if item.imageOrientation == 'left' %}
                     order-2
-                {% else %}
+                {% elif item.imageOrientation == 'right' %}
                     order-1
                 {% endif %}"
                 {% if id %} id="{{ id }}" {% endif %}
             >
                 {{ h2(copy = item.title, classes=['heading', 'heading--2', 'font-calibre', 'font-medium', 'text--color__sn-6']) }}
-                <div class="font-ivar text-lg-2 text--color__sn-6 mb-8">
-                    {{ item.description | safe }}
-                </div>
-                {% for cta in item.actions %}
-                    {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = cta.copy, href = cta.href, target = cta.target ) }}
-                {% endfor %}
+                {{ h4(copy = item.description, classes=['heading', 'heading--4', 'font-ivar', 'font-normal', 'text-lg-2', 'text--color__sn-6']) }}
+                {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = item.button.copy, href = item.button.url, target = item.button.target ) }}
             </figcaption>
         </section>
     {% endfor %}
@@ -56,19 +52,19 @@
             {% if id %} id="{{ id }}" {% endif %} 
         >
             {% if item.image %}
-                {{global_image(item.image.global_image, classes='image_frame sm:4:3 lg:4:3 2xl:4:3 4xl:4:3')}}
+                {{ scaled_image(item.image)}}
             {% endif %}
         </figure>
         <figcaption class="card-text {% for class in figcaptionClass %} {{ class }} {% endfor %}"
             {% if id %} id="{{ id }}" {% endif %}
         >
+            {% if item.secondaryHeading %}
+                {{ h5(copy = item.secondaryHeading, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
+            {% endif %}
             {% if item.title %}
-                {{ h5(copy = item.title, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                {{ h3(copy = item.title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
             {% endif %}
-            {% if item.sub_title %}
-                {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
-            {% endif %}
-            {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'min-h-120', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+            {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
             {% if item.criterias %}
                 <div>
                     {% for criteria in item.criterias %}
@@ -91,14 +87,6 @@
     </section>
 {% endmacro %}
 
-{#
-    #   @desc   a single vertical card
-    #   @param  figureClass     string, image class (optional)
-    #   @param  figcaptionClass string, caption class (optional)
-    #   @param  id              string, a unique ID (optional)
-    #   @param  items           json data file
-    #   @author Sarjis
-#}
 {% macro singleCard(classes = ['card-container'], id = '', item, figureClass = '', figcaptionClass = '') %}
     <section class="{% for class in classes %} {{ class }} {% endfor %}">        
         <figure class="card-image {{ figureClass }}" 
@@ -115,9 +103,7 @@
             {% if item.sub_title %}
                 {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
             {% endif %}
-            <div class="font-ivar text-lg-2 text--color__sn-6 mb-8">
-                {{ item.description | safe }}
-            </div>
+            {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
             {% if item.criterias %}
                 <div>
                     {% for criteria in item.criterias %}
@@ -125,7 +111,7 @@
                     {% endfor %}
                 </div>
             {% endif %}                                           
-            <div class="flex justify-center gap-x-2 {% if  item.criterias | length < 1 %} mt-10 {% endif %}">
+            <div class="flex justify-center gap-x-2">
                 {% for action in item.actions %}
                     {% if action.type == 'view-details' %}
                         {{ view_details(classes = ['view-details','font-calibre', 'font-medium', 'text-lg', 'text--color__sn-6'], copy = action.copy, href = action.url, target=action.target ) }}
@@ -136,36 +122,6 @@
                     {% endif %}
                 {% endfor %}
             </div>
-        </figcaption>
-    </section>
-{% endmacro %}
-{% macro singleCardHorizontal(item, horizontal_card_container = ['horizontal__card-container'], figureClass = '', figcaptionClass = '') %}
-    <section class="{% for class in horizontal_card_container %} {{ class }} {% endfor %}">        
-        <figure class="horizontal__card-image {{ figureClass }}
-            {% if item.left_image == 'left' %}
-                order-1
-            {% elif item.left_image == 'right' %}
-                order-2
-            {% endif %}" 
-        >
-            {% if item.image %}
-                {{global_image(item.image.global_image, classes='image_frame sm:4:3 lg:4:3 2xl:4:3 4xl:4:3')}}
-            {% endif %}
-        </figure>
-        <figcaption class="horizontal__card-text {{ figcaptionClass }}
-            {% if item.left_image == 'left' %}
-                order-2
-            {% elif item.left_image == 'right' %}
-                order-1
-            {% endif %}"
-        >
-            {{ h2(copy = item.sub_title, classes=['heading', 'heading--2', 'font-calibre', 'font-medium', 'text--color__sn-6']) }}
-            <div class="font-ivar text-lg-2 text--color__sn-6 mb-8">
-                {{ item.description | safe }}
-            </div>
-            {% for cta in item.actions %}
-                {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = cta.copy, href = cta.href, target = cta.target ) }}
-            {% endfor %}
         </figcaption>
     </section>
 {% endmacro %}

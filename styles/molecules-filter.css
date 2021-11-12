@@ -1,5 +1,6 @@
 .filter {
     display: block;
+    padding-top: 3rem;
 }
 .filter__header {
     align-items: flex-end;
@@ -49,7 +50,8 @@
     flex-direction: row;
     padding: 20px 38px;
     border-radius: 45px;
-    background-color: var(--sundance__neutral4);
+    background-color: var(--sundance__neutral5);
+    cursor: pointer;
     /* border: 1px dotted var(--sundance__neutral1); */
 }
 .filter__toggle__label .icon--filter {

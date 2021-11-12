@@ -5,7 +5,7 @@ const defaultConfig = {
   loop: true,
   preloadImages: false,
   slidesPerView: "auto",
-  loopedSlides: 4,
+  loopedSlides: 5,
   spaceBetween: 8,
   lazy: {
     loadPrevNext: true,
