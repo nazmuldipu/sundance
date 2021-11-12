@@ -62,12 +62,12 @@
           }
     ],
     "heroCornerBlock":{
-      "title":"Summer at Sundance",
-      "description":"Join us for dining, art studio classes, spa treatments, shopping, fly fishing, and horseback riding.",
+      "title":"The Spa",
+      "description":"Treat yourself to an array of spa services that will re-energize and rejuvenate your mind and body.",
       "actions":[
          {
           "type":"view-details",
-          "copy":"Explore Summer Activities",
+          "copy":"Explore Spa",
           "href":"#",
           "target":"_self"
          }
