@@ -60,5 +60,17 @@
               { "copy": "Contacts", "href": "#" }
             ]
           }
-    ] 
+    ],
+    "heroCornerBlock":{
+      "title":"Summer at Sundance",
+      "description":"Join us for dining, art studio classes, spa treatments, shopping, fly fishing, and horseback riding.",
+      "actions":[
+         {
+          "type":"view-details",
+          "copy":"Explore Summer Activities",
+          "href":"#",
+          "target":"_self"
+         }
+      ]
+  }
 }

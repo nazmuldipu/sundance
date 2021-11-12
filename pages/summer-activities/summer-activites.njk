@@ -10,6 +10,7 @@ permalinkBypassOutputDir: true
 {% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
+{% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
 
 {% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
@@ -19,8 +20,9 @@ permalinkBypassOutputDir: true
 {{ navMenu(navMenuLink) }}
 <section class="summer-activites__margin-top"></section>
 {# Hero Image Section #}
-<section>
+<section class="relative">
     {{global_image(pageCMS['top-banner'].global_image, classes='relative h-screen w-full image_frame sm:4:3 lg:4:3 2xl:16:9 4xl:9:16')}}
+    {{ top_banner_right_bottom_container(heroCornerBlock) }}
 </section>
 {# Card Title #}
 {{ h2(copy = card_title.title, classes = ['bg-sn-4', 'summer-activites__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
