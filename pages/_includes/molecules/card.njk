@@ -127,6 +127,11 @@
             {% endif %}                                           
             <div class="flex justify-center gap-x-2 {% if  item.criterias | length < 1 %} mt-10 {% endif %}">
                 {% for object in item.actions %}
+                    {% if object.action %}
+                        {% set action = object.action %}
+                    {% else %}
+                        {% set action = object %}
+                    {% endif %}
                     {% set action = object.action %}
                     {% if action.type == 'view-details' %}
                         {{ view_details(classes = ['view-details','font-calibre', 'font-medium', 'text-lg', 'text--color__sn-6'], copy = action.copy, href = action.url, target=action.target ) }}
