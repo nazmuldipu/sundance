@@ -1,3 +1,53 @@
 /****  start imports  ********************************/
 @import "../../styles/global.css";
 /****  end imports  ********************************/
+.sundance-events {
+    padding: 20px;
+}
+.sundance-events__header {
+    padding: 20px;
+    font-size: 45px;
+    line-height: 54px;
+}
+.sundance-events__carousel_title {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 102px;
+}
+.sundance-events__carousel{
+    width: 100%;
+}
+.sundance-events__nav{
+    display: flex;
+    position:absolute;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -100px;
+    margin-top: 100px;
+    z-index: 10;
+}
+.sundance-events__events{
+    text-align: left;
+    display: grid;
+    grid-auto-flow: column;
+    margin-bottom: 25px;
+}
+.sundance-events__events__date {
+    width: 70px;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    padding-right: 16px;
+    margin-right: 14px;
+    border-right: 1px solid var(--sundance__secondary3);
+}
+.sundance-events__events__title{
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.sundance-events__events__title > span > a{
+    color: var(--sundance__primary2);
+    font-weight: 500;
+}

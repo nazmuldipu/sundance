@@ -34,7 +34,8 @@
   padding-bottom: 44px;
   position: relative;
 }
-.swiper-slide {
+
+.\!w-auto{
   width: auto !important;
 }
 

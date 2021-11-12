@@ -1,3 +1,7 @@
+{% from "atoms/a.njk" import a,
+Link %}
+{% from 'atoms/icons.njk' import iconCSS %}
+
 {% macro cardcard(header, eyebrow, description, image, alt, link)%}
   <div class="container px-12 mx-auto grid grid-cols-3 gap-2 place-items-auto">
     <img class="rounded" src="{{ image }}" alt="{{ alt }}">
@@ -81,8 +85,43 @@
   </picture>
 {% endmacro %}
 
-{% macro events(events={}) %}
-<section>
-  Events
-</section>
+{% macro events(events = {}) %}
+  <section class="segment-outer">
+    <section class="sundance-events segment-inner relative">
+      <header class="sundance-events__header font-ivar bold">{{events.header}}</header>
+      
+      <media-carousel>
+        <div class="swiper-container overflow-hidden">
+          
+          <div class="swiper-wrapper">
+            {% for sprint in events.sprint%}
+              <div class="swiper-slide">
+                <article class="sundance-events__carousel">
+                  <header class="sundance-events__carousel_title font-ivar">{{sprint.title}}</header>
+                  {% for eve in sprint.event_list%}
+                    <div class="sundance-events__events grid ">
+                      <div class="sundance-events__events__date">{{eve.sundance_event.date}}</div>
+                      <div class="sundance-events__events__title font-calibre">
+                        {{eve.sundance_event.title}}
+                        <br/>
+                        <span>{{ a( copy=eve.sundance_event.action.action.copy, href=eve.sundance_event.action.action.url, target='_self') }}<br></span>
+                      </div>
+                    </div>
+                  {% endfor %}
+                </article>
+              </div>
+            {% endfor %}
+          </div>
+          <nav class="sundance-events__nav">
+            {{ iconCSS( classes=['carousel-button-prev','icon-css', 'arrow-left', 'rotate-45'] ) }}
+            {{ iconCSS( classes=['carousel-button-next', 'icon-css', 'arrow-right', 'rotate-45'] ) }}
+          </nav>
+        </div>
+      </media-carousel>
+
+      {% for action in events.actions %}
+        {{ Link( href=action.action.url, copy=action.action.copy, target='_self', classes=['button', 'button--' + action.action.type, 'font-calibre', 'sundance-events__links'] ) }}
+      {% endfor %}
+    </section>
+  </section>
 {% endmacro %}
