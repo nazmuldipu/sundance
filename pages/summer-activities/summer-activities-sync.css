@@ -4,6 +4,9 @@
 .summer-activites__section-outer{
     width: 100%;
 }
+.summer-activites__margin-top{
+    margin-top: 8rem;
+}
 .summer-activites__section-inner{
     max-width: 1080px;
     overflow: hidden;
@@ -41,4 +44,10 @@
         padding-right: 1.5rem;
     }
     
+}
+@media screen and (min-width: 768px) and (max-width: 1365px){
+    .summer-activites__section-inner{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
