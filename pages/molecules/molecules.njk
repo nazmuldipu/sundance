@@ -1,0 +1,126 @@
+---
+layout: base.njk
+pagename: molecules
+permalink: "build/molecules/index.html"
+permalinkBypassOutputDir: true
+nickname: "Molecules"
+---
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from 'molecules/header.njk' import navMenu %}
+{% from 'molecules/card.njk' import horrizontalCard, card %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'molecules/lodging-widget.njk' import lodgingWidget %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/filter.njk' import filter %}
+{% from 'molecules/details-widget.njk' import details_widget_desktop, details_widget_mobile %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'molecules/art-studio.njk' import artStudio %}
+{% from 'molecules/bridge-2.njk' import secondBridge %}
+{% from 'molecules/accommodation-feature.njk' import accommodationFeature %}
+{% from 'organisms/amenities.njk' import amenities %}
+{% from 'organisms/forms.njk' import lodging_form %}
+{% from 'organisms/global-image.njk' import global_image %}
+
+<header>
+    {{ h1( copy='Molecules' ) }}
+</header>
+
+
+{{ horrizontalCard(horizontalCardImage) }}
+
+
+<section style="padding-bottom:3rem">
+    <div></div>
+</section>
+
+<section class="card-sample__example grid grid-cols-3 gap-x-2 gap-y-2">
+    {{ card(cardImage) }}
+    {{ card(cardImage2) }}
+    {{ card(cardImage3) }}
+    {{ card(cardImage4) }}
+    {{ card(cardImage5) }}
+    {{ card(cardImage6) }}
+    {{ card(cardImage7) }}
+    {{ card(cardImage8) }}
+    {{ card(cardImage9) }}
+    {{ card(cardImage10) }}
+</section>
+<section>
+    {{ secondBridge(bridgeItems) }}
+</section>
+<section style="padding-bottom:3rem">
+    <div></div>
+</section>
+<section>
+<section>
+    {{accommodationFeature(features)}}
+</section>
+<section>
+    {{ artStudio(artInstructor) }}
+</section>
+<header>
+    {{ h1( copy='Molecules' ) }}
+</header>
+
+<div class="lodgingWidget">
+{% for object in  lodginObject%}
+    <div>
+    {{lodgingWidget(object)}}
+    </div>
+{% endfor %}
+</div>
+
+<section class="segment-outer">
+    <section class="segment-inner">
+        <header>
+            {{ h3( copy='Details Widget 1' ) }}
+        </header>
+        {{ details_widget_desktop(
+            detailsData = detailsObject, 
+            dropdown1 = detailsWidgetDropdown1, 
+            dropdown2 = detailsWidgetDropdown2) 
+        }}
+        <header>
+            {{ h3( copy='Details Widget 2' ) }}
+        </header>
+        {{ details_widget_mobile(
+            detailsData = detailsObject2,
+            dropdown1 = detailsWidgetDropdown3, 
+            cta = widgetCTA) 
+        }}
+    </section>
+</section>
+<section class="segment-outer">
+    <section class="segment-inner">
+        <header>
+            {{ h3( copy='Lodging Forms' ) }}
+        </header>
+        {{ lodging_form(item = lodgingForm) }}
+    </section>
+</section>
+
+<section class="segment-outer">
+    <section class="segment-inner">
+        {{ amenities(item = amenitiesData) }}
+    </section>
+</section>
+
+{{ h2( copy='Group Venues' ) }}
+{% for event in groupVenue %}
+    <section class="group-section">
+        <div class="bridge__top-frame"></div>
+        <div class="group-container">
+            {{groupVenues(event)}}
+        <div>
+    </section>
+{% endfor %}
+
+{{ h2( copy='Filters' ) }}
+{{filter(filters)}}
+
+{{bridge()}}
+
+{{newsletter()}}
+
+{{footer(data.footer)}}

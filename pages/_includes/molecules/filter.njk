@@ -11,11 +11,11 @@
     <section class="filter">
         <input type="checkbox" id="filter_btn" class="filter__toggle" name="filter" >
         <header class="filter__header">
-            <span>18 Entries</span>
-            {{ h2(copy="Find a  place to stay", classes=['heading--2', 'font-calibre', 'font-medium']) }}
+            <div>18 Entries</div>
+            <header>{{ h2(copy="Find a  place to stay", classes=['heading--2', 'font-calibre', 'font-medium']) }}</header>
             <div>
                 <label for="filter_btn" class="filter__toggle__label font-calibre font-medium" >{{ iconCSS( classes=['icon-css', 'icon--filter'], copy='<span></span><span></span><span></span>' ) }} Filter </label>
-            <div>
+            </div>
         </header>
         <section class="filter__container-toggle">
             <section class="filter__container">
