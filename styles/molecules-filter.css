@@ -1,5 +1,6 @@
 .filter {
     display: block;
+    padding-top: 3rem;
 }
 .filter__header {
     align-items: flex-end;

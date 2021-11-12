@@ -277,6 +277,16 @@ strong {
 .pb-4{
     padding-bottom: 2rem !important;
 }
+.pb-10{
+    padding-bottom: 2.5rem;
+}
+/* margin class */
+.mb-4{
+    margin-bottom: 2rem;
+}
+.mb-8{
+    margin-bottom: 2rem;
+}  
 .mt-4 {
     margin-top: 1rem;
 }
@@ -363,7 +373,9 @@ strong {
 .h-screen {
     height: 100vh;
 }
-
+.h-full {
+    height: 100%;
+}
 /* rotation */
 .rotate-90:after{
     transform: rotateZ(90deg);
