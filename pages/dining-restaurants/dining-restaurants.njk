@@ -19,6 +19,7 @@ nickname: "dining-restaurants"
 {% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
 {% set horizontal_card_list = pageCMS['horizontal-card-list'].horizontal_card_list %}
 {% set chefs_card_horizontal_card_list = pageCMS['chefs-card'].horizontal_card_list %}
+{% set horizontal_card_title = pageCMS['horizontal-card-title'].simple_article.title %}
 <section class="segment-outer segment-outer__margin">
     <section class="segment-inner text-left">
         <section class="relative">
@@ -29,7 +30,7 @@ nickname: "dining-restaurants"
 </section>
 <section class="segment-outer bg-sn-4 px-4 dining-restaurants__horizontal-cards">
     <section class="segment-inner">
-        {{ h2(classes=['heading', 'heading--2', 'font-ivar', 'text-center'], copy = 'Things to do at Sundance') }}
+        {{ h2(classes=['heading', 'heading--2', 'font-ivar', 'text-center'], copy = horizontal_card_title) }}
         {{ horrizontalCard(items = horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
         {{ horrizontalCard2(items = chefs_card_horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
     </section>

@@ -15,7 +15,7 @@ nickname: "lodging-rooms-and-suites"
 {{ navMenu(data.navMenuLink) }}
 {% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
 <section class="segment-outer segment-outer__margin">
-    <section class="segment-inner">
+    <section class="segment-inner text-center">
         {{ lodging_form(item = lodgingForm) }}
     </section>
 </section>
@@ -35,7 +35,7 @@ nickname: "lodging-rooms-and-suites"
             {% endfor %}
         </section>
         {% if pageCMS['card-footer-caption'] %}
-            <div class="font-ivar text-sm card-footer-caption">
+            <div class="font-ivar text-sm card-footer-caption text-center">
                 {{ pageCMS['card-footer-caption'].simple_article.description | safe }}
             </div>
         {% endif %}
