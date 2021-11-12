@@ -1,0 +1,16 @@
+{
+    "heroCornerBlock":{
+        "title":"Philosophy : Food as Art",
+        "sub_title":"Face coverings required on Sundance Property. Once seated for dining, guests may remove face coverings to enjoy food & beverage.",
+        "description":"At Sundance Mountain Resort, we believe that food is art and dining is communal. Come enjoy dining integrated with nature.",
+        "actions":[
+           {
+            "type":"view-details",
+            "copy":"Explore Dining",
+            "href":"#",
+            "target":"_self",
+            "label":"Details"
+           }
+        ]
+    }
+}
