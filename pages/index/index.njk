@@ -11,10 +11,8 @@ permalinkBypassOutputDir: true
 {% from 'molecules/footer.njk' import footer %}
 {% from 'hero-carousel.njk' import heroCarousel %}
 {% from 'macros.njk' import events %}
+{% from 'organisms/thumbnail_slider.njk' import thumbnail_slider %}
 
-
-
-=======
 {{ navMenu(navMenuLink) }}
 
 <div>Hello world!</div>
@@ -23,6 +21,7 @@ permalinkBypassOutputDir: true
 <div>Hello world!</div>
 <div>Hello world!</div>
 <div>Hello world!</div>
+{{ thumbnail_slider(pageCMS['lodging-slider'].thumbnail_slider) }}
 
 {{heroCarousel()}}
 
@@ -51,6 +50,6 @@ permalinkBypassOutputDir: true
     </section>
 </section>
 
-{{newsletter()}}
+{{ newsletter() }}
 
-{{footer(data.footer)}}
+{{ footer(data.footer) }}

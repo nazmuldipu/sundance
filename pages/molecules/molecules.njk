@@ -7,7 +7,7 @@ nickname: "Molecules"
 ---
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from 'molecules/header.njk' import navMenu %}
-{% from 'molecules/card.njk' import horrizontalCard, card %}
+{% from 'molecules/card2.njk' import horrizontalCard, card %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'molecules/lodging-widget.njk' import lodgingWidget %}
@@ -27,7 +27,7 @@ nickname: "Molecules"
 </header>
 
 
-{{ horrizontalCard(horizontalCardImage) }}
+{# {{ horrizontalCard(horizontalCardImage) }} #}
 
 
 <section style="padding-bottom:3rem">
@@ -35,7 +35,7 @@ nickname: "Molecules"
 </section>
 
 <section class="card-sample__example grid grid-cols-3 gap-x-2 gap-y-2">
-    {{ card(cardImage) }}
+    {# {{ card(cardImage) }}
     {{ card(cardImage2) }}
     {{ card(cardImage3) }}
     {{ card(cardImage4) }}
@@ -44,7 +44,7 @@ nickname: "Molecules"
     {{ card(cardImage7) }}
     {{ card(cardImage8) }}
     {{ card(cardImage9) }}
-    {{ card(cardImage10) }}
+    {{ card(cardImage10) }} #}
 </section>
 <section>
     {{ secondBridge(bridgeItems) }}

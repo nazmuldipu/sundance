@@ -1,0 +1,15 @@
+{
+    "heroCornerBlock":{
+        "title":"Lodging Specials",
+        "subtitle":"Enhance your Sundance experience with one of our curated packages to help you experience more of what Sundance has to offer.",
+        "actions":[
+           {
+            "type":"view-details",
+            "copy":"View Details",
+            "href":"#",
+            "target":"_self",
+            "label":"Details"
+           }
+        ]
+    }
+}
