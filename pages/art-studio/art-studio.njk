@@ -20,9 +20,9 @@ nickname: "Art Studio"
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
 {# {% set card_title= pageCMS['card-title'].simple_article %} #}
 {{ navMenu(navMenuLink) }}
-
-<section>
-    {{global_image(pageCMS['top-banner'].global_image, classes='relative h-screen w-full image_frame sm:4:3 lg:4:3 2xl:16:9 4xl:9:16')}}
+<section class="art-studio__margin-top"></section>
+<section class="relative">
+    {{global_image(pageCMS['top-banner'].global_image, classes='h-screen w-full image_frame sm:4:3 lg:4:3 2xl:16:9 4xl:9:16')}}
     {{ top_banner_right_bottom_container(heroCornerBlock) }}
 </section>
 

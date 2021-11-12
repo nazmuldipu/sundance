@@ -4,6 +4,9 @@
 .art-studio__section-outer{
     width: 100%;
 }
+.art-studio__margin-top{
+    margin-top: 8rem;
+}
 .art-studio__section-inner{
     max-width: 1080px;
     overflow: hidden;
