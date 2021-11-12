@@ -14,28 +14,32 @@
     {% for item in items %}
         <section class="{% for class in horizontal_card_container %} {{ class }} {% endfor %}">        
             <figure class="horizontal__card-image {{ figureClass }}
-                {% if item.imageOrientation == 'left' %}
+                {% if item.left_image == true %}
                     order-1
-                {% elif item.imageOrientation == 'right' %}
+                {% else %}
                     order-2
                 {% endif %}" 
                 {% if id %} id="{{ id }}" {% endif %} 
             >
                 {% if item.image %}
-                    {{ scaled_image(item.image)}}
+                    {{global_image(item.image.global_image, classes='h-full w-full image_frame sm:4:3 lg:4:3 2xl:4:3 4xl:4:3')}}
                 {% endif %}
             </figure>
             <figcaption class="horizontal__card-text {{ figcaptionClass }}
-                {% if item.imageOrientation == 'left' %}
+                {% if item.left_image == true %}
                     order-2
-                {% elif item.imageOrientation == 'right' %}
+                {% else %}
                     order-1
                 {% endif %}"
                 {% if id %} id="{{ id }}" {% endif %}
             >
                 {{ h2(copy = item.title, classes=['heading', 'heading--2', 'font-calibre', 'font-medium', 'text--color__sn-6']) }}
-                {{ h4(copy = item.description, classes=['heading', 'heading--4', 'font-ivar', 'font-normal', 'text-lg-2', 'text--color__sn-6']) }}
-                {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = item.button.copy, href = item.button.url, target = item.button.target ) }}
+                <div class="font-ivar text-lg-2 text--color__sn-6 mb-8">
+                    {{ item.description | safe }}
+                </div>
+                {% for cta in item.actions %}
+                    {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = cta.copy, href = cta.href, target = cta.target ) }}
+                {% endfor %}
             </figcaption>
         </section>
     {% endfor %}
@@ -52,19 +56,19 @@
             {% if id %} id="{{ id }}" {% endif %} 
         >
             {% if item.image %}
-                {{ scaled_image(item.image)}}
+                {{global_image(item.image.global_image, classes='image_frame sm:4:3 lg:4:3 2xl:4:3 4xl:4:3')}}
             {% endif %}
         </figure>
         <figcaption class="card-text {% for class in figcaptionClass %} {{ class }} {% endfor %}"
             {% if id %} id="{{ id }}" {% endif %}
         >
-            {% if item.secondaryHeading %}
-                {{ h5(copy = item.secondaryHeading, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
-            {% endif %}
             {% if item.title %}
-                {{ h3(copy = item.title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
+                {{ h5(copy = item.title, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
             {% endif %}
-            {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+            {% if item.sub_title %}
+                {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
+            {% endif %}
+            {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'min-h-120', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
             {% if item.criterias %}
                 <div>
                     {% for criteria in item.criterias %}
