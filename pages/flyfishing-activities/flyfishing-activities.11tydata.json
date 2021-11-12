@@ -1,0 +1,136 @@
+{
+    "navMenuLink":[
+        {
+            "title": "Activities",
+            "links": [
+              { "copy": "Winter", "href": "#" },
+              { "copy": "Summer", "href": "#" },
+              { "copy": "Year-Round", "href": "#" }
+            ]
+          },
+          {
+            "title": "Lodging",
+            "links": [
+              { "copy": "Mountain Homes", "href": "#" },
+              { "copy": "Rooms & Suites", "href": "#" },
+              { "copy": "Special + Packages", "href": "#" },
+              { "copy": "Book Your Stay", "href": "#" }          
+            ]
+          },
+          {
+            "title": "Dining",
+            "links": [
+              { "copy": "Restaurants", "href": "#" },
+              { "copy": "Fast Casuals", "href": "#" },
+              { "copy": "Catering", "href": "#" }          
+            ]
+          },
+          {
+            "title": "Events",
+            "links": [
+              { "copy": "Calender", "href": "#" },
+              { "copy": "Summer Theater", "href": "#" },
+              { "copy": "Author Series", "href": "#" },
+              { "copy": "Music at Sundance", "href": "#" }
+            ]
+          },
+          {
+            "title": "Groups",
+            "links": [
+              { "copy": "Meetings & Events", "href": "#" },
+              { "copy": "Weddings", "href": "#" },
+              { "copy": "Venues", "href": "#" }
+            ]
+          },
+          {
+            "title": "Shop",
+            "links": [
+              { "copy": "The General Store", "href": "#" },
+              { "copy": "SMO", "href": "#" },
+              { "copy": "Shop Online", "href": "#" }
+            ]
+          },
+          {
+            "title": "About",
+            "links": [
+              { "copy": "History of Sundance", "href": "#" },
+              { "copy": "Conserve", "href": "#" },
+              { "copy": "Safety", "href": "#" },
+              { "copy": "Career", "href": "#" },
+              { "copy": "Contacts", "href": "#" }
+            ]
+          }
+    ],
+    "flyFishingGroupVenue":[
+      {
+        "breadcrumbs": [
+            { "copy": "Homepage", "url": "/" },
+            { "copy": "Screening Room", "url": "/" }
+        ],
+        "title": "Great For Screenings",
+        "descriptions": [
+            "The Sundance Screening Room was built in 1987 as a place to showcase the work of the Sundance Institute Lab and Sundance Film Festival. The 1,100 square-foot lobby features stone floors, a fireplace and sliding glass doors that open onto a lawn overlooking the waterfall and pond. The 144-seat state-of-the-art theater can easily be incorporated into events or a private movie night."
+        ],
+        "actions": [
+            {
+                "copy": "Book Meetings & Events",
+                "url": "/",
+                "target": "_blank",
+                "type": "primary",
+                "category": "link"
+            },
+            {
+                "copy": "View Floor Plan",
+                "url": "/",
+                "target": "_blank",
+                "type": "secondary",
+                "category": "link"
+            }
+        ],
+        "navs": [
+            {
+                "label": "Waiver",
+                "copy": "Sign",
+                "url": "/",
+                "target": "_self"
+            },
+            {
+              "label": "License",
+              "copy": "Get License",
+              "url": "/",
+              "target": "_self"
+            },
+            {
+              "label": "Location",
+              "copy": "View Location",
+              "url": "/",
+              "target": "_self"
+            }
+        ]
+      } 
+    ],
+    "bridgeSlider":{
+      "title":"explore",
+      "sub_title":"activity",
+      "images":[
+        {
+          "imageSrc":"https://via.placeholder.com/264x264"
+        },
+        {
+          "imageSrc":"https://via.placeholder.com/264x264"
+        },
+        {
+          "imageSrc":"https://via.placeholder.com/264x264"
+        },
+        {
+          "imageSrc":"https://via.placeholder.com/264x264"
+        },
+        {
+          "imageSrc":"https://via.placeholder.com/264x264"
+        },
+        {
+          "imageSrc":"https://via.placeholder.com/264x264"
+        }
+      ]
+    }
+}

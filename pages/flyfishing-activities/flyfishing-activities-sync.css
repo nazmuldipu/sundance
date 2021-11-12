@@ -1,0 +1,59 @@
+/****  start imports  ********************************/
+@import "../../styles/global.css";
+/****  end imports  ********************************/
+.flyfishing-activities__section-outer{
+    width: 100%;
+}
+.flyfishing-activities__margin-top{
+    margin-top: 8rem;
+}
+.flyfishing-activities__section-inner{
+    max-width: 1080px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+.flyfishing-activities__header{
+    font-weight: 600;
+    font-size: 2.625rem;
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+}
+.flyfishing-activities__card{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 3rem;
+    padding-top: 4.75rem;
+    padding-bottom: 4.5rem;
+}
+.flyfishing-activities__bridge__top-frame {
+    background-color: var(--sundance__primary1) !important;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .flyfishing-activities__margin-top{
+        margin-top: 4rem;
+    }
+    .flyfishing-activities__header{
+        font-size: 1.5rem;
+        padding-top: 1.375rem;
+        padding-bottom: 1.5rem;
+    }
+    .flyfishing-activities__card{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding-top: 0.25rem;
+        padding-bottom: 0rem;
+    }
+    .flyfishing-activities__section-inner{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+}
+@media screen and (min-width: 768px) and (max-width: 1365px){
+    .flyfishing-activities__section-inner{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
