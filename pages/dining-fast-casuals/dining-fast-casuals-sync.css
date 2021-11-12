@@ -1,10 +1,10 @@
 /****  start imports  ********************************/
 @import "../../styles/global.css";
 /****  end imports  ********************************/
-.dining-restaurants__horizontal-cards {
+.dining-fast-casuals__horizontal-cards {
     padding: 2rem 0 0 0;
 }
-.dining-restaurants__cards {
+.dining-fast-casuals__cards {
     padding: 0 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -12,7 +12,7 @@
     margin-bottom: 40px;
     margin: 0 auto;
 }
-.dining-restaurants__single-card {
+.dining-fast-casuals__single-card {
     margin-bottom: 32px;
 }
 .segment-outer__margin {
@@ -22,7 +22,7 @@
     .segment-outer__margin {
         margin-top: 6rem;
     }
-    .dining-restaurants__cards {
+    .dining-fast-casuals__cards {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
@@ -31,17 +31,17 @@
         row-gap: 40px;
         margin: 0 auto;
     }
-    .dining-restaurants__single-card {
+    .dining-fast-casuals__single-card {
         width: 328px;
         margin: 0;
     }
-    .dining-restaurants__horizontal-cards {
+    .dining-fast-casuals__horizontal-cards {
         padding-top: 6rem;
         padding-bottom: 7rem;
     }
 }
 @media screen and (min-width: 1365px){
-    .dining-restaurants__cards {
+    .dining-fast-casuals__cards {
         max-width: 1080px;
     }
 }
