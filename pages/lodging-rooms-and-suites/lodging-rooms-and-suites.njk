@@ -19,7 +19,7 @@ nickname: "lodging-rooms-and-suites"
         {{ lodging_form(item = lodgingForm) }}
     </section>
 </section>
-<section class="segment-outer bg-sn-4">
+<section class="segment-outer bg-sn-4 text-left lodging-accommodation__filter">
     <section class="segment-inner">
         {{ filter(filters) }}
     </section>
@@ -34,6 +34,11 @@ nickname: "lodging-rooms-and-suites"
                 }}
             {% endfor %}
         </section>
+        {% if pageCMS['card-footer-caption'] %}
+            <div class="font-ivar text-sm card-footer-caption">
+                {{ pageCMS['card-footer-caption'].simple_article.description | safe }}
+            </div>
+        {% endif %}
     </section>
 </section>
 {{newsletter()}}
