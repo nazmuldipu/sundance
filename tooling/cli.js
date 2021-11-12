@@ -5,19 +5,22 @@ import { PAGES_DIR } from './lib.js';
 
 
 const templates = {
-  template: `
-  ---
-  layout: base.njk
-  pagename: sample
-  permalink: "build/sample/index.html"
-  permalinkBypassOutputDir: true
-  nickname: "Sample"
-  ---
-  <div class="sample"> sample page </div>`,
-  css: '',
-  json: '',
+  template: name => (`---
+layout: base.njk
+pagename: ${name}
+permalink: "build/${name}/index.html"
+permalinkBypassOutputDir: true
+nickname: ${name}
+---
+<div class="${name}"> ${name} page </div>`),
+  css: () => '',
+  json: () => '',
+  js: ()=> '',
 }
 
+function trimData(data) {
+  return data.trim();
+}
 
 const fileExists = path => file => fs.existsSync(`${path}/${file}`);
 
@@ -26,7 +29,6 @@ const writeToPath = path => (file, content) => {
   if (!fs.existsSync(path)){
     fs.mkdirSync(path);
   }
-  console.log(content);
   fs.writeFile(filePath, content, err => {
     if (err) throw err;
     console.log("Created file: ", filePath);
@@ -52,8 +54,10 @@ function createFiles(path, name) {
   if (noneExist) {
     console.log(`Detected new file: ${name}, ${path}`);
     Object.entries(files).forEach(([type, fileName]) => {
-      writeFile(fileName, templates[type]);
+      writeFile(fileName, trimData(templates[type](name)));
     });
+  }else{
+    console.log(`File already exists: ${name}, ${path}`);
   }
 }
 
