@@ -65,7 +65,8 @@
       {
         "breadcrumbs": [
             { "copy": "Homepage", "url": "/" },
-            { "copy": "Screening Room", "url": "/" }
+            { "copy": "Summer Activities", "url": "/" },
+            { "copy": "FlyFishing", "url": "/" }
         ],
         "title": "Great For Screenings",
         "descriptions": [
@@ -77,13 +78,6 @@
                 "url": "/",
                 "target": "_blank",
                 "type": "primary",
-                "category": "link"
-            },
-            {
-                "copy": "View Floor Plan",
-                "url": "/",
-                "target": "_blank",
-                "type": "secondary",
                 "category": "link"
             }
         ],

@@ -17,19 +17,23 @@ permalinkBypassOutputDir: true
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
 {% set card_title= pageCMS['card-title'].simple_article %}
 {% set bridge_slider = pageCMS['bridge-slider'].flyfishing_bridge_slider  %}
+{% set textAllData = pageCMS['flyfishing-text-container'].text_container  %}
+
 {# Navigation Menu  #}
 {{ navMenu(navMenuLink) }}
 <section class="flyfishing-activities__margin-top"></section>
+
 {# Hero Image Section #}
 {% for event in flyFishingGroupVenue %}
     <section class="group-section">
         {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:4:3 lg:4:3 2xl:16:9 4xl:9:16')}}
-        <div class="group-container">
+        <div class="group-container flyfishing__group-container">
             {{groupVenues(event)}}
         <div>
     </section>
 {% endfor %}
-<section class="bridge">
+{# Bridge carousal #}
+<section class="bridge flyfishing-activities__bridge">
     <article class="bridge__top-frame flyfishing-activities__bridge__top-frame">
         <header>{{ihh1(copy=bridge_slider.title,classes = ['bridge__header', 'font-ivar'])}}</header>
         {{h4(copy=bridge_slider.sub_title, classes=['bridge__text', 'font-calibre'])}}
@@ -55,17 +59,27 @@ permalinkBypassOutputDir: true
         </media-carousel>
     </article>
 </section>
+
 {# Card Title #}
-{{ h2(copy = card_title.title, classes = ['bg-sn-4', 'flyfishing-activities__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{{ h2(copy = card_title.title, classes = ['flyfishing-activities__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
 
 {# Vertical Card Section #}
-<section class="bg-sn-4 flyfishing-activities__section-outer">
+<section class="flyfishing-activities__section-outer">
     <section class="flyfishing-activities__section-inner flyfishing-activities__card">
         {% for item in vertical_card_list %}
             {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
         {% endfor %}
     </section>
 </section>
+
+<article class="flyfishing__text-container font-ivar">
+    <header>
+        {{ h1(copy = textAllData.title, classes = ['flyfishing__text-container__header', 'heading--2']) }}
+    </header>
+    {% for item in textAllData.descriptions %}
+        <p class = "flyfishing__text-container__copy">{{ item.text | safe }}</p>
+    {% endfor %}    
+</article>
 
 {{newsletter()}}
 
