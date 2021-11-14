@@ -65,8 +65,8 @@
       {
         "breadcrumbs": [
             { "copy": "Homepage", "url": "/" },
-            { "copy": "Summer Activities", "url": "/" },
-            { "copy": "FlyFishing", "url": "/" }
+            { "copy": "Summer Activities", "url": "/summer-activities" },
+            { "copy": "FlyFishing", "url": "/flyfishing-activities" }
         ],
         "title": "Like No Place That Ever Was",
         "descriptions": [
