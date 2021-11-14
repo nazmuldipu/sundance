@@ -1,0 +1,48 @@
+---
+layout: base.njk
+pagename: dining-fast-casuals
+permalink: "build/dining-fast-casuals/index.html"
+permalinkBypassOutputDir: true
+nickname: "dining-fast-casuals"
+---
+{% from 'molecules/filter.njk' import filter %}
+{% from 'organisms/forms.njk' import lodging_form %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/card.njk' import singleCard, horrizontalCard, horrizontalCard2 %}
+{% from 'molecules/header.njk' import navMenu %}
+{% from "atoms/headings.njk" import h2 %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
+---
+{{ navMenu(data.navMenuLink) }}
+{% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
+{% set horizontal_card_list = pageCMS['horizontal-card-list'].horizontal_card_list %}
+{% set chefs_card_horizontal_card_list = pageCMS['chefs-card'].horizontal_card_list %}
+{% set horizontal_card_title = pageCMS['horizontal-card-title'].simple_article.title %}
+<section class="segment-outer segment-outer__margin">
+    <section class="segment-inner text-left">
+        <section class="relative">
+            {{global_image(pageCMS['top-banner'].global_image, classes='h-screen w-full image_frame sm:4:3 lg:4:3 2xl:16:9 4xl:9:16')}}
+            {{ top_banner_right_bottom_container(heroCornerBlock) }}
+        </section>
+    </section>
+</section>
+<section class="segment-outer bg-sn-4 px-4 dining-fast-casuals__horizontal-cards">
+    <section class="segment-inner">
+        {{ h2(classes=['heading', 'heading--2', 'font-ivar', 'text-center'], copy = horizontal_card_title) }}
+        {{ horrizontalCard(items = horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
+        {{ horrizontalCard2(items = chefs_card_horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
+    </section>
+</section>
+<section class="segment-outer bg-sn-4 px-4 pb-4">
+    <section class="segment-inner">
+        <section class="dining-fast-casuals__cards">
+            {% for item in cardAllData %}
+                {{ singleCard(item = item.vertical_card, classes = ['card-container', 'dining-fast-casuals__single-card']) }}
+            {% endfor %}
+        </section>
+    </section>
+</section>
+{{newsletter()}}
+{{footer(data.footer)}}

@@ -89,6 +89,9 @@ strong {
 .justify-content-space-between {
     justify-content: space-between;
 }
+.justify-space-around{ 
+    justify-content: space-around !important;
+}
 .justify-center{
     justify-content: center;
 }
@@ -121,7 +124,6 @@ strong {
 }
 .segment-outer {
     width: 100%;
-    text-align: center;
 }
 .segment-inner {
     max-width: 1440px;
@@ -293,6 +295,12 @@ strong {
 .pb-4{
     padding-bottom: 2rem !important;
 }
+.pt-24 {
+    padding-top: 6rem;
+}
+.pb-28 {
+    padding-bottom: 7rem;
+}
 .pb-10{
     padding-bottom: 2.5rem;
 }
@@ -333,6 +341,16 @@ strong {
 }    
 .mt-40 {
     margin-top: 10rem;
+}
+.mt-10 {
+    margin-top: 2.5rem;
+}
+.mb-8 {
+    margin-bottom: 2rem;
+}
+/* Z index */
+.z-10{
+    z-index: 10;
 }
 /* backgrounds */
 .bg-sp-2 {
