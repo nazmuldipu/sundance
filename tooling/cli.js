@@ -1,8 +1,15 @@
+#!/usr/bin/env node
 import fs from 'fs';
-import yargs from 'yargs'
-import { hideBin } from 'yargs/helpers'
+import { Command } from 'commander/esm.mjs';
 import { PAGES_DIR } from './lib.js';
 
+const program = new Command();
+
+/* 
+  possibl commands
+  npm run cli generate-page about
+  npm run cli generate-page --help
+*/
 
 const templates = {
   template: name => (`---
@@ -22,6 +29,15 @@ function trimData(data) {
   return data.trim();
 }
 
+function getFilesObject(name){
+  return {
+    template: `${name}.njk`,
+    css: `${name}-sync.css`,
+    js: `${name}-module.js`,
+    json: `${name}.json`,
+  };
+}
+
 const fileExists = path => file => fs.existsSync(`${path}/${file}`);
 
 const writeToPath = path => (file, content) => {
@@ -37,12 +53,7 @@ const writeToPath = path => (file, content) => {
 };
 
 function createFiles(path, name) {
-  const files = {
-    template: `${name}.njk`,
-    css: `${name}-sync.css`,
-    js: `${name}-module.js`,
-    json: `${name}.json`,
-  };
+  const files = getFilesObject(name);
   const writeFile = writeToPath(path);
   const toFileMissingBool = file => !fileExists(path)(file);
   const checkAllMissing = (acc, cur) => acc && cur;
@@ -61,12 +72,19 @@ function createFiles(path, name) {
   }
 }
 
-/* yargs will be used for better command line interface
-const parsedArguments = yargs(hideBin(process.argv)).argv;
-console.log(parsedArguments);
-*/
-const fileName = process.argv[2];
-if(fileName){
-  createFiles(PAGES_DIR.pathname + `/${fileName}`, fileName);
-}
+program.name('create skipper site');
+
+program
+  .command('generate-page')
+  .description('generates a page and required assets')
+  .option('-n,--name <page_name>', 'page name')
+  .action((options) => {
+    const { name } = options;
+    if(name){
+      createFiles(PAGES_DIR.pathname + `/${name}`, name);
+    }
+  });
+
+  
+program.parse();
 
