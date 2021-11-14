@@ -9,6 +9,7 @@ permalinkBypassOutputDir: true
 {% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
 {% from 'hero-carousel.njk' import heroCarousel %}
 {% from 'macros.njk' import events %}
 {% from 'organisms/thumbnail_slider.njk' import thumbnail_slider %}
@@ -46,7 +47,7 @@ permalinkBypassOutputDir: true
                 </div>
             </div>
             <div class="horizontal-card__image">
-                image
+                {{ global_image(cardObj.image.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
             </div>
         </div>
     </section>

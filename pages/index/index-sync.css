@@ -59,45 +59,6 @@
 .sundance-events__events__action {
     display: none;
 }
-/* -------------------------- End Events Styles ------------------------------ */
-
-.horizontal-card {
-    text-align: left;
-    padding: 30px;
-}
-.horizontal-card__header {
-    font-size: 180px;
-    line-height: 80px;
-    text-align: center;
-    color: var(--sundance__secondary3);
-    padding-bottom: 60px;
-}
-.horizontal-card__container {
-    display: grid;
-}
-.horizontal-card__title {
-    font-weight: 600;
-    font-size: 35px;
-    line-height: 42px;
-}
-.horizontal-card__description {
-    font-size: 25px;
-    line-height: 40px;
-}
-.horizontal-card__breadcrumb {
-    padding-right: 20px;
-    margin: 24px 20px 70px 0;
-    border-right: 1px solid var(--sundance__secondary3);
-}
-.horizontal-card__breadcrumb.last{
-    border-right: none;
-}
-.horizontal-card__breadcrumb > a {
-    font-size: 23px;
-    text-decoration: underline;
-    line-height: 24px;
-    color: var(--sundance__primary2);
-}
 /* Desktop screen (Screen size : > 767 pts) */
 @media screen and (min-width: 768px) {
     .sundance-events {
@@ -145,5 +106,76 @@
     .sundance-events__nav .carousel-button-prev,
     .sundance-events__nav .carousel-button-next {
         margin: 0 140px;
+    }
+}
+
+/* -------------------------- End Events Styles ------------------------------ */
+
+.horizontal-card {
+    text-align: left;
+}
+.horizontal-card__header {
+    font-size: 180px;
+    line-height: 80px;
+    text-align: center;
+    color: var(--sundance__secondary3);
+    padding: 48px 37px 60px 37px;
+}
+.horizontal-card__container {
+    display: grid;
+}
+.horizontal-card__text {
+    padding: 0 30px;
+}
+.horizontal-card__title {
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 42px;
+}
+.horizontal-card__description {
+    font-size: 25px;
+    line-height: 40px;
+}
+.horizontal-card__breadcrumb {
+    padding-right: 20px;
+    margin: 24px 20px 70px 0;
+    border-right: 1px solid var(--sundance__secondary3);
+}
+.horizontal-card__breadcrumb.last {
+    border-right: none;
+}
+.horizontal-card__breadcrumb > a {
+    font-size: 23px;
+    text-decoration: underline;
+    line-height: 24px;
+    color: var(--sundance__primary2);
+}
+.horizontal-card__image {
+    padding-right: 42px;
+    padding-bottom: 42px;
+}
+
+/* Tab screen (Screen size : > 767 pts) */
+@media screen and (min-width: 768px) {
+    .horizontal-card__container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .horizontal-card__text {
+        max-width: 524px;
+        justify-self: end;
+        padding-right: 20px;
+        align-self: center;
+    }
+}
+
+/* Desktop screen (Screen size : > 1365px) */
+@media screen and (min-width: 1366px) {
+    .horizontal-card__title {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .horizontal-card__text {
+        padding-right: 100px;
+        
     }
 }
