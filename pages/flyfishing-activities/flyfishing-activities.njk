@@ -26,7 +26,11 @@ permalinkBypassOutputDir: true
 {# Hero Image Section #}
 {% for event in flyFishingGroupVenue %}
     <section class="group-section">
-        {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:4:3 lg:4:3 2xl:16:9 4xl:9:16')}}
+        <section class="segment-outer">
+            <figure class="segment-inner">
+                {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
+            </figure>
+        </section>
         <div class="group-container flyfishing__group-container">
             {{groupVenues(event)}}
         <div>
