@@ -68,13 +68,14 @@
             { "copy": "Summer Activities", "url": "/" },
             { "copy": "FlyFishing", "url": "/" }
         ],
-        "title": "Great For Screenings",
+        "title": "Like No Place That Ever Was",
         "descriptions": [
-            "The Sundance Screening Room was built in 1987 as a place to showcase the work of the Sundance Institute Lab and Sundance Film Festival. The 1,100 square-foot lobby features stone floors, a fireplace and sliding glass doors that open onto a lawn overlooking the waterfall and pond. The 144-seat state-of-the-art theater can easily be incorporated into events or a private movie night."
+            "Just 5 minutes from Sundance Mountain Resort, the Provo River offers the perfect experience for anglers of all ages and experience, men and women. As a Blue Ribbon fishery, seasoned anglers will enjoy the world-class fishing while beginners take advantage of easy wading access and proximity.",
+            "Please note that this information and activity is provided by Fly Fishing Provo River, a Sundance Preferred Outfitter. Sundance provides this information on it’s website as a service to it’s guests."
         ],
         "actions": [
             {
-                "copy": "Book Meetings & Events",
+                "copy": "Book Your Guided Trip",
                 "url": "/",
                 "target": "_blank",
                 "type": "primary",
