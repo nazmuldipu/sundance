@@ -35,10 +35,6 @@
   position: relative;
 }
 
-.\!w-auto{
-  width: auto !important;
-}
-
 .bridge__box {
   height: 264px;
   width: 264px;

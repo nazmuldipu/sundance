@@ -142,8 +142,8 @@
     .sundance-events__nav {
         top: 185px;
     }
-    .carousel-button-prev,
-    .carousel-button-next {
+    .sundance-events__nav .carousel-button-prev,
+    .sundance-events__nav .carousel-button-next {
         margin: 0 140px;
     }
 }

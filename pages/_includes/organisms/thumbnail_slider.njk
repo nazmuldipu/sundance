@@ -27,7 +27,7 @@
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             {% for item in obj.images %}
-                                <div class="swiper-slide">
+                                <div class="swiper-slide !w-auto">
                                     <div class="thumbnail-slider__slides__box">
                                         {{ global_image(item.image.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
                                     </div>
