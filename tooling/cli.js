@@ -75,11 +75,11 @@ function createFiles(path, name) {
 program.name('create skipper site');
 
 program
-  .command('generate-page')
+  .command('generate-page [name]')
   .description('generates a page and required assets')
-  .option('-n,--name <page_name>', 'page name')
+  //.option('-n,--name <page_name>', 'page name')
   .action((options) => {
-    const { name } = options;
+    const name = options;
     if(name){
       createFiles(PAGES_DIR.pathname + `/${name}`, name);
     }
