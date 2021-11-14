@@ -2,6 +2,37 @@
 @import "../../styles/global.css";
 /****  end imports  ********************************/
 
+/* -------------------------- hero-carousel Styles ------------------------------ */
+.hero-carousel{
+    display: flex;
+    justify-content: space-between;
+}
+.hero-carousel__frame{
+    --d: 1;
+    --n: 6;
+    position: relative;
+    cursor: pointer;
+    width: 15%;
+    border: 1px dotted #ccc;/* TODO: remove this line once complete */
+}
+.hero-carousel__frame.active{
+    --d: 3;
+    --n: 4;
+    width: 85%;
+}
+/* Desktop screen (Screen size : > 767 pts) */
+@media screen and (min-width: 768px) {
+    .hero-carousel__frame{
+        --d: 3;
+        --n: 7;
+    }
+    .hero-carousel__frame.active{
+        --d: 16;
+        --n: 9;
+        width: 85%;
+    }
+}
+/* -------------------------- hero-carousel Styles ------------------------------ */
 /* -------------------------- Events Styles ------------------------------ */
 .sundance-events {
     padding: 20px;
@@ -111,6 +142,8 @@
 
 /* -------------------------- End Events Styles ------------------------------ */
 
+
+/* -------------------------- horizontal-card Styles ------------------------------ */
 .horizontal-card {
     text-align: left;
 }
@@ -179,3 +212,4 @@
         
     }
 }
+/* -------------------------- end horizontal-card Styles ------------------------------ */

@@ -586,4 +586,32 @@ strong {
     transform: rotateZ(-45deg);
     -webkit-transform: rotateZ(-45deg);
 }
+
+.page-top-adjust {
+    padding-top: 80px;
+}
+/* Mobile (Screen size : 375 pts) */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    
+}
+/* Tab (Screen size : 1200 pts) */
+@media screen and (min-width: 768px) and (max-width: 1365px) {
+    .page-top-adjust {
+        padding-top: 151px;
+    }
+}
+
+/* Desktop (Screen size : 1440 pts) */
+@media screen and (min-width: 1366px) and (max-width: 1919px) {
+    .page-top-adjust {
+        padding-top: 106px;
+    }
+}
+
+/* Desktop XXL (Screen size : 1920 pts) */
+@media screen and (min-width: 1920px) {
+    .page-top-adjust {
+        padding-top: 128px;
+    }
+}
 /****  end base styles  ********************************/

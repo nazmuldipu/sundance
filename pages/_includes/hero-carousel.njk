@@ -1,5 +1,12 @@
-{% macro heroCarousel()%}
-<section>
-  hero carousel
-</section>
+{% from 'organisms/global-image.njk' import global_image %}
+{% macro heroCarousel(bannerObj =[])%}
+  <section class="segment-outer">
+    <section class="segment-inner hero-carousel">
+      {% for banner in bannerObj %}
+        <article class="hero-carousel__frame hero-carousel__frame__left {{'active' if loop.first}}">
+          {{ global_image(banner.image.global_image, classes='image_frame') }}
+        </article>
+      {% endfor %}
+    </section>
+  </section>
 {% endmacro %}
