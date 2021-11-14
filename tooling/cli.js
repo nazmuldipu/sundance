@@ -80,7 +80,7 @@ program
   //.option('-n,--name <page_name>', 'page name')
   .action((options) => {
     const name = options;
-    if(name){
+    if(name && typeof name == 'string'){
       createFiles(PAGES_DIR.pathname + `/${name}`, name);
     }
   });
