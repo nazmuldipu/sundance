@@ -24,6 +24,8 @@ permalinkBypassOutputDir: true
 
 {% set flat_cards = pageCMS['flat-card'].flat_card %}
 {% set action_cards = pageCMS['action-card'].action_card %}
+{% set card_title = pageCMS['card-title'].simple_article %}
+{% set bottom_banners = pageCMS['bottom-banners'].global_image_arr.images %}
 
 
 {# Navigation Menu  #}
@@ -80,16 +82,17 @@ permalinkBypassOutputDir: true
 </section> 
 <section class="general-store__section-outer">
     <section class="general-store__section-inner">
-       {{ h2(copy = 'Beautiful, handcrafted products, for any ocassion', classes = ['general-store__bottom-title']) }} 
+       {{ h2(copy = card_title.title, classes = ['general-store__bottom-title']) }} 
     </section>
 </section>
 
 <section class="general-store__section-outer">
-    <section class="general-store__section-inner">
-       <figure class="general-store__bottom-banners">
-            <img src="https://via.placeholder.com/524x288"/>
-            <img src="https://via.placeholder.com/524x288"/>
-       </figure>
+    <section class="general-store__section-inner general-store__bottom-banners">
+       {% for item in bottom_banners %}
+           <figure>
+                {{global_image(item.global_image, classes='w-full image_frame sm:16:9 lg:16:9 2xl:16:9 4xl:16:9')}}
+           </figure>
+       {% endfor %}
     </section>
 </section>
 {{newsletter()}}
