@@ -415,7 +415,7 @@ strong {
     border: 0;
 }
 .border-0 {
-    border: 0;
+    border: 0 !important;
 }
 .border-1-sp-2 {
     border: 1px solid #617C6A !important;

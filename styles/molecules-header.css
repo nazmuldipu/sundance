@@ -23,6 +23,7 @@
     max-width: 1440px;
     margin: auto;
     background: var(--sundance__neutral5);
+    max-height: 98px;
 }
 .header__links {
     position:absolute; 
