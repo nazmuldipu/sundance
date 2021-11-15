@@ -23,6 +23,7 @@ permalinkBypassOutputDir: true
 {% set sectionArticleText = pageCMS['article'].banner.title %}
 
 {% set flat_cards = pageCMS['flat-card'].flat_card %}
+{% set action_cards = pageCMS['action-card'].action_card %}
 
 
 {# Navigation Menu  #}
@@ -72,7 +73,7 @@ permalinkBypassOutputDir: true
 </section>
 <section class="general-store__section-outer">
     <section class="general-store__section-inner general-store__action-card">
-        {% for item in bridgeItems %}
+        {% for item in action_cards %}
               {{ secondBridge(item) }}
         {% endfor %}
     </section>
