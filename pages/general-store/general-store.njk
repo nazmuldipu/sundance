@@ -1,0 +1,67 @@
+---
+layout: base.njk
+pagename: general-store
+permalink: "build/general-store/index.html"
+permalinkBypassOutputDir: true
+---
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/header.njk' import navMenu %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from "atoms/headings.njk" import h4, ihh1 %}
+{% from 'atoms/icons.njk' import iconCSS %}
+
+
+{% set generalStore_group_venues = pageCMS['group-venues'].group_venues  %}
+{% set globalImage = pageCMS['top-banner'].banner.global_image %}
+{% set globalImageText = pageCMS['top-banner'].banner.title %}
+
+{# Navigation Menu  #}
+{{ navMenu(navMenuLink) }}
+<section class="general-store__margin-top"></section>
+
+{# Hero Image Section #}
+{% for event in generalStore_group_venues %}
+    <section class="group-section">
+        <section class="segment-outer relative">
+            <figure class="segment-inner">
+                {{global_image(globalImage.global_image, classes='h-screen w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
+            </figure>
+            <figcaption>
+                {{ h5(copy = globalImageText, classes = ['general-store__hero--caption', 'font-ivar', 'font-semibold', 'text-white']) }}
+            </figcaption>
+        </section>
+        <div class="group-container general-store__group-container">
+            {{groupVenues(event)}}
+        <div>
+    </section>
+{% endfor %}
+
+<section class="general-store__section-outer">
+    <section class="general-store__section-inner">
+        <article class="general-store__section--article">
+            <figcaption class="general-store__section--text">
+              <p>Remember your trip to Sundance long after you’ve gone home with something special from the distinctive store.</p>  
+            </figcaption>
+            <figure class="general-store__section--figure">
+                <img src="https://via.placeholder.com/416x408" />
+            </figure>
+        </article>
+    </section>
+</section>
+
+{#<article class="flyfishing__text-container font-ivar">
+    <header>
+        {{ h1(copy = textAllData.title, classes = ['flyfishing__text-container__header', 'heading--2']) }}
+    </header>
+    {% for item in textAllData.descriptions %}
+        <p class = "flyfishing__text-container__copy">{{ item.text | safe }}</p>
+    {% endfor %}    
+</article> #}
+
+{{newsletter()}}
+
+{{footer(data.footer)}}

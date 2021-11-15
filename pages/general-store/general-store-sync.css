@@ -1,0 +1,93 @@
+/****  start imports  ********************************/
+@import "../../styles/global.css";
+/****  end imports  ********************************/
+.general-store__section-outer{
+    width: 100%;
+}
+.general-store__margin-top{
+    margin-top: 8rem;
+}
+.general-store__section-inner{
+    max-width: 1080px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+.general-store__hero--caption{
+    max-width: 536px;
+    margin: auto;
+    line-height: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 56px;
+}
+.general-store__group-container{
+    border: none;
+    margin-top: 48px;
+}
+.general-store__section--article{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.general-store__section--text{
+    line-height: 2.5rem;
+    max-width: 440px;
+    align-self: center;
+    font-size: 42px;
+    font-family: var(--sundance__font-ivar);
+    font-weight: 600;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .general-store__section-inner{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .general-store__margin-top{
+        margin-top: 4rem;
+    }
+    .general-store__hero--caption{
+        max-width: 230px;
+        margin: auto;
+        line-height: 1.5rem;
+        font-size: 24px;
+    }
+    .general-store__group-container{
+        border: none;
+        margin-top: 24px;
+    }
+    .general-store__section--article{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .general-store__section--text{
+        align-self: flex-start;
+        line-height: 2rem;
+        max-width: 249px;
+        font-size: 24px;
+    }
+    .general-store__section--figure{
+        width: 100%;
+    }
+    
+}
+@media screen and (min-width: 768px) and (max-width: 1365px){
+    .general-store__section-inner{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
