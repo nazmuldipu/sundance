@@ -56,16 +56,21 @@
 }
 .general-store__flat-card__title{
     font-family: var(--sundance__font-ivar);
+    line-height: 3rem;
     font-size: 42px;
     font-weight: 600;
+    padding-bottom: 25px;
 }
 .general-store__flat-card__subtitle{
     font-family: var(--sundance__font-ivar);
+    line-height: 2rem;
     font-size: 19px;
     font-weight: 600;
+    padding-bottom: 8px;
 }
 .general-store__flat-card__description{
     font-family: var(--sundance__font-ivar);
+    line-height: 1.5rem;
     font-size: 19px;
     font-weight: 400;
 }

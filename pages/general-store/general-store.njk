@@ -21,6 +21,10 @@ permalinkBypassOutputDir: true
 
 {% set sectionArticleImage = pageCMS['article'].banner.global_image %}
 {% set sectionArticleText = pageCMS['article'].banner.title %}
+
+{% set flat_cards = pageCMS['flat-card'].flat_card %}
+
+
 {# Navigation Menu  #}
 {{ navMenu(navMenuLink) }}
 <section class="general-store__margin-top"></section>
@@ -54,14 +58,14 @@ permalinkBypassOutputDir: true
         </article>
     </section>
 </section>
-{%set x=[1,2,3]%}
+{# Flat Card Section #}
 <section class="general-store__section-outer">
     <section class="general-store__section-inner general-store__flat-card">
-        {% for item in x %}
+        {% for item in flat_cards %}
             <article class="general-store__flat-card__container">
-                {{ h1(copy = 'title', classes = ['general-store__flat-card__title']) }}
-                {{ h1(copy = 'sub title', classes = ['general-store__flat-card__subtitle']) }}
-                <p class = "general-store__flat-card__description">{{ 'description' | safe }}</p>
+                {{ h1(copy = item.title, classes = ['general-store__flat-card__title']) }}
+                {{ h1(copy = item.subtitle, classes = ['general-store__flat-card__subtitle']) }}
+                <p class = "general-store__flat-card__description">{{ item.description | safe }}</p>
             </article>
         {% endfor %}
     </section>
