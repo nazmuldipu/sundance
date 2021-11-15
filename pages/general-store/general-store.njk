@@ -52,15 +52,19 @@ permalinkBypassOutputDir: true
         </article>
     </section>
 </section>
+{%set x=[1,2,3]%}
+<section class="general-store__section-outer">
+    <section class="general-store__section-inner general-store__flat-card">
+        {% for item in x %}
+            <article class="general-store__flat-card__container">
+                {{ h1(copy = 'title', classes = ['general-store__flat-card__title']) }}
+                {{ h1(copy = 'sub title', classes = ['general-store__flat-card__subtitle']) }}
+                <p class = "general-store__flat-card__description">{{ 'description' | safe }}</p>
+            </article>
+        {% endfor %}
+    </section>
+</section>    
 
-{#<article class="flyfishing__text-container font-ivar">
-    <header>
-        {{ h1(copy = textAllData.title, classes = ['flyfishing__text-container__header', 'heading--2']) }}
-    </header>
-    {% for item in textAllData.descriptions %}
-        <p class = "flyfishing__text-container__copy">{{ item.text | safe }}</p>
-    {% endfor %}    
-</article> #}
 
 {{newsletter()}}
 
