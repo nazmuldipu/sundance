@@ -5,13 +5,11 @@
     #   @param items take two values title and button  
     #   @author Meherab
 #}
-{% macro secondBridge(items) %}               
-    <article class="second-bridge">
-        {% for item in items %}
-            <header>
-                {{ h3(copy = item.title, classes=['second-bridge__header', 'font-calibre', 'font-medium', 'text-white']) }}
-            </header>            
-            {{ button_primary(classes=['button', 'button--primary', 'second-bridge__button--size', 'font-calibre', 'font-medium', 'text-base'], id = item.id, copy = item.actions.copy, href = item.actions.href, target = item.actions.target ) }}                
-        {% endfor %}
+{% macro secondBridge(item) %}               
+    <article class="second-bridge">        
+        <header>
+            {{ h3(copy = item.title, classes=['second-bridge__header', 'font-calibre', 'font-medium', 'text-white']) }}
+        </header>            
+        {{ button_primary(classes=['button', 'button--primary', 'second-bridge__button--size', 'font-calibre', 'font-medium', 'text-base'], copy = item.actions.copy, href = item.actions.href, target = item.actions.target ) }}
     </article>
 {% endmacro %}
