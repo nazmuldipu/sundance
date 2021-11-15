@@ -78,8 +78,7 @@ program
   .command('generate-page [name]')
   .description('generates a page and required assets')
   //.option('-n,--name <page_name>', 'page name')
-  .action((options) => {
-    const name = options;
+  .action((name) => {
     if(name && typeof name == 'string'){
       createFiles(PAGES_DIR.pathname + `/${name}`, name);
     }
