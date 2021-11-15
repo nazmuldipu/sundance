@@ -60,5 +60,25 @@
               { "copy": "Contacts", "href": "#" }
             ]
           }
-    ]
+    ],
+    "bridgeItems": [
+      {
+          "id": "secondBridge-1",
+          "title": "2020 - 21 SEason passes",
+          "actions": {
+              "copy": "Shop season passes",
+              "href": "/",
+              "target": "_self"
+          }
+      },
+      {
+        "id": "secondBridge-2",
+        "title": "Give the perfect gift",
+        "actions": {
+            "copy": "Shop gift cards",
+            "href": "/",
+            "target": "_self"
+        }
+    }
+  ]
 }

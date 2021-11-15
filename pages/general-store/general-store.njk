@@ -13,7 +13,7 @@ permalinkBypassOutputDir: true
 {% from 'molecules/group-venues.njk' import groupVenues %}
 {% from "atoms/headings.njk" import h4, ihh1 %}
 {% from 'atoms/icons.njk' import iconCSS %}
-
+{% from 'molecules/bridge-2.njk' import secondBridge %}
 
 {% set generalStore_group_venues = pageCMS['group-venues'].group_venues  %}
 {% set globalImage = pageCMS['top-banner'].banner.global_image %}
@@ -63,7 +63,14 @@ permalinkBypassOutputDir: true
             </article>
         {% endfor %}
     </section>
-</section>    
+</section>
+<section class="general-store__section-outer">
+    <section class="general-store__section-inner general-store__action-card">
+        {% for item in bridgeItems %}
+              {{ secondBridge(item) }}
+        {% endfor %}
+    </section>
+</section>  
 
 
 {{newsletter()}}
