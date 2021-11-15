@@ -18,7 +18,8 @@
     "watch-stage": "cross-env NODE_ENV=development THE_ENV=local ACTIVE_API_URI=STAGE node tooling/dev.js",
     "watch-prod": "cross-env NODE_ENV=development THE_ENV=local ACTIVE_API_URI=PROD node tooling/dev.js",
     "resize-images": "node tooling/images.js",
-    "snapshots": "percy exec -- node snapshots.js"
+    "snapshots": "percy exec -- node snapshots.js",
+    "cli": "cross-env NODE_ENV=production node tooling/cli"
   },
   "repository": {
     "type": "git",
@@ -35,6 +36,7 @@
     "autoprefixer": "^10.2.3",
     "browser-sync": "^2.26.14",
     "chokidar": "^3.5.1",
+    "commander": "^8.3.0",
     "cross-env": "^7.0.3",
     "cross-fetch": "^3.1.4",
     "cssnano": "^4.1.10",
