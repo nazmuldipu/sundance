@@ -43,7 +43,7 @@ const fileExists = path => file => fs.existsSync(`${path}/${file}`);
 const writeToPath = path => (file, content) => {
   const filePath = `${path}/${file}`;
   if (!fs.existsSync(path)){
-    fs.mkdirSync(path);
+    fs.mkdirSync(path, { recursive: true });
   }
   fs.writeFile(filePath, content, err => {
     if (err) throw err;
@@ -73,14 +73,15 @@ function createFiles(path, name) {
 }
 
 program.name('create skipper site');
-program.version('0.0.1');
+program.version('0.0.2');
 program
   .command('generate-page [name]')
   .description('generates a page and required assets')
   //.option('-n,--name <page_name>', 'page name')
   .action((name) => {
+    const parsedName = name.includes('/') ? name.split('/')[1] : name;
     if(name && typeof name == 'string'){
-      createFiles(PAGES_DIR.pathname + `/${name}`, name);
+      createFiles(PAGES_DIR.pathname + `/${name}`, parsedName);
     }
   });
 
