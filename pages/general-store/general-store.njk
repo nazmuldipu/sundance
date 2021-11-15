@@ -70,9 +70,21 @@ permalinkBypassOutputDir: true
               {{ secondBridge(item) }}
         {% endfor %}
     </section>
-</section>  
+</section> 
+<section class="general-store__section-outer">
+    <section class="general-store__section-inner">
+       {{ h2(copy = 'Beautiful, handcrafted products, for any ocassion', classes = ['general-store__bottom-title']) }} 
+    </section>
+</section>
 
-
+<section class="general-store__section-outer">
+    <section class="general-store__section-inner">
+       <figure class="general-store__bottom-banners">
+            <img src="https://via.placeholder.com/524x288"/>
+            <img src="https://via.placeholder.com/524x288"/>
+       </figure>
+    </section>
+</section>
 {{newsletter()}}
 
 {{footer(data.footer)}}
