@@ -10,15 +10,15 @@
  #}
 {% macro thumbnail_slider(obj = {}) %}
     <section class="thumbnail-slider grid grid-cols-3">
-        <article class="thumbnail-slider__texts self-center order-1">
+        <article class="thumbnail-slider__texts self-center {{'order-2' if obj.left_slider else 'order-1'}}">
             <div class="">
                 {{ h1( copy=obj.title ,  classes=['thumbnail-slider__title', 'font-ivar', 'font-semibold']) }}
-                <p class="thumbnail-slider__description font-calibre">{{ obj.description }}</p>
+                <p class="thumbnail-slider__description font-calibre">{{ obj.description }} aa{{object | json}}aa</p>
                 {{ Link( href=obj.action.href, copy=obj.action.copy, classes=['button', 'button--primary2', 'font-calibre', 'thumbnail-slider__action'] ) }}
             </div>
         </article>
-        <article class="thumbnail-slider__images order-2 grid">
-            <section id="thumbnail-slider__image__frame">
+        <article class="thumbnail-slider__images grid {{'order-1' if obj.left_slider else 'order-2'}}">
+            <section id="thumbnail-slider__{{obj.slug}}">
                 {{ global_image(obj.images[0].image.global_image, classes='image_frame sm:15:8 lg:15:8 2xl:15:8 4xl:15:8') }}
                 {{ h1( copy=obj.title ,  classes=['thumbnail-slider__mobile__title', 'font-ivar', 'font-semibold']) }}
             </section>
@@ -28,7 +28,7 @@
                         <div class="swiper-wrapper">
                             {% for item in obj.images %}
                                 <div class="swiper-slide !w-auto">
-                                    <div class="thumbnail-slider__slides__box">
+                                    <div class="thumbnail-slider__slides__box" data-frameName="thumbnail-slider__{{obj.slug}}">
                                         {{ global_image(item.image.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
                                     </div>
                                     <header class="font-calibre">{{item.title}}</header>

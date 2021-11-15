@@ -3,36 +3,145 @@
 /****  end imports  ********************************/
 
 /* -------------------------- hero-carousel Styles ------------------------------ */
-.hero-carousel{
+.hero-carousel {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-.hero-carousel__frame{
+
+.hero-carousel__frame {
     --d: 1;
     --n: 6;
     position: relative;
     cursor: pointer;
     width: 15%;
-    border: 1px dotted #ccc;/* TODO: remove this line once complete */
 }
-.hero-carousel__frame.active{
+
+.hero-carousel__frame.active {
     --d: 3;
     --n: 4;
     width: 85%;
+    transition: width 1s;
+}
+
+.hero-carousel__texts {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    /* top: 120px; */
+    bottom: 60px;
+    color: var(--sundance__neutral5);
+}
+.hero-carousel__title {
+    font-size: 30px;
+    line-height: 36px;
+    transform: rotate(270deg);
+}
+.hero-carousel__sub-title {
+    display: none;
+    font-size: 20px;
+    line-height: 40px;
+}
+.hero-carousel__links {
+    display: none;
+    font-size: 20px;
+    line-height: 24px;
+    width: 176px;
+    margin: 0 auto;
+    padding: 15px 0;
+    margin-bottom: 8px;
+}
+.hero-carousel__frame.active .button--secondary {
+    border: none;
+}
+.hero-carousel__frame.active .hero-carousel__texts {
+    bottom: 85px;
+}
+.hero-carousel__frame.active .hero-carousel__title {
+    font-size: 50px;
+    line-height: 60px;
+    transform: rotate(0deg);
+}
+.hero-carousel__frame.active .hero-carousel__sub-title,
+.hero-carousel__frame.active .hero-carousel__links {
+    display: block;
+    text-align: center;
 }
 /* Desktop screen (Screen size : > 767 pts) */
 @media screen and (min-width: 768px) {
-    .hero-carousel__frame{
+    .hero-carousel__frame {
         --d: 3;
         --n: 7;
     }
-    .hero-carousel__frame.active{
+    .hero-carousel__frame.active {
         --d: 16;
         --n: 9;
         width: 85%;
     }
+    .hero-carousel {
+        padding: 0 90px;
+    }
+    .hero-carousel__texts {
+        bottom: 250px;
+    }
+    .hero-carousel__frame.active .hero-carousel__texts {
+        bottom: 350px;
+    }
 }
 /* -------------------------- hero-carousel Styles ------------------------------ */
+
+.search-box {
+    margin: 32px;
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.87);
+}
+.search-box .form-label {
+    border: none;
+    margin: 0;
+}
+.search-box svg {
+    padding-bottom: 11px;
+}
+.form-label .form-input::-webkit-input-placeholder {
+    /* Edge */
+    color: var(--sundance__neutral3);
+}
+
+.form-label .form-input:-ms-input-placeholder {
+    /* Internet Explorer */
+    color: var(--sundance__neutral3);
+}
+
+.form-label .form-input::placeholder {
+    color: var(--sundance__neutral3);
+    font-size: 16px;
+    line-height: 24px;
+}
+/* Desktop screen (Screen size : > 767 pts) */
+@media screen and (min-width: 768px) {
+    .search-box {
+        display: none;
+    }
+}
+
+.thumbnail-slider__header {
+    padding-top: 32px;
+    font-size: 26px;
+    line-height: 31px;
+    text-align: center;
+}
+/* Desktop screen (Screen size : > 767 pts) */
+@media screen and (min-width: 768px) {
+    .thumbnail-slider__header {
+        padding-top: 72px;
+        font-size: 60px;
+        line-height: 72px;
+        max-width: 768px;
+        margin: 0 auto;
+    }
+}
+
 /* -------------------------- Events Styles ------------------------------ */
 .sundance-events {
     padding: 20px;
@@ -142,7 +251,6 @@
 
 /* -------------------------- End Events Styles ------------------------------ */
 
-
 /* -------------------------- horizontal-card Styles ------------------------------ */
 .horizontal-card {
     text-align: left;
@@ -209,7 +317,6 @@
     }
     .horizontal-card__text {
         padding-right: 100px;
-        
     }
 }
 /* -------------------------- end horizontal-card Styles ------------------------------ */
