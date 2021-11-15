@@ -18,13 +18,14 @@ permalinkBypassOutputDir: true
 {% set card_title= pageCMS['card-title'].simple_article %}
 {% set bridge_slider = pageCMS['bridge-slider'].flyfishing_bridge_slider  %}
 {% set textAllData = pageCMS['flyfishing-text-container'].text_container  %}
+{% set flyfishing_group_venues = pageCMS['group-venues'].group_venues  %}
 
 {# Navigation Menu  #}
 {{ navMenu(navMenuLink) }}
 <section class="flyfishing-activities__margin-top"></section>
 
 {# Hero Image Section #}
-{% for event in flyFishingGroupVenue %}
+{% for event in flyfishing_group_venues %}
     <section class="group-section">
         <section class="segment-outer">
             <figure class="segment-inner">
