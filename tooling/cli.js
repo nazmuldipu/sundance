@@ -73,7 +73,7 @@ function createFiles(path, name) {
 }
 
 program.name('create skipper site');
-
+program.version('0.0.1');
 program
   .command('generate-page [name]')
   .description('generates a page and required assets')
