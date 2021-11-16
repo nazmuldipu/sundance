@@ -2,6 +2,9 @@
     margin: 90px;
     gap: 20px;
 }
+.thumbnail-slider__frame{
+    position: relative;
+}
 .thumbnail-slider__texts {
     display: block;
     padding-left: 100px;
@@ -65,7 +68,7 @@
 .thumbnail-slider__navs {
     margin-top: -70px;
     margin-right: -4px;
-    flex-direction: row-reverse;
+    /* flex-direction: row-reverse; */
 }
 .thumbnail-slider__navs > div {
     background-color: var(--sundance__neutral5);

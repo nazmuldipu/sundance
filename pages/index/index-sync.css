@@ -2,6 +2,23 @@
 @import "../../styles/global.css";
 /****  end imports  ********************************/
 
+.home-style-bg {
+    background-repeat: no-repeat;
+    background-position: 0px var(--top-position);
+    background-size: 100% auto;
+    background-image: var(--background-url);
+}
+
+.home-style-bg.newsletter-bg{
+    background: var(--background-url) 0 0 no-repeat;
+}
+.home-style-bg .newsletter {
+    background-color: transparent;
+    padding-top: 260px;
+    margin-top: -155px;
+    /* background: #837960 var(--background-url) 0 0 no-repeat; */
+    /* background-color: var(--sundance__secondary3); */
+}
 /* -------------------------- hero-carousel Styles ------------------------------ */
 .hero-carousel {
     display: flex;
@@ -69,6 +86,11 @@
 }
 /* Desktop screen (Screen size : > 767 pts) */
 @media screen and (min-width: 768px) {
+    .home-style-bg .newsletter {
+        background-color: transparent;
+        padding-top: 280px;
+        margin-top: -125px;
+    }
     .hero-carousel__frame {
         --d: 3;
         --n: 7;
@@ -145,6 +167,7 @@
 /* -------------------------- Events Styles ------------------------------ */
 .sundance-events {
     padding: 20px;
+    padding-top: 67px;
     max-width: 335px;
 }
 .sundance-events__header {
@@ -164,7 +187,7 @@
     display: flex;
     position: absolute;
     width: calc(100% - 40px);
-    top: 220px;
+    top: 260px;
     align-items: center;
     justify-content: center;
     z-index: 10;
@@ -202,7 +225,7 @@
 /* Desktop screen (Screen size : > 767 pts) */
 @media screen and (min-width: 768px) {
     .sundance-events {
-        padding: 20px;
+        padding-top: 250px;
         max-width: 1440px;
     }
     .sundance-events__carousel {
@@ -241,7 +264,7 @@
         display: block;
     }
     .sundance-events__nav {
-        top: 185px;
+        top: 415px;
     }
     .sundance-events__nav .carousel-button-prev,
     .sundance-events__nav .carousel-button-next {
@@ -254,6 +277,7 @@
 /* -------------------------- horizontal-card Styles ------------------------------ */
 .horizontal-card {
     text-align: left;
+    padding: 0;
 }
 .horizontal-card__header {
     font-size: 180px;
@@ -293,7 +317,6 @@
 }
 .horizontal-card__image {
     padding-right: 42px;
-    padding-bottom: 42px;
 }
 
 /* Tab screen (Screen size : > 767 pts) */
@@ -311,6 +334,9 @@
 
 /* Desktop screen (Screen size : > 1365px) */
 @media screen and (min-width: 1366px) {
+    .horizontal-card {
+        padding: 0 90px;
+    }
     .horizontal-card__title {
         font-size: 50px;
         line-height: 60px;

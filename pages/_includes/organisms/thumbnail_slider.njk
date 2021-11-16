@@ -18,7 +18,7 @@
             </div>
         </article>
         <article class="thumbnail-slider__images grid {{'order-1' if obj.left_slider else 'order-2'}}">
-            <section id="thumbnail-slider__{{obj.slug}}">
+            <section class="thumbnail-slider__frame" id="thumbnail-slider__{{obj.slug}}">
                 {{ global_image(obj.images[0].image.global_image, classes='image_frame sm:15:8 lg:15:8 2xl:15:8 4xl:15:8') }}
                 {{ h1( copy=obj.title ,  classes=['thumbnail-slider__mobile__title', 'font-ivar', 'font-semibold']) }}
             </section>
@@ -36,7 +36,7 @@
                                 </div>
                             {% endfor %}
                         </div>
-                        <nav class="thumbnail-slider__navs flex">
+                        <nav class="thumbnail-slider__navs flex {{'flex-row' if obj.left_slider else 'flex-row-reverse'}}">
                             <div class="flex p-2 z-10">
                                 {{ iconCSS( classes=['carousel-button', 'carousel-button-prev', 'icon-css', 'arrow-left', 'rotate-45'] ) }}
                                 {{ iconCSS( classes=['carousel-button', 'carousel-button-next', 'icon-css', 'arrow-right', 'rotate-45'] ) }}
