@@ -16,7 +16,7 @@ nickname: zip-tour
 {% from 'atoms/icons.njk' import iconCSS %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
 
-{% set zipTour_group_venues = pageCMS['group-venues'].group_venues  %}
+{% set activities_group_venues = pageCMS['group-venues'].group_venues  %}
 {% set bridge_slider = pageCMS['bridge-slider'].bridge_slider  %}
 {% set textAllData = pageCMS['zip-tour-text-container'].text_container  %}
 {% set action_card = pageCMS['zip-tour-action-card'].action_card %}
@@ -29,22 +29,22 @@ nickname: zip-tour
 <section class="zipTour__margin-top"></section>
 
 {# Hero Image Section #}
-{% for event in zipTour_group_venues %}
+{% for event in activities_group_venues %}
     <section class="group-section">
         <section class="segment-outer relative">
             <figure class="segment-inner">
                 {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
             </figure>
         </section>
-        <div class="group-container zip-tour__group-container">
+        <div class="group-container activities__group-container">
             {{groupVenues(event)}}
         <div>
     </section>
 {% endfor %}
 
 {# Bridge carousal #}
-<section class="bridge zip-tour__bridge">
-    <article class="bridge__top-frame zip-tour__bridge__top-frame">
+<section class="bridge activities__bridge">
+    <article class="bridge__top-frame activities__bridge__top-frame">
         <header>{{ihh1(copy=bridge_slider.title,classes = ['bridge__header', 'font-ivar'])}}</header>
         {{h4(copy=bridge_slider.sub_title, classes=['bridge__text', 'font-calibre'])}}
     </article>
@@ -68,31 +68,31 @@ nickname: zip-tour
         </media-carousel>
     </article>
 </section>
-<article class="zip-tour__text-container font-ivar">
+<article class="activities__text-container font-ivar">
     <header>
-        {{ h1(copy = textAllData.title, classes = ['zip-tour__text-container__header']) }}
+        {{ h1(copy = textAllData.title, classes = ['activities__text-container__header']) }}
     </header>
     {% for item in textAllData.descriptions %}
-        <p class = "zip-tour__text-container__copy">{{ item.text | safe }}</p>
+        <p class = "activities__text-container__copy">{{ item.text | safe }}</p>
     {% endfor %}    
 </article>
 
-<section class="zip-tour__section-outer">
-    <section class="zip-tour__section-inner zip-tour__action-card">
+<section class="activities__section-outer">
+    <section class="activities__section-inner activities__action-card">
         {% for item in action_card %}
               {{ secondBridge(item) }}
         {% endfor %}
-        <div class="zip-tour__action-card__text-wrapper zip-tour__action-card__caption">
+        <div class="activities__action-card__text-wrapper activities__action-card__caption">
            {{action_card_caption.description | safe}}
         </div>
     </section>
 </section> 
 {# Card Title #}
-{{ h2(copy = card_title.title, classes = ['zip-tour__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{{ h2(copy = card_title.title, classes = ['activities__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
 
 {# Vertical Card Section #}
-<section class="zip-tour__section-outer">
-    <section class="zip-tour__section-inner zip-tour__card">
+<section class="activities__section-outer">
+    <section class="activities__section-inner activities__card">
         {% for item in vertical_card_list %}
             {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
         {% endfor %}

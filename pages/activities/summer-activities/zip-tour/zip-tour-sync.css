@@ -1,61 +1,61 @@
 /****  start imports  ********************************/
 @import "../../../../styles/global.css";
 /****  end imports  ********************************/
-.zip-tour__section-outer{
+.activities__section-outer{
     width: 100%;
 }
-.zip-tour__margin-top{
+.activities__margin-top{
     margin-top: 8rem;
 }
-.zip-tour__section-inner{
+.activities__section-inner{
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
 }
-.zip-tour__group-container{
+.activities__group-container{
     border: none;
 }
-.zip-tour__bridge{
+.activities__bridge{
     padding-bottom: 92px;
 }
-.zip-tour__bridge__top-frame {
+.activities__bridge__top-frame {
     background-color: var(--sundance__primary2) !important;
 }
-.zip-tour__text-container{
+.activities__text-container{
     max-width: 792px;
     margin: auto;
     padding-bottom: 48px;
     padding-left: 24px;
     padding-right: 24px;
 }
-.zip-tour__text-container__header{
+.activities__text-container__header{
     font-size: 42px;
     font-weight: 600;
     padding-bottom: 25px;
     text-align: center;
 }
-.zip-tour__text-container__copy{
+.activities__text-container__copy{
     font-size: 19px;
     text-align: center;
 }
-.zip-tour__action-card{
+.activities__action-card{
   display: grid;
   gap: 48px;
   padding-bottom: 48px;
 }
-.zip-tour__action-card__text-wrapper a{
+.activities__action-card__text-wrapper a{
     text-decoration: none;
 }
-.zip-tour__action-card__caption{
+.activities__action-card__caption{
    font-size: 19px;
    font-family: var(--sundance__font-ivar);
    text-align: center;
 }
-.zip-tour__header{
+.activities__header{
     font-weight: 600;
     font-size: 2.625rem;
 }
-.zip-tour__card{
+.activities__card{
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 3rem;
@@ -65,46 +65,58 @@
 
 
 @media screen and (min-width: 320px) and (max-width: 767px){
-    .zip-tour__section-inner{
+    .activities__section-inner{
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
-    .zip-tour__margin-top{
+    .activities__margin-top{
         margin-top: 4rem;
     }
-    .zip-tour__bridge{
+    .activities__bridge{
         padding-bottom: 44px;
     }
-    .zip-tour__text-container{
+    .activities__text-container{
         max-width: 821px;
         margin: auto;
         padding-bottom: 40px;
     }
-    .zip-tour__text-container__header{
+    .activities__text-container__header{
         font-size: 24px;
         padding-bottom: 16px;
     }
-    .zip-tour__text-container__copy{
+    .activities__text-container__copy{
         text-align: left;
     }
-    .zip-tour__action-card{
+    .activities__action-card{
         padding-bottom: 40px;
     }
-    .zip-tour__action-card__caption{
+    .activities__action-card__caption{
         text-align: left;
     }
-    .zip-tour__header{
+    .activities__header{
         font-size: 1.5rem;
     }
-    .zip-tour__card{
+    .activities__card{
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         padding-top: 24px;
         padding-bottom: 0px;
     }
 }
-@media screen and (min-width: 768px) and (max-width: 1365px){
-    .zip-tour__section-inner{
+@media screen and (min-width: 768px) and (max-width: 1080px){
+    .activities__card{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 0px;
+    }
+    .activities__section-inner{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+@media screen and (min-width: 1081px) and (max-width: 1365px){
+    .activities__section-inner{
         padding-left: 1rem;
         padding-right: 1rem;
     }
