@@ -138,3 +138,17 @@
         {{ copy | safe }}
     </h6>
 {% endmacro %}
+{#
+    #   @desc   a Header tag
+    #   @param  classes  array, class names (optional)
+    #   @param  copy     string, the HTML mark up that is linked
+    #   @return HTML Header tag
+    #   @author Sarjis
+#}
+{% macro global_header( classes=['global-header', 'bold', 'font-ivar'], copy )%}
+    <header>
+        <h3 class="{% for class in classes %} {{ class }} {% endfor %}">
+            {{ copy | safe }}
+        </h3>
+    </header>
+{% endmacro %}

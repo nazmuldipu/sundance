@@ -371,5 +371,54 @@
             "label": "&copy;2021 Sundance Mountain Resort"
         },
         "static_image": "images/s_dot.png"
-    }
+    },
+    "groupData": [
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Dining", "url": "/" },
+                { "copy": "Tree Room", "url": "/" }
+            ],
+            "title": "Tree Room",
+            "descriptions": [
+                "Enjoy the romantic atmosphere of candlelight and soft illumination accenting beautiful Native American art from Robert Redford’s private collection as you savor fresh, seasonal mountain cuisine.",
+                "Children under 12 not permitted."
+            ],
+            "actions": [
+                {
+                    "copy": "Make a Reservation",
+                    "url": "/",
+                    "target": "_blank",
+                    "type": "primary",
+                    "category": "link"
+                }
+            ],
+            "navs": [
+                {
+                    "label": "Hours",
+                    "copy": "View Hours",
+                    "url": "/",
+                    "target": "_self"
+                },
+                {
+                    "label": "Contact",
+                    "copy": "Call Now",
+                    "url": "/",
+                    "target": "_self"
+                },
+                {
+                    "label": "Menu",
+                    "copy": "View",
+                    "url": "/",
+                    "target": "_self"
+                },
+                {
+                    "label": "Music",
+                    "copy": "View Lineup",
+                    "url": "/",
+                    "target": "_self"
+                }
+            ]
+        }
+    ]
 }
