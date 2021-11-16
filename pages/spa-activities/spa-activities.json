@@ -1,1 +1,1 @@
-{"defer_js":"./spa-activities-defer.js","module_js":"./spa-activities-module.js","sync_css":"./spa-activities-sync.css"}
+{"sync_css":"./spa-activities-sync.css","defer_js":"./spa-activities-defer.js","module_js":"./spa-activities-module.js"}
