@@ -1,0 +1,28 @@
+/****  start imports  ********************************/
+@import "../../../../styles/global.css";
+/****  end imports  ********************************/
+.zip-tour__section-outer{
+    width: 100%;
+}
+.zip-tour__margin-top{
+    margin-top: 8rem;
+}
+.zip-tour__section-inner{
+    max-width: 1080px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+.zip-tour__group-container{
+    border: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .zip-tour__section-inner{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .zip-tour__margin-top{
+        margin-top: 4rem;
+    }
+}    

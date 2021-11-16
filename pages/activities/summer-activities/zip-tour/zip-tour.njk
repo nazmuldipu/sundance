@@ -1,0 +1,37 @@
+---
+layout: base.njk
+pagename: zip-tour
+permalink: "build/activities/summer-activities/zip-tour/index.html"
+permalinkBypassOutputDir: true
+nickname: zip-tour
+---
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/header.njk' import navMenu %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from "atoms/headings.njk" import h4, ihh1 %}
+{% from 'atoms/icons.njk' import iconCSS %}
+{% from 'molecules/bridge-2.njk' import secondBridge %}
+
+{% set zipTour_group_venues = pageCMS['group-venues'].group_venues  %}
+
+{# Navigation Menu  #}
+{{ navMenu(data.navMenuLink) }}
+<section class="zipTour__margin-top"></section>
+
+{# Hero Image Section #}
+{% for event in zipTour_group_venues %}
+    <section class="group-section">
+        <section class="segment-outer relative">
+            <figure class="segment-inner">
+                {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
+            </figure>
+        </section>
+        <div class="group-container zip-tour__group-container">
+            {{groupVenues(event)}}
+        <div>
+    </section>
+{% endfor %}
