@@ -43,7 +43,7 @@ nickname: zip-tour
 {% endfor %}
 
 {# Bridge carousal #}
-{# <section class="bridge zip-tour__bridge">
+<section class="bridge zip-tour__bridge">
     <article class="bridge__top-frame zip-tour__bridge__top-frame">
         <header>{{ihh1(copy=bridge_slider.title,classes = ['bridge__header', 'font-ivar'])}}</header>
         {{h4(copy=bridge_slider.sub_title, classes=['bridge__text', 'font-calibre'])}}
@@ -53,7 +53,7 @@ nickname: zip-tour
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     {% for image in bridge_slider.images %}
-                        <div class="swiper-slide">
+                        <div class="swiper-slide !w-auto">
                             <div class="bridge__box">
                                 {{global_image(image.global_image, classes='w-full image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1')}}
                             </div>
@@ -67,7 +67,7 @@ nickname: zip-tour
             </div>
         </media-carousel>
     </article>
-</section> #}
+</section>
 <article class="zip-tour__text-container font-ivar">
     <header>
         {{ h1(copy = textAllData.title, classes = ['zip-tour__text-container__header']) }}
