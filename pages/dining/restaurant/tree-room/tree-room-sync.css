@@ -2,7 +2,7 @@
 @import "../../../../styles/global.css";
 /****  end imports  ********************************/
 .top-section {
-    margin-top: 90px;
+    margin-top: 72px;
 }
 .dining-details-container {
     display: block;
@@ -59,6 +59,9 @@
     padding: 0 1rem;
 }
 @media screen and (min-width: 1024px){
+    .top-section {
+        margin-top: 90px;
+    }
     .dining-details-container {
         display: grid;
         grid-template-columns: 3fr 2fr;
