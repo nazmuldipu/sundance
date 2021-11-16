@@ -143,7 +143,7 @@ const getGoogleMapsApiToken = () => {
 const pathResolvePlugin = {
     name: 'pathResolver',
     setup(build){  
-      build.onResolve({ filter: /^components\// }, args => {
+      build.onResolve({ filter: /^components\// }, args => { 
         return { path: join(args.resolveDir, 'components', args.path) }
       })
     },
@@ -171,6 +171,7 @@ export const buildJS = async (inputPaths, outDir, outBase, metafilePath) => {
             '*.ttf'
         ],
         outdir: outDir,
+        plugins: [pathResolvePlugin],
         outbase: outBase,
         target: ['es2017'],
         minify: process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging',
@@ -183,8 +184,7 @@ export const buildJS = async (inputPaths, outDir, outBase, metafilePath) => {
             GOOGLE_MAPS_API_KEY: getGoogleMapsApiToken(),
             SKIPPER_WEBSITE_API_BASE: getSkipperWebsiteAPIBase(),
             SKIPPER_WEB_API_TOKEN: getSkipperWebsiteToken()
-        },
-        plugins: [pathResolvePlugin],
+        }
     });
 
     const metadata = JSON.parse(readFileSync(metafilePath));
