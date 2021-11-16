@@ -17,7 +17,10 @@ nickname: zip-tour
 {% from 'molecules/bridge-2.njk' import secondBridge %}
 
 {% set zipTour_group_venues = pageCMS['group-venues'].group_venues  %}
-
+{% set bridge_slider = pageCMS['bridge-slider'].bridge_slider  %}
+{% set textAllData = pageCMS['zip-tour-text-container'].text_container  %}
+{% set action_card = pageCMS['zip-tour-action-card'].action_card %}
+{% set action_card_caption = pageCMS['zip-tour-action-card-caption'].simple_article %}
 {# Navigation Menu  #}
 {{ navMenu(data.navMenuLink) }}
 <section class="zipTour__margin-top"></section>
@@ -35,3 +38,49 @@ nickname: zip-tour
         <div>
     </section>
 {% endfor %}
+
+{# Bridge carousal #}
+{# <section class="bridge zip-tour__bridge">
+    <article class="bridge__top-frame zip-tour__bridge__top-frame">
+        <header>{{ihh1(copy=bridge_slider.title,classes = ['bridge__header', 'font-ivar'])}}</header>
+        {{h4(copy=bridge_slider.sub_title, classes=['bridge__text', 'font-calibre'])}}
+    </article>
+    <article class="bridge__container">
+        <media-carousel>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {% for image in bridge_slider.images %}
+                        <div class="swiper-slide">
+                            <div class="bridge__box">
+                                {{global_image(image.global_image, classes='w-full image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1')}}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <nav class="bridge__nav">
+                    {{ iconCSS( classes=['carousel-button-prev', 'bridge__nav-icon', 'arrow-left', 'rotate-45'] ) }}
+                    {{ iconCSS( classes=['carousel-button-next', 'bridge__nav-icon', 'arrow-right', 'rotate-45'] ) }}
+                </nav>
+            </div>
+        </media-carousel>
+    </article>
+</section> #}
+<article class="zip-tour__text-container font-ivar">
+    <header>
+        {{ h1(copy = textAllData.title, classes = ['zip-tour__text-container__header']) }}
+    </header>
+    {% for item in textAllData.descriptions %}
+        <p class = "zip-tour__text-container__copy">{{ item.text | safe }}</p>
+    {% endfor %}    
+</article>
+
+<section class="zip-tour__section-outer">
+    <section class="zip-tour__section-inner zip-tour__action-card">
+        {% for item in action_card %}
+              {{ secondBridge(item) }}
+        {% endfor %}
+        <div class="zip-tour__action-card__text-wrapper zip-tour__action-card__caption">
+           {{action_card_caption.description | safe}}
+        </div>
+    </section>
+</section> 
