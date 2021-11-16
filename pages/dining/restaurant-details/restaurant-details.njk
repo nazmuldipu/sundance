@@ -12,6 +12,17 @@ nickname: dining/restaurant-details
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+
+{% set middle_banner = pageCMS['middle-banner'].banner %}
+{% set middleBannerImage = middle_banner.global_image.global_image %}
+
+{% set bridge_slider = pageCMS['top-banner-right'].bridge_slider %}
+{% set quoteCard = pageCMS['quote-card'].quote_card %}
+{% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
+
+{% set top_banner = pageCMS['top-banner-left'].banner %}
+{% set topBannerImage = top_banner.global_image.global_image %}
 
 {{ navMenu(navMenuLink) }}
 <section class="segment-outer bg-sn-5 px-4 top-section">
@@ -19,21 +30,22 @@ nickname: dining/restaurant-details
         <section class="dining-details-container">
             <section>
                 <figure class="dining-details__figure">
-                    <img class="w-full" src="https://via.placeholder.com/500">
+                    {{global_image(topBannerImage, classes='w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
                 </figure>
-                <figcaption>
+                <figcaption class="dining-details__figcaption">
                     <header>
-                        <h3 class="dining-details__top-banner--header font-ivar bold">It all started with a tree in 1970</h3>
+                        <h3 class="dining-details__top-banner--header font-ivar bold">
+                            {{top_banner.title}}
+                        </h3>
                     </header>
-                    <div class="dining-details__top-banner--descriptions font-ivar">
-                        <p>In 1970, Robert Redford built the first building at Sundance Mountain Resort: The Tree Room, a cabin constructed around an actual tree. Since then, the restaurant has grown but maintains its rustic, intimate atmosphere while serving some of the best cuisine in the area.</p>
-                    </div>
-                    <div class="dining-details__top-banner--descriptions font-ivar">
-                        <p>Face Coverings are recommended. Guests may remove their face coverings to enjoy food &amp; beverage.</p>
-                    </div>
+                    {% for item in top_banner.descriptions %}
+                        <div class="dining-details__top-banner--descriptions font-ivar">
+                            {{ item.text }}
+                        </div>
+                    {% endfor %}
                 </figcaption>
             </section>
-            <section>
+            <section class="dining-details__venues">
                 {% for event in data.groupData %}
                     <section>
                         {{ groupVenues(event) }}
@@ -52,20 +64,19 @@ nickname: dining/restaurant-details
     <section class="segment-inner">
         <section class="details__middle-banner">
             <figure class="dining-details__figure">
-                <img class="w-full" src="https://via.placeholder.com/500">
+                {{global_image(middleBannerImage, classes='w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
             </figure>
-            <figcaption>
+            <figcaption class="dining-details__figcaption">
                 <header>
                     <h3 class="dining-details__middle-banner--header font-ivar bold">
-                        Decorated with native american art and pieces from Robert Redford’s personal collection
+                        {{ middle_banner.title }}
                     </h3>
                 </header>
-                <div class="dining-details__middle-banner--descriptions font-ivar">
-                    <p>The tables are surrounded by kachina dolls, pottery, large blankets, and photos from Redford’s films. Next to the tree is a large fireplace incorporating unique stone/concrete designed &amp; made by Robert Redford himself.</p>
-                </div>
-                <div class="dining-details__middle-banner--descriptions font-ivar">
-                    <p>The building is designed with large windows to facilitate natural lighting and views of surrounding nature, especially magical with drifting snow and changing colors of the seasons. The dining philosophy incorporates modern French techniques with American comfort in a rustic Western, Rocky Mountain setting.</p>
-                </div>
+                {% for item in middle_banner.descriptions %}
+                    <div class="dining-details__middle-banner--descriptions font-ivar">
+                        {{ item.text }}
+                    </div>
+                {% endfor %}
             </figcaption>
         </section>
     </section>
@@ -74,61 +85,19 @@ nickname: dining/restaurant-details
     <section class="segment-inner">
         <article class="details__quote bg-ss-4 font-ivar">
             <div class="dining-details__middle-banner--descriptions font-ivar">
-                <p>“The first year, I couldn’t get a loan from the bank. The waiters didn’t show up, so the owners had to wait on tables… And the Tree in the Tree Room died. But, we endured. To us, Sundance is and always will be a dream. What you see, smell, taste and feel here is a dream being carefully nurtured.
-It is an area whose pledge is to people. What we offer in the form of art and culture, spirit and service, is homegrown and available to all.
-We hope you like it.”</p>
+                "{{ quoteCard.description | safe }}"
             </div>
             <div class="dining-details__middle-banner--descriptions font-ivar">
-                <p>- Robert Redford</p>
+                <p>- {{quoteCard.speaker}}</p>
             </div>
         </article>
     </section>
 </section>
 <section class="segment-outer">
     <section class="segment-inner text-center">
-        <article class="details__quote bg-sn-5 font-ivar">
+        <article class="details__card bg-sn-5 font-ivar">
             {{ global_header(copy = 'Dining at Sundance') }}
             <section class="dining-details__card">
-            {% set vertical_card_list = [
-        {
-          "vertical_card": {
-            "id": "",
-            "image": {
-              "global_image": {
-                "alt": "Flyfishing Activities Image",
-                "src": "stage/upload/sundance/sundance/2123a46745b7669d-flyfishing-5.jpg",
-                "sizes": [
-                  {
-                    "src": "",
-                    "view": "30vw",
-                    "media": "(min-width:900.1px)",
-                    "intrinsicwidth": 1,
-                    "intrinsicheight": 1
-                  },
-                  {
-                    "src": "",
-                    "view": "100vw",
-                    "media": "(max-width:900px)",
-                    "intrinsicwidth": 1,
-                    "intrinsicheight": 1
-                  }
-                ],
-                "types": [
-                  "webp",
-                  "jpg"
-                ],
-                "background": false,
-                "intrinsicwidth": 328,
-                "intrinsicheight": 202
-              }
-            },
-            "title": "",
-            "sub_title": "Experienced Angelers",
-            "left_image": false,
-            "description": "<p>The Provo River is home to large German trout and prolific hatches. Whether it’s a guided tour or day on the River, fly fishing with Sundance is a premier experience.</p>"
-          }
-        }
-      ]%}
                 {% for item in vertical_card_list %}
                     {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
                 {% endfor %}

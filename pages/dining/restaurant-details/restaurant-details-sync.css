@@ -5,8 +5,7 @@
     margin-top: 6rem;
 }
 .dining-details-container {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
+    display: block;
 }
 .dining-details__figure {
     margin-bottom: 48px;
@@ -33,8 +32,6 @@
 }
 .details__quote {
     max-width: 1080px;
-    padding: 64px 200px;
-    margin: 0 auto;
 }
 .dining-details__card{
     display: grid;
@@ -42,7 +39,27 @@
     padding-top: 24px;
     padding-bottom: 40px;
 }
+.bridge {
+    padding-bottom: 36px;
+}
+.dining-details__figcaption {
+    padding: 0 1rem;
+}
+.dining-details__venues {
+    padding: 0 1rem;
+}
+.details__quote {
+    padding: 0 1rem;
+    margin: 0 1rem;
+}
+.details__card {
+    padding: 0 1rem;
+}
 @media screen and (min-width: 1024px){
+    .dining-details-container {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+    }
     .dining-details__top-banner--header {
         font-size: 42px;
         line-height: 46.2px;
@@ -63,6 +80,13 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
         column-gap: 3rem;
         padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .details__quote {
+        padding: 64px 200px;
+        margin: 0 auto;
+    }
+    .bridge {
         padding-bottom: 40px;
     }
 }
