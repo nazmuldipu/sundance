@@ -19,6 +19,7 @@ nickname: dining/restaurant-details
 
 {% set bridge_slider = pageCMS['top-banner-right'].bridge_slider %}
 {% set quoteCard = pageCMS['quote-card'].quote_card %}
+{% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
 {% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
 
 {% set top_banner = pageCMS['top-banner-left'].banner %}
@@ -96,7 +97,7 @@ nickname: dining/restaurant-details
 <section class="segment-outer">
     <section class="segment-inner text-center">
         <article class="details__card bg-sn-5 font-ivar">
-            {{ global_header(copy = 'Dining at Sundance') }}
+            {{ global_header(copy = card_list_title) }}
             <section class="dining-details__card">
                 {% for item in vertical_card_list %}
                     {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
