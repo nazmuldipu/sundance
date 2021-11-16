@@ -18,19 +18,19 @@
     font-size: 14px;
     padding-bottom: 16px;
 }
-.dining-details__middle-banner--header {
+.dining-details__middle-article--header {
     font-size: 24px;
     padding-bottom: 24px;
 }
-.dining-details__middle-banner--descriptions {
+.dining-details__descriptions {
     font-size: 14px;
     padding-bottom: 16px;
 }
-.details__middle-banner {
+.details__middle-article {
     max-width: 792px;
     margin: 0 auto;
 }
-.details__quote {
+.details__notice {
     max-width: 1080px;
 }
 .dining-details__card{
@@ -50,7 +50,7 @@
 .dining-details__venues {
     padding: 0 1rem;
 }
-.details__quote {
+.details__notice {
     padding: 0 1rem;
     margin: 1rem 1rem;
 }
@@ -70,11 +70,11 @@
         font-size: 19px;
         padding-bottom: 16px;
     }
-    .dining-details__middle-banner--header {
+    .dining-details__middle-article--header {
         font-size: 42px;
         line-height: 46.2px;
     }
-    .dining-details__middle-banner--descriptions {
+    .dining-details__descriptions {
         font-size: 19px;
         padding-bottom: 16px;
     }
@@ -84,7 +84,7 @@
         padding-top: 40px;
         padding-bottom: 40px;
     }
-    .details__quote {
+    .details__notice {
         padding: 64px 200px;
         margin: 3rem auto;
     }
