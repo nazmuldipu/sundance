@@ -438,6 +438,9 @@ strong {
 .pb-4 {
     padding-bottom: 2rem !important;
 }
+.pt-12{
+    padding-top: 3rem;
+}
 .pt-24 {
     padding-top: 6rem;
 }
@@ -496,6 +499,9 @@ strong {
     z-index: 10;
 }
 /* backgrounds */
+.bg-sp-1 {
+    background-color: var(--sundance__primary1) !important;
+}
 .bg-sp-2 {
     background-color: var(--sundance__primary2) !important;
 }

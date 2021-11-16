@@ -1,0 +1,60 @@
+---
+layout: base.njk
+pagename: meetings-weddings
+permalink: "build/meetings-weddings/index.html"
+permalinkBypassOutputDir: true
+---
+{% from "atoms/headings.njk" import h2 %}
+{% from 'molecules/header.njk' import navMenu %}
+{% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from "atoms/headings.njk" import h4,
+ihh1 %}
+{% from 'atoms/icons.njk' import iconCSS %}
+{% from 'molecules/bridge.njk' import bridge %}
+
+{{ navMenu(data.navMenuLink) }}
+<section class="page-top-adjust"></section>
+
+{# Hero Image Section #}
+{% for event in pageCMS['venues'].group_venues %}
+    <section class="group-section">
+        <section class="segment-outer">
+            <figure class="segment-inner">
+                {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:4:3 lg:2:1 2xl:2:1 4xl:2:1')}}
+            </figure>
+        </section>
+        <div class="group-container flyfishing__group-container">
+            {{groupVenues(event)}}
+        </div>
+    </section>
+{% endfor %}
+
+{# Bridge carousal #}
+{{bridge(obj =  pageCMS['bridge-slider'].bridge_slider, classes = ['meetings-weddings'])}}
+
+{# Text Container #}
+<section class="segment-outer">
+    <section class="segment-inner meetings-weddings__text-container">
+        {{ h2(copy = pageCMS['text-container'].text_container.title, classes = ['meetings-weddings__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+        {{ pageCMS['text-container'].text_container.texts | safe }}
+    </section>
+</section>
+
+{# vertical card #}
+<section class="segment-outer pt-12">
+    <section class="segment-inner meetings-weddings__section-inner meetings-weddings__card">
+        {{ h2(copy = 'Complete your Experience', classes = ['meetings-weddings__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+        {% for item in pageCMS['vertical-card'].vertical_card_list %}
+            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+        {% endfor %}
+    </section>
+</section>
+
+
+{{newsletter()}}
+
+{{footer(data.footer)}}
