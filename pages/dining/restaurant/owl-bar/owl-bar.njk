@@ -1,0 +1,164 @@
+---
+layout: base.njk
+pagename: dining/restaurant/owl-bar
+permalink: "build/dining/restaurant/owl-bar/index.html"
+permalinkBypassOutputDir: true
+nickname: dining/restaurant/owl-bar
+---
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/card.njk' import verticalCard %}
+{% from 'atoms/headings.njk' import global_header %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/header.njk' import navMenu %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+
+{# {% set middle_banner = pageCMS['middle-banner'].banner %} #}
+{# {% set middleBannerImage = middle_banner.global_image.global_image %} #}
+
+{% set bridge_slider = pageCMS['slider'].bridge_slider %}
+{% set articles = pageCMS['middle-article'].simple_article_list %}
+{# {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
+{% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %} #}
+
+{% set notice = pageCMS['notice'].simple_article %}
+{% set contactInfo = pageCMS['contact-info'].simple_article %}
+{# {% set topBannerImage = top_banner.global_image.global_image %} #}
+
+{{ navMenu(navMenuLink) }}
+<section class="group-section top-section">
+    <section class="segment-outer relative">
+        <figure class="segment-inner">
+            {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
+        </figure>
+    </section>
+    {% for event in data.groupData %}
+        <section class="group-container">
+            {{ groupVenues(event) }}
+        </section>
+    {% endfor %}
+</section>
+{# <section class="segment-outer bg-sn-5 px-4 top-section">
+    <section class="segment-inner">
+        <section class="dining-details-container">
+            <section>
+                <figure class="dining-details__figure">
+                    {{global_image(topBannerImage, classes='w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
+                </figure>
+                <figcaption class="dining-details__figcaption">
+                    <header>
+                        <h3 class="dining-details__top-banner--header font-ivar bold">
+                            {{top_banner.title}}
+                        </h3>
+                    </header>
+                    {% for item in top_banner.descriptions %}
+                        <div class="dining-details__top-banner--descriptions font-ivar">
+                            {{ item.text }}
+                        </div>
+                    {% endfor %}
+                </figcaption>
+            </section>
+            <section class="dining-details__venues">
+                {% for event in data.groupData %}
+                    <section>
+                        {{ groupVenues(event) }}
+                    </section>
+                {% endfor %}
+            </section>
+        </section>
+    </section>
+</section> #}
+<section class="segment-outer bg-sn-5 px-4">
+    <section class="segment-inner">
+        {{bridge(bridge_slider)}}
+    </section>
+</section>
+<section class="segment-outer bg-sn-5 px-4">
+    <section class="segment-inner">
+        <section class="details__middle-banner">
+            {% for item in articles %}
+                {% set object = item.simple_article %}
+                <article class="dining-details__figcaption">
+                    <header>
+                        <h3 class="dining-details__middle-banner--header font-ivar bold text-center">
+                            {{ object.title }}
+                        </h3>
+                    </header>
+                    <div class="dining-details__middle-banner--descriptions font-ivar">
+                        {{ object.description | safe }}
+                    </div>
+                </article>
+            {% endfor %}
+        </section>
+    </section>
+</section>
+<section class="segment-outer">
+    <section class="segment-inner">
+        <article class="details__quote bg-sn-4 font-ivar">
+            <div class="dining-details__middle-banner--descriptions font-ivar">
+                {{ notice.description | safe }}
+            </div>
+        </article>
+        <div class="dining-details__middle-banner--descriptions font-ivar text-center">
+            {{ contactInfo.description | safe }}
+        </div>
+    </section>
+</section>
+{# <section class="segment-outer">
+    <section class="segment-inner">
+        <article class="details__quote bg-ss-4 font-ivar">
+            <div class="dining-details__middle-banner--descriptions font-ivar">
+                {{ quoteCard.description | safe }}
+            </div>
+            <div class="dining-details__middle-banner--descriptions font-ivar">
+                <p>{{quoteCard.speaker}}</p>
+            </div>
+        </article>
+    </section>
+</section>
+<section class="segment-outer">
+    <section class="segment-inner text-center">
+        <article class="details__card bg-sn-5 font-ivar">
+            {{ global_header(copy = card_list_title) }}
+            <section class="dining-details__card">
+                {% for item in vertical_card_list %}
+                    {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+                {% endfor %}
+            </section>
+        </article>
+    </section>
+</section> #}
+
+{{newsletter()}}
+
+{{footer(data.footer)}}
+{# {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/header.njk' import navMenu %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from "atoms/headings.njk" import h4, ihh1 %}
+{% from 'atoms/icons.njk' import iconCSS %}
+{% from 'molecules/bridge-2.njk' import secondBridge %} #}
+
+{# {% set zipTour_group_venues = pageCMS['group-venues'].group_venues  %} #}
+
+{# Navigation Menu  #}
+{# {{ navMenu(data.navMenuLink) }} #}
+{# Hero Image Section #}
+{# {% for event in zipTour_group_venues %}
+    <section class="group-section">
+        <section class="segment-outer relative">
+            <figure class="segment-inner">
+                {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
+            </figure>
+        </section>
+        <div class="group-container zip-tour__group-container">
+            {{groupVenues(event)}}
+        <div>
+    </section>
+{% endfor %} #}
+
