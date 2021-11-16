@@ -1,1 +1,1 @@
-console.log("module js")
+import '../../scripts/lib/globalEvents.js';

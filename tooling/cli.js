@@ -21,7 +21,7 @@ nickname: ${name}
 ---
 <div class="${name}"> ${name} page </div>`),
   css: () => '',
-  json: () => '',
+  json: () => '{}',
   js: ()=> '',
 }
 
