@@ -1,8 +1,8 @@
 'use strict';
 import esbuild from 'esbuild';
-import {readFileSync, readdirSync, statSync, truncateSync, createReadStream, createWriteStream} from 'fs';
+import { readFileSync, readdirSync, statSync, truncateSync, createReadStream, createWriteStream} from 'fs';
 import { appendFile, readFile, writeFile, truncate } from 'fs/promises';
-import {join, basename, extname, posix, relative, sep} from 'path';
+import { join, basename, extname, posix, relative, sep} from 'path';
 import { platform } from 'os'
 import { rmNoExist, SCRIPTS_DIR, getPathLoadType, getPageAssets, PAGES_DIR, sanitizePageData } from './lib.js';
 
@@ -140,6 +140,15 @@ const getGoogleMapsApiToken = () => {
     }
 };
 
+const pathResolvePlugin = {
+    name: 'pathResolver',
+    setup(build){  
+      build.onResolve({ filter: /^components\// }, args => {
+        return { path: join(args.resolveDir, 'components', args.path) }
+      })
+    },
+}
+
 /**
  * 
  * @param {String[]} inputPaths 
@@ -174,7 +183,8 @@ export const buildJS = async (inputPaths, outDir, outBase, metafilePath) => {
             GOOGLE_MAPS_API_KEY: getGoogleMapsApiToken(),
             SKIPPER_WEBSITE_API_BASE: getSkipperWebsiteAPIBase(),
             SKIPPER_WEB_API_TOKEN: getSkipperWebsiteToken()
-        }
+        },
+        plugins: [pathResolvePlugin],
     });
 
     const metadata = JSON.parse(readFileSync(metafilePath));
@@ -191,6 +201,7 @@ export const buildGlobalEventsJS = async (files,type) => {
         entryPoints: ['scripts/lib/dummy-entry.js'],
         inject: files,
         outfile: `build/js/global-${type}.js`,
+        plugins: [pathResolvePlugin],
         bundle: true,
         target: ['es2017'],
         format: 'esm',
