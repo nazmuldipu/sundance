@@ -42,6 +42,7 @@
 .zip-tour__action-card{
   display: grid;
   gap: 48px;
+  padding-bottom: 48px;
 }
 .zip-tour__action-card__text-wrapper a{
     text-decoration: none;
@@ -51,6 +52,18 @@
    font-family: var(--sundance__font-ivar);
    text-align: center;
 }
+.zip-tour__header{
+    font-weight: 600;
+    font-size: 2.625rem;
+}
+.zip-tour__card{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 3rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
 
 @media screen and (min-width: 320px) and (max-width: 767px){
     .zip-tour__section-inner{
@@ -75,8 +88,20 @@
     .zip-tour__text-container__copy{
         text-align: left;
     }
+    .zip-tour__action-card{
+        padding-bottom: 40px;
+    }
     .zip-tour__action-card__caption{
         text-align: left;
+    }
+    .zip-tour__header{
+        font-size: 1.5rem;
+    }
+    .zip-tour__card{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 0px;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 1365px){

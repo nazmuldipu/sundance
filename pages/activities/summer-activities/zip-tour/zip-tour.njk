@@ -21,6 +21,9 @@ nickname: zip-tour
 {% set textAllData = pageCMS['zip-tour-text-container'].text_container  %}
 {% set action_card = pageCMS['zip-tour-action-card'].action_card %}
 {% set action_card_caption = pageCMS['zip-tour-action-card-caption'].simple_article %}
+{% set card_title= pageCMS['card-title'].simple_article %}
+{% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
+
 {# Navigation Menu  #}
 {{ navMenu(data.navMenuLink) }}
 <section class="zipTour__margin-top"></section>
@@ -84,3 +87,14 @@ nickname: zip-tour
         </div>
     </section>
 </section> 
+{# Card Title #}
+{{ h2(copy = card_title.title, classes = ['zip-tour__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+
+{# Vertical Card Section #}
+<section class="zip-tour__section-outer">
+    <section class="zip-tour__section-inner zip-tour__card">
+        {% for item in vertical_card_list %}
+            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+        {% endfor %}
+    </section>
+</section>
