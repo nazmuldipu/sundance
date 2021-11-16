@@ -2,7 +2,7 @@
 @import "../../../styles/global.css";
 /****  end imports  ********************************/
 .top-section {
-    margin-top: 6rem;
+    margin-top: 90px;
 }
 .dining-details-container {
     display: block;
@@ -32,12 +32,15 @@
 }
 .details__quote {
     max-width: 1080px;
+    color: white;
 }
 .dining-details__card{
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     padding-top: 24px;
     padding-bottom: 40px;
+    max-width: 1080px;
+    margin: 0 auto;
 }
 .bridge {
     padding-bottom: 36px;
@@ -50,7 +53,7 @@
 }
 .details__quote {
     padding: 0 1rem;
-    margin: 0 1rem;
+    margin: 1rem 1rem;
 }
 .details__card {
     padding: 0 1rem;
@@ -84,9 +87,12 @@
     }
     .details__quote {
         padding: 64px 200px;
-        margin: 0 auto;
+        margin: 3rem auto;
     }
     .bridge {
         padding-bottom: 40px;
+    }
+    .group-venues__container {
+        padding-top: 24px;
     }
 }

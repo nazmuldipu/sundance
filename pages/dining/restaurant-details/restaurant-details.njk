@@ -85,10 +85,10 @@ nickname: dining/restaurant-details
     <section class="segment-inner">
         <article class="details__quote bg-ss-4 font-ivar">
             <div class="dining-details__middle-banner--descriptions font-ivar">
-                "{{ quoteCard.description | safe }}"
+                {{ quoteCard.description | safe }}
             </div>
             <div class="dining-details__middle-banner--descriptions font-ivar">
-                <p>- {{quoteCard.speaker}}</p>
+                <p>{{quoteCard.speaker}}</p>
             </div>
         </article>
     </section>
