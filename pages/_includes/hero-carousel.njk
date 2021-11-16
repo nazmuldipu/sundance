@@ -1,0 +1,21 @@
+{% from 'organisms/global-image.njk' import global_image %}
+{% from "atoms/a.njk" import Link %}
+
+{% macro heroCarousel(bannerObj =[])%}
+  <section class="segment-outer">
+    <section class="hero-carousel">
+      {% for banner in bannerObj %}
+        <article class="hero-carousel__frame hero-carousel__frame__left {{'active' if loop.first}}">
+          {{ global_image(banner.image.global_image, classes='image_frame') }}
+          <div class="hero-carousel__texts">
+            <header class="hero-carousel__title font-ivar bold">{{banner.title}}</header>
+            <div class="hero-carousel__sub-title font-calibre">{{banner.sub_title}}</div>
+            {% for action in banner.actions%}
+              {{ Link( href=action.action.url, copy=action.action.copy, target='_self', classes=['button', 'button--' + action.action.type, 'font-calibre', 'hero-carousel__links'] ) }}
+            {% endfor %}
+          </div>
+        </article>
+      {% endfor %}
+    </section>
+  </section>
+{% endmacro %}
