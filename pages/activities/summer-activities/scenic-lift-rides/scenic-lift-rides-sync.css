@@ -1,0 +1,123 @@
+/****  start imports  ********************************/
+@import "../../../../styles/global.css";
+/****  end imports  ********************************/
+.activities__section-outer{
+    width: 100%;
+}
+.activities__margin-top{
+    margin-top: 8rem;
+}
+.activities__section-inner{
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.activities__group-container{
+    border: none;
+}
+.activities__bridge{
+    padding-bottom: 92px;
+}
+.activities__bridge__top-frame {
+    background-color: var(--sundance__primary5) !important;
+}
+.activities__text-container{
+    max-width: 792px;
+    margin: auto;
+    padding-bottom: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.activities__text-container__header{
+    font-size: 42px;
+    font-weight: 600;
+    padding-bottom: 25px;
+    text-align: center;
+}
+.activities__text-container__copy{
+    font-size: 19px;
+    text-align: center;
+}
+.activities__action-card{
+  display: grid;
+  gap: 48px;
+  padding-bottom: 48px;
+}
+.activities__action-card__text-wrapper a{
+    text-decoration: none;
+}
+.activities__action-card__caption{
+   font-size: 19px;
+   font-family: var(--sundance__font-ivar);
+   text-align: center;
+}
+.activities__header{
+    font-weight: 600;
+    font-size: 2.625rem;
+}
+.activities__card{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 3rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .activities__section-inner{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .activities__margin-top{
+        margin-top: 4rem;
+    }
+    .activities__bridge{
+        padding-bottom: 44px;
+    }
+    .activities__text-container{
+        max-width: 821px;
+        margin: auto;
+        padding-bottom: 40px;
+    }
+    .activities__text-container__header{
+        font-size: 24px;
+        padding-bottom: 16px;
+    }
+    .activities__text-container__copy{
+        text-align: left;
+    }
+    .activities__action-card{
+        padding-bottom: 40px;
+    }
+    .activities__action-card__caption{
+        text-align: left;
+    }
+    .activities__header{
+        font-size: 1.5rem;
+    }
+    .activities__card{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 0px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1080px){
+    .activities__card{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 0px;
+    }
+    .activities__section-inner{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+@media screen and (min-width: 1081px) and (max-width: 1365px){
+    .activities__section-inner{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
