@@ -469,7 +469,14 @@ strong {
 .-mt-22 {
     margin-top: -88px;
 }
-.mb-8 {
+/* Z index */
+.z-10{
+    z-index: 10;
+}
+.-z-1{
+    z-index: -1;
+}
+.mb-8{
     margin-bottom: 2rem;
 }
 .min-h-120 {
@@ -551,7 +558,7 @@ strong {
     border: 0;
 }
 .border-0 {
-    border: 0;
+    border: 0 !important;
 }
 .border-1-sp-2 {
     border: 1px solid #617c6a !important;
