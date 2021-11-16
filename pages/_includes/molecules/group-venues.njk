@@ -2,7 +2,7 @@
 {% from "atoms/a.njk" import a, Link, dropdown %}
 {#
     #   @desc   group venues form
-    #   @author Nazmul Alam
+    #   @author Nazmul Alam, Sarjis
 #}
 
 {% macro groupVenues(object)%}
@@ -23,7 +23,7 @@
             <section class="group-venues__actions">
                 {% for action in object.actions %}
                     {%if action.category == 'dropdown' %}
-                        {{ dropdown( classes=['dropdown-container--' + action.type, 'group-venues__dropdown'], labelClasses= [ 'button', 'button--' + action.type, 'group-venues__dropdown-btn', 'font-calibre', 'text-base'], labelId=action.slug, copy=action.copy, items=action.items ) }}
+                        {{ dropdown( classes=['dropdown-container--' + action.type, 'group-venues__dropdown'], labelClasses= [ 'button', 'button--' + action.type, 'group-venues__dropdown-btn', 'font-calibre', 'text-base'], labelId=action.id, copy=action.copy, items=action.items ) }}
                     {% elif action.category == 'link' %}
                         {{ Link( href=action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}
                     {% endif %}
