@@ -190,14 +190,14 @@ pagename: base
                 phoneElements[i].innerHTML = navisTFNdisp;
             }
         })();
-        jQuery(document).ready(function() {
-            jQuery("a[href*='be.synxis.com']").each(function(i){
-                var bookingLink = jQuery(this);
-                var bookhref = bookingLink.attr('href');
+        window.addEventListener('load', function(){
+            const urls = document.querySelectorAll("a[href*='be.synxis.com']");
+            urls.forEach(function(url){
+                var bookhref = url.getAttribute("href");
                 bookhref.replace('&NCK=organic', '');
-                bookingLink.attr('href', AppendNavisKeywordToURL(bookhref));
-            });
-        });
+                bookingLink.setAttribute('href', AppendNavisKeywordToURL(bookhref));      
+            })
+        })
         </script>
         <!-- END NAVIS Tracking Snippets -->
         <!--
