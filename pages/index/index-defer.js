@@ -1,37 +1,37 @@
-import {foo} from '../../scripts/sample';
-import {onclickDropdown, onblurDropdown} from '../../scripts/dropdown';
-import '../../components/random-adder.js';
-
-
-window.poop = function(stuff) {
-    console.log('STUFF', stuff);
-}
-
-document.addEventListener("DOMContentLoaded", function(){
-    window.handleClick = function(id){
-        onclickDropdown(id)
-    }
-    window.handleBlur = function(){
-        onblurDropdown()
-    }
+// hero-carousel
+const hero_image_frames = document.querySelectorAll(".hero-carousel__frame .image_frame");
+hero_image_frames.forEach(function (slide_frame) {
+    slide_frame.addEventListener("click", function (frame) {
+        const parent_ele = frame.target.parentElement.parentElement;
+        if(!parent_ele.classList.contains("active")){
+            const active_elements = parent_ele.parentElement.querySelectorAll(".active");
+            active_elements.forEach(function (active_element) {
+                active_element.classList.remove("active");
+                parent_ele.classList.add("active");
+            });
+        }
+    });
 });
 
 // thumbnail slider events
-const slide_frame = document.getElementById('thumbnail-slider__image__frame');
-const add_image_click_event = () =>{
-    const slider_images = document.querySelectorAll('.thumbnail-slider__slides__box .image_frame');
-    slider_images.forEach(function(slide){
-        slide.addEventListener('click', function(){
+const add_image_click_event = () => {
+    const slider_images = document.querySelectorAll(
+        ".thumbnail-slider__slides__box .image_frame"
+    );
+    slider_images.forEach(function (slide) {
+        slide.addEventListener("click", function () {
+            const frame_id = slide.parentElement.dataset.framename;
+            const slide_frame = document.getElementById(frame_id);
             slide_frame.firstElementChild.innerHTML = slide.innerHTML;
-        })
+        });
     });
-}
+};
 
-const carousel_buttons = document.querySelectorAll('.carousel-button');
-carousel_buttons.forEach(function(button){
-    button.addEventListener('click', function(){
+const carousel_buttons = document.querySelectorAll(".carousel-button");
+carousel_buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
         add_image_click_event();
-    })
+    });
 });
 
 add_image_click_event();

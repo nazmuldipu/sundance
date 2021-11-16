@@ -4,22 +4,81 @@ pagename: index
 permalink: "build/index.html"
 permalinkBypassOutputDir: true
 ---
+{% from 'atoms/form-fields.njk' import form_input %}
+{% from "atoms/a.njk" import a,
+Link %}
+{% from "atoms/headings.njk" import h2 %}
 {% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'hero-carousel.njk' import heroCarousel %}
+{% from 'macros.njk' import events %}
 {% from 'organisms/thumbnail_slider.njk' import thumbnail_slider %}
 
 {{ navMenu(navMenuLink) }}
 
-<div>Hello world!</div>
-<div>Hello world!</div>
-<div>Hello world!</div>
-<div>Hello world!</div>
-<div>Hello world!</div>
-<div>Hello world!</div>
-{{ thumbnail_slider(pageCMS['lodging-slider'].thumbnail_slider) }}
+<section class="page-top-adjust"></section>
 
+<section class="home-style-bg" style="--background-url: url({{pageCMS['home-sliders'].home_sliders.background | theImgSrc}}); --top-position: 200px;">
+    {{heroCarousel(pageCMS['banner-carousel'].banner_carousel)}}
 
-{{ newsletter() }}
+    {# Search bar #}
+    <section class="segment-outer">
+        <section class="segment-inner search-box">
+            {% set sField = pageCMS['search-form'].form_field %}
+            {{ sField.icon | safe}}
+            {{ form_input(obj = sField, suffix = true, classes = ['form-label', 'block', 'text-center'], href = '#', id = 'join') }}
+        </section>
+    </section>
+
+    {# sliders #}
+    <section class="segment-outer">
+        <section class="">
+            {{ h2( copy=pageCMS['home-sliders'].home_sliders.title, classes=['heading', 'thumbnail-slider__header', 'font-semibold', 'font-ivar'] ) }}
+            <div class="text-center">
+                {% set actionLink = pageCMS['home-sliders'].home_sliders.action.action %}
+                {% set trg = '_self' if actionLink.internal else 
+                    '_blank' %}
+                {{ a( copy=actionLink.copy, href=actionLink.url, target=trg) }}<br>
+            </div>
+            {% for slider in pageCMS['home-sliders'].home_sliders.sliders%}
+                {{ thumbnail_slider(slider.thumbnail_slider) }}
+            {% endfor %}
+        </section>
+    </section>
+</section>
+
+<section class="home-style-bg" style="--background-url: url({{pageCMS['events'].sundance_events.background | theImgSrc}}); --top-position: 0;">
+    {{events(pageCMS['events'].sundance_events )}}
+</section>
+
+    <section class="segment-outer">
+        <section class="segment-inner horizontal-card">
+            {% set cardObj = pageCMS['horizontal-card'].horizontal_card%}
+            <header class="horizontal-card__header font-horizon">{{cardObj.header}}</header>
+            <div class="horizontal-card__container">
+                <div class="horizontal-card__text">
+                    {{ h2( copy=cardObj.title, classes=['heading', 'horizontal-card__title', 'font-ivar'] ) }}
+                    <div class="horizontal-card__description font-calibre">
+                        {{cardObj.description | safe}}
+                    </div>
+                    <div class="flex">
+                        {% for item in cardObj.actions%}
+                            <div class="horizontal-card__breadcrumb font-calibre {{'last' if loop.last}}">
+                                {{ Link( href=item.action.url, copy=item.action.copy, target='_self', classes=['button', 'button--' + item.action.type, 'font-calibre'] ) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="horizontal-card__image">
+                    {{ global_image(cardObj.image.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
+                </div>
+            </div>
+        </section>
+    </section>
+<section class="home-style-bg newsletter-bg" style="--background-url: url({{pageCMS['horizontal-card'].horizontal_card.background | theImgSrc}}); --top-position: 0;">
+    {{ newsletter() }}
+</section>
 
 {{ footer(data.footer) }}
