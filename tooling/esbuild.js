@@ -144,7 +144,7 @@ const pathResolvePlugin = {
     name: 'pathResolver',
     setup(build){  
       build.onResolve({ filter: /^components\// }, args => { 
-        const rootPath = args.resolveDir.split('pages/')[0];
+        const rootPath = args.resolveDir.split('pages' + sep)[0];
         return { path: join(rootPath, args.path) }
       })
     },
