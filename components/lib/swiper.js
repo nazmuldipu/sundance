@@ -1,5 +1,7 @@
 "use strict";
-import Swiper from "https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js";
+import SwiperCore, {Navigation, Lazy} from 'swiper/core';
+SwiperCore.use([Navigation, Lazy]);
+import Swiper from 'swiper';
 
 const defaultConfig = {
   loop: true,
