@@ -29,18 +29,22 @@ nickname: zip-tour
 <section class="activities__margin-top"></section>
 
 {# Hero Image Section #}
-{% for event in activities_group_venues %}
-    <section class="group-section">
-        <section class="segment-outer relative">
-            <figure class="segment-inner">
+<section class="group-section">
+    <section class="segment-outer relative">
+        <figure class="segment-inner">
+            {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
                 {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
-            </figure>
-        </section>
-        <div class="group-container activities__group-container">
-            {{groupVenues(event)}}
-        <div>
+            {% endif %}
+        </figure>
     </section>
-{% endfor %}
+    {% if pageCMS['group-venues'] and pageCMS['group-venues'].group_venues %}
+        {% for event in activities_group_venues %}
+            <div class="group-container activities__group-container">
+                {{groupVenues(event)}}
+            <div>
+        {% endfor %}
+    {% endif %}
+</section>
 
 {# Bridge carousal #}
 <section class="bridge activities__bridge">
