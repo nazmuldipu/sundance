@@ -14,19 +14,15 @@ nickname: dining/restaurant/foundry-grill
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
 
-{% set middle_banner = pageCMS['middle-banner'].banner %}
-{% set middleBannerImage = middle_banner.global_image.global_image %}
 {% set articles = pageCMS['middle-article'].simple_article_list %}
 {% set bridge_slider = pageCMS['slider'].bridge_slider %}
-{% set quoteCard = pageCMS['quote-card'].quote_card %}
 {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
 {% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
 
-{% set top_banner = pageCMS['top-banner-left'].banner %}
-{% set topBannerImage = top_banner.global_image.global_image %}
 {% set notice = pageCMS['notice'].simple_article %}
 {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
 {% set groupData = pageCMS['top-group-venues'].group_venues %}
+
 {{ navMenu(navMenuLink) }}
 <section class="group-section top-section">
     <section class="segment-outer relative">
