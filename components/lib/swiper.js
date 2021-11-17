@@ -1,7 +1,7 @@
 "use strict";
 import SwiperCore, {Navigation, Lazy} from 'swiper/core';
-SwiperCore.use([Navigation, Lazy]);
 import Swiper from 'swiper';
+SwiperCore.use([Navigation, Lazy]);
 
 const defaultConfig = {
   loop: true,
