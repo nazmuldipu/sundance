@@ -16,80 +16,59 @@ nickname: dining/restaurant/foundry-grill
 
 {% set middle_banner = pageCMS['middle-banner'].banner %}
 {% set middleBannerImage = middle_banner.global_image.global_image %}
-
-{% set bridge_slider = pageCMS['top-banner-right'].bridge_slider %}
+{% set articles = pageCMS['middle-article'].simple_article_list %}
+{% set bridge_slider = pageCMS['slider'].bridge_slider %}
 {% set quoteCard = pageCMS['quote-card'].quote_card %}
 {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
 {% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
 
 {% set top_banner = pageCMS['top-banner-left'].banner %}
 {% set topBannerImage = top_banner.global_image.global_image %}
-
+{% set notice = pageCMS['notice'].simple_article %}
+{% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
+{% set groupData = pageCMS['top-group-venues'].group_venues %}
 {{ navMenu(navMenuLink) }}
-<section class="segment-outer bg-sn-5 px-4 top-section">
+<section class="group-section top-section">
+    <section class="segment-outer relative">
+        <figure class="segment-inner">
+            {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
+        </figure>
+    </section>
+    {% for event in groupData %}
+        <section class="group-container">
+            {{ groupVenues(event) }}
+        </section>
+    {% endfor %}
+</section>
+<section class="segment-outer bg-sn-5 px-4">
     <section class="segment-inner">
-        <section class="dining-details-container">
-            <section>
-                <figure class="dining-details__figure">
-                    {{global_image(topBannerImage, classes='w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
-                </figure>
-                <figcaption class="dining-details__figcaption">
+        {{bridge(bridge_slider)}}
+    </section>
+</section>
+<section class="segment-outer bg-sn-5 px-4">
+    <section class="segment-inner">
+        <section class="details__middle-article">
+            {% for item in articles %}
+                {% set object = item.simple_article %}
+                <article class="dining-details__figcaption">
                     <header>
-                        <h3 class="dining-details__top-banner--header font-ivar bold">
-                            {{top_banner.title}}
+                        <h3 class="dining-details__middle-article--header font-ivar bold text-center">
+                            {{ object.title }}
                         </h3>
                     </header>
-                    {% for item in top_banner.descriptions %}
-                        <div class="dining-details__top-banner--descriptions font-ivar">
-                            {{ item.text }}
-                        </div>
-                    {% endfor %}
-                </figcaption>
-            </section>
-            <section class="dining-details__venues">
-                {% for event in data.groupData %}
-                    <section>
-                        {{ groupVenues(event) }}
-                    </section>
-                {% endfor %}
-            </section>
-        </section>
-    </section>
-</section>
-<section class="segment-outer bg-sn-5 px-4">
-    <section class="segment-inner">
-        {{bridge()}}
-    </section>
-</section>
-<section class="segment-outer bg-sn-5 px-4">
-    <section class="segment-inner">
-        <section class="details__middle-banner">
-            <figure class="dining-details__figure">
-                {{global_image(middleBannerImage, classes='w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
-            </figure>
-            <figcaption class="dining-details__figcaption">
-                <header>
-                    <h3 class="dining-details__middle-banner--header font-ivar bold">
-                        {{ middle_banner.title }}
-                    </h3>
-                </header>
-                {% for item in middle_banner.descriptions %}
-                    <div class="dining-details__middle-banner--descriptions font-ivar">
-                        {{ item.text }}
+                    <div class="dining-details__descriptions font-ivar">
+                        {{ object.description | safe }}
                     </div>
-                {% endfor %}
-            </figcaption>
+                </article>
+            {% endfor %}
         </section>
     </section>
 </section>
 <section class="segment-outer">
     <section class="segment-inner">
-        <article class="details__quote bg-ss-4 font-ivar">
-            <div class="dining-details__middle-banner--descriptions font-ivar">
-                {{ quoteCard.description | safe }}
-            </div>
-            <div class="dining-details__middle-banner--descriptions font-ivar">
-                <p>{{quoteCard.speaker}}</p>
+        <article class="details__notice bg-sn-4 font-ivar">
+            <div class="dining-details__descriptions font-ivar">
+                {{ notice.description | safe }}
             </div>
         </article>
     </section>
