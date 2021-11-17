@@ -5,18 +5,18 @@
 .bridge__nav-icon{
     background-color: transparent;
 }
-.meetings-weddings__text-container{
+.meetings-events__text-container{
     max-width: 792px;
     margin: 0 auto;
 }
-.meetings-weddings__text-container__header {
+.meetings-events__text-container__header {
     font-size: 42px;
     line-height: 110%;
     font-weight: 600;
     padding-bottom: 40px;
     text-align: center;
 }
-.meetings-weddings__text-container ul{
+.meetings-events__text-container ul{
     padding-inline-start: 40px;
     list-style-type: disc;
 }

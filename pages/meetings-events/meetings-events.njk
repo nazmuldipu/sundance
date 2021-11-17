@@ -18,7 +18,7 @@ permalinkBypassOutputDir: true
 <section class="page-top-adjust"></section>
 
 {# Hero Image Section #}
-{% if pageCMS['venues'].group_venue %}
+{% if pageCMS['venues'].group_venues.length and pageCMS['top-banner'].global_image %}
     {% set event = (pageCMS['venues'].group_venues |  first )%}
     <section class="group-section">
         {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
@@ -30,14 +30,14 @@ permalinkBypassOutputDir: true
 
 {# Bridge carousal #}
 {% if pageCMS['bridge-slider'].bridge_slider %}
-    {{bridge(obj =  pageCMS['bridge-slider'].bridge_slider, classes = ['meetings-weddings'])}}
+    {{bridge(obj =  pageCMS['bridge-slider'].bridge_slider, classes = ['meetings-events'])}}
 {% endif %}
 
 {# Text Container #}
 {% if pageCMS['text-container'].text_container %}
     <section class="segment-outer">
-        <section class="segment-inner meetings-weddings__text-container sm:px-6 lg:px-6">
-            {{ h2(copy = pageCMS['text-container'].text_container.title, classes = ['meetings-weddings__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+        <section class="segment-inner meetings-events__text-container sm:px-6 lg:px-6">
+            {{ h2(copy = pageCMS['text-container'].text_container.title, classes = ['meetings-events__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
             {{ pageCMS['text-container'].text_container.texts | safe }}
         </section>
     </section>
@@ -47,7 +47,7 @@ permalinkBypassOutputDir: true
 {% if pageCMS['vertical-card'].vertical_card_list %}
     <section class="segment-outer pt-12">
         <section class="segment-inner">
-            {{ h2(copy = 'Complete your Experience', classes = ['meetings-weddings__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+            {{ h2(copy = 'Complete your Experience', classes = ['meetings-events__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
             <article class="segment-inner__vertical-card-container grid lg:grid-cols-3 2xl:grid-cols-3 4xl:grid-cols-3 gap-x-12 sm:px-6 lg:px-6">
                 {% for item in pageCMS['vertical-card'].vertical_card_list %}
                     {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}

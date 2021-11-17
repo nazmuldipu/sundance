@@ -1,1 +1,1 @@
-console.log('weddings-defer.js');
+import "../../components/MediaCarousel/index.js";
