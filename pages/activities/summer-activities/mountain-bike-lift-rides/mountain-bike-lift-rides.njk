@@ -15,7 +15,7 @@ nickname: Mountain Bike Lift Rides
 {% from "atoms/headings.njk" import h4, ihh1 %}
 {% from 'atoms/icons.njk' import iconCSS %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
-
+{% from 'molecules/bridge.njk' import bridge %}
 {% set activities_group_venues = pageCMS['group-venues'].group_venues  %}
 {% set bridge_slider = pageCMS['bridge-slider'].bridge_slider  %}
 {% set caption = pageCMS['caption'].simple_article  %}
@@ -26,7 +26,7 @@ nickname: Mountain Bike Lift Rides
 {{ navMenu(data.navMenuLink) }}
 <section class="activities__margin-top"></section>
 
-{# Hero Image Section #}  
+{# Hero Image Section #}
 <section class="group-section">
     <section class="segment-outer relative">
         <figure class="segment-inner">
@@ -45,31 +45,10 @@ nickname: Mountain Bike Lift Rides
 </section>
 
 {# Bridge carousal #}
-<section class="bridge activities__bridge">
-    <article class="bridge__top-frame activities__bridge__top-frame">
-        <header>{{ihh1(copy=bridge_slider.title,classes = ['bridge__header', 'font-ivar'])}}</header>
-        {{h4(copy=bridge_slider.sub_title, classes=['bridge__text', 'font-calibre'])}}
-    </article>
-    <article class="bridge__container">
-        <media-carousel>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    {% for image in bridge_slider.images %}
-                        <div class="swiper-slide !w-auto">
-                            <div class="bridge__box">
-                                {{global_image(image.global_image, classes='w-full image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1')}}
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                <nav class="bridge__nav">
-                    {{ iconCSS( classes=['carousel-button-prev', 'bridge__nav-icon', 'arrow-left', 'rotate-45'] ) }}
-                    {{ iconCSS( classes=['carousel-button-next', 'bridge__nav-icon', 'arrow-right', 'rotate-45'] ) }}
-                </nav>
-            </div>
-        </media-carousel>
-    </article>
-</section>
+{% if pageCMS['bridge-slider'] %}
+{% set bridge_slider = pageCMS['bridge-slider'].bridge_slider %}
+    {{bridge(bridge_slider)}}        
+{% endif %}
 
 <article class="activities__text-container font-ivar">
     <p class = "activities__text-container__copy">{{ caption.description | safe }}</p> 

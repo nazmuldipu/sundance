@@ -1,49 +1,32 @@
 {% from "atoms/headings.njk" import h4,
 ihh1 %}
 {% from 'atoms/icons.njk' import iconCSS %}
+{% from 'organisms/global-image.njk' import global_image %}
 {#
     #   @desc   a basic bridge/carousel molecules
     #   @return HTML anchor tag
-    #   @author Nazmul Alam
+    #   @author Nazmul Alam, Sarjis
 #}
-{% macro bridge(  )%}
+{% macro bridge(item = {})%}
     <section class="bridge">
         <article class="bridge__top-frame">
-            <header>{{ihh1('Explore Your Creativity',classes = ['bridge__header', 'font-ivar'])}}</header>
-            {{h4(copy='EXPLORE GALLERY', classes=['bridge__text', 'font-calibre'])}}
+            <header>{{ihh1(item.title,classes = ['bridge__header', 'font-ivar'])}}</header>
+            {{h4(copy=item.sub_title, classes=['bridge__text', 'font-calibre'])}}
         </article>
 
         <article class="bridge__container">
             <media-carousel>
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide !w-auto">
-                            <div class="bridge__box">a</div>
-                        </div>
-                        <div class="swiper-slide !w-auto">
-                            <div class="bridge__box">b</div>
-                        </div>
-                        <div class="swiper-slide !w-auto">
-                            <div class="bridge__box">c</div>
-                        </div>
-                        <div class="swiper-slide !w-auto">
-                            <div class="bridge__box">d</div>
-                        </div>
-                        <div class="swiper-slide !w-auto">
-                            <div class="bridge__box">e</div>
-                        </div>
-                        <div class="swiper-slide !w-auto">
-                            <div class="bridge__box">f</div>
-                        </div>
-                        <div class="swiper-slide !w-auto">
-                            <div class="bridge__box">g</div>
-                        </div>
-                        <div class="swiper-slide !w-auto">
-                            <div class="bridge__box">h</div>
-                        </div>
-                        <div class="swiper-slide !w-auto">
-                            <div class="bridge__box">i</div>
-                        </div>
+                        {% if item.images | length > 0 %}
+                            {% for obj in item.images %}
+                                <div class="swiper-slide !w-auto">
+                                    <div class="bridge__box">
+                                        {{global_image(obj.global_image, classes='w-full h-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                     <nav class="bridge__nav">
                         {{ iconCSS( classes=['carousel-button-prev', 'bridge__nav-icon', 'arrow-left', 'rotate-45'] ) }}

@@ -15,11 +15,11 @@
 .activities__group-container{
     border: none;
 }
-.activities__bridge{
+.bridge{
     padding-bottom: 50px;
 }
-.activities__bridge__top-frame {
-    background-color: var(--sundance__primary5) !important;
+.bridge__top-frame {
+    background-color: var(--sundance__secondary5) !important;
 }
 .activities__text-container{
     max-width: 792px;
@@ -72,7 +72,7 @@
     .activities__margin-top{
         margin-top: 4rem;
     }
-    .activities__bridge{
+    .bridge{
         padding-bottom: 8px;
     }
     .activities__text-container{
