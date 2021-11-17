@@ -18,7 +18,7 @@ nickname: dining/fast-casuals/sundance-deli
 <section class="group-section top-section">
     <section class="segment-outer relative">
         <figure class="segment-inner">
-        {% if pageCMS['top-banner'] %}
+        {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
             {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
         {% endif %}
         </figure>
@@ -32,7 +32,7 @@ nickname: dining/fast-casuals/sundance-deli
         {% endfor %}
     {% endif %}
 </section>
-{% if pageCMS['slider'] %}
+{# {% if pageCMS['slider'] %}
 {% set bridge_slider = pageCMS['slider'].bridge_slider %}
     <section class="segment-outer bg-sn-5 px-4">
         <section class="segment-inner">
@@ -94,7 +94,7 @@ nickname: dining/fast-casuals/sundance-deli
             {% endif %}
         </article>
     </section>
-</section>
+</section> #}
 
 {{newsletter()}}
 
