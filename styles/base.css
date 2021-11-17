@@ -210,7 +210,7 @@ strong {
 .flex {
     display: flex;
 }
-.flex-row{
+.flex-row {
     flex-direction: row;
 }
 .flex-row-reverse {
@@ -264,6 +264,11 @@ strong {
     margin-left: auto;
     margin-right: auto;
 }
+.segment-inner__vertical-card-container {
+    max-width: 1080px;
+    overflow: hidden;
+    margin: 0 auto;
+}
 .mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -280,6 +285,9 @@ strong {
 }
 .gap-x-2 {
     column-gap: 0.5rem;
+}
+.gap-x-12 {
+    column-gap: 3rem;
 }
 /* grid template columns */
 .grid {
@@ -438,7 +446,7 @@ strong {
 .pb-4 {
     padding-bottom: 2rem !important;
 }
-.pt-12{
+.pt-12 {
     padding-top: 3rem;
 }
 .pt-24 {
@@ -473,13 +481,13 @@ strong {
     margin-top: -88px;
 }
 /* Z index */
-.z-10{
+.z-10 {
     z-index: 10;
 }
-.-z-1{
+.-z-1 {
     z-index: -1;
 }
-.mb-8{
+.mb-8 {
     margin-bottom: 2rem;
 }
 .min-h-120 {
@@ -608,12 +616,25 @@ strong {
 }
 /* Mobile (Screen size : 375 pts) */
 @media screen and (min-width: 320px) and (max-width: 767px) {
-    
+    .sm\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .sm\:px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
 }
 /* Tab (Screen size : 1200 pts) */
 @media screen and (min-width: 768px) and (max-width: 1365px) {
     .page-top-adjust {
         padding-top: 151px;
+    }
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .lg\:px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
 
@@ -622,12 +643,26 @@ strong {
     .page-top-adjust {
         padding-top: 106px;
     }
+    .\32 xl\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .\32 xl\:px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
 }
 
 /* Desktop XXL (Screen size : 1920 pts) */
 @media screen and (min-width: 1920px) {
     .page-top-adjust {
         padding-top: 128px;
+    }
+    .\34 xl\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .\34 xl\:px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
 /****  end base styles  ********************************/
