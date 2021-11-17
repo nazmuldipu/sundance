@@ -13,7 +13,7 @@
         <article class="thumbnail-slider__texts self-center {{'order-2' if obj.left_slider else 'order-1'}}">
             <div class="">
                 {{ h1( copy=obj.title ,  classes=['thumbnail-slider__title', 'font-ivar', 'font-semibold']) }}
-                <p class="thumbnail-slider__description font-calibre">{{ obj.description }} aa{{object | json}}aa</p>
+                <p class="thumbnail-slider__description font-calibre">{{ obj.description }}</p>
                 {{ Link( href=obj.action.href, copy=obj.action.copy, classes=['button', 'button--primary2', 'font-calibre', 'thumbnail-slider__action'] ) }}
             </div>
         </article>
