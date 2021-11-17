@@ -1,0 +1,1 @@
+console.log('group-venues-module.js');import '../../scripts/lib/globalEvents.js';

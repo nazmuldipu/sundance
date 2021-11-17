@@ -1,1 +1,1 @@
-console.log('meetings-events-module.js');
+console.log('meetings-events-module.js');import '../../scripts/lib/globalEvents.js';
