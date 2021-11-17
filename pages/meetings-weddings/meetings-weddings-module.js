@@ -1,1 +1,0 @@
-console.log('meetings-weddings-module.js');

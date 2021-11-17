@@ -1,0 +1,1 @@
+console.log('weddings-defer.js');
