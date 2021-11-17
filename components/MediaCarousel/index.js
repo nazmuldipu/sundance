@@ -1,13 +1,14 @@
 "use strict";
-
+//import { join } from 'path';
 import ProgressiveElement from "../progressive-element.js";
+
 
 export default class MediaCarousel extends ProgressiveElement {
   constructor() {
     super([
       {
         id: "swiper",
-        behaviorPath: "../lib/swiper.js",
+        behaviorPath: "/../lib/swiper.js", // have to use relative path
         stylePath: "https://unpkg.com/swiper/swiper-bundle.min.css",
         type: "IntersectionObserver",
         observerConfig: {

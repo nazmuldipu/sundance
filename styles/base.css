@@ -129,7 +129,7 @@ table {
 @font-face {
     font-display: swap;
     font-family: "Ivar Headline";
-    src: url("../fonts/IvarHeadline-Regular.otf");
+    src: url("/fonts/IvarHeadline-Regular.otf");
     font-weight: 400;
     font-style: normal;
     unicode-range: U+000-5FF;
@@ -137,7 +137,7 @@ table {
 @font-face {
     font-display: swap;
     font-family: "Ivar Headline";
-    src: url("../fonts/IvarHeadline-SemiBold.otf");
+    src: url("/fonts/IvarHeadline-SemiBold.otf");
     font-weight: 700;
     font-style: normal;
     unicode-range: U+000-5FF;
@@ -145,7 +145,7 @@ table {
 @font-face {
     font-display: swap;
     font-family: "Calibre";
-    src: url("../fonts/Calibre-BoldItalic.otf");
+    src: url("/fonts/Calibre-BoldItalic.otf");
     font-weight: 700;
     font-style: italic;
     unicode-range: U+000-5FF;
@@ -153,7 +153,7 @@ table {
 @font-face {
     font-display: swap;
     font-family: "Calibre";
-    src: url("../fonts/Calibre-Bold.otf");
+    src: url("/fonts/Calibre-Bold.otf");
     font-weight: 700;
     font-style: normal;
     unicode-range: U+000-5FF;
@@ -161,7 +161,7 @@ table {
 @font-face {
     font-display: swap;
     font-family: "Calibre";
-    src: url("../fonts/Calibre-Regular.otf");
+    src: url("/fonts/Calibre-Regular.otf");
     font-weight: 400;
     font-style: normal;
     unicode-range: U+000-5FF;
@@ -169,7 +169,7 @@ table {
 @font-face {
     font-display: swap;
     font-family: "Calibre";
-    src: url("../fonts/Calibre-RegularItalic.otf");
+    src: url("/fonts/Calibre-RegularItalic.otf");
     font-weight: 400;
     font-style: italic;
     unicode-range: U+000-5FF;
@@ -177,7 +177,7 @@ table {
 @font-face {
     font-display: swap;
     font-family: "Horizon";
-    src: url("../fonts/Horizon-Regular.otf");
+    src: url("/fonts/Horizon-Regular.otf");
     font-weight: 400;
     font-style: normal;
     unicode-range: U+000-5FF;

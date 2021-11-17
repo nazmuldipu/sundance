@@ -54,6 +54,7 @@ export default class ProgressiveElement extends HTMLElement {
                 const jsRes = await import(mod.behaviorPath)
                 results.push(jsRes);
             }
+            console.log(results);
             return results
         }
         return this
