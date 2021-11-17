@@ -1,1 +1,1 @@
-console.log('atoms-module.js')
+import '../../scripts/lib/globalEvents.js';
