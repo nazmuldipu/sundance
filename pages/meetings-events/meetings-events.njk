@@ -48,7 +48,7 @@ permalinkBypassOutputDir: true
     <section class="segment-outer pt-12">
         <section class="segment-inner">
             {{ h2(copy = 'Complete your Experience', classes = ['meetings-events__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
-            <article class="segment-inner__vertical-card-container grid lg:grid-cols-3 2xl:grid-cols-3 4xl:grid-cols-3 gap-x-12 sm:px-6 lg:px-6">
+            <article class="segment-inner__vertical-card-container grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 4xl:grid-cols-3 gap-x-12 sm:px-6 md:px-6 lg:px-6">
                 {% for item in pageCMS['vertical-card'].vertical_card_list %}
                     {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
                 {% endfor %}
