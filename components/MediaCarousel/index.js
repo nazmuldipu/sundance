@@ -1,5 +1,4 @@
 "use strict";
-//import { join } from 'path';
 import ProgressiveElement from "../progressive-element.js";
 
 
