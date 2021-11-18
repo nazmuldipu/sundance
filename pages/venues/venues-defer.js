@@ -1,0 +1,1 @@
+console.log('group-venues-defer.js')

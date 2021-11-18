@@ -337,31 +337,31 @@
                         "label": "Facebook icon",
                         "url": "#",
                         "external": true,
-                        "icon": "images/facebook.svg"
+                        "icon": "../images/facebook.svg"
                     },
                     {
                         "label": "Twitter icon",
                         "url": "#",
                         "external": true,
-                        "icon": "images/twitter.svg"
+                        "icon": "../images/twitter.svg"
                     },
                     {
                         "label": "TripAdvisor icon",
                         "url": "#",
                         "external": true,
-                        "icon": "images/tripAdvisor.svg"
+                        "icon": "../images/tripAdvisor.svg"
                     },
                     {
                         "label": "YouTube icon",
                         "url": "#",
                         "external": true,
-                        "icon": "images/youtube.svg"
+                        "icon": "../images/youtube.svg"
                     },
                     {
                         "label": "Instagram icon",
                         "url": "#",
                         "external": true,
-                        "icon": "images/instagram.svg"
+                        "icon": "../images/instagram.svg"
                     }
                 ]
             }
