@@ -2,11 +2,10 @@
 ihh1 %}
 {% from 'atoms/icons.njk' import iconCSS %}
 {% from 'organisms/global-image.njk' import global_image %}
-
 {#
     #   @desc   a basic bridge/carousel molecules
     #   @return HTML anchor tag
-    #   @author Nazmul Alam
+    #   @author Nazmul Alam, Sarjis
 #}
 {% macro bridge( obj = {}, classes = ['bridge__header', 'font-ivar']  )%}
     <section class="bridge {% for class in classes %} {{ class }}__bridge {% endfor %}">
