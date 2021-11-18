@@ -1,5 +1,7 @@
-{% from "atoms/a.njk" import a, dropdown2 %}
-{% from 'atoms/icons.njk' import iconImage, iconCSS %}
+{% from "atoms/a.njk" import a,
+dropdown2 %}
+{% from 'atoms/icons.njk' import iconImage,
+iconCSS %}
 {% from 'atoms/form-fields.njk' import form_input %}
 {% set dropdownItems1 = [
         {
@@ -21,7 +23,7 @@
             "target": "_self"
         }
     ]%}
-    {% set emailInput = {
+{% set emailInput = {
         "type" : "email", 
         "placeholder" : "I’m searching for",
         "classes": ["form-input", "border-0"]
@@ -51,45 +53,37 @@
                         {{ item.title }}
                     </h2>
                 </label>
-                
+
                 <ul class="toggle-details hidden font-ivar header__links">
                     {% for linkItems in item.links %}
-                       <li class="header__link">
+                        <li class="header__link">
                             {{a(classes= ['text--color__sn-6', 'no-underline', 'font-ivar'], copy = linkItems.copy)}}
-                       </li> 
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
         {% endfor %}
     </section>
     <script>
-        window.onBlurMenuToggle =function(id) {
+        window.onBlurMenuToggle = function (id) {
             let el = document.getElementById(id);
-                if(el.checked){
-                    el.checked = false;
-                }
+            if (el.checked) {
+                el.checked = false;
+            }
         }
-        window.toggleMobileMenu =function(id = 'toggle-154') {
+        window.toggleMobileMenu = function (id = 'toggle-154') {
             let el = document.getElementById(id);
-                if(el.checked){
-                    el.checked = false;
-                }
+            if (el.checked) {
+                el.checked = false;
+            }
         }
     </script>
 {% endmacro %}
-{% macro headerIcons() %}
-    <section class="header-icon flex align-items-center">
-        {{ iconImage( src='images/location.svg', alt='Location icon' ) }}
-        {{ iconImage( src='images/playButton.svg', alt='Play Button icon' ) }}
-        {{ iconImage( src='images/temparature.svg', alt='Temparature icon' ) }}
-    </section>
-{% endmacro %}
-{% macro headerCTA(id='dropdown-22') %}
+{% macro headerCTA(item) %}
     <section class="header-button">
-        {{ dropdown2( classes=['dropdown-container--secondary'], labelClasses=['button--secondary2', 'button', 'text-base'], copy='Book Now', labelId=id, items=dropdownItems1 ) }}
+        {{ dropdown2( classes=['dropdown-container--secondary'], labelClasses=['button--secondary2', 'button', 'text-base'], copy=item.title, labelId=item.id, items=item.drop_down ) }}
     </section>
 {% endmacro %}
-
 
 {% macro navMenu(menuItems) %}
     <nav class="header__nav">
@@ -97,19 +91,21 @@
             <div class="header__burger-icon">
                 <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
                 <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
-                    {{ iconCSS( classes=['burger-icon'] ) }}
+                    {{ iconCSS( classes=[ menuItems.toggle_icon] ) }}
                 </label>
                 <div class="toggle-details hidden font-ivar w-screen h-screen align-baseline overflow-y-auto">
-                    {{ headerLeft(menuItems, id = 'toggle-156') }}               
+                    {{ headerLeft(menuItems.sections , id = 'toggle-156') }}
                 </div>
             </div>
-            <div class="header__menu-items--container">{{ headerLeft(menuItems, id = 'toggle-155') }}</div>
+            <div class="header__menu-items--container">{{ headerLeft(menuItems.sections , id = 'toggle-155') }}</div>
             <div class="header__logo">{{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}</div>
             <div class="header__icons__cta--container">
-                {{ headerIcons() }}
-                {{ headerCTA(id='dropdown-22') }}
+                {% for ic_action in menuItems.icon_actions %}
+                    {{ iconImage( src=ic_action.src, alt=ic_action.alt ) }}
+                {% endfor %}
+                {{ headerCTA(menuItems.cta_action) }}
             </div>
-            <div class="header__cta--container">{{ headerCTA(id='dropdown-222') }}</div>
+            <div class="header__cta--container">{{ headerCTA(menuItems.cta_action) }}</div>
         </header>
     </nav>
 {% endmacro %}
