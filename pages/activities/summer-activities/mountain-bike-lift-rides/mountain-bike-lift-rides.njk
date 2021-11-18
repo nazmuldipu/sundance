@@ -22,23 +22,21 @@ nickname: Mountain Bike Lift Rides
 <section class="activities__margin-top"></section>
 
 {# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues.length and pageCMS['top-banner'].global_image %}
+{% set activities_group_venues = pageCMS['group-venues'].group_venues  %}
 <section class="group-section">
     <section class="segment-outer relative">
         <figure class="segment-inner">
-            {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
-                {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
-            {% endif %}
+            {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         </figure>
-    </section>
-    {% if pageCMS['group-venues'] %}
-        {% set activities_group_venues = pageCMS['group-venues'].group_venues  %}
-        {% for event in activities_group_venues %}
-            <div class="group-container activities__group-container">
-                {{groupVenues(event)}}
-            <div>
-        {% endfor %}
-    {% endif %}
+    </section>        
+    {% for event in activities_group_venues %}
+        <div class="group-container activities__group-container">
+            {{groupVenues(event)}}
+        <div>
+    {% endfor %}
 </section>
+{% endif %}
 
 {# Bridge carousal #}
 {% if pageCMS['bridge-slider'] %}
@@ -61,16 +59,16 @@ nickname: Mountain Bike Lift Rides
 {% endif %}
 
 {# Vertical Card Section #}
+{% if  pageCMS['vertical-cards'] %}
+{% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
 <section class="activities__section-outer">
-    <section class="activities__section-inner activities__card">
-        {% if  pageCMS['vertical-cards'] %}
-            {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
-            {% for item in vertical_card_list %}
-                {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
-            {% endfor %}
-        {% endif %}
+    <section class="activities__section-inner activities__card">            
+        {% for item in vertical_card_list %}
+            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+        {% endfor %}
     </section>
 </section>
+{% endif %}
 
 {{newsletter()}}
 
