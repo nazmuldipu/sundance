@@ -20,7 +20,7 @@ nickname: Massages
 <section class="spa__margin-top"></section>
 
 {# Hero Image Section #}
-{% if pageCMS['group-venues'].length and pageCMS['top-banner'].global_image %}
+{% if pageCMS['group-venues'].group_venues.length and pageCMS['top-banner'].global_image %}
 {% set spa_group_venues = pageCMS['group-venues'].group_venues  %}
 <section class="group-section">
     <section class="segment-outer relative">
@@ -42,11 +42,17 @@ nickname: Massages
     {{ bridge(bridge_slider) }}        
 {% endif %}
 
+{# Accordion Title #}
+{% if pageCMS['accordion-title'] %}
+    {% set accordion_title = pageCMS['accordion-title'].simple_article %}
+    {{ h2(copy = accordion_title.title, classes = ['accordion__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
+
 {# Accordion #}
 {% if  pageCMS['accordion'] %}
 {% set accordions = pageCMS['accordion'].accordion %}
 <section class="spa__section-outer">
-    <section class="spa__section-inner">
+    <section class="spa__section-inner accordion__bottom-padding">
         {% for item in accordions %}
             {{ accordion( item = item ) }}
         {% endfor %}             
