@@ -57,6 +57,9 @@
 .details__card {
     padding: 0 1rem;
 }
+.bridge__top-frame {
+    background-color: var(--sundance__primary2);
+}
 @media screen and (min-width: 1024px){
     .dining-details-container {
         display: grid;

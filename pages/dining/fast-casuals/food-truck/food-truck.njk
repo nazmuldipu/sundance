@@ -13,6 +13,7 @@ nickname: dining/fast-casuals/food-truck
 {% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
+{% from 'macros.njk' import gallery %}
 
 {{ navMenu(navMenuLink) }}
 <section class="group-section top-section">
@@ -33,10 +34,10 @@ nickname: dining/fast-casuals/food-truck
     {% endif %}
 </section>
 {% if pageCMS['slider'] %}
-{% set bridge_slider = pageCMS['slider'].bridge_slider %}
+{% set item = pageCMS['slider'].bridge_slider %}
     <section class="segment-outer bg-sn-5 px-4">
         <section class="segment-inner">
-            {{bridge(bridge_slider)}}
+            {{ gallery(item.images) }}
         </section>
     </section>
 {% endif %}
@@ -76,7 +77,7 @@ nickname: dining/fast-casuals/food-truck
 </section>
 {% endif %}
 
-<section class="segment-outer">
+<section class="segment-outer mt-16">
     <section class="segment-inner text-center">
         <article class="details__card bg-sn-5 font-ivar">
             {% if pageCMS['vertical-card-title'] %}
