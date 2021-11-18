@@ -16,9 +16,17 @@
             </section>
             {{ h2( copy=object.title, classes=['group-venues__title','font-ivar'] ) }}
 
-            {% for des in object.descriptions %}
-                <p class="group-venues__description font-ivar">{{des}}</p>
-            {% endfor %}
+            {% if object.rich_descriptions %}                
+                <div class="group-venues__description special-background--secondary4 font-ivar">
+                    {{ object.rich_descriptions | safe }}
+                </div>
+            {% endif %}
+            
+            {% if object.descriptions %}
+                {% for des in object.descriptions %}
+                    <p class="group-venues__description font-ivar">{{des}}</p>
+                {% endfor %}
+            {% endif %}
 
             <section class="group-venues__actions">
                 {% for action in object.actions %}
