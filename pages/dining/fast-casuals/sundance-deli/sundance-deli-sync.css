@@ -60,6 +60,9 @@
 .bridge__top-frame {
     background-color: var(--sundance__primary2);
 }
+.group-venues__description:nth-child(4){
+    color: var(--sundance__primary1);
+}
 @media screen and (min-width: 1024px){
     .dining-details-container {
         display: grid;

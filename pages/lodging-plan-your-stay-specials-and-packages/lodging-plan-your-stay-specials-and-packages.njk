@@ -19,7 +19,7 @@ nickname: "lodging-plan-your-stay-specials-and-packages"
         {% for event in groupVenue %}
             <section class="group-section">
                 <figure>
-                    {{global_image(pageCMS['group-venues-top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
+                    {{global_image(pageCMS['group-venues-top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
                 </figure>
                 <div class="group-container flyfishing__group-container border-0">
                     {{groupVenues(event)}}

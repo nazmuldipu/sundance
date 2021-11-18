@@ -52,11 +52,27 @@
     padding: 0 1rem;
 }
 .details__quote {
+    max-width: 680px;;
     padding: 0 1rem;
-    margin: 1rem 1rem;
+    margin: 1rem auto;
 }
 .details__card {
     padding: 0 1rem;
+}
+.group-venues__container {
+    text-align: left;
+}
+.group-venues__description {
+    padding-left: 0;
+}
+.group-venues__breadcrumbs__link:nth-child(1) {
+    padding-left: 0;
+}
+.dining-details__top-banner--descriptions:nth-child(3){
+    color: var(--sundance__primary1);
+}
+.group-venues__description:nth-child(4){
+    color: var(--sundance__primary1);
 }
 @media screen and (min-width: 1024px){
     .top-section {
@@ -65,6 +81,7 @@
     .dining-details-container {
         display: grid;
         grid-template-columns: 3fr 2fr;
+        grid-column-gap: 2rem;
     }
     .dining-details__top-banner--header {
         font-size: 42px;
