@@ -138,3 +138,16 @@
         margin-top: 4rem;
     }
 }
+
+.carousel-button-next-container{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    left: auto;
+}
+.carousel-button-prev-container{
+    position: absolute;
+    top: 50%;
+    right: auto;
+    left: 10px;
+}
