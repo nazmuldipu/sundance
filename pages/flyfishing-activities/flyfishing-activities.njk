@@ -13,6 +13,7 @@ permalinkBypassOutputDir: true
 {% from 'molecules/group-venues.njk' import groupVenues %}
 {% from "atoms/headings.njk" import h4, ihh1 %}
 {% from 'atoms/icons.njk' import iconCSS %}
+{% from 'molecules/bridge.njk' import bridge %}
 
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
 {% set card_title= pageCMS['card-title'].simple_article %}
@@ -29,7 +30,7 @@ permalinkBypassOutputDir: true
     <section class="group-section">
         <section class="segment-outer">
             <figure class="segment-inner">
-                {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
+                {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
             </figure>
         </section>
         <div class="group-container flyfishing__group-container">
@@ -37,33 +38,12 @@ permalinkBypassOutputDir: true
         </div>
     </section>
 {% endfor %}
-{# Bridge carousal #}
-<section class="bridge flyfishing-activities__bridge">
-    <article class="bridge__top-frame flyfishing-activities__bridge__top-frame">
-        <header>{{ihh1(copy=bridge_slider.title,classes = ['bridge__header', 'font-ivar'])}}</header>
-        {{h4(copy=bridge_slider.sub_title, classes=['bridge__text', 'font-calibre'])}}
-    </article>
-    <article class="bridge__container">
-        <media-carousel>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    {% for image in bridge_slider.images %}
-                        <div class="swiper-slide">
-                            <div class="bridge__box">
-                                {{global_image(image.global_image, classes='w-full image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1')}}
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                <nav class="bridge__nav">
-                    {{ iconCSS( classes=['carousel-button-prev', 'bridge__nav-icon', 'arrow-left', 'rotate-45'] ) }}
-                    {{ iconCSS( classes=['carousel-button-next', 'bridge__nav-icon', 'arrow-right', 'rotate-45'] ) }}
-                </nav>
 
-            </div>
-        </media-carousel>
-    </article>
-</section>
+{# Bridge carousal #}
+{{bridge(obj =  bridge_slider, classes = ['flyfishing-activities'])}}
+
+{# Flyfishing Text Section #}
+
 
 {# Card Title #}
 {{ h2(copy = card_title.title, classes = ['flyfishing-activities__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
