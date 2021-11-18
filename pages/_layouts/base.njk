@@ -64,6 +64,7 @@ pagename: base
     </head>
     <body class="preload page-{{pagename}} bg-sn-5">
         {{content | safe}}
+        {% include "_page-footer.njk" %}
         <script>
             document.body.classList.remove("preload");
         </script>
