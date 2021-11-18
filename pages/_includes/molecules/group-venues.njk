@@ -16,7 +16,7 @@
             </section>
             {{ h2( copy=object.title, classes=['group-venues__title','font-ivar'] ) }}
 
-            {% if object.rich_descriptions %}                
+            {% if not object.rich_descriptions == "<p><br></p>" %}  
                 <div class="group-venues__description special-background--secondary4 font-ivar">
                     {{ object.rich_descriptions | safe }}
                 </div>
