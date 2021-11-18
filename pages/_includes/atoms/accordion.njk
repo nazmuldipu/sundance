@@ -34,7 +34,11 @@
                         <p class="accordion--text__padding"> {{ text | safe }} </p>
                     {% endfor %}
                {% endif %}
+               {% if article.summary %}
+                    <p class="accordion--text__summary"> {{ article.summary | safe }} </p>
+               {% endif %}
             </figcaption>
+            
             {% if item.image %}
                 {{ scaled_image(imgObj = item.image) }}
             {% endif %} 
