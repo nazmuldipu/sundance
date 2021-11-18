@@ -70,9 +70,6 @@
 .dining-details__top-banner--descriptions:nth-child(3){
     color: var(--sundance__primary1);
 }
-.group-venues__description:nth-child(4){
-    color: red !important;
-}
 .group-venues__description:nth-child(4) {
     color: var(--sundance__primary1);
 }
@@ -81,6 +78,9 @@
 }
 .group-venues__nav {
     margin-left: 0;
+}
+.slider-container {
+    margin-top: 2.5rem;
 }
 @media screen and (min-width: 1024px){
     .top-section {
@@ -122,5 +122,8 @@
     }
     .group-venues__container {
         padding-top: 24px;
+    }
+    .slider-container {
+        margin-top: 4rem;
     }
 }
