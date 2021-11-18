@@ -21,6 +21,9 @@
 .bridge__top-frame {
     background-color: var(--sundance__primary5) !important;
 }
+.bridge__nav-icon{
+    background-color: transparent;
+}
 .activities__text-container{
     max-width: 792px;
     margin: auto;

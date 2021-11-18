@@ -26,7 +26,7 @@ nickname: Mountain Bike Lift Rides
     <section class="segment-outer relative">
         <figure class="segment-inner">
             {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
-                {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
+                {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 h-screen w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
             {% endif %}
         </figure>
     </section>
@@ -71,3 +71,7 @@ nickname: Mountain Bike Lift Rides
         {% endif %}
     </section>
 </section>
+
+{{newsletter()}}
+
+{{footer(data.footer)}}
