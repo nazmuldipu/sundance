@@ -16,10 +16,12 @@
             </section>
             {{ h2( copy=object.title, classes=['group-venues__title','font-ivar'] ) }}
 
-            {% if not object.rich_descriptions == "<p><br></p>" %}  
-                <div class="group-venues__description special-background--secondary4 font-ivar">
-                    {{ object.rich_descriptions | safe }}
-                </div>
+            {% if object.rich_description | length > 0 %}
+                {% for item in object.rich_description %}
+                    <div class="group-venues__description special-background--secondary4 font-ivar">
+                        {{ object.rich_descriptions | safe }}
+                    </div>
+                {% endfor %} 
             {% endif %}
             
             {% if object.descriptions %}
