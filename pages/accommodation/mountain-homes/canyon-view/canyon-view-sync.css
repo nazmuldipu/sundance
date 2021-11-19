@@ -82,6 +82,9 @@
 .group-venues__nav {
     margin-left: 0;
 }
+.group-container {
+    margin: 0;
+}
 .slider-container {
     margin-top: 2.5rem;
 }
