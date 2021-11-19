@@ -3,26 +3,6 @@ dropdown2 %}
 {% from 'atoms/icons.njk' import iconImage,
 iconCSS %}
 {% from 'atoms/form-fields.njk' import form_input %}
-{% set dropdownItems1 = [
-        {
-            "logo": "ticket-and-passes",
-            "copy": "Tickets & Passes",
-            "url": "http://example.com/",
-            "target": "_self"
-        },
-        {
-            "logo": "book-your-stay",
-            "copy": "Book Your Stay",
-            "url": "http://example.com/",
-            "target": "_blank"
-        },
-        {
-            "logo": "reserve-a-table",
-            "copy": "Reserve a Table",
-            "url": "http://example.com/",
-            "target": "_self"
-        }
-    ]%}
 {% set emailInput = {
         "type" : "email", 
         "placeholder" : "I’m searching for",
@@ -57,7 +37,7 @@ iconCSS %}
                 <ul class="toggle-details hidden font-ivar header__links">
                     {% for linkItems in item.links %}
                         <li class="header__link">
-                            {{a(classes= ['text--color__sn-6', 'no-underline', 'font-ivar'], copy = linkItems.copy)}}
+                            {{a(classes= ['text--color__sn-6', 'no-underline', 'font-ivar'], copy = linkItems.copy, href=linkItems.href)}}
                         </li>
                     {% endfor %}
                 </ul>
@@ -65,11 +45,14 @@ iconCSS %}
         {% endfor %}
     </section>
     <script>
-        window.onBlurMenuToggle = function (id) {
-            let el = document.getElementById(id);
-            if (el.checked) {
-                el.checked = false;
+        {
+            # window.onBlurMenuToggle = function (id) {
+                let el = document.getElementById(id);
+                if (el.checked) {
+                    el.checked = false;
+                }
             }
+            #
         }
         window.toggleMobileMenu = function (id = 'toggle-154') {
             let el = document.getElementById(id);
@@ -86,8 +69,49 @@ iconCSS %}
 {% endmacro %}
 
 {% macro navMenu(menuItems) %}
-    <nav class="header__nav">
-        <header class="header">
+    <nav class="header__nav fixed-top sm:px-4 md:px-5 lg:px-5 2xl:px-14 4xl:px-22">
+        <div class="header__burger-icon">
+            <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
+            <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
+                {{ iconCSS( classes=[ menuItems.toggle_icon] ) }}
+            </label>
+            <div class="toggle-details hidden font-ivar w-screen h-screen align-baseline overflow-y-auto">
+                {{ headerLeft(menuItems.sections , id = 'toggle-156') }}
+            </div>
+        </div>
+        <div class="header__sections">
+            <ul>
+                {% for sec in menuItems.sections%}
+                    <li>
+                        <a href="#" class="font-ivar">{{sec.title}}</a>
+                        <ul class="dropdown">
+                            {% for item in sec.links %}
+                                <li>
+                                    <a href="{{item.href}}">{{item.copy}}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="header__tab__icon-buttons">
+            {% for ic_action in menuItems.icon_actions %}
+                {{ic_action.icon | safe}}
+            {% endfor %}
+        </div>
+
+        <div class="header__logo">{{menuItems.company_logo | safe}}</div>
+
+        <div class="header__actions">
+            <span class="header_icon-buttons">
+                {% for ic_action in menuItems.icon_actions %}
+                    {{ic_action.icon | safe}}
+                {% endfor %}
+            </span>
+            {{ dropdown2( classes=['dropdown-container--secondary'], labelClasses=['button--secondary2', 'button', 'text-base'], copy=menuItems.cta_action.title, labelId=menuItems.cta_action.id, items=menuItems.cta_action.drop_down ) }}
+        </div>
+        {# <header class="header">
             <div class="header__burger-icon">
                 <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
                 <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
@@ -98,14 +122,14 @@ iconCSS %}
                 </div>
             </div>
             <div class="header__menu-items--container">{{ headerLeft(menuItems.sections , id = 'toggle-155') }}</div>
-            <div class="header__logo">{{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}</div>
+            <div class="header__logo">{{menuItems.company_logo | safe}}</div>
             <div class="header__icons__cta--container">
                 {% for ic_action in menuItems.icon_actions %}
-                    {{ iconImage( src=ic_action.src, alt=ic_action.alt ) }}
+                    {{ic_action.icon | safe}}
                 {% endfor %}
                 {{ headerCTA(menuItems.cta_action) }}
             </div>
             <div class="header__cta--container">{{ headerCTA(menuItems.cta_action) }}</div>
-        </header>
+        </header> #}
     </nav>
 {% endmacro %}

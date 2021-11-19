@@ -1,2 +1,2 @@
 import "components/MediaCarousel/index.js";
-i;
+i;import '../../../../scripts/lib/globalEvents.js';
