@@ -1,1 +1,1 @@
-{"defer_js":"./venues-defer.js","module_js":"./venues-module.js","sync_css":"./venues-sync.css"}
+{"sync_css":"./venues-sync.css","defer_js":"./venues-defer.js","module_js":"./venues-module.js"}
