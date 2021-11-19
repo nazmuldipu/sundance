@@ -41,14 +41,14 @@ nickname: accommodation/mountain-homes/canyon-view
                                         </div>
                                     {% endfor %}
                                 </div>
-                                <div class="carousel-button-next swiper-button-next"></div>
-      <div class="carousel-button-prev swiper-button-prev"></div>
-                                {# <div class="carousel-button-prev-container cursor-pointer">
+                                {# <div class="carousel-button-next"></div>
+                                <div class="carousel-button-prev"></div> #}
+                                <div class="carousel-button-next-container cursor-pointer">
                                     {{ iconCSS( classes=['carousel-button-prev','carousel-icon-css', 'arrow-left', 'mx-1', 'rotate-45'] ) }}
                                 </div>
-                                <div class="carousel-button-next-container cursor-pointer">
+                                <div class="carousel-button-prev-container cursor-pointer">
                                     {{ iconCSS( classes=['carousel-button-next', 'carousel-icon-css', 'arrow-right', 'mx-1', 'rotate-45'] ) }}
-                                </div> #}
+                                </div>
                             </div>
                         </media-carousel>
                     </section>
@@ -85,31 +85,60 @@ nickname: accommodation/mountain-homes/canyon-view
 <section class="segment-outer">
     <section class="segment-inner text-center">
         <article class="dining-details-container bg-sn-5 font-ivar">
-            <section>
+            <section class="accommodation__features mt-12">
                 {% if pageCMS['accommodation-features'].accommodation_features %}
-                    <section class="accommodation__features mt-12">
-                        {{ accommodationFeature(pageCMS['accommodation-features'].accommodation_features) }}
-                    </section>
-                {% endif %}
-                {% if pageCMS['amenities-data'].amenities_list %}
-                    <section class="mt-12">
-                        {{ amenities(pageCMS['amenities-data'].amenities_list) }}
-                    </section>
+                    {% for item in pageCMS['accommodation-features'].accommodation_features %}
+                        <a href="#" target="_self" class="accommodation-feature no-underline" id="features-2">
+                            <div class="icon-css plus-icon rotate-90 justify-self-center bg-sn-5"></div>
+                            {% if item.title %}
+                                <header class = "accommodation-feature__type--style">
+                                    <h6>{{ item.title | safe }}</h6>
+                                </header>
+                            {% endif %}
+
+                            {% if item.sub_title %}
+                                <summary class = "accommodation-feature__text--style">
+                                    {{ item.sub_title | safe }}
+                                </summary>
+                            {% endif %}
+                        </a>
+                    {% endfor %}
                 {% endif %}
             </section>
         </article>
     </section>
 </section>
 <section class="segment-outer">
+    <section class="segment-inner dining-details-container">
+        {% if pageCMS['amenities-data'].amenities_list %}
+            <section class="mt-12">
+                {{ amenities(pageCMS['amenities-data'].amenities_list) }}
+            </section>
+            <div></div>
+        {% endif %}
+        {% if pageCMS['amenities-bottom-title'].simple_article %}
+            <p class="mt-12">{{pageCMS['amenities-bottom-title'].simple_article.title}}</p>
+        {% endif %}
+    </section>
+</section>
+<section class="segment-outer mt-12">
     <section class="segment-inner text-center">
         <article class="details__card bg-sn-5 font-ivar">
-            {# {{ global_header(copy = card_list_title) }}
+            {% if pageCMS['vertical-card-title'] and pageCMS['vertical-card-title'].simple_article.title %}
+                {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
+                {{ global_header(copy = card_list_title) }}
+            {% endif %}
+
+            {% if pageCMS['vertical-card-list'] and pageCMS['vertical-card-list'].vertical_card_list %}
+                {% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
                 <section class="dining-details__card">
                     {% for item in vertical_card_list %}
                         {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
                     {% endfor %}
-                </section> #}
+                </section>
+            {% endif %}
         </article>
+
     </section>
 </section>
 
