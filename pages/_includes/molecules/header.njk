@@ -17,7 +17,7 @@ iconCSS %}
 
             {{ form_input(obj = emailInput, classes = ['menu__input']) }}
         </div>
-        <div class="menu__cross-btn cursor-pointer" onclick="toggleMobileMenu()">
+        <div class="menu__cross-btn cursor-pointer" id="toogle_button_cross" onclick="toggleMobileMenu()">
             <svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="32.5" cy="32" r="32" fill="#262624"/>
                 <line x1="23.6924" y1="40.4853" x2="41.3701" y2="22.8076" stroke="white" stroke-linecap="round"/>
@@ -25,19 +25,19 @@ iconCSS %}
             </svg>
         </div>
         {% for item in menuItems %}
-            <div class="flex header-left__menu cursor-pointer">
-                {% set id = id+ item.title%}
-                <input type="checkbox" id="{{id}}" class="toggle hidden" name="First">
-                <label onblur="onBlurMenuToggle('{{id}}')" tabindex="0" for="{{id}}" class="header--label">
+            <div class="flex header-left__menu justify-center cursor-pointer flex-col">
+                {% set id = id + '-' + item.title%}
+                <input type="checkbox" id="{{id}}" class="toggle_menu hidden" name="First">
+                <label tabindex="0" for="{{id}}" class="header--label">
                     <h2 class="menu__label--header font-ivar">
                         {{ item.title }}
                     </h2>
                 </label>
 
-                <ul class="toggle-details hidden font-ivar header__links">
+                <ul class="hidden font-ivar toggle_sub_menu">
                     {% for linkItems in item.links %}
-                        <li class="header__link">
-                            {{a(classes= ['text--color__sn-6', 'no-underline', 'font-ivar'], copy = linkItems.copy, href=linkItems.href)}}
+                        <li class="toggle_sub_menu__link font-calibre">
+                            {{a(classes= ['text--color__sn-6', 'no-underline', 'font-calibre'], copy = linkItems.copy, href=linkItems.href)}}
                         </li>
                     {% endfor %}
                 </ul>
@@ -46,13 +46,12 @@ iconCSS %}
     </section>
     <script>
         {
-            # window.onBlurMenuToggle = function (id) {
+            window.onBlurMenuToggle = function (id) {
                 let el = document.getElementById(id);
                 if (el.checked) {
                     el.checked = false;
                 }
-            }
-            #
+            }            
         }
         window.toggleMobileMenu = function (id = 'toggle-154') {
             let el = document.getElementById(id);
