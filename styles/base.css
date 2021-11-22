@@ -601,6 +601,12 @@ strong {
 .w-screen {
     width: 100vw;
 }
+.w-5{
+    width: 20px;
+}
+.h-4{
+    width: 16px;
+}
 .\!w-auto {
     width: auto !important;
 }

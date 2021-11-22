@@ -48,7 +48,9 @@ nickname: accommodation/mountain-homes/ponderosa
         {% endif %}
     </section>
 {% endmacro %}
-<section class="segment-outer bg-sn-5 px-4 top-section">
+
+<section class="page-top-adjust"></section>
+<section class="segment-outer bg-sn-5 px-4">
     <section class="segment-inner">
         <section class="dining-details-container">
             <section>
@@ -100,7 +102,7 @@ nickname: accommodation/mountain-homes/ponderosa
             {% set slider_card_list = pageCMS['slider-card-list'].vertical_card_list %}
             <media-carousel>
                 <div class="swiper-container mt-12">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper gap-x-4">
                         {% for item in slider_card_list %}
                             <div class="swiper-slide slider-card--max-width">
                                 {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
