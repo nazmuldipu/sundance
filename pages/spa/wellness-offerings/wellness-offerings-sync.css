@@ -15,6 +15,8 @@
 .group-venues__caption{
     max-width: 608px;
     margin: auto;
+    padding-left: 16px;
+    padding-right: 16px;
     padding-bottom: 48px;
 }
 .bridge{
@@ -30,6 +32,11 @@
     font-weight: 600;
     font-size: 2.625rem;
     padding-bottom: 24px;
+}
+.accordion-wrapper{
+    max-width: 608px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .accordion{
     margin-bottom: .5rem;
@@ -60,6 +67,10 @@
     }
     .bridge{
         padding-bottom: 8px;
+    }
+    .accordion-wrapper{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
     .accordion__header{
         font-size: 1.5rem;
