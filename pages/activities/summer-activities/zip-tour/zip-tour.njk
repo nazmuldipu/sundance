@@ -19,23 +19,21 @@ nickname: zip-tour
 <section class="activities__margin-top"></section>
 
 {# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues.length and pageCMS['top-banner'].global_image %}
+{% set activities_group_venues = pageCMS['group-venues'].group_venues  %}
 <section class="group-section">
     <section class="segment-outer relative">
         <figure class="segment-inner">
-            {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
-                {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
-            {% endif %}
+            {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         </figure>
-    </section>
-    {% if pageCMS['group-venues'] %}
-        {% set activities_group_venues = pageCMS['group-venues'].group_venues  %}
-        {% for event in activities_group_venues %}
-            <div class="group-container activities__group-container">
-                {{groupVenues(event)}}
-            <div>
-        {% endfor %}
-    {% endif %}
+    </section>       
+    {% for event in activities_group_venues %}
+        <div class="group-container activities__group-container">
+            {{groupVenues(event)}}
+        <div>
+    {% endfor %}    
 </section>
+{% endif %}
 
 {# Bridge carousal #}
 {% if pageCMS['bridge-slider'] %}
@@ -57,22 +55,20 @@ nickname: zip-tour
 {% endif %}
 
 {# Action Card #}
+{% if pageCMS['zip-tour-action-card'] and pageCMS['zip-tour-action-card-caption'] %}
+{% set action_card = pageCMS['zip-tour-action-card'].action_card %}
+{% set action_card_caption = pageCMS['zip-tour-action-card-caption'].simple_article %}
 <section class="activities__section-outer">
     <section class="activities__section-inner activities__action-card">
-        {% if pageCMS['zip-tour-action-card'] %}
-            {% set action_card = pageCMS['zip-tour-action-card'].action_card %}
-            {% for item in action_card %}
-                {{ secondBridge(item) }}
-            {% endfor %}
-        {% endif %}
-        {% if pageCMS['zip-tour-action-card-caption'] %}    
-            {% set action_card_caption = pageCMS['zip-tour-action-card-caption'].simple_article %}
-            <div class="activities__action-card__text-wrapper activities__action-card__caption">
-                {{action_card_caption.description | safe}}
-            </div>
-        {% endif %}        
+        {% for item in action_card %}
+            {{ secondBridge(item) }}
+        {% endfor %}
+        <div class="activities__action-card__text-wrapper activities__action-card__caption">
+            {{action_card_caption.description | safe}}
+        </div>      
     </section>
-</section> 
+</section>
+{% endif %}  
 
 {# Card Title #}
 {% if pageCMS['card-title'] %}
