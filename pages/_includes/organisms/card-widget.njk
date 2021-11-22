@@ -1,0 +1,94 @@
+{# 
+    #   @desc   Global: Weather, Lift Status, and Snow Report card
+    #   @param  item   object (data from data json)
+    #   @return HTML Card component
+    #   @author Nazmul Alam
+ #}
+{% macro cardWidget(cardWidgetData = {}, type = 'temp', title = 'Weather') %}
+    <section class="card-widget bg-sn-5">
+        <header class="card-widget__title bg-sp-1">{{title}}</header>
+        <section class="card-widget__body">
+            {% if type === 'temp'%}
+                {{weatherCardWidget(cardWidgetData)}}
+            {% elif type === 'video'%}
+                {{videoCardWidget(cardWidgetData)}}
+            {% elif type === 'location'%}
+                {{locationCardWidget(cardWidgetData)}}
+            {% endif %}
+        </section>
+    </section>
+{% endmacro %}
+
+{% macro weatherCardWidget(weatherInfo)%}
+    <article class="card-widget__weather flex flex-col">
+        <div class="card-widget__weather__temp grid grid-cols-2 text-center border-b-1 border--color__sn_ss-3">
+            <div>
+                <header class="card-widget__weather__title-2 font-calibre font-normal"> Currently </header>
+                <div class="card-widget__weather__title-1 font-calibre font-semibold justify-center ">67&#176;</div>
+                <img class="card-widget__weather__icon" src="https://opensnow.com/img/weather/day/bkn.png" />
+                <div class="font-calibre card-widget__weather__icon__text">5mph</div>
+            </div>
+            <div>
+            <header class="card-widget__weather__title-2 font-calibre font-normal"> Snow </header>
+                <div class="card-widget__weather__title-1 font-calibre font-semibold justify-center ">36”</div>
+                <div class="font-calibre card-widget__weather__snow__text grid grid-flow-col gap-x-4 justify-center">
+                    <div class="flex flex-col"><strong>12”</strong> <span>24 hr</span></div>
+                    <div class="flex flex-col"><strong>24”</strong> <span>48 hr</span></div>
+                    <div class="flex flex-col"><strong>128”</strong> <span>YTD</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-5 gap-x-6 py-10 border-b-1 border--color__sn_ss-3">
+            <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
+                <span class="text-2xl">Mon.</span>
+                <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png" />
+                <span>0”</span>
+                <span>H 67°</span>
+                <span>L 42°</span>
+            </div>
+            <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
+                <span class="text-2xl">Tue.</span>
+                <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png" />
+                <span>0”</span>
+                <span>H 67°</span>
+                <span>L 42°</span>
+            </div>
+            <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
+                <span class="text-2xl">Wed.</span>
+                <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png" />
+                <span>0”</span>
+                <span>H 67°</span>
+                <span>L 42°</span>
+            </div>
+            <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
+                <span class="text-2xl">Thu.</span>
+                <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png" />
+                <span>0”</span>
+                <span>H 67°</span>
+                <span>L 42°</span>
+            </div>
+            <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
+                <span class="text-2xl">Fri.</span>
+                <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png" />
+                <span>0”</span>
+                <span>H 67°</span>
+                <span>L 42°</span>
+            </div>
+        </div>
+        <div class="py-5">
+        abc
+        </div>
+    </article>
+{% endmacro %}
+
+{% macro videoCardWidget(videoInfo)%}
+    <article class="card-widget__video">
+        video
+    </article>
+{% endmacro %}
+
+{% macro locationCardWidget(locationInfo)%}
+    <article class="card-widget__location">
+        location
+    </article>
+{% endmacro %}

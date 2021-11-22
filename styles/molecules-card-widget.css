@@ -1,0 +1,53 @@
+.card-widget__title {
+    cursor: initial;
+    position: relative;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    padding: 20px;
+    color: var(--sundance__neutral5);
+}
+
+.card-widget__title:after {
+    content: "";
+    position: absolute;
+    bottom: -11px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 11px solid var(--sundance__primary1);
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+}
+
+.card-widget__body {
+    cursor: initial;
+    max-width: 341px;
+    margin: 0 auto;
+    padding: 32px 0 100px 0;
+}
+.card-widget__weather__title-1 {
+    font-size: 80px;
+    line-height: 95px;
+}
+.card-widget__weather__title-2 {
+    font-size: 25px;
+    line-height: 30px;
+}
+.card-widget__weather__icon {
+    width: 38px;
+    height: auto;
+}
+.card-widget__weather__icon2{
+    width: 30px;
+    height: auto;
+}
+.card-widget__weather__icon__text {
+    font-size: 15px;
+    line-height: 18px;
+}
+.card-widget__weather__snow__text > strong{
+    height: 38px;
+}
