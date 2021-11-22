@@ -692,4 +692,7 @@
         line-height: 46.2px;
     }
 }
+.slider-card--max-width {
+    max-width: 328px;
+}
 /****  end atoms  ********************************/

@@ -37,9 +37,10 @@
     margin: 0 44px;
 }
 .accommodation__features {
-    display: block;
+    display: flex;
     grid-gap: 1rem;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .accommodation-feature {
     width: 210px;
@@ -47,6 +48,9 @@
     box-sizing: border-box;
     display: block;
     padding: 0;
+}
+.slider-card--max-width {
+    max-width: 328px;
 }
 @media screen and (min-width: 767px){
     .dining-details__card{
