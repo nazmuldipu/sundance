@@ -216,6 +216,9 @@ strong {
 .flex-row-reverse {
     flex-direction: row-reverse;
 }
+.flex-col{
+    flex-direction: column;
+}
 .justify-items-center {
     justify-items: center;
 }
@@ -251,6 +254,13 @@ strong {
 }
 .absolute {
     position: absolute;
+}
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
 }
 .cursor-pointer {
     cursor: pointer;
@@ -403,7 +413,7 @@ strong {
 .text-white {
     color: white;
 }
-.anchor-color{
+.anchor-color {
     color: var(--sundance__primary1);
 }
 
@@ -450,6 +460,9 @@ strong {
 }
 .pb-4 {
     padding-bottom: 2rem !important;
+}
+.pb-6{
+    padding-bottom: 1.5rem;
 }
 .pt-12 {
     padding-top: 3rem;
@@ -597,16 +610,16 @@ strong {
 .h-full {
     height: 100%;
 }
-.special-background--secondary4{
+.special-background--secondary4 {
     font-size: 16px !important;
     padding: 32px 56px !important;
     margin-bottom: 24px;
     background-color: var(--sundance__secondary4);
 }
-@media screen and (min-width: 320px) and (max-width: 767px){
-    .special-background--secondary4{
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .special-background--secondary4 {
         padding: 16px !important;
-    }    
+    }
 }
 /* rotation */
 .rotate-90:after {
@@ -638,27 +651,63 @@ strong {
     .sm\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+    .sm\:px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .sm\:px-5 {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
     .sm\:px-6 {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+    }
+    .sm\:px-14 {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .md\:grid-cols-2 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+    .md\:px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .md\:px-5 {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
     .md\:px-6 {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+    }
+    .md\:px-14 {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
     }
 }
 @media screen and (min-width: 1025px) and (max-width: 1365px) {
     .lg\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+    .lg\:px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .lg\:px-5 {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
     .lg\:px-6 {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+    }
+    .lg\:px-14 {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
     }
 }
 
@@ -666,7 +715,7 @@ strong {
 @media screen and (min-width: 768px) and (max-width: 1365px) {
     .page-top-adjust {
         padding-top: 151px;
-    }    
+    }
 }
 
 /* Desktop (Screen size : 1440 pts) */
@@ -677,9 +726,21 @@ strong {
     .\32 xl\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+    .\32 xl\:px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .\32 xl\:px-5 {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
     .\32 xl\:px-6 {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+    }
+    .\32 xl\:px-14 {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
     }
 }
 
@@ -691,9 +752,25 @@ strong {
     .\34 xl\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+    .\34 xl\:px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .\34 xl\:px-5 {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
     .\34 xl\:px-6 {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+    }
+    .\34 xl\:px-14 {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+    }
+    .\34 xl\:px-22 {
+        padding-left: 5.5rem;
+        padding-right: 5.5rem;
     }
 }
 /****  end base styles  ********************************/

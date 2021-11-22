@@ -1,0 +1,76 @@
+---
+layout: base.njk
+pagename: kids-menu
+permalink: "build/spa/kids-menu/index.html"
+permalinkBypassOutputDir: true
+nickname: kids-menu
+---
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/header.njk' import navMenu %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'atoms/accordion.njk' import accordion %}
+
+{# Navigation Menu  #}
+{{ navMenu(data.navMenuLink) }}
+<section class="page-top-adjust"></section>
+
+{# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues.length and pageCMS['top-banner'].global_image %}
+{% set spa_group_venues = pageCMS['group-venues'].group_venues  %}
+<section class="group-section">
+    <section class="segment-outer relative -z-1">
+        <figure class="segment-inner">
+            {{global_image(pageCMS['top-banner'].global_image, classes='w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
+        </figure>
+    </section> 
+    {% for event in spa_group_venues %}
+        <div class="group-container">
+            {{groupVenues(event)}}
+        <div>
+    {% endfor %}
+</section>
+{% endif %}
+
+{# Accordion Title #}
+{% if pageCMS['accordion-title'] %}
+    {% set accordion_title = pageCMS['accordion-title'].simple_article %}
+    {{ h2(copy = accordion_title.title, classes = ['accordion__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
+
+{# Accordion #}
+{% if  pageCMS['accordion'] %}
+{% set accordions = pageCMS['accordion'].accordion %}
+<section class="section-outer">
+    <section class="accordion-wrapper accordion__bottom-padding">
+        {% for item in accordions %}
+            {{ accordion( item = item ) }}
+        {% endfor %}             
+    </section>
+</section>
+{% endif %}  
+
+{# Card Title #}
+{% if pageCMS['card-title'] %}
+    {% set card_title= pageCMS['card-title'].simple_article %}
+    {{ h2(copy = card_title.title, classes = ['spa__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
+
+{# Vertical Card Section #}
+{% if  pageCMS['vertical-cards'] %}
+{% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
+<section class="section-outer">
+    <section class="section-inner spa__card">
+        {% for item in vertical_card_list %}
+            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+        {% endfor %}
+    </section>
+</section>
+{% endif %}
+
+{{newsletter()}}
+
+{{footer(data.footer)}}

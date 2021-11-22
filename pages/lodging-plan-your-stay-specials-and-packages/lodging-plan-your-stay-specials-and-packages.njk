@@ -7,11 +7,10 @@ nickname: "lodging-plan-your-stay-specials-and-packages"
 ---
 {% from 'molecules/footer.njk' import footer %}
 {% from 'molecules/newsletter.njk' import newsletter %}
-{% from 'molecules/header.njk' import navMenu %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
 ---
-{{ navMenu(data.navMenuLink) }}
+
 {% set groupVenue = pageCMS['group-venues'].group_venues %}
 
 <section class="segment-outer lodging-plan-your-stay-specials-and-packages__top-banner">
@@ -29,4 +28,3 @@ nickname: "lodging-plan-your-stay-specials-and-packages"
     </figure>
 </section>
 {{newsletter()}}
-{{footer(data.footer)}}
