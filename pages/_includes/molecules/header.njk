@@ -3,6 +3,8 @@ dropdown2 %}
 {% from 'atoms/icons.njk' import iconImage,
 iconCSS %}
 {% from 'atoms/form-fields.njk' import form_input %}
+{% from 'organisms/card-widget.njk' import cardWidget %}
+
 {% set emailInput = {
         "type" : "email", 
         "placeholder" : "I’m searching for",
@@ -51,7 +53,7 @@ iconCSS %}
                 if (el.checked) {
                     el.checked = false;
                 }
-            }            
+            }
         }
         window.toggleMobileMenu = function (id = 'toggle-154') {
             let el = document.getElementById(id);
@@ -67,7 +69,7 @@ iconCSS %}
     </section>
 {% endmacro %}
 
-{% macro navMenu(menuItems) %}
+{% macro navMenu(menuItems, cardWidgetData) %}
     <nav class="header__nav fixed-top sm:px-4 md:px-5 lg:px-5 2xl:px-14 4xl:px-22">
         <div class="header__burger-icon">
             <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
@@ -105,30 +107,33 @@ iconCSS %}
         <div class="header__actions">
             <span class="header_icon-buttons">
                 {% for ic_action in menuItems.icon_actions %}
-                    {{ic_action.icon | safe}}
+                    <span>
+                        <input type="radio" id="action_icon-{{ic_action.slug}}" name="action_icon_radio" class="action_icon__btn hidden" name="First">
+                        <label for="action_icon-{{ic_action.slug}}" class="">
+                            {{ic_action.icon | safe}}
+                        </label>
+                        <div id="ic_action_{{ic_action.slug}}_container" class="ic_action_container">
+                            {{cardWidget(cardWidgetData, type = ic_action.slug, title=ic_action.title)}}
+                        </div>
+                    </span>
                 {% endfor %}
+                <script>
+                    let actionBtns = document.querySelectorAll('.action_icon__btn');
+                    let currActionBtn = null;
+
+                    actionBtns.forEach(function (btn) {
+                        btn.addEventListener('click', function (event) {
+                            if (currActionBtn == this.id) {
+                                this.checked = false;
+                                currActionBtn = null;
+                            } else {
+                                currActionBtn = this.id;
+                            }
+                        })
+                    })
+                </script>
             </span>
             {{ dropdown2( classes=['dropdown-container--secondary'], labelClasses=['button--secondary2', 'button', 'text-base'], copy=menuItems.cta_action.title, labelId=menuItems.cta_action.id, items=menuItems.cta_action.drop_down ) }}
         </div>
-        {# <header class="header">
-            <div class="header__burger-icon">
-                <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
-                <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
-                    {{ iconCSS( classes=[ menuItems.toggle_icon] ) }}
-                </label>
-                <div class="toggle-details hidden font-ivar w-screen h-screen align-baseline overflow-y-auto">
-                    {{ headerLeft(menuItems.sections , id = 'toggle-156') }}
-                </div>
-            </div>
-            <div class="header__menu-items--container">{{ headerLeft(menuItems.sections , id = 'toggle-155') }}</div>
-            <div class="header__logo">{{menuItems.company_logo | safe}}</div>
-            <div class="header__icons__cta--container">
-                {% for ic_action in menuItems.icon_actions %}
-                    {{ic_action.icon | safe}}
-                {% endfor %}
-                {{ headerCTA(menuItems.cta_action) }}
-            </div>
-            <div class="header__cta--container">{{ headerCTA(menuItems.cta_action) }}</div>
-        </header> #}
     </nav>
 {% endmacro %}
