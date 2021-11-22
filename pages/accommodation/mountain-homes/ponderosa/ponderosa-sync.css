@@ -47,7 +47,7 @@
     height: 210px;
     box-sizing: border-box;
     display: block;
-    padding: 0;
+    padding: 52px 34px 48px 34px;
 }
 .slider-card--max-width {
     max-width: 328px;
