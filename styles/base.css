@@ -216,6 +216,9 @@ strong {
 .flex-row-reverse {
     flex-direction: row-reverse;
 }
+.flex-col{
+    flex-direction: column;
+}
 .justify-items-center {
     justify-items: center;
 }
