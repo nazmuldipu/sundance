@@ -52,7 +52,7 @@ nickname: facials
 {% if  pageCMS['accordion'] %}
 {% set accordions = pageCMS['accordion'].accordion %}
 <section class="section-outer">
-    <section class="section-inner accordion__bottom-padding">
+    <section class="accordion-wrapper accordion__bottom-padding">
         {% for item in accordions %}
             {{ accordion( item = item ) }}
         {% endfor %}             
