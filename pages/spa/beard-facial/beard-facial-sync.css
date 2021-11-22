@@ -27,17 +27,6 @@
     padding-bottom: 48px;
     text-align: center;
 }
-.accordion__header{
-    font-weight: 600;
-    font-size: 2.625rem;
-    padding-bottom: 24px;
-}
-.accordion{
-    margin-bottom: .5rem;
-}
-.accordion__bottom-padding{
-    padding-bottom: 48px;
-}
 .spa__header{
     font-weight: 600;
     font-size: 2.625rem;
@@ -61,12 +50,6 @@
     }
     .caption__copy{
         font-size: 14px;
-        padding-bottom: 40px;
-    }
-    .accordion__header{
-        font-size: 1.5rem;
-    }
-    .accordion__bottom-padding{
         padding-bottom: 40px;
     }
     .spa__header{
