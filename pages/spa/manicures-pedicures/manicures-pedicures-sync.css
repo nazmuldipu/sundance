@@ -21,6 +21,11 @@
 .bridge__nav-icon{
     background-color: transparent;
 }
+.accordion-wrapper{
+    max-width: 608px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .accordion__header{
     font-weight: 600;
     font-size: 2.625rem;
@@ -52,6 +57,10 @@
     }
     .bridge{
         padding-bottom: 8px;
+    }
+    .accordion-wrapper{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
     .accordion__header{
         font-size: 1.5rem;
