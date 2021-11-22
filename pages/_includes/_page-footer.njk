@@ -1,3 +1,5 @@
 {% from 'molecules/footer.njk' import footer %}
 
-{{ footer(globalCMS['footer'].footer) }}
+{% if globalCMS['footer'].footer %}
+    {{ footer(globalCMS['footer'].footer) }}
+{% endif %}

@@ -6,7 +6,6 @@ permalinkBypassOutputDir: true
 ---
 
 {% from "atoms/headings.njk" import h2 %}
-{% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/card.njk' import verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
@@ -14,7 +13,6 @@ permalinkBypassOutputDir: true
 {% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'molecules/bridge.njk' import bridge %}
 
-{{ navMenu(data.navMenuLink) }}
 <section class="page-top-adjust"></section>
 
 {# Hero Image Section #}

@@ -7,7 +7,6 @@ permalinkBypassOutputDir: true
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
-{% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
@@ -27,9 +26,6 @@ permalinkBypassOutputDir: true
 {% set card_title = pageCMS['card-title'].simple_article %}
 {% set bottom_banners = pageCMS['bottom-banners'].global_image_arr.images %}
 
-
-{# Navigation Menu  #}
-{{ navMenu(navMenuLink) }}
 <section class="general-store__margin-top"></section>
 
 {# Hero Image Section #}

@@ -63,6 +63,7 @@ pagename: base
 <!-- end scripts -->
     </head>
     <body class="preload page-{{pagename}} bg-sn-5">
+        {% include "_page-header.njk" %}
         {{content | safe}}
         {% include "_page-footer.njk" %}
         <script>

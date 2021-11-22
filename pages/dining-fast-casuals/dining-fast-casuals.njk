@@ -10,12 +10,10 @@ nickname: "dining-fast-casuals"
 {% from 'molecules/footer.njk' import footer %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/card.njk' import singleCard, horrizontalCard, horrizontalCard2 %}
-{% from 'molecules/header.njk' import navMenu %}
 {% from "atoms/headings.njk" import h2 %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
 ---
-{{ navMenu(data.navMenuLink) }}
 {% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
 {% set horizontal_card_list = pageCMS['horizontal-card-list'].horizontal_card_list %}
 {% set chefs_card_horizontal_card_list = pageCMS['chefs-card'].horizontal_card_list %}

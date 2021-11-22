@@ -8,15 +8,12 @@ permalinkBypassOutputDir: true
 {% from "atoms/a.njk" import a,
 Link %}
 {% from "atoms/headings.njk" import h2 %}
-{% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'hero-carousel.njk' import heroCarousel %}
 {% from 'macros.njk' import events %}
 {% from 'organisms/thumbnail_slider.njk' import thumbnail_slider %}
-
-{{ navMenu(globalCMS['top-navbar'].navbar) }}
 
 <section class="page-top-adjust"></section>
 
