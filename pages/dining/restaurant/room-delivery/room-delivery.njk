@@ -7,13 +7,11 @@ nickname: dining/restaurant/room-delivery
 ---
 {% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'molecules/newsletter.njk' import newsletter %}
-{% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
 
 {% set groupData = pageCMS['top-group-venues'].group_venues %}
 
-{{ navMenu(navMenuLink) }}
 <section class="group-section top-section">
     <section class="segment-outer relative">
         <figure class="segment-inner">

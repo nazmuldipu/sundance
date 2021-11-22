@@ -10,7 +10,6 @@ nickname: "Art Studio"
 {% from "atoms/a.njk" import a, button_primary, button_secondary, view_details, dropdown %}
 {% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
-{% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'molecules/art-studio.njk' import artStudio %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
@@ -19,7 +18,7 @@ nickname: "Art Studio"
 {% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
 {# {% set card_title= pageCMS['card-title'].simple_article %} #}
-{{ navMenu(navMenuLink) }}
+
 <section class="art-studio__margin-top"></section>
 <section class="relative">
     {{global_image(pageCMS['top-banner'].global_image, classes='w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
@@ -43,4 +42,3 @@ nickname: "Art Studio"
 
 {{newsletter()}}
 
-{{footer(data.footer)}}

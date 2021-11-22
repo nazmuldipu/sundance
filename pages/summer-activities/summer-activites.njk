@@ -7,7 +7,6 @@ permalinkBypassOutputDir: true
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
-{% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
@@ -16,8 +15,6 @@ permalinkBypassOutputDir: true
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
 {% set card_title= pageCMS['card-title'].simple_article %}
 
-{# Navigation Menu  #}
-{{ navMenu(navMenuLink) }}
 <section class="summer-activites__margin-top"></section>
 {# Hero Image Section #}
 <section class="relative">
@@ -43,5 +40,3 @@ permalinkBypassOutputDir: true
 </section>
 
 {{newsletter()}}
-
-{{footer(data.footer)}}
