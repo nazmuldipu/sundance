@@ -12,6 +12,11 @@
 .group-container{
     border: none;
 }
+.accordion-wrapper{
+    max-width: 608px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .accordion__header{
     font-weight: 600;
     font-size: 2.625rem;
@@ -38,6 +43,10 @@
 
 @media screen and (min-width: 320px) and (max-width: 767px){
     .section-inner{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .accordion-wrapper{
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
