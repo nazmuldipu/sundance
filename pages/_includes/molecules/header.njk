@@ -112,7 +112,7 @@ iconCSS %}
                         <label for="action_icon-{{ic_action.slug}}" class="">
                             {{ic_action.icon | safe}}
                         </label>
-                        <div id="ic_action_{{ic_action.slug}}_container" class="ic_action_container">
+                        <div id="ic_action_{{ic_action.slug}}_container" class="ic_action_container {{ic_action.slug}}">
                             {{cardWidget(cardWidgetData, type = ic_action.slug, title=ic_action.title)}}
                         </div>
                     </span>
