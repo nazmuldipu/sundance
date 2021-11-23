@@ -1,0 +1,121 @@
+---
+layout: base.njk
+pagename: s-card
+permalink: "build/s-card/index.html"
+permalinkBypassOutputDir: true
+nickname: s-card
+---
+{% from "atoms/a.njk" import a,
+Link %}
+{% from "atoms/headings.njk" import h1, h2 %}
+{% from "atoms/a.njk" import a, button_primary, button_secondary%}
+
+<section class="hero-block segment-outer">
+    <div class="hero-block__inner">
+        <article class="hero-content">
+            <header>
+               <h1 class="hero-heading font-calibre text--color__sn-6">Introducing the S-Card</h1>
+            </header>
+            <div class="hero-content__text font-calibre">
+                The only way to get discounted rates on ski/snowboard lift tickets at Sundance, without buying a season pass.
+            </div>
+            <div class="hero-content__buttons">
+                {{ button_primary( href='http://example.com', classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy='Buy Now', id='myButton-1', target='_blank' ) }}
+                {{ button_secondary( href='http://example.com', classes = ['button', 'button--secondary', 'font-calibre', 'text-base'],  copy='FAQ', id='myButton-1', target='_blank' ) }}
+            </div>
+        </article>
+    </div>
+</section>
+
+
+<section class="intro-block segment-outer">    
+        <div class="intro-images">
+            <figure class="intro-images__imageBlock">
+                <img src="/images/buy-once-images.svg">
+            </figure>
+        </div> 
+        <article class="intro-text">
+            <header class="intro-text__header">
+                <h2 class="intro-heading font-calibre text--color__sn-6">
+                    Buy once. Reload anytime.
+                </h2>
+            </header>
+            <div class="intro-text__body">
+                The great thing about the S-Card is that you only have to buy it once. Subsequent visits are auto-charged at the discounted rate.
+            </div>    
+            <div class="intro-text__buttons">
+                {{ button_primary( href='http://example.com', classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy='Buy Now', id='myButton-1', target='_blank' ) }}
+                <a class="link link--plain font-calibre" href="#" class="btn btn--primary">View Pricing</a>   
+            </div>
+        </article>
+</section>
+
+
+
+<section class="lift-block segment-outer">
+    <article class="lift-block__textBlock">
+        <header class="lift-block__textBlock--header">
+            <h2 class="intro-heading font-calibre text--color__sn-6">
+               Direct to lift.
+            </h2>            
+        </header>
+        <div class="lift-block__textBlock--body intro-text__body">
+            With integrated RFID technology, you can skip the ticketing line and go straight to the lift.
+        </div>  
+        <div class="lift-block__textBlock--buttons">
+            {{ button_primary( href='http://example.com', classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy='Buy Now', id='myButton-1', target='_blank' ) }}
+            <a class="link link--plain font-calibre" href="#" class="btn btn--primary">View Pricing</a>   
+        </div>
+    </article>  
+    <div class="lift-block__imageBlock">
+        <figure>
+            <img src="/images/direct-to-lift.svg">
+        </figure>
+    </div>
+</section>
+
+<section class="icons-block segment-outer">
+    <div class="icons-block__icons">
+       <ul>
+              <li class="icon icon-wifi">
+                <span>
+                    <img src="/images/wifi.svg">
+                    <p class="font-calibre">RFID chip means you can leave your pass in your pocket</p>
+                </span>
+              </li>
+              <li class="icon icon-phone">
+                <span>
+                    <img src="/images/phone.svg">
+                    <p class="font-calibre">Buy online and skip the ticketing line</p>
+                </span>
+              </li>
+              <li class="icon icon-reload">
+                    <img src="/images/reload.svg">
+                    <p class="font-calibre">One time fee, reloads automatically</p>
+              </li>
+       </ul>
+    </div> 
+</section>
+
+<section class="flex-block segment-outer">
+    <div class="lift-block__imageBlock">
+        <figure>
+            <img src="/images/flexibility-image.svg">
+        </figure>
+    </div>
+    <article class="lift-block__textBlock">
+        <header class="lift-block__textBlock--header">
+            <h2 class="intro-heading font-calibre text--color__sn-6">
+              Flexibility + value.
+            </h2>            
+        </header>
+        <div class="lift-block__textBlock--body intro-text__body">
+            Not sure how many times you'll visit this season? Buy an S-Card and you're guaranteed discounted days without buying a Season Pass.
+        </div>  
+        <div class="lift-block__textBlock--buttons">
+            {{ button_primary( href='http://example.com', classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy='Buy Now', id='myButton-1', target='_blank' ) }}
+            <a class="link link--plain font-calibre" href="#" class="btn btn--primary">View Pricing</a>   
+        </div>
+    </article>  
+</section>
+
