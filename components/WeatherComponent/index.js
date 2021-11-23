@@ -1,3 +1,5 @@
+import {fetchApi} from './fetchApi'
+
 class WeatherComponent extends HTMLElement{
     constructor(){
         super()
@@ -10,23 +12,38 @@ class WeatherComponent extends HTMLElement{
 
     async render(){
 
-        let git = await fetch('https://api.github.com/users/mostafa6765');
-        let gitUser = await git.json();
+        let snr = await fetchApi('https://hotel-site-dev.skipperhospitality.com/sundance/snow-report');
+        let snrJson = await snr.json();
+        let snowReport = snrJson[0]
+        console.log(snowReport)
 
-        let git2 = await fetch('https://api.github.com/users/mostafa6765');
-        let gitUser2 = await git2.json();
-        console.log(gitUser2)
+        let lfr = await fetchApi('https://hotel-site-dev.skipperhospitality.com/sundance/lift-report');
+        let lfrJson = await lfr.json();
+        let liftReport = lfrJson[0]
+        // open , close, limited
+        let roadsParking = {
+            'sr-92': liftReport.road_92_condition,
+            'highway-189': liftReport.road_189_condition,
+            'parking': liftReport.parking_condition
+        }
+
+        let liftStatus = {
+            'rays': liftReport.lift_ray_condition,
+            'stairways': liftReport.lift_stairway_condition,
+            'reds': liftReport.lift_red_condition
+        }
+
+        console.log(liftReport)
 
         this.shadow.innerHTML = `
         <link rel="stylesheet" type="text/css" href="index/index-sync.css">
-        <h1>${gitUser.login} ${gitUser2.login}</h1>
         <article class="card-widget__weather flex flex-col">
         <div class="card-widget__weather__temp grid grid-cols-2 text-center border-b-1 border--color__sn_ss-3">
             <div>
                 <header class="card-widget__weather__title-2 font-calibre font-normal"> Currently </header>
-                <div class="card-widget__weather__title-1 font-calibre font-semibold justify-center ">67&#176;</div>
+                <div class="card-widget__weather__title-1 font-calibre font-semibold justify-center ">${snowReport?.current?.temp ?? ''}</div>
                 <img class="card-widget__weather__icon" src="https://opensnow.com/img/weather/day/bkn.png"/>
-                <div class="font-calibre card-widget__weather__icon__text">5mph</div>
+                <div class="font-calibre card-widget__weather__icon__text">${snowReport?.current?.wind?.speed ?? ''}</div>
             </div>
             <div>
                 <header class="card-widget__weather__title-2 font-calibre font-normal"> Snow </header>
@@ -86,26 +103,26 @@ class WeatherComponent extends HTMLElement{
                 <summary class="card-widget__weather-summary">Roads + Parking</summary>
                 <div class="toggle__content font-calibre">
                     <div class="toggle__content__line">
-                        <span class="toggle__content__icon bg-sp-1">✓</span> SR-92: <span class="text--color__sp-1"> Open </span>
+                        <span class="toggle__content__icon bg-sp-1">✓</span> SR-92: <span class="text--color__sp-1"> ${roadsParking['sr-92']} </span>
                     </div>
                     <div class="toggle__content__line">
-                        <span class="toggle__content__icon bg-ssm-1">⨯</span> Highway 189: <span class="text--color__ssm-1"> Closed </span>
+                        <span class="toggle__content__icon bg-ssm-1">⨯</span> Highway 189: <span class="text--color__ssm-1"> ${roadsParking['highway-189']} </span>
                     </div>
                     <div class="toggle__content__line">
-                        <span class="toggle__content__icon bg-sp-3">!</span> Parking: <span class="text--color__sp-3"> Limited </span></div>
+                        <span class="toggle__content__icon bg-sp-3">!</span> Parking: <span class="text--color__sp-3"> ${roadsParking['parking']} </span></div>
                 </div>
             </details>
             <details class="border-b-1 border--color__sn_ss-3">
                 <summary class="card-widget__weather-summary font-calibre">Lift Status</summary>
                 <div class="toggle__content font-calibre">
                     <div class="toggle__content__line">
-                        <span class="toggle__content__icon bg-sp-1">✓</span> Rays: <span class="text--color__sp-1"> Open </span>
+                        <span class="toggle__content__icon bg-sp-1">✓</span> Rays: <span class="text--color__sp-1"> ${liftStatus.rays} </span>
                     </div>
                     <div class="toggle__content__line">
-                        <span class="toggle__content__icon bg-ssm-1">⨯</span> Stairway: <span class="text--color__ssm-1"> Closed </span>
+                        <span class="toggle__content__icon bg-ssm-1">⨯</span> Stairway: <span class="text--color__ssm-1"> ${liftStatus.stairways} </span>
                     </div>
                     <div class="toggle__content__line">
-                        <span class="toggle__content__icon bg-sp-3">!</span> Reds: <span class="text--color__sp-3"> Delayed </span></div>
+                        <span class="toggle__content__icon bg-sp-3">!</span> Reds: <span class="text--color__sp-3"> ${liftStatus.reds} </span></div>
                 </div>
             </details>
             <details>
