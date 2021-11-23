@@ -433,6 +433,9 @@ strong {
 .text--color__ssm-1 {
     color: var(--sundance__semantic1) !important;
 }
+.text--color__sn-1 {
+    color: var(--sundance__neutral1) !important;
+}
 .text-white {
     color: white;
 }
@@ -705,6 +708,9 @@ strong {
 }
 /* Mobile (Screen size : 375 pts) */
 @media screen and (min-width: 320px) and (max-width: 767px) {
+    .sm\:block {
+        display: block;
+    }
     .sm\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
