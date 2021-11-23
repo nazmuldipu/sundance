@@ -1,1 +1,1 @@
-console.log('redford-conference-defer.js')
+import "components/MediaCarousel/index.js";
