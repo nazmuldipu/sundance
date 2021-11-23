@@ -16,10 +16,63 @@
             </section>
             {{ h2( copy=object.title, classes=['group-venues__title','font-ivar'] ) }}
 
+            {# TODO, *object.rich_description* it needs to re-think here for proper naming with Meherab, by Sarjis 11th Nov 2021 #}
             {% if object.rich_description | length > 0 %}
                 {% for item in object.rich_description %}
                     <div class="group-venues__description special-background--secondary4 font-ivar">
-                        {{ object.rich_descriptions | safe }}
+                        {{ item.text | safe }}
+                    </div>
+                {% endfor %} 
+            {% endif %}
+            
+            {% if object.descriptions %}
+                {% for des in object.descriptions %}
+                    <p class="group-venues__description font-ivar">{{des}}</p>
+                {% endfor %}
+            {% endif %}
+
+            <section class="group-venues__actions">
+                {% for action in object.actions %}
+                    {%if action.category == 'dropdown' %}
+                        {{ dropdown( classes=['dropdown-container--' + action.type, 'group-venues__dropdown'], labelClasses= [ 'button', 'button--' + action.type, 'group-venues__dropdown-btn', 'font-calibre', 'text-base'], labelId=action.id, copy=action.copy, items=action.items ) }}
+                    {% elif action.category == 'link' %}
+                        {{ Link( href=action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}
+                    {% elif action.category == 'tel' %}
+                        {{ Link( href="tel:"+action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}    
+                    {% endif %}
+                {% endfor %}
+            </section>
+
+            {% for nav in object.navs %}
+                <div class="group-venues__nav">
+                    <label class="font-ivar">{{nav.label}}</label>
+                    {{ a( copy=nav.copy, href=nav.url, target=nav.target) }}
+                </div>
+            {% endfor %}
+
+        </article>
+    </section>
+{% endmacro %}
+
+{#
+    #   @desc   group venues form
+    #   @author Sarjis
+#}
+{% macro groupVenues3(object)%}
+    <section class="group-venues">
+        <article class="group-venues__container">
+            <section class="group-venues__breadcrumbs font-calibre">
+                {% for breadcrumb in object.breadcrumbs %}
+                    <a class="group-venues__breadcrumbs__link {{ 'breadcrumbs-last' if loop.last}}" href="{{breadcrumb.url}}">{{breadcrumb.copy}}
+                    </a>
+                {% endfor %}
+            </section>
+            {{ h2( copy=object.title, classes=['group-venues__title','font-ivar'] ) }}
+
+            {% if object.rich_description | length > 0 %}
+                {% for item in object.rich_description %}
+                    <div class="group-venues__description font-ivar">
+                        {{ item.text | safe }}
                     </div>
                 {% endfor %} 
             {% endif %}

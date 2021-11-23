@@ -1,3 +1,20 @@
 /****  start imports  ********************************/
 @import "../../../styles/global.css";
 /****  end imports  ********************************/
+.gallery-image__column {
+    column-count: 2;
+    column-gap: 0.7rem;
+    max-width: 792px;
+    margin: 0 auto;
+}
+.gallery--wrapper {
+    padding-bottom: 40px;
+}
+@media only screen and (min-width: 1024px) {
+    .gallery-image__column {
+        column-count: 3;
+    }
+    .gallery--wrapper {
+        padding-bottom: 72px;
+    }
+}

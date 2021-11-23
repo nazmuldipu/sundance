@@ -8,12 +8,12 @@ nickname: "specials-packages/mid-week-lodging-sale"
 {% from 'molecules/footer.njk' import footer %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'organisms/global-image.njk' import global_image %}
-{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/group-venues.njk' import groupVenues3 %}
 ---
 
 {% set groupVenue = pageCMS['group-venues'].group_venues %}
-
-<section class="group-section top-section">
+<section class="page-top-adjust"></section>
+<section class="group-section">
     <section class="segment-outer relative">
         <figure class="segment-inner">
         {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
@@ -25,7 +25,7 @@ nickname: "specials-packages/mid-week-lodging-sale"
         {% set groupData = pageCMS['top-group-venues'].group_venues %}
         {% for event in groupData %}
             <section class="group-container">
-                {{ groupVenues(event) }}
+                {{ groupVenues3(event) }}
             </section>
         {% endfor %}
     {% endif %}
