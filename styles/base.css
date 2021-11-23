@@ -413,15 +413,25 @@ strong {
     font-size: 1.5rem;
     line-height: 2rem;
 }
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
 /* text color*/
 .text--color__sn-6 {
     color: #000;
 }
-.text--color__sp-2 {
-    color: #617c6a !important;
-}
 .text--color__sp-1 {
-    color: #458691 !important;
+    color: var(--sundance__primary1) !important;
+}
+.text--color__sp-2 {
+    color: var(--sundance__primary2) !important;
+}
+.text--color__sp-3 {
+    color: var(--sundance__primary3) !important;
+}
+.text--color__ssm-1 {
+    color: var(--sundance__semantic1) !important;
 }
 .text-white {
     color: white;
@@ -455,6 +465,10 @@ strong {
 .text--color__sp-1 {
     color: #458691 !important;
 }
+.text--color__ss-3 {
+    color: var(--sundance__secondary3) !important;
+}
+
 .text-white {
     color: white;
 }
@@ -489,11 +503,11 @@ strong {
 .pb-10 {
     padding-bottom: 40px;
 }
-.py-5{
+.py-5 {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.py-10{
+.py-10 {
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -562,6 +576,9 @@ strong {
 .bg-sp-2 {
     background-color: var(--sundance__primary2) !important;
 }
+.bg-sp-3 {
+    background-color: var(--sundance__primary3) !important;
+}
 .bg-sn-4 {
     background-color: var(--sundance__neutral4) !important;
 }
@@ -576,6 +593,9 @@ strong {
 }
 .bg-ss-4 {
     background-color: var(--sundance__secondary4) !important;
+}
+.bg-ssm-1 {
+    background-color: var(--sundance__semantic1) !important;
 }
 /* borders */
 .border--color__sp-2 {

@@ -118,6 +118,8 @@
     position: absolute;
     width: 529px;
     right: 22px;
+    max-height: 850px;
+    overflow-y: auto;
     text-align: center;
 }
 /* Mobile (Screen size : 375 pts) */
