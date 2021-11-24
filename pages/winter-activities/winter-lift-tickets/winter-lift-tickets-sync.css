@@ -62,10 +62,30 @@
         padding-left: 1rem;
         padding-right: 1rem;
     }
+    .group-venues__actions{
+        display: grid;
+        grid-auto-flow: row;
+        justify-content: center;
+        align-items: center;
+    }
 }
 @media screen and (min-width: 1081px) and (max-width: 1365px){
     .section-inner{
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+    .group-venues__actions{
+        display: grid;
+        grid-auto-flow: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (min-width: 1366px){
+    .group-venues__actions{
+        display: grid;
+        grid-auto-flow: row;
+        justify-content: center;
+        align-items: center;
     }
 }
