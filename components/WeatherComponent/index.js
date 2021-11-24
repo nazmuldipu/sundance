@@ -53,17 +53,63 @@ class WeatherComponent extends HTMLElement{
         let lfrJson = await lfr.json();
         let liftReport = lfrJson[0]
         // open , close, limited
-        let roadsParking = {
-            'sr-92': liftReport.road_92_condition,
-            'highway-189': liftReport.road_189_condition,
-            'parking': liftReport.parking_condition
-        }
+        let roadsParking = [
+            {name: 'SR-92', status: liftReport.road_92_condition},
+            {name: 'Highway 189', status: liftReport.road_189_condition},
+            {name: 'Parking', status: liftReport.parking_condition}
+        ]
+        let roadsParkingReport = ``
+        roadsParking.forEach(rp => {
+            if (rp.status === 'open') {
+                roadsParkingReport += `
+                <div class="toggle__content__line">
+                    <span class="toggle__content__icon bg-sp-1">✓</span> ${rp.name}: <span class="text--color__sp-1"> ${rp.status} </span>
+                </div>
+                `
+            } else if (rp.status === 'closed') {
+                roadsParkingReport += `
+                <div class="toggle__content__line">
+                    <span class="toggle__content__icon bg-ssm-1">⨯</span> ${rp.name}: <span class="text--color__ssm-1"> ${rp.status} </span>
+                </div>
+                `
+            } else {
+                roadsParkingReport += `
+                <div class="toggle__content__line">
+                    <span class="toggle__content__icon bg-sp-3">!</span> ${rp.name}: <span class="text--color__sp-3"> ${rp.status} </span></div>
+                </div>
+                `
+            }
+        });
 
-        let liftStatus = {
-            'rays': liftReport.lift_ray_condition,
-            'stairways': liftReport.lift_stairway_condition,
-            'reds': liftReport.lift_red_condition
-        }
+
+        let theLiftStatus = [
+            {name: 'Rays', status: liftReport.lift_ray_condition},
+            {name: 'Stairway', status: liftReport.lift_stairway_condition},
+            {name: 'Reds', status: liftReport.lift_red_condition}
+        ]
+
+        let theLiftStatusReport = ``
+        theLiftStatus.forEach(rp => {
+            if (rp.status === 'open') {
+                theLiftStatusReport += `
+                <div class="toggle__content__line">
+                    <span class="toggle__content__icon bg-sp-1">✓</span> ${rp.name}: <span class="text--color__sp-1"> ${rp.status} </span>
+                </div>
+                `
+            } else if (rp.status === 'closed') {
+                theLiftStatusReport += `
+                <div class="toggle__content__line">
+                    <span class="toggle__content__icon bg-ssm-1">⨯</span> ${rp.name}: <span class="text--color__ssm-1"> ${rp.status} </span>
+                </div>
+                `
+            } else {
+                theLiftStatusReport += `
+                <div class="toggle__content__line">
+                    <span class="toggle__content__icon bg-sp-3">!</span> ${rp.name}: <span class="text--color__sp-3"> ${rp.status} </span></div>
+                </div>
+                `
+            }
+        });
 
         console.log(liftReport)
 
@@ -100,27 +146,13 @@ class WeatherComponent extends HTMLElement{
             <details class="border-b-1 border--color__sn_ss-3 font-calibre">
                 <summary class="card-widget__weather-summary">Roads + Parking</summary>
                 <div class="toggle__content font-calibre">
-                    <div class="toggle__content__line">
-                        <span class="toggle__content__icon bg-sp-1">✓</span> SR-92: <span class="text--color__sp-1"> ${roadsParking['sr-92']} </span>
-                    </div>
-                    <div class="toggle__content__line">
-                        <span class="toggle__content__icon bg-ssm-1">⨯</span> Highway 189: <span class="text--color__ssm-1"> ${roadsParking['highway-189']} </span>
-                    </div>
-                    <div class="toggle__content__line">
-                        <span class="toggle__content__icon bg-sp-3">!</span> Parking: <span class="text--color__sp-3"> ${roadsParking['parking']} </span></div>
+                    ${roadsParkingReport}
                 </div>
             </details>
             <details class="border-b-1 border--color__sn_ss-3">
                 <summary class="card-widget__weather-summary font-calibre">Lift Status</summary>
                 <div class="toggle__content font-calibre">
-                    <div class="toggle__content__line">
-                        <span class="toggle__content__icon bg-sp-1">✓</span> Rays: <span class="text--color__sp-1"> ${liftStatus.rays} </span>
-                    </div>
-                    <div class="toggle__content__line">
-                        <span class="toggle__content__icon bg-ssm-1">⨯</span> Stairway: <span class="text--color__ssm-1"> ${liftStatus.stairways} </span>
-                    </div>
-                    <div class="toggle__content__line">
-                        <span class="toggle__content__icon bg-sp-3">!</span> Reds: <span class="text--color__sp-3"> ${liftStatus.reds} </span></div>
+                    ${theLiftStatusReport}
                 </div>
             </details>
             <details>
