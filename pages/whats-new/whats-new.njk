@@ -30,7 +30,8 @@ Link %}
 </section>
 
 
-<section class="intro-block segment-outer">    
+<section class="segment-outer">    
+    <section class="intro-block segment-inner">
         <div class="intro-images">
         </div> 
         <article class="intro-text">
@@ -47,30 +48,34 @@ Link %}
                 <a class="link link--plain font-calibre" href="#" class="btn btn--primary">View Pricing</a>   
             </div>
         </article>
+    </section>
+
 </section>
 
 
 
-<section class="lift-block segment-outer">
-    <article class="lift-block__textBlock">
-        <header class="lift-block__textBlock--header">
-            <h2 class="intro-heading font-calibre text--color__sn-6">
-              Slopes + savings: Say hello to the S-Card.
-            </h2>            
-        </header>
-        <div class="lift-block__textBlock--body intro-text__body">
-            The S-Card is an RFID enabled pass that reloads (at a discount) automatically when you hit the slopes at Sundance. Skip the ticketing lines.
-        </div>  
-        <div class="lift-block__textBlock--buttons">
-            {{ button_primary( href='http://example.com', classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy='Buy Now', id='myButton-1', target='_blank' ) }}
-            <a class="link link--plain font-calibre" href="#" class="btn btn--primary">View Pricing</a>   
+<section class="segment-outer">
+    <section class="lift-block segment-inner">
+        <article class="lift-block__textBlock">
+            <header class="lift-block__textBlock--header">
+                <h2 class="intro-heading font-calibre text--color__sn-6">
+                Slopes + savings: Say hello to the S-Card.
+                </h2>            
+            </header>
+            <div class="lift-block__textBlock--body intro-text__body">
+                The S-Card is an RFID enabled pass that reloads (at a discount) automatically when you hit the slopes at Sundance. Skip the ticketing lines.
+            </div>  
+            <div class="lift-block__textBlock--buttons">
+                {{ button_primary( href='http://example.com', classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy='Buy Now', id='myButton-1', target='_blank' ) }}
+                <a class="link link--plain font-calibre" href="#" class="btn btn--primary">View Pricing</a>   
+            </div>
+        </article>  
+        <div class="lift-block__imageBlock">
+            <figure>
+                <img src="/images/single-person-ski.svg">
+            </figure>
         </div>
-    </article>  
-    <div class="lift-block__imageBlock">
-        <figure>
-            <img src="/images/single-person-ski.svg">
-        </figure>
-    </div>
+    </section>
 </section>
 
 <section class="lift-block segment-outer">
@@ -96,46 +101,50 @@ Link %}
 </section>
 
 <section class="icons-block segment-outer">
-    <div class="icons-block__icons">
-       <ul>
-              <li class="icon icon-wifi">
-                <span>
-                    <img src="/images/timer.svg">
-                    <p class="font-calibre">A new high-speed lift will help you hit the slopes quicker</p>
-                </span>
-              </li>
-              <li class="icon icon-phone">
-                <span>
-                    <img src="/images/snow.svg">
-                    <p class="font-calibre">Improved snowmaking helps you get more out of your passes</p>
-                </span>
-              </li>
-              <li class="icon icon-reload">
-                    <img src="/images/mountain.svg">
-                    <p class="font-calibre">With new ski runs, now there’s even more to explore</p>
-              </li>
-       </ul>
-    </div> 
+    <section class="segment-inner">
+        <div class="icons-block__icons">
+            <ul>
+                    <li class="icon icon-wifi">
+                        <span>
+                            <img src="/images/timer.svg">
+                            <p class="font-calibre">A new high-speed lift will help you hit the slopes quicker</p>
+                        </span>
+                    </li>
+                    <li class="icon icon-phone">
+                        <span>
+                            <img src="/images/snow.svg">
+                            <p class="font-calibre">Improved snowmaking helps you get more out of your passes</p>
+                        </span>
+                    </li>
+                    <li class="icon icon-reload">
+                            <img src="/images/mountain.svg">
+                            <p class="font-calibre">With new ski runs, now there’s even more to explore</p>
+                    </li>
+            </ul>
+        </div> 
+    </section>
 </section>
 
 <section class="flex-block segment-outer">
-    <div class="lift-block__imageBlock">
-        <figure>
-            <img src="/images/lookout.svg">
-        </figure>
-    </div>
-    <article class="lift-block__textBlock">
-        <header class="lift-block__textBlock--header">
-            <h2 class="intro-heading font-calibre text--color__sn-6">
-              New eats: The Lookout
-            </h2>            
-        </header>
-        <div class="lift-block__textBlock--body intro-text__body">
-           New menu. Completely remodeled space. Incredible views of Mount Timpanogos.
-        </div>  
-        <div class="lift-block__textBlock--buttons">
-            {{ button_primary( href='http://example.com', classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy='Buy Now', id='myButton-1', target='_blank' ) }}
-            <a class="link link--plain font-calibre" href="#" class="btn btn--primary">View Pricing</a>   
+    <section class="segment-inner">
+        <div class="lift-block__imageBlock">
+            <figure>
+                <img src="/images/lookout.svg">
+            </figure>
         </div>
-    </article>  
+        <article class="lift-block__textBlock">
+            <header class="lift-block__textBlock--header">
+                <h2 class="intro-heading font-calibre text--color__sn-6">
+                New eats: The Lookout
+                </h2>            
+            </header>
+            <div class="lift-block__textBlock--body intro-text__body">
+            New menu. Completely remodeled space. Incredible views of Mount Timpanogos.
+            </div>  
+            <div class="lift-block__textBlock--buttons">
+                {{ button_primary( href='http://example.com', classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy='Buy Now', id='myButton-1', target='_blank' ) }}
+                <a class="link link--plain font-calibre" href="#" class="btn btn--primary">View Pricing</a>   
+            </div>
+        </article>  
+    </section>
 </section>
