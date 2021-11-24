@@ -1,0 +1,1 @@
+console.log('rehersal-hall-module.js')
