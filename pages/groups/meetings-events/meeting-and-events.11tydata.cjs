@@ -1,3 +1,3 @@
 const getAllData = require('../../scripts/utils/get-page-data.cjs')
 
-module.exports  = getAllData('/venues');
+module.exports  = getAllData('/groups/meeting-and-events');
