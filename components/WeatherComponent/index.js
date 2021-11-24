@@ -125,16 +125,16 @@ class WeatherComponent extends HTMLElement{
             </div>
             <div>
                 <header class="card-widget__weather__title-2 font-calibre font-normal"> Snow </header>
-                <div class="card-widget__weather__title-1 font-calibre font-semibold justify-center ">36”</div>
+                <div class="card-widget__weather__title-1 font-calibre font-semibold justify-center ">${liftReport["base"]}”</div>
                 <div class="font-calibre card-widget__weather__snow__text grid grid-flow-col gap-x-4 justify-center">
                     <div class="flex flex-col">
-                        <strong>12”</strong>
+                        <strong>${liftReport["24_hour"]}”</strong>
                         <span>24 hr</span></div>
                     <div class="flex flex-col">
-                        <strong>24”</strong>
+                        <strong>${liftReport["48_hour"]}”</strong>
                         <span>48 hr</span></div>
                     <div class="flex flex-col">
-                        <strong>128”</strong>
+                        <strong>${liftReport["ytd"]}”</strong>
                         <span>YTD</span></div>
                 </div>
             </div>
