@@ -1,4 +1,4 @@
-import {fetchApi} from './fetchApi'
+import { fetchApi } from '../../scripts/utils/http-client'
 
 class WeatherComponent extends HTMLElement{
     constructor(){
@@ -10,12 +10,23 @@ class WeatherComponent extends HTMLElement{
         this.render()
     }
 
-    async render(){
+     getDayName(dateStr)
+    {
+        let date = new Date(dateStr);
+        let day = date.toLocaleString('en-us', {weekday: 'short'});   
+        return day     
+    }
 
+    async render(){
         let snr = await fetchApi('https://hotel-site-dev.skipperhospitality.com/sundance/snow-report');
         let snrJson = await snr.json();
         let snowReport = snrJson[0]
-        console.log(snowReport)
+
+        let forecasts = snowReport.forecast.daily
+        forecasts.forEach(forecast => {
+            forecast.dayname = this.getDayName(forecast.date)
+        });
+        console.log(forecasts)
 
         let lfr = await fetchApi('https://hotel-site-dev.skipperhospitality.com/sundance/lift-report');
         let lfrJson = await lfr.json();
@@ -62,6 +73,9 @@ class WeatherComponent extends HTMLElement{
             </div>
         </div>
         <div class="grid grid-cols-5 gap-x-6 py-10 border-b-1 border--color__sn_ss-3">
+            ${[1,2,3].forEach(item => {
+                "<p>kamal</p>"
+            })}
             <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
                 <span class="text-2xl">Mon.</span>
                 <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png"/>
