@@ -23,10 +23,31 @@ class WeatherComponent extends HTMLElement{
         let snowReport = snrJson[0]
 
         let forecasts = snowReport.forecast.daily
+        let weather = ``
+        let detailSnowReport = ``
         forecasts.forEach(forecast => {
             forecast.dayname = this.getDayName(forecast.date)
+            weather += `
+            <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
+                <span class="text-2xl">${forecast?.dayname}</span>
+                <img class="card-widget__weather__icon2 pb-1" src="${forecast?.day?.icon}"/>
+                <span>${forecast?.day?.snow}</span>
+                <span>H ${forecast?.day?.temp ?? ""}</span>
+                <span>L ${forecast?.night?.temp ?? ""}</span>
+            </div>
+            `
+
+            detailSnowReport += `
+            <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre text-lg">
+                <span class="text-2xl">${forecast?.dayname}</span>
+                <img class="card-widget__weather__icon2 pb-1" src="${forecast?.day?.icon}"/>
+                <span>D ${forecast?.day?.snow}</span>
+                <span>N ${forecast?.night?.snow}</span>
+                <span>W ${forecast?.day?.wind?.speed}</span>
+            </div>
+            `
         });
-        console.log(forecasts)
+        console.log(snowReport)
 
         let lfr = await fetchApi('https://hotel-site-dev.skipperhospitality.com/sundance/lift-report');
         let lfrJson = await lfr.json();
@@ -73,44 +94,7 @@ class WeatherComponent extends HTMLElement{
             </div>
         </div>
         <div class="grid grid-cols-5 gap-x-6 py-10 border-b-1 border--color__sn_ss-3">
-            ${[1,2,3].forEach(item => {
-                "<p>kamal</p>"
-            })}
-            <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
-                <span class="text-2xl">Mon.</span>
-                <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png"/>
-                <span>0”</span>
-                <span>H 67°</span>
-                <span>L 42°</span>
-            </div>
-            <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
-                <span class="text-2xl">Tue.</span>
-                <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png"/>
-                <span>0”</span>
-                <span>H 67°</span>
-                <span>L 42°</span>
-            </div>
-            <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
-                <span class="text-2xl">Wed.</span>
-                <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png"/>
-                <span>0”</span>
-                <span>H 67°</span>
-                <span>L 42°</span>
-            </div>
-            <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
-                <span class="text-2xl">Thu.</span>
-                <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png"/>
-                <span>0”</span>
-                <span>H 67°</span>
-                <span>L 42°</span>
-            </div>
-            <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
-                <span class="text-2xl">Fri.</span>
-                <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png"/>
-                <span>0”</span>
-                <span>H 67°</span>
-                <span>L 42°</span>
-            </div>
+            ${weather}
         </div>
         <div>
             <details class="border-b-1 border--color__sn_ss-3 font-calibre">
@@ -142,41 +126,7 @@ class WeatherComponent extends HTMLElement{
             <details>
                 <summary class="card-widget__weather-summary font-calibre">Detailed Snow Report</summary>
                 <div class="toggle__content grid grid-cols-5 gap-x-4">
-                    <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre text-lg">
-                        <span class="text-2xl">Mon.</span>
-                        <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png"/>
-                        <span>D 0”</span>
-                        <span>N 0”</span>
-                        <span>W 5mp</span>
-                    </div>
-                    <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre text-lg">
-                        <span class="text-2xl">Tue.</span>
-                        <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png"/>
-                        <span>D 0”</span>
-                        <span>N 67°</span>
-                        <span>W 5mp</span>
-                    </div>
-                    <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre text-lg">
-                        <span class="text-2xl">Wed.</span>
-                        <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png"/>
-                        <span>D 0”</span>
-                        <span>N 67°</span>
-                        <span>W 5mp</span>
-                    </div>
-                    <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre text-lg">
-                        <span class="text-2xl">Thu.</span>
-                        <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png"/>
-                        <span>D 0”</span>
-                        <span>N 67°</span>
-                        <span>W 5mp</span>
-                    </div>
-                    <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre text-lg">
-                        <span class="text-2xl">Fri.</span>
-                        <img class="card-widget__weather__icon2 pb-1" src="https://opensnow.com/img/weather/day/skc.png"/>
-                        <span>0”</span>
-                        <span>N 67°</span>
-                        <span>W 5mp</span>
-                    </div>
+                    ${detailSnowReport}
                 </div>
                 <div class="font-calibre text-lg text--color__sp-1 grid grid-flow-col">
                     <span>D = Day</span>
