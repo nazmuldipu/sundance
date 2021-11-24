@@ -47,7 +47,6 @@ class WeatherComponent extends HTMLElement{
             </div>
             `
         });
-        console.log(snowReport)
 
         let lfr = await fetchApi('https://hotel-site-dev.skipperhospitality.com/sundance/lift-report');
         let lfrJson = await lfr.json();
@@ -111,7 +110,6 @@ class WeatherComponent extends HTMLElement{
             }
         });
 
-        console.log(liftReport)
 
         this.shadow.innerHTML = `
         <link rel="stylesheet" type="text/css" href="index/index-sync.css">
