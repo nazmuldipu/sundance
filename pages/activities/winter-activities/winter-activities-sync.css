@@ -9,17 +9,8 @@
     margin-left: auto;
     margin-right: auto;
 }
-.group-container{
-    border: none;
-}
-.bridge{
-    padding-bottom: 50px;
-}
-.bridge__top-frame {
-    background-color: var(--sundance__primary1);
-}
-.bridge__nav-icon{
-    background-color: transparent;
+.winter-hero__padding-bottom{
+    padding-bottom: 80px;
 }
 .winter__header{
     font-weight: 600;
@@ -33,13 +24,14 @@
     padding-bottom: 40px;
 }
 
+
 @media screen and (min-width: 320px) and (max-width: 767px){
     .section-inner{
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
-    .bridge{
-        padding-bottom: 8px;
+    .winter-hero__padding-bottom{
+        padding-bottom: 48px;
     }
     .winter__header{
         font-size: 1.5rem;
@@ -48,7 +40,7 @@
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         padding-top: 24px;
-        padding-bottom: 8px;
+        padding-bottom: 0px;
     }
 }
 @media screen and (min-width: 768px) and (max-width: 1080px){
@@ -56,36 +48,16 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         padding-top: 24px;
-        padding-bottom: 8px;
+        padding-bottom: 0px;
     }
     .section-inner{
         padding-left: 1rem;
         padding-right: 1rem;
-    }
-    .group-venues__actions{
-        display: grid;
-        grid-auto-flow: row;
-        justify-content: center;
-        align-items: center;
     }
 }
 @media screen and (min-width: 1081px) and (max-width: 1365px){
     .section-inner{
         padding-left: 1rem;
         padding-right: 1rem;
-    }
-    .group-venues__actions{
-        display: grid;
-        grid-auto-flow: row;
-        justify-content: center;
-        align-items: center;
-    }
-}
-@media screen and (min-width: 1366px){
-    .group-venues__actions{
-        display: grid;
-        grid-auto-flow: row;
-        justify-content: center;
-        align-items: center;
     }
 }

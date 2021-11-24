@@ -1,9 +1,9 @@
 ---
 layout: base.njk
-pagename: nordic-center
-permalink: "build/winter-activities/nordic-center/index.html"
+pagename: winter-zip-tour
+permalink: "build/activities/winter-activities/winter-zip-tour/index.html"
 permalinkBypassOutputDir: true
-nickname: nordic-center
+nickname: winter-zip-tour
 ---
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from 'molecules/card.njk' import verticalCard %}
@@ -54,15 +54,6 @@ nickname: nordic-center
         {% endfor %}
     </section>
 </section>
-{% endif %}
-{% if pageCMS['bottom-article'].simple_article %}
-    {% set bottom_article = pageCMS['bottom-article'].simple_article  %}
-    <article class="winter__article-wrapper font-ivar">
-        <header>
-            {{ h1(copy = bottom_article.title, classes = ['winter__article-header', 'heading--2']) }}
-        </header>
-        <div class="winter__article-copy">{{ bottom_article.description | safe }}</div>        
-    </article> 
 {% endif %}
 
 {{newsletter()}}

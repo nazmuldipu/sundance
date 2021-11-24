@@ -1,26 +1,41 @@
 ---
 layout: base.njk
-pagename: winter-activities
-permalink: "build/winter-activities/index.html"
+pagename: winter-lift-tickets
+permalink: "build/activities/winter-activities/winter-lift-tickets/index.html"
 permalinkBypassOutputDir: true
-nickname: winter-activities
+nickname: winter-lift-tickets
 ---
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from 'molecules/card.njk' import verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'organisms/global-image.njk' import global_image %}
-{% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'atoms/accordion.njk' import accordion %}
 
 <section class="page-top-adjust"></section>
 
 {# Hero Image Section #}
-{% if pageCMS['top-banner'].global_image %}
-    <section class="segment-outer winter-hero__padding-bottom">
-        <figure class="segment-inner relative">
+{% if pageCMS['group-venues'].group_venues.length and pageCMS['top-banner'].global_image %}
+{% set spa_group_venues = pageCMS['group-venues'].group_venues  %}
+<section class="group-section">
+    <section class="segment-outer relative -z-1">
+        <figure class="segment-inner">
             {{global_image(pageCMS['top-banner'].global_image, classes='w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
-            {{ top_banner_right_bottom_container(heroCornerBlock) }}
         </figure>
-    </section>
+    </section> 
+    {% for event in spa_group_venues %}
+        <div class="group-container">
+            {{groupVenues(event)}}
+        <div>
+    {% endfor %}
+</section>
+{% endif %}
+
+{# Bridge carousal #}
+{% if pageCMS['bridge-slider'] %}
+{% set bridge_slider = pageCMS['bridge-slider'].bridge_slider %}
+    {{ bridge(bridge_slider) }}        
 {% endif %}
 
 {# Card Title #}
