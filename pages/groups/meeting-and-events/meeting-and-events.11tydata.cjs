@@ -1,3 +1,3 @@
 const getAllData = require('../../../scripts/utils/get-page-data.cjs')
 
-module.exports  = getAllData('/dining/fast-casuals')
+module.exports  = getAllData('/groups/meeting-and-events');

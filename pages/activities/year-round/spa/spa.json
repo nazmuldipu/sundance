@@ -1,1 +1,1 @@
-{"sync_css":"./spa-sync.css","defer_js":"./spa-defer.js","module_js":"./spa-module.js"}
+{"defer_js":"./spa-defer.js","module_js":"./spa-module.js","sync_css":"./spa-sync.css"}
