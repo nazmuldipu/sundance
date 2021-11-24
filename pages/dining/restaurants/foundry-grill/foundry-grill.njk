@@ -1,9 +1,9 @@
 ---
 layout: base.njk
-pagename: bear-claw-cabin
-permalink: "build/dining/fast-casuals/bear-claw-cabin/index.html"
+pagename: foundry-grill
+permalink: "build/dining/restaurants/foundry-grill/index.html"
 permalinkBypassOutputDir: true
-nickname: dining/fast-casuals/bear-claw-cabin
+nickname: dining/restaurants/foundry-grill
 ---
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
@@ -16,7 +16,7 @@ nickname: dining/fast-casuals/bear-claw-cabin
 <section class="group-section top-section">
     <section class="segment-outer relative">
         <figure class="segment-inner">
-        {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
+        {% if pageCMS['top-banner'] %}
             {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         {% endif %}
         </figure>
@@ -32,7 +32,7 @@ nickname: dining/fast-casuals/bear-claw-cabin
 </section>
 {% if pageCMS['slider'] %}
 {% set bridge_slider = pageCMS['slider'].bridge_slider %}
-    <section class="segment-outer bg-sn-5 px-4">
+    <section class="bg-sn-5 px-4">
         <section>
             {{bridge(bridge_slider)}}
         </section>
@@ -63,7 +63,7 @@ nickname: dining/fast-casuals/bear-claw-cabin
 {% endif %}
 {% if pageCMS['notice'] %}
 <section class="segment-outer">
-    <section class="segment-inner text-center">
+    <section class="segment-inner">
         {% set notice = pageCMS['notice'].simple_article %}
         <article class="details__notice bg-sn-4 font-ivar">
             <div class="dining-details__descriptions font-ivar">
@@ -74,9 +74,7 @@ nickname: dining/fast-casuals/bear-claw-cabin
 </section>
 {% endif %}
 
-<section class="segment-outer {% if not pageCMS['notice'] %}
-                                    mt-16
-                                {% endif %}">
+<section class="segment-outer">
     <section class="segment-inner text-center">
         <article class="details__card bg-sn-5 font-ivar">
             {% if pageCMS['vertical-card-title'] %}

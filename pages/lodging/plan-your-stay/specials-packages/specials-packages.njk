@@ -1,0 +1,42 @@
+---
+layout: base.njk
+pagename: specials-packages
+permalink: "build/lodging/plan-your-stay/specials-packages/index.html"
+permalinkBypassOutputDir: true
+nickname: "lodging/plan-your-stay/specials-packages"
+---
+{% from 'molecules/filter.njk' import filter %}
+{% from 'organisms/forms.njk' import lodging_form %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/card.njk' import singleCard %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
+
+---
+{% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
+<section class="segment-outer segment-outer__margin">
+    <section class="segment-inner text-left">
+        <section class="relative">
+            {{global_image(pageCMS['top-banner'].global_image, classes='h-screen w-full image_frame sm:4:3 lg:4:3 2xl:16:9 4xl:9:16')}}
+            {{ top_banner_right_bottom_container(heroCornerBlock) }}
+        </section>
+    </section>
+</section>
+
+<section class="segment-outer bg-sn-4 px-4 pb-4">
+    <section class="segment-inner text-center">
+        {% if pageCMS['vertical-cards-title'] %}
+            <header class="font-ivar lodging-plan-your-stay__cards--title">
+                {{ pageCMS['vertical-cards-title'].simple_article.title | safe }}
+            </header>
+        {% endif %}
+        <section class="lodging-plan-your-stay__cards">
+            {% for item in cardAllData %}
+                {{ singleCard(item = item.vertical_card, classes = ['card-container', 'lodging-plan-your-stay__single-card']) }}
+            {% endfor %}
+        </section>
+    </section>
+</section>
+
+{{newsletter()}}
