@@ -17,14 +17,14 @@ nickname: winter-zip-tour
 
 {# Hero Image Section #}
 {% if pageCMS['group-venues'].group_venues.length and pageCMS['top-banner'].global_image %}
-{% set spa_group_venues = pageCMS['group-venues'].group_venues  %}
+{% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
 <section class="group-section">
     <section class="segment-outer relative -z-1">
         <figure class="segment-inner">
             {{global_image(pageCMS['top-banner'].global_image, classes='w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         </figure>
     </section> 
-    {% for event in spa_group_venues %}
+    {% for event in winter_group_venues %}
         <div class="group-container">
             {{groupVenues(event)}}
         <div>
