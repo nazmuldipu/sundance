@@ -2,17 +2,23 @@
 @import "../../../styles/global.css";
 /****  end imports  ********************************/
 .gallery-image__column {
-    column-count: 2;
-    column-gap: 0.7rem;
-    max-width: 792px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1080px;
+    box-sizing: border-box;
+    justify-content: center;
+    grid-gap: 1rem;
     margin: 0 auto;
 }
 .gallery--wrapper {
     padding-bottom: 40px;
 }
+.gallery {
+    max-width: calc(50% - 1em);
+}
 @media only screen and (min-width: 1024px) {
-    .gallery-image__column {
-        column-count: 3;
+    .gallery {
+        max-width: 210px;
     }
     .gallery--wrapper {
         padding-bottom: 72px;
