@@ -1,9 +1,9 @@
 ---
 layout: base.njk
-pagename: dining-restaurants
-permalink: "build/dining-restaurants/index.html"
+pagename: dining/restaurants
+permalink: "build/dining/restaurants/index.html"
 permalinkBypassOutputDir: true
-nickname: "dining-restaurants"
+nickname: "dining/restaurants"
 ---
 {% from 'molecules/filter.njk' import filter %}
 {% from 'organisms/forms.njk' import lodging_form %}
@@ -26,7 +26,7 @@ nickname: "dining-restaurants"
         </section>
     </section>
 </section>
-<section class="segment-outer bg-sn-4 px-4 dining-restaurants__horizontal-cards">
+<section class="segment-outer bg-sn-4 px-4 dining/restaurants__horizontal-cards">
     <section class="segment-inner">
         {{ h2(classes=['heading', 'heading--2', 'font-ivar', 'text-center'], copy = horizontal_card_title) }}
         {{ horrizontalCard(items = horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
@@ -35,9 +35,9 @@ nickname: "dining-restaurants"
 </section>
 <section class="segment-outer bg-sn-4 px-4 pb-4">
     <section class="segment-inner">
-        <section class="dining-restaurants__cards">
+        <section class="dining/restaurants__cards">
             {% for item in cardAllData %}
-                {{ singleCard(item = item.vertical_card, classes = ['card-container', 'dining-restaurants__single-card']) }}
+                {{ singleCard(item = item.vertical_card, classes = ['card-container', 'dining/restaurants__single-card']) }}
             {% endfor %}
         </section>
     </section>
