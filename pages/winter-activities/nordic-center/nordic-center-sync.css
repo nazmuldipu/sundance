@@ -30,12 +30,12 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 3rem;
     padding-top: 40px;
-    padding-bottom: 40px;
+    padding-bottom: 8px;
 }
 .winter__article-wrapper{
     max-width: 792px;
     margin: auto;
-    padding-bottom: 56px;
+    padding-bottom: 72px;
     padding-left: 24px;
     padding-right: 24px;
 }
@@ -70,10 +70,10 @@
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         padding-top: 24px;
-        padding-bottom: 0px;
+        padding-bottom: 8px;
     }
     .winter__article-wrapper{
-        padding-bottom: 24px;
+        padding-bottom: 40px;
         margin: 0;
     }
     .winter__article-header{
@@ -85,7 +85,7 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         padding-top: 24px;
-        padding-bottom: 0px;
+        padding-bottom: 8px;
     }
     .section-inner{
         padding-left: 1rem;
