@@ -1,6 +1,7 @@
 {% from "atoms/a.njk" import a,
 Link %}
 {% from 'atoms/icons.njk' import iconCSS %}
+{% from 'organisms/global-image.njk' import global_image %}
 
 {% macro cardcard(header, eyebrow, description, image, alt, link)%}
   <div class="container px-12 mx-auto grid grid-cols-3 gap-2 place-items-auto">
@@ -91,7 +92,7 @@ Link %}
       <header class="sundance-events__header text-center font-ivar bold">{{events.header}}</header>
       
       <media-carousel>
-        <div class="swiper-container overflow-hidden">
+        <div class="swiper-container overflow-hidden bg-sn-5">
           
           <div class="swiper-wrapper">
             {% for sprint in events.sprint%}
@@ -128,4 +129,16 @@ Link %}
       {% endfor %}
     </section>
   </section>
+{% endmacro %}
+{% macro gallerySingleItem(image) %}
+    <figure class="gallery mb-3">
+        {{global_image(image.global_image)}}
+    </figure>
+{% endmacro %}
+{% macro gallery(images, classes = ['gallery-image__column']) %}
+    <div class="{% for class in classes %} {{ class }} {% endfor %}">
+        {% for image in images %}
+            {{ gallerySingleItem(image) }}
+        {% endfor %}
+    </div>
 {% endmacro %}

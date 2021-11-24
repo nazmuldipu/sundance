@@ -1,0 +1,5 @@
+{% from 'molecules/header.njk' import navMenu %}
+
+{% if globalCMS['top-navbar'].navbar %}
+    {{ navMenu(globalCMS['top-navbar'].navbar) }}
+{% endif %}

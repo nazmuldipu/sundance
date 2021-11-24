@@ -6,143 +6,176 @@
             "type": "font/ttf"
         }
     ],
-    "navMenuLink": [
-        {
-            "title": "Activities",
-            "links": [
+    "navMenuLink": {
+        "toggle_icon": "burger-icon",
+        "sections": [
+            {
+                "title": "Activities",
+                "links": [
+                    {
+                        "copy": "Winter",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Summer",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Year-Round",
+                        "href": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Lodging",
+                "links": [
+                    {
+                        "copy": "Mountain Homes",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Rooms & Suites",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Special + Packages",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Book Your Stay",
+                        "href": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Dining",
+                "links": [
+                    {
+                        "copy": "Restaurants",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Fast Casuals",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Catering",
+                        "href": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Events",
+                "links": [
+                    {
+                        "copy": "Calender",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Summer Theater",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Author Series",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Music at Sundance",
+                        "href": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Groups",
+                "links": [
+                    {
+                        "copy": "Meetings & Events",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Weddings",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Venues",
+                        "href": "#"
+                    }
+                ]
+            },
+            {
+                "title": "Shop",
+                "links": [
+                    {
+                        "copy": "The General Store",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "SMO",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Shop Online",
+                        "href": "#"
+                    }
+                ]
+            },
+            {
+                "title": "About",
+                "links": [
+                    {
+                        "copy": "History of Sundance",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Conserve",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Safety",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Career",
+                        "href": "#"
+                    },
+                    {
+                        "copy": "Contacts",
+                        "href": "#"
+                    }
+                ]
+            }
+        ],
+        "company_logo": "images/sundance.svg",
+        "icon_actions": [
+            { "src": "images/location.svg", "alt": "Location icon" },
+            { "src": "images/playButton.svg", "alt": "Play Button icon" },
+            { "src": "images/temparature.svg", "alt": "Temparature icon" }
+        ],
+        "cta_action": {
+            "title": "Book Now",
+            "id" : "cta_action_dropdown",
+            "drop_down": [
                 {
-                    "copy": "Winter",
-                    "href": "#"
+                    "logo": "ticket-and-passes",
+                    "copy": "Tickets & Passes",
+                    "url": "http://example.com/",
+                    "target": "_self"
                 },
                 {
-                    "copy": "Summer",
-                    "href": "#"
-                },
-                {
-                    "copy": "Year-Round",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "title": "Lodging",
-            "links": [
-                {
-                    "copy": "Mountain Homes",
-                    "href": "#"
-                },
-                {
-                    "copy": "Rooms & Suites",
-                    "href": "#"
-                },
-                {
-                    "copy": "Special + Packages",
-                    "href": "#"
-                },
-                {
+                    "logo": "book-your-stay",
                     "copy": "Book Your Stay",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "title": "Dining",
-            "links": [
-                {
-                    "copy": "Restaurants",
-                    "href": "#"
+                    "url": "http://example.com/",
+                    "target": "_blank"
                 },
                 {
-                    "copy": "Fast Casuals",
-                    "href": "#"
-                },
-                {
-                    "copy": "Catering",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "title": "Events",
-            "links": [
-                {
-                    "copy": "Calender",
-                    "href": "#"
-                },
-                {
-                    "copy": "Summer Theater",
-                    "href": "#"
-                },
-                {
-                    "copy": "Author Series",
-                    "href": "#"
-                },
-                {
-                    "copy": "Music at Sundance",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "title": "Groups",
-            "links": [
-                {
-                    "copy": "Meetings & Events",
-                    "href": "#"
-                },
-                {
-                    "copy": "Weddings",
-                    "href": "#"
-                },
-                {
-                    "copy": "Venues",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "title": "Shop",
-            "links": [
-                {
-                    "copy": "The General Store",
-                    "href": "#"
-                },
-                {
-                    "copy": "SMO",
-                    "href": "#"
-                },
-                {
-                    "copy": "Shop Online",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "title": "About",
-            "links": [
-                {
-                    "copy": "History of Sundance",
-                    "href": "#"
-                },
-                {
-                    "copy": "Conserve",
-                    "href": "#"
-                },
-                {
-                    "copy": "Safety",
-                    "href": "#"
-                },
-                {
-                    "copy": "Career",
-                    "href": "#"
-                },
-                {
-                    "copy": "Contacts",
-                    "href": "#"
+                    "logo": "reserve-a-table",
+                    "copy": "Reserve a Table",
+                    "url": "http://example.com/",
+                    "target": "_self"
                 }
             ]
         }
-    ],
+    },
     "footer": {
         "sections": [
             {
@@ -371,5 +404,54 @@
             "label": "&copy;2021 Sundance Mountain Resort"
         },
         "static_image": "images/s_dot.png"
-    }
+    },
+    "groupData": [
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Dining", "url": "/" },
+                { "copy": "Tree Room", "url": "/" }
+            ],
+            "title": "Tree Room",
+            "descriptions": [
+                "Enjoy the romantic atmosphere of candlelight and soft illumination accenting beautiful Native American art from Robert Redford’s private collection as you savor fresh, seasonal mountain cuisine.",
+                "Children under 12 not permitted."
+            ],
+            "actions": [
+                {
+                    "copy": "Make a Reservation",
+                    "url": "/",
+                    "target": "_blank",
+                    "type": "primary",
+                    "category": "link"
+                }
+            ],
+            "navs": [
+                {
+                    "label": "Hours",
+                    "copy": "View Hours",
+                    "url": "/",
+                    "target": "_self"
+                },
+                {
+                    "label": "Contact",
+                    "copy": "Call Now",
+                    "url": "/",
+                    "target": "_self"
+                },
+                {
+                    "label": "Menu",
+                    "copy": "View",
+                    "url": "/",
+                    "target": "_self"
+                },
+                {
+                    "label": "Music",
+                    "copy": "View Lineup",
+                    "url": "/",
+                    "target": "_self"
+                }
+            ]
+        }
+    ]
 }

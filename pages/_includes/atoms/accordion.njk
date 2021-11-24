@@ -3,14 +3,14 @@
     #   @param  detailsClasses  array, class names (optional)
     #   @param  titleClasses  array, class names (optional)
     #   @param  item     object
-    #   @author Ashfaqur Rahman, Sarjis
+    #   @author Ashfaqur Rahman, Sarjis, Meherab
  #}
-{% macro accordion( detailsClasses = ['font-ivar'], titleClasses = ['font-ivar'], item = {} ) %}
+{% macro accordion( detailsClasses = ['font-ivar'], titleClasses = ['font-ivar'], item = {}, classes = ["toggle", "hidden"] ) %}
     <div class="accordion">
         <input 
             type="checkbox" 
             {% if item.id %} id="{{ item.id }}" {% endif %}
-            class="{% for class in item.classes %} {{ class }} {% endfor %}"
+            class="{% for class in classes %} {{ class }} {% endfor %} {% for class in item.classes %} {{ class }} {% endfor %}"
             {% if item.name %} name="{{ item.name }}" {% endif %}
         >
         <label 
@@ -24,13 +24,21 @@
         <figure class="toggle-details hidden {% for class in detailsClasses %} {{ class }} {% endfor %}">
             {% set article = item.article %}
             <figcaption>
-                <h3>
-                    {{ article.heading }}
-                </h3>
-                {% for text in article.copy %}
-                    <p class="accordion--text__padding"> {{ text | safe }} </p>
-                {% endfor %}
+               {% if article.heading %}
+                    <h3>
+                        {{ article.heading | safe }}
+                    </h3>
+               {% endif %}
+               {% if article.copy %}
+                    {% for text in article.copy %}
+                        <p class="accordion--text__padding"> {{ text | safe }} </p>
+                    {% endfor %}
+               {% endif %}
+               {% if article.summary %}
+                    <p class="accordion--text__summary"> {{ article.summary | safe }} </p>
+               {% endif %}
             </figcaption>
+            
             {% if item.image %}
                 {{ scaled_image(imgObj = item.image) }}
             {% endif %} 

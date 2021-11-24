@@ -8,7 +8,6 @@ nickname: Scenic Lift Rides
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
-{% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
@@ -17,28 +16,24 @@ nickname: Scenic Lift Rides
 {% from 'molecules/bridge-2.njk' import secondBridge %}
 {% from 'molecules/bridge.njk' import bridge %}
 
-{# Navigation Menu  #}
-{{ navMenu(data.navMenuLink) }}
 <section class="activities__margin-top"></section>
 
 {# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues.length and pageCMS['top-banner'].global_image %}
+{% set activities_group_venues = pageCMS['group-venues'].group_venues  %}
 <section class="group-section">
     <section class="segment-outer relative">
         <figure class="segment-inner">
-            {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
-                {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
-            {% endif %}
+            {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         </figure>
     </section>
-    {% if pageCMS['group-venues'] %}
-        {% set activities_group_venues = pageCMS['group-venues'].group_venues  %}
-        {% for event in activities_group_venues %}
-            <div class="group-container activities__group-container">
-                {{groupVenues(event)}}
-            <div>
-        {% endfor %}
-    {% endif %}
+    {% for event in activities_group_venues %}
+        <div class="group-container activities__group-container">
+            {{groupVenues(event)}}
+        <div>
+    {% endfor %}   
 </section>
+{% endif %}
 
 {# Bridge carousal #}
 {% if pageCMS['bridge-slider'] %}
@@ -78,5 +73,3 @@ nickname: Scenic Lift Rides
 {% endif %}
 
 {{newsletter()}}
-
-{{footer(data.footer)}}

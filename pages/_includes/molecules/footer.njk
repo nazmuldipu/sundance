@@ -1,6 +1,7 @@
 {% from "atoms/a.njk" import a %}
 {% from "atoms/headings.njk" import h2 %}
 {% from 'atoms/icons.njk' import iconImage %}
+{% from 'organisms/global-image.njk' import global_image %}
 {# 
     #   @desc   footer element
     #   @param  footer       object (footer data from data.json)
@@ -10,14 +11,16 @@
     <footer>
         <article class="footer__container">
             {% for sec in footer.sections %}
-                <section class="footer__col">
+                <section class="footer__col font-calibre">
                     {{ h2( classes=['heading', 'font-ivar', 'heading__foooter--2'], copy=sec.title ) }}
-                    {% for link in sec.links %}
-                        {% set trg = '_blank' if link.external %}
+                    {% for actionLink in sec.links %}
+                        {% set link = actionLink.action %}
+                        {% set trg = '_blank' if not link.internal else 
+                            '_self' %}
                         {% if not link.icon %}
-                            <nav>{{ a( id=link.label, copy=link.label, href=link.url, classes=['footer__link'], target=trg) }}</nav>
+                            <nav>{{ a( id=link.copy, copy=link.copy, href=link.url, classes=['footer__link'], target=trg) }}</nav>
                         {% else %}
-                            {{ a( id=link.label, copy=iconImage( src=link.icon, alt=link.label, classes = ['footer__icon'] ), href=link.url, classes=['footer__link'], target=trg) }}
+                            {{ a( id=link.label, copy=(link.icon | safe), href=link.url, classes=['footer__link'], target=trg) }}
                         {% endif %}
                     {% endfor %}
                 </section>
@@ -25,11 +28,18 @@
         </article>
         <article class="footer__copy font-calibre">
             <section class="footer__copy__image">
-                {{ iconImage( src=footer.bottom.image, alt='Hotels icon' ) }}
+                {% for imgLink in footer.bottom.image_link %}
+                    <a href="{{imgLink.url}}" target="_blank">
+                        {{ global_image(imgLink.image.global_image, classes="footer_image", imgClass='footer_image') }}
+                    </a>
+                    {# {{ imgLink | json }} #}
+                    {# {{ iconImage( src=footer.bottom.image, alt='Hotels icon' ) }} #}
+                {% endfor %}
             </section>
             <section>{{footer.bottom.label | safe}}</section>
+            
         </article>
-        <img class="footer__s_dot" src={{footer['static_image']}} alt="S dot logo">
+        <img class="footer__s_dot" src={{footer.bottom.static_image | theImgSrc}} alt="S dot logo">
     </footer>
 
 {% endmacro %}

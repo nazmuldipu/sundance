@@ -8,6 +8,7 @@
 {% macro global_image(image, classes, carousel=false, lazy = true, imgClass="") %}
     {% set srcset = 'data-srcset' if carousel else 'srcset' %}
     <picture class="{{ classes }}">
+        {% if image.sizes | length > 0 %}
         {% for size in image.sizes %}
             {% set defaultSrc = {
                 intrinsicwidth: (size.intrinsicwidth if size.intrinsicwidth else
@@ -20,6 +21,7 @@
                         sizes="{{ size.view }}" type="image/{{ type | trim }}">
             {% endfor %}
         {% endfor %}
+        {% endif %}
         <img
                 src="{{ image.src | theImgSrc }}"
         {{ srcset }} = "{{ image | cmsImgObjSrcSet(image.types | last ) }}"

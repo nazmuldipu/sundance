@@ -441,7 +441,7 @@
                 "artDirection": [
                     {
                         "classes": "",
-                        "media": "(min-width:900.1px)",
+                        "media": "(min-width:767.1px)",
                         "sizes": "30vw",
                         "type": "jpg",
                         "src": "images/card",
@@ -451,7 +451,7 @@
                     },
                     {
                         "classes": "",
-                        "media": "(max-width:900px)",
+                        "media": "(max-width:767px)",
                         "sizes": "90vw",
                         "type": "jpg",
                         "src": "images/card",
@@ -1311,5 +1311,127 @@
                 }
             ]
         }
-    ]
+    ],
+    "bridge_slider": {
+        "title": "Award Winning Cuisine",
+        "images": [
+          {
+            "global_image": {
+              "alt": "The Image",
+              "src": "stage/upload/sundance/sundance/1362e9d6a68c1225-dining-restaurant-details-1.jpg",
+              "sizes": [
+                {
+                  "src": "",
+                  "view": "25vw",
+                  "media": "(min-width:900.1px)",
+                  "intrinsicwidth": 1,
+                  "intrinsicheight": 1
+                },
+                {
+                  "src": "",
+                  "view": "40vw",
+                  "media": "(max-width:900px)",
+                  "intrinsicwidth": 1,
+                  "intrinsicheight": 1
+                }
+              ],
+              "types": [
+                "webp",
+                "jpg"
+              ],
+              "background": true,
+              "intrinsicwidth": 262,
+              "intrinsicheight": 263
+            }
+          },
+          {
+            "global_image": {
+              "alt": "The Image",
+              "src": "stage/upload/sundance/sundance/1362e9d6a68c1225-dining-restaurant-details-1.jpg",
+              "sizes": [
+                {
+                  "src": "",
+                  "view": "25vw",
+                  "media": "(min-width:900.1px)",
+                  "intrinsicwidth": 1,
+                  "intrinsicheight": 1
+                },
+                {
+                  "src": "",
+                  "view": "40vw",
+                  "media": "(max-width:900px)",
+                  "intrinsicwidth": 1,
+                  "intrinsicheight": 1
+                }
+              ],
+              "types": [
+                "webp",
+                "jpg"
+              ],
+              "background": true,
+              "intrinsicwidth": 262,
+              "intrinsicheight": 263
+            }
+          },
+          {
+            "global_image": {
+              "alt": "The Image",
+              "src": "stage/upload/sundance/sundance/1362e9d6a68c1225-dining-restaurant-details-1.jpg",
+              "sizes": [
+                {
+                  "src": "",
+                  "view": "25vw",
+                  "media": "(min-width:900.1px)",
+                  "intrinsicwidth": 1,
+                  "intrinsicheight": 1
+                },
+                {
+                  "src": "",
+                  "view": "40vw",
+                  "media": "(max-width:900px)",
+                  "intrinsicwidth": 1,
+                  "intrinsicheight": 1
+                }
+              ],
+              "types": [
+                "webp",
+                "jpg"
+              ],
+              "background": true,
+              "intrinsicwidth": 262,
+              "intrinsicheight": 263
+            }
+          },
+          {
+            "global_image": {
+              "alt": "The Image",
+              "src": "stage/upload/sundance/sundance/1362e9d6a68c1225-dining-restaurant-details-1.jpg",
+              "sizes": [
+                {
+                  "src": "",
+                  "view": "25vw",
+                  "media": "(min-width:900.1px)",
+                  "intrinsicwidth": 1,
+                  "intrinsicheight": 1
+                },
+                {
+                  "src": "",
+                  "view": "40vw",
+                  "media": "(max-width:900px)",
+                  "intrinsicwidth": 1,
+                  "intrinsicheight": 1
+                }
+              ],
+              "types": [
+                "webp",
+                "jpg"
+              ],
+              "background": true,
+              "intrinsicwidth": 262,
+              "intrinsicheight": 263
+            }
+          }
+        ],
+        "sub_title": "EXPLORE GALLERY"
+    }
 }
