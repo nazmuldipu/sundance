@@ -30,7 +30,7 @@ nickname: dining/catering
         {% endfor %}
     {% endif %}
 </section>
-{% if pageCMS['slider'] %}
+{% if pageCMS['slider'] and pageCMS['slider'].bridge_slider %}
 {% set bridge_slider = pageCMS['slider'].bridge_slider %}
     <section class="bg-sn-5 px-4">
         <section>
@@ -58,18 +58,6 @@ nickname: dining/catering
                 </article>
             {% endfor %}
         </section>
-    </section>
-</section>
-{% endif %}
-{% if pageCMS['notice'] %}
-<section class="segment-outer">
-    <section class="segment-inner">
-        {% set notice = pageCMS['notice'].simple_article %}
-        <article class="details__notice bg-sn-4 font-ivar">
-            <div class="dining-details__descriptions font-ivar">
-                {{ notice.description | safe }}
-            </div>
-        </article>
     </section>
 </section>
 {% endif %}

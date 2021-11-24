@@ -27,7 +27,7 @@
     padding-bottom: 16px;
 }
 .details__middle-article {
-    max-width: 1080px;
+    max-width: 792px;
     margin: 0 auto;
 }
 .dining-details__card{
@@ -46,11 +46,6 @@
 }
 .dining-details__venues {
     padding: 0 1rem;
-}
-.details__notice {
-    max-width: 680px;
-    padding: 0 1rem;
-    margin: 1rem 1rem;
 }
 .details__card {
     padding: 0 1rem;
@@ -92,10 +87,6 @@
         column-gap: 3rem;
         padding-top: 40px;
         padding-bottom: 40px;
-    }
-    .details__notice {
-        padding: 64px 200px;
-        margin: 3rem auto;
     }
     .bridge {
         padding-bottom: 40px;
