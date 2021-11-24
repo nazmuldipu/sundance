@@ -690,4 +690,7 @@
         line-height: 46.2px;
     }
 }
+.text--primary {
+    color: var(--sundance__primary1);
+}
 /****  end atoms  ********************************/
