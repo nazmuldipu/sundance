@@ -1,0 +1,43 @@
+---
+layout: base.njk
+pagename: rooms-and-suites
+permalink: "build/lodging/rooms-and-suites/index.html"
+permalinkBypassOutputDir: true
+nickname: "lodging/rooms-and-suites"
+---
+{% from 'molecules/filter.njk' import filter %}
+{% from 'organisms/forms.njk' import lodging_form %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/card.njk' import singleCard %}
+---
+
+{% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
+<section class="segment-outer segment-outer__margin">
+    <section class="segment-inner text-center">
+        {{ lodging_form(item = lodgingForm) }}
+    </section>
+</section>
+<section class="segment-outer bg-sn-4 text-left lodging-accommodation__filter">
+    <section class="segment-inner">
+        {{ filter(filters) }}
+    </section>
+</section>
+<section class="segment-outer bg-sn-4 px-4 pb-4">
+    <section class="segment-inner">
+        <section class="lodging-rooms-and-suites__cards">
+            {% for item in cardAllData %}
+                {{ singleCard(
+                    item = item.vertical_card, 
+                    classes = ['card-container', 'text-left', 'lodging-rooms-and-suites__single-card']) 
+                }}
+            {% endfor %}
+        </section>
+        {% if pageCMS['card-footer-caption'] %}
+            <div class="font-ivar text-sm card-footer-caption text-center">
+                {{ pageCMS['card-footer-caption'].simple_article.description | safe }}
+            </div>
+        {% endif %}
+    </section>
+</section>
+{{newsletter()}}

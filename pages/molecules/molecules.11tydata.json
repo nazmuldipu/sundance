@@ -441,7 +441,7 @@
                 "artDirection": [
                     {
                         "classes": "",
-                        "media": "(min-width:900.1px)",
+                        "media": "(min-width:767.1px)",
                         "sizes": "30vw",
                         "type": "jpg",
                         "src": "images/card",
@@ -451,7 +451,7 @@
                     },
                     {
                         "classes": "",
-                        "media": "(max-width:900px)",
+                        "media": "(max-width:767px)",
                         "sizes": "90vw",
                         "type": "jpg",
                         "src": "images/card",
