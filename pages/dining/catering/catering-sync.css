@@ -25,6 +25,7 @@
 .catering__descriptions {
     font-size: 14px;
     padding-bottom: 16px;
+    text-align: center;
 }
 .details__middle-article {
     max-width: 792px;
@@ -102,5 +103,8 @@
     }
     .global-header {
         padding-top: 32px;
+    }
+    .catering__descriptions p:first-of-type{
+        text-align: left;
     }
 }
