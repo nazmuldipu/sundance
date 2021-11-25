@@ -14,10 +14,10 @@ nickname: dining/catering
 {% from 'organisms/global-image.njk' import global_image %}
 
 <section class="group-section top-section">
-    <section class="segment-outer relative">
+    <section class="segment-outer relative -z-1">
         <figure class="segment-inner">
         {% if pageCMS['top-banner'] %}
-            {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
+            {{global_image(pageCMS['top-banner'].global_image, classes='image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         {% endif %}
         </figure>
     </section>
@@ -52,7 +52,7 @@ nickname: dining/catering
                             {{ object.title }}
                         </h3>
                     </header>
-                    <div class="dining-details__descriptions font-ivar">
+                    <div class="catering__descriptions font-ivar">
                         {{ object.description | safe }}
                     </div>
                 </article>

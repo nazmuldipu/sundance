@@ -22,7 +22,7 @@
     font-size: 24px;
     padding-bottom: 24px;
 }
-.dining-details__descriptions {
+.catering__descriptions {
     font-size: 14px;
     padding-bottom: 16px;
 }
@@ -53,6 +53,12 @@
 .group-venues__description:nth-child(4){
     color: var(--sundance__primary1);
 }
+.global-header {
+    padding-top: 24px;
+}
+.catering__descriptions a {
+    text-decoration: none;
+}
 @media screen and (min-width: 767px){
     .dining-details__card{
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -78,7 +84,7 @@
         font-size: 42px;
         line-height: 46.2px;
     }
-    .dining-details__descriptions {
+    .catering__descriptions {
         font-size: 19px;
         padding-bottom: 16px;
     }
@@ -93,5 +99,8 @@
     }
     .group-venues__container {
         padding-top: 24px;
+    }
+    .global-header {
+        padding-top: 32px;
     }
 }
