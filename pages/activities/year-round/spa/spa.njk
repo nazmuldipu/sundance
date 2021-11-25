@@ -9,6 +9,7 @@ permalinkBypassOutputDir: true
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
+{% from 'macros.njk' import top_banner %}
 {% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
 
 {% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
@@ -17,10 +18,7 @@ permalinkBypassOutputDir: true
 
 <section class="spa-activities__margin-top"></section>
 {# Hero Image Section #}
-<section class="relative">
-    {{global_image(pageCMS['top-banner'].global_image, classes='relative h-screen w-full image_frame sm:4:3 lg:4:3 2xl:16:9 4xl:9:16')}}
-    {{ top_banner_right_bottom_container(heroCornerBlock) }}
-</section>
+{{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
 {# Card Title #}
 {{ h2(copy = card_title.title, classes = ['bg-sn-4', 'spa-activities__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
 

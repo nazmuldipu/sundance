@@ -2,6 +2,7 @@
 Link %}
 {% from 'atoms/icons.njk' import iconCSS %}
 {% from 'organisms/global-image.njk' import global_image %}
+{% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
 
 {% macro cardcard(header, eyebrow, description, image, alt, link)%}
   <div class="container px-12 mx-auto grid grid-cols-3 gap-2 place-items-auto">
@@ -141,4 +142,11 @@ Link %}
             {{ gallerySingleItem(image) }}
         {% endfor %}
     </div>
+{% endmacro %}
+
+{% macro top_banner(image, heroCornerBlock) %}
+    <section class="relative">
+        {{ global_image(image, classes='w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1') }}
+        {{ top_banner_right_bottom_container(heroCornerBlock) }}
+    </section>
 {% endmacro %}
