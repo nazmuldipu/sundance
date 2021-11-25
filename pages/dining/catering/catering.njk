@@ -1,9 +1,9 @@
 ---
 layout: base.njk
-pagename: sundance-deli
-permalink: "build/dining/fast-casuals/sundance-deli/index.html"
+pagename: catering
+permalink: "build/dining/catering/index.html"
 permalinkBypassOutputDir: true
-nickname: dining/fast-casuals/sundance-deli
+nickname: dining/catering
 ---
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
@@ -16,7 +16,7 @@ nickname: dining/fast-casuals/sundance-deli
 <section class="group-section top-section">
     <section class="segment-outer relative -z-1">
         <figure class="segment-inner">
-        {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
+        {% if pageCMS['top-banner'] %}
             {{global_image(pageCMS['top-banner'].global_image, classes='image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         {% endif %}
         </figure>
@@ -30,7 +30,7 @@ nickname: dining/fast-casuals/sundance-deli
         {% endfor %}
     {% endif %}
 </section>
-{% if pageCMS['slider'] %}
+{% if pageCMS['slider'] and pageCMS['slider'].bridge_slider %}
 {% set bridge_slider = pageCMS['slider'].bridge_slider %}
     <section class="bg-sn-5 px-4">
         <section>
@@ -52,24 +52,12 @@ nickname: dining/fast-casuals/sundance-deli
                             {{ object.title }}
                         </h3>
                     </header>
-                    <div class="dining-details__descriptions font-ivar">
+                    <div class="catering__descriptions font-ivar">
                         {{ object.description | safe }}
                     </div>
                 </article>
             {% endfor %}
         </section>
-    </section>
-</section>
-{% endif %}
-{% if pageCMS['notice'] %}
-<section class="segment-outer">
-    <section class="segment-inner text-center">
-        {% set notice = pageCMS['notice'].simple_article %}
-        <article class="details__notice bg-sn-4 font-ivar">
-            <div class="dining-details__descriptions font-ivar">
-                {{ notice.description | safe }}
-            </div>
-        </article>
     </section>
 </section>
 {% endif %}

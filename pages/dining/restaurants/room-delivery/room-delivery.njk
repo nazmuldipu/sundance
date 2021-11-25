@@ -13,9 +13,9 @@ nickname: dining/restaurants/room-delivery
 {% set groupData = pageCMS['top-group-venues'].group_venues %}
 
 <section class="group-section top-section">
-    <section class="segment-outer relative">
+    <section class="segment-outer relative -z-1">
         <figure class="segment-inner">
-            {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
+            {{global_image(pageCMS['top-banner'].global_image, classes='image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         </figure>
     </section>
     {% for event in groupData %}
