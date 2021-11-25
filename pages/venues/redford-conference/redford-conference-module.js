@@ -1,1 +1,0 @@
-console.log('redford-conference-module.js');import '../../../scripts/lib/globalEvents.js';
