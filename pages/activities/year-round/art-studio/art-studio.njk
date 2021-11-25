@@ -14,17 +14,18 @@ nickname: "Art Studio"
 {% from 'molecules/art-studio.njk' import artStudio %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
 {% from 'organisms/global-image.njk' import global_image %}
+{% from 'macros.njk' import top_banner %}
 {% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
 {% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
 {# {% set card_title= pageCMS['card-title'].simple_article %} #}
 
 <section class="art-studio__margin-top"></section>
-<section class="relative">
-    {{global_image(pageCMS['top-banner'].global_image, classes='w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
-    {{ top_banner_right_bottom_container(heroCornerBlock) }}
+<section class="segment-outer">
+    <section class="segment-inner">
+        {{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
+    </section>
 </section>
-
 {{ h2(copy = titleHead.title, classes = ['bg-sn-4', 'art-studio__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
 
 <section class="bg-sn-4 art-studio__section-outer">
