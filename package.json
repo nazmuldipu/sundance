@@ -15,8 +15,11 @@
     "build-prod": "cross-env NODE_ENV=production THE_ENV=live ACTIVE_API_URI=PROD node tooling/build.js",
     "watch:html": "cross-env NODE_ENV=development npx @11ty/eleventy --config=.eleventy.cjs",
     "watch-dev": "cross-env NODE_ENV=development THE_ENV=local ACTIVE_API_URI=DEV node tooling/dev.js",
+    "watch-dev-preview": "cross-env NODE_ENV=development THE_ENV=local ACTIVE_API_URI=DEV THE_PREVIEW=PREVIEW node tooling/dev.js",
     "watch-stage": "cross-env NODE_ENV=development THE_ENV=local ACTIVE_API_URI=STAGE node tooling/dev.js",
+    "watch-stage-preview": "cross-env NODE_ENV=development THE_ENV=local ACTIVE_API_URI=STAGE THE_PREVIEW=PREVIEW node tooling/dev.js",
     "watch-prod": "cross-env NODE_ENV=development THE_ENV=local ACTIVE_API_URI=PROD node tooling/dev.js",
+    "watch-prod-preview": "cross-env NODE_ENV=development THE_ENV=local ACTIVE_API_URI=PROD THE_PREVIEW=PREVIEW node tooling/dev.js",
     "resize-images": "node tooling/images.js",
     "snapshots": "percy exec -- node snapshots.js",
     "cli": "cross-env NODE_ENV=production node tooling/cli"
