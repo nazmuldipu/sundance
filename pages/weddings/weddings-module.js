@@ -1,1 +1,0 @@
-console.log('weddings-module.js');import '../../scripts/lib/globalEvents.js';
