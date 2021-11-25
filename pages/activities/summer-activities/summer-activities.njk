@@ -18,7 +18,11 @@ permalinkBypassOutputDir: true
 <section class="summer-activites__margin-top"></section>
 {# Hero Image Section #}
 {% from 'macros.njk' import top_banner %}
-{{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
+<section class="segment-outer">
+    <section class="segment-inner">
+        {{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
+    </section>
+</section>
 {# Card Title #}
 {{ h2(copy = card_title.title, classes = ['bg-sn-4', 'summer-activites__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
 

@@ -21,8 +21,11 @@ nickname: "Art Studio"
 {# {% set card_title= pageCMS['card-title'].simple_article %} #}
 
 <section class="art-studio__margin-top"></section>
-{{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
-
+<section class="segment-outer">
+    <section class="segment-inner">
+        {{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
+    </section>
+</section>
 {{ h2(copy = titleHead.title, classes = ['bg-sn-4', 'art-studio__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
 
 <section class="bg-sn-4 art-studio__section-outer">
