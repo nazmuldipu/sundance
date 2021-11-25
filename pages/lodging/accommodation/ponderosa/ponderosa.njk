@@ -1,9 +1,9 @@
 ---
 layout: base.njk
-pagename: accommodation/mountain-homes/mountain-view
-permalink: "build/accommodation/mountain-homes/mountain-view/index.html"
+pagename: ponderosa
+permalink: "build/lodging/accommodation/ponderosa/index.html"
 permalinkBypassOutputDir: true
-nickname: accommodation/mountain-homes/mountain-view
+nickname: lodging/accommodation/ponderosa
 ---
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
@@ -29,12 +29,14 @@ nickname: accommodation/mountain-homes/mountain-view
         </section>
         <div></div>
     {% endif %}
+
     {% if pageCMS['amenities-bottom-description'].simple_article %}
         <div class="mt-12 font-ivar text-lg-2 text-center">{{pageCMS['amenities-bottom-description'].simple_article.description | safe}}</div>
     {% endif %}
     {% if pageCMS['amenities-bottom-description'].simple_article %}
         <p class="mt-12 font-ivar text-center">{{pageCMS['amenities-bottom-description'].simple_article.title}}</p>
     {% endif %}
+    
 {% endmacro %}
 
 {% macro features() %}
