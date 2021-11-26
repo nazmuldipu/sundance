@@ -9,27 +9,15 @@ nickname: ladies-day-cross-country-clinics
 {% from 'molecules/card.njk' import verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'organisms/global-image.njk' import global_image %}
-{% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'molecules/bridge.njk' import bridge %}
-{% from 'atoms/accordion.njk' import accordion %}
+{% from 'macros.njk' import top_banner_group_venues %}
 
 <section class="page-top-adjust"></section>
 
 {# Hero Image Section #}
-{% if pageCMS['group-venues'].group_venues.length and pageCMS['top-banner'].global_image %}
-{% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
-<section class="group-section">
-    <section class="segment-outer relative -z-1">
-        <figure class="segment-inner">
-            {{global_image(pageCMS['top-banner'].global_image, classes='w-full image_frame sm:3:4 lg:2:1 2xl:2:1 4xl:2:1')}}
-        </figure>
-    </section> 
-    {% for event in winter_group_venues %}
-        <div class="group-container">
-            {{groupVenues(event)}}
-        <div>
-    {% endfor %}
-</section>
+{% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
+    {% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues) }}
 {% endif %}
 
 {# Bridge carousal #}
