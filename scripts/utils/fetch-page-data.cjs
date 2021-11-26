@@ -11,22 +11,33 @@ const { gql } = require('@apollo/client/core')
 async function fetchPageData(brandSlug, pagePath, query = ''){
     
     let PAGE_QUERY = gql`
-    query Query($contentBySlugPagePath: String!, $contentBySlugBrandSlug: String!) {
-        contentBySlug(pagePath: $contentBySlugPagePath, brandSlug: $contentBySlugBrandSlug) {
-          values
+    query ContentBySlug($pagePath: String!, $brandSlug: String!, $isDirty: Boolean) {
+      contentBySlug(pagePath: $pagePath, brandSlug: $brandSlug, isDirty: $isDirty) {
+        ...on ContentType {
           name
+          values
+          title
+          order
+        }
+        ... on PublishedContentType {
+          name
+          values
           title
           order
         }
       }
+    }
     `
+    let variables = {
+      "pagePath": pagePath,
+      "brandSlug": brandSlug,
+    }
+    if (process.env.THE_PREVIEW){
+      variables['isDirty'] = true
+    }
     const result = await Client.query({
       query: PAGE_QUERY,
-      variables: {
-          "contentBySlugPagePath": pagePath,
-          "contentBySlugBrandSlug": brandSlug
-
-      }
+      variables: variables
     })
     return result
 }
