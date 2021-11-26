@@ -120,5 +120,33 @@
             "url": "http://example.com/",
             "target": "_self"
         }
+    ],
+    "imageCarouses":[
+        {
+            "id":"img-1",
+            "copy":"Activities",
+            "href":"/activities/winter-activities",
+            "image": {
+                "global_image": {
+                    "alt": "Winter",
+                    "src": "stage/upload/sundance/sundance/046561b6cb7e4eaa-winter.jpg",
+                    "sizes": [{
+                        "src": "",
+                        "view": "85vw",
+                        "media": "(min-width:320px)",
+                        "intrinsicwidth": 0,
+                        "intrinsicheight": 0
+                    }],
+                    "types": [
+                        "webp",
+                        "jpg"
+                    ],
+                    "background": false,
+                    "intrinsicwidth": 2000,
+                    "intrinsicheight": 1333
+                }
+            },
+            "target":"_self"
+        }
     ]
 }
