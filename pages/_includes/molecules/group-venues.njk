@@ -43,11 +43,13 @@
                 {% endfor %}
             </section>
 
-            {% for nav in object.navs %}
-                <div class="group-venues__nav">
-                    <label class="font-ivar">{{nav.label}}</label>
-                    {{ a( copy=nav.copy, href=nav.url, target=nav.target) }}
-                </div>
+            {% for nav in object.navs %} 
+                {% if not nav.copy == "" %}
+                    <div class="group-venues__nav">
+                        <label class="font-ivar">{{nav.label}}</label>
+                        {{ a( copy=nav.copy, href=nav.url, target=nav.target) }}
+                    </div>
+                {% endif %}
             {% endfor %}
 
         </article>
