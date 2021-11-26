@@ -21,7 +21,24 @@
 .bridge__nav-icon{
     background-color: transparent;
 }
-.winter__header{
+.winter-article__container{
+    max-width: 792px;
+    margin: auto;
+    padding-bottom: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.winter-article__header{
+    font-size: 42px;
+    font-weight: 600;
+    padding-bottom: 25px;
+    text-align: center;
+}
+.winter-article__copy{
+    font-size: 19px;
+    text-align: center;
+}
+.winter-card__header{
     font-weight: 600;
     font-size: 2.625rem;
 }
@@ -41,7 +58,17 @@
     .bridge{
         padding-bottom: 8px;
     }
-    .winter__header{
+    .winter-article__container{
+        padding-bottom: 40px;
+    }
+    .winter-article__header{
+        font-size: 24px;
+        padding-bottom: 16px;
+    }
+    .winter-article__copy{
+        text-align: left;
+    }
+    .winter-card__header{
         font-size: 1.5rem;
     }
     .winter__card{
