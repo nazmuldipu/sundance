@@ -17,8 +17,19 @@ class WeatherComponent extends HTMLElement{
         return day     
     }
 
+    getBaseUri(){
+        let apiType = document.querySelector('meta[name="api_type"]').content
+        if (apiType === 'PROD') {
+            return 'https://hotel-site.skipperhospitality.com'
+        } else if (apiType === 'STAGE'){
+            return 'https://hotel-site-dev.skipperhospitality.com'
+        } else {
+            return 'https://hotel-site-dev.skipperhospitality.com'
+        }
+    }
+
     async render(){
-        let snr = await fetchApi('https://hotel-site-dev.skipperhospitality.com/sundance/snow-report');
+        let snr = await fetchApi(this.getBaseUri()+'/sundance/snow-report');
         let snrJson = await snr.json();
         let snowReport = snrJson[0]
 
@@ -30,10 +41,10 @@ class WeatherComponent extends HTMLElement{
             weather += `
             <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
                 <span class="text-2xl">${forecast?.dayname}</span>
-                <img class="card-widget__weather__icon2 pb-1" src="${forecast?.day?.icon}"/>
-                <span>${forecast?.day?.snow}</span>
-                <span>H ${forecast?.day?.temp ?? ""}</span>
-                <span>L ${forecast?.night?.temp ?? ""}</span>
+                <img class="card-widget__weather__icon2 pb-1" src="${forecast?.day?.icon ?? forecast?.night?.icon}"/>
+                <span>${forecast?.day?.snow ?? '0"'}</span>
+                <span>H ${forecast?.day?.temp?.slice(0,-1) ?? ""}</span>
+                <span>L ${forecast?.night?.temp?.slice(0,-1) ?? ""}</span>
             </div>
             `
 
@@ -48,7 +59,7 @@ class WeatherComponent extends HTMLElement{
             `
         });
 
-        let lfr = await fetchApi('https://hotel-site-dev.skipperhospitality.com/sundance/lift-report');
+        let lfr = await fetchApi(this.getBaseUri()+'/sundance/lift-report');
         let lfrJson = await lfr.json();
         let liftReport = lfrJson[0]
         // open , close, limited
@@ -117,7 +128,7 @@ class WeatherComponent extends HTMLElement{
         <div class="card-widget__weather__temp grid grid-cols-2 text-center border-b-1 border--color__sn_ss-3">
             <div>
                 <header class="card-widget__weather__title-2 font-calibre font-normal"> Currently </header>
-                <div class="card-widget__weather__title-1 font-calibre font-semibold justify-center ">${snowReport?.current?.temp ?? ''}</div>
+                <div class="card-widget__weather__title-1 font-calibre font-semibold justify-center ">${snowReport?.current?.temp?.slice(0,-1) ?? ''}</div>
                 <img class="card-widget__weather__icon" src="https://opensnow.com/img/weather/day/bkn.png"/>
                 <div class="font-calibre card-widget__weather__icon__text">${snowReport?.current?.wind?.speed ?? ''}</div>
             </div>
