@@ -14,23 +14,13 @@ Link %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'hero-carousel.njk' import heroCarousel %}
 {% from 'macros.njk' import events %}
-{% from 'organisms/thumbnail_slider.njk' import thumbnail_slider %}
+{% from 'organisms/thumbnail_slider.njk' import thumbnail_slider, thumbnail_slider_circle %}
 
 <section class="page-top-adjust"></section>
 
 <section class="segment-outer">
     <section class="segment-inner hidden sm:grid">
-        <media-carousel>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    {% for item in pageCMS['image-actions'].image_action_list %}
-                        <div class="swiper-slide !w-auto">
-                            {{iconImageLink(item)}}
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </media-carousel>
+        {{ thumbnail_slider_circle( pageCMS['image-actions'].image_action_list) }}        
     </section>
 </section>
 

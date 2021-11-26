@@ -37,6 +37,13 @@
     position: relative;
     padding-top: 20px;
 }
+.thumbnail-slider__slides-circle{
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+}
 
 .thumbnail-slider__slides__box {
     cursor: pointer;
@@ -107,7 +114,7 @@
     .thumbnail-slider__slides {
         padding-top: 120px;
         margin-top: -60px;
-    }
+    }    
     .thumbnail-slider__navs > div {
         background-color: transparent;
     }
