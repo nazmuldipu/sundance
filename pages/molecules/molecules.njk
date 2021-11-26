@@ -6,6 +6,8 @@ permalinkBypassOutputDir: true
 nickname: "Molecules"
 ---
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from 'atoms/icons.njk' import iconImageLink %}
+
 {% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/card2.njk' import horrizontalCard, card %}
 {% from 'molecules/newsletter.njk' import newsletter %}
@@ -105,6 +107,16 @@ nickname: "Molecules"
         {{ amenities(item = amenitiesData) }}
     </section>
 </section>
+
+<hr>
+    <section class="segment-outer">
+        <section class="segment-inner grid grid-flow-col auto-cols-min gap-x-2">
+            {% for item in imageCarouses%}
+                {{iconImageLink(item)}}
+            {% endfor %}
+        </section>
+    </section>
+<hr>
 
 {{ h2( copy='Group Venues' ) }}
 {% for event in groupVenue %}
