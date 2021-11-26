@@ -10,7 +10,6 @@ nickname: lodging/rooms-and-suites/sundance-suite
 {% from 'molecules/card.njk' import verticalCard %}
 {% from 'atoms/headings.njk' import global_header %}
 {% from 'molecules/newsletter.njk' import newsletter %}
-{% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'organisms/thumbnail_slider.njk' import multi_slider %}
@@ -21,7 +20,6 @@ nickname: lodging/rooms-and-suites/sundance-suite
 
 {% set sliderImages = pageCMS['slider'].global_image_arr.images %}
 
-{{ navMenu(data.navMenuLink) }}
 {% macro aminitiesSection() %}
     {% if pageCMS['amenities-data'].amenities_list %}
         <section class="mt-12">
