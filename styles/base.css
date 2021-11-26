@@ -660,6 +660,9 @@ strong {
 }
 /* Mobile (Screen size : 375 pts) */
 @media screen and (min-width: 320px) and (max-width: 767px) {
+    .sm\:grid {
+        display: grid;
+    }
     .sm\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }

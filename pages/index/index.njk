@@ -8,6 +8,7 @@ permalinkBypassOutputDir: true
 {% from "atoms/a.njk" import a,
 Link %}
 {% from "atoms/headings.njk" import h2 %}
+{% from 'atoms/icons.njk' import iconImageLink %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
@@ -16,6 +17,22 @@ Link %}
 {% from 'organisms/thumbnail_slider.njk' import thumbnail_slider %}
 
 <section class="page-top-adjust"></section>
+
+<section class="segment-outer">
+    <section class="segment-inner hidden sm:grid">
+        <media-carousel>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {% for item in pageCMS['image-actions'].image_action_list %}
+                        <div class="swiper-slide !w-auto">
+                            {{iconImageLink(item)}}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </media-carousel>
+    </section>
+</section>
 
 <section class="home-style-bg" style="--background-url: url({{pageCMS['home-sliders'].home_sliders.background | theImgSrc}}); --top-position: 200px;">
     {{heroCarousel(pageCMS['banner-carousel'].banner_carousel)}}
@@ -50,30 +67,30 @@ Link %}
     {{events(pageCMS['events'].sundance_events )}}
 </section>
 
-    <section class="segment-outer">
-        <section class="segment-inner horizontal-card">
-            {% set cardObj = pageCMS['horizontal-card'].horizontal_card%}
-            <header class="horizontal-card__header font-horizon">{{cardObj.header}}</header>
-            <div class="horizontal-card__container">
-                <div class="horizontal-card__text">
-                    {{ h2( copy=cardObj.title, classes=['heading', 'horizontal-card__title', 'font-ivar'] ) }}
-                    <div class="horizontal-card__description font-calibre">
-                        {{cardObj.description | safe}}
-                    </div>
-                    <div class="flex">
-                        {% for item in cardObj.actions%}
-                            <div class="horizontal-card__breadcrumb font-calibre {{'last' if loop.last}}">
-                                {{ Link( href=item.action.url, copy=item.action.copy, target='_self', classes=['button', 'button--' + item.action.type, 'font-calibre'] ) }}
-                            </div>
-                        {% endfor %}
-                    </div>
+<section class="segment-outer">
+    <section class="segment-inner horizontal-card">
+        {% set cardObj = pageCMS['horizontal-card'].horizontal_card%}
+        <header class="horizontal-card__header font-horizon">{{cardObj.header}}</header>
+        <div class="horizontal-card__container">
+            <div class="horizontal-card__text">
+                {{ h2( copy=cardObj.title, classes=['heading', 'horizontal-card__title', 'font-ivar'] ) }}
+                <div class="horizontal-card__description font-calibre">
+                    {{cardObj.description | safe}}
                 </div>
-                <div class="horizontal-card__image">
-                    {{ global_image(cardObj.image.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
+                <div class="flex">
+                    {% for item in cardObj.actions%}
+                        <div class="horizontal-card__breadcrumb font-calibre {{'last' if loop.last}}">
+                            {{ Link( href=item.action.url, copy=item.action.copy, target='_self', classes=['button', 'button--' + item.action.type, 'font-calibre'] ) }}
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
-        </section>
+            <div class="horizontal-card__image">
+                {{ global_image(cardObj.image.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
+            </div>
+        </div>
     </section>
+</section>
 <section class="home-style-bg newsletter-bg" style="--background-url: url({{pageCMS['horizontal-card'].horizontal_card.background | theImgSrc}}); --top-position: 0;">
     {{ newsletter() }}
 </section>

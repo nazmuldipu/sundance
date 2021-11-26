@@ -32,7 +32,7 @@
 #}
 {% macro iconImageLink( classes=['no-underline'], imgClasses = 'icon-image', obj )%}
     <a
-        href="{{ obj.href }}"
+        href="{{ obj | json }}"
         class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if obj.id %} id="{{ obj.id }}" {% endif %}
         {% if obj.target %} target="{{ obj.target }}" {% endif %}
