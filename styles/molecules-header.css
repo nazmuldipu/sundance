@@ -90,7 +90,7 @@
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-.dropdown-list__list-item {
+.header__actions .dropdown-list__list-item {
     display: flex;
     flex-direction: row;
     align-items: center;

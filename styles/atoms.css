@@ -273,8 +273,19 @@
     padding-bottom: 24px;
     text-align: center;
 }
-.accordion--text__padding:last-child{
-    padding-bottom: 24px;
+.accordion--text__padding{
+    padding-bottom: 16px;
+}
+.accordion--text__summary{
+    font-size: 19px;
+    font-weight: 600;
+    font-family: var(--sundance__font-ivar);
+    padding-top: 16px;
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .accordion--text__summary{
+        font-size: 16px;
+    }
 }
 
 .accordion--label {
@@ -583,7 +594,7 @@
     max-height: 0;
     left: 1px;
     overflow: hidden;
-    padding-top: 39px;
+    padding-top: 35px;
     position: absolute;
     transition: max-height 0.4s linear;
     top: 26px;
@@ -676,5 +687,8 @@
         font-size: 42px;
         line-height: 46.2px;
     }
+}
+.text--primary {
+    color: var(--sundance__primary1);
 }
 /****  end atoms  ********************************/
