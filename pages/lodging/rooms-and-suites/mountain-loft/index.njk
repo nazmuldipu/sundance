@@ -21,6 +21,11 @@ nickname: lodging/rooms-and-suites/mountain-loft
 {% set sliderImages = pageCMS['slider'].global_image_arr.images %}
 
 {% macro aminitiesSection() %}
+    {% if pageCMS['amenities-top-description'].simple_article %}
+        <div class="details_amenities-top-description mt-12 font-ivar text-lg-2 text-center">
+            {{pageCMS['amenities-top-description'].simple_article.title | safe}}
+        </div>
+    {% endif %}
     {% if pageCMS['amenities-data'].amenities_list %}
         <section class="mt-12">
             {{ amenities(pageCMS['amenities-data'].amenities_list) }}
@@ -58,6 +63,7 @@ nickname: lodging/rooms-and-suites/mountain-loft
                 <div class="top__accommodation-fetaures">
                     {{ features() }}
                 </div>
+
                 <div class="top__aminities-section">
                     {{ aminitiesSection() }}
                 </div>
