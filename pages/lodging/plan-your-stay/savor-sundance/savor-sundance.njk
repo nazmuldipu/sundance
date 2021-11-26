@@ -15,10 +15,10 @@ nickname: "lodging/plan-your-stay/savor-sundance"
 {% set groupVenue = pageCMS['group-venues'].group_venues %}
 <section class="page-top-adjust"></section>
 <section class="group-section">
-    <section class="segment-outer relative">
+    <section class="segment-outer relative -z-1">
         <figure class="segment-inner">
         {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
-            {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
+            {{global_image(pageCMS['top-banner'].global_image, classes='image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         {% endif %}
         </figure>
     </section>
