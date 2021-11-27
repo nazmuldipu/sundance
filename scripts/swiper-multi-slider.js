@@ -1,15 +1,14 @@
 
 import {Swiper, defaultConfig} from '../components/lib/swiper';
-if (document.querySelector(".gallery-thumbs") && defaultConfig) {
-    let galleryThumbs = new Swiper(".gallery-thumbs", {
-    loop: true,
-    spaceBetween: 8,
-    slidesPerView: "auto",
-    watchSlidesProgress: true,
-  });
-  defaultConfig.thumbs = {
-    swiper: galleryThumbs
-  }
+const condition = document.querySelector(".gallery-thumbs") && defaultConfig;
+if (condition) {
+    const galleryThumbs = new Swiper(".gallery-thumbs", {
+      loop: true,
+      spaceBetween: 8,
+      slidesPerView: "auto",
+      watchSlidesProgress: true,
+      id: "swiper-2",
+    });
 }
-console.log(defaultConfig)
+
 export { Swiper, defaultConfig };
