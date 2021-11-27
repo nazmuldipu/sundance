@@ -1,5 +1,15 @@
 {% from 'molecules/header.njk' import navMenu %}
+{% from 'organisms/thumbnail_slider.njk' import thumbnail_slider_circle %}
 
 {% if globalCMS['top-navbar'].navbar %}
     {{ navMenu(globalCMS['top-navbar'].navbar) }}
+{% endif %}
+
+{% if globalCMS['top-navbar'].navbar %}
+    <section class="page-top-adjust"></section>
+    <section class="segment-outer">
+        <section class="segment-inner hidden sm:grid">
+            {{ thumbnail_slider_circle( globalCMS['image-actions'].image_action_list) }}        
+        </section>
+    </section>
 {% endif %}
