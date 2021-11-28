@@ -88,7 +88,7 @@
 
 {% macro multi_slider_thumbnail(images = []) %}
     <section>
-        <media-carousel-thumbnail>
+        <media-carousel-thumbnail style="display: block; overflow: hidden;">
             <div class="swiper-container swiper mySwiper2">
                 <div class="swiper-wrapper">
                     {% for item in images %}
@@ -104,7 +104,7 @@
                     {{ iconCSS( classes=['carousel-button-next', 'carousel-icon-css', 'arrow-right', 'mx-1', 'rotate-45'] ) }}
                 </div>
             </div>
-            <div class="swiper-thumbnail-container gallery-thumbs">
+            <div thumbsslider="" style="width: 100%; overflow: hidden" class="swiper-thumbnail-container gallery-thumbs">
                 <div class="swiper-wrapper" >
                     {% for item in images %}
                         <div class="swiper-slide !w-auto"  >

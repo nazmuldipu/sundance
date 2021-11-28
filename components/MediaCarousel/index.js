@@ -44,7 +44,10 @@ export default class MediaCarousel extends ProgressiveElement {
           },
         })
       );
-    });   
+    });
+    setTimeout(() => {
+      this.swiperInstance.emit('resize');
+    }, 10);    
   }
 }
 
