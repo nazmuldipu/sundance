@@ -1,9 +1,9 @@
 ---
 layout: base.njk
-pagename: ladies-day-cross-country-clinics
-permalink: "build/activities/winter-activities/ladies-day-cross-country-clinics/index.html"
+pagename: night-skiing
+permalink: "build/activities/winter-activities/night-skiing/index.html"
 permalinkBypassOutputDir: true
-nickname: ladies-day-cross-country-clinics
+nickname: night-skiing
 ---
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from 'molecules/card.njk' import verticalCard %}
@@ -24,6 +24,18 @@ nickname: ladies-day-cross-country-clinics
 {% if pageCMS['bridge-slider'] %}
 {% set bridge_slider = pageCMS['bridge-slider'].bridge_slider %}
     {{ bridge(bridge_slider) }}        
+{% endif %}
+
+{# Simple Blog #}
+{% if pageCMS['simple-blog'] %}
+    {% set simple_blog = pageCMS['simple-blog'].simple_blog  %}
+    <article class="winter-article__container font-ivar">
+        <header>
+            {{ h1(copy = simple_blog.title, classes = ['winter-article__header']) }}
+        </header>
+        <p class="winter-article__subtitle">{{ simple_blog.subtitle | safe }}</p>
+        <div class = "winter-article__copy">{{ simple_blog.descriptions | safe }}</div>
+    </article>
 {% endif %}
 
 {# Card Title #}

@@ -1,11 +1,12 @@
 ---
 layout: base.njk
-pagename: ladies-day-cross-country-clinics
-permalink: "build/activities/winter-activities/ladies-day-cross-country-clinics/index.html"
+pagename: winter-activities
+permalink: "build/activities/winter-activities/ski-and-snowboard/index.html"
 permalinkBypassOutputDir: true
-nickname: ladies-day-cross-country-clinics
+nickname: winter-activities
 ---
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from "atoms/a.njk" import button_secondary %}
 {% from 'molecules/card.njk' import verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'organisms/global-image.njk' import global_image %}
@@ -24,6 +25,23 @@ nickname: ladies-day-cross-country-clinics
 {% if pageCMS['bridge-slider'] %}
 {% set bridge_slider = pageCMS['bridge-slider'].bridge_slider %}
     {{ bridge(bridge_slider) }}        
+{% endif %}
+
+{# Simple Blog #}
+{% if pageCMS['simple-blog'] %}
+    {% set simple_blog = pageCMS['simple-blog'].simple_blog  %}
+    <article class="winter-blog__container font-ivar">
+        <div class = "winter-blog__copy">{{ simple_blog.descriptions | safe }}</div>
+        {% for item in simple_blog.actions %}
+            {% if item.action.type == 'secondary' %}
+                {% set trg = '_self' if item.action.internal else 
+                        '_blank' %}
+                <div class="winter-blog__action">
+                    {{ button_secondary(classes = ['button', 'button--secondary', 'font-calibre', 'font-medium', 'text-base'], href = item.action.url, copy = item.action.copy, target = trg ) }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </article>
 {% endif %}
 
 {# Card Title #}
