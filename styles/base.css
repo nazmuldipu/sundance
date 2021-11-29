@@ -743,6 +743,16 @@ strong {
 .h-full {
     height: 100%;
 }
+
+.global-px{
+    padding: 0 24px;
+}
+@media screen and (min-width: 1024px){
+    .global-px{
+        padding: 0;
+    }
+}
+
 .special-background--secondary4 {
     font-size: 16px !important;
     padding: 32px 56px !important;
