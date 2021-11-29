@@ -504,6 +504,9 @@ strong {
 .-mt-22 {
     margin-top: -88px;
 }
+.my-12 {
+    margin: 3rem 0;
+}
 /* Z index */
 .z-10 {
     z-index: 10;
@@ -775,5 +778,9 @@ strong {
         padding-left: 5.5rem;
         padding-right: 5.5rem;
     }
+}
+.global-contents {
+    max-width: 792px;
+    margin: 0 auto;
 }
 /****  end base styles  ********************************/

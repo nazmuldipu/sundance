@@ -11,7 +11,7 @@ nickname: winter-mountain-safety
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'molecules/bridge.njk' import bridge %}
-{% from 'atoms/accordion.njk' import accordion %}
+{% from 'atoms/accordion.njk' import accordion2 %}
 {% from 'macros.njk' import top_banner_group_venues %}
 
 <section class="page-top-adjust"></section>
@@ -21,6 +21,26 @@ nickname: winter-mountain-safety
     {% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
     {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues) }}
 {% endif %}
+
+{% if  pageCMS['contact-info'] and  pageCMS['contact-info'].simple_article %}
+<section class="segment-outer">
+    <section class="segment-inner global-contents text-lg-2 font-ivar">
+        {{pageCMS['contact-info'].simple_article.description | safe}}
+    </section>
+</section>
+{% endif %} 
+
+{# Accordion #}
+{% if  pageCMS['accordion'] %}
+{% set accordions = pageCMS['accordion'].accordion %}
+<section class="segment-outer my-12">
+    <section class="segment-inner accordion-wrapper accordion__bottom-padding">
+        {% for item in accordions %}
+            {{ accordion2( item = item ) }}
+        {% endfor %}             
+    </section>
+</section>
+{% endif %} 
 
 {# Card Title #}
 {% if pageCMS['card-title'] %}
