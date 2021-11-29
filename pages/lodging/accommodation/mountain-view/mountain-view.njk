@@ -49,10 +49,11 @@ nickname: lodging/accommodation/mountain-view
 <section class="page-top-adjust"></section>
 <section class="segment-outer bg-sn-5 px-4">
     <section class="segment-inner">
+        {{multi_slider_thumbnail(sliderImages)}}
         <section class="dining-details-container">
             <section>
                 <article class="thumbnail-slider__images grid order-2">
-                    {{multi_slider_thumbnail(sliderImages)}}
+                   {#  {{multi_slider_thumbnail(sliderImages)}} #}
                 </article>
                 <div class="top__accommodation-fetaures">
                     {{ features() }}

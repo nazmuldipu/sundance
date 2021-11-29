@@ -88,7 +88,7 @@
 
 {% macro multi_slider_thumbnail(images = []) %}
     <section>
-        <media-carousel-thumbnail style="display: block; overflow: hidden;">
+        <media-carousel-thumbnail>
             <div class="swiper-container swiper mySwiper2">
                 <div class="swiper-wrapper">
                     {% for item in images %}
@@ -104,11 +104,42 @@
                     {{ iconCSS( classes=['carousel-button-next', 'carousel-icon-css', 'arrow-right', 'mx-1', 'rotate-45'] ) }}
                 </div>
             </div>
-            <div thumbsslider="" style="width: 100%; overflow: hidden" class="swiper-thumbnail-container gallery-thumbs">
-                <div class="swiper-wrapper" >
+            <div class="mySwiper swiper-thumbnail-container gallery-thumbs">
+                <div class="swiper-wrapper">
                     {% for item in images %}
                         <div class="swiper-slide !w-auto"  >
                             <div class="thumbnail-slider__slides__box" >
+                                {{ global_image(item.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </media-carousel-thumbnail>
+    </section>
+{% endmacro %}
+
+{% macro multi_slider_thumbnail_test(images = []) %}
+    <section>
+        <media-carousel-thumbnail>
+            <div
+                class="swiper mySwiper2"
+            >
+            <div class="swiper-wrapper">
+                {% for item in images %}
+                    <div class="swiper-slide">
+                        {{ global_image(item.global_image, classes='image_frame sm:15:8 lg:15:8 2xl:15:8 4xl:15:8') }}
+                    </div>
+                {% endfor %}
+            </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <div thumbsSlider="" class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    {% for item in images %}
+                        <div class="swiper-slide"  >
+                            <div class="w-full h-full" >
                                 {{ global_image(item.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
                             </div>
                         </div>

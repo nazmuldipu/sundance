@@ -1,20 +1,23 @@
 "use strict";
 import MediaCarousel from "../MediaCarousel/index.js";
-
+import './index.css';
 export default class MediaCarouselWithThumbnail extends MediaCarousel {
   
-  setupSwiper(mod){ 
+  setupSwiper(mod){
+    //this.loadStyles();  
     const config = {
         loop: true,
         loopedSlides: 7
-    }  
+    } 
     this.thumbnailInstance = new mod.Swiper(
-        this.getElementsByClassName("swiper-thumbnail-container")?.[0],
-        Object.assign({}, mod.defaultConfig, {observeParents: true, ...config})
+        this.getElementsByClassName("mySwiper")?.[0],
+        {loop: true, slidesPerView: 4,freeMode: true, watchSlidesProgress: true }
+        //Object.assign({}, mod.defaultConfig, {observeParents: true, ...config})
     );
     this.swiperInstance = new mod.Swiper(
-        this.getElementsByClassName("swiper-container")?.[0],
-        Object.assign(mod.defaultConfig, { thumbs: { swiper: this.thumbnailInstance, observeParents: true, noSwiping : true, ...config} })
+        this.getElementsByClassName("mySwiper2")?.[0],
+        //Object.assign(mod.defaultConfig, { thumbs: { swiper: this.thumbnailInstance, observeParents: true, noSwiping : true, ...config} })
+        {loop: true, navigation: {nextEl: ".carousel-button-next-container",  prevEl: ".carousel-button-prev-container"}, thumbs: { swiper: this.thumbnailInstance }}
     );
 
     this.swiperInstance.on("realIndexChange", function (e) {
@@ -32,6 +35,14 @@ export default class MediaCarouselWithThumbnail extends MediaCarousel {
         this.thumbnailInstance.update();
         this.swiperInstance.update();
     }, 100);   
+  }
+  loadStyles(){
+    fetch('./index.css').then(response => {
+        const css = response.json();
+        const cssElement = document.createElement("styles");
+        cssElement.innerHTML = css.default.toString();
+        this.prepend(cssElement);
+    })  
   }
 
 }
