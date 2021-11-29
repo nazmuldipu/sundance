@@ -693,4 +693,11 @@
 .text--primary {
     color: var(--sundance__primary1);
 }
+.group-venues__article--title {
+    font-family: var(--sundance__font-calibre);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 100%;
+}
 /****  end atoms  ********************************/
