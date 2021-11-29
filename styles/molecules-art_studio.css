@@ -1,15 +1,18 @@
 .art-studio{
     display: grid;
+    margin: auto;
     column-gap: 96px ;
     max-width: 792px;
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .art-studio__caption__header{
     font-size: 42px;
+    line-height: 46.2px;
 }
 .art-studio__caption__text--padding{
     padding-top: 28px;
     padding-bottom: 28px;
+    line-height: 26.2px;
 }
 .art-studio__caption__button--padding{
     padding: 20px 48px 12px 48px ;
