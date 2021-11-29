@@ -1,0 +1,14 @@
+{
+    "heroCornerBlock":{
+        "title":"Winter at Sundance",
+        "description":"Experience the magic of winter at Sundance your own way.",
+        "actions":[
+           {
+            "type":"view-details",
+            "copy":"Explore Winter Activities",
+            "href":"#",
+            "target":"_self"
+           }
+        ]
+    }
+}
