@@ -1,4 +1,5 @@
 {% from 'macros.njk' import scaled_image %}
+{% from 'atoms/tables.njk' import tables %}
 {# 
     #   @param  detailsClasses  array, class names (optional)
     #   @param  titleClasses  array, class names (optional)
@@ -84,18 +85,32 @@
                {% if article.summary %}
                     <p class="accordion--text__summary"> {{ article.summary | safe }} </p>
                {% endif %}
-            </figcaption>
-            {% if item.blog and not item.blog.video_url == "" %}
-                {{ item.blog.top_description | safe}}
 
-                <iframe class="my-12 w-full image_frame sm:3:4 lg:4:3 2xl:4:3 4xl:4:3" 
-                    src="{{item.blog.video_url}}"
-                    title="YouTube video player" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe>
+               {% if item.blog and not item.blog == {} %}
+                    
+                    {% if item.blog.top_description %}
+                        {{ item.blog.top_description | safe}}
+                    {% endif %}
+
+                    {% if not item.blog.video_url == "" %}
+                        <iframe class="my-12 w-full image_frame sm:3:4 lg:4:3 2xl:4:3 4xl:4:3" 
+                            src="{{item.blog.video_url}}"
+                            title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    {% endif %}
+                    
+                    {% if item.blog.bottom_description %}
+                        {{ item.blog.bottom_description | safe}}
+                    {% endif %}
+                {% endif %}
                 
-                {{ item.blog.bottom_description | safe}}
-            {% endif %}
+                {% if item.table and item.table | length > 0 %}
+                    {% for content in item.table %}
+                        {{ tables(tableData = content.table) }}
+                    {% endfor %}
+                {% endif %}
+            </figcaption>
         </figure>
     </div>    
 {% endmacro %}

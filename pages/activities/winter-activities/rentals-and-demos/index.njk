@@ -1,0 +1,55 @@
+---
+layout: base.njk
+pagename: rentals-and-demos
+permalink: "build/activities/winter-activities/rentals-and-demos/index.html"
+permalinkBypassOutputDir: true
+nickname: rentals-and-demos
+---
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6, global_header %}
+{% from 'molecules/card.njk' import verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'atoms/accordion.njk' import accordion2 %}
+{% from 'macros.njk' import top_banner_group_venues %}
+
+<section class="page-top-adjust"></section>
+
+{# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
+    {% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues) }}
+{% endif %}
+
+{% if  pageCMS['accordion-title'] and pageCMS['accordion-title'].simple_article %}
+{% set title = pageCMS['accordion-title'].simple_article.title %}
+<section class="segment-outer mb-12">
+    <section class="segment-inner text-center">
+        {{ global_header(copy = title) }}             
+    </section>
+</section>
+{% endif %} 
+
+{# Accordion #}
+{% if  pageCMS['accordion'] %}
+{% set accordions = pageCMS['accordion'].accordion %}
+<section class="segment-outer my-12">
+    <section class="segment-inner accordion-wrapper accordion__bottom-padding">
+        {% for item in accordions %}
+            {{ accordion2( item = item ) }}
+        {% endfor %}             
+    </section>
+</section>
+{% endif %} 
+
+{% if  pageCMS['bottom-content'] and pageCMS['bottom-content'].simple_article %}
+{% set description = pageCMS['bottom-content'].simple_article.description %}
+<section class="segment-outer mb-12">
+    <section class="segment-inner global-contents">
+        {{ description | safe }}             
+    </section>
+</section>
+{% endif %} 
+
+{{newsletter()}}

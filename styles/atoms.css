@@ -221,6 +221,11 @@
 }
 
 /* tables */
+.table--header-row {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+} 
 .table--row {
     display: flex;
     flex-flow: row nowrap;
@@ -238,11 +243,7 @@
     padding: 16px;
 }
 .table--row__head {
-    background-color: var(--sundance__neutral4);
     margin-right: 8px;
-}
-.table--row__data {
-    background-color: var(--sundance__neutral5);
 }
 @media screen and ( max-width: 767px ) {
     .table--row__data {
