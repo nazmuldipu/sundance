@@ -37,12 +37,12 @@ export default class MediaCarouselWithThumbnail extends MediaCarousel {
     }, 100);   
   }
   loadStyles(){
-    fetch('./index.css').then(response => {
-        const css = response.json();
+    fetch('./index.css').then(response => response.text()).then(css => {
+        console.log(css);
         const cssElement = document.createElement("styles");
-        cssElement.innerHTML = css.default.toString();
-        this.prepend(cssElement);
-    })  
+        cssElement.innerHTML = css;
+        //this.prepend(cssElement);
+    })
   }
 
 }
