@@ -105,11 +105,11 @@
                     </div>
                 </div>
             </div>
-            <div class="grid">
+            <div class="grid mt-2">
                 <div class="swiper thumbnail-swiper-container mySwiper">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper flex gap-x-4">
                         {% for item in images %}
-                            <div class="swiper-slide"  >
+                            <div class="swiper-slide cursor-pointer">
                                 <div class="w-full h-full" >
                                     {{ global_image(item.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
                                 </div>
