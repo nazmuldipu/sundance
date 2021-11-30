@@ -28,11 +28,30 @@ class WeatherComponent extends HTMLElement{
         }
     }
 
-    async render(){
-        let snr = await fetchApi(this.getBaseUri()+'/sundance/snow-report');
-        let snrJson = await snr.json();
-        let snowReport = snrJson[0]
+    getAllCss(){
+        const allCSS = [...document.styleSheets]
+        .map(styleSheet => {
+            try {
+            return [...styleSheet.cssRules]
+                .map(rule => rule.cssText)
+                .join('');
+            } catch (e) {
+            console.log('Access to stylesheet %s is denied. Ignoring...', styleSheet.href);
+            }
+        })
+        .filter(Boolean)
+        .join('\n');
+        return allCSS
+    }
 
+    async render(){
+        let getSnowReport = await fetchApi(this.getBaseUri()+'/sundance/snow-report');
+        let snowReportJson = await getSnowReport.json();
+        let snowReport = snowReportJson[0]
+
+        document.getElementById('navbar_icon_temp').innerHTML = snowReport?.current?.temp?.slice(0,-1) ?? '0'
+        document.getElementById('navbar_icon_temp-tab').innerHTML = snowReport?.current?.temp?.slice(0,-1) ?? '0'
+    
         let forecasts = snowReport.forecast.daily
         let weather = ``
         let detailSnowReport = ``
@@ -59,10 +78,9 @@ class WeatherComponent extends HTMLElement{
             `
         });
 
-        let lfr = await fetchApi(this.getBaseUri()+'/sundance/lift-report');
-        let lfrJson = await lfr.json();
-        let liftReport = lfrJson[0]
-        // open , close, limited
+        let getLiftReport = await fetchApi(this.getBaseUri()+'/sundance/lift-report');
+        let getLiftReportJson = await getLiftReport.json();
+        let liftReport = getLiftReportJson[0]
         let roadsParking = [
             {name: 'SR-92', status: liftReport.road_92_condition},
             {name: 'Highway 189', status: liftReport.road_189_condition},
@@ -121,9 +139,8 @@ class WeatherComponent extends HTMLElement{
             }
         });
 
-
         this.shadow.innerHTML = `
-        <link rel="stylesheet" type="text/css" href="index/index-sync.css">
+        <style>${getAllCss()}</style>
         <article class="card-widget__weather flex flex-col">
         <div class="card-widget__weather__temp grid grid-cols-2 text-center border-b-1 border--color__sn_ss-3">
             <div>

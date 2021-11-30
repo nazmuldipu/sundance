@@ -115,7 +115,7 @@ iconCSS %}
                     <label for="action_icon-tab-{{ic_action.slug}}" class="action_icon__label action_icon__label-{{ic_action.slug}}">
                         {% if ic_action.slug === 'temp'%}
                             <div class="temp_icon_text">
-                                <span id="navbar_icon_temp-tab">32</span>&deg;</div>
+                                <span id="navbar_icon_temp-tab">0 &deg;</span></div>
                         {% else %}
                             {{ic_action.icon | safe}}
                         {% endif %}
@@ -138,7 +138,7 @@ iconCSS %}
                         <label for="action_icon-{{ic_action.slug}}" class="action_icon__label action_icon__label-{{ic_action.slug}}">
                             {% if ic_action.slug === 'temp'%}
                                 <div class="temp_icon_text">
-                                    <span id="navbar_icon_temp">32</span>&deg;</div>
+                                    <span id="navbar_icon_temp">0 &deg;</span></div>
                             {% else %}
                                 {{ic_action.icon | safe}}
                             {% endif %}
