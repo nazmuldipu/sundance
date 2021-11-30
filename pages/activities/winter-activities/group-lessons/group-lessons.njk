@@ -1,0 +1,62 @@
+---
+layout: base.njk
+pagename: group-lessons
+permalink: "build/activities/winter-activities/group-lessons/index.html"
+permalinkBypassOutputDir: true
+nickname: group-lessons
+---
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from 'molecules/card.njk' import verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'macros.njk' import top_banner_group_venues %}
+
+<section class="page-top-adjust"></section>
+
+{# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
+    {% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues) }}
+{% endif %}
+
+{# Video Section #}
+<section class="section-outer">
+    <section class="winter-video__container pb-10">
+        <iframe class="w-full image_frame sm:3:4 lg:4:3 2xl:4:3 4xl:4:3" src="https://www.youtube.com/embed/brqp5a8GELE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+</section>
+
+{# Simple Blog #}
+{% if pageCMS['middle-article'] %}
+    {% set article_list = pageCMS['middle-article'].simple_article_list  %}
+    {% for item in article_list %}
+       <section class="section-inner">
+             <article class="winter-article__container font-ivar">
+                <header>
+                    {{ h1(copy = item.simple_article.title, classes = ['winter-article__header']) }}
+                </header>
+                <div class = "winter-article__copy">{{ item.simple_article.description | safe }}</div>
+            </article>
+       </section>
+    {% endfor %}
+{% endif %} 
+
+{# Card Title #}
+{% if pageCMS['card-title'] %}
+    {% set card_title= pageCMS['card-title'].simple_article %}
+    {{ h2(copy = card_title.title, classes = ['winter-card__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
+
+{# Vertical Card Section #}
+{% if  pageCMS['vertical-cards'] %}
+{% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
+<section class="section-outer">
+    <section class="section-inner winter__card">
+        {% for item in vertical_card_list %}
+            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+        {% endfor %}
+    </section>
+</section>
+{% endif %}
+
+{{newsletter()}}

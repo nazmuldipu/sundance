@@ -223,25 +223,17 @@
         line-height: 25px;
         padding-left: 14px;
     }
-    /* .toggle:checked + .header__burger-icon--toggle-label {
-        display: none;
-    }
-    .toggle:checked ~ .toggle-details{
-        grid-column: 1 / span 3;
-    } */
-    .dropdown-list2 {
-        margin: 0;
-        position: absolute;
-        left: 53%;
-        margin-right: -47%;
-        transform: translate(-92%, -2%);
-    }
-    .header__logo,
     .header__sections {
         display: none;
     }
-    .header__actions {
-        grid-column: 2 / span 2;
+    .header__logo svg {
+        width: 160px;
+    }
+    .header__nav .dropdown-container{
+        display: none;
+    }
+    .header__nav .header_icon-buttons svg:nth-child(-n+2){
+        display: none;
     }
     .dropdown-button2 {
         padding: 13px 20px;
@@ -269,6 +261,16 @@
     .action_icon__label-cross{
         padding: 7px 12px;
         font-size: 18px;
+
+    /* on scroll view */
+    .app_nav--scroll .header__logo{
+        display: none;
+    }
+    .app_nav--scroll .header__actions {
+        grid-column: 2 / span 2;
+    }
+    .app_nav--scroll .dropdown-container,.app_nav--scroll .header_icon-buttons svg:nth-child(-n+2){
+        display: inline-block;
     }
 }
 

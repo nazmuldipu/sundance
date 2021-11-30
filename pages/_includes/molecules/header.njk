@@ -47,6 +47,18 @@ iconCSS %}
         {% endfor %}
     </section>
     <script>
+        const app_nav = document.querySelector('#app_nav');
+        function changeLinkState() {
+            if(window.scrollY > 0) {
+                app_nav.classList.add('app_nav--scroll');
+            } else {
+                app_nav.classList.remove('app_nav--scroll');
+            }
+        }
+
+        window.addEventListener('scroll', changeLinkState);
+
+
         {
             window.onBlurMenuToggle = function (id) {
                 let el = document.getElementById(id);
@@ -69,8 +81,8 @@ iconCSS %}
     </section>
 {% endmacro %}
 
-{% macro navMenu(menuItems, cardWidgetData) %}
-    <nav class="header__nav fixed-top sm:px-4 md:px-5 lg:px-5 2xl:px-14 4xl:px-22">
+{% macro navMenu(menuItems) %}
+    <nav class="header__nav fixed-top sm:px-4 md:px-5 lg:px-5 2xl:px-14 4xl:px-22" id="app_nav">
         <div class="header__burger-icon">
             <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
             <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
