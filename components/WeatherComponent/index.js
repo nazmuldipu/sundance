@@ -1,22 +1,37 @@
 import { fetchApi } from '../../scripts/utils/http-client'
 
 class WeatherComponent extends HTMLElement{
+
     constructor(){
         super()
         this.shadow = this.attachShadow({mode: "open"})
     }
 
+    /**
+     * Connect web component.
+     */
     connectedCallback(){
         this.render()
     }
 
-     getDayName(dateStr)
+    /**
+     * Date to day convert.
+     * 
+     * @param {string} dateStr - forecast date 
+     * @returns {string}
+     */
+    getDayName(dateStr)
     {
-        let date = new Date(dateStr);
-        let day = date.toLocaleString('en-us', {weekday: 'short'});   
+        let date = new Date(dateStr)
+        let day = date.toLocaleString('en-us', {weekday: 'short'})   
         return day     
     }
 
+    /**
+     * Hotel site api's base uri.
+     * 
+     * @returns {string}
+     */
     getBaseUri(){
         let apiType = document.querySelector('meta[name="api_type"]').content
         if (apiType === 'PROD') {
@@ -28,6 +43,11 @@ class WeatherComponent extends HTMLElement{
         }
     }
 
+    /**
+     * Get all css - (shadow dom purpose).
+     * 
+     * @returns {string}
+     */
     getAllCss(){
         const allCSS = [...document.styleSheets]
         .map(styleSheet => {
@@ -44,6 +64,11 @@ class WeatherComponent extends HTMLElement{
         return allCSS
     }
 
+    /**
+     * Render DOM
+     * 
+     * @returns {void}
+     */
     async render(){
         let getSnowReport = await fetchApi(this.getBaseUri()+'/sundance/snow-report');
         let snowReportJson = await getSnowReport.json();
@@ -139,8 +164,9 @@ class WeatherComponent extends HTMLElement{
             }
         });
 
+        // set html inside shadow dom
         this.shadow.innerHTML = `
-        <style>${getAllCss()}</style>
+        <style>${this.getAllCss()}</style>
         <article class="card-widget__weather flex flex-col">
         <div class="card-widget__weather__temp grid grid-cols-2 text-center border-b-1 border--color__sn_ss-3">
             <div>
