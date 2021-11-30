@@ -72,7 +72,7 @@
     border: none;
 }
 .hero-carousel__frame.active .hero-carousel__texts {
-    bottom: 85px;
+    bottom: 30%;
 }
 .hero-carousel__frame.active .hero-carousel__title {
     font-size: 50px;
@@ -107,7 +107,15 @@
         bottom: 250px;
     }
     .hero-carousel__frame.active .hero-carousel__texts {
-        bottom: 350px;
+        top: 10%;
+        bottom: 17%;
+    }
+}
+/* Desktop screen (Screen size : > 1365px) */
+@media screen and (min-width: 1366px) {
+    .hero-carousel__frame.active .hero-carousel__texts {
+        top: 20%;
+        bottom: 25%;
     }
 }
 /* -------------------------- hero-carousel Styles ------------------------------ */
