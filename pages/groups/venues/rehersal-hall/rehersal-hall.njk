@@ -13,7 +13,7 @@ nickname: rehersal-hall
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'molecules/card.njk' import verticalCard %}
 
-<section class="page-top-adjust"></section>
+
 {# Hero Image Section #}
 {% if pageCMS['venues'].group_venues.length and pageCMS['top-banner'].global_image %}
     {% set event = (pageCMS['venues'].group_venues |  first )%}
