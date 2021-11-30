@@ -36,7 +36,7 @@ export default class Utils{
         }
     }
 
-        /**
+    /**
      * Date to day convert.
      * 
      * @param {string} dateStr - forecast date 
