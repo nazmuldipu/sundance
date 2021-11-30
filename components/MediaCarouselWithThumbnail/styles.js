@@ -41,11 +41,6 @@ export default `
 .thumbnail-swiper-container .swiper-slide {
     width: 25%;
     height: 100%;
-    opacity: 0.4;
-}
-
-.thumbnail-swiper-container .swiper-slide-thumb-active {
-    opacity: 1;
 }
 
 `
