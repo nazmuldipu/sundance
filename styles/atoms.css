@@ -733,4 +733,18 @@
     font-size: 28px;
     line-height: 100%;
 }
+.table__title {
+    padding-bottom: 16px;
+}
+.table__footer {
+    padding-top: 16px;
+}
+@media screen and (min-width: 1024px) {
+    .table__title {
+        padding-bottom: 25px;
+    }
+    .table__footer {
+        padding-top: 48px;
+    }
+}
 /****  end atoms  ********************************/

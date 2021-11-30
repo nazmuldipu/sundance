@@ -126,6 +126,9 @@ ol, ul {
     margin: 0;
     position: static;
 }
+.accordion--title {
+    padding: 0;
+}
 @media screen and (min-width: 320px) and (max-width: 767px){
     .accordion--label {
         padding-right: 3rem;

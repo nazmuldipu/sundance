@@ -408,6 +408,9 @@ strong {
 .text-lg-2 {
     font-size: 19px !important;
 }
+.text-6 {
+    font-size: 24px;
+}
 .line-h-1 {
     line-height: 1rem !important;
 }
@@ -803,5 +806,13 @@ strong {
 .global-contents {
     max-width: 792px;
     margin: 0 auto;
+}
+.global-pb {
+    padding-bottom: 40px;
+}
+@media screen and (min-width: 1024px){
+    .global-pb {
+        padding-bottom: 48px;
+    }
 }
 /****  end base styles  ********************************/
