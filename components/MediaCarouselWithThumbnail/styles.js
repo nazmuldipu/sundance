@@ -27,24 +27,24 @@ export default `
     object-fit: cover;
 }
 
-.mySwiper2 {
+.swiper-container {
     height: 100%;
     width: 100%;
 }
 
-.mySwiper {
+.thumbnail-swiper-container {
     height: 220px;
     width: 100%;
     box-sizing: border-box;
 }
 
-.mySwiper .swiper-slide {
+.thumbnail-swiper-container .swiper-slide {
     width: 25%;
     height: 100%;
     opacity: 0.4;
 }
 
-.mySwiper .swiper-slide-thumb-active {
+.thumbnail-swiper-container .swiper-slide-thumb-active {
     opacity: 1;
 }
 

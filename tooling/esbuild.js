@@ -63,7 +63,6 @@ export const addGlobalBehavior = async (pagesDir, scriptsDir) => {
                 try {
                     const pageData = readFileSync(page, 'utf-8');
                     const content = sanitizePageData(pageData);
-                    console.log(pageData.includes('!ignore'));
                     /* will only run if appendData is not added already */
                     if(!content.includes(appendData)){
                         const data = content + appendData;
