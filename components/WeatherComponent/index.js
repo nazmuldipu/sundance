@@ -1,4 +1,5 @@
 import { fetchApi } from '../../scripts/utils/http-client'
+import utils from './utils.js'
 
 class WeatherComponent extends HTMLElement{
 
@@ -15,62 +16,12 @@ class WeatherComponent extends HTMLElement{
     }
 
     /**
-     * Date to day convert.
-     * 
-     * @param {string} dateStr - forecast date 
-     * @returns {string}
-     */
-    getDayName(dateStr)
-    {
-        let date = new Date(dateStr)
-        let day = date.toLocaleString('en-us', {weekday: 'short'})   
-        return day     
-    }
-
-    /**
-     * Hotel site api's base uri.
-     * 
-     * @returns {string}
-     */
-    getBaseUri(){
-        let apiType = document.querySelector('meta[name="api_type"]').content
-        if (apiType === 'PROD') {
-            return 'https://hotel-site.skipperhospitality.com'
-        } else if (apiType === 'STAGE'){
-            return 'https://hotel-site-dev.skipperhospitality.com'
-        } else {
-            return 'https://hotel-site-dev.skipperhospitality.com'
-        }
-    }
-
-    /**
-     * Get all css - (shadow dom purpose).
-     * 
-     * @returns {string}
-     */
-    getAllCss(){
-        const allCSS = [...document.styleSheets]
-        .map(styleSheet => {
-            try {
-            return [...styleSheet.cssRules]
-                .map(rule => rule.cssText)
-                .join('');
-            } catch (e) {
-            console.log('Access to stylesheet %s is denied. Ignoring...', styleSheet.href);
-            }
-        })
-        .filter(Boolean)
-        .join('\n');
-        return allCSS
-    }
-
-    /**
      * Render DOM
      * 
      * @returns {void}
      */
     async render(){
-        let getSnowReport = await fetchApi(this.getBaseUri()+'/sundance/snow-report');
+        let getSnowReport = await fetchApi(utils.getBaseUri()+'/sundance/snow-report');
         let snowReportJson = await getSnowReport.json();
         let snowReport = snowReportJson[0]
 
@@ -81,7 +32,7 @@ class WeatherComponent extends HTMLElement{
         let weather = ``
         let detailSnowReport = ``
         forecasts.forEach(forecast => {
-            forecast.dayname = this.getDayName(forecast.date)
+            forecast.dayname = utils.getDayName(forecast.date)
             weather += `
             <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre">
                 <span class="text-2xl">${forecast?.dayname}</span>
@@ -103,7 +54,7 @@ class WeatherComponent extends HTMLElement{
             `
         });
 
-        let getLiftReport = await fetchApi(this.getBaseUri()+'/sundance/lift-report');
+        let getLiftReport = await fetchApi(utils.getBaseUri()+'/sundance/lift-report');
         let getLiftReportJson = await getLiftReport.json();
         let liftReport = getLiftReportJson[0]
         let roadsParking = [
@@ -112,23 +63,23 @@ class WeatherComponent extends HTMLElement{
             {name: 'Parking', status: liftReport.parking_condition}
         ]
         let roadsParkingReport = ``
-        roadsParking.forEach(rp => {
-            if (rp.status === 'open') {
+        roadsParking.forEach(parking => {
+            if (parking.status === 'open') {
                 roadsParkingReport += `
                 <div class="toggle__content__line">
-                    <span class="toggle__content__icon bg-sp-1">✓</span> ${rp.name}: <span class="text--color__sp-1"> ${rp.status} </span>
+                    <span class="toggle__content__icon bg-sp-1">✓</span> ${parking.name}: <span class="text--color__sp-1"> ${parking.status} </span>
                 </div>
                 `
-            } else if (rp.status === 'closed') {
+            } else if (parking.status === 'closed') {
                 roadsParkingReport += `
                 <div class="toggle__content__line">
-                    <span class="toggle__content__icon bg-ssm-1">⨯</span> ${rp.name}: <span class="text--color__ssm-1"> ${rp.status} </span>
+                    <span class="toggle__content__icon bg-ssm-1">⨯</span> ${parking.name}: <span class="text--color__ssm-1"> ${parking.status} </span>
                 </div>
                 `
             } else {
                 roadsParkingReport += `
                 <div class="toggle__content__line">
-                    <span class="toggle__content__icon bg-sp-3">!</span> ${rp.name}: <span class="text--color__sp-3"> ${rp.status} </span></div>
+                    <span class="toggle__content__icon bg-sp-3">!</span> ${parking.name}: <span class="text--color__sp-3"> ${parking.status} </span></div>
                 </div>
                 `
             }
@@ -142,23 +93,23 @@ class WeatherComponent extends HTMLElement{
         ]
 
         let theLiftStatusReport = ``
-        theLiftStatus.forEach(rp => {
-            if (rp.status === 'open') {
+        theLiftStatus.forEach(lift => {
+            if (lift.status === 'open') {
                 theLiftStatusReport += `
                 <div class="toggle__content__line">
-                    <span class="toggle__content__icon bg-sp-1">✓</span> ${rp.name}: <span class="text--color__sp-1"> ${rp.status} </span>
+                    <span class="toggle__content__icon bg-sp-1">✓</span> ${lift.name}: <span class="text--color__sp-1"> ${lift.status} </span>
                 </div>
                 `
-            } else if (rp.status === 'closed') {
+            } else if (lift.status === 'closed') {
                 theLiftStatusReport += `
                 <div class="toggle__content__line">
-                    <span class="toggle__content__icon bg-ssm-1">⨯</span> ${rp.name}: <span class="text--color__ssm-1"> ${rp.status} </span>
+                    <span class="toggle__content__icon bg-ssm-1">⨯</span> ${lift.name}: <span class="text--color__ssm-1"> ${lift.status} </span>
                 </div>
                 `
             } else {
                 theLiftStatusReport += `
                 <div class="toggle__content__line">
-                    <span class="toggle__content__icon bg-sp-3">!</span> ${rp.name}: <span class="text--color__sp-3"> ${rp.status} </span></div>
+                    <span class="toggle__content__icon bg-sp-3">!</span> ${lift.name}: <span class="text--color__sp-3"> ${lift.status} </span></div>
                 </div>
                 `
             }
@@ -166,7 +117,7 @@ class WeatherComponent extends HTMLElement{
 
         // set html inside shadow dom
         this.shadow.innerHTML = `
-        <style>${this.getAllCss()}</style>
+        <style>${utils.getAllCss()}</style>
         <article class="card-widget__weather flex flex-col">
         <div class="card-widget__weather__temp grid grid-cols-2 text-center border-b-1 border--color__sn_ss-3">
             <div>
