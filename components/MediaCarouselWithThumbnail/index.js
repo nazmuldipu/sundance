@@ -1,10 +1,9 @@
 "use strict";
 import MediaCarousel from "../MediaCarousel/index.js";
-import './index.css';
 export default class MediaCarouselWithThumbnail extends MediaCarousel {
   
   setupSwiper(mod){
-    //this.loadStyles();  
+    this.loadStyles();  
     const config = {
         loop: true,
         loopedSlides: 7
@@ -37,11 +36,10 @@ export default class MediaCarouselWithThumbnail extends MediaCarousel {
     }, 100);   
   }
   loadStyles(){
-    fetch('./index.css').then(response => response.text()).then(css => {
-        console.log(css);
-        const cssElement = document.createElement("styles");
-        cssElement.innerHTML = css;
-        //this.prepend(cssElement);
+    import('./styles.js').then( module => {
+        const style = document.createElement('style');
+        style.innerHTML = module.default;
+        this.prepend(style);
     })
   }
 
