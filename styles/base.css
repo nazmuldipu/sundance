@@ -428,6 +428,9 @@ strong {
 .anchor-color {
     color: var(--sundance__primary1);
 }
+.phone-number{
+    color: var(--sundance__primary2);
+}
 
 /* text */
 .text-lg {

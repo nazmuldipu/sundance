@@ -289,10 +289,12 @@
 }
 .accordion--title {
     margin: 0;
-    padding-bottom: 24px;
     text-align: center;
 }
-.accordion--text__padding {
+.toggle:checked + label .accordion--title {
+    padding-bottom: 24px;
+}
+.accordion--text__padding{
     padding-bottom: 16px;
 }
 .accordion--text__summary {
@@ -343,7 +345,7 @@
     border: 1px solid #000;
     height: 0px;
     right: 0;
-    top: 1rem;
+    top: 0.5rem;
     width: 1rem;
 }
 .toggle--label:after {
