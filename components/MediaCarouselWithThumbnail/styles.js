@@ -1,7 +1,7 @@
 export default `
 .swiper {
     width: 100%;
-    height: 300px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
 }
@@ -10,9 +10,6 @@ export default `
     text-align: center;
     font-size: 18px;
     background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .swiper-slide {
@@ -23,7 +20,6 @@ export default `
 .swiper-slide img, .swiper-slide picture {
     display: block;
     width: 100%;
-    height: 100%;
     object-fit: cover;
 }
 
@@ -33,7 +29,7 @@ export default `
 }
 
 .thumbnail-swiper-container {
-    height: 220px;
+    height: auto;
     width: 100%;
     box-sizing: border-box;
 }

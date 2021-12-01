@@ -110,9 +110,7 @@
                     <div class="swiper-wrapper flex gap-x-4">
                         {% for item in images %}
                             <div class="swiper-slide cursor-pointer">
-                                <div class="w-full h-full" >
-                                    {{ global_image(item.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
-                                </div>
+                                {{ global_image(item.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
                             </div>
                         {% endfor %}
                     </div>
