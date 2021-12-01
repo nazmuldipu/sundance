@@ -17,7 +17,7 @@ nickname: lodging/accommodation/canyon-view
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'molecules/accommodation-feature.njk' import accommodationFeature2 %}
-
+{% from "organisms/carousel.njk" import card_carousel %}
 {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
 {% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
 {% set sliderImages = pageCMS['slider'].global_image_arr.images %}
@@ -98,17 +98,7 @@ nickname: lodging/accommodation/canyon-view
 
         {% if pageCMS['slider-card-list'] and pageCMS['slider-card-list'].vertical_card_list %}
             {% set slider_card_list = pageCMS['slider-card-list'].vertical_card_list %}
-            <media-carousel>
-                <div class="swiper-container mt-12">
-                    <div class="swiper-wrapper gap-x-4">
-                        {% for item in slider_card_list %}
-                            <div class="swiper-slide slider-card--max-width">
-                                {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </media-carousel>
+            {{ card_carousel(cards = slider_card_list) }}
         {% endif %}
     </article>
 </section>
