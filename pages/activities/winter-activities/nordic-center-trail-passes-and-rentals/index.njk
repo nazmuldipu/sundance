@@ -5,7 +5,7 @@ permalink: "build/activities/winter-activities/nordic-center-trail-passes-and-re
 permalinkBypassOutputDir: true
 nickname: nordic-center-trail-passes-and-rentals
 ---
-{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6, global_header %}
 {% from 'molecules/card.njk' import verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'organisms/global-image.njk' import global_image %}
@@ -13,13 +13,65 @@ nickname: nordic-center-trail-passes-and-rentals
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'atoms/accordion.njk' import accordion %}
 {% from 'macros.njk' import top_banner_group_venues %}
-
-<section class="page-top-adjust"></section>
+{% from 'atoms/tables.njk' import tables %}
 
 {# Hero Image Section #}
 {% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
     {% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
     {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues) }}
+{% endif %}
+
+{# Bridge carousal #}
+{% if pageCMS['bridge-slider'] %}
+{% set bridge_slider = pageCMS['bridge-slider'].bridge_slider %}
+    {{ bridge(bridge_slider) }}        
+{% endif %}
+
+{% if pageCMS['top-middle-content'] %}
+<section class="segment-outer global-pb">
+    <section class="segment-inner global-contents">
+        {% set article = pageCMS['top-middle-content'].simple_article %}
+        <article class="cms-description font-ivar global-px">
+            {{global_header(classes = ['global-header', 'bold', 'mb-6', 'text-center'],article.title)}}
+            {{ article.description | safe }}
+        </article>
+    </section>
+</section>
+{% endif %}
+
+{% if pageCMS['middle-table-list'] and pageCMS['middle-table-list'].table_list %}
+    <section class="group-section">
+        <section class="segment-outer global-contents">
+        {% for item in pageCMS['middle-table-list'].table_list %}
+            <div class="global-pb global-px">
+                {{ tables(tableData = item.table) }}
+            </div>
+        {% endfor %}
+        </section>
+    </section>
+{% endif %}
+
+{% if pageCMS['bottom-middle-content'] %}
+<section class="segment-outer global-pb">
+    <section class="segment-inner global-contents">
+        {% set article = pageCMS['bottom-middle-content'].simple_article %}
+        <div class="cms-description font-ivar global-px">
+            {{ article.description | safe }}
+        </div>
+    </section>
+</section>
+{% endif %}
+
+{% if pageCMS['bottom-table-list'] and pageCMS['bottom-table-list'].table_list %}
+    <section class="group-section">
+        <section class="segment-outer global-contents">
+        {% for item in pageCMS['bottom-table-list'].table_list %}
+            <div class="global-pb global-px">
+                {{ tables(tableData = item.table) }}
+            </div>
+        {% endfor %}
+        </section>
+    </section>
 {% endif %}
 
 {# Card Title #}
@@ -31,8 +83,8 @@ nickname: nordic-center-trail-passes-and-rentals
 {# Vertical Card Section #}
 {% if  pageCMS['vertical-cards'] %}
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
-<section class="section-outer">
-    <section class="section-inner winter__card">
+<section class="segment-outer">
+    <section class="segment-inner winter__card">
         {% for item in vertical_card_list %}
             {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
         {% endfor %}
