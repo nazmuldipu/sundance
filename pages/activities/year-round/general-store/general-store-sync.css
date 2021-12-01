@@ -4,9 +4,6 @@
 .general-store__section-outer{
     width: 100%;
 }
-.general-store__margin-top{
-    margin-top: 8rem;
-}
 .general-store__section-inner{
     max-width: 1080px;
     overflow: hidden;
@@ -97,9 +94,6 @@
     .general-store__section-inner{
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-    }
-    .general-store__margin-top{
-        margin-top: 4rem;
     }
     .general-store__hero--caption{
         max-width: 230px;

@@ -5,7 +5,8 @@
 }
 
 .image_frame {
-    aspect-ratio: var(--d) / var(--n);
+    /* aspect-ratio: var(--d) / var(--n); */
+    padding-top: calc((var(--n) / var(--d)) * 100%);
     position: relative;
     display: block;
 }
@@ -66,7 +67,7 @@
         --d: 15;
         --n: 8;
     }
-    
+
     .sm\:8\:15 {
         /* 8:15 */
         --d: 15;
@@ -91,7 +92,6 @@
         --n: 114;
     }
 }
-
 
 /* lg breakpoint aspect ratios */
 /* Tab (Screen size : 1200 pts) */
@@ -131,7 +131,7 @@
         --d: 15;
         --n: 8;
     }
-    
+
     .lg\:8\:15 {
         /* 8:15 */
         --d: 15;
@@ -194,7 +194,7 @@
         --d: 15;
         --n: 8;
     }
-    
+
     .\32 xl\:8\:15 {
         /* 8:15 */
         --d: 15;
@@ -250,13 +250,13 @@
         --d: 4;
         --n: 3;
     }
-    
+
     .\34 xl\:15\:8 {
         /* 15:8 */
         --d: 15;
         --n: 8;
     }
-    
+
     .\34 xl\:8\:15 {
         /* 8:15 */
         --d: 15;
