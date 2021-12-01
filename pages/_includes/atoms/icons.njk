@@ -1,3 +1,5 @@
+{% from 'organisms/global-image.njk' import global_image %}
+
 {#
     #   @desc   icon image builder
     #   @param  classes array, class names (optional)
@@ -19,6 +21,28 @@
     </figure>
 {% endmacro %}
 
+{#
+    #   @desc   icon image builder
+    #   @param  classes array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  src,    image path
+    #   @param  alt     string, alternate text (optional)
+    #   @return HTML icon image
+    #   @author Alexander Khost
+#}
+{% macro iconImageLink( classes=['no-underline'], imgClasses = 'icon-image', obj )%}
+    <a
+        href="{{ obj.url }}"
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if obj.id %} id="{{ obj.id }}" {% endif %}
+        {% if obj.target %} target="{{ obj.target }}" {% endif %}
+    >
+        <figure class="icon-image-frame">
+            {{ global_image(obj.image.global_image, classes='icon-image', imgClass=imgClasses) }}
+            <figcaption class="icon-image-caption font-calibre">{{obj.copy}}</figcaption>
+        </figure>
+    </a>
+{% endmacro %}
 
 {#
     #   @desc   icon CSS builder
@@ -28,7 +52,7 @@
     #   @return HTML icon using CSS
     #   @author Alexander Khost
 #}
-{% macro iconCSS( classes=['icon'], id, copy ) %}
+{% macro iconCSS(classes = ['icon'], id, copy) %}
     <div
         class="{% for class in classes %} {{ class }} {% endfor %}"
         {% if id %} id="{{ id }}" {% endif %}

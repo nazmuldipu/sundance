@@ -45,6 +45,18 @@ iconCSS %}
         {% endfor %}
     </section>
     <script>
+        const app_nav = document.querySelector('#app_nav');
+        function changeLinkState() {
+            if(window.scrollY > 0) {
+                app_nav.classList.add('app_nav--scroll');
+            } else {
+                app_nav.classList.remove('app_nav--scroll');
+            }
+        }
+
+        window.addEventListener('scroll', changeLinkState);
+
+
         {
             window.onBlurMenuToggle = function (id) {
                 let el = document.getElementById(id);
@@ -68,7 +80,7 @@ iconCSS %}
 {% endmacro %}
 
 {% macro navMenu(menuItems) %}
-    <nav class="header__nav fixed-top sm:px-4 md:px-5 lg:px-5 2xl:px-14 4xl:px-22">
+    <nav class="header__nav fixed-top sm:px-4 md:px-5 lg:px-5 2xl:px-14 4xl:px-22" id="app_nav">
         <div class="header__burger-icon">
             <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
             <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
@@ -110,25 +122,5 @@ iconCSS %}
             </span>
             {{ dropdown2( classes=['dropdown-container--secondary'], labelClasses=['button--secondary2', 'button', 'text-base'], copy=menuItems.cta_action.title, labelId=menuItems.cta_action.id, items=menuItems.cta_action.drop_down ) }}
         </div>
-        {# <header class="header">
-            <div class="header__burger-icon">
-                <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
-                <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
-                    {{ iconCSS( classes=[ menuItems.toggle_icon] ) }}
-                </label>
-                <div class="toggle-details hidden font-ivar w-screen h-screen align-baseline overflow-y-auto">
-                    {{ headerLeft(menuItems.sections , id = 'toggle-156') }}
-                </div>
-            </div>
-            <div class="header__menu-items--container">{{ headerLeft(menuItems.sections , id = 'toggle-155') }}</div>
-            <div class="header__logo">{{menuItems.company_logo | safe}}</div>
-            <div class="header__icons__cta--container">
-                {% for ic_action in menuItems.icon_actions %}
-                    {{ic_action.icon | safe}}
-                {% endfor %}
-                {{ headerCTA(menuItems.cta_action) }}
-            </div>
-            <div class="header__cta--container">{{ headerCTA(menuItems.cta_action) }}</div>
-        </header> #}
     </nav>
 {% endmacro %}

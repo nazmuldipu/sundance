@@ -6,14 +6,25 @@ permalinkBypassOutputDir: true
 nickname: "Atoms"
 ---
 
-{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
-{% from "atoms/a.njk" import a, button_primary, button_secondary, view_details, dropdown %}
+{% from "atoms/headings.njk" import h1,
+h2,
+h3,
+h4,
+h5,
+h6 %}
+{% from "atoms/a.njk" import a,
+button_primary,
+button_secondary,
+view_details,
+dropdown %}
 {% from 'atoms/form-fields.njk' import checkboxes, form_input %}
 {% from 'atoms/tables.njk' import tables %}
 {% from 'atoms/box.njk' import box %}
 {% from 'atoms/box.njk' import text_container %}
 {% from 'atoms/accordion.njk' import accordion %}
-{% from 'atoms/icons.njk' import iconImage, iconCSS %}
+{% from 'atoms/icons.njk' import iconImage,
+iconCSS,
+iconImageLink %}
 
 <header>
     {{ h1( copy='Atoms' ) }}
@@ -138,6 +149,16 @@ nickname: "Atoms"
         {{ iconCSS( classes=['icon-css', 'icon--filter'], copy='<span></span><span></span><span></span>' ) }}<br>
     </section>
 </section>
+
+<hr>
+<section>
+{{ h3(copy = 'General') }}
+    {% for item in imageCarouses%}
+        {{iconImageLink(item)}}
+    {% endfor %}
+</section>
+<hr>
+
 {# <section>
     <header>
         {{ h3(copy = 'Magazine logos') }}

@@ -216,7 +216,7 @@ strong {
 .flex-row-reverse {
     flex-direction: row-reverse;
 }
-.flex-col{
+.flex-col {
     flex-direction: column;
 }
 .justify-items-center {
@@ -320,6 +320,18 @@ strong {
 .grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
 }
+.grid-flow-row {
+    grid-auto-flow: row;
+}
+.grid-flow-col {
+    grid-auto-flow: column;
+}
+.auto-cols-min {
+    grid-auto-columns: min-content;
+}
+.auto-cols-max {
+    grid-auto-columns: max-content;
+}
 
 /* overflow classes */
 .overflow-y-auto {
@@ -416,6 +428,9 @@ strong {
 .anchor-color {
     color: var(--sundance__primary1);
 }
+.phone-number{
+    color: var(--sundance__primary2);
+}
 
 /* text */
 .text-lg {
@@ -461,8 +476,11 @@ strong {
 .pb-4 {
     padding-bottom: 2rem !important;
 }
-.pb-6{
+.pb-6 {
     padding-bottom: 1.5rem;
+}
+.pb-10 {
+    padding-bottom: 40px;
 }
 .pt-12 {
     padding-top: 3rem;
@@ -645,6 +663,9 @@ strong {
 }
 /* Mobile (Screen size : 375 pts) */
 @media screen and (min-width: 320px) and (max-width: 767px) {
+    .sm\:grid {
+        display: grid;
+    }
     .sm\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }

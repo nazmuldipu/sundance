@@ -1,3 +1,5 @@
+
+
 // hero-carousel
 const hero_image_frames = document.querySelectorAll(".hero-carousel__frame .image_frame");
 hero_image_frames.forEach(function (slide_frame) {

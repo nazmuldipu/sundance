@@ -4,9 +4,6 @@
 .flyfishing-activities__section-outer{
     width: 100%;
 }
-.flyfishing-activities__margin-top{
-    margin-top: 8rem;
-}
 .flyfishing-activities__section-inner{
     max-width: 1080px;
     margin-left: auto;
@@ -55,9 +52,6 @@
     .flyfishing-activities__section-inner{
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-    }
-    .flyfishing-activities__margin-top{
-        margin-top: 4rem;
     }
     .flyfishing-activities__header{
         font-size: 1.5rem;
