@@ -1,15 +1,16 @@
 ---
 layout: base.njk
-pagename: explore-your-inner-artist
-permalink: "build/lodging/plan-your-stay/explore-your-inner-artist/index.html"
+pagename: careers
+permalink: "build/about/careers/index.html"
 permalinkBypassOutputDir: true
-nickname: "lodging/plan-your-stay/explore-your-inner-artist"
+nickname: "about/careers"
 ---
+
+{% from "atoms/headings.njk" import h2 %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'organisms/global-image.njk' import global_image %}
-{% from 'molecules/group-venues.njk' import groupVenues3 %}
----
+{% from 'molecules/group-venues.njk' import groupVenues %}
 
 {% set groupVenue = pageCMS['group-venues'].group_venues %}
 
@@ -25,9 +26,20 @@ nickname: "lodging/plan-your-stay/explore-your-inner-artist"
         {% set groupData = pageCMS['top-group-venues'].group_venues %}
         {% for event in groupData %}
             <section class="group-container">
-                {{ groupVenues3(event) }}
+                {{ groupVenues(event) }}
             </section>
         {% endfor %}
     {% endif %}
+    {# Simple Article #}
+    {% if pageCMS['our-mission'] %}
+        <article class="careers__text-container font-ivar">
+            <header>
+                {{ h2(copy = pageCMS['our-mission'].simple_article.title, classes = ['careers__text-container__header']) }}
+            </header>
+            <div class="careers__text-container__copy font-ivar">
+                {{ pageCMS['our-mission'].simple_article.description | safe }}
+            </div>    
+        </article>
+    {% endif %}        
 </section>
 {{newsletter()}}
