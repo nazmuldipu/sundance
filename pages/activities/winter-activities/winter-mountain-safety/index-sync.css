@@ -30,6 +30,9 @@
 ol, ul {
     list-style: inside;
 }
+.accordion--title {
+    padding-bottom: 0;
+}
 .global-contents p strong {
     font-size: 28px;
     line-height: 28px;
