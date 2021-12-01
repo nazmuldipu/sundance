@@ -6,7 +6,7 @@
     #   @author Nazmul Alam
 #}
 {% macro newsletter( )%}
-   <section class="newsletter">
+    <section class="newsletter">
         {{ h2( copy='Stay in the loop on exclusive deals & events.', classes=['newsletter__heading', 'font-ivar']) }}
         {% set obj = {
             "label" : "", 
@@ -14,9 +14,14 @@
             "placeholder" : "Email Address", 
             "classes" : ['newnletter__input', 'font-calibre']
         } %}
-        <div>
-            {{ form_input(obj = obj) }}
-        </div>
-        {{Button('Subscribe', classes=['bg-primary2', 'font-calibre', 'text-white', 'newsletter__btn'])}}
-   </section>
+        <form-sender data-type="newsletter">
+            <form>
+                <div>
+                    {{ form_input(obj = obj) }}
+                </div>
+                {{Button('Subscribe', classes=['submit__button', 'bg-primary2', 'font-calibre', 'text-white', 'newsletter__btn'])}}
+            </form>
+            <div class="ajax__status">ajax</div>
+        </form-sender>
+    </section>
 {% endmacro %}
