@@ -108,20 +108,78 @@
 .header__tab__icon-buttons {
     display: none;
 }
-
+.action_icon__label svg {
+    padding-top: 8px;
+}
+.temp_icon_text {
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 14px 12px;
+    font-size: 24px;
+}
+.action_icon__label-cross {
+    color: var(--sundance__neutral5);
+    border: 1px solid var(--sundance__primary1);
+    border-radius: 50%;
+    padding: 15px 18px;
+    background-color: var(--sundance__primary1);
+    font-size: 24px;
+}
+.action_icon__btn:checked ~ .action_icon__label svg,
+.action_icon__btn:checked ~ .action_icon__label .temp_icon_text {
+    display: none;
+}
+.action_icon__btn:checked ~ .action_icon__label .action_icon__label-cross {
+    display: block;
+}
+.action_icon__btn:checked ~ .ic_action_container {
+    display: block;
+}
+#ic_action_tab-temp_container {
+    right: null;
+    left: 20px;
+}
+#ic_action_tab-video_container {
+    right: null;
+    left: 15px;
+}
+#ic_action_tab-location_container {
+    right: null;
+    left: 10px;
+}
+.ic_action_container {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    width: 529px;
+    right: 22px;
+    max-height: calc(100vh - 98px);
+    overflow-y: auto;
+    text-align: center;
+}
+.ic_action_container.video {
+    right: 90px;
+}
+.ic_action_container.location {
+    right: 257px;
+    width: 331px;
+}
 /* Mobile (Screen size : 375 pts) */
 @media screen and (min-width: 320px) and (max-width: 767px) {
+    .header__nav {
+        grid-template-columns: 1fr 180px 1fr;
+    }
     .header__actions {
         gap: 4px;
     }
-    .dropdown-button2{
+    .dropdown-button2 {
         z-index: -1;
     }
     .header__burger-icon {
         display: block;
         position: relative;
     }
-    .header_icon-buttons svg{
+    .header_icon-buttons svg {
         width: 42px;
         height: 42px;
     }
@@ -129,19 +187,19 @@
         margin-left: -16px;
         margin-top: -32px;
         position: absolute;
-        left:5;
+        left: 5;
         right: 5;
-        top:5;
+        top: 5;
         bottom: 5;
         background-color: white;
     }
-    .toggle_sub_menu{
+    .toggle_sub_menu {
         padding: 10px 0 32px 0;
     }
-    .toggle_menu:checked ~ .toggle_sub_menu{
+    .toggle_menu:checked ~ .toggle_sub_menu {
         display: block;
     }
-    .toggle_sub_menu__link{
+    .toggle_sub_menu__link {
         font-size: 27px;
         line-height: 32px;
         font-weight: normal;
@@ -164,7 +222,7 @@
         border-bottom: 1px solid;
         margin: 10px;
     }
-    .menu__input input{
+    .menu__input input {
         font-size: 21px;
         line-height: 25px;
         padding-left: 14px;
@@ -175,25 +233,52 @@
     .header__logo svg {
         width: 160px;
     }
-    .header__nav .dropdown-container{
+    .header__nav .dropdown-container {
         display: none;
     }
-    .header__nav .header_icon-buttons svg:nth-child(-n+2){
+    .header__nav .header_icon-buttons svg:nth-child(-n + 2) {
         display: none;
     }
-    .dropdown-button2{
+    .dropdown-button2 {
         padding: 13px 20px;
     }
-
+    .ic_action_container {
+        width: 100%;
+        right: 0;
+    }
+    .ic_action_container.video {
+        right: 0;
+        height: calc(100vh - 60px);
+    }
+    .ic_action_container.location {
+        width: 100%;
+        right: 0;
+        height: calc(100vh - 60px);
+    }
+    .action_icon__label svg {
+        padding-top: 7px;
+    }
+    .temp_icon_text {
+        padding: 7px 8px;
+        font-size: 18px;
+    }
+    .action_icon__label-cross {
+        padding: 7px 12px;
+        font-size: 18px;
+    }
     /* on scroll view */
-    .app_nav--scroll .header__logo{
+    .app_nav--scroll .header__logo {
         display: none;
     }
     .app_nav--scroll .header__actions {
         grid-column: 2 / span 2;
     }
-    .app_nav--scroll .dropdown-container,.app_nav--scroll .header_icon-buttons svg:nth-child(-n+2){
+    .app_nav--scroll .dropdown-container,
+    .app_nav--scroll .header_icon-buttons svg:nth-child(-n + 2) {
         display: inline-block;
+    }
+    .action_icon__btn:checked ~ .action_icon__label svg {
+        display: none;
     }
 }
 
