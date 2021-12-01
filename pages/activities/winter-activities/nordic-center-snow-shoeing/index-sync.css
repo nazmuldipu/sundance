@@ -57,3 +57,33 @@
         padding-right: 1rem;
     }
 }
+/*Table start*/
+.table--header-row {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    grid-gap: 0.5rem;
+}
+.table--header-row
+.table--row__head {
+    margin-right: 0;
+    background-color: var(--sundance__neutral4);
+}
+.table--row {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    grid-gap: 0.5rem;
+}
+.table--row__data {
+    display: flex;
+    flex: 1;
+    padding: 16px;
+}
+.table--row:nth-child(odd) .table--row__data {
+    background-color: var(--sundance__neutral5);
+}
+.table--row:nth-child(even) .table--row__data {
+    background-color: var(--sundance__neutral4);
+}
+/*Table End*/
