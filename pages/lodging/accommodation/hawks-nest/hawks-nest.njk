@@ -12,7 +12,7 @@ nickname: lodging/accommodation/hawks-nest
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
-{% from 'organisms/thumbnail_slider.njk' import multi_slider %}
+{% from 'organisms/thumbnail_slider.njk' import multi_slider_thumbnail %}
 {% from 'atoms/icons.njk' import iconCSS %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'organisms/amenities.njk' import amenities %}
@@ -53,7 +53,7 @@ nickname: lodging/accommodation/hawks-nest
         <section class="dining-details-container">
             <section>
                 <article class="thumbnail-slider__images grid order-2">
-                    {{multi_slider(sliderImages)}}
+                    {{multi_slider_thumbnail(sliderImages)}}
                 </article>
                 <div class="top__accommodation-fetaures">
                     {{ features() }}
