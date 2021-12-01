@@ -2,7 +2,7 @@
 {% from 'organisms/thumbnail_slider.njk' import thumbnail_slider_circle %}
 
 {% if globalCMS['top-navbar'].navbar %}
-    {{ navMenu(globalCMS['top-navbar'].navbar) }}
+    {{ navMenu(globalCMS['top-navbar'].navbar, data.weatherInfo) }}
 {% endif %}
 
 {% if globalCMS['top-navbar'].navbar %}
