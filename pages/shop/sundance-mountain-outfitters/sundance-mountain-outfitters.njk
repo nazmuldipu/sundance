@@ -21,6 +21,7 @@ verticalCard %}
 ihh1 %}
 {% from 'atoms/icons.njk' import iconCSS %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
+{% from 'macros.njk' import top_banner_center_text_group_venues %}
 
 {% set generalStore_group_venues = pageCMS['group-venues'].group_venues  %}
 {% set globalImage = pageCMS['top-banner'].banner.global_image %}
@@ -32,19 +33,12 @@ ihh1 %}
 {% set card_title = pageCMS['card-title'].simple_article %}
 
 {# Hero Image Section #}
-{% for event in generalStore_group_venues %}
-    <section class="segment-outer relative">
-        <figure class="segment-inner">
-            {{global_image(globalImage.global_image, classes='w-full image_frame sm:3:4 lg:2:1 2xl:2:1 4xl:2:1')}}
-        </figure>
-        <figcaption>
-            {{ h5(copy = pageCMS['banner-content'].simple_article.title, classes = ['general-store__hero--caption', 'font-ivar', 'font-semibold', 'text-white']) }}
-        </figcaption>
-    </section>
-    <div class="group-container general-store__group-container">
-        {{groupVenues(event)}}
-    <div>
-{% endfor %}
+{{ top_banner_center_text_group_venues(
+    image = globalImage.global_image,
+    title = pageCMS['banner-content'].simple_article.title,
+    events = generalStore_group_venues
+    )
+}}
 
 <section class="segment-outer font-ivar">
     <section class="segment-inner">
