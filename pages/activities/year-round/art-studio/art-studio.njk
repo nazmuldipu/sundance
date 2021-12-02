@@ -7,15 +7,11 @@ nickname: "Art Studio"
 ---
 
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
-{% from "atoms/a.njk" import a, button_primary, button_secondary, view_details, dropdown %}
-{% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
+{% from 'molecules/card.njk' import horrizontalCard, verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
-{% from 'molecules/art-studio.njk' import artStudio %}
-{% from 'molecules/bridge-2.njk' import secondBridge %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'macros.njk' import top_banner %}
-{% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
 
 {# Hero Section #}
 {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
