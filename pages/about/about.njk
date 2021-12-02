@@ -9,12 +9,16 @@ nickname: "about"
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/bridge.njk' import bridge %}
+
 
 {# Hero Image Section #}
 {% if pageCMS['top-banner'].global_image %}
-    <section class="group-section sm:px-6">
-        {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:4 lg:5:2 2xl:5:2 4xl:5:2')}}
-        {{ h3( copy=pageCMS['top-banner'].global_image.alt, classes=['text-5.5xl', 'sm:text-lg-2', 'font-ivar', 'text-center', 'font-semibold'] ) }}
+    <section class="group-section relative">
+        <section class="sm:mx-6">
+            {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:4 lg:5:2 2xl:5:2 4xl:5:2')}}
+        </section>
+        {{ h3( copy=pageCMS['top-banner'].global_image.alt, classes=['absolute', 'top-banner-title', 'text-white', 'text-5.5xl', 'sm:text-lg-2', 'font-ivar', 'text-center', 'font-semibold'] ) }}
     </section>
 {% endif %}
 
@@ -25,4 +29,42 @@ nickname: "about"
     </section>
 {% endif %}
 
+{# Second Image Section #}
+{% if pageCMS['second-banner'].global_image %}
+    <section class="group-section relative pb-12">
+        <section class="sm:mx-6">
+            {{global_image(pageCMS['second-banner'].global_image, classes='-z-1 image_frame sm:2:1 lg:2:1 2xl:2:1 4xl:2:1 ')}}
+        </section>
+    </section>
+{% endif %}
+
+{# Page content #}
+{% if pageCMS['page-content'].simple_article %}
+    <section class="group-section text-lg">
+        <section class="segment-inner__text-container px-6 pb-10">
+            {{ h3( copy=pageCMS['page-content'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'text-center', 'font-semibold', 'pb-6'] ) }}
+            {{pageCMS['page-content'].simple_article.description | safe}}
+        </section>
+    </section>
+{% endif %}
+
+{# page archive #}
+{% if pageCMS['archive-images'].global_image_arr %}
+    <section class="group-section text-lg pb-10">
+        <section class="grid grid-cols-2 gap-x-8 sm:gap-x-4 sm:mx-6 pb-6">
+            {% for img in pageCMS['archive-images'].global_image_arr.images %}
+                {{global_image(img.global_image, classes='-z-1 image_frame')}}
+            {% endfor %}
+        </section>
+        <div class="text-center">{{pageCMS['archive-images'].global_image_arr.description}}</div>
+    </section>
+{% endif %}
+
+
+{# Bridge carousal #}
+{% if pageCMS['bridge-slider'].bridge_slider %}
+    {{bridge(obj =  pageCMS['bridge-slider'].bridge_slider, classes = ['weddings'])}}
+{% endif %}
+
+{# ihh1 #}
 {{newsletter()}}

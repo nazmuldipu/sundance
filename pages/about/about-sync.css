@@ -1,3 +1,8 @@
 /****  start imports  ********************************/
 @import "../../styles/global.css";
 /****  end imports  ********************************/
+
+.top-banner-title{
+    top: 45%;
+    width: 100%;
+}

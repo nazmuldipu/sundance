@@ -290,6 +290,10 @@ strong {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
 }
+.mx-6 {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
 .mt-16 {
     margin-top: 4rem;
 }
@@ -532,6 +536,9 @@ strong {
 .pb-10 {
     padding-bottom: 40px;
 }
+.pb-12{
+    padding-bottom: 3rem;
+}
 .pt-12 {
     padding-top: 3rem;
 }
@@ -757,6 +764,10 @@ strong {
     }
     .sm\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .sm\:mx-6 {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
     }
     .sm\:px-4 {
         padding-left: 1rem;
