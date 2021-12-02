@@ -46,3 +46,8 @@
         padding-bottom: 0rem;
     }
 }
+@media screen and (min-width: 1024px){
+    .art-studio__hero-pb{
+        padding-bottom: 40px;
+    }
+}

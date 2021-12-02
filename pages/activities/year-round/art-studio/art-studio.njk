@@ -15,7 +15,7 @@ nickname: "Art Studio"
 
 {# Hero Section #}
 {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
-   <section class="segment-outer">
+   <section class="segment-outer art-studio__hero-pb">
         {{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
     </section> 
 {% endif %}
