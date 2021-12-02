@@ -31,14 +31,14 @@ nickname: "about/conserve"
 {% endif %}
 
 {% if pageCMS['second-content'] %}
-    {% for article in pageCMS['second-content'].simple_article_list %}
-        <section class="segment-outer">
+    <section class="segment-outer">
+        {% for article in pageCMS['second-content'].simple_article_list %}
             <section class="segment-inner__text-container px-6 pt-12">
                 {{ h3( copy=article.simple_article.title, classes=['article_style', 'font-calibre', 'font-semibold'] ) }}
                 {{ article.simple_article.description | safe }}
             </section>
-        </section>
-    {% endfor %}
+        {% endfor %}
+    </section>
 {% endif %}
 
 {% if pageCMS['video-content'] %}
@@ -52,14 +52,14 @@ nickname: "about/conserve"
 {% endif %}
 
 {% if pageCMS['third-content'] %}
-    {% for article in pageCMS['third-content'].simple_article_list %}
-        <section class="segment-outer">
+    <section class="segment-outer pb-10">
+        {% for article in pageCMS['third-content'].simple_article_list %}
             <section class="segment-inner__text-container px-6 pt-12">
                 {{ h3( copy=article.simple_article.title, classes=['article_style', 'font-calibre', 'font-semibold'] ) }}
                 {{ article.simple_article.description | safe }}
             </section>
-        </section>
-    {% endfor %}
+        {% endfor %}
+    </section>
 {% endif %}
 
 {{newsletter()}}
