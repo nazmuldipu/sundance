@@ -22,7 +22,7 @@
     box-sizing: border-box;
 }
 .shop-action__card {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
     grid-gap: 1rem;
     align-items: center;
     border-top: 1px solid black;
@@ -31,7 +31,7 @@
 }
 .bridge-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 1rem;
 }
 .action-card {
@@ -71,5 +71,11 @@
     .general-store__hero--caption{
         line-height: 3rem;
         font-size: 56px;
+    }
+    .shop-action__card {
+        grid-template-columns: 1fr 2fr;
+    }
+    .bridge-wrapper {
+        grid-template-columns: 1fr 1fr;
     }
 }
