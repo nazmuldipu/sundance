@@ -31,6 +31,7 @@ ihh1 %}
 {% set bottom_action_cards = pageCMS['bottom-action-card'].action_card %}
 
 {% set card_title = pageCMS['card-title'].simple_article %}
+{% set horizontal_card_list= pageCMS['card-list'].horizontal_card_list %}
 
 {# Hero Image Section #}
 {{ top_banner_center_text_group_venues(
@@ -98,6 +99,12 @@ ihh1 %}
                 </a>
             </article>
         {% endfor %}
+    </section>
+</section>
+{# Horrizontal Card Section #}
+<section class="segment-outer">
+    <section class="segment-inner global-pb">
+        {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
     </section>
 </section>
 {{newsletter()}}

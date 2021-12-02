@@ -270,7 +270,6 @@ strong {
 }
 .segment-inner {
     max-width: 1080px;
-    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
 }
