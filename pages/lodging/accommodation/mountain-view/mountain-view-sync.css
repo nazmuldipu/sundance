@@ -44,7 +44,7 @@
 }
 .accommodation-feature {
     width: 210px;
-    height: 210px;
+    min-height: 210px;
     box-sizing: border-box;
     display: block;
     padding: 52px 34px 48px 34px;
@@ -108,7 +108,7 @@
     }
     .accommodation-feature {
         width: 210px;
-        height: 210px;
+        min-height: 210px;
         box-sizing: border-box;
         display: block;
     }
