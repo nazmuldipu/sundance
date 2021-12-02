@@ -1,0 +1,148 @@
+/****  start imports  ********************************/
+@import "../../styles/global.css";
+/****  end imports  ********************************/
+
+.hero-section{
+    height: 700px;
+    padding: 0 76px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-image: url('/images/winter-lift-ticket-background.svg');
+    background-repeat: no-repeat;
+    & .hero-section__menu{
+        margin-bottom: 0;
+        width: 60vw;
+        height: 100px;
+        text-align: center;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & ul {
+            display: inline-flex;
+            & li {
+                padding: 0 10px;
+                font-weight: 700;
+                font-size: 1rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+.intro__container{
+    height: 520px;
+    width: 60vw;
+    text-align: center;
+    margin: 0 auto;
+    & .intro__heading{
+        margin-bottom: 30px;
+    }
+    & .intro__section--highlighted{
+        padding: 35px 71px;
+        background: #DECBA9;
+        margin-bottom: 30px;
+        & p {
+            font-weight: 400;
+            font-size: 22px;
+        }
+    }
+    & .intro__section--paragraph{
+        margin-bottom: 30px;
+        padding: 0 10px;
+        & p {
+            font-size: 24px;
+        }
+    }
+    & .intro__section--menu{
+        & ul {
+            display: inline-flex;
+            & li{
+                    border: 2px solid #262624;
+                    padding: 10px;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;
+                    font-size: 1.05rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 15px;
+                    font-weight: 500;
+                }
+        }
+    }
+}
+
+.pricing__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .pricing-card{
+        width: 350px;
+        margin: 0 10px;
+        text-align: center;
+        & .pricing-card__header{
+            background-color: #458691;
+            height: 160px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            & p{
+                font-size: 1.8rem;
+                color: #fff;
+            }
+        }
+        & .pricing-card__body--price{
+            font-size: 1.3rem;
+        }
+        & .pricing-card__body--intro{
+            height: 175px;
+            position: relative;
+        }
+        & .pricing-card__body--intro::after{
+            height: 1px;
+            width: 100%;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            display: block;
+            background-color: #D0D0D0;
+        }
+        & .pricing-card__body--intro.second::after{
+            width: 120%;
+            margin-left: -10%;
+            margin-right: -10%;
+        }
+        & .pricing-card__body--list{
+            & li {
+                padding: 20px;
+                position: relative;
+            }
+            & li:after{
+                height: 1px;
+                width: 100%;
+                content: "";
+                position: absolute;
+                bottom: 0;
+                display: block;
+                background-color: #D0D0D0;
+            }
+            & .purchase-photo-block{
+                height: 100px;
+            }
+        }
+    }
+    & .second .pricing-card__body--list{
+        & li::after{
+            width: 120%;
+            margin-left: -10%;
+            margin-right: -10%;
+        }
+    }
+    & .pricing-card__body--footer{
+        padding-top: 15px;
+    }
+}
