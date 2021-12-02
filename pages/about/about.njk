@@ -10,7 +10,7 @@ nickname: "about"
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'molecules/bridge.njk' import bridge %}
-
+{% from 'atoms/icons.njk' import iconImageLink %}
 
 {# Hero Image Section #}
 {% if pageCMS['top-banner'].global_image %}
@@ -60,10 +60,23 @@ nickname: "about"
     </section>
 {% endif %}
 
-
 {# Bridge carousal #}
 {% if pageCMS['bridge-slider'].bridge_slider %}
     {{bridge(obj =  pageCMS['bridge-slider'].bridge_slider, classes = ['weddings'])}}
+{% endif %}
+
+{# profile #}
+{% if pageCMS['profile'].art_instructor %}
+    <section class="group-section text-lg">
+        <section class="segment-inner__text-container px-6 pb-10 text-center">
+            <figure class="grid justify-center pb-8">
+                {% set profileObj = (pageCMS['profile'].art_instructor | first) %}
+                {{ global_image(profileObj.image.global_image, classes='icon-image') }}
+            </figure>
+            {{profileObj.description | safe}}
+            {{ h3( copy=profileObj.title, classes=['text-lg-2', 'font-ivar', 'text-center', 'font-semibold', 'py-6'] ) }}
+        </section>
+    </section>
 {% endif %}
 
 {# ihh1 #}
