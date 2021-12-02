@@ -1,53 +1,63 @@
 /****  start imports  ********************************/
-@import "../../../../styles/global.css";
+@import "../../../../../styles/global.css";
 /****  end imports  ********************************/
-.art-studio__section-outer{
+.section-outer{
     width: 100%;
 }
-.art-studio__section-inner{
+.section-inner{
     max-width: 1080px;
-    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
 }
-.art-studio__header{
+.group-container{
+    border: none;
+}
+.bridge{
+    padding-bottom: 50px;
+}
+.bridge__top-frame {
+    background-color: var(--sundance__primary2);
+}
+.bridge__nav-icon{
+    background-color: transparent;
+}
+.art-studio__instructor{
+    padding-bottom: 48px;
+}
+.art-studio__card-header{
     font-weight: 600;
     font-size: 2.625rem;
-    padding-top: 3rem;
-    padding-bottom: 2.5rem;
 }
 .art-studio__card{
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 3rem;
-    padding-top: 4.75rem;
-    padding-bottom: 4.5rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px){
-    .art-studio__header{
-        font-size: 1.5rem;
-        padding-top: 1.375rem;
-        padding-bottom: 1.5rem;
+    .bridge{
+        padding-bottom: 0px;
     }
     .art-studio__card{
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
-        padding-top: 0.5rem;
-        padding-bottom: 0rem;
+        padding-top: 24px;
+        padding-bottom: 8px;
     }
-    
+    .art-studio__card-header{
+        font-size: 24px;
+    }
+    .art-studio__instructor{
+        padding-bottom: 40px;
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
     .art-studio__card{
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        padding-top: 0.5rem;
-        padding-bottom: 0rem;
-    }
-}
-@media screen and (min-width: 1024px){
-    .art-studio__hero-pb{
-        padding-bottom: 40px;
+        padding-top: 24px;
+        padding-bottom: 8px;
     }
 }
