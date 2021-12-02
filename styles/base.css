@@ -269,7 +269,7 @@ strong {
     width: 100%;
 }
 .segment-inner {
-    max-width: 1440px;
+    max-width: 1080px;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
@@ -292,11 +292,14 @@ strong {
 .bold {
     font-weight: bold !important;
 }
+.gap-x-2 {
+    column-gap: 0.5rem;
+}
 .gap-x-4 {
     column-gap: 1rem;
 }
-.gap-x-2 {
-    column-gap: 0.5rem;
+.gap-x-6 {
+    column-gap: 1.5rem;
 }
 .gap-x-12 {
     column-gap: 3rem;
@@ -304,6 +307,12 @@ strong {
 /* grid template columns */
 .grid {
     display: grid;
+}
+.grid-flow-row {
+    grid-auto-flow: row;
+}
+.grid-flow-col {
+    grid-auto-flow: column;
 }
 .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -408,19 +417,39 @@ strong {
 .text-lg-2 {
     font-size: 19px !important;
 }
+.text-6 {
+    font-size: 24px;
+}
 .line-h-1 {
     line-height: 1rem !important;
 }
-
+/* font size */
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
 /* text color*/
 .text--color__sn-6 {
     color: #000;
 }
-.text--color__sp-2 {
-    color: #617c6a !important;
-}
 .text--color__sp-1 {
-    color: #458691 !important;
+    color: var(--sundance__primary1) !important;
+}
+.text--color__sp-2 {
+    color: var(--sundance__primary2) !important;
+}
+.text--color__sp-3 {
+    color: var(--sundance__primary3) !important;
+}
+.text--color__ssm-1 {
+    color: var(--sundance__semantic1) !important;
+}
+.text--color__sn-1 {
+    color: var(--sundance__neutral1) !important;
 }
 .text-white {
     color: white;
@@ -457,6 +486,10 @@ strong {
 .text--color__sp-1 {
     color: #458691 !important;
 }
+.text--color__ss-3 {
+    color: var(--sundance__secondary3) !important;
+}
+
 .text-white {
     color: white;
 }
@@ -469,6 +502,9 @@ strong {
 /* padding class */
 .p-2 {
     padding: 0.5rem;
+}
+.pb-1 {
+    padding-bottom: 0.25rem;
 }
 .pb-2 {
     padding-bottom: 1rem;
@@ -492,11 +528,25 @@ strong {
     padding-bottom: 7rem;
 }
 .pb-10 {
-    padding-bottom: 2.5rem;
+    padding-bottom: 40px;
+}
+.py-5 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.py-10 {
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 /* margin class */
 .mb-4 {
     margin-bottom: 2rem;
+}
+.mr-2 {
+    margin-right: 1rem;
+}
+.mr-4 {
+    margin-right: 2rem;
 }
 .mb-8 {
     margin-bottom: 2rem;
@@ -521,6 +571,22 @@ strong {
 }
 .-mt-22 {
     margin-top: -88px;
+}
+.my-12 {
+    margin: 3rem 0;
+}
+.mb-12 {
+    margin-bottom: 3rem;
+}
+.mt-12 {
+    margin-top: 3rem;
+}
+.mb-6 {
+    margin-bottom: 24px;
+}
+.my-10 {
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 /* Z index */
 .z-10 {
@@ -555,6 +621,9 @@ strong {
 .bg-sp-2 {
     background-color: var(--sundance__primary2) !important;
 }
+.bg-sp-3 {
+    background-color: var(--sundance__primary3) !important;
+}
 .bg-sn-4 {
     background-color: var(--sundance__neutral4) !important;
 }
@@ -569,6 +638,9 @@ strong {
 }
 .bg-ss-4 {
     background-color: var(--sundance__secondary4) !important;
+}
+.bg-ssm-1 {
+    background-color: var(--sundance__semantic1) !important;
 }
 /* borders */
 .border--color__sp-2 {
@@ -591,6 +663,9 @@ strong {
 }
 .border--color__sn-5 {
     border-color: #fff;
+}
+.border--color__sn_ss-3 {
+    border-color: var(--sundance__secondary3) !important;
 }
 .border-l--color__sn-5 {
     border-left-color: #fff !important;
@@ -686,8 +761,8 @@ strong {
 }
 /* Mobile (Screen size : 375 pts) */
 @media screen and (min-width: 320px) and (max-width: 767px) {
-    .sm\:grid {
-        display: grid;
+    .sm\:block {
+        display: block;
     }
     .sm\:grid-cols-3 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -813,5 +888,30 @@ strong {
         padding-left: 5.5rem;
         padding-right: 5.5rem;
     }
+}
+.global-contents {
+    max-width: 792px;
+    margin: 0 auto;
+}
+.global-pb {
+    padding-bottom: 40px;
+}
+@media screen and (min-width: 1024px){
+    .global-pb {
+        padding-bottom: 48px;
+    }
+}
+.global-px{
+    padding-left: 24px;
+    padding-right: 24px;
+}
+@media screen and (min-width: 1024px){
+    .global-px{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.cms-description a {
+    text-decoration: none;
 }
 /****  end base styles  ********************************/
