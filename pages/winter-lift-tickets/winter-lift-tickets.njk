@@ -12,7 +12,7 @@ Link %}
 
 <section class="hero-section">
     <div class="hero-section__menu">
-        <ul>
+        <ul class="font-ivar">
             <li>Homepage</li>
             <li>Winter activities</li>
             <li>Winter lift tickets</li>
@@ -20,123 +20,130 @@ Link %}
     </div>
 </section>
 
-<section class="segment-outer">
+<section class="segment-outer intro">
     <section class="segment-inner">
-        <article>
-            <header>
-                <h3>Now, 3 Ways to Ride</h3>
+        <article class="intro__container">
+            <header class="text-center">
+                <h2 class="intro__heading fheading heading--2 font-helvetica">Now, 3 Ways to Ride</h2>
             </header>
-            <div class="section__highlighted">
-                Important: Before purchasing tickets or passes, be sure to familiarize yourself with our new parking policy.
-            </div>  
-            <div>
+            <section class="intro__section--highlighted">
+                <p class="font-calibre"><strong>Important:</strong> Before purchasing tickets or passes, be sure to familiarize yourself with our new parking policy.</p>
+            </section>  
+            <section class="intro__section--paragraph">
                 <p class="font-ivar">
                     With all that's new at Sundance this season, compare pass options and see which way to ride is best for you.
                 </p>
-            </div>  
-            <div>
-                <ul>
+            </section>  
+            <section class="intro__section--menu">
+                <ul class="font-ivar">
                     <li><span>Parking</span></li>
                     <li><span>Trail Map</span></li>
                     <li><span>Hours</span></li>
                     <li><span>Safety</span></li>
                 </ul>
-            </div>        
+            </section>        
         </article>    
     </section>
 </section>    
 
-<section>
-    <article class="pricing-card">
-        <header>
-            Season Passes
-        </header>
-        <div>
-            <div>
-                <small>Most Flexible</small>
-                <h5>$399 Adult / $299 Child *</h5>
-                <small>$399 Adult / $299 Child *</small>
+<section class="segment-outer pricing">
+    <section class="segment-inner pricing__container">
+        <article class="pricing-card">
+            <header class="pricing-card__header">
+                <p class="font-ivar">Season Passes</p>
+                <button class="button">Buy Now</button>
+            </header>
+            <div class="pricing-card__body">
+                <div class="pricing-card__body--intro">
+                    <small class="font-calibre">Most Flexible</small>
+                    <h5 class="pricing-card__body--price">$399 Adult / $299 Child *</h5>
+                    <small class="font-calibre">* Represents starting prices.</small>
+                </div>  
+                <ul class="pricing-card__body--list"> 
+                    <li>Best value for 5+ visits</li>
+                    <li>Purchase by October 31st</li>
+                    <li class="purchase-photo-block">Purchase online (with photo)</li>
+                    <li>Renew annually online</li>
+                    <li>Direct to lift</li>
+                    <li>Payment plan available</li>
+                    <li>Includes Nordic Center</li>
+                    <li>Includes summer lift access</li>
+                    <li>Includes summer lift access</li>
+                </ul> 
+                <div class="pricing-card__body--footer">
+                    <button class="button-primary">
+                        <span>Buy Now</span>
+                    </button>
+                </div>
+                <a class="pricing-card__body--link">Learn More</a>       
+            </div> 
+        </article>
+        <article class="pricing-card second">
+            <header class="pricing-card__header">
+                <p class="font-ivar">S-Card</p>
+                <button class="button">Buy Now</button>
+            </header>
+            <div class="pricing-card__body">
+                <div class="pricing-card__body--intro second">
+                    <small class="font-calibre">Most Flexible</small>
+                    <h5 class="font-calibre pricing-card__body--price">$399 Adult / $299 Child *</h5>
+                    <small class="font-calibre">* One time fee. First day is free, then $89 for each additional day (adult) / $59 (child).</small>
+                </div> 
+                <ul class="pricing-card__body--list"> 
+                    <li>Best value for 2–5 visits</li>
+                    <li>Purchase by December 17th</li>
+                    <li class="purchase-photo-block">Purchase online (with photo)</li>
+                    <li>Buy online, auto-charges each visit</li>
+                    <li>Direct to lift</li>
+                    <li>Pay-as-you-go</li>
+                    <li>Nordic Center excluded</li>
+                    <li>Summer lift access excluded</li>
+                    <li>UTA pass not included</li>
+                </ul> 
+                <div class="pricing-card__body--footer">
+                    <button class="button-primary">
+                        <span>Buy Now</span>
+                    </button>
+                </div> 
+                <a class="pricing-card__body--link">Learn More</a>  
             </div>  
-            <ul> 
-                <li>Best value for 5+ visits</li>
-                <li>Purchase by October 31st</li>
-                <li>Purchase online (with photo)</li>
-                <li>Renew annually online</li>
-                <li>Direct to lift</li>
-                <li>Payment plan available</li>
-                <li>Includes Nordic Center</li>
-                <li>Includes summer lift access</li>
-                <li>Includes summer lift access</li>
-            </ul> 
-            <div>
-                <button class="button-primary">
-                    <span>Buy Now</span>
-                </button>
+        </article>
+        <article class="pricing-card">
+            <header class="pricing-card__header">
+                <p class="font-ivar">Lift Tickets</p>
+                <button class="button">Buy Now</button>
+            </header>
+            <div class="pricing-card__body">
+                <div class="pricing-card__body--intro">
+                    <small class="font-calibre">Most Flexible</small>
+                    <h5 class="pricing-card__body--price">$399 Adult / $299 Child *</h5>
+                    <small class="font-calibre">
+                        * Regular weekday prices. Saturdays and holidays $129 (adult) / $89 (child).
+                    </small>
+                </div>
+                <ul class="pricing-card__body--list"> 
+                    <li>Best value for 1–2 visits</li>
+                    <li>Purchase anytime</li>
+                    <li class="purchase-photo-block">
+                        Must be picked up at resort
+                        <small>Must be picked up for the first time at Sundance ticket window. Subsequent visits can be loaded onto ticket and used as direct-to-lift.</small>
+                    </li>
+                    <li>Buy + renew online</li>
+                    <li>Direct to lift, after initial purchase</li>
+                    <li>Pay-as-you-go</li>
+                    <li>Nordic Center excluded</li>
+                    <li>Summer lift access excluded</li>
+                    <li>UTA pass not included</li>
+                </ul> 
+                <div class="pricing-card__body--footer">
+                    <button class="button-primary">
+                        <span>Buy Now</span>
+                    </button>
+                </div> 
+                <a class="pricing-card__body--link">Learn More</a>  
             </div>
-            <a>Learn More</a>       
-        </div> 
-    </article>
-    <article class="pricing-card">
-        <header>
-            S-Card
-        </header>
-        <div>
-            <div>
-                <small>Most Flexible</small>
-                <h5>$399 Adult / $299 Child *</h5>
-                <small>$399 Adult / $299 Child *</small>
-            </div> 
-            <ul> 
-                <li>Best value for 2–5 visits</li>
-                <li>Purchase by December 17th</li>
-                <li>Purchase online (with photo)</li>
-                <li>Buy online, auto-charges each visit</li>
-                <li>Direct to lift</li>
-                <li>Pay-as-you-go</li>
-                <li>Nordic Center excluded</li>
-                <li>Summer lift access excluded</li>
-                <li>UTA pass not included</li>
-            </ul> 
-            <div>
-                <button class="button-primary">
-                    <span>Buy Now</span>
-                </button>
-            </div> 
-            <a>Learn More</a>  
-        </div>  
-    </article>
-    <article class="pricing-card">
-        <header>
-            Lift Tickets
-        </header>
-        <div>
-            <div>
-                <small>Most Flexible</small>
-                <h5>$399 Adult / $299 Child *</h5>
-                <small>$399 Adult / $299 Child *</small>
-            </div>
-            <ul> 
-                <li>Best value for 1–2 visits</li>
-                <li>Purchase anytime</li>
-                <li>
-                    Must be picked up at resort
-                    <small>Must be picked up for the first time at Sundance ticket window. Subsequent visits can be loaded onto ticket and used as direct-to-lift.</small>
-                </li>
-                <li>Buy + renew online</li>
-                <li>Direct to lift, after initial purchase</li>
-                <li>Pay-as-you-go</li>
-                <li>Nordic Center excluded</li>
-                <li>Summer lift access excluded</li>
-                <li>UTA pass not included</li>
-            </ul> 
-            <div>
-                <button class="button-primary">
-                    <span>Buy Now</span>
-                </button>
-            </div> 
-            <a>Learn More</a>  
-        </div>
-    </article>            
+        </article> 
+    </section>           
 </section>    
 
 <section class="segment-outer">
