@@ -1323,7 +1323,7 @@
                         {
                             "src": "",
                             "view": "25vw",
-                            "media": "(min-width:900.1px)",
+                            "media": "(min-width:767.1px)",
                             "intrinsicwidth": 1,
                             "intrinsicheight": 1
                         },
