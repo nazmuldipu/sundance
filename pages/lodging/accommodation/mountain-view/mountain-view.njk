@@ -28,7 +28,7 @@ nickname: lodging/accommodation/mountain-view
         <div></div>
     {% endif %}
     {% if pageCMS['amenities-bottom-description'].simple_article %}
-        <div class="mt-12 font-ivar text-lg-2 text-center">{{pageCMS['amenities-bottom-description'].simple_article.description | safe}}</div>
+        <div class="mt-12 font-ivar text-lg-2 text-center cms-description">{{pageCMS['amenities-bottom-description'].simple_article.description | safe}}</div>
     {% endif %}
     {% if pageCMS['amenities-bottom-description'].simple_article %}
         <p class="mt-12 font-ivar text-center">{{pageCMS['amenities-bottom-description'].simple_article.title}}</p>
@@ -44,7 +44,6 @@ nickname: lodging/accommodation/mountain-view
         {% endif %}
     </section>
 {% endmacro %}
-<section class="page-top-adjust"></section>
 <section class="segment-outer bg-sn-5 px-4">
     <section class="segment-inner">
         <section class="dining-details-container">
@@ -59,7 +58,7 @@ nickname: lodging/accommodation/mountain-view
                     {{ aminitiesSection() }}
                 </div>
             </section>
-            <section class="dining-details__venues">
+            <section class="dining-details__venues global-px">
                 {% if pageCMS['top-group-venues'] and pageCMS['top-group-venues'].group_venues %}
                     {% set groupData = pageCMS['top-group-venues'].group_venues %}
                     {% for event in groupData %}
@@ -81,13 +80,13 @@ nickname: lodging/accommodation/mountain-view
 </section>
 </section>
 <section class="segment-outer middle__aminities-section">
-<section class="segment-inner dining-details-container">
+<section class="segment-inner dining-details-container global-px">
     {{ aminitiesSection() }}
 </section>
 </section>
 <section class="segment-outer mt-12">
 <section class="segment-inner text-center">
-    <article class="details__card bg-sn-5 font-ivar">
+    <article class="bg-sn-5 font-ivar">
         {% if pageCMS['slider-card-title'] and pageCMS['slider-card-title'].simple_article.title %}
             {% set card_list_title = pageCMS['slider-card-title'].simple_article.title %}
             {{ global_header(copy = card_list_title) }}
@@ -102,7 +101,7 @@ nickname: lodging/accommodation/mountain-view
 </section>
 <section class="segment-outer mt-12">
 <section class="segment-inner text-center">
-    <article class="details__card bg-sn-5 font-ivar">
+    <article class="bg-sn-5 font-ivar global-px">
         {% if pageCMS['vertical-card-title'] and pageCMS['vertical-card-title'].simple_article.title %}
             {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
             {{ global_header(copy = card_list_title) }}

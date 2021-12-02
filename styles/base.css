@@ -914,4 +914,8 @@ strong {
 .cms-description a {
     text-decoration: none;
 }
+a[href^="tel"] {
+    text-decoration: none;
+    color: var(--sundance__primary1);
+}
 /****  end base styles  ********************************/
