@@ -33,18 +33,16 @@
     .art-studio__card{
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
-        padding-top: 0.25rem;
+        padding-top: 0.5rem;
         padding-bottom: 0rem;
-    }
-    .art-studio__section-inner{
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
     }
     
 }
-@media screen and (min-width: 768px) and (max-width: 1365px){
-    .art-studio__section-inner{
-        padding-left: 1rem;
-        padding-right: 1rem;
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .art-studio__card{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-top: 0.5rem;
+        padding-bottom: 0rem;
     }
 }
