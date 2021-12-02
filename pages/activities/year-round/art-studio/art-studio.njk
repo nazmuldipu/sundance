@@ -16,29 +16,41 @@ nickname: "Art Studio"
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'macros.njk' import top_banner %}
 {% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
-{% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
-{% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
-{# {% set card_title= pageCMS['card-title'].simple_article %} #}
 
-<section class="segment-outer">
-    <section class="segment-inner">
+{# Hero Section #}
+{% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
+   <section class="segment-outer">
         {{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
-    </section>
-</section>
-{{ h2(copy = titleHead.title, classes = ['bg-sn-4', 'art-studio__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+    </section> 
+{% endif %}
 
-<section class="bg-sn-4 art-studio__section-outer">
-    <section class="art-studio__section-inner">
-        {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-4']) }}
+{# Horizontal card title  #}
+{% if pageCMS['horizontal-card-title'] %}
+    {% set horizontal_card_title = pageCMS['horizontal-card-title'].simple_article %}
+    {{ h2(copy = horizontal_card_title.title, classes = ['bg-sn-4', 'art-studio__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
+
+{# Horizontal Cards #}
+{% if pageCMS['horizontal-cards'] %}
+   {% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
+   <section class="bg-sn-4 art-studio__section-outer">
+        <section class="art-studio__section-inner global-px">
+            {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-4']) }}
+        </section>
+    </section> 
+{% endif %}
+
+{# Vertical Cards #}
+{% if pageCMS['vertical-cards'] %}
+    {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
+    <section class="bg-sn-4 art-studio__section-outer">
+        <section class="art-studio__section-inner art-studio__card global-px">
+            {% for item in vertical_card_list %}
+                {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-4']) }}
+            {% endfor %}
+        </section>
     </section>
-</section>
-<section class="bg-sn-4 art-studio__section-outer">
-    <section class="art-studio__section-inner art-studio__card">
-        {% for item in vertical_card_list %}
-            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-4']) }}
-        {% endfor %}
-    </section>
-</section>
+{% endif %}
 
 {{newsletter()}}
 
