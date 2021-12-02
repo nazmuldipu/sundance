@@ -5,5 +5,61 @@ permalink: "build/about/conserve/index.html"
 permalinkBypassOutputDir: true
 nickname: "about/conserve"
 ---
+{% from "atoms/headings.njk" import h3 %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
 
-Hello conserve
+{# Hero Image Section #}
+{% if pageCMS['venues'].group_venues.length and pageCMS['top-banner'].global_image %}
+    {% set event = (pageCMS['venues'].group_venues |  first )%}
+    <section class="group-section">
+        {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
+        <div class="group-container">
+            {{groupVenues(event)}}
+        </div>
+    </section>
+{% endif %}
+
+{% if pageCMS['first-content'] %}
+    <section class="segment-outer">
+        <section class="segment-inner__text-container px-6">
+            {{ h3( copy=pageCMS['first-content'].simple_article.title, classes=['heading', 'text-2xl', 'sm:text-lg-2', 'font-ivar', 'text-center', 'font-semibold'] ) }}
+            {{ pageCMS['first-content'].simple_article.description | safe }}
+        </section>
+    </section>
+{% endif %}
+
+{% if pageCMS['second-content'] %}
+    {% for article in pageCMS['second-content'].simple_article_list %}
+        <section class="segment-outer">
+            <section class="segment-inner__text-container px-6 pt-12">
+                {{ h3( copy=article.simple_article.title, classes=['article_style', 'font-calibre', 'font-semibold'] ) }}
+                {{ article.simple_article.description | safe }}
+            </section>
+        </section>
+    {% endfor %}
+{% endif %}
+
+{% if pageCMS['video-content'] %}
+    <section class="section-outer">
+        <section class="segment-inner__text-container py-10">
+            <div class="image_frame sm:4:3 lg:4:3 2xl:4:3 4xl:4:3">
+                <iframe class="w-full h-full" src="{{pageCMS['video-content'].action.url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            </div>
+        </section>
+    </section>
+{% endif %}
+
+{% if pageCMS['third-content'] %}
+    {% for article in pageCMS['third-content'].simple_article_list %}
+        <section class="segment-outer">
+            <section class="segment-inner__text-container px-6 pt-12">
+                {{ h3( copy=article.simple_article.title, classes=['article_style', 'font-calibre', 'font-semibold'] ) }}
+                {{ article.simple_article.description | safe }}
+            </section>
+        </section>
+    {% endfor %}
+{% endif %}
+
+{{newsletter()}}
