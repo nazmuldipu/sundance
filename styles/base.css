@@ -269,7 +269,7 @@ strong {
     width: 100%;
 }
 .segment-inner {
-    max-width: 1440px;
+    max-width: 1080px;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
@@ -430,6 +430,13 @@ strong {
 .text-lg-2 {
     font-size: 19px !important;
 }
+.text-6 {
+    font-size: 24px;
+}
+.line-h-1 {
+    line-height: 1rem !important;
+}
+/* font size */
 .text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -565,6 +572,18 @@ strong {
 }
 .-mt-22 {
     margin-top: -88px;
+}
+.my-12 {
+    margin: 3rem 0;
+}
+.mb-12 {
+    margin-bottom: 3rem;
+}
+.mt-12 {
+    margin-top: 3rem;
+}
+.mb-6 {
+    margin-bottom: 24px;
 }
 .my-10 {
     margin-top: 40px;
@@ -856,5 +875,30 @@ strong {
         padding-left: 5.5rem;
         padding-right: 5.5rem;
     }
+}
+.global-contents {
+    max-width: 792px;
+    margin: 0 auto;
+}
+.global-pb {
+    padding-bottom: 40px;
+}
+@media screen and (min-width: 1024px){
+    .global-pb {
+        padding-bottom: 48px;
+    }
+}
+.global-px{
+    padding-left: 24px;
+    padding-right: 24px;
+}
+@media screen and (min-width: 1024px){
+    .global-px{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+.cms-description a {
+    text-decoration: none;
 }
 /****  end base styles  ********************************/
