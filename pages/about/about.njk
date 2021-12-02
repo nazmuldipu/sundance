@@ -5,4 +5,24 @@ permalink: "build/about/index.html"
 permalinkBypassOutputDir: true
 nickname: "about"
 ---
-About Page
+{% from "atoms/headings.njk" import h3 %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+
+{# Hero Image Section #}
+{% if pageCMS['top-banner'].global_image %}
+    <section class="group-section sm:px-6">
+        {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:4 lg:5:2 2xl:5:2 4xl:5:2')}}
+        {{ h3( copy=pageCMS['top-banner'].global_image.alt, classes=['text-5.5xl', 'sm:text-lg-2', 'font-ivar', 'text-center', 'font-semibold'] ) }}
+    </section>
+{% endif %}
+
+{% if pageCMS['venues'].group_venues.length %}
+    <section>
+        {% set event = (pageCMS['venues'].group_venues |  first )%}
+        {{groupVenues(event)}}
+    </section>
+{% endif %}
+
+{{newsletter()}}
