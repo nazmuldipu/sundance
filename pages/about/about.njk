@@ -68,7 +68,7 @@ nickname: "about"
 {# profile #}
 {% if pageCMS['profile'].art_instructor %}
     <section class="group-section text-lg">
-        <section class="segment-inner__text-container px-6 pb-10 text-center">
+        <section class="segment-inner px-6 pb-10 text-center">
             <figure class="grid justify-center pb-8">
                 {% set profileObj = (pageCMS['profile'].art_instructor | first) %}
                 {{ global_image(profileObj.image.global_image, classes='icon-image') }}
@@ -79,5 +79,16 @@ nickname: "about"
     </section>
 {% endif %}
 
-{# ihh1 #}
+{#  Vision and mission #}
+<section class="group-section text-lg pb-10">
+    <section class="grid grid-cols-2 sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 pb-6 border-t-1 border-b-1">
+        {% for item in pageCMS['vision-mission'].simple_article_list %}
+            <article>
+                {{ h3( copy=item.simple_article.title, classes=['text-4xl', 'sm:text-3_axl', 'font-calibre', 'font-medium', 'text-center', 'pt-10', 'pb-6'] ) }}
+                {{item.simple_article.description | safe}}
+            </article>
+        {% endfor %}
+    </section>
+</section>
+
 {{newsletter()}}
