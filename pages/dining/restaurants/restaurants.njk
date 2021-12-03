@@ -34,7 +34,7 @@ nickname: "dining/restaurants"
 </section>
 <section class="segment-outer bg-sn-4 px-4 pb-4">
     <section class="segment-inner">
-        <section class="dining-restaurants__cards">
+        <section class="flex-card-container">
             {% for item in cardAllData %}
                 {{ singleCard(item = item.vertical_card, classes = ['card-container', 'dining-restaurants__single-card']) }}
             {% endfor %}

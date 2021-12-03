@@ -4,7 +4,7 @@
 .dining-restaurants__horizontal-cards {
     padding: 2rem 0 0 0;
 }
-.dining-restaurants__cards {
+.flex-card-container {
     padding: 0 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -22,7 +22,7 @@
     .segment-outer__margin {
         margin-top: 6rem;
     }
-    .dining-restaurants__cards {
+    .flex-card-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-start;
