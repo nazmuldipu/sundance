@@ -72,7 +72,7 @@
             {% if item.criterias %}
                 <div>
                     {% for criteria in item.criterias %}
-                        {{ h5(copy = criteria.p, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                        {{ h5(copy = criteria.text, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
                     {% endfor %}
                 </div>
             {% endif %}                                           
