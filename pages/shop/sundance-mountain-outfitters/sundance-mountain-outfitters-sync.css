@@ -66,6 +66,9 @@
         border: none;
         margin-top: 24px;
     }
+    .group-venues__container {
+        padding-bottom: 48px;
+    }
 }
 @media screen and (min-width: 1024px) {
     .general-store__hero--caption{

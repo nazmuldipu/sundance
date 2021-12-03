@@ -43,7 +43,7 @@ ihh1 %}
 
 <section class="segment-outer font-ivar">
     <section class="segment-inner">
-        <div class="grid shop-action__card">
+        <div class="grid shop-action__card global-px">
             <div class="action-card__content font-ivar bold">
                 {{pageCMS['top-action-card-content'].simple_article.title}}
             </div>
@@ -71,7 +71,7 @@ ihh1 %}
 </section>
 
 <section class="segment-outer">
-    <section class="segment-inner border-t-1 action-card middle-action-card global-pb">
+    <section class="segment-inner border-t-1 action-card middle-action-card global-pb global-mx">
         {% for item in middle_action_cards %}
             {{ secondBridge(item) }}
         {% endfor %}
@@ -79,14 +79,14 @@ ihh1 %}
 </section>
 {% if pageCMS['accessories-image'] and pageCMS['accessories-image'].global_image %}
 <section class="segment-outer">
-    <section class="segment-inner">
+    <section class="segment-inner global-px">
         <div class="global-pb text-center">{{ global_header(copy = card_title.title) }}</div>
         <figure class="global-pb">{{ global_image(pageCMS['accessories-image'].global_image, classes='w-full image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1')}}</figure>
     </section>
 </section>
 {% endif %}
 <section class="segment-outer">
-    <section class="segment-inner global-pb">
+    <section class="segment-inner global-pb global-px">
         {% for item in bottom_action_cards %}
             <article class="single-action-card bg-sp6">
                 <header>
@@ -103,7 +103,7 @@ ihh1 %}
 </section>
 {# Horrizontal Card Section #}
 <section class="segment-outer">
-    <section class="segment-inner global-pb">
+    <section class="segment-inner global-pb global-px">
         {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
     </section>
 </section>

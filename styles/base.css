@@ -907,6 +907,16 @@ strong {
         padding-right: 0;
     }
 }
+.global-mx{
+    padding-left: 24px;
+    padding-right: 24px;
+}
+@media screen and (min-width: 1024px){
+    .global-mx{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
 .cms-description a {
     text-decoration: none;
 }
