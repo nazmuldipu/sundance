@@ -4,34 +4,12 @@
 .dining-fast-casuals__horizontal-cards {
     padding: 2rem 0 0 0;
 }
-.flex-card-container {
-    padding: 0 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 40px;
-    margin: 0 auto;
-}
-.flex__single-card {
-    margin-bottom: 32px;
-}
 .segment-outer__margin {
     margin-top: 2rem;
 }
 @media screen and (min-width: 768px){
     .segment-outer__margin {
         margin-top: 6rem;
-    }
-    .flex-card-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        column-gap: 2rem;
-        row-gap: 40px;
-        margin: 0 auto;
-    }
-    .flex__single-card {
-        margin: 0;
     }
     .dining-fast-casuals__horizontal-cards {
         padding-top: 6rem;
@@ -43,8 +21,4 @@
         width: 33.3%;
     }
 }
-@media screen and (min-width: 1365px){
-    .flex-card-container {
-        max-width: 1080px;
-    }
-}
+
