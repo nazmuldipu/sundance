@@ -4,6 +4,7 @@ import {accessSync, readdirSync, statSync, writeFileSync} from 'fs';
 import {platform} from 'os';
 import {rm, writeFile} from 'fs/promises';
 import compose from "just-compose";
+import beautify from 'js-beautify';
 
 export const prettyJSONStringify = json => JSON.stringify(json, null, 2);
 
@@ -273,7 +274,11 @@ export const addSemicolonIfMissing = (string) => {
     return string.lastIndexOf(';') === string.length - 1 ? string : string + ";";
 }
 
-export const sanitizePageData = compose(removeDuplicateFromPageData, addSemicolonIfMissing, addNewLineToString);
+export const formatCode = (code) => {
+    return beautify(code, { indent_size: 2, space_in_empty_paren: true, preserve_newlines: true });
+}
+
+export const sanitizePageData = compose(removeDuplicateFromPageData, addSemicolonIfMissing, formatCode);
 
 const getAllFiles = (dirPath, arrayOfFiles = [], ignorePatterns = defaultIgnorePattern) => {
     let files = readdirSync(dirPath)

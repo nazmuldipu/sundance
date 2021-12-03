@@ -62,6 +62,7 @@ export const addGlobalBehavior = async (pagesDir, scriptsDir) => {
             if ( platform() !== 'win32') {
                 try {
                     const pageData = readFileSync(page, 'utf-8');
+                    console.log({pageData})
                     const content = sanitizePageData(pageData);
                     /* will only run if appendData is not added already */
                     if(!content.includes(appendData)){
