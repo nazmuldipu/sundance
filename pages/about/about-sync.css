@@ -22,10 +22,17 @@
 
 .accolades__item {
     padding: 32px;
+    display: grid;
+    grid-auto-flow: row;
     border: 1px solid var(--sundance__neutral1);
 }
 .accolades__item-image{
-    max-width: 96px;
+    height: 104px;
+    max-width: 96px; 
     margin: 0 auto;
-    padding-bottom: 30px;
+    display: grid;
+    align-items: center;
 }
+/* .accolades__item-title {
+    min-height: 110px;
+} */

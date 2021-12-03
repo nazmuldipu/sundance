@@ -110,14 +110,16 @@ nickname: "about"
                 <div id="{{item.slug}}-container" class="accolades__container hidden {{'active' if loop.index === 1 }} ">
                     <article class="grid grid-cols-4 sm:grid-cols-1 md:grid-cols-3 gap-x-4 py-13 sm:mx-6 md:mx-4">
                         {% for award in item.award%}
-                            <div class="accolades__item mb-4">
-                                <div class="accolades__item-image">
-                                    {{global_image(award.logo.global_image, classes='accolades__image-frame')}}
-                                </div>
-                                <div class="text-xs text-center">
-                                    {{ h3( copy=award.title, classes=['text-xl', 'font-ivar', 'font-semibold', 'pb-6'] ) }}
-                                    {{award.name }}
-                                </div>
+                            <div class="accolades__item mb-4 text-center">
+                                {% if award.has_image %}
+                                    <div class="accolades__item-image">
+                                        {{global_image(award.logo.global_image, classes='accolades__image-frame')}}
+                                    </div>
+                                {% endif %}
+                                {# <div class="text-xs text-center"> #}
+                                    {{ h3( copy=award.title, classes=['accolades__item-title', 'grid', 'align-items-center', 'text-xl', 'font-ivar', 'font-semibold', 'pb-6'] ) }}
+                                    <div class="text-xs">{{award.name }}</div>
+                                {# </div> #}
                             </div>
                         {% endfor %}
                     </article>
