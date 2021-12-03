@@ -10,3 +10,7 @@
 .bridge__nav-icon{
     background-color: rgba(0, 0, 0, 0.1);
 }
+.segment-inner__text-container ul{
+    padding-inline-start: 40px;
+    list-style-type: disc;
+}
