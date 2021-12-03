@@ -16,6 +16,10 @@ export default class ProgressiveElement extends HTMLElement {
           }); 
     } 
 
+    static get observedAttributes() {
+        return ['src'];
+    }
+
     constructor(modules) {
         super();
         // load each module.path on module.trigger (some sort of Listener interface)
