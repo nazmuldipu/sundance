@@ -100,15 +100,29 @@ nickname: "about"
     <section class="segment-outer text-lg py-10">
         <section class="segment-inner">
             {{ h3( copy = accoladesObj.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center', 'pb-16', 'pt-2'] ) }}
-            <article class="grid grid-flow-col gap-x-8 auto-cols-min sm:gap-x-4 justify-center">
+            <article class="flex flex-row flex-wrap justify-center">
                 {% for item in accoladesObj.tabs %}
-                    <div id="{{item.slug}}" class="accolades__tab cursor-pointer font-medium font-calibre {{'active' if loop.index === 1 }}"> {{ item.title }}</div>
-                {% endfor %}                
+                    <div id="{{item.slug}}" class="accolades__tab cursor-pointer font-medium font-calibre mx-4 mb-4 {{'active' if loop.index === 1 }}">
+                        {{ item.title }}</div>
+                {% endfor %}
             </article>
-                {% for item in accoladesObj.tabs %}
-                    <div id="{{item.slug}}-container" class="accolades__container hidden {{'active' if loop.index === 1 }}"> {{ item.title }}</div>
-                {% endfor %}                
-            
+            {% for item in accoladesObj.tabs %}
+                <div id="{{item.slug}}-container" class="accolades__container hidden {{'active' if loop.index === 1 }} ">
+                    <article class="grid grid-cols-4 sm:grid-cols-1 md:grid-cols-3 gap-x-4 py-13 sm:mx-6 md:mx-4">
+                        {% for award in item.award%}
+                            <div class="accolades__item mb-4">
+                                <div class="accolades__item-image">
+                                    {{global_image(award.logo.global_image, classes='accolades__image-frame')}}
+                                </div>
+                                <div class="text-xs text-center">
+                                    {{ h3( copy=award.title, classes=['text-xl', 'font-ivar', 'font-semibold', 'pb-6'] ) }}
+                                    {{award.name }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </article>
+                </div>
+            {% endfor %}
         </section>
     </section>
 {% endif %}
