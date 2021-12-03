@@ -1,1 +1,1 @@
-console.log('screening-room-module.js');import '../../../../scripts/lib/globalEvents.js';
+import '../../../../scripts/lib/globalEvents.js';
