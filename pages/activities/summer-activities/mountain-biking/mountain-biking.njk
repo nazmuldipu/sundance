@@ -28,7 +28,7 @@ nickname: Mountain Bike Lift Rides
 {# Bridge caption #}
 {% if pageCMS['caption'] %}
     {% set caption = pageCMS['caption'].simple_article  %}
-    <article class="activities__text-container font-ivar">
+    <article class="activities__text-container global-px font-ivar">
         <div class = "activities__text-container__copy">{{ caption.description | safe }}</div> 
     </article>
 {% endif %}
@@ -43,7 +43,7 @@ nickname: Mountain Bike Lift Rides
 {% if  pageCMS['vertical-cards'] %}
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
 <section class="activities__section-outer">
-    <section class="activities__section-inner activities__card">            
+    <section class="activities__section-inner global-px activities__card">            
         {% for item in vertical_card_list %}
             {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
         {% endfor %}

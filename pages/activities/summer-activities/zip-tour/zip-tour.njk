@@ -29,7 +29,7 @@ nickname: zip-tour
 {# Simple Article #}
 {% if pageCMS['zip-tour-text-container'] %}
     {% set textAllData = pageCMS['zip-tour-text-container'].text_container  %}
-    <article class="activities__text-container font-ivar">
+    <article class="activities__text-container global-px font-ivar">
         {% if textAllData.title %}
             <header>
                 {{ h1(copy = textAllData.title, classes = ['activities__text-container__header']) }}
@@ -48,7 +48,7 @@ nickname: zip-tour
 {% set action_card = pageCMS['zip-tour-action-card'].action_card %}
 {% set action_card_caption = pageCMS['zip-tour-action-card-caption'].simple_article %}
 <section class="activities__section-outer">
-    <section class="activities__section-inner activities__action-card">
+    <section class="activities__section-inner global-px activities__action-card">
         {% for item in action_card %}
             {{ secondBridge(item) }}
         {% endfor %}
@@ -69,7 +69,7 @@ nickname: zip-tour
 {% if pageCMS['vertical-cards'] %}
     {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
     <section class="activities__section-outer">
-        <section class="activities__section-inner activities__card">
+        <section class="activities__section-inner global-px activities__card">
             {% for item in vertical_card_list %}
                 {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
             {% endfor %}
