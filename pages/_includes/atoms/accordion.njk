@@ -1,4 +1,5 @@
 {% from 'macros.njk' import scaled_image %}
+{% from 'atoms/tables.njk' import tables %}
 {# 
     #   @param  detailsClasses  array, class names (optional)
     #   @param  titleClasses  array, class names (optional)
@@ -42,6 +43,74 @@
             {% if item.image %}
                 {{ scaled_image(imgObj = item.image) }}
             {% endif %} 
+        </figure>
+    </div>    
+{% endmacro %}
+
+{# 
+    #   @param  detailsClasses  array, class names (optional)
+    #   @param  titleClasses  array, class names (optional)
+    #   @param  item     object
+    #   @author Sarjis
+ #}
+{% macro accordion2( detailsClasses = ['font-ivar'], titleClasses = ['font-ivar'], item = {}, classes = ["toggle", "hidden"] ) %}
+    <div class="accordion">
+        <input 
+            type="checkbox" 
+            {% if item.id %} id="{{ item.id }}" {% endif %}
+            class="{% for class in classes %} {{ class }} {% endfor %} {% for class in item.classes %} {{ class }} {% endfor %}"
+            {% if item.name %} name="{{ item.name }}" {% endif %}
+        >
+        <label 
+            {% if item.id %} for="{{ item.id }}" {% endif %} 
+            class="accordion--label toggle--label"
+        >
+            <h2 class="accordion--title heading--4 {% for class in titleClasses %} {{ class }} {% endfor %}">
+                {{ item.title | safe }}
+            </h2>
+        </label>
+        <figure class="toggle-details hidden {% for class in detailsClasses %} {{ class }} {% endfor %}">
+            {% set article = item.article %}
+            <figcaption>
+               {% if article.heading %}
+                    <h3>
+                        {{ article.heading | safe }}
+                    </h3>
+               {% endif %}
+               {% if article.copy %}
+                    {% for text in article.copy %}
+                        <p class="accordion--text__padding"> {{ text | safe }} </p>
+                    {% endfor %}
+               {% endif %}
+               {% if article.summary %}
+                    <p class="accordion--text__summary"> {{ article.summary | safe }} </p>
+               {% endif %}
+
+               {% if item.blog and not item.blog == {} %}
+                    
+                    {% if item.blog.top_description %}
+                        {{ item.blog.top_description | safe}}
+                    {% endif %}
+
+                    {% if not item.blog.video_url == "" %}
+                        <iframe class="my-12 w-full image_frame sm:3:4 lg:4:3 2xl:4:3 4xl:4:3" 
+                            src="{{item.blog.video_url}}"
+                            title="YouTube video player" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    {% endif %}
+                    
+                    {% if item.blog.bottom_description %}
+                        {{ item.blog.bottom_description | safe}}
+                    {% endif %}
+                {% endif %}
+                
+                {% if item.table and item.table | length > 0 %}
+                    {% for content in item.table %}
+                        {{ tables(tableData = content.table) }}
+                    {% endfor %}
+                {% endif %}
+            </figcaption>
         </figure>
     </div>    
 {% endmacro %}
