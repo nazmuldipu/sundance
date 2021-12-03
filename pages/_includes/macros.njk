@@ -1,6 +1,7 @@
 {% from "atoms/a.njk" import a,
 Link %}
 {% from 'atoms/icons.njk' import iconCSS %}
+{% from 'atoms/headings.njk' import h5 %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
@@ -165,4 +166,20 @@ Link %}
         <div>
     {% endfor %}
 </section>
+{% endmacro %}
+
+{% macro top_banner_center_text_group_venues(image, title, events) %}
+  <section class="segment-outer relative">
+        <figure class="segment-inner">
+            {{global_image(image, classes='w-full image_frame sm:3:4 lg:2:1 2xl:2:1 4xl:2:1')}}
+        </figure>
+        <figcaption>
+            {{ h5(copy = title, classes = ['general-store__hero--caption', 'font-ivar', 'font-semibold', 'text-white']) }}
+        </figcaption>
+    </section>
+    <div class="group-container general-store__group-container">
+        {% for event in events %}
+            {{groupVenues(event)}}
+        {% endfor %}
+    </div>
 {% endmacro %}
