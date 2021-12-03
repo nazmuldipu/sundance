@@ -11,6 +11,7 @@ nickname: "about"
 {% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'atoms/icons.njk' import iconImageLink %}
+{% from 'molecules/card.njk' import verticalCard %}
 
 {# Hero Image Section #}
 {% if pageCMS['top-banner'].global_image %}
@@ -81,7 +82,7 @@ nickname: "about"
 
 {#  Vision and mission #}
 <section class="group-section text-lg pb-10">
-    <section class="grid grid-cols-2 sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 pb-6 border-t-1 border-b-1">
+    <section class="segment-inner grid grid-cols-2 sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 pb-6 border-t-1 border-b-1">
         {% for item in pageCMS['vision-mission'].simple_article_list %}
             <article>
                 {{ h3( copy=item.simple_article.title, classes=['text-4xl', 'sm:text-3_axl', 'font-calibre', 'font-medium', 'text-center', 'pt-10', 'pb-6'] ) }}
@@ -90,5 +91,33 @@ nickname: "about"
         {% endfor %}
     </section>
 </section>
+
+{# family content #}
+{% if pageCMS['family-content'] %}
+    <section class="group-section text-lg py-10">
+        <section class="segment-inner grid grid-cols-2 sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6">
+            {{ h3( copy=pageCMS['family-content'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'pb-6'] ) }}
+            <article>
+                {{pageCMS['family-content'].simple_article.description | safe}}
+            </article>
+        </section>
+    </section>
+{% endif %}
+
+{# Family Card #}
+{% if pageCMS['family-card'] %}
+<section class="segment-outer py-5">
+    <section class="segment-inner">
+        <article class="segment-inner__vertical-card-container grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 4xl:grid-cols-3 gap-x-12 sm:px-6 md:px-6 lg:px-6">
+            {% for item in pageCMS['family-card'].vertical_card_list %}
+                <a href="/groups/venues/{{item.vertical_card.slug}}" class="no-underline">
+                    {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+                </a>
+            {% endfor %}
+        </article>
+    </section>
+</section>
+{% endif %}
+
 
 {{newsletter()}}
