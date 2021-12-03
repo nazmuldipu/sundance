@@ -81,16 +81,37 @@ nickname: "about"
 {% endif %}
 
 {#  Vision and mission #}
-<section class="group-section text-lg pb-10">
-    <section class="segment-inner grid grid-cols-2 text-center sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 pb-6 border-t-1 border-b-1">
-        {% for item in pageCMS['vision-mission'].simple_article_list %}
-            <article>
-                {{ h3( copy=item.simple_article.title, classes=['text-4xl', 'sm:text-3_axl', 'font-calibre', 'font-medium', 'pt-10', 'pb-6'] ) }}
-                {{item.simple_article.description | safe}}
-            </article>
-        {% endfor %}
+{% if pageCMS['vision-mission'] %}
+    <section class="group-section text-lg pb-10">
+        <section class="segment-inner grid grid-cols-2 text-center sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 pb-6 border-t-1 border-b-1">
+            {% for item in pageCMS['vision-mission'].simple_article_list %}
+                <article>
+                    {{ h3( copy=item.simple_article.title, classes=['text-4xl', 'sm:text-3_axl', 'font-calibre', 'font-medium', 'pt-10', 'pb-6'] ) }}
+                    {{item.simple_article.description | safe}}
+                </article>
+            {% endfor %}
+        </section>
     </section>
-</section>
+{% endif %}
+
+{# Accolades #}
+{% if pageCMS['accolades'] %}
+    {% set accoladesObj = pageCMS['accolades'].accolades %}
+    <section class="segment-outer text-lg py-10">
+        <section class="segment-inner">
+            {{ h3( copy = accoladesObj.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center', 'pb-16', 'pt-2'] ) }}
+            <article class="grid grid-flow-col gap-x-8 auto-cols-min sm:gap-x-4 justify-center">
+                {% for item in accoladesObj.tabs %}
+                    <div id="{{item.slug}}" class="accolades__tab cursor-pointer font-medium font-calibre {{'active' if loop.index === 1 }}"> {{ item.title }}</div>
+                {% endfor %}                
+            </article>
+                {% for item in accoladesObj.tabs %}
+                    <div id="{{item.slug}}-container" class="accolades__container hidden {{'active' if loop.index === 1 }}"> {{ item.title }}</div>
+                {% endfor %}                
+            
+        </section>
+    </section>
+{% endif %}
 
 {# family content #}
 {% if pageCMS['family-content'] %}
@@ -119,6 +140,7 @@ nickname: "about"
     </section>
 {% endif %}
 
+{# Local partners #}
 {% if pageCMS['local-partners-title'].simple_article and  pageCMS['local-partners-cards'] %}
     <section class="segment-outer py-10">
         <section class="segment-inner">
@@ -132,12 +154,13 @@ nickname: "about"
     </section>
 {% endif %}
 
+{# Recent Press #}
 {% if pageCMS['recent-press'].simple_article %}
     <section class="segment-outer text-lg pb-10">
         <section class="segment-inner">
             {{ h3( copy = pageCMS['recent-press'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center', 'pb-10'] ) }}
             <article class="segment-inner__text-container">
-               {{pageCMS['recent-press'].simple_article.description | safe}}
+                {{pageCMS['recent-press'].simple_article.description | safe}}
             </article>
         </section>
     </section>

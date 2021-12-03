@@ -534,6 +534,9 @@ strong {
 .pb-2 {
     padding-bottom: 1rem;
 }
+.pt-2{
+    padding-top: 0.5rem;
+}
 .pb-4 {
     padding-bottom: 2rem !important;
 }
@@ -559,14 +562,14 @@ strong {
 .pt-12 {
     padding-top: 3rem;
 }
+.pb-16 {
+    padding-bottom: 4rem;
+}
 .pt-24 {
     padding-top: 6rem;
 }
 .pb-28 {
     padding-bottom: 7rem;
-}
-.pb-10 {
-    padding-bottom: 40px;
 }
 .py-5 {
     padding-top: 20px;
