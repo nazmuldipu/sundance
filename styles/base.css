@@ -915,25 +915,30 @@ strong {
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 40px;
-    margin: 0 auto;
+    row-gap: 40px;
 }
 .flex__single-card {
     margin-bottom: 32px;
 }
 @media screen and (min-width: 768px){
     .flex-card-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        row-gap: 40px;
+        justify-content: flex-start;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .flex-card-container {
+        gap: calc(100% - 96%);
     }
     .flex__single-card {
         width: 48%;
     }
 }
 @media screen and (min-width: 1024px){
+    .flex-card-container {
+        gap: calc(100% - 98%);
+    }
     .flex__single-card {
-        width: 30%;
+        width: 32%;
     }
 }
 /****  end base styles  ********************************/
