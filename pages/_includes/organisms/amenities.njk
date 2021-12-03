@@ -14,15 +14,15 @@
         {% for data in item.amenities %}
             <div class="amenities__features-container">
                 <header class="amenities__features--header">
-                    <h1> Features </h1>
+                    <h1> {{ data.title }} </h1>
                 </header>
                 <ul class="amenities__features--item-container grid-cols-2">
                 {% for object in data.features %}
                     <li class="amenities__features--item">
-                        {{ view_details(
-                            copy=object.copy, 
-                            href=object.href
-                        ) }}
+                        {{object.icon | safe}}
+                        <a href="{{object.href}}" class="view-details font-calibre text-base pl-4">
+                            {{object.copy}}
+                        </a>
                     </li>
                 {% endfor %}
                 </ul>

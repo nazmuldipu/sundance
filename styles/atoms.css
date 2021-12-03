@@ -388,6 +388,21 @@
     border: 1px solid #000;
     background-color: black;
 }
+.carousel-icon-css {
+    border-radius: 50%;
+    height: 50px;
+    position: relative;
+    width: 50px;
+}
+.carousel-icon-css:before,
+.carousel-icon-css:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    border: 2px solid white;
+    z-index: 1;
+    background: white;
+}
 
 /* down arrow */
 .arrow-down:before {
@@ -746,5 +761,8 @@
     .table__footer {
         padding-top: 48px;
     }
+}
+.slider-card--max-width {
+    max-width: 328px;
 }
 /****  end atoms  ********************************/
