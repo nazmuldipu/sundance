@@ -9,7 +9,7 @@ nickname: winter-lift-tickets
 Link %}
 {% from "atoms/headings.njk" import h1, h2 %}
 {% from "atoms/a.njk" import a, button_primary, button_secondary%}
-
+{% from 'molecules/bridge.njk' import bridge %}
 <section class="hero-section">
     <div class="hero-section__menu">
         <ul class="font-ivar">
@@ -149,13 +149,7 @@ Link %}
 <section class="segment-outer">
     <section class="segment-inner">
         <article>
-            <header>
-                <h3>Fresh powder, clean air & stunning views</h3>
-                <p>EXPLORE GALLERY</p>
-            </header>
-            <div class="gallery">
-
-            </div>
+            {{bridge(bridge_slider)}}
         </article>
     </section>    
 </section>
