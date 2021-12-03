@@ -13,6 +13,7 @@ permalinkBypassOutputDir: true
 {% from "atoms/headings.njk" import h4, ihh1 %}
 {% from 'atoms/icons.njk' import iconCSS %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
+{% from 'macros.njk' import top_banner_center_text_group_venues %}
 
 {% set generalStore_group_venues = pageCMS['group-venues'].group_venues  %}
 {% set globalImage = pageCMS['top-banner'].banner.global_image %}
@@ -27,21 +28,12 @@ permalinkBypassOutputDir: true
 {% set bottom_banners = pageCMS['bottom-banners'].global_image_arr.images %}
 
 {# Hero Image Section #}
-{% for event in generalStore_group_venues %}
-    <section class="group-section">
-        <section class="segment-outer relative">
-            <figure class="segment-inner">
-                {{global_image(globalImage.global_image, classes='w-full image_frame sm:3:4 lg:2:1 2xl:2:1 4xl:2:1')}}
-            </figure>
-            <figcaption>
-                {{ h5(copy = globalImageText, classes = ['general-store__hero--caption', 'font-ivar', 'font-semibold', 'text-white']) }}
-            </figcaption>
-        </section>
-        <div class="group-container general-store__group-container">
-            {{groupVenues(event)}}
-        <div>
-    </section>
-{% endfor %}
+{{ top_banner_center_text_group_venues(
+    image = globalImage.global_image,
+    title = globalImageText,
+    events = generalStore_group_venues
+    )
+}}
 
 <section class="general-store__section-outer">
     <section class="general-store__section-inner">
