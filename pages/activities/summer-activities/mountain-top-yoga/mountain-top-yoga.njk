@@ -1,0 +1,49 @@
+---
+layout: base.njk
+pagename: mountain-top-yoga
+permalink: "build/activities/summer-activities/mountain-top-yoga/index.html"
+permalinkBypassOutputDir: true
+nickname: mountain-top-yoga
+---
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from 'molecules/card.njk' import verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'macros.njk' import top_banner_group_venues %}
+{% from 'molecules/art-studio.njk' import artStudio2 %}
+
+{# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
+    {% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues) }}
+{% endif %}
+
+{# Art Instructor #}
+{% if pageCMS['art-instructor'] %}
+    {% set art_instructor = pageCMS['art-instructor'].art_instructor %}
+    <section class="activities__instructor global-px">
+        {% for item in art_instructor %}
+            {{ artStudio2(item) }}
+        {% endfor %}
+    </section>
+{% endif %}
+
+{# Card Title #}
+{% if pageCMS['card-title'] %}
+    {% set card_title= pageCMS['card-title'].simple_article %}
+    {{ h2(copy = card_title.title, classes = ['activities__card-header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
+
+{# Vertical Card Section #}
+{% if  pageCMS['vertical-cards'] %}
+{% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
+<section class="section-outer">
+    <section class="section-inner activities__card global-px">
+        {% for item in vertical_card_list %}
+            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+        {% endfor %}
+    </section>
+</section>
+{% endif %}
+
+{{newsletter()}}
