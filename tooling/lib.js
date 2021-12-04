@@ -278,7 +278,7 @@ export const formatCode = (code) => {
     return beautify(code, { indent_size: 2, space_in_empty_paren: true, preserve_newlines: true });
 }
 
-export const sanitizePageData = compose(removeDuplicateFromPageData, addSemicolonIfMissing, formatCode);
+export const sanitizePageData = compose(removeDuplicateFromPageData, addSemicolonIfMissing, addNewLineToString, formatCode);
 
 const getAllFiles = (dirPath, arrayOfFiles = [], ignorePatterns = defaultIgnorePattern) => {
     let files = readdirSync(dirPath)
