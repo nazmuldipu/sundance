@@ -60,12 +60,6 @@
     .accommodation-feature{
         padding: 52px 34px 48px 34px;
     }
-    .accommodation__features {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        grid-gap: 1rem;
-    }
 }
 .amenities {
     margin: 0;
@@ -76,23 +70,9 @@
         margin: 0;
     }
 }
-@media screen and (min-width: 1366px){
-    .accommodation__features {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        grid-gap: 1rem;
-    }
-}
 @media screen and (min-width: 1024px) and (max-width: 1365px){
     .top-section {
         margin-top: 90px;
-    }
-    .accommodation__features {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        grid-gap: 1rem;
     }
     .dining-details-container {
         display: grid;
