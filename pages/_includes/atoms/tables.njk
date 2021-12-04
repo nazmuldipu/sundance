@@ -5,10 +5,13 @@
     #   @author Ashfaqur Rahman, Sarjis
  #}
 {% macro tables( classes = ['table', 'w-full', 'font-ivar'], tableData = {} ) %}
+    {% if tableData.title %}
+        <h6 class="table__title font-ivar text-6 bold">{{tableData.title}}</h6>
+    {% endif %}
     <table class="{% for class in classes %} {{ class }} {% endfor %}">
         {% if tableData.headers | length > 0 %}
             <thead class="table--header">
-                <tr class="table--row">
+                <tr class="table--header-row">
                     {% for header in tableData.headers %}
                         <th class="table--row__head">
                             {{ header }}
@@ -29,4 +32,7 @@
             {% endfor %}
         </tbody>
     </table>
+    {% if tableData.footer %}
+        <summary class="table__footer font-ivar text-lg-2">{{tableData.footer}}</summary>
+    {% endif %}
 {% endmacro %}

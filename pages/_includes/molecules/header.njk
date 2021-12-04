@@ -3,6 +3,8 @@ dropdown2 %}
 {% from 'atoms/icons.njk' import iconImage,
 iconCSS %}
 {% from 'atoms/form-fields.njk' import form_input %}
+{% from 'organisms/card-widget.njk' import cardWidget %}
+
 {% set emailInput = {
         "type" : "email", 
         "placeholder" : "I’m searching for",
@@ -45,13 +47,25 @@ iconCSS %}
         {% endfor %}
     </section>
     <script>
+        const app_nav = document.querySelector('#app_nav');
+        function changeLinkState() {
+            if(window.scrollY > 0) {
+                app_nav.classList.add('app_nav--scroll');
+            } else {
+                app_nav.classList.remove('app_nav--scroll');
+            }
+        }
+
+        window.addEventListener('scroll', changeLinkState);
+
+
         {
             window.onBlurMenuToggle = function (id) {
                 let el = document.getElementById(id);
                 if (el.checked) {
                     el.checked = false;
                 }
-            }            
+            }
         }
         window.toggleMobileMenu = function (id = 'toggle-154') {
             let el = document.getElementById(id);
@@ -68,7 +82,7 @@ iconCSS %}
 {% endmacro %}
 
 {% macro navMenu(menuItems) %}
-    <nav class="header__nav fixed-top sm:px-4 md:px-5 lg:px-5 2xl:px-14 4xl:px-22">
+    <nav class="header__nav fixed-top sm:px-4 md:px-5 lg:px-5 2xl:px-14 4xl:px-22" id="app_nav">
         <div class="header__burger-icon">
             <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
             <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
@@ -94,41 +108,64 @@ iconCSS %}
                 {% endfor %}
             </ul>
         </div>
-        <div class="header__tab__icon-buttons">
+        <div class="header__tab__icon-buttons grid grid-flow-col gap-x-2 align-items-center">
             {% for ic_action in menuItems.icon_actions %}
-                {{ic_action.icon | safe}}
+                <div>
+                    <input type="radio" id="action_icon-tab-{{ic_action.slug}}" name="action_icon_radio" class="action_icon__btn hidden">
+                    <label for="action_icon-tab-{{ic_action.slug}}" class="action_icon__label action_icon__label-{{ic_action.slug}}">
+                        {% if ic_action.slug === 'temp'%}
+                            <div class="temp_icon_text">
+                                <span id="navbar_icon_temp-tab">0 &deg;</span></div>
+                        {% else %}
+                            {{ic_action.icon | safe}}
+                        {% endif %}
+                        <div class="hidden action_icon__label-cross">&#x2715;</div>
+                    </label>
+                    <div id="ic_action_tab-{{ic_action.slug}}_container" class="ic_action_container {{ic_action.slug}}">
+                            {{cardWidget(cardWidgetData, type = ic_action.slug, title=ic_action.title)}}
+                        </div>
+                </div>
             {% endfor %}
         </div>
 
         <div class="header__logo">{{menuItems.company_logo | safe}}</div>
 
         <div class="header__actions">
-            <span class="header_icon-buttons">
+            <div class="header_icon-buttons grid grid-flow-col gap-x-2 align-items-center">
                 {% for ic_action in menuItems.icon_actions %}
-                    {{ic_action.icon | safe}}
+                    <div>
+                        <input type="radio" id="action_icon-{{ic_action.slug}}" name="action_icon_radio" class="action_icon__btn hidden">
+                        <label for="action_icon-{{ic_action.slug}}" class="action_icon__label action_icon__label-{{ic_action.slug}}">
+                            {% if ic_action.slug === 'temp'%}
+                                <div class="temp_icon_text">
+                                    <span id="navbar_icon_temp">0 &deg;</span></div>
+                            {% else %}
+                                {{ic_action.icon | safe}}
+                            {% endif %}
+                            <div class="hidden action_icon__label-cross">&#x2715;</div>
+                        </label>
+                        <div id="ic_action_{{ic_action.slug}}_container" class="ic_action_container {{ic_action.slug}}">
+                            {{cardWidget(cardWidgetData, type = ic_action.slug, title=ic_action.title)}}
+                        </div>
+                    </div>
                 {% endfor %}
-            </span>
+                <script>
+                    let actionBtns = document.querySelectorAll('.action_icon__btn');
+                    let currActionBtn = null;
+
+                    actionBtns.forEach(function (btn) {
+                        btn.addEventListener('click', function (event) {
+                            if (currActionBtn == this.id) {
+                                this.checked = false;
+                                currActionBtn = null;
+                            } else {
+                                currActionBtn = this.id;
+                            }
+                        })
+                    })
+                </script>
+            </div>
             {{ dropdown2( classes=['dropdown-container--secondary'], labelClasses=['button--secondary2', 'button', 'text-base'], copy=menuItems.cta_action.title, labelId=menuItems.cta_action.id, items=menuItems.cta_action.drop_down ) }}
         </div>
-        {# <header class="header">
-            <div class="header__burger-icon">
-                <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
-                <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
-                    {{ iconCSS( classes=[ menuItems.toggle_icon] ) }}
-                </label>
-                <div class="toggle-details hidden font-ivar w-screen h-screen align-baseline overflow-y-auto">
-                    {{ headerLeft(menuItems.sections , id = 'toggle-156') }}
-                </div>
-            </div>
-            <div class="header__menu-items--container">{{ headerLeft(menuItems.sections , id = 'toggle-155') }}</div>
-            <div class="header__logo">{{menuItems.company_logo | safe}}</div>
-            <div class="header__icons__cta--container">
-                {% for ic_action in menuItems.icon_actions %}
-                    {{ic_action.icon | safe}}
-                {% endfor %}
-                {{ headerCTA(menuItems.cta_action) }}
-            </div>
-            <div class="header__cta--container">{{ headerCTA(menuItems.cta_action) }}</div>
-        </header> #}
     </nav>
 {% endmacro %}

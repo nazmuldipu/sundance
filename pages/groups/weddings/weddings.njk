@@ -12,7 +12,7 @@ permalinkBypassOutputDir: true
 {% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'molecules/bridge.njk' import bridge %}
 
-<section class="page-top-adjust"></section>
+
 {# Hero Image Section #}
 {% if pageCMS['venues'].group_venues.length and pageCMS['top-banner'].global_image %}
     {% set event = (pageCMS['venues'].group_venues |  first )%}

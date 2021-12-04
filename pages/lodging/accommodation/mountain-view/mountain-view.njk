@@ -10,18 +10,16 @@ nickname: lodging/accommodation/mountain-view
 {% from 'molecules/card.njk' import verticalCard %}
 {% from 'atoms/headings.njk' import global_header %}
 {% from 'molecules/newsletter.njk' import newsletter %}
-{% from 'molecules/header.njk' import navMenu %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
-{% from 'organisms/thumbnail_slider.njk' import multi_slider %}
+{% from 'organisms/thumbnail_slider.njk' import multi_slider_thumbnail %}
 {% from 'atoms/icons.njk' import iconCSS %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'molecules/accommodation-feature.njk' import accommodationFeature2 %}
-
+{% from "organisms/carousel.njk" import card_carousel %}
 {% set sliderImages = pageCMS['slider'].global_image_arr.images %}
 
-{{ navMenu(data.navMenuLink) }}
 {% macro aminitiesSection() %}
     {% if pageCMS['amenities-data'].amenities_list %}
         <section class="mt-12">
@@ -30,7 +28,7 @@ nickname: lodging/accommodation/mountain-view
         <div></div>
     {% endif %}
     {% if pageCMS['amenities-bottom-description'].simple_article %}
-        <div class="mt-12 font-ivar text-lg-2 text-center">{{pageCMS['amenities-bottom-description'].simple_article.description | safe}}</div>
+        <div class="mt-12 font-ivar text-lg-2 text-center cms-description">{{pageCMS['amenities-bottom-description'].simple_article.description | safe}}</div>
     {% endif %}
     {% if pageCMS['amenities-bottom-description'].simple_article %}
         <p class="mt-12 font-ivar text-center">{{pageCMS['amenities-bottom-description'].simple_article.title}}</p>
@@ -46,14 +44,12 @@ nickname: lodging/accommodation/mountain-view
         {% endif %}
     </section>
 {% endmacro %}
-
-<section class="page-top-adjust"></section>
 <section class="segment-outer bg-sn-5 px-4">
     <section class="segment-inner">
         <section class="dining-details-container">
             <section>
-                <article class="thumbnail-slider__images grid order-2">
-                    {{multi_slider(sliderImages)}}
+                <article  class="thumbnail-slider__images grid order-2">
+                   {{multi_slider_thumbnail(sliderImages)}}
                 </article>
                 <div class="top__accommodation-fetaures">
                     {{ features() }}
@@ -62,7 +58,7 @@ nickname: lodging/accommodation/mountain-view
                     {{ aminitiesSection() }}
                 </div>
             </section>
-            <section class="dining-details__venues">
+            <section class="dining-details__venues global-px">
                 {% if pageCMS['top-group-venues'] and pageCMS['top-group-venues'].group_venues %}
                     {% set groupData = pageCMS['top-group-venues'].group_venues %}
                     {% for event in groupData %}
@@ -84,13 +80,13 @@ nickname: lodging/accommodation/mountain-view
 </section>
 </section>
 <section class="segment-outer middle__aminities-section">
-<section class="segment-inner dining-details-container">
+<section class="segment-inner dining-details-container global-px">
     {{ aminitiesSection() }}
 </section>
 </section>
 <section class="segment-outer mt-12">
-<section class="segment-inner text-center">
-    <article class="details__card bg-sn-5 font-ivar">
+<section class="segment-inner text-center overflow-hidden">
+    <article class="bg-sn-5 font-ivar">
         {% if pageCMS['slider-card-title'] and pageCMS['slider-card-title'].simple_article.title %}
             {% set card_list_title = pageCMS['slider-card-title'].simple_article.title %}
             {{ global_header(copy = card_list_title) }}
@@ -98,24 +94,14 @@ nickname: lodging/accommodation/mountain-view
 
         {% if pageCMS['slider-card-list'] and pageCMS['slider-card-list'].vertical_card_list %}
             {% set slider_card_list = pageCMS['slider-card-list'].vertical_card_list %}
-            <media-carousel>
-                <div class="swiper-container mt-12">
-                    <div class="swiper-wrapper gap-x-4">
-                        {% for item in slider_card_list %}
-                            <div class="swiper-slide slider-card--max-width">
-                                {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </media-carousel>
+            {{ card_carousel(cards = slider_card_list) }}
         {% endif %}
     </article>
 </section>
 </section>
 <section class="segment-outer mt-12">
 <section class="segment-inner text-center">
-    <article class="details__card bg-sn-5 font-ivar">
+    <article class="bg-sn-5 font-ivar global-px">
         {% if pageCMS['vertical-card-title'] and pageCMS['vertical-card-title'].simple_article.title %}
             {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
             {{ global_header(copy = card_list_title) }}

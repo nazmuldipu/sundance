@@ -1,5 +1,5 @@
 {% from 'organisms/global-image.njk' import global_image %}
-{% from 'atoms/icons.njk' import iconCSS %}
+{% from 'atoms/icons.njk' import iconCSS, iconImageLink %}
 {% from "atoms/headings.njk" import h1 %}
 {% from "atoms/a.njk" import Link %}
 {#
@@ -49,10 +49,28 @@
     </section>
 {% endmacro %}
 
-{% macro multi_slider(images = []) %}
-    <section>
+{% macro thumbnail_slider_circle(obj = []) %}
+    <section class="thumbnail-slider__slides-circle">
         <media-carousel>
-            <div class="swiper-container swiper mySwiper2">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {% for item in obj %}
+                        <div class="swiper-slide !w-auto">
+                            <div>
+                                {{iconImageLink(item)}}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </media-carousel>
+    </section>
+{% endmacro %}
+
+{% macro multi_slider_thumbnail(images = []) %}
+    <media-carousel-thumbnail>
+        <div class="grid">
+            <div class="swiper swiper-container mySwiper2">
                 <div class="swiper-wrapper">
                     {% for item in images %}
                         <div class="swiper-slide">
@@ -67,21 +85,17 @@
                     {{ iconCSS( classes=['carousel-button-next', 'carousel-icon-css', 'arrow-right', 'mx-1', 'rotate-45'] ) }}
                 </div>
             </div>
-        </media-carousel>
-    </section>
-    <section thumbsSlider="" class="thumbnail-slider__slides">
-        <media-carousel>
-            <div class="swiper-container gallery-thumbs">
-                <div class="swiper-wrapper" >
+        </div>
+        <div class="grid mt-2">
+            <div class="swiper thumbnail-swiper-container mySwiper">
+                <div class="swiper-wrapper flex gap-x-4">
                     {% for item in images %}
-                        <div class="swiper-slide !w-auto"  >
-                            <div class="thumbnail-slider__slides__box" >
-                                {{ global_image(item.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
-                            </div>
+                        <div class="swiper-slide cursor-pointer">
+                            {{ global_image(item.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
                         </div>
                     {% endfor %}
                 </div>
             </div>
-        </media-carousel>
-    </section>
+        </div>
+    </media-carousel-thumbnail>
 {% endmacro %}

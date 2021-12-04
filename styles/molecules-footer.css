@@ -73,6 +73,13 @@ footer {
     padding-bottom: 100px;
     flex-direction: column;
   }
+  .footer__copy__image .footer_image{
+    height: 35px;
+    width: auto;
+  }
+  .footer__copy__image{
+    column-gap: 4px;
+  }
   .footer__copy__image,
   .footer__copy__image img {
     width: 100%;

@@ -1315,123 +1315,215 @@
     "bridge_slider": {
         "title": "Award Winning Cuisine",
         "images": [
-          {
-            "global_image": {
-              "alt": "The Image",
-              "src": "stage/upload/sundance/sundance/1362e9d6a68c1225-dining-restaurant-details-1.jpg",
-              "sizes": [
-                {
-                  "src": "",
-                  "view": "25vw",
-                  "media": "(min-width:900.1px)",
-                  "intrinsicwidth": 1,
-                  "intrinsicheight": 1
-                },
-                {
-                  "src": "",
-                  "view": "40vw",
-                  "media": "(max-width:900px)",
-                  "intrinsicwidth": 1,
-                  "intrinsicheight": 1
+            {
+                "global_image": {
+                    "alt": "The Image",
+                    "src": "stage/upload/sundance/sundance/1362e9d6a68c1225-dining-restaurant-details-1.jpg",
+                    "sizes": [
+                        {
+                            "src": "",
+                            "view": "25vw",
+                            "media": "(min-width:767.1px)",
+                            "intrinsicwidth": 1,
+                            "intrinsicheight": 1
+                        },
+                        {
+                            "src": "",
+                            "view": "40vw",
+                            "media": "(max-width:900px)",
+                            "intrinsicwidth": 1,
+                            "intrinsicheight": 1
+                        }
+                    ],
+                    "types": ["webp", "jpg"],
+                    "background": true,
+                    "intrinsicwidth": 262,
+                    "intrinsicheight": 263
                 }
-              ],
-              "types": [
-                "webp",
-                "jpg"
-              ],
-              "background": true,
-              "intrinsicwidth": 262,
-              "intrinsicheight": 263
-            }
-          },
-          {
-            "global_image": {
-              "alt": "The Image",
-              "src": "stage/upload/sundance/sundance/1362e9d6a68c1225-dining-restaurant-details-1.jpg",
-              "sizes": [
-                {
-                  "src": "",
-                  "view": "25vw",
-                  "media": "(min-width:900.1px)",
-                  "intrinsicwidth": 1,
-                  "intrinsicheight": 1
-                },
-                {
-                  "src": "",
-                  "view": "40vw",
-                  "media": "(max-width:900px)",
-                  "intrinsicwidth": 1,
-                  "intrinsicheight": 1
+            },
+            {
+                "global_image": {
+                    "alt": "The Image",
+                    "src": "stage/upload/sundance/sundance/1362e9d6a68c1225-dining-restaurant-details-1.jpg",
+                    "sizes": [
+                        {
+                            "src": "",
+                            "view": "25vw",
+                            "media": "(min-width:900.1px)",
+                            "intrinsicwidth": 1,
+                            "intrinsicheight": 1
+                        },
+                        {
+                            "src": "",
+                            "view": "40vw",
+                            "media": "(max-width:900px)",
+                            "intrinsicwidth": 1,
+                            "intrinsicheight": 1
+                        }
+                    ],
+                    "types": ["webp", "jpg"],
+                    "background": true,
+                    "intrinsicwidth": 262,
+                    "intrinsicheight": 263
                 }
-              ],
-              "types": [
-                "webp",
-                "jpg"
-              ],
-              "background": true,
-              "intrinsicwidth": 262,
-              "intrinsicheight": 263
-            }
-          },
-          {
-            "global_image": {
-              "alt": "The Image",
-              "src": "stage/upload/sundance/sundance/1362e9d6a68c1225-dining-restaurant-details-1.jpg",
-              "sizes": [
-                {
-                  "src": "",
-                  "view": "25vw",
-                  "media": "(min-width:900.1px)",
-                  "intrinsicwidth": 1,
-                  "intrinsicheight": 1
-                },
-                {
-                  "src": "",
-                  "view": "40vw",
-                  "media": "(max-width:900px)",
-                  "intrinsicwidth": 1,
-                  "intrinsicheight": 1
+            },
+            {
+                "global_image": {
+                    "alt": "The Image",
+                    "src": "stage/upload/sundance/sundance/1362e9d6a68c1225-dining-restaurant-details-1.jpg",
+                    "sizes": [
+                        {
+                            "src": "",
+                            "view": "25vw",
+                            "media": "(min-width:900.1px)",
+                            "intrinsicwidth": 1,
+                            "intrinsicheight": 1
+                        },
+                        {
+                            "src": "",
+                            "view": "40vw",
+                            "media": "(max-width:900px)",
+                            "intrinsicwidth": 1,
+                            "intrinsicheight": 1
+                        }
+                    ],
+                    "types": ["webp", "jpg"],
+                    "background": true,
+                    "intrinsicwidth": 262,
+                    "intrinsicheight": 263
                 }
-              ],
-              "types": [
-                "webp",
-                "jpg"
-              ],
-              "background": true,
-              "intrinsicwidth": 262,
-              "intrinsicheight": 263
-            }
-          },
-          {
-            "global_image": {
-              "alt": "The Image",
-              "src": "stage/upload/sundance/sundance/1362e9d6a68c1225-dining-restaurant-details-1.jpg",
-              "sizes": [
-                {
-                  "src": "",
-                  "view": "25vw",
-                  "media": "(min-width:900.1px)",
-                  "intrinsicwidth": 1,
-                  "intrinsicheight": 1
-                },
-                {
-                  "src": "",
-                  "view": "40vw",
-                  "media": "(max-width:900px)",
-                  "intrinsicwidth": 1,
-                  "intrinsicheight": 1
+            },
+            {
+                "global_image": {
+                    "alt": "The Image",
+                    "src": "stage/upload/sundance/sundance/1362e9d6a68c1225-dining-restaurant-details-1.jpg",
+                    "sizes": [
+                        {
+                            "src": "",
+                            "view": "25vw",
+                            "media": "(min-width:900.1px)",
+                            "intrinsicwidth": 1,
+                            "intrinsicheight": 1
+                        },
+                        {
+                            "src": "",
+                            "view": "40vw",
+                            "media": "(max-width:900px)",
+                            "intrinsicwidth": 1,
+                            "intrinsicheight": 1
+                        }
+                    ],
+                    "types": ["webp", "jpg"],
+                    "background": true,
+                    "intrinsicwidth": 262,
+                    "intrinsicheight": 263
                 }
-              ],
-              "types": [
-                "webp",
-                "jpg"
-              ],
-              "background": true,
-              "intrinsicwidth": 262,
-              "intrinsicheight": 263
             }
-          }
         ],
         "sub_title": "EXPLORE GALLERY"
+    },
+    "image-actions": {
+        "image_action_list": [
+            {
+                "id": "img-1",
+                "url": "/activities/summer-activities/",
+                "copy": "Activities",
+                "image": {
+                    "global_image": {
+                        "alt": "Activities",
+                        "src": "stage/upload/sundance/sundance/0e9ba426b92a0387-snowboard-4.jpg",
+                        "sizes": [
+                            {
+                                "src": "",
+                                "view": "20vw",
+                                "media": "(max-width:767px)",
+                                "intrinsicwidth": 0,
+                                "intrinsicheight": 0
+                            }
+                        ],
+                        "types": ["webp", "jpg"],
+                        "background": false,
+                        "intrinsicwidth": 264,
+                        "intrinsicheight": 264
+                    }
+                },
+                "target": "_self"
+            },
+            {
+                "id": "img-2",
+                "url": "/lodging/rooms-and-suites/",
+                "copy": "Lodging",
+                "image": {
+                    "global_image": {
+                        "alt": "Lodging",
+                        "src": "stage/upload/sundance/sundance/524da80e5655d53e-rooms-suites-2.jpg",
+                        "sizes": [
+                            {
+                                "src": "",
+                                "view": "20vw",
+                                "media": "(max-width:767px)",
+                                "intrinsicwidth": 0,
+                                "intrinsicheight": 0
+                            }
+                        ],
+                        "types": ["webp", "jpg"],
+                        "background": false,
+                        "intrinsicwidth": 328,
+                        "intrinsicheight": 202
+                    }
+                },
+                "target": "_self"
+            },
+            {
+                "id": "img-3",
+                "url": "/dining/restaurants/",
+                "copy": "Dining",
+                "image": {
+                    "global_image": {
+                        "alt": "Dining",
+                        "src": "stage/upload/sundance/sundance/686619f604165bb8-catering-groups-events.jpg",
+                        "sizes": [
+                            {
+                                "src": "",
+                                "view": "20vw",
+                                "media": "(max-width:767px)",
+                                "intrinsicwidth": 0,
+                                "intrinsicheight": 0
+                            }
+                        ],
+                        "types": ["webp", "jpg"],
+                        "background": false,
+                        "intrinsicwidth": 328,
+                        "intrinsicheight": 202
+                    }
+                },
+                "target": "_self"
+            },
+            {
+                "id": "img-4",
+                "url": "/bluebird-cafe-concert-series",
+                "copy": "Events",
+                "image": {
+                    "global_image": {
+                        "alt": "Events",
+                        "src": "stage/upload/sundance/sundance/7b2100d81ee42ea5-Wedding_bridge_2.jpg",
+                        "sizes": [
+                            {
+                                "src": "",
+                                "view": "20vw",
+                                "media": "(max-width:767px)",
+                                "intrinsicwidth": 0,
+                                "intrinsicheight": 0
+                            }
+                        ],
+                        "types": ["webp", "jpg"],
+                        "background": false,
+                        "intrinsicwidth": 1200,
+                        "intrinsicheight": 800
+                    }
+                },
+                "target": "_self"
+            }
+        ]
     }
 }
