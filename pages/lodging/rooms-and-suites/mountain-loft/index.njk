@@ -12,7 +12,7 @@ nickname: lodging/rooms-and-suites/mountain-loft
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
-{% from 'organisms/thumbnail_slider.njk' import multi_slider %}
+{% from 'organisms/thumbnail_slider.njk' import multi_slider_thumbnail %}
 {% from 'atoms/icons.njk' import iconCSS %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'organisms/amenities.njk' import amenities %}
@@ -52,13 +52,12 @@ nickname: lodging/rooms-and-suites/mountain-loft
     </section>
 {% endmacro %}
 
-<section class="page-top-adjust"></section>
 <section class="segment-outer bg-sn-5 px-4">
     <section class="segment-inner">
         <section class="dining-details-container">
             <section>
                 <article class="thumbnail-slider__images grid order-2">
-                    {{multi_slider(sliderImages)}}
+                    {{multi_slider_thumbnail(sliderImages)}}
                 </article>
                 <div class="top__accommodation-fetaures">
                     {{ features() }}
@@ -95,7 +94,7 @@ nickname: lodging/rooms-and-suites/mountain-loft
 </section>
 </section>
 <section class="segment-outer mt-12">
-<section class="segment-inner text-center">
+<section class="segment-inner text-center overflow-hidden">
     <article class="details__card bg-sn-5 font-ivar">
         {% if pageCMS['slider-card-title'] and pageCMS['slider-card-title'].simple_article.title %}
             {% set card_list_title = pageCMS['slider-card-title'].simple_article.title %}
