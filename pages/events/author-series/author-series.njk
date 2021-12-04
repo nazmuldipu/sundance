@@ -45,7 +45,7 @@ nickname: author-series
             {% set images = pageCMS['large-image-gallery'].global_image_arr.images %}
             <div class="large-images mt-4">
                 {% for item in images %}
-                    <div class="large-single-image">{{global_image(item.global_image, classes = 'image_frame sm:1:1 lg:6:5')}}</div>
+                    <div class="large-single-image">{{global_image(item.global_image, classes = 'image_frame sm:11:5 lg:27:20')}}</div>
                 {% endfor %}
             </div>
             {% endif %}
