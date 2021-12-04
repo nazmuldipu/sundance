@@ -4,7 +4,7 @@ Link %}
 {% from 'atoms/headings.njk' import h5 %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
-{% from 'molecules/group-venues.njk' import groupVenues, groupVenues3 %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
 
 {% macro cardcard(header, eyebrow, description, image, alt, link)%}
   <div class="container px-12 mx-auto grid grid-cols-3 gap-2 place-items-auto">
@@ -162,7 +162,7 @@ Link %}
     </section> 
     {% for event in venuesData %}
         <div class="group-container">
-            {{groupVenues3(event)}}
+            {{groupVenues(event)}}
         <div>
     {% endfor %}
 </section>
@@ -179,7 +179,7 @@ Link %}
     </section>
     <div class="group-container general-store__group-container">
         {% for event in events %}
-            {{groupVenues3(event)}}
+            {{groupVenues(event)}}
         {% endfor %}
     </div>
 {% endmacro %}

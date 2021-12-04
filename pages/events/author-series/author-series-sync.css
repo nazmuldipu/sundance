@@ -1,104 +1,59 @@
 /****  start imports  ********************************/
 @import "../../../styles/global.css";
 /****  end imports  ********************************/
-.section-outer{
-    width: 100%;
-}
-.section-inner{
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.group-container{
-    border: none;
-}
-.bridge{
-    padding-bottom: 50px;
-}
-.bridge__top-frame {
-    background-color: var(--sundance__primary1);
-}
-.bridge__nav-icon{
-    background-color: transparent;
-}
-.winter-article__container{
-    max-width: 792px;
-    margin: auto;
-    padding-bottom: 48px;
-    padding-left: 24px;
-    padding-right: 24px;
-}
-.winter-article__header{
-    font-size: 42px;
-    font-weight: 600;
-    padding-bottom: 25px;
-    text-align: center;
-}
-.winter-article__subtitle{
-    font-size: 19px;
-    font-weight: 600;
-    padding-bottom: 16px;
-    text-align: center;
-}
-.winter-article__copy{
-    font-size: 19px;
-    text-align: left;
-}
-.winter-card__header{
-    font-weight: 600;
-    font-size: 2.625rem;
-}
-.winter__card{
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 3rem;
-    padding-top: 40px;
+.gallery--wrapper {
     padding-bottom: 40px;
 }
-
-@media screen and (min-width: 320px) and (max-width: 767px){
-    .section-inner{
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+@media only screen and (max-width: 1023px) {
+    .global-mb {
+        margin: 0;
     }
-    .bridge{
-        padding-bottom: 0px;
-    }
-    .winter-article__container{
-        padding-bottom: 40px;
-    }
-    .winter-article__header{
-        font-size: 24px;
-        padding-bottom: 16px;
-    }
-    .winter-article__subtitle{
-        font-size: 16px;
-    }
-    .winter-card__header{
-        font-size: 1.5rem;
-    }
-    .winter__card{
-        display: grid;
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        padding-top: 24px;
-        padding-bottom: 8px;
+    .horizontal__card-container {
+        margin-bottom: 0;
     }
 }
-@media screen and (min-width: 768px) and (max-width: 1023px){
-    .winter__card{
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        padding-top: 24px;
-        padding-bottom: 8px;
-    }
-    .section-inner{
-        padding-left: 1rem;
-        padding-right: 1rem;
+@media only screen and (min-width: 1024px) {
+    .gallery--wrapper {
+        padding-bottom: 72px;
     }
 }
-@media screen and (min-width: 1024px) and (max-width: 1365px){
-    .section-inner{
-        padding-left: 1rem;
-        padding-right: 1rem;
+.small-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(100% - 96%);
+}
+.small-images > .div_next_line {
+    display: flex;
+}
+.small-images > .small-single-image {
+    display: inline-block;
+    flex-grow: 1;
+    flex-basis: calc(96% / 2);
+}
+.small-images:nth-child(3) {
+    display: inline-block;
+    flex-grow: 1;
+    flex-basis: calc(100% / 3);
+}
+.small-single-image {
+    width: 33.3%;
+}
+.small-single-image:nth-child(3n+3) {
+    margin-top: 1rem;
+}
+.large-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
+@media only screen and (min-width: 1024px) {
+    .small-images > .small-single-image {
+        flex-basis: calc(92% / 3);
+    }
+    .small-single-image:nth-child(3n+3) {
+        margin-top: 0;
+    }
+    .large-images {
+        grid-template-columns: 1fr 1fr;
     }
 }

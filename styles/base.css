@@ -897,6 +897,14 @@ strong {
         padding-bottom: 48px;
     }
 }
+.global-mb {
+    margin-bottom: 40px;
+}
+@media screen and (min-width: 1024px){
+    .global-mb {
+        margin-bottom: 48px;
+    }
+}
 .global-px{
     padding-left: 24px;
     padding-right: 24px;
@@ -915,6 +923,16 @@ strong {
     .global-mx{
         padding-left: 0;
         padding-right: 0;
+    }
+}
+.global-py {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+@media screen and (min-width: 1024px){
+    .global-py {
+        padding-top: 48px;
+        padding-bottom: 48px;
     }
 }
 .cms-description a {
@@ -950,5 +968,9 @@ strong {
     .flex__single-card {
         width: 32%;
     }
+}
+a[href^="tel"] {
+    color: var(--sundance__primary1);
+    text-decoration: none; 
 }
 /****  end base styles  ********************************/
