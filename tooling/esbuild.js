@@ -62,11 +62,14 @@ export const addGlobalBehavior = async (pagesDir, scriptsDir) => {
             if ( platform() !== 'win32') {
                 try {
                     const pageData = readFileSync(page, 'utf-8');
-                    const content = sanitizePageData(pageData);
-                    /* will only run if appendData is not added already */
-                    if(!content.includes(appendData)){
-                        const data = content + appendData;
-                        promises.push(writeFile(page, data));
+                    /* if a file has *ignore* at start, it will be ignored */
+                    if(!pageData.startsWith('/* ignore */') || !pageData.startsWith('// ignore')) {
+                        const content = sanitizePageData(pageData);
+                        /* will only run if appendData is not added already */
+                        if(!content.includes(appendData)){
+                            const data = content + appendData;
+                            promises.push(writeFile(page, data));
+                        }
                     }
                 }catch(e) {
                     console.log(e)
