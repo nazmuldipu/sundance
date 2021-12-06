@@ -37,9 +37,11 @@
                 <div class="font-ivar text-lg-2 text--color__sn-6 mb-8">
                     {{ item.description | safe }}
                 </div>
-                {% for cta in item.actions %}
-                    {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = cta.copy, href = cta.href, target = cta.target ) }}
-                {% endfor %}
+                {% if item.actions | length > 0 %}
+                    {% for cta in item.actions %}
+                        {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = cta.copy, href = cta.href, target = cta.target ) }}
+                    {% endfor %}
+                {% endif %}
             </figcaption>
         </section>
     {% endfor %}
