@@ -60,17 +60,21 @@ module.exports = function(eleventyConfig) {
         return toIgnorePatterns.filter(pattern => url.includes(pattern)).length > 0 ? url : "/" + url;
     } )
 
-    eleventyConfig.addPassthroughCopy('videos');
+    if (process.env.MINIMAL_PREVIEW) {
+         // nothing to copy for preview
+    } else {
+        eleventyConfig.addPassthroughCopy('videos');
     
-    eleventyConfig.addPassthroughCopy({ 'images/output': 'images' });
-
-    eleventyConfig.addPassthroughCopy({ 'images/svg': 'images' });
-
-    eleventyConfig.addPassthroughCopy('fonts');
-
-    eleventyConfig.addPassthroughCopy('favicon.*');
-
-    eleventyConfig.addPassthroughCopy('robots.txt');
+        eleventyConfig.addPassthroughCopy({ 'images/output': 'images' });
+    
+        eleventyConfig.addPassthroughCopy({ 'images/svg': 'images' });
+    
+        eleventyConfig.addPassthroughCopy('fonts');
+    
+        eleventyConfig.addPassthroughCopy('favicon.*');
+    
+        eleventyConfig.addPassthroughCopy('robots.txt');
+    }
     
     eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
         if(outputPath.endsWith('.html')) {
