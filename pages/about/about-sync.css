@@ -1,0 +1,38 @@
+/****  start imports  ********************************/
+@import "../../styles/global.css";
+/****  end imports  ********************************/
+
+.top-banner-title {
+    top: 45%;
+    width: 100%;
+}
+.bridge__nav-icon {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.accolades__tab.active {
+    border-bottom: 2px solid var(--sundance__neutral1);
+}
+.accolades__container.active {
+    display: block;
+}
+.segment-inner__text-container ul {
+    padding-inline-start: 40px;
+    list-style-type: disc;
+}
+
+.accolades__item {
+    padding: 32px;
+    display: grid;
+    grid-auto-flow: row;
+    border: 1px solid var(--sundance__neutral1);
+}
+.accolades__item-image{
+    height: 104px;
+    max-width: 96px; 
+    margin: 0 auto;
+    display: grid;
+    align-items: center;
+}
+/* .accolades__item-title {
+    min-height: 110px;
+} */
