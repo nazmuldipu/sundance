@@ -13,7 +13,6 @@ accolades__tabs.forEach(tab => {
         console.log(tab.id);
         remove_classname_arr('active', accolades__containers);
         const container = document.getElementById(tab.id + '-container');
-        console.log(container);
         container.className += " active";
     });
 });
