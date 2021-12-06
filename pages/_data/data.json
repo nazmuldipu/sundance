@@ -5,5 +5,260 @@
             "href": "fonts/SpaceMono-Regular.ttf",
             "type": "font/ttf"
         }
+    ],
+    "weatherInfo": {
+        "title": "Weather",
+        "weather": [
+            {
+                "id": 45,
+                "name": "Sundance",
+                "url": "https://opensnow.com/location/sundance",
+                "state": {
+                    "id": 45,
+                    "name": "Utah",
+                    "url": "https://opensnow.com/state/UT"
+                },
+                "current": {
+                    "temp": "26ºF",
+                    "wind": {
+                        "direction": "NNE",
+                        "speed": "5mph"
+                    },
+                    "location": "Mid-Mtn",
+                    "icon": "https://opensnow.com/img/weather/night/skc.png",
+                    "weather": "Clear",
+                    "updated_at": "2021-11-22 08:00:03"
+                },
+                "warnings": [],
+                "forecast": {
+                    "daily_updated_at": "2021-11-22 08:00:03",
+                    "daily": [
+                        {
+                            "date": "2021-11-22",
+                            "day": {
+                                "temp": "54ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/day/skc.png",
+                                "weather": "Sunny",
+                                "wind": {
+                                    "direction": "W",
+                                    "speed": "5mph",
+                                    "gust": "15mph"
+                                },
+                                "snow_level": "5,000ft",
+                                "cloud_cover": "5%",
+                                "precip_chance": "0%"
+                            },
+                            "night": {
+                                "temp": "32ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/night/skc.png",
+                                "weather": "Clear",
+                                "wind": {
+                                    "direction": "SW",
+                                    "speed": "5mph",
+                                    "gust": "15mph"
+                                },
+                                "snow_level": "4,100ft",
+                                "cloud_cover": "10%",
+                                "precip_chance": "0%"
+                            }
+                        },
+                        {
+                            "date": "2021-11-23",
+                            "day": {
+                                "temp": "50ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/day/bkn.png",
+                                "weather": "Mostly Sunny",
+                                "wind": {
+                                    "direction": "SW",
+                                    "speed": "10mph",
+                                    "gust": "20mph"
+                                },
+                                "snow_level": "4,800ft",
+                                "cloud_cover": "35%",
+                                "precip_chance": "20%"
+                            },
+                            "night": {
+                                "temp": "26ºF",
+                                "snow": "0-1\"",
+                                "icon": "https://opensnow.com/img/weather/night/bkn.png",
+                                "weather": "Mostly Clear",
+                                "wind": {
+                                    "direction": "WNW",
+                                    "speed": "5mph",
+                                    "gust": "10mph"
+                                },
+                                "snow_level": "3,300ft",
+                                "cloud_cover": "25%",
+                                "precip_chance": "40%"
+                            }
+                        },
+                        {
+                            "date": "2021-11-24",
+                            "day": {
+                                "temp": "34ºF",
+                                "snow": "0-1\"",
+                                "icon": "https://opensnow.com/img/weather/day/few.png",
+                                "weather": "Partly Cloudy",
+                                "wind": {
+                                    "direction": "WNW",
+                                    "speed": "5mph",
+                                    "gust": "5mph"
+                                },
+                                "snow_level": "2,600ft",
+                                "cloud_cover": "40%",
+                                "precip_chance": "15%"
+                            },
+                            "night": {
+                                "temp": "15ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/night/skc.png",
+                                "weather": "Clear",
+                                "wind": {
+                                    "direction": "NNE",
+                                    "speed": "5mph",
+                                    "gust": "5mph"
+                                },
+                                "snow_level": "1,600ft",
+                                "cloud_cover": "5%",
+                                "precip_chance": "5%"
+                            }
+                        },
+                        {
+                            "date": "2021-11-25",
+                            "day": {
+                                "temp": "39ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/day/skc.png",
+                                "weather": "Sunny",
+                                "wind": {
+                                    "direction": "SSW",
+                                    "speed": "5mph",
+                                    "gust": "5mph"
+                                },
+                                "snow_level": "3,400ft",
+                                "cloud_cover": "5%",
+                                "precip_chance": "0%"
+                            },
+                            "night": {
+                                "temp": "24ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/night/skc.png",
+                                "weather": "Clear",
+                                "wind": {
+                                    "direction": "ENE",
+                                    "speed": "5mph",
+                                    "gust": "5mph"
+                                },
+                                "snow_level": "3,700ft",
+                                "cloud_cover": "5%",
+                                "precip_chance": "5%"
+                            }
+                        },
+                        {
+                            "date": "2021-11-26",
+                            "day": {
+                                "temp": "47ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/day/few.png",
+                                "weather": "Partly Cloudy",
+                                "wind": {
+                                    "direction": "S",
+                                    "speed": "5mph",
+                                    "gust": "5mph"
+                                },
+                                "snow_level": "4,800ft",
+                                "cloud_cover": "55%",
+                                "precip_chance": "10%"
+                            },
+                            "night": {
+                                "temp": "25ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/night/skc.png",
+                                "weather": "Clear",
+                                "wind": {
+                                    "direction": "NE",
+                                    "speed": "5mph",
+                                    "gust": "5mph"
+                                },
+                                "snow_level": "4,800ft",
+                                "cloud_cover": "15%",
+                                "precip_chance": "10%"
+                            }
+                        }
+                    ]
+                }
+            }
+        ],
+        "lift":[
+            {
+                "base": "0",
+                "24_hour": "0",
+                "48_hour": "0",
+                "ytd": "0",
+                "road_92_condition": "open",
+                "road_189_condition": "open",
+                "parking_condition": "open",
+                "lift_ray_condition": "closed",
+                "lift_outlaw_condition": "closed",
+                "lift_stairway_condition": "closed",
+                "lift_jake_condition": "closed",
+                "lift_red_condition": "closed",
+                "lift_flathead_condition": "closed",
+                "nordic_center": "closed",
+                "lift_notes": ""
+            }
+        ]
+    },
+    "groupData": [
+        {
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Dining", "url": "/" },
+                { "copy": "Tree Room", "url": "/" }
+            ],
+            "title": "Tree Room",
+            "descriptions": [
+                "Enjoy the romantic atmosphere of candlelight and soft illumination accenting beautiful Native American art from Robert Redford’s private collection as you savor fresh, seasonal mountain cuisine.",
+                "Children under 12 not permitted."
+            ],
+            "actions": [
+                {
+                    "copy": "Make a Reservation",
+                    "url": "/",
+                    "target": "_blank",
+                    "type": "primary",
+                    "category": "link"
+                }
+            ],
+            "navs": [
+                {
+                    "label": "Hours",
+                    "copy": "View Hours",
+                    "url": "/",
+                    "target": "_self"
+                },
+                {
+                    "label": "Contact",
+                    "copy": "Call Now",
+                    "url": "/",
+                    "target": "_self"
+                },
+                {
+                    "label": "Menu",
+                    "copy": "View",
+                    "url": "/",
+                    "target": "_self"
+                },
+                {
+                    "label": "Music",
+                    "copy": "View Lineup",
+                    "url": "/",
+                    "target": "_self"
+                }
+            ]
+        }
     ]
 }

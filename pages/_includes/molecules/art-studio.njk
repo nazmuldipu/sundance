@@ -1,0 +1,48 @@
+
+{% from 'macros.njk' import scaled_image %}
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from "atoms/a.njk" import button_primary %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% macro artStudio(id = '', items, containerBackground = '', figureClass = '', figcaptionClass = '') %}
+    <section class="{% if containerBackground %} containerBackground {% endif %}">
+         {% for item in items %}
+            <section class="art-studio">       
+                <figure class="art-studio__image {{ figureClass }}" 
+                    {% if id %} id="{{ id }}" {% endif %} 
+                >
+                    <img src={{item.image}} class="w-full"/>
+                </figure>
+                <figcaption class="art-studio__caption {{ figcaptionClass }}"
+                    {% if id %} id="{{ id }}" {% endif %}
+                >                    
+                    {{ h3(copy = item.title, classes = ['art-studio__caption__header', 'font-ivar', 'font-semibold', 'text--color__sn-6']) }}                    
+                    {{ h4(copy = item.description, classes = ['heading--4', 'art-studio__caption__text--padding', 'font-ivar', 'font-normal', 'text--color__sn-6']) }}
+                    {% if item.cta %}
+                        {{ button_primary(classes = ['button', 'button--primary', 'art-studio__caption__button--padding', 'font-calibre', 'font-medium', 'text-base'], href = item.cta.url, copy = item.cta.copy, id = item.id, target = item.cta.target ) }}
+                    {% endif %}                   
+                </figcaption>
+            </section>
+        {% endfor %}
+   </section>
+{% endmacro %}
+
+{% macro artStudio2(item, figureClass = '', figcaptionClass = '') %}   
+    <section class="art-studio  {% if item.id %} id="{{ id }}" {% endif %}">       
+        <figure class="art-studio__image {{ figureClass }}">
+            {{global_image(item.image.global_image, classes='w-full image_frame sm:3:4 lg:2:3 2xl:2:3 4xl:2:3')}}
+        </figure>
+        <figcaption class="art-studio__caption {{ figcaptionClass }}">                    
+            {{ h3(copy = item.title, classes = ['art-studio__caption__header', 'font-ivar', 'font-semibold', 'text--color__sn-6']) }}                    
+            {{ h4(copy = item.description, classes = ['heading--4', 'art-studio__caption__text--padding', 'font-ivar', 'font-normal', 'text--color__sn-6']) }}
+            {% if item.actions%}
+                {% for action in item.actions %}
+                     {% set action =action.action %}
+                     {% set trg = '_blank' if not link.internal else '_self' %}
+                     {% if action.type == 'primary' %}
+                         {{ button_primary(classes = ['button', 'button--primary', 'art-studio__caption__button--padding', 'font-calibre', 'font-medium', 'text-base'], href = action.url, copy = action.copy, id = item.id, target = trg ) }}
+                     {% endif %}
+                {% endfor %}
+            {% endif %}                  
+        </figcaption>
+    </section>
+{% endmacro %}

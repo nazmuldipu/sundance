@@ -1,0 +1,171 @@
+{% from "atoms/a.njk" import a,
+dropdown2 %}
+{% from 'atoms/icons.njk' import iconImage,
+iconCSS %}
+{% from 'atoms/form-fields.njk' import form_input %}
+{% from 'organisms/card-widget.njk' import cardWidget %}
+
+{% set emailInput = {
+        "type" : "email", 
+        "placeholder" : "I’m searching for",
+        "classes": ["form-input", "border-0"]
+    } %}
+{% macro headerLeft(menuItems, id) %}
+    <section class="header-left">
+        <div class="menu__input--container cursor-pointer">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.837 19.0453C19.9414 19.1501 20 19.2924 20 19.4407C20 19.5891 19.9414 19.7313 19.837 19.8362C19.7326 19.9411 19.5911 20 19.4435 20C19.2959 20 19.1543 19.9411 19.0499 19.8362L13.0805 13.8373C13.0239 13.7872 12.951 13.7595 12.8755 13.7595C12.8 13.7595 12.7271 13.7872 12.6704 13.8373C12.6704 13.8373 12.5817 13.9153 12.421 14.0323C10.8584 15.2122 8.91024 15.756 6.96594 15.5551C5.02164 15.3542 3.22441 14.4233 1.93345 12.9485C0.642483 11.4737 -0.0471076 9.56366 0.00250234 7.60008C0.0521123 5.63651 0.837268 3.76407 2.20104 2.35701C3.56481 0.949955 5.40674 0.111929 7.35868 0.0104268C9.31062 -0.091075 11.2288 0.551425 12.7298 1.80951C14.2308 3.0676 15.2041 4.8486 15.4551 6.79654C15.7061 8.74448 15.2164 10.7159 14.0838 12.3167C13.9452 12.5061 13.8233 12.6565 13.8233 12.6565C13.7722 12.7129 13.744 12.7863 13.744 12.8626C13.744 12.9388 13.7722 13.0122 13.8233 13.0686L19.837 19.0453ZM7.80397 14.4277C9.11945 14.4277 10.4054 14.0357 11.4992 13.3013C12.5929 12.5668 13.4454 11.5229 13.9488 10.3016C14.4522 9.08024 14.584 7.73631 14.3273 6.43974C14.0707 5.14317 13.4372 3.95219 12.507 3.01742C11.5769 2.08265 10.3917 1.44606 9.10155 1.18815C7.81135 0.93025 6.47403 1.06262 5.25869 1.56851C4.04336 2.07441 3.00459 2.93111 2.27375 4.03029C1.54292 5.12947 1.15283 6.42175 1.15283 7.74372C1.15283 9.51643 1.85358 11.2165 3.10091 12.47C4.34824 13.7235 6.03998 14.4277 7.80397 14.4277Z" fill="#231F20"/>
+            </svg>
+
+            {{ form_input(obj = emailInput, classes = ['menu__input']) }}
+        </div>
+        <div class="menu__cross-btn cursor-pointer" id="toogle_button_cross" onclick="toggleMobileMenu()">
+            <svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32.5" cy="32" r="32" fill="#262624"/>
+                <line x1="23.6924" y1="40.4853" x2="41.3701" y2="22.8076" stroke="white" stroke-linecap="round"/>
+                <line x1="41.37" y1="41.1924" x2="23.6924" y2="23.5147" stroke="white" stroke-linecap="round"/>
+            </svg>
+        </div>
+        {% for item in menuItems %}
+            <div class="flex header-left__menu justify-center cursor-pointer flex-col">
+                {% set id = id + '-' + item.title%}
+                <input type="checkbox" id="{{id}}" class="toggle_menu hidden" name="First">
+                <label tabindex="0" for="{{id}}" class="header--label">
+                    <h2 class="menu__label--header font-ivar">
+                        {{ item.title }}
+                    </h2>
+                </label>
+
+                <ul class="hidden font-ivar toggle_sub_menu">
+                    {% for linkItems in item.links %}
+                        <li class="toggle_sub_menu__link font-calibre">
+                            {{a(classes= ['text--color__sn-6', 'no-underline', 'font-calibre'], copy = linkItems.copy, href=linkItems.href)}}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </section>
+    <script>
+        const app_nav = document.querySelector('#app_nav');
+        function changeLinkState() {
+            if(window.scrollY > 0) {
+                app_nav.classList.add('app_nav--scroll');
+            } else {
+                app_nav.classList.remove('app_nav--scroll');
+            }
+        }
+
+        window.addEventListener('scroll', changeLinkState);
+
+
+        {
+            window.onBlurMenuToggle = function (id) {
+                let el = document.getElementById(id);
+                if (el.checked) {
+                    el.checked = false;
+                }
+            }
+        }
+        window.toggleMobileMenu = function (id = 'toggle-154') {
+            let el = document.getElementById(id);
+            if (el.checked) {
+                el.checked = false;
+            }
+        }
+    </script>
+{% endmacro %}
+{% macro headerCTA(item) %}
+    <section class="header-button">
+        {{ dropdown2( classes=['dropdown-container--secondary'], labelClasses=['button--secondary2', 'button', 'text-base'], copy=item.title, labelId=item.id, items=item.drop_down ) }}
+    </section>
+{% endmacro %}
+
+{% macro navMenu(menuItems) %}
+    <nav class="header__nav fixed-top sm:px-4 md:px-5 lg:px-5 2xl:px-14 4xl:px-22" id="app_nav">
+        <div class="header__burger-icon">
+            <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
+            <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
+                {{ iconCSS( classes=[ menuItems.toggle_icon] ) }}
+            </label>
+            <div class="toggle-details hidden font-ivar w-screen h-screen align-baseline overflow-y-auto">
+                {{ headerLeft(menuItems.sections , id = 'toggle-156') }}
+            </div>
+        </div>
+        <div class="header__sections">
+            <ul>
+                {% for sec in menuItems.sections%}
+                    <li>
+                        <a href="#" class="font-ivar">{{sec.title}}</a>
+                        <ul class="dropdown">
+                            {% for item in sec.links %}
+                                <li>
+                                    <a href="{{item.href}}">{{item.copy}}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="header__tab__icon-buttons grid grid-flow-col gap-x-2 align-items-center">
+            {% for ic_action in menuItems.icon_actions %}
+                <div>
+                    <input type="radio" id="action_icon-tab-{{ic_action.slug}}" name="action_icon_radio" class="action_icon__btn hidden">
+                    <label for="action_icon-tab-{{ic_action.slug}}" class="action_icon__label action_icon__label-{{ic_action.slug}}">
+                        {% if ic_action.slug === 'temp'%}
+                            <div class="temp_icon_text">
+                                <span id="navbar_icon_temp-tab">0 &deg;</span></div>
+                        {% else %}
+                            {{ic_action.icon | safe}}
+                        {% endif %}
+                        <div class="hidden action_icon__label-cross">&#x2715;</div>
+                    </label>
+                    <div id="ic_action_tab-{{ic_action.slug}}_container" class="ic_action_container {{ic_action.slug}}">
+                            {{cardWidget(cardWidgetData, type = ic_action.slug, title=ic_action.title)}}
+                        </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="header__logo">{{menuItems.company_logo | safe}}</div>
+
+        <div class="header__actions">
+            <div class="header_icon-buttons grid grid-flow-col gap-x-2 align-items-center">
+                {% for ic_action in menuItems.icon_actions %}
+                    <div>
+                        <input type="radio" id="action_icon-{{ic_action.slug}}" name="action_icon_radio" class="action_icon__btn hidden">
+                        <label for="action_icon-{{ic_action.slug}}" class="action_icon__label action_icon__label-{{ic_action.slug}}">
+                            {% if ic_action.slug === 'temp'%}
+                                <div class="temp_icon_text">
+                                    <span id="navbar_icon_temp">0 &deg;</span></div>
+                            {% else %}
+                                {{ic_action.icon | safe}}
+                            {% endif %}
+                            <div class="hidden action_icon__label-cross">&#x2715;</div>
+                        </label>
+                        <div id="ic_action_{{ic_action.slug}}_container" class="ic_action_container {{ic_action.slug}}">
+                            {{cardWidget(cardWidgetData, type = ic_action.slug, title=ic_action.title)}}
+                        </div>
+                    </div>
+                {% endfor %}
+                <script>
+                    let actionBtns = document.querySelectorAll('.action_icon__btn');
+                    let currActionBtn = null;
+
+                    actionBtns.forEach(function (btn) {
+                        btn.addEventListener('click', function (event) {
+                            if (currActionBtn == this.id) {
+                                this.checked = false;
+                                currActionBtn = null;
+                            } else {
+                                currActionBtn = this.id;
+                            }
+                        })
+                    })
+                </script>
+            </div>
+            {{ dropdown2( classes=['dropdown-container--secondary'], labelClasses=['button--secondary2', 'button', 'text-base'], copy=menuItems.cta_action.title, labelId=menuItems.cta_action.id, items=menuItems.cta_action.drop_down ) }}
+        </div>
+    </nav>
+{% endmacro %}

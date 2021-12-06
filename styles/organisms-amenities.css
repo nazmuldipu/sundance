@@ -1,0 +1,43 @@
+.amenities {
+  background: #F7F7F7;
+  max-width: 702px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 48px 40px;
+}
+.amenities__features-container {
+  text-align: left;
+  margin-top: 1rem;
+}
+.amenities__features-container:nth-child(1){
+  margin-top: 0 !important;
+}
+.amenities__features--header {
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid black;
+}
+.amenities__features--item-container {
+  display: block;
+}
+.amenities__features--item {
+  display: flex;
+  align-items: baseline;
+  padding-top: 0;
+}
+.pl-4 {
+  padding-left: 1rem;
+}
+.amenities__features--item:nth-child(1) {
+  padding-top: 26px;
+}
+/* Tab (Screen size : 1200 pts) */
+@media screen and (min-width: 768px) {
+  .amenities__features--item-container {
+    display: grid;
+  }
+  .amenities__features--item:nth-child(1),
+  .amenities__features--item:nth-child(2) {
+    padding-top: 26px;
+  }
+}

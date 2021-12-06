@@ -1,0 +1,110 @@
+---
+layout: base.njk
+pagename: sundance-mountain-outfitters
+permalink: "build/shop/sundance-mountain-outfitters/index.html"
+permalinkBypassOutputDir: true
+---
+{% from "atoms/headings.njk" import h1,
+global_header,
+h3,
+h4,
+h5,
+h6 %}
+{% from 'molecules/card.njk' import horrizontalCard,
+card,
+verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from "atoms/headings.njk" import h4,
+ihh1 %}
+{% from 'atoms/icons.njk' import iconCSS %}
+{% from 'molecules/bridge-2.njk' import secondBridge %}
+{% from 'macros.njk' import top_banner_center_text_group_venues %}
+
+{% set generalStore_group_venues = pageCMS['group-venues'].group_venues  %}
+{% set globalImage = pageCMS['top-banner'].banner.global_image %}
+
+{% set top_action_cards = pageCMS['top-action-card'].action_card %}
+{% set middle_action_cards = pageCMS['middle-action-card'].action_card %}
+{% set bottom_action_cards = pageCMS['bottom-action-card'].action_card %}
+
+{% set card_title = pageCMS['card-title'].simple_article %}
+{% set horizontal_card_list= pageCMS['card-list'].horizontal_card_list %}
+
+{# Hero Image Section #}
+{{ top_banner_center_text_group_venues(
+    image = globalImage.global_image,
+    title = pageCMS['banner-content'].simple_article.title,
+    events = generalStore_group_venues
+    )
+}}
+
+<section class="segment-outer font-ivar">
+    <section class="segment-inner">
+        <div class="grid shop-action__card global-px">
+            <div class="action-card__content font-ivar bold">
+                {{pageCMS['top-action-card-content'].simple_article.title}}
+            </div>
+            <div>
+                <div class="bridge-wrapper">
+                    {% for item in top_action_cards %}
+                        <article class="single-action-card">
+                            <header>
+                                <h3 class="second-bridge__header font-calibre font-medium">
+                                {{item.title}}
+                                </h3>
+                            </header>
+                            <a href="/" class="button button--primary second-bridge__button--size font-calibre font-medium text-base" target="_self">
+                                {{item.actions.copy}}
+                            </a>
+                        </article>
+                    {% endfor %}
+                </div>
+                <div class="mt-4">
+                    {{pageCMS['top-action-card-content'].simple_article.description | safe}}
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<section class="segment-outer">
+    <section class="segment-inner border-t-1 action-card middle-action-card global-pb global-mx">
+        {% for item in middle_action_cards %}
+            {{ secondBridge(item) }}
+        {% endfor %}
+    </section>
+</section>
+{% if pageCMS['accessories-image'] and pageCMS['accessories-image'].global_image %}
+<section class="segment-outer">
+    <section class="segment-inner global-px">
+        <div class="global-pb text-center">{{ global_header(copy = card_title.title) }}</div>
+        <figure class="global-pb">{{ global_image(pageCMS['accessories-image'].global_image, classes='w-full image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1')}}</figure>
+    </section>
+</section>
+{% endif %}
+<section class="segment-outer">
+    <section class="segment-inner global-pb global-px">
+        {% for item in bottom_action_cards %}
+            <article class="single-action-card bg-sp6">
+                <header>
+                    <h3 class="second-bridge__header font-calibre font-medium text-white">
+                    {{item.title}}
+                    </h3>
+                </header>
+                <a href="/" class="button button--primary second-bridge__button--size font-calibre font-medium text-base" target="_self">
+                    {{item.actions.copy}}
+                </a>
+            </article>
+        {% endfor %}
+    </section>
+</section>
+{# Horrizontal Card Section #}
+<section class="segment-outer">
+    <section class="segment-inner global-pb global-px">
+        {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
+    </section>
+</section>
+{{newsletter()}}

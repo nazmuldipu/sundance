@@ -1,0 +1,165 @@
+/* TODO: Need to be delete following section once molecule building done */
+.group-section {
+  margin: 0 180px;
+}
+.group-container {
+  margin: -100px 144px 0 144px;
+  /* border: 1px dotted black; */
+}
+/* Mobile (Screen size : 375 pts) */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .group-section {
+    margin: 0;
+  }
+  .group-container {
+    margin: -100px 24px 0 24px;
+  }
+}
+
+/* Tab (Screen size : 1200 pts) */
+@media screen and (min-width: 768px) and (max-width: 1365px) {
+  .group-section {
+    margin: 0 80px;
+  }
+  .group-container {
+    margin: -100px 70px 0 70px;
+  }
+}
+
+/* Desktop (Screen size : 1440 pts) */
+@media screen and (min-width: 1366px) and (max-width: 1919px) {
+}
+
+/* Desktop XXL (Screen size : 1920 pts) */
+@media screen and (min-width: 1920px) {
+}
+
+/* Delete till here */
+
+.group-venues {
+  display: grid;
+  justify-content: center;
+  background-color: var(--sundance__neutral5);
+}
+
+.group-venues__container {
+  max-width: 608px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 0;
+}
+.group-venues__breadcrumbs {
+  width: 100%;
+}
+.group-venues__breadcrumbs__link {
+  text-decoration: none;
+  color: var(--sundance__neutral3);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0 8px;
+  border-right: 1px solid var(--sundance__neutral3);
+}
+
+.group-venues__breadcrumbs__link.breadcrumbs-last {
+  border: none !important;
+  color: var(--sundance__neutral1);
+}
+
+.group-venues__title {
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 110%;
+  padding: 24px 0;
+  color: var(--sundance__neutral1);
+}
+
+.group-venues__description {
+  padding: 0 16px 24px 16px;
+  font-size: 19px;
+  line-height: 140%;
+  letter-spacing: 0.04em;
+  color: var(--sundance__neutral1);
+}
+
+.group-venues__actions {
+  margin: 8px 0;
+}
+.group-venues__links {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  margin: 8px;
+}
+
+.group-venues__dropdown {
+  margin: 8px;
+}
+.group-venues__dropdown .dropdown-list__list-item {
+  text-align: left;
+}
+
+.group-venues__nav {
+  display: flex;
+  max-width: 376px;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--sundance__neutral3);
+}
+.group-venues__nav label {
+  font-size: 16px;
+  line-height: 140%;
+}
+.group-venues__nav a {
+  font-weight: 500;
+  line-height: 19px;
+}
+
+/* Mobile (Screen size : 375 pts) */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .group-venues__container {
+    padding: 24px 0;
+  }
+  .group-venues__title {
+    font-size: 24px;
+    padding: 16px 0;
+  }
+  .group-venues__description {
+    padding: 16px;
+  }
+  .group-venues__dropdown {
+    display: block;
+    margin: 0 16px;
+  }
+  .group-venues__dropdown-btn {
+    display: block;
+    padding: 20px 48px 20px 0px;
+    text-align: center;
+  }
+  .group-venues__links {
+    display: block;
+    margin: 16px;
+    padding: 22px 0 18px 0;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+  }
+  .group-venues__nav {
+    padding: 16px;    
+  }
+}
+
+/* Tab (Screen size : 1200 pts) */
+@media screen and (min-width: 768px) and (max-width: 1365px) {
+}
+
+/* Desktop (Screen size : 1440 pts) */
+@media screen and (min-width: 1366px) and (max-width: 1919px) {
+}
+
+/* Desktop XXL (Screen size : 1920 pts) */
+@media screen and (min-width: 1920px) {
+}

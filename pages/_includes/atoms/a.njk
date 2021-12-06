@@ -1,3 +1,5 @@
+{% from 'atoms/icons.njk' import iconImage %}
+{% from 'atoms/icons.njk' import iconCSS %}
 {#
     #   @desc   a basic anchor tag
     #   @param  classes  array, class names (optional)
@@ -18,7 +20,6 @@
         {{ copy | safe }}
     </a>
 {% endmacro %}
-
 
 {#
     #   @desc   a primary button
@@ -41,7 +42,6 @@
     </a>
 {% endmacro %}
 
-
 {#
     #   @desc   a secondary button
     #   @param  classes  array, class names (optional)
@@ -62,7 +62,6 @@
         {{ copy | safe }}
     </a>
 {% endmacro %}
-
 
 {# 
     #   @desc   view details anchor tag
@@ -85,6 +84,79 @@
     </a>
 {% endmacro %}
 
+
+{# 
+    #   @desc   view details anchor tag with target boolean
+    #   @param  classes array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  copy    string, the HTML mark up that is linked
+    #   @param  href    string, link url
+    #   @param  target  string, the link target location (optional)
+    #   @return HTML anchor tag 
+    #   @author Nazmul 
+ #}
+{% macro view_details2( classes = ['view-details', 'font-calibre', 'text-base'], id, copy, href='#', internal ) %}
+    <a 
+        {% if href %} href="{{ href }}" {% endif %} 
+        target="{{ '_self' if internal else '_blank' }}"
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+    >
+        <span class="icon"></span>{{ copy | safe }}
+    </a>
+{% endmacro %}
+
+
+{# 
+    #   @desc   button for click event
+    #   @param  classes array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  copy    string, the HTML mark up that is linked
+    #   @author Nazmul Alam
+ #}
+{% macro Button( copy, classes = ['view-details', 'font-calibre', 'text-base'], type="button", id) %}
+    <button type="{{type}}" 
+        {% if id %} id="{{ id }}" {% endif %} 
+        class="{% for class in classes %} {{ class }} {% endfor %}" >
+            {{ copy | safe }}
+    </button>
+{% endmacro %}
+
+{# 
+    #   @desc   Icon button for click event
+    #   @param  classes array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  copy    string, the HTML mark up that is linked
+    #   @author Nazmul Alam
+ #}
+{% macro IconButton( copy, classes = ['view-details', 'font-calibre', 'text-base'], type="button", id) %}
+    <button type="{{type}}" 
+        {% if id %} id="{{ id }}" {% endif %} 
+        class="{% for class in classes %} {{ class }} {% endfor %} icon-button" >
+        {{ iconCSS( classes=['icon-css', 'icon--filter'], copy='<span></span><span></span><span></span>' ) }} {{ copy | safe }}
+    </button>
+{% endmacro %}
+
+{#
+    #   @desc   Anchor tag for click event
+    #   @param  classes  array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  copy     string, the HTML mark up that is linked
+    #   @param  href     string, link url
+    #   @param  target   string, the link target location (optional)
+    #   @return HTML link
+    #   @author Nazmul Alam
+#}
+{% macro Link( classes=['button', 'button--primary', 'font-calibre', 'text-base'], id, copy, href='#', target )%}
+    <a
+        href="{{ href }}"
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+        {% if target %} target="{{ target }}" {% endif %}
+    >
+        {{ copy | safe }}
+    </a>
+{% endmacro %}
 
 {#
     #   @desc   a dropdown button with a list of links
@@ -114,6 +186,43 @@
             {% for item in items %}
                 <li class="dropdown-list__list-item">
                     <a href="{{ item.url }}" target="{{ item.target }}" class="dropdown-list-item__anchor">
+                        {{ item.copy | safe }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endmacro %}
+{#
+    #   @desc   a dropdown button with a list of links
+    #   @param  classes         array, class names (optional)
+    #   @param  id              string, a unique ID (optional)
+    #   @param  copy            string, the dropdown copy
+    #   @param  labelClasses    array, label class names (optional)
+    #   @param  labelId         string, a unique label button ID
+    #   @param  items           array, an array of dropdown links
+    #   @return HTML primary dropdown
+    #   @author Sarjis
+#}
+{% macro dropdown2( classes=['dropdown-container--primary'], labelClasses=['button--primary', 'button', 'font-calibre', 'text-base'], listClasses = ['font-ivar'], id, copy, labelId='dropdown-1', items = [] )%}
+    <div
+        class="dropdown-container {% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+    >
+        <input type="checkbox" class="dropdown-container__toggle" id="{{ labelId }}">
+        <label
+            for="{{ labelId }}"
+            class="dropdown-button2 {% for class in labelClasses %} {{ class }} {% endfor %}"
+        >
+            {{ copy | safe }}
+        </label>
+        <ul class="dropdown-list2 {% for class in listClasses %} {{ class }} {% endfor %}">
+            {% for item in items %}
+                <li class="dropdown-list__list-item">
+                    
+                    {{ item.logo | safe }}
+                    
+                    <a href="{{ item.url }}" target="{{ item.target }}" class="dropdown-list2-item__anchor font-calibre">
                         {{ item.copy | safe }}
                     </a>
                 </li>

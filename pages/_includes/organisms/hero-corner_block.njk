@@ -1,0 +1,36 @@
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from "atoms/a.njk" import a, button_primary, button_secondary, view_details, dropdown %}
+{# 
+    #   @desc   top_banner_right_bottom_container
+    #   @param  heroCornerBlock       object (data from json file)
+    #   @return HTML section
+    #   @author Meherab, Sarjis
+ #}
+{% macro top_banner_right_bottom_container(heroCornerBlock) %}
+  <section class="hero__corner--block">
+    {{ h2(copy = heroCornerBlock.title, classes=['heading', 'hero__corner--block__title']) }}
+    {% if heroCornerBlock.subtitle %}
+        <p class="hero__corner--block__subtitle">{{ heroCornerBlock.subtitle }}</p>
+    {% endif %}
+    {% if heroCornerBlock.description %}
+        <p class="hero__corner--block__description">{{ heroCornerBlock.description }}</p>
+    {% endif %}
+    {% for action in heroCornerBlock.actions %}
+        {% if action.type == "view-details" %}
+            <div class="hero__corner--block__cta {{ 'mt-8' if not heroCornerBlock.description }}">
+                {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = action.copy, href = action.href, target = action.target ) }}
+            </div>
+        {% endif %}
+        {% if action.label %}
+            <div class="hero__corner--block__nav">
+                <label class="font-ivar">{{action.label}}</label>
+                {{ a( copy=action.copy, classes=['link', 'link--primary', 'font-calibre', 'font-medium', 'text-base'], href=action.href, target=action.target) }}
+            </div>
+        {% else %}
+            <div class="hero__corner--block__cta-primary">
+                {{ button_primary(classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = action.copy, href = action.href, target = action.target ) }}
+            </div>    
+        {% endif %}        
+    {% endfor %}
+  </section>
+{% endmacro %}

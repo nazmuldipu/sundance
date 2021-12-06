@@ -1,0 +1,185 @@
+---
+layout: base.njk
+pagename: about
+permalink: "build/about/index.html"
+permalinkBypassOutputDir: true
+nickname: "about"
+---
+{% from "atoms/headings.njk" import h3 %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'atoms/icons.njk' import iconImageLink %}
+{% from 'molecules/card.njk' import verticalCard %}
+
+{# Hero Image Section #}
+{% if pageCMS['top-banner'].global_image %}
+    <section class="group-section relative">
+        <section class="sm:mx-6">
+            {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:4 lg:5:2 2xl:5:2 4xl:5:2')}}
+        </section>
+        {{ h3( copy=pageCMS['top-banner'].global_image.alt, classes=['absolute', 'top-banner-title', 'text-white', 'text-5.5xl', 'sm:text-lg-2', 'font-ivar', 'text-center', 'font-semibold'] ) }}
+    </section>
+{% endif %}
+
+{% if pageCMS['venues'].group_venues.length %}
+    <section>
+        {% set event = (pageCMS['venues'].group_venues |  first )%}
+        {{groupVenues(event)}}
+    </section>
+{% endif %}
+
+{# Second Image Section #}
+{% if pageCMS['second-banner'].global_image %}
+    <section class="group-section relative pb-12">
+        <section class="segment-inner sm:mx-6">
+            {{global_image(pageCMS['second-banner'].global_image, classes='-z-1 image_frame sm:2:1 lg:2:1 2xl:2:1 4xl:2:1 ')}}
+        </section>
+    </section>
+{% endif %}
+
+{# Page content #}
+{% if pageCMS['page-content'].simple_article %}
+    <section class="group-section text-lg">
+        <section class="segment-inner__text-container px-6 pb-10">
+            {{ h3( copy=pageCMS['page-content'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'text-center', 'font-semibold', 'pb-6'] ) }}
+            {{pageCMS['page-content'].simple_article.description | safe}}
+        </section>
+    </section>
+{% endif %}
+
+{# page archive #}
+{% if pageCMS['archive-images'].global_image_arr %}
+    <section class="group-section text-lg pb-10">
+        <section class="segment-inner grid grid-cols-2 gap-x-8 sm:gap-x-4 sm:mx-6 pb-6">
+            {% for img in pageCMS['archive-images'].global_image_arr.images %}
+                {{global_image(img.global_image, classes='-z-1 image_frame')}}
+            {% endfor %}
+        </section>
+        <div class="text-center">{{pageCMS['archive-images'].global_image_arr.description}}</div>
+    </section>
+{% endif %}
+
+{# Bridge carousal #}
+{% if pageCMS['bridge-slider'].bridge_slider %}
+    {{bridge(obj =  pageCMS['bridge-slider'].bridge_slider, classes = ['weddings'])}}
+{% endif %}
+
+{# profile #}
+{% if pageCMS['profile'].art_instructor %}
+    <section class="group-section text-lg">
+        <section class="segment-inner px-6 pb-10 text-center">
+            <figure class="grid justify-center pb-8">
+                {% set profileObj = (pageCMS['profile'].art_instructor | first) %}
+                {{ global_image(profileObj.image.global_image, classes='icon-image') }}
+            </figure>
+            {{profileObj.description | safe}}
+            {{ h3( copy=profileObj.title, classes=['text-lg-2', 'font-ivar', 'text-center', 'font-semibold', 'py-6'] ) }}
+        </section>
+    </section>
+{% endif %}
+
+{#  Vision and mission #}
+{% if pageCMS['vision-mission'] %}
+    <section class="group-section text-lg pb-10">
+        <section class="segment-inner grid grid-cols-2 text-center sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 pb-6 border-t-1 border-b-1">
+            {% for item in pageCMS['vision-mission'].simple_article_list %}
+                <article>
+                    {{ h3( copy=item.simple_article.title, classes=['text-4xl', 'sm:text-3_axl', 'font-calibre', 'font-medium', 'pt-10', 'pb-6'] ) }}
+                    {{item.simple_article.description | safe}}
+                </article>
+            {% endfor %}
+        </section>
+    </section>
+{% endif %}
+
+{# Accolades #}
+{% if pageCMS['accolades'] %}
+    {% set accoladesObj = pageCMS['accolades'].accolades %}
+    <section class="segment-outer text-lg py-10">
+        <section class="segment-inner">
+            {{ h3( copy = accoladesObj.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center', 'pb-16', 'pt-2'] ) }}
+            <article class="flex flex-row flex-wrap justify-center">
+                {% for item in accoladesObj.tabs %}
+                    <div id="{{item.slug}}" class="accolades__tab cursor-pointer font-medium font-calibre mx-4 mb-4 {{'active' if loop.index === 1 }}">
+                        {{ item.title }}</div>
+                {% endfor %}
+            </article>
+            {% for item in accoladesObj.tabs %}
+                <div id="{{item.slug}}-container" class="accolades__container hidden {{'active' if loop.index === 1 }} ">
+                    <article class="grid grid-cols-4 sm:grid-cols-1 md:grid-cols-3 gap-x-4 py-13 sm:mx-6 md:mx-4">
+                        {% for award in item.award%}
+                            <div class="accolades__item mb-4 text-center {{award.classes}}">
+                                {% if award.has_image %}
+                                    <div class="accolades__item-image">
+                                        {{global_image(award.logo.global_image, classes='accolades__image-frame')}}
+                                    </div>
+                                {% endif %}
+                                {# <div class="text-xs text-center"> #}
+                                    {{ h3( copy=award.title, classes=['accolades__item-title', 'grid', 'align-items-center', 'text-xl', 'font-ivar', 'font-semibold', 'pb-6'] ) }}
+                                    <div class="text-xs">{{award.name }}</div>
+                                {# </div> #}
+                            </div>
+                        {% endfor %}
+                    </article>
+                </div>
+            {% endfor %}
+        </section>
+    </section>
+{% endif %}
+
+{# family content #}
+{% if pageCMS['family-content'] %}
+    <section class="group-section text-lg py-10">
+        <section class="segment-inner grid grid-cols-2 sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6">
+            {{ h3( copy=pageCMS['family-content'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'sm:text-center', 'pb-6'] ) }}
+            <article>
+                {{pageCMS['family-content'].simple_article.description | safe}}
+            </article>
+        </section>
+    </section>
+{% endif %}
+
+{# Family Card #}
+{% if pageCMS['family-card'] %}
+    <section class="segment-outer py-5">
+        <section class="segment-inner">
+            <article class="segment-inner__vertical-card-container grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 4xl:grid-cols-3 gap-x-12 sm:px-6 md:px-6 lg:px-6">
+                {% for item in pageCMS['family-card'].vertical_card_list %}
+                    <a href="/groups/venues/{{item.vertical_card.slug}}" class="no-underline">
+                        {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+                    </a>
+                {% endfor %}
+            </article>
+        </section>
+    </section>
+{% endif %}
+
+{# Local partners #}
+{% if pageCMS['local-partners-title'].simple_article and  pageCMS['local-partners-cards'] %}
+    <section class="segment-outer py-10">
+        <section class="segment-inner">
+            {{ h3( copy = pageCMS['local-partners-title'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center', 'py-10'] ) }}
+            <article class="segment-inner__vertical-card-container grid grid-cols-2 sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6">
+                {% for item in pageCMS['local-partners-cards'].vertical_card_list %}
+                    {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+                {% endfor %}
+            </article>
+        </section>
+    </section>
+{% endif %}
+
+{# Recent Press #}
+{% if pageCMS['recent-press'].simple_article %}
+    <section class="segment-outer text-lg pb-10">
+        <section class="segment-inner">
+            {{ h3( copy = pageCMS['recent-press'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center', 'pb-10'] ) }}
+            <article class="segment-inner__text-container">
+                {{pageCMS['recent-press'].simple_article.description | safe}}
+            </article>
+        </section>
+    </section>
+{% endif %}
+
+{{newsletter()}}

@@ -1,0 +1,56 @@
+---
+layout: base.njk
+pagename: author-series
+permalink: "build/events/author-series/index.html"
+permalinkBypassOutputDir: true
+nickname: author-series
+---
+{% from "atoms/headings.njk" import global_header %}
+{% from 'molecules/card.njk' import horrizontalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'macros.njk' import top_banner_group_venues %}
+{% from 'macros.njk' import gallery %}
+
+{# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
+    {% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues) }}
+{% endif %}
+
+{# Horrizontal Card Section #}
+{% if pageCMS['card-list'] and pageCMS['card-list'].horizontal_card_list %}
+{% set horizontal_card_list= pageCMS['card-list'].horizontal_card_list %}
+<section class="segment-outer global-py global-mb bg-sn-4">
+    <section class="segment-inner global-px">
+        <div class="text-center global-pb">{{global_header(pageCMS['card-title'].simple_article.title)}}</div>
+        {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container']) }}
+    </section>
+</section>
+{% endif %}
+
+<section class="segment-outer bg-sn-5">
+    <section class="segment-inner gallery--wrapper global-px">
+        <div class="global-contents">
+            {% if pageCMS['small-image-gallery'] and pageCMS['small-image-gallery'].global_image_arr and pageCMS['small-image-gallery'].global_image_arr.images %}
+                {% set images = pageCMS['small-image-gallery'].global_image_arr.images %}
+                <div class="small-images">
+                    {% for item in images %}
+                        <div class="small-single-image">{{global_image(item.global_image, classes = 'image_frame sm:1:1 lg:6:5')}}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            {% if pageCMS['large-image-gallery'] and pageCMS['large-image-gallery'].global_image_arr and pageCMS['large-image-gallery'].global_image_arr.images %}
+            {% set images = pageCMS['large-image-gallery'].global_image_arr.images %}
+            <div class="large-images mt-4">
+                {% for item in images %}
+                    <div class="large-single-image">{{global_image(item.global_image, classes = 'image_frame sm:11:5 lg:27:20')}}</div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</section>
+
+{{newsletter()}}

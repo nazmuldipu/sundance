@@ -1,0 +1,10 @@
+/****  start imports  ********************************/
+@import "../../../styles/global.css";
+/****  end imports  ********************************/
+
+.article_style {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 100%;
+    padding-bottom: 1.5rem;
+}
