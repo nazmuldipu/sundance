@@ -36,4 +36,17 @@ const add_image_click_event = () => {
     slider_images.forEach(function (slide) {
         slide.addEventListener("click", function () {
             const frame_id = slide.parentElement.dataset.framename;
-            const slide_frame = document.getElem
+            const slide_frame = document.getElementById(frame_id);
+            slide_frame.firstElementChild.innerHTML = slide.innerHTML;
+        });
+    });
+};
+
+const carousel_buttons = document.querySelectorAll(".carousel-button");
+carousel_buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        add_image_click_event();
+    });
+});
+
+add_image_click_event();
