@@ -1,7 +1,7 @@
 "use strict";
-import SwiperCore, {Navigation, Lazy} from 'swiper/core';
+import SwiperCore, {Navigation, Lazy, Thumbs} from 'swiper/core';
 import Swiper from 'swiper';
-SwiperCore.use([Navigation, Lazy]);
+SwiperCore.use([Navigation, Lazy, Thumbs]);
 
 const defaultConfig = {
   loop: true,
@@ -19,5 +19,4 @@ const defaultConfig = {
     prevEl: ".carousel-button-prev",
   },
 };
-
 export { Swiper, defaultConfig };
