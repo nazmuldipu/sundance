@@ -84,6 +84,29 @@
     </a>
 {% endmacro %}
 
+
+{# 
+    #   @desc   view details anchor tag with target boolean
+    #   @param  classes array, class names (optional)
+    #   @param  id       string, a unique ID (optional)
+    #   @param  copy    string, the HTML mark up that is linked
+    #   @param  href    string, link url
+    #   @param  target  string, the link target location (optional)
+    #   @return HTML anchor tag 
+    #   @author Nazmul 
+ #}
+{% macro view_details2( classes = ['view-details', 'font-calibre', 'text-base'], id, copy, href='#', internal ) %}
+    <a 
+        {% if href %} href="{{ href }}" {% endif %} 
+        target="{{ '_self' if internal else '_blank' }}"
+        class="{% for class in classes %} {{ class }} {% endfor %}"
+        {% if id %} id="{{ id }}" {% endif %}
+    >
+        <span class="icon"></span>{{ copy | safe }}
+    </a>
+{% endmacro %}
+
+
 {# 
     #   @desc   button for click event
     #   @param  classes array, class names (optional)
