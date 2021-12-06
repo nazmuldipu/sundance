@@ -240,6 +240,11 @@
 }
 
 /* tables */
+.table--header-row {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+} 
 .table--row {
     display: flex;
     flex-flow: row nowrap;
@@ -257,7 +262,6 @@
     padding: 16px;
 }
 .table--row__head {
-    background-color: var(--sundance__neutral4);
     margin-right: 8px;
 }
 .table--row__data {
@@ -383,6 +387,21 @@
     width: 12px;
     border: 1px solid #000;
     background-color: black;
+}
+.carousel-icon-css {
+    border-radius: 50%;
+    height: 50px;
+    position: relative;
+    width: 50px;
+}
+.carousel-icon-css:before,
+.carousel-icon-css:after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    border: 2px solid white;
+    z-index: 1;
+    background: white;
 }
 
 /* down arrow */
@@ -721,5 +740,29 @@
 }
 .text--primary {
     color: var(--sundance__primary1);
+}
+.group-venues__article--title {
+    font-family: var(--sundance__font-calibre);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 100%;
+}
+.table__title {
+    padding-bottom: 16px;
+}
+.table__footer {
+    padding-top: 16px;
+}
+@media screen and (min-width: 1024px) {
+    .table__title {
+        padding-bottom: 25px;
+    }
+    .table__footer {
+        padding-top: 48px;
+    }
+}
+.slider-card--max-width {
+    max-width: 328px;
 }
 /****  end atoms  ********************************/

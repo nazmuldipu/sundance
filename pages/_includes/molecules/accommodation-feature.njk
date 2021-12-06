@@ -23,3 +23,20 @@
         </a>
     {% endfor %}
 {% endmacro %}
+
+{% macro accommodationFeature2(item = {}) %}
+    <a href="#" target="_self" class="accommodation-feature no-underline" id="features-2">
+        <div class="icon-css plus-icon rotate-90 justify-self-center bg-sn-5"></div>
+        {% if item.title %}
+            <header class = "accommodation-feature__type--style">
+                <h6>{{ item.title | safe }}</h6>
+            </header>
+        {% endif %}
+
+        {% if item.sub_title %}
+            <summary class = "accommodation-feature__text--style">
+                {{ item.sub_title | safe }}
+            </summary>
+        {% endif %}
+    </a>
+{% endmacro %}

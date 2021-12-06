@@ -21,8 +21,12 @@
   display: block;
 }
 .amenities__features--item {
-  margin-left: -10px;
+  display: flex;
+  align-items: baseline;
   padding-top: 0;
+}
+.pl-4 {
+  padding-left: 1rem;
 }
 .amenities__features--item:nth-child(1) {
   padding-top: 26px;

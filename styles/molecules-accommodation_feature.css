@@ -3,6 +3,7 @@
     border: 1px solid;
     padding: 52px 34px 48px 34px;
     text-align: center;
+    border: 1px solid black;
 }
 .accommodation-feature__type--style{
     color: var(--sundance__primary3);
