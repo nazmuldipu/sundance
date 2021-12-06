@@ -52,9 +52,7 @@
     padding: 0 1rem;
     margin: 1rem 1rem;
 }
-.details__card {
-    padding: 0 1rem;
-}
+
 .gallery-image__column {
     column-count: 2;
     column-gap: 0.7rem;

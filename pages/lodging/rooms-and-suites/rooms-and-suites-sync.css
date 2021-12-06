@@ -12,9 +12,6 @@
 .lodging-rooms-and-suites__single-card {
     margin-bottom: 32px;
 }
-.segment-outer__margin {
-    margin-top: 2rem;
-}
 .card-footer-caption {
     padding-top: 40px;
     padding-bottom: 40px;
@@ -23,9 +20,6 @@
     padding-bottom: 40px;
 }
 @media screen and (min-width: 768px){
-    .segment-outer__margin {
-        margin-top: 6rem;
-    }
     .lodging-rooms-and-suites__cards {
         display: flex;
         flex-wrap: wrap;
