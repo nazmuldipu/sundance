@@ -19,7 +19,7 @@
             {# TODO, *object.rich_description* it needs to re-think here for proper naming with Meherab, by Sarjis 11th Nov 2021 #}
             {% if object.rich_description | length > 0 %}
                 {% for item in object.rich_description %}
-                    <div class="group-venues__description special-background--secondary4 font-ivar">
+                    <div class="group-venues__description font-ivar">
                         {{ item.text | safe }}
                     </div>
                 {% endfor %} 
