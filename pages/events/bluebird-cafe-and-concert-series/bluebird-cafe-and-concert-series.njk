@@ -5,3 +5,92 @@ permalink: "build/events/bluebird-cafe-and-concert-series/index.html"
 permalinkBypassOutputDir: true
 nickname: bluebird-cafe-and-concert-series
 ---
+{% from "atoms/headings.njk" import h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+global_header %}
+{% from 'molecules/card.njk' import horrizontalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'atoms/accordion.njk' import accordion %}
+{% from 'macros.njk' import top_banner_group_venues %}
+
+{# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
+    {% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues) }}
+{% endif %}
+
+{# Horizontal Cards #}
+{% if pageCMS['event-card'] %}
+    {% set event = pageCMS['event-card'].horizontal_event_card %}
+    <section class="segment-outer">
+        <section class="segment-inner global-px">
+            <section class="horizontal__card-container event global-px">
+                <figure class="horizontal__card-image order-1">
+                    {{global_image(event.image.global_image, classes = ['image_frame sm:33:26 lg:55:73'])}}
+                </figure>
+                <figcaption class="horizontal__card-text order-2">
+                    <header class="order-1">
+                        <h2 class="heading heading--2 font-calibre font-medium text--color__sn-6">
+                            {{event.title}}
+                        </h2>
+                    </header>
+                    <div class="order-2 font-ivar">
+                        {{event.description | safe}}
+                    </div>
+                    {% if event.dates | length > 0 %}
+                        <div class="order-3 font-calibre text-lg event-date__container">
+                            {% for item in event.dates %}
+                                <div class="event-date">{{item}}</div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    
+                    {% if event.actions | length > 0%}
+                        <div class="order-4 w-full">
+                            {% for item in event.actions %}
+                                {% set action = item.action %}
+                                <div class="grid w-full">
+                                    <a class="block button button--primary font-calibre font-normal text-lg text--color__sn-6 text-center">
+                                        <span class="icon"></span>
+                                        {{ action.copy }}
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    {% if event.navs | length > 0 %}
+                        {% for nav in event.navs %}
+                            <div class="order-5 group-venues__nav">
+                                <label class="font-ivar">{{nav.label}}</label>
+                                <a href="#" class="link link--primary font-calibre text-base" target="_self">
+                                    {{nav.copy}}
+                                </a>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </figcaption>
+            </section>
+        </section>
+    </section>
+{% endif %}
+{% if pageCMS['horizontal-cards'] %}
+    {% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
+    <section class="segment-outer">
+        <section class="segment-inner global-px">
+            {{ horrizontalCard(
+            items=horizontal_card_list,  
+            horizontal_card_container = ['horizontal__card-container', 'mb-4'],
+            imageClasses = 'image_frame sm:33:26 lg:11:12'
+            ) }}
+        </section>
+    </section>
+{% endif %}
+
+{{newsletter()}}
