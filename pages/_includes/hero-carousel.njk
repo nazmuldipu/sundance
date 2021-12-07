@@ -9,10 +9,12 @@
           {{ global_image(banner.image.global_image, classes='image_frame') }}
           <div class="hero-carousel__texts">
             <header class="hero-carousel__title font-ivar bold">{{banner.title}}</header>
-            <div class="hero-carousel__sub-title font-calibre">{{banner.sub_title}}</div>
-            {% for action in banner.actions%}
-              {{ Link( href=action.action.url, copy=action.action.copy, target='_self', classes=['button', 'button--' + action.action.type, 'font-calibre', 'hero-carousel__links'] ) }}
-            {% endfor %}
+            <div class="hero-carousel__sub-title font-calibre pb-2">{{banner.sub_title}}</div>
+            <div class="hero-carousel__actions flex justify-center flex-wrap">
+              {% for action in banner.actions%}
+                {{ Link( href=action.action.url, copy=action.action.copy, target='_self', classes=['button', 'button--' + action.action.type, 'font-calibre', 'hero-carousel__links', 'mx-1'] ) }}
+              {% endfor %}
+            </div>
           </div>
         </article>
       {% endfor %}

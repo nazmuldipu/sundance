@@ -537,8 +537,15 @@ strong {
     text-decoration: none;
 }
 /* padding class */
+.p-4 {
+    padding: 1rem;
+}
 .p-2 {
     padding: 0.5rem;
+}
+.px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
 }
 .p-4{
     padding: 1rem;
@@ -1102,5 +1109,12 @@ a[href^="tel"] {
     transform: translate(-50%, -50%);
     text-align: center;
     font-size: 56px;
+}
+/*For only CMS annotation purpose*/
+.background--primary2 {
+    display: block;
+    background-color: var(--sundance__primary2);
+    padding: 1rem;
+    color: white;
 }
 /****  end base styles  ********************************/
