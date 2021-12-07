@@ -52,9 +52,7 @@
     padding: 0 1rem;
     margin: 1rem 1rem;
 }
-.details__card {
-    padding: 0 1rem;
-}
+
 .bridge__top-frame {
     background-color: var(--sundance__primary2);
 }
