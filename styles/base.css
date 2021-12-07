@@ -306,6 +306,9 @@ strong {
 .bold {
     font-weight: bold !important;
 }
+.gap-2 {
+    gap: 0.5rem;
+}
 .gap-x-2 {
     column-gap: 0.5rem;
 }
@@ -514,6 +517,9 @@ strong {
 .no-underline {
     text-decoration: none;
 }
+.normal-case{
+    text-transform: none;
+}
 .text--color__sp-1 {
     color: #458691 !important;
 }
@@ -531,8 +537,18 @@ strong {
     text-decoration: none;
 }
 /* padding class */
+.p-4 {
+    padding: 1rem;
+}
 .p-2 {
     padding: 0.5rem;
+}
+.px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
+.p-4{
+    padding: 1rem;
 }
 .pb-1 {
     padding-bottom: 0.25rem;
@@ -784,6 +800,7 @@ strong {
 }
 
 .special-background--secondary4 {
+    display: block;
     font-size: 16px !important;
     padding: 32px 56px !important;
     margin-bottom: 24px;
@@ -1080,5 +1097,24 @@ a[href^="tel"] {
 a[href^="tel"] {
     color: var(--sundance__primary1);
     text-decoration: none; 
+}
+.top-banner__center-text {
+    max-width: 536px;
+    margin: auto;
+    line-height: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 56px;
+}
+/*For only CMS annotation purpose*/
+.background--primary2 {
+    display: block;
+    background-color: var(--sundance__primary2);
+    padding: 1rem;
+    color: white;
 }
 /****  end base styles  ********************************/

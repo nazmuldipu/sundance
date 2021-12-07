@@ -64,15 +64,15 @@
     font-size: 20px;
     line-height: 24px;
     width: 176px;
-    margin: 0 auto;
-    padding: 15px 0;
+    padding: 15px 0 12px 0;
     margin-bottom: 8px;
+    border: none;
 }
 .hero-carousel__frame.active .button--secondary {
     border: none;
 }
 .hero-carousel__frame.active .hero-carousel__texts {
-    bottom: 30%;
+    bottom: 25%;
 }
 .hero-carousel__frame.active .hero-carousel__title {
     font-size: 50px;
@@ -84,8 +84,21 @@
     display: block;
     text-align: center;
 }
+.icon-css:before,
+.icon-css:after {
+    border: 1px solid #979494;
+    background-color: #979494;
+}
 /* Desktop screen (Screen size : > 767 pts) */
 @media screen and (min-width: 768px) {
+    .hero-carousel__links {
+        font-size: 25px;
+        line-height: 30px;
+        width: 252px;
+        padding: 18px 0 15px 0;
+        /* margin-bottom: 8px; */
+    }
+
     .home-style-bg .newsletter {
         background-color: transparent;
         padding-top: 280px;
@@ -103,9 +116,6 @@
     .hero-carousel {
         padding: 0 90px;
     }
-    .hero-carousel__texts {
-        bottom: 250px;
-    }
     .hero-carousel__frame.active .hero-carousel__texts {
         top: 10%;
         bottom: 17%;
@@ -116,6 +126,9 @@
     .hero-carousel__frame.active .hero-carousel__texts {
         top: 20%;
         bottom: 25%;
+    }
+    .hero-carousel__texts {
+        bottom: 250px;
     }
 }
 /* -------------------------- hero-carousel Styles ------------------------------ */
@@ -261,9 +274,9 @@
     .sundance-events__events__title > span > a {
         display: none;
     }
-    .button--secondary {
+    /* .button--secondary {
         padding: 17px 45px 15px 45px;
-    }
+    } */
     .sundance-events__events__title > span.time {
         display: block;
         font-size: 20px;
@@ -289,6 +302,8 @@
     padding: 0;
 }
 .horizontal-card__header {
+    max-width: 560px;
+    margin: 0 auto;
     font-size: 180px;
     line-height: 80px;
     text-align: center;

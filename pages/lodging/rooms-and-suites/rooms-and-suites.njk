@@ -10,7 +10,6 @@ nickname: "lodging/rooms-and-suites"
 {% from 'molecules/footer.njk' import footer %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/card.njk' import singleCard %}
----
 
 {% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
 <section class="page-top-adjust"></section>
@@ -26,11 +25,11 @@ nickname: "lodging/rooms-and-suites"
 </section>
 <section class="segment-outer bg-sn-4 px-4 pb-4">
     <section class="segment-inner">
-        <section class="lodging-rooms-and-suites__cards">
+        <section class="flex-card-container">
             {% for item in cardAllData %}
                 {{ singleCard(
                     item = item.vertical_card, 
-                    classes = ['card-container', 'text-left', 'lodging-rooms-and-suites__single-card']) 
+                    classes = ['card-container', 'text-left', 'flex__single-card']) 
                 }}
             {% endfor %}
         </section>
