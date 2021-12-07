@@ -1,9 +1,6 @@
 /****  start imports  ********************************/
 @import "../../../styles/global.css";
 /****  end imports  ********************************/
-.flex-card-container {
-    justify-content: center;
-}
 .lodging-accommodation__filter {
     padding-top: 48px;
     padding-bottom: 40px;
