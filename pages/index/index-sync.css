@@ -84,6 +84,11 @@
     display: block;
     text-align: center;
 }
+.icon-css:before,
+.icon-css:after {
+    border: 1px solid #979494;
+    background-color: #979494;
+}
 /* Desktop screen (Screen size : > 767 pts) */
 @media screen and (min-width: 768px) {
     .hero-carousel__links {
