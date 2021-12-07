@@ -55,10 +55,12 @@ nickname: dining/catering
 <section class="segment-outer">
     <section class="segment-inner text-center">
         <article class="details__card bg-sn-5 font-ivar">
-            {% if pageCMS['vertical-card-title'] %}
-                {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
-                {{ global_header(copy = card_list_title) }}
-            {% endif %}
+            <div class="global-pb">
+                {% if pageCMS['vertical-card-title'] %}
+                    {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
+                    {{ global_header(copy = card_list_title) }}
+                {% endif %}
+            </div>
             
             {% if pageCMS['vertical-card-list'] %}
                 {% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
