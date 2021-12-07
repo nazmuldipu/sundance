@@ -1,0 +1,45 @@
+/****  start imports  ********************************/
+@import "../../../../styles/global.css";
+/****  end imports  ********************************/
+.section-outer{
+    width: 100%;
+}
+.section-inner{
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.group-container{
+    border: none;
+}
+.activities__card-header{
+    font-weight: 600;
+    font-size: 2.625rem;
+}
+.activities__card{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 3rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .activities__card{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 8px;
+    }
+    .activities__card-header{
+        font-size: 24px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .activities__card{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 8px;
+    }
+}

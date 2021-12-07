@@ -514,6 +514,9 @@ strong {
 .no-underline {
     text-decoration: none;
 }
+.normal-case{
+    text-transform: none;
+}
 .text--color__sp-1 {
     color: #458691 !important;
 }
@@ -537,6 +540,9 @@ strong {
 .px-1 {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
+}
+.p-4{
+    padding: 1rem;
 }
 .pb-1 {
     padding-bottom: 0.25rem;
@@ -788,6 +794,7 @@ strong {
 }
 
 .special-background--secondary4 {
+    display: block;
     font-size: 16px !important;
     padding: 32px 56px !important;
     margin-bottom: 24px;
