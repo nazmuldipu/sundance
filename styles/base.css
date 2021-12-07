@@ -534,6 +534,9 @@ strong {
     text-decoration: none;
 }
 /* padding class */
+.p-4 {
+    padding: 1rem;
+}
 .p-2 {
     padding: 0.5rem;
 }
@@ -1087,5 +1090,12 @@ a[href^="tel"] {
 a[href^="tel"] {
     color: var(--sundance__primary1);
     text-decoration: none; 
+}
+/*For only CMS annotation purpose*/
+.background--primary2 {
+    display: block;
+    background-color: var(--sundance__primary2);
+    padding: 1rem;
+    color: white;
 }
 /****  end base styles  ********************************/
