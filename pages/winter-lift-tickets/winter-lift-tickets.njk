@@ -10,7 +10,9 @@ Link %}
 {% from "atoms/headings.njk" import h1, h2 %}
 {% from "atoms/a.njk" import a, button_primary, button_secondary%}
 {% from 'molecules/bridge.njk' import bridge %}
-<section class="hero-section">
+{% from 'molecules/card.njk' import verticalCard %}
+
+<section class="hero-section segment-outer">
     <div class="hero-section__menu">
         <ul class="font-ivar">
             <li>Homepage</li>
@@ -48,12 +50,12 @@ Link %}
 
 <section class="segment-outer pricing">
     <section class="segment-inner pricing__container">
-        <article class="pricing-card">
+        <article class="pricing-card first card-primary">
             <header class="pricing-card__header">
-                <p class="font-ivar">Season Passes</p>
-                <button class="button">Buy Now</button>
+                <p class="font-ivar header__title">Season Passes</p>
+                <a class="button card--button button--white font-calibre" href="#">Buy Now</a>
             </header>
-            <div class="pricing-card__body">
+            <div class="pricing-card__body font-black font-calibre">
                 <div class="pricing-card__body--intro">
                     <small class="font-calibre">Most Flexible</small>
                     <h5 class="pricing-card__body--price">$399 Adult / $299 Child *</h5>
@@ -71,19 +73,17 @@ Link %}
                     <li>Includes summer lift access</li>
                 </ul> 
                 <div class="pricing-card__body--footer">
-                    <button class="button-primary">
-                        <span>Buy Now</span>
-                    </button>
+                    <a class="button card--button button--primary font-calibre" href="#">Buy Now</a>
                 </div>
                 <a class="pricing-card__body--link">Learn More</a>       
             </div> 
         </article>
-        <article class="pricing-card second">
+        <article class="pricing-card second card-secondary">
             <header class="pricing-card__header">
-                <p class="font-ivar">S-Card</p>
-                <button class="button">Buy Now</button>
+                <p class="font-ivar header__title">S-Card</p>
+                <a class="button card--button button--white font-calibre" href="#">Buy Now</a>
             </header>
-            <div class="pricing-card__body">
+            <div class="pricing-card__body font-black font-calibre">
                 <div class="pricing-card__body--intro second">
                     <small class="font-calibre">Most Flexible</small>
                     <h5 class="font-calibre pricing-card__body--price">$399 Adult / $299 Child *</h5>
@@ -101,19 +101,17 @@ Link %}
                     <li>UTA pass not included</li>
                 </ul> 
                 <div class="pricing-card__body--footer">
-                    <button class="button-primary">
-                        <span>Buy Now</span>
-                    </button>
+                    <a class="button card--button button--secondary font-calibre" href="#">Buy Now</a>
                 </div> 
                 <a class="pricing-card__body--link">Learn More</a>  
             </div>  
         </article>
-        <article class="pricing-card">
+        <article class="pricing-card third card-tertiary">
             <header class="pricing-card__header">
-                <p class="font-ivar">Lift Tickets</p>
-                <button class="button">Buy Now</button>
+                <p class="font-ivar header__title">Lift Tickets</p>
+                <a class="button card--button button--white font-calibre" href="#">Buy Now</a>
             </header>
-            <div class="pricing-card__body">
+            <div class="pricing-card__body font-black font-calibre">
                 <div class="pricing-card__body--intro">
                     <small class="font-calibre">Most Flexible</small>
                     <h5 class="pricing-card__body--price">$399 Adult / $299 Child *</h5>
@@ -136,9 +134,7 @@ Link %}
                     <li>UTA pass not included</li>
                 </ul> 
                 <div class="pricing-card__body--footer">
-                    <button class="button-primary">
-                        <span>Buy Now</span>
-                    </button>
+                    <a class="button card--button button--tertiary font-calibre" href="#">Buy Now</a>
                 </div> 
                 <a class="pricing-card__body--link">Learn More</a>  
             </div>
@@ -147,22 +143,26 @@ Link %}
 </section>    
 
 <section class="segment-outer">
-    <section class="segment-inner">
+    <section>
         <article>
             {{bridge(bridge_slider)}}
         </article>
     </section>    
 </section>
+{# Card Title #}
+{% if pageCMS['card-title'] %}
+    {% set card_title= pageCMS['card-title'].simple_article %}
+    {{ h2(copy = card_title.title, classes = ['winter__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
 
-<section class="segment-outer">
-    <section class="segment-inner">
-        <article>
-            <header>
-                <h3>Other Ski Information</h3>
-            </header>
-            <div class="gallery">
-
-            </div>
-        </article>
+{# Vertical Card Section #}
+{% if  pageCMS['vertical-cards'] %}
+{% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
+<section class="section-outer">
+    <section class="section-inner winter__card">
+        {% for item in vertical_card_list %}
+            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+        {% endfor %}
     </section>
-</section>    
+</section>
+{% endif %}

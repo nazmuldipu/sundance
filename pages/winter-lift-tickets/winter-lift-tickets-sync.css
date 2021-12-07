@@ -4,15 +4,18 @@
 
 .hero-section{
     height: 700px;
-    padding: 0 76px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     background-image: url('/images/winter-lift-ticket-background.svg');
     background-repeat: no-repeat;
+    background-size: cover;
+    width: calc(100% - 76px);
     & .hero-section__menu{
         margin-bottom: 0;
         width: 60vw;
+        max-width: 1080px;
         height: 100px;
         text-align: center;
         background: #fff;
@@ -35,6 +38,7 @@
     width: 60vw;
     text-align: center;
     margin: 0 auto;
+    max-width: 1080px;
     & .intro__heading{
         margin-bottom: 30px;
     }
@@ -83,7 +87,7 @@
         margin: 0 10px;
         text-align: center;
         & .pricing-card__header{
-            background-color: #458691;
+            background-color: var(--sundance__primary1);
             height: 160px;
             text-align: center;
             display: flex;
@@ -93,7 +97,11 @@
             & p{
                 font-size: 1.8rem;
                 color: #fff;
+                margin-bottom: 1rem;
             }
+        }
+        & .pricing-card__body{
+            color: var(--sundance__neutral6);
         }
         & .pricing-card__body--price{
             font-size: 1.3rem;
@@ -101,6 +109,7 @@
         & .pricing-card__body--intro{
             height: 175px;
             position: relative;
+            padding-top: 1rem;
         }
         & .pricing-card__body--intro::after{
             height: 1px;
@@ -142,7 +151,57 @@
             margin-right: -10%;
         }
     }
+    & .first .pricing-card__header{
+        background-color: var(--sundance__primary1);
+    }
+    & .second .pricing-card__header{
+        background-color: var(--sundance__primary3);
+    }
+    & .third .pricing-card__header{
+        background-color: var(--sundance__primary2);
+    }
     & .pricing-card__body--footer{
         padding-top: 15px;
+        & .button{
+            margin-bottom: 3rem;
+        }
     }
+}
+.card-primary{
+    color: var(--sundance__primary1);
+}
+.card-secondary{
+    color: var(--sundance__primary3);
+}
+.card-tertiary{
+    color: var(--sundance__primary2);
+}
+
+.card--button{
+    padding: 10px 45px;
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    cursor: pointer;
+    padding-top: 14px;
+    font-size: 1.1rem;
+    border-color: transparent;
+}
+
+.card--button.button--white{
+    background-color: #fff;
+    color: #000;
+}
+.card--button.button--primary{
+    background-color: var(--sundance__primary1);
+    color: #fff;
+}
+.card--button.button--secondary{
+    background-color: var(--sundance__primary3);
+    color: #fff;
+}
+.card--button.button--tertiary{
+    background-color: var(--sundance__primary2);
+    color: #fff;
 }
