@@ -36,6 +36,10 @@
 .horizontal__card-container {
     margin-bottom: 16px;
 }
+.horizontal__card-image {
+    display: grid;
+    align-items: center;
+}
 @media screen and (min-width: 1024px) {
     .event-date__container {
         grid-template-columns: 1fr 1fr;

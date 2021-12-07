@@ -31,7 +31,7 @@ global_header %}
     {% set event = pageCMS['event-card'].horizontal_event_card %}
     <section class="segment-outer">
         <section class="segment-inner global-px">
-            <section class="horizontal__card-container event global-px">
+            <section class="horizontal__card-container event">
                 <figure class="horizontal__card-image order-1">
                     {{global_image(event.image.global_image, classes = ['image_frame sm:33:26 lg:55:73'])}}
                 </figure>
@@ -93,4 +93,13 @@ global_header %}
     </section>
 {% endif %}
 
+{% if pageCMS['card-footer'] and pageCMS['card-footer'].simple_article %}
+    <section class="segment-outer">
+        <section class="segment-inner global-px global-pb">
+            <div class="global-contents text-center font-ivar">
+            {{ pageCMS['card-footer'].simple_article.description | safe }}
+            </div>
+        </section>
+    </section>
+{% endif %}
 {{newsletter()}}
