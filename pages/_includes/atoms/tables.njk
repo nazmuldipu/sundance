@@ -36,3 +36,45 @@
         <summary class="table__footer font-ivar text-lg-2">{{tableData.footer}}</summary>
     {% endif %}
 {% endmacro %}
+
+{% macro tables2( classes = ['table', 'w-full', 'font-ivar'], tableData = {} ) %}
+    {% if tableData.title %}
+        <h6 class="table__title font-ivar text-6 bold">{{tableData.title}}</h6>
+    {% endif %}
+    <table class="{% for class in classes %} {{ class }} {% endfor %}">
+        {% if tableData.headers %}
+            <thead class="table--header">
+                <tr class="table--header-row">
+                    {% for header in tableData.headers %}
+                        <th class="table--row__head">
+                            {% if header.title %}
+                                {{ header.title |safe }}
+                            {% endif %}
+                            {% if header.subtitle %}
+                                <div class="table--row__header-subtitle font-normal normal-case font-ivar text-sm">
+                                    {{ header.subtitle |safe }}
+                                </div>
+                            {% endif %}
+                        </th>
+                    {% endfor %}
+                </tr>
+            </thead>
+        {% endif %}
+        {% if tableData.bodies %}
+            <tbody class="table--body">
+                {% for body in tableData.bodies %}
+                    <tr class="table--row">
+                        {% for data in body.datas %}
+                            <td class="table--row__data">
+                                {{ data }}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        {% endif %}      
+    </table>
+    {% if tableData.footer %}
+        <summary class="table__footer font-ivar text-lg-2">{{tableData.footer}}</summary>
+    {% endif %}
+{% endmacro %}
