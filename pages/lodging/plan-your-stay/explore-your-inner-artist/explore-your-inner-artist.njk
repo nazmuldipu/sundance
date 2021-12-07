@@ -1,0 +1,33 @@
+---
+layout: base.njk
+pagename: explore-your-inner-artist
+permalink: "build/lodging/plan-your-stay/explore-your-inner-artist/index.html"
+permalinkBypassOutputDir: true
+nickname: "lodging/plan-your-stay/explore-your-inner-artist"
+---
+{% from 'molecules/footer.njk' import footer %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues3 %}
+---
+
+{% set groupVenue = pageCMS['group-venues'].group_venues %}
+
+<section class="group-section">
+    <section class="segment-outer relative -z-1">
+        <figure class="segment-inner">
+        {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
+            {{global_image(pageCMS['top-banner'].global_image, classes='image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
+        {% endif %}
+        </figure>
+    </section>
+    {% if pageCMS['top-group-venues'] %}
+        {% set groupData = pageCMS['top-group-venues'].group_venues %}
+        {% for event in groupData %}
+            <section class="group-container">
+                {{ groupVenues3(event) }}
+            </section>
+        {% endfor %}
+    {% endif %}
+</section>
+{{newsletter()}}

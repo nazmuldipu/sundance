@@ -1,0 +1,234 @@
+{
+    "heroCornerBlock":{
+        "title":"The Sundance Art Studio",
+        "subtitle":"Classes by appointment only. Guests are recommended to wear face coverings in the Art Studio.",
+        "description":"Nestled underneath Mount Timpanogos, the Sundance Art Studio provides a great escape from the mundane with a wide array of activities and classes.",
+        "actions":[
+           {
+            "type":"view-details",
+            "copy":"View Details",
+            "href":"#",
+            "target":"_self",
+            "label":"Details"
+           }
+        ]
+    },
+    "banner_image":{
+        "classes": "h-screen w-full",
+        "artDirection": [
+            {
+                "classes": "",
+                "media": "(min-width:900.1px)",
+                "sizes": "30vw",
+                "type": "jpg",
+                "src": "images/art-studio-1",
+                "alt": "Art Studio Image",
+                "intrinsicwidth": "544",
+                "intrinsicheight": "408"
+            },
+            {
+                "classes": "",
+                "media": "(max-width:900px)",
+                "sizes": "90vw",
+                "type": "jpg",
+                "src": "images/art-studio-1",
+                "alt": "Art Studio Image",
+                "intrinsicwidth": "544",
+                "intrinsicheight": "408"
+            }
+        ]
+    },
+    "titleHead":{
+        "title": "Unleash your creativity"
+    },
+    "horrizontalCardItems":[
+        {
+            "id": "horrizontalCard-1",
+            "title": "Art Studio Classes",
+            "description": "Spend two hours in an Art Studio workshop and take away a lasting memory of your Sundance visit. Choose from single-session workshops in jewelry making, wheel-thrown pottery, journal making, watercolor, acrylic or oil painting, printmaking or drawing.",
+            "image": {
+                "classes": "h-full w-full",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/art-studio-1",
+                        "alt": "Art Studio Image",
+                        "intrinsicwidth": "544",
+                        "intrinsicheight": "408"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/art-studio-1",
+                        "alt": "Art Studio Image",
+                        "intrinsicwidth": "544",
+                        "intrinsicheight": "408"
+                    }
+                ]
+            },
+            "imageOrientation": "left",
+            "button": {
+                "copy": "View Details",
+                "url": "http://example.com/",
+                "target": "_self"
+            }
+        },
+        {
+            "id": "horrizontalCard-2",
+            "title": "Visiting Artist Program",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar fames eget enim, purus id hendrerit eu et pulvinar. Quisque amet, tincidunt condimentum turpis quis turpis tellus facilisis. Dignissim risus nibh tellus enim nunc, amet, in. .",
+            "image": {
+                "classes": "h-full w-full",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/art-studio-2",
+                        "alt": "Art Studio Image",
+                        "intrinsicwidth": "544",
+                        "intrinsicheight": "437"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/art-studio-2",
+                        "alt": "Art Studio Image",
+                        "intrinsicwidth": "544",
+                        "intrinsicheight": "437"
+                    }
+                ]
+            },
+            "imageOrientation": "left",
+            "button": {
+                "copy": "View Details",
+                "url": "http://example.com/",
+                "target": "_self"
+            }
+        }
+    ],
+    "artStudioCardItems":[
+        {
+            "id": "art-studio_card-1",
+            "title": "Pottery Class",
+            "description": "Feel clay take shape beneath your fingers in an Art Studio Pottery class. Make and glaze your own wheel thrown or hand-built pieces.Sundance master potters will fire your creation and send it along to you in a few weeks. Instruction is geared toward all levels.",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/art-studio-3",
+                        "alt": "Art Studio Image",
+                        "intrinsicwidth": "328",
+                        "intrinsicheight": "202"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/art-studio-3",
+                        "alt": "Art Studio Image",
+                        "intrinsicwidth": "328",
+                        "intrinsicheight": "202"
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "type": "view-details",
+                    "copy": "VIEW DETAILS",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                }
+            ]
+        },
+        {
+            "id": "art-studio_card-2",
+            "title": "Soap making class",
+            "description": "See and smell the unique Sundance soaps take form in our brand-new soap making class. Learn about the ingredients used and choose different essential oils and plant materials to create and take home your own Sundancecreation.",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/art-studio-4",
+                        "alt": "Art Studio Image",
+                        "intrinsicwidth": "328",
+                        "intrinsicheight": "202"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/art-studio-4",
+                        "alt": "Art Studio Image",
+                        "intrinsicwidth": "328",
+                        "intrinsicheight": "202"
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "type": "view-details",
+                    "copy": "VIEW DETAILS",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                }
+            ]
+        },
+        {
+            "id": "art-studio_card-3",
+            "title": "Journal Making Class",
+            "description": "See your memories take shape beneath your hands as you create your own custom leather journal. Design and imprint the leather cover with metal stamps and burning tools, then create paper signatures and stitch them to the cover for a one-of-a kind journal or notebook.",
+            "image": {
+                "classes": "",
+                "artDirection": [
+                    {
+                        "classes": "",
+                        "media": "(min-width:900.1px)",
+                        "sizes": "30vw",
+                        "type": "jpg",
+                        "src": "images/art-studio-5",
+                        "alt": "Art Studio Image",
+                        "intrinsicwidth": "328",
+                        "intrinsicheight": "202"
+                    },
+                    {
+                        "classes": "",
+                        "media": "(max-width:900px)",
+                        "sizes": "90vw",
+                        "type": "jpg",
+                        "src": "images/art-studio-5",
+                        "alt": "Art Studio Image",
+                        "intrinsicwidth": "328",
+                        "intrinsicheight": "202"
+                    }
+                ]
+            },
+            "actions": [
+                {
+                    "type": "view-details",
+                    "copy": "VIEW DETAILS",
+                    "url": "http://example.com/",
+                    "target": "_self"
+                }
+            ]
+        }
+    ]
+}

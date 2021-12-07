@@ -31,11 +31,18 @@
     position: relative;
 }
 .thumbnail-slider__slides {
-    width: 100%;
+    width: initial;
     text-align: center;
     overflow: hidden;
     position: relative;
     padding-top: 20px;
+}
+.thumbnail-slider__slides-circle{
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
 }
 
 .thumbnail-slider__slides__box {
@@ -107,7 +114,7 @@
     .thumbnail-slider__slides {
         padding-top: 120px;
         margin-top: -60px;
-    }
+    }    
     .thumbnail-slider__navs > div {
         background-color: transparent;
     }
@@ -158,6 +165,7 @@
         padding-top: 20px;
         font-size: 27px;
         line-height: 32px;
+        width: 200px;
     }
     .thumbnail-slider__slides summary {
         font-size: 20px;
@@ -184,6 +192,7 @@
         padding-top: 20px;
         font-size: 27px;
         line-height: 32px;
+        width: 220px;
     }
     .thumbnail-slider__slides summary {
         font-size: 20px;
@@ -202,6 +211,7 @@
         padding-top: 20px;
         font-size: 27px;
         line-height: 32px;
+        width: 285px;
     }
     .thumbnail-slider__slides summary {
         font-size: 20px;

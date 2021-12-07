@@ -1,0 +1,52 @@
+---
+layout: base.njk
+pagename: art-studio
+permalink: "build/activities/year-round/art-studio/index.html"
+permalinkBypassOutputDir: true
+nickname: "Art Studio"
+---
+
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from 'molecules/card.njk' import horrizontalCard, verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'macros.njk' import top_banner %}
+
+{# Hero Section #}
+{% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
+   <section class="segment-outer art-studio__hero-pb">
+        {{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
+    </section> 
+{% endif %}
+
+{# Horizontal card title  #}
+{% if pageCMS['horizontal-card-title'] %}
+    {% set horizontal_card_title = pageCMS['horizontal-card-title'].simple_article %}
+    {{ h2(copy = horizontal_card_title.title, classes = ['bg-sn-4', 'art-studio__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
+
+{# Horizontal Cards #}
+{% if pageCMS['horizontal-cards'] %}
+   {% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
+   <section class="bg-sn-4 art-studio__section-outer">
+        <section class="art-studio__section-inner global-px">
+            {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-4']) }}
+        </section>
+    </section> 
+{% endif %}
+
+{# Vertical Cards #}
+{% if pageCMS['vertical-cards'] %}
+    {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
+    <section class="bg-sn-4 art-studio__section-outer">
+        <section class="art-studio__section-inner art-studio__card global-px">
+            {% for item in vertical_card_list %}
+                {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-4']) }}
+            {% endfor %}
+        </section>
+    </section>
+{% endif %}
+
+{{newsletter()}}
+

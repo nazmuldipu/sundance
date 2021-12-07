@@ -1,6 +1,5 @@
 footer {
   position: relative;
-  border-top: 1px dotted black;
   letter-spacing: 0.02em;
 }
 .footer__container {
@@ -27,6 +26,11 @@ footer {
   margin-bottom: 6px;
   cursor: pointer;
 }
+.footer__link svg{
+  height: 25px;
+  padding-right: 16px;
+  justify-content: center;
+}
 .footer__icon {
   display: inline;
   width: 24px;
@@ -38,7 +42,17 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 60px;
   /* padding-bottom: 20px; */
+}
+.footer__copy__image{
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 20px;
+}
+.footer__copy__image .footer_image{
+  height: 73px;
+  /* margin-right: 16px; */
 }
 .footer__s_dot {
   position: absolute;
@@ -58,6 +72,13 @@ footer {
   .footer__copy {
     padding-bottom: 100px;
     flex-direction: column;
+  }
+  .footer__copy__image .footer_image{
+    height: 35px;
+    width: auto;
+  }
+  .footer__copy__image{
+    column-gap: 4px;
   }
   .footer__copy__image,
   .footer__copy__image img {

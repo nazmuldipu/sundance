@@ -72,7 +72,7 @@
     border: none;
 }
 .hero-carousel__frame.active .hero-carousel__texts {
-    bottom: 85px;
+    bottom: 30%;
 }
 .hero-carousel__frame.active .hero-carousel__title {
     font-size: 50px;
@@ -107,7 +107,15 @@
         bottom: 250px;
     }
     .hero-carousel__frame.active .hero-carousel__texts {
-        bottom: 350px;
+        top: 10%;
+        bottom: 17%;
+    }
+}
+/* Desktop screen (Screen size : > 1365px) */
+@media screen and (min-width: 1366px) {
+    .hero-carousel__frame.active .hero-carousel__texts {
+        top: 20%;
+        bottom: 25%;
     }
 }
 /* -------------------------- hero-carousel Styles ------------------------------ */
@@ -171,7 +179,8 @@
     max-width: 335px;
 }
 .sundance-events__header {
-    padding: 20px;
+    padding-bottom: 60px;
+
     font-size: 45px;
     line-height: 54px;
 }
@@ -187,7 +196,7 @@
     display: flex;
     position: absolute;
     width: calc(100% - 40px);
-    top: 260px;
+    top: 280px;
     align-items: center;
     justify-content: center;
     z-index: 10;
@@ -232,7 +241,7 @@
         max-width: 1048px;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 80px;
+        padding-top: 60px;
         padding-bottom: 40px;
     }
     .sundance-events__events {

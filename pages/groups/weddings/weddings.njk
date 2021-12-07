@@ -1,0 +1,42 @@
+---
+layout: base.njk
+pagename: weddings
+permalink: "build/groups/weddings/index.html"
+permalinkBypassOutputDir: true
+---
+{% from "atoms/headings.njk" import h2 %}
+{% from 'molecules/card.njk' import verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/bridge.njk' import bridge %}
+
+
+{# Hero Image Section #}
+{% if pageCMS['venues'].group_venues.length and pageCMS['top-banner'].global_image %}
+    {% set event = (pageCMS['venues'].group_venues |  first )%}
+    <section class="group-section">
+        {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
+        <div class="group-container">
+            {{groupVenues(event)}}
+        </div>
+    </section>
+{% endif %}
+
+{# Bridge carousal #}
+{% if pageCMS['bridge-slider'].bridge_slider %}
+    {{bridge(obj =  pageCMS['bridge-slider'].bridge_slider, classes = ['weddings'])}}
+{% endif %}
+
+{# Text Container #}
+{% if pageCMS['text-container'].text_container %}
+    <section class="segment-outer">
+        <section class="segment-inner weddings__text-container sm:px-6 lg:px-6">
+            {{ h2(copy = pageCMS['text-container'].text_container.title, classes = ['weddings__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+            {{ pageCMS['text-container'].text_container.texts | safe }}
+        </section>
+    </section>
+{% endif %}
+
+{{newsletter()}}

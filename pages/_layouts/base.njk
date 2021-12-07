@@ -119,10 +119,12 @@ pagename: base
     </head>
     <body class="preload page-{{pagename}} bg-sn-5">
         <!-- Google Tag Manager (noscript) -->
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5CLV4"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5CLV4"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
+        {% include "_page-header.njk" %}
         {{content | safe}}
+        {% include "_page-footer.njk" %}
         <script>
             document.body.classList.remove("preload");
         </script>

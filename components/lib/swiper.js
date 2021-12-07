@@ -1,5 +1,7 @@
 "use strict";
-import Swiper from "https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js";
+import SwiperCore, {Navigation, Lazy, Thumbs} from 'swiper/core';
+import Swiper from 'swiper';
+SwiperCore.use([Navigation, Lazy, Thumbs]);
 
 const defaultConfig = {
   loop: true,
@@ -17,5 +19,4 @@ const defaultConfig = {
     prevEl: ".carousel-button-prev",
   },
 };
-
 export { Swiper, defaultConfig };

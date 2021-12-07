@@ -1,0 +1,14 @@
+{
+    "heroCornerBlock":{
+      "title":"The Spa",
+      "description":"Treat yourself to an array of spa services that will re-energize and rejuvenate your mind and body.",
+      "actions":[
+         {
+          "type":"view-details",
+          "copy":"Explore Spa",
+          "href":"#",
+          "target":"_self"
+         }
+      ]
+  }
+}

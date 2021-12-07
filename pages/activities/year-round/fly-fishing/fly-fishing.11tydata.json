@@ -1,0 +1,69 @@
+{
+    "flyFishingGroupVenue":[
+      {
+        "breadcrumbs": [
+            { "copy": "Homepage", "url": "/" },
+            { "copy": "Summer Activities", "url": "/summer-activities" },
+            { "copy": "FlyFishing", "url": "/flyfishing-activities" }
+        ],
+        "title": "Like No Place That Ever Was",
+        "descriptions": [
+            "Just 5 minutes from Sundance Mountain Resort, the Provo River offers the perfect experience for anglers of all ages and experience, men and women. As a Blue Ribbon fishery, seasoned anglers will enjoy the world-class fishing while beginners take advantage of easy wading access and proximity.",
+            "Please note that this information and activity is provided by Fly Fishing Provo River, a Sundance Preferred Outfitter. Sundance provides this information on it’s website as a service to it’s guests."
+        ],
+        "actions": [
+            {
+                "copy": "Book Your Guided Trip",
+                "url": "/",
+                "target": "_blank",
+                "type": "primary",
+                "category": "link"
+            }
+        ],
+        "navs": [
+            {
+                "label": "Waiver",
+                "copy": "Sign",
+                "url": "/",
+                "target": "_self"
+            },
+            {
+              "label": "License",
+              "copy": "Get License",
+              "url": "/",
+              "target": "_self"
+            },
+            {
+              "label": "Location",
+              "copy": "View Location",
+              "url": "/",
+              "target": "_self"
+            }
+        ]
+      } 
+    ],
+    "bridgeSlider":{
+      "title":"explore",
+      "sub_title":"activity",
+      "images":[
+        {
+          "imageSrc":"https://via.placeholder.com/264x264"
+        },
+        {
+          "imageSrc":"https://via.placeholder.com/264x264"
+        },
+        {
+          "imageSrc":"https://via.placeholder.com/264x264"
+        },
+        {
+          "imageSrc":"https://via.placeholder.com/264x264"
+        },
+        {
+          "imageSrc":"https://via.placeholder.com/264x264"
+        },
+        {
+          "imageSrc":"https://via.placeholder.com/264x264"
+        }
+      ]
+    }
+}

@@ -1,0 +1,90 @@
+---
+layout: base.njk
+pagename: zip-tour
+permalink: "build/activities/summer-activities/zip-tour/index.html"
+permalinkBypassOutputDir: true
+nickname: zip-tour
+---
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from "atoms/headings.njk" import h4, ihh1 %}
+{% from 'atoms/icons.njk' import iconCSS %}
+{% from 'molecules/bridge-2.njk' import secondBridge %}
+{% from 'molecules/bridge.njk' import bridge %}
+
+{# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues.length and pageCMS['top-banner'].global_image %}
+{% set activities_group_venues = pageCMS['group-venues'].group_venues  %}
+<section class="group-section">
+    <section class="segment-outer relative -z-1">
+        <figure class="segment-inner">
+            {{global_image(pageCMS['top-banner'].global_image, classes='w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
+        </figure>
+    </section>       
+    {% for event in activities_group_venues %}
+        <div class="group-container activities__group-container">
+            {{groupVenues(event)}}
+        <div>
+    {% endfor %}    
+</section>
+{% endif %}
+
+{# Bridge carousal #}
+{% if pageCMS['bridge-slider'] %}
+{% set bridge_slider = pageCMS['bridge-slider'].bridge_slider  %}
+    {{bridge(bridge_slider)}}        
+{% endif %}
+
+{# Simple Article #}
+{% if pageCMS['zip-tour-text-container'] %}
+    {% set textAllData = pageCMS['zip-tour-text-container'].text_container  %}
+    <article class="activities__text-container font-ivar">
+        <header>
+            {{ h1(copy = textAllData.title, classes = ['activities__text-container__header']) }}
+        </header>
+        {% for item in textAllData.descriptions %}
+            <p class = "activities__text-container__copy">{{ item.text | safe }}</p>
+        {% endfor %}    
+    </article>
+{% endif %}
+
+{# Action Card #}
+{% if pageCMS['zip-tour-action-card'] and pageCMS['zip-tour-action-card-caption'] %}
+{% set action_card = pageCMS['zip-tour-action-card'].action_card %}
+{% set action_card_caption = pageCMS['zip-tour-action-card-caption'].simple_article %}
+<section class="activities__section-outer">
+    <section class="activities__section-inner activities__action-card">
+        {% for item in action_card %}
+            {{ secondBridge(item) }}
+        {% endfor %}
+        <div class="activities__action-card__text-wrapper activities__action-card__caption">
+            {{action_card_caption.description | safe}}
+        </div>      
+    </section>
+</section>
+{% endif %}  
+
+{# Card Title #}
+{% if pageCMS['card-title'] %}
+    {% set card_title= pageCMS['card-title'].simple_article %}
+    {{ h2(copy = card_title.title, classes = ['activities__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
+
+{# Vertical Card Section #}
+{% if pageCMS['vertical-cards'] %}
+    {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
+    <section class="activities__section-outer">
+        <section class="activities__section-inner activities__card">
+            {% for item in vertical_card_list %}
+                {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+            {% endfor %}
+        </section>
+    </section>
+{% endif %}
+
+{{newsletter()}}
+

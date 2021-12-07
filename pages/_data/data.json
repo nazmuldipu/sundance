@@ -6,370 +6,259 @@
             "type": "font/ttf"
         }
     ],
-    "navMenuLink": [
-        {
-            "title": "Activities",
-            "links": [
-                {
-                    "copy": "Winter",
-                    "href": "#"
+    "weatherInfo": {
+        "title": "Weather",
+        "weather": [
+            {
+                "id": 45,
+                "name": "Sundance",
+                "url": "https://opensnow.com/location/sundance",
+                "state": {
+                    "id": 45,
+                    "name": "Utah",
+                    "url": "https://opensnow.com/state/UT"
                 },
-                {
-                    "copy": "Summer",
-                    "href": "#"
+                "current": {
+                    "temp": "26ºF",
+                    "wind": {
+                        "direction": "NNE",
+                        "speed": "5mph"
+                    },
+                    "location": "Mid-Mtn",
+                    "icon": "https://opensnow.com/img/weather/night/skc.png",
+                    "weather": "Clear",
+                    "updated_at": "2021-11-22 08:00:03"
                 },
-                {
-                    "copy": "Year-Round",
-                    "href": "#"
+                "warnings": [],
+                "forecast": {
+                    "daily_updated_at": "2021-11-22 08:00:03",
+                    "daily": [
+                        {
+                            "date": "2021-11-22",
+                            "day": {
+                                "temp": "54ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/day/skc.png",
+                                "weather": "Sunny",
+                                "wind": {
+                                    "direction": "W",
+                                    "speed": "5mph",
+                                    "gust": "15mph"
+                                },
+                                "snow_level": "5,000ft",
+                                "cloud_cover": "5%",
+                                "precip_chance": "0%"
+                            },
+                            "night": {
+                                "temp": "32ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/night/skc.png",
+                                "weather": "Clear",
+                                "wind": {
+                                    "direction": "SW",
+                                    "speed": "5mph",
+                                    "gust": "15mph"
+                                },
+                                "snow_level": "4,100ft",
+                                "cloud_cover": "10%",
+                                "precip_chance": "0%"
+                            }
+                        },
+                        {
+                            "date": "2021-11-23",
+                            "day": {
+                                "temp": "50ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/day/bkn.png",
+                                "weather": "Mostly Sunny",
+                                "wind": {
+                                    "direction": "SW",
+                                    "speed": "10mph",
+                                    "gust": "20mph"
+                                },
+                                "snow_level": "4,800ft",
+                                "cloud_cover": "35%",
+                                "precip_chance": "20%"
+                            },
+                            "night": {
+                                "temp": "26ºF",
+                                "snow": "0-1\"",
+                                "icon": "https://opensnow.com/img/weather/night/bkn.png",
+                                "weather": "Mostly Clear",
+                                "wind": {
+                                    "direction": "WNW",
+                                    "speed": "5mph",
+                                    "gust": "10mph"
+                                },
+                                "snow_level": "3,300ft",
+                                "cloud_cover": "25%",
+                                "precip_chance": "40%"
+                            }
+                        },
+                        {
+                            "date": "2021-11-24",
+                            "day": {
+                                "temp": "34ºF",
+                                "snow": "0-1\"",
+                                "icon": "https://opensnow.com/img/weather/day/few.png",
+                                "weather": "Partly Cloudy",
+                                "wind": {
+                                    "direction": "WNW",
+                                    "speed": "5mph",
+                                    "gust": "5mph"
+                                },
+                                "snow_level": "2,600ft",
+                                "cloud_cover": "40%",
+                                "precip_chance": "15%"
+                            },
+                            "night": {
+                                "temp": "15ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/night/skc.png",
+                                "weather": "Clear",
+                                "wind": {
+                                    "direction": "NNE",
+                                    "speed": "5mph",
+                                    "gust": "5mph"
+                                },
+                                "snow_level": "1,600ft",
+                                "cloud_cover": "5%",
+                                "precip_chance": "5%"
+                            }
+                        },
+                        {
+                            "date": "2021-11-25",
+                            "day": {
+                                "temp": "39ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/day/skc.png",
+                                "weather": "Sunny",
+                                "wind": {
+                                    "direction": "SSW",
+                                    "speed": "5mph",
+                                    "gust": "5mph"
+                                },
+                                "snow_level": "3,400ft",
+                                "cloud_cover": "5%",
+                                "precip_chance": "0%"
+                            },
+                            "night": {
+                                "temp": "24ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/night/skc.png",
+                                "weather": "Clear",
+                                "wind": {
+                                    "direction": "ENE",
+                                    "speed": "5mph",
+                                    "gust": "5mph"
+                                },
+                                "snow_level": "3,700ft",
+                                "cloud_cover": "5%",
+                                "precip_chance": "5%"
+                            }
+                        },
+                        {
+                            "date": "2021-11-26",
+                            "day": {
+                                "temp": "47ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/day/few.png",
+                                "weather": "Partly Cloudy",
+                                "wind": {
+                                    "direction": "S",
+                                    "speed": "5mph",
+                                    "gust": "5mph"
+                                },
+                                "snow_level": "4,800ft",
+                                "cloud_cover": "55%",
+                                "precip_chance": "10%"
+                            },
+                            "night": {
+                                "temp": "25ºF",
+                                "snow": "0\"",
+                                "icon": "https://opensnow.com/img/weather/night/skc.png",
+                                "weather": "Clear",
+                                "wind": {
+                                    "direction": "NE",
+                                    "speed": "5mph",
+                                    "gust": "5mph"
+                                },
+                                "snow_level": "4,800ft",
+                                "cloud_cover": "15%",
+                                "precip_chance": "10%"
+                            }
+                        }
+                    ]
                 }
-            ]
-        },
+            }
+        ],
+        "lift":[
+            {
+                "base": "0",
+                "24_hour": "0",
+                "48_hour": "0",
+                "ytd": "0",
+                "road_92_condition": "open",
+                "road_189_condition": "open",
+                "parking_condition": "open",
+                "lift_ray_condition": "closed",
+                "lift_outlaw_condition": "closed",
+                "lift_stairway_condition": "closed",
+                "lift_jake_condition": "closed",
+                "lift_red_condition": "closed",
+                "lift_flathead_condition": "closed",
+                "nordic_center": "closed",
+                "lift_notes": ""
+            }
+        ]
+    },
+    "groupData": [
         {
-            "title": "Lodging",
-            "links": [
+            "breadcrumbs": [
+                { "copy": "Homepage", "url": "/" },
+                { "copy": "Dining", "url": "/" },
+                { "copy": "Tree Room", "url": "/" }
+            ],
+            "title": "Tree Room",
+            "descriptions": [
+                "Enjoy the romantic atmosphere of candlelight and soft illumination accenting beautiful Native American art from Robert Redford’s private collection as you savor fresh, seasonal mountain cuisine.",
+                "Children under 12 not permitted."
+            ],
+            "actions": [
                 {
-                    "copy": "Mountain Homes",
-                    "href": "#"
-                },
-                {
-                    "copy": "Rooms & Suites",
-                    "href": "#"
-                },
-                {
-                    "copy": "Special + Packages",
-                    "href": "#"
-                },
-                {
-                    "copy": "Book Your Stay",
-                    "href": "#"
+                    "copy": "Make a Reservation",
+                    "url": "/",
+                    "target": "_blank",
+                    "type": "primary",
+                    "category": "link"
                 }
-            ]
-        },
-        {
-            "title": "Dining",
-            "links": [
+            ],
+            "navs": [
                 {
-                    "copy": "Restaurants",
-                    "href": "#"
+                    "label": "Hours",
+                    "copy": "View Hours",
+                    "url": "/",
+                    "target": "_self"
                 },
                 {
-                    "copy": "Fast Casuals",
-                    "href": "#"
+                    "label": "Contact",
+                    "copy": "Call Now",
+                    "url": "/",
+                    "target": "_self"
                 },
                 {
-                    "copy": "Catering",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "title": "Events",
-            "links": [
-                {
-                    "copy": "Calender",
-                    "href": "#"
+                    "label": "Menu",
+                    "copy": "View",
+                    "url": "/",
+                    "target": "_self"
                 },
                 {
-                    "copy": "Summer Theater",
-                    "href": "#"
-                },
-                {
-                    "copy": "Author Series",
-                    "href": "#"
-                },
-                {
-                    "copy": "Music at Sundance",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "title": "Groups",
-            "links": [
-                {
-                    "copy": "Meetings & Events",
-                    "href": "#"
-                },
-                {
-                    "copy": "Weddings",
-                    "href": "#"
-                },
-                {
-                    "copy": "Venues",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "title": "Shop",
-            "links": [
-                {
-                    "copy": "The General Store",
-                    "href": "#"
-                },
-                {
-                    "copy": "SMO",
-                    "href": "#"
-                },
-                {
-                    "copy": "Shop Online",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "title": "About",
-            "links": [
-                {
-                    "copy": "History of Sundance",
-                    "href": "#"
-                },
-                {
-                    "copy": "Conserve",
-                    "href": "#"
-                },
-                {
-                    "copy": "Safety",
-                    "href": "#"
-                },
-                {
-                    "copy": "Career",
-                    "href": "#"
-                },
-                {
-                    "copy": "Contacts",
-                    "href": "#"
+                    "label": "Music",
+                    "copy": "View Lineup",
+                    "url": "/",
+                    "target": "_self"
                 }
             ]
         }
-    ],
-    "footer": {
-        "sections": [
-            {
-                "title": "Activities",
-                "links": [
-                    {
-                        "label": "Winter",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Summer",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Year-Round",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    }
-                ]
-            },
-            {
-                "title": "Lodging",
-                "links": [
-                    {
-                        "label": "Mountain Homes",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Rooms & Suites",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Special + Packages",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Book Your Stay",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    }
-                ]
-            },
-            {
-                "title": "Dining",
-                "links": [
-                    {
-                        "label": "Restaurants",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Fast Casuals",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Catering",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    }
-                ]
-            },
-            {
-                "title": "Events",
-                "links": [
-                    {
-                        "label": "Calender",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Summer Theater",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Author Series",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Music at Sundance",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    }
-                ]
-            },
-            {
-                "title": "Groups",
-                "links": [
-                    {
-                        "label": "Meetings & Events",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Weddings",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Venues",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    }
-                ]
-            },
-            {
-                "title": "Shop",
-                "links": [
-                    {
-                        "label": "The General Store",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "SMO",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Shop Online",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    }
-                ]
-            },
-            {
-                "title": "About",
-                "links": [
-                    {
-                        "label": "History of Sundance",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Conserve",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Safety",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Career",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    },
-                    {
-                        "label": "Contacts",
-                        "url": "#",
-                        "external": false,
-                        "icon": ""
-                    }
-                ]
-            },
-            {
-                "title": "Social",
-                "links": [
-                    {
-                        "label": "Facebook icon",
-                        "url": "#",
-                        "external": true,
-                        "icon": "images/facebook.svg"
-                    },
-                    {
-                        "label": "Twitter icon",
-                        "url": "#",
-                        "external": true,
-                        "icon": "images/twitter.svg"
-                    },
-                    {
-                        "label": "TripAdvisor icon",
-                        "url": "#",
-                        "external": true,
-                        "icon": "images/tripAdvisor.svg"
-                    },
-                    {
-                        "label": "YouTube icon",
-                        "url": "#",
-                        "external": true,
-                        "icon": "images/youtube.svg"
-                    },
-                    {
-                        "label": "Instagram icon",
-                        "url": "#",
-                        "external": true,
-                        "icon": "images/instagram.svg"
-                    }
-                ]
-            }
-        ],
-        "bottom": {
-            "image": "images/footer_partners.png",
-            "label": "&copy;2021 Sundance Mountain Resort"
-        },
-        "static_image": "images/s_dot.png"
-    }
+    ]
 }

@@ -1,27 +1,11 @@
-{% from "atoms/a.njk" import a, dropdown2 %}
-{% from 'atoms/icons.njk' import iconImage, iconCSS %}
+{% from "atoms/a.njk" import a,
+dropdown2 %}
+{% from 'atoms/icons.njk' import iconImage,
+iconCSS %}
 {% from 'atoms/form-fields.njk' import form_input %}
-{% set dropdownItems1 = [
-        {
-            "logo": "ticket-and-passes",
-            "copy": "Tickets & Passes",
-            "url": "http://example.com/",
-            "target": "_self"
-        },
-        {
-            "logo": "book-your-stay",
-            "copy": "Book Your Stay",
-            "url": "http://example.com/",
-            "target": "_blank"
-        },
-        {
-            "logo": "reserve-a-table",
-            "copy": "Reserve a Table",
-            "url": "http://example.com/",
-            "target": "_self"
-        }
-    ]%}
-    {% set emailInput = {
+{% from 'organisms/card-widget.njk' import cardWidget %}
+
+{% set emailInput = {
         "type" : "email", 
         "placeholder" : "I’m searching for",
         "classes": ["form-input", "border-0"]
@@ -35,7 +19,7 @@
 
             {{ form_input(obj = emailInput, classes = ['menu__input']) }}
         </div>
-        <div class="menu__cross-btn cursor-pointer" onclick="toggleMobileMenu()">
+        <div class="menu__cross-btn cursor-pointer" id="toogle_button_cross" onclick="toggleMobileMenu()">
             <svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="32.5" cy="32" r="32" fill="#262624"/>
                 <line x1="23.6924" y1="40.4853" x2="41.3701" y2="22.8076" stroke="white" stroke-linecap="round"/>
@@ -43,73 +27,145 @@
             </svg>
         </div>
         {% for item in menuItems %}
-            <div class="flex header-left__menu cursor-pointer">
-                {% set id = id+ item.title%}
-                <input type="checkbox" id="{{id}}" class="toggle hidden" name="First">
-                <label onblur="onBlurMenuToggle('{{id}}')" tabindex="0" for="{{id}}" class="header--label">
+            <div class="flex header-left__menu justify-center cursor-pointer flex-col">
+                {% set id = id + '-' + item.title%}
+                <input type="checkbox" id="{{id}}" class="toggle_menu hidden" name="First">
+                <label tabindex="0" for="{{id}}" class="header--label">
                     <h2 class="menu__label--header font-ivar">
                         {{ item.title }}
                     </h2>
                 </label>
-                
-                <ul class="toggle-details hidden font-ivar header__links">
+
+                <ul class="hidden font-ivar toggle_sub_menu">
                     {% for linkItems in item.links %}
-                       <li class="header__link">
-                            {{a(classes= ['text--color__sn-6', 'no-underline', 'font-ivar'], copy = linkItems.copy)}}
-                       </li> 
+                        <li class="toggle_sub_menu__link font-calibre">
+                            {{a(classes= ['text--color__sn-6', 'no-underline', 'font-calibre'], copy = linkItems.copy, href=linkItems.href)}}
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
         {% endfor %}
     </section>
     <script>
-        window.onBlurMenuToggle =function(id) {
-            let el = document.getElementById(id);
-                if(el.checked){
-                    el.checked = false;
-                }
+        const app_nav = document.querySelector('#app_nav');
+        function changeLinkState() {
+            if(window.scrollY > 0) {
+                app_nav.classList.add('app_nav--scroll');
+            } else {
+                app_nav.classList.remove('app_nav--scroll');
+            }
         }
-        window.toggleMobileMenu =function(id = 'toggle-154') {
-            let el = document.getElementById(id);
-                if(el.checked){
+
+        window.addEventListener('scroll', changeLinkState);
+
+
+        {
+            window.onBlurMenuToggle = function (id) {
+                let el = document.getElementById(id);
+                if (el.checked) {
                     el.checked = false;
                 }
+            }
+        }
+        window.toggleMobileMenu = function (id = 'toggle-154') {
+            let el = document.getElementById(id);
+            if (el.checked) {
+                el.checked = false;
+            }
         }
     </script>
 {% endmacro %}
-{% macro headerIcons() %}
-    <section class="header-icon flex align-items-center">
-        {{ iconImage( src='images/location.svg', alt='Location icon' ) }}
-        {{ iconImage( src='images/playButton.svg', alt='Play Button icon' ) }}
-        {{ iconImage( src='images/temparature.svg', alt='Temparature icon' ) }}
-    </section>
-{% endmacro %}
-{% macro headerCTA(id='dropdown-22') %}
+{% macro headerCTA(item) %}
     <section class="header-button">
-        {{ dropdown2( classes=['dropdown-container--secondary'], labelClasses=['button--secondary2', 'button', 'text-base'], copy='Book Now', labelId=id, items=dropdownItems1 ) }}
+        {{ dropdown2( classes=['dropdown-container--secondary'], labelClasses=['button--secondary2', 'button', 'text-base'], copy=item.title, labelId=item.id, items=item.drop_down ) }}
     </section>
 {% endmacro %}
-
 
 {% macro navMenu(menuItems) %}
-    <nav class="header__nav">
-        <header class="header">
-            <div class="header__burger-icon">
-                <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
-                <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
-                    {{ iconCSS( classes=['burger-icon'] ) }}
-                </label>
-                <div class="toggle-details hidden font-ivar w-screen h-screen align-baseline overflow-y-auto">
-                    {{ headerLeft(menuItems, id = 'toggle-156') }}               
+    <nav class="header__nav fixed-top sm:px-4 md:px-5 lg:px-5 2xl:px-14 4xl:px-22" id="app_nav">
+        <div class="header__burger-icon">
+            <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
+            <label for="toggle-154" class="header__burger-icon--label header__burger-icon--toggle-label">
+                {{ iconCSS( classes=[ menuItems.toggle_icon] ) }}
+            </label>
+            <div class="toggle-details hidden font-ivar w-screen h-screen align-baseline overflow-y-auto">
+                {{ headerLeft(menuItems.sections , id = 'toggle-156') }}
+            </div>
+        </div>
+        <div class="header__sections">
+            <ul>
+                {% for sec in menuItems.sections%}
+                    <li>
+                        <a href="#" class="font-ivar">{{sec.title}}</a>
+                        <ul class="dropdown">
+                            {% for item in sec.links %}
+                                <li>
+                                    <a href="{{item.href}}">{{item.copy}}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="header__tab__icon-buttons grid grid-flow-col gap-x-2 align-items-center">
+            {% for ic_action in menuItems.icon_actions %}
+                <div>
+                    <input type="radio" id="action_icon-tab-{{ic_action.slug}}" name="action_icon_radio" class="action_icon__btn hidden">
+                    <label for="action_icon-tab-{{ic_action.slug}}" class="action_icon__label action_icon__label-{{ic_action.slug}}">
+                        {% if ic_action.slug === 'temp'%}
+                            <div class="temp_icon_text">
+                                <span id="navbar_icon_temp-tab">0 &deg;</span></div>
+                        {% else %}
+                            {{ic_action.icon | safe}}
+                        {% endif %}
+                        <div class="hidden action_icon__label-cross">&#x2715;</div>
+                    </label>
+                    <div id="ic_action_tab-{{ic_action.slug}}_container" class="ic_action_container {{ic_action.slug}}">
+                            {{cardWidget(cardWidgetData, type = ic_action.slug, title=ic_action.title)}}
+                        </div>
                 </div>
+            {% endfor %}
+        </div>
+
+        <div class="header__logo">{{menuItems.company_logo | safe}}</div>
+
+        <div class="header__actions">
+            <div class="header_icon-buttons grid grid-flow-col gap-x-2 align-items-center">
+                {% for ic_action in menuItems.icon_actions %}
+                    <div>
+                        <input type="radio" id="action_icon-{{ic_action.slug}}" name="action_icon_radio" class="action_icon__btn hidden">
+                        <label for="action_icon-{{ic_action.slug}}" class="action_icon__label action_icon__label-{{ic_action.slug}}">
+                            {% if ic_action.slug === 'temp'%}
+                                <div class="temp_icon_text">
+                                    <span id="navbar_icon_temp">0 &deg;</span></div>
+                            {% else %}
+                                {{ic_action.icon | safe}}
+                            {% endif %}
+                            <div class="hidden action_icon__label-cross">&#x2715;</div>
+                        </label>
+                        <div id="ic_action_{{ic_action.slug}}_container" class="ic_action_container {{ic_action.slug}}">
+                            {{cardWidget(cardWidgetData, type = ic_action.slug, title=ic_action.title)}}
+                        </div>
+                    </div>
+                {% endfor %}
+                <script>
+                    let actionBtns = document.querySelectorAll('.action_icon__btn');
+                    let currActionBtn = null;
+
+                    actionBtns.forEach(function (btn) {
+                        btn.addEventListener('click', function (event) {
+                            if (currActionBtn == this.id) {
+                                this.checked = false;
+                                currActionBtn = null;
+                            } else {
+                                currActionBtn = this.id;
+                            }
+                        })
+                    })
+                </script>
             </div>
-            <div class="header__menu-items--container">{{ headerLeft(menuItems, id = 'toggle-155') }}</div>
-            <div class="header__logo">{{ iconImage( src='images/sundance.svg', alt='Sundance text icon' ) }}</div>
-            <div class="header__icons__cta--container">
-                {{ headerIcons() }}
-                {{ headerCTA(id='dropdown-22') }}
-            </div>
-            <div class="header__cta--container">{{ headerCTA(id='dropdown-222') }}</div>
-        </header>
+            {{ dropdown2( classes=['dropdown-container--secondary'], labelClasses=['button--secondary2', 'button', 'text-base'], copy=menuItems.cta_action.title, labelId=menuItems.cta_action.id, items=menuItems.cta_action.drop_down ) }}
+        </div>
     </nav>
 {% endmacro %}
