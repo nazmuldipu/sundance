@@ -72,9 +72,9 @@ nickname: dining/catering
             
             {% if pageCMS['vertical-card-list'] %}
                 {% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
-                <section class="dining-details__card">
+                <section class="flex-card-container">
                     {% for item in vertical_card_list %}
-                        {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+                        {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8','flex__single-card']) }}
                     {% endfor %}
                 </section>
             {% endif %}
