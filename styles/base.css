@@ -514,6 +514,9 @@ strong {
 .no-underline {
     text-decoration: none;
 }
+.normal-case{
+    text-transform: none;
+}
 .text--color__sp-1 {
     color: #458691 !important;
 }
