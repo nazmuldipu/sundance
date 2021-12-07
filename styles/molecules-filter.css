@@ -44,7 +44,9 @@
     max-height: 800px;
     transition: max-height 0.35s ease-in; */
 }
-
+.filter__toggle__label .icon-css{
+    background-color: transparent;
+}
 .filter__toggle__label {
     display: flex;
     flex-direction: row;
