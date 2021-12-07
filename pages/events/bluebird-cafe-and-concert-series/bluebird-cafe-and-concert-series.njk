@@ -31,7 +31,7 @@ global_header %}
     {% set event = pageCMS['event-card'].horizontal_event_card %}
     <section class="segment-outer">
         <section class="segment-inner global-px">
-            <section class="horizontal__card-container event">
+            <section class="event horizontal__card-container">
                 <figure class="horizontal__card-image order-1">
                     {{global_image(event.image.global_image, classes = ['image_frame sm:33:26 lg:55:73'])}}
                 </figure>
@@ -45,7 +45,7 @@ global_header %}
                         {{event.description | safe}}
                     </div>
                     {% if event.dates | length > 0 %}
-                        <div class="order-3 font-calibre text-lg event-date__container">
+                        <div class="event__dates font-calibre text-lg event-date__container">
                             {% for item in event.dates %}
                                 <div class="event-date">{{item}}</div>
                             {% endfor %}
@@ -53,21 +53,19 @@ global_header %}
                     {% endif %}
                     
                     {% if event.actions | length > 0%}
-                        <div class="order-4 w-full">
+                        <div class="event__cta grid grid-cols-1 w-full">
                             {% for item in event.actions %}
                                 {% set action = item.action %}
-                                <div class="grid w-full">
-                                    <a class="block button button--primary font-calibre font-normal text-lg text--color__sn-6 text-center">
-                                        <span class="icon"></span>
-                                        {{ action.copy }}
-                                    </a>
-                                </div>
+                                <a class="block button button--primary font-calibre font-normal text-lg text--color__sn-6 text-center">
+                                    <span class="icon"></span>
+                                    {{ action.copy }}
+                                </a>
                             {% endfor %}
                         </div>
                     {% endif %}
                     {% if event.navs | length > 0 %}
                         {% for nav in event.navs %}
-                            <div class="order-5 group-venues__nav">
+                            <div class="event__navs group-venues__nav">
                                 <label class="font-ivar">{{nav.label}}</label>
                                 <a href="#" class="link link--primary font-calibre text-base" target="_self">
                                     {{nav.copy}}
