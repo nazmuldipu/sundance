@@ -1,5 +1,3 @@
-
-
 // hero-carousel
 const hero_image_frames = document.querySelectorAll(".hero-carousel__frame .image_frame");
 const hero_carousel__title = document.querySelectorAll(".hero-carousel__title");
