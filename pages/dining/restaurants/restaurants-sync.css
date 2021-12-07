@@ -4,13 +4,7 @@
 .dining-restaurants__horizontal-cards {
     padding: 2rem 0 0 0;
 }
-.segment-outer__margin {
-    margin-top: 2rem;
-}
 @media screen and (min-width: 768px){
-    .segment-outer__margin {
-        margin-top: 6rem;
-    }
     .dining-restaurants__horizontal-cards {
         padding-top: 6rem;
         padding-bottom: 7rem;

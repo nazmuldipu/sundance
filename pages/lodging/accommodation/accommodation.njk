@@ -24,9 +24,9 @@ nickname: "lodging/accommodation"
 </section>
 <section class="segment-outer bg-sn-4 px-4 pb-4">
     <section class="segment-inner">
-        <section class="lodging-accomodation__cards">
+        <section class="flex-card-container">
             {% for item in cardAllData %}
-                {{ singleCard(item = item.vertical_card, classes = ['card-container', 'text-left', 'lodging-accommodation__single-card']) }}
+                {{ singleCard(item = item.vertical_card, classes = ['card-container', 'text-left', 'flex__single-card']) }}
             {% endfor %}
         </section>
         <div class="font-ivar text-sm card-footer-caption">

@@ -12,24 +12,14 @@ nickname: dining/catering
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
+{% from 'macros.njk' import top_banner_group_venues %}
+{# Hero Image Section #}
+{% if pageCMS['top-group-venues'] and pageCMS['top-group-venues'].group_venues %}
+    {{ top_banner_group_venues(image = pageCMS['top-banner'].global_image, 
+        venuesData = pageCMS['top-group-venues'].group_venues) 
+    }}
+{% endif %}
 
-<section class="group-section top-section">
-    <section class="segment-outer relative -z-1">
-        <figure class="segment-inner">
-        {% if pageCMS['top-banner'] %}
-            {{global_image(pageCMS['top-banner'].global_image, classes='image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
-        {% endif %}
-        </figure>
-    </section>
-    {% if pageCMS['top-group-venues'] %}
-        {% set groupData = pageCMS['top-group-venues'].group_venues %}
-        {% for event in groupData %}
-            <section class="group-container">
-                {{ groupVenues(event) }}
-            </section>
-        {% endfor %}
-    {% endif %}
-</section>
 {% if pageCMS['slider'] and pageCMS['slider'].bridge_slider %}
 {% set bridge_slider = pageCMS['slider'].bridge_slider %}
     <section class="bg-sn-5 px-4">
@@ -65,16 +55,18 @@ nickname: dining/catering
 <section class="segment-outer">
     <section class="segment-inner text-center">
         <article class="details__card bg-sn-5 font-ivar">
-            {% if pageCMS['vertical-card-title'] %}
-                {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
-                {{ global_header(copy = card_list_title) }}
-            {% endif %}
+            <div class="global-pb">
+                {% if pageCMS['vertical-card-title'] %}
+                    {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
+                    {{ global_header(copy = card_list_title) }}
+                {% endif %}
+            </div>
             
             {% if pageCMS['vertical-card-list'] %}
                 {% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
-                <section class="dining-details__card">
+                <section class="flex-card-container">
                     {% for item in vertical_card_list %}
-                        {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+                        {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8','flex__single-card']) }}
                     {% endfor %}
                 </section>
             {% endif %}
