@@ -103,9 +103,6 @@
     .hero-carousel {
         padding: 0 90px;
     }
-    .hero-carousel__texts {
-        bottom: 250px;
-    }
     .hero-carousel__frame.active .hero-carousel__texts {
         top: 10%;
         bottom: 17%;
@@ -116,6 +113,9 @@
     .hero-carousel__frame.active .hero-carousel__texts {
         top: 20%;
         bottom: 25%;
+    }
+    .hero-carousel__texts {
+        bottom: 250px;
     }
 }
 /* -------------------------- hero-carousel Styles ------------------------------ */
