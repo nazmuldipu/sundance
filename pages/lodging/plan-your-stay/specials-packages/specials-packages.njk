@@ -14,10 +14,9 @@ nickname: "lodging/plan-your-stay/specials-packages"
 {% from 'macros.njk' import top_banner %}
 {% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
 
----
 {% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
 <section class="segment-outer">
-    <section class="segment-inner text-left">
+    <section class="banner_segment-inner text-left">
         {{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
     </section>
 </section>
@@ -25,13 +24,13 @@ nickname: "lodging/plan-your-stay/specials-packages"
 <section class="segment-outer bg-sn-4 px-4 pb-4">
     <section class="segment-inner text-center">
         {% if pageCMS['vertical-cards-title'] %}
-            <header class="font-ivar lodging-plan-your-stay__cards--title">
+            <header class="font-ivar flex-card-container--title">
                 {{ pageCMS['vertical-cards-title'].simple_article.title | safe }}
             </header>
         {% endif %}
-        <section class="lodging-plan-your-stay__cards">
+        <section class="flex-card-container">
             {% for item in cardAllData %}
-                {{ singleCard(item = item.vertical_card, classes = ['card-container', 'lodging-plan-your-stay__single-card']) }}
+                {{ singleCard(item = item.vertical_card, classes = ['card-container', 'flex__single-card']) }}
             {% endfor %}
         </section>
     </section>

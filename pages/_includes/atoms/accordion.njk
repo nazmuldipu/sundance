@@ -83,21 +83,22 @@
                     {% endfor %}
                {% endif %}
                {% if article.summary %}
-                    <p class="accordion--text__summary"> {{ article.summary | safe }} </p>
+                    <div class="accordion--text__summary"> {{ article.summary | safe }} </div>
                {% endif %}
 
-               {% if item.blog and not item.blog == {} %}
-                    
+               {% if item.blog and item.blog %}
                     {% if item.blog.top_description %}
                         {{ item.blog.top_description | safe}}
                     {% endif %}
 
                     {% if not item.blog.video_url == "" %}
-                        <iframe class="my-12 w-full image_frame sm:3:4 lg:4:3 2xl:4:3 4xl:4:3" 
+                    <div class="my-12 image_frame sm:3:4 lg:4:3 2xl:4:3 4xl:4:3">
+                        <iframe class="w-full h-full" 
                             src="{{item.blog.video_url}}"
                             title="YouTube video player" frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                         </iframe>
+                    </div>
                     {% endif %}
                     
                     {% if item.blog.bottom_description %}

@@ -1,9 +1,6 @@
 /****  start imports  ********************************/
 @import "../../../../styles/global.css";
 /****  end imports  ********************************/
-.top-section {
-    margin-top: 72px;
-}
 .top__aminities-section {
     display: none;
 }
@@ -21,14 +18,6 @@
 }
 .dining-details-container {
     display: block;
-}
-.dining-details__card{
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    padding-top: 24px;
-    padding-bottom: 40px;
-    max-width: 1080px;
-    margin: 0 auto;
 }
 
 .icon-css {
@@ -51,12 +40,6 @@
     max-width: 328px;
 }
 @media screen and (min-width: 767px){
-    .dining-details__card{
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 3rem;
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
     .accommodation-feature{
         padding: 52px 34px 48px 34px;
     }
@@ -71,9 +54,6 @@
     }
 }
 @media screen and (min-width: 1024px) and (max-width: 1365px){
-    .top-section {
-        margin-top: 90px;
-    }
     .dining-details-container {
         display: grid;
         grid-template-columns: 1fr;
@@ -81,9 +61,6 @@
     }
 }
 @media screen and (min-width: 1024px){
-    .top-section {
-        margin-top: 90px;
-    }
     .accommodation-feature {
         width: 210px;
         height: 210px;
@@ -94,12 +71,6 @@
         display: grid;
         grid-template-columns: 3fr 2fr;
         grid-column-gap: 2rem;
-    }
-    .dining-details__card{
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        column-gap: 3rem;
-        padding-top: 40px;
-        padding-bottom: 40px;
     }
     .group-venues__container {
         text-align: left;

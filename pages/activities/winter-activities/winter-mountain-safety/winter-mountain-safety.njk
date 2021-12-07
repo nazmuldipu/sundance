@@ -32,7 +32,7 @@ nickname: winter-mountain-safety
 {% if  pageCMS['accordion'] %}
 {% set accordions = pageCMS['accordion'].accordion %}
 <section class="segment-outer my-12">
-    <section class="segment-inner accordion-wrapper accordion__bottom-padding">
+    <section class="segment-inner accordion-wrapper flex flex-col gap-2">
         {% for item in accordions %}
             {{ accordion2( item = item ) }}
         {% endfor %}             

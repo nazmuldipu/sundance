@@ -1,45 +1,16 @@
 /****  start imports  ********************************/
 @import "../../../../styles/global.css";
 /****  end imports  ********************************/
-.lodging-plan-your-stay__cards {
-    padding: 0 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-    margin: 0 auto;
-}
-.lodging-plan-your-stay__single-card {
-    margin-bottom: 32px;
-   
-}
-.lodging-plan-your-stay__cards--title {
+.flex-card-container--title {
     font-size: 24px;
     font-weight: bold;
     padding-top: 16px;
     padding-bottom: 24px;
 }
 @media screen and (min-width: 768px){
-    .lodging-plan-your-stay__cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        max-width: 720px;
-        column-gap: 3rem;
-        row-gap: 40px;
-        margin: 0 auto;
-    }
-    .lodging-plan-your-stay__single-card {
-        margin: 0;
-        width: 328px;
-    }
-    .lodging-plan-your-stay__cards--title {
+    .flex-card-container--title {
         font-size: 42px;
         padding-top: 80px;
         padding-bottom: 40px;
-    }
-}
-@media screen and (min-width: 1365px){
-    .lodging-plan-your-stay__cards {
-        max-width: 1080px;
     }
 }
