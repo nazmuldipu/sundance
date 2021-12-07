@@ -32,8 +32,32 @@ nickname: "about/contact"
         <header>
             {{ h2(copy = pageCMS['contact-address'].simple_article.title, classes = ['contact-page__description']) }}
         </header>
-        <div class="">
+        <div>
             {{ pageCMS['contact-address'].simple_article.description | safe }}
         </div>
     </article>
+    <article>
+        <div>
+            {% if pageCMS['page-content'] and pageCMS['page-content'].simple_article_list %}
+                {% set articles = pageCMS['page-content'].simple_article_list %}
+                <div class="group-venues__container container__padding text-left">
+                    {% for item in articles %}
+                        {% set object = item.simple_article %}
+                        <article>
+                            <header>
+                                <h2 class="contact-page__heading font-ivar">
+                                    {{ object.title }}
+                                </h2>
+                            </header>
+                            <div class="contact-page__description-content font-ivar">
+                                {{ object.description | safe }}
+                            </div>
+                        </article>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </article>
 </section>
+
+{{newsletter()}}

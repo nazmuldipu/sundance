@@ -2,3 +2,63 @@
 @import "../../../styles/global.css";
 /****  end imports  ********************************/
 
+.group-venues__container{
+    padding-bottom: 0px;
+    max-width: 792px;
+}
+.group-venues__description-title{
+    font-weight: 600;
+    padding-bottom: 0;
+}
+.contact-address{
+    letter-spacing: 0.04em;
+    font-size: 19px;
+}
+.contact-page__heading {
+    font-size: 38px;
+    font-weight: 600;
+    text-align: center;
+}
+.contact-page__description{
+    font-weight: 600;
+}
+.contact-page__description-content{
+    font-size: 19px;
+    line-height: 26.6px;
+    letter-spacing: 0.4px;
+    padding: 40px 0px;
+    margin-bottom: 0px;
+}
+.contact-page__description-content p{
+    margin-bottom: 10px;
+}
+.contact-page__description-content a{
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--sundance__primary2);
+    letter-spacing: 0.02rem;
+    line-height: 26px;
+}
+.container__padding{
+    padding: 60px 20px 30px 20px;
+}
+.anchor-color{
+    font-weight: 600;
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .contact-page__heading{
+        font-size: 24px;
+    }
+    .container__padding {
+        padding-top: 40px;
+        padding-bottom: 0px;
+    }
+    .contact-page__description-content strong{
+        font-weight: 400;
+        font-size: 16px;
+    }
+    .contact-page__description-content a{
+        font-weight: 400;
+        font-size: 16px;
+    }
+}
