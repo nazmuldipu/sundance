@@ -115,12 +115,12 @@ h2 %}
 {% if pageCMS['bottom-article'].vertical_card %}
     {% set item = pageCMS['bottom-article'].vertical_card %}
     <section class="flex-block segment-outer container s-card-pb">
-        <div class="lift-block__imageBlock global-px">
+        <div class="bottom-block__imageBlock global-px">
             <figure>
                 {{global_image(item.image.global_image)}}
             </figure>
         </div>
-        <article class="lift-block__textBlock global-px">
+        <article class="bottom-block__textBlock intro-text global-px">
             <header class="lift-block__textBlock--header">
                 <h2 class="intro-heading font-calibre text--color__sn-6">
                     {{item.title}}
