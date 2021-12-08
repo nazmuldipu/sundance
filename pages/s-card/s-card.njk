@@ -13,7 +13,7 @@ h2 %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% if pageCMS['top-article'].vertical_card %}
     {% set item = pageCMS['top-article'].vertical_card %}
-    <section class="hero-block segment-outer container" style="background-image:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), url('{{item.image.global_image.src | theImgSrc}}');">
+    <section class="hero-block segment-outer container s-card-pb" style="background-image:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), url('{{item.image.global_image.src | theImgSrc}}');">
         <div class="hero-block__inner-1"></div>
         <div class="hero-block__inner global-px">
             <article class="hero-content">
@@ -43,7 +43,7 @@ h2 %}
 
 {% if pageCMS['middle-article-1'].vertical_card %}
     {% set item = pageCMS['middle-article-1'].vertical_card %}
-    <section class="intro-block segment-outer container">
+    <section class="intro-block segment-outer container s-card-pb">
         <div class="intro-images global-px">
             <figure class="intro-images__imageBlock">
                 {{global_image(item.image.global_image)}}
@@ -68,7 +68,7 @@ h2 %}
 
 {% if pageCMS['middle-article-2'].vertical_card %}
     {% set item = pageCMS['middle-article-2'].vertical_card %}
-    <section class="lift-block segment-outer container">
+    <section class="lift-block segment-outer container s-card-pb">
         <article class="lift-block__textBlock global-px">
             <header class="lift-block__textBlock--header">
                 <h2 class="intro-heading font-calibre text--color__sn-6">
@@ -114,7 +114,7 @@ h2 %}
 </section> #}
 {% if pageCMS['bottom-article'].vertical_card %}
     {% set item = pageCMS['bottom-article'].vertical_card %}
-    <section class="flex-block segment-outer container">
+    <section class="flex-block segment-outer container s-card-pb">
         <div class="lift-block__imageBlock global-px">
             <figure>
                 {{global_image(item.image.global_image)}}
