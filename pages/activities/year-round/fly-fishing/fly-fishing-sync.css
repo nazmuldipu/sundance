@@ -1,14 +1,6 @@
 /****  start imports  ********************************/
 @import "../../../../styles/global.css";
 /****  end imports  ********************************/
-.flyfishing-activities__section-outer{
-    width: 100%;
-}
-.flyfishing-activities__section-inner{
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-}
 .flyfishing-activities__header{
     font-weight: 600;
     font-size: 2.625rem;
@@ -33,8 +25,6 @@
     max-width: 821px;
     margin: auto;
     padding-bottom: 56px;
-    padding-left: 24px;
-    padding-right: 24px;
 }
 .flyfishing__text-container__header{
     font-size: 42px;
@@ -49,10 +39,6 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px){
-    .flyfishing-activities__section-inner{
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
     .flyfishing-activities__header{
         font-size: 1.5rem;
     }
@@ -78,9 +64,11 @@
     }
     
 }
-@media screen and (min-width: 768px) and (max-width: 1365px){
-    .flyfishing-activities__section-inner{
-        padding-left: 1rem;
-        padding-right: 1rem;
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .flyfishing-activities__card{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 40px;
     }
 }
