@@ -5,7 +5,7 @@ import { appendFile, readFile, writeFile, truncate } from 'fs/promises';
 import { join, basename, extname, posix, relative, sep} from 'path';
 import { platform } from 'os'
 import readline from 'readline';
-import { rmNoExist, SCRIPTS_DIR, getPathLoadType, getPageAssets, PAGES_DIR, sanitizePageData } from './lib.js';
+import { rmNoExist, SCRIPTS_DIR, getPathLoadType, getPageAssets, PAGES_DIR, sanitizePageData, getFirstLine } from './lib.js';
 
 const defaultPagePath = `${posix.join(PAGES_DIR.pathname, 'pagename')}`;
 const createImportPaths = (scriptsPaths, pagePath = defaultPagePath) => {
@@ -25,25 +25,6 @@ const globalJsPath = scriptsPaths => {
         return `./scripts${path.substring(1)}`
     });
 }
-
-export const getFirstLine = async(pathToFile)=> {
-    let lineNumber = 0;
-    const readable = fs.createReadStream(pathToFile);
-    const reader = readline.createInterface({ input: readable });
-    const line = await new Promise((resolve) => {
-      reader.on('line', (line) => {
-        if(lineNumber > 0){
-            resolve(line);
-        }else{
-            lineNumber++;  
-            reader.close();
-            resolve(line);
-        }
-      });
-    });
-    readable.close();
-    return line;
-  }
 
 /**
  * 
@@ -81,9 +62,10 @@ export const addGlobalBehavior = async (pagesDir, scriptsDir) => {
             const appendData = createImportPaths( globalsCache[loadType], pageName ).join('\n');
             if ( platform() !== 'win32') {
                 try {
-                    const pageData = readFileSync(page, 'utf-8');
+                    const firstLine = getFirstLine(page);    
                     /* if a file has *ignore* at start, it will be ignored */
-                    if(!pageData.startsWith('/* ignore */') || !pageData.startsWith('// ignore')) {
+                    if(!firstLine.startsWith('/*ignore*/') || !firstLine.startsWith('//ignore')) {
+                        const pageData = readFileSync(page, 'utf-8');
                         const content = sanitizePageData(pageData);
                         /* will only run if appendData is not added already */
                         if(!content.includes(appendData)){

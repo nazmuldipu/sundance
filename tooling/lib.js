@@ -1,8 +1,10 @@
 'use strict';
 import path, {extname, join, sep } from 'path';
-import {accessSync, readdirSync, statSync, writeFileSync} from 'fs';
+import { accessSync, readdirSync, statSync, writeFileSync, createReadStream } from 'fs';
 import {platform} from 'os';
 import {rm, writeFile} from 'fs/promises';
+import { once } from 'events';
+import { createInterface } from 'readline';
 import compose from "just-compose";
 import beautify from 'js-beautify';
 
@@ -300,3 +302,29 @@ const getAllFiles = (dirPath, arrayOfFiles = [], ignorePatterns = defaultIgnoreP
         return file.startsWith(pattern);
     });
   }
+
+  export const getFirstLine = async (filePath) => {
+    let result = '';
+    let counter = 0;
+    try {
+      const rl = createInterface({
+        input: createReadStream(filePath),
+        crlfDelay: Infinity
+      });
+  
+      rl.on('line', (line) => {
+        if(counter > 0){
+            rl.close();
+        }else{
+            result = line;
+        }
+        counter++;
+      });
+  
+      await once(rl, 'close');
+      
+    } catch (err) {
+      console.error(err);
+    }
+    return result;
+}
