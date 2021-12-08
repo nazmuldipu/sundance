@@ -886,9 +886,6 @@ strong {
     .sm\:gap-x-4 {
         column-gap: 1rem;
     }
-    .sm\:text-lg-2 {
-        font-size: 19px !important;
-    }
     .sm\:text-center {
         text-align: center !important;
     }
