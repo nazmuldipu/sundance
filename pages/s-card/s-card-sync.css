@@ -6,6 +6,7 @@
     /* hero block start */
     .hero-block{
         display: flex;
+        justify-content: center;
         height: 1048px;
         background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), url("/images/ski-background.png");
         background-position:left top;
@@ -25,10 +26,18 @@
         background-size: contain;
     }
     .hero-block .hero-block__inner{
-        width: 100%;
+        width: 500px;
         height: 100%;
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
+        align-items: flex-start;
+        margin-right: 6rem;
+    }
+    .hero-block .hero-block__inner-1{
+        width: 520px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
         align-items: flex-start;
         margin-right: 6rem;
     }
@@ -58,8 +67,7 @@
     /* intro block start */
     .intro-block {
         display: flex;
-        height: 710px;
-        justify-content: space-between;
+        justify-content: center;
         align-items: flex-start;
     }
     .intro-images{
@@ -87,6 +95,7 @@
     .intro-text{
         width: 500px;
         margin-right: 6rem;
+        padding-left: 7rem;
     }
     .intro-heading{
         font-size: 72px;
@@ -138,6 +147,7 @@
         display: flex;
         background: url("/images/vector2.svg");
         height: 500px;
+        margin-top: -10rem;
     }
     .icons-block__icons{
         display: flex;
