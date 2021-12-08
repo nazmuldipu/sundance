@@ -1070,9 +1070,9 @@ a[href^="tel"] {
     margin-bottom: 40px;
     row-gap: 40px;
 }
-.flex__single-card {
+/* .flex__single-card {
     margin-bottom: 32px;
-}
+} */
 @media screen and (min-width: 768px) {
     .flex-card-container {
         justify-content: flex-start;
