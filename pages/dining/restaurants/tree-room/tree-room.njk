@@ -45,7 +45,7 @@ nickname: dining/restaurants/tree-room
                 </figcaption>
             </section>
             <section class="dining-details__venues">
-                {% for event in data.groupData %}
+                {% for event in pageCMS['group-venues'].group_venues %}
                     <section>
                         {{ groupVenues(event) }}
                     </section>
