@@ -4,82 +4,103 @@ pagename: general-store
 permalink: "build/activities/year-round/general-store/index.html"
 permalinkBypassOutputDir: true
 ---
-{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6, global_header %}
 {% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
-{% from 'molecules/group-venues.njk' import groupVenues %}
-{% from "atoms/headings.njk" import h4, ihh1 %}
-{% from 'atoms/icons.njk' import iconCSS %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
 {% from 'macros.njk' import top_banner_center_text_group_venues %}
 
-{% set generalStore_group_venues = pageCMS['group-venues'].group_venues  %}
-{% set globalImage = pageCMS['top-banner'].banner.global_image %}
-{% set globalImageText = pageCMS['top-banner'].banner.title %}
-
-{% set sectionArticleImage = pageCMS['article'].banner.global_image %}
-{% set sectionArticleText = pageCMS['article'].banner.title %}
-
-{% set flat_cards = pageCMS['flat-card'].flat_card %}
-{% set action_cards = pageCMS['action-card'].action_card %}
-{% set card_title = pageCMS['card-title'].simple_article %}
-{% set bottom_banners = pageCMS['bottom-banners'].global_image_arr.images %}
-
 {# Hero Image Section #}
-{{ top_banner_center_text_group_venues(
-    image = globalImage.global_image,
-    title = globalImageText,
-    events = generalStore_group_venues
-    )
-}}
+{% if pageCMS['top-banner'] and pageCMS['top-banner'].banner.global_image and pageCMS['top-banner'].banner.title %}
+    {% set generalStore_group_venues = pageCMS['group-venues'].group_venues  %}
+    {% set globalImage = pageCMS['top-banner'].banner.global_image %}
+    {% set globalImageText = pageCMS['top-banner'].banner.title %}
 
-<section class="general-store__section-outer">
-    <section class="general-store__section-inner">
-        <article class="general-store__section--article">
-            <figcaption class="general-store__section--text">
-              <p>{{ sectionArticleText | safe }}</p>  
-            </figcaption>
-            <figure>
-                {{global_image(sectionArticleImage.global_image, classes='general-store__section--figure image_frame sm:4:3 lg:4:3 2xl:4:3 4xl:4:3')}}
-            </figure>
-        </article>
-    </section>
-</section>
-{# Flat Card Section #}
-<section class="general-store__section-outer">
-    <section class="general-store__section-inner general-store__flat-card">
-        {% for item in flat_cards %}
-            <article class="general-store__flat-card__container">
-                {{ h1(copy = item.title, classes = ['general-store__flat-card__title']) }}
-                {{ h1(copy = item.subtitle, classes = ['general-store__flat-card__subtitle']) }}
-                <p class = "general-store__flat-card__description">{{ item.description | safe }}</p>
+    {{ top_banner_center_text_group_venues(
+        image = globalImage.global_image,
+        title = globalImageText,
+        events = generalStore_group_venues
+        )
+    }}
+{% endif %}
+
+{# Section Article With Image #}
+{% if pageCMS['article'].banner.global_image and pageCMS['article'].banner.title %}
+   {% set sectionArticleImage = pageCMS['article'].banner.global_image %}
+   {% set sectionArticleText = pageCMS['article'].banner.title %}
+   <section class="segment-outer">
+        <section class="segment-inner global-px">
+            <article class="general-store__section--article">
+                <figcaption class="general-store__section--text">
+                    <p>{{ sectionArticleText | safe }}</p>  
+                </figcaption>
+                <figure>
+                    {{global_image(sectionArticleImage.global_image, classes='image_frame sm:11:10 lg:1:1 2xl:1:1 4xl:1:1')}}
+                </figure>
             </article>
-        {% endfor %}
-    </section>
-</section>
-<section class="general-store__section-outer">
-    <section class="general-store__section-inner general-store__action-card">
-        {% for item in action_cards %}
-              {{ secondBridge(item) }}
-        {% endfor %}
-    </section>
-</section> 
-<section class="general-store__section-outer">
-    <section class="general-store__section-inner">
-       {{ h2(copy = card_title.title, classes = ['general-store__bottom-title']) }} 
-    </section>
-</section>
+        </section>
+   </section>
+{% endif %}
 
-<section class="general-store__section-outer">
-    <section class="general-store__section-inner general-store__bottom-banners">
-       {% for item in bottom_banners %}
-           <figure>
-                {{global_image(item.global_image, classes='w-full image_frame sm:16:9 lg:16:9 2xl:16:9 4xl:16:9')}}
-           </figure>
-       {% endfor %}
+{# Flat Card Section #}
+{% if pageCMS['flat-card'] and pageCMS['flat-card'].flat_card %}
+    {% set flat_cards = pageCMS['flat-card'].flat_card %}
+    <section class="segment-outer">
+        <section class="segment-inner global-px general-store__flat-card">
+            {% for item in flat_cards %}
+                <article class="general-store__flat-card__container">
+                    {% if item.title %}
+                        {{ h1(copy = item.title, classes = ['general-store__flat-card__title']) }}
+                    {% endif %}
+                    {% if item.subtitle %}
+                        {{ h1(copy = item.subtitle, classes = ['general-store__flat-card__subtitle']) }}
+                    {% endif %}
+                    {% if item.description %}
+                        <div class = "general-store__flat-card__description">{{ item.description | safe }}</div>
+                    {% endif %}
+                </article>
+            {% endfor %}
+        </section>
     </section>
-</section>
+{% endif %}
+
+{# Action Cards #}
+{% if pageCMS['action-card'] and pageCMS['action-card'].action_card %}
+    {% set action_cards = pageCMS['action-card'].action_card %}
+    <section class="segment-outer">
+        <section class="segment-inner global-px general-store__action-card">
+            {% for item in action_cards %}
+                {{ secondBridge(item) }}
+            {% endfor %}
+        </section>
+    </section> 
+{% endif %}
+
+{# Card Title #}
+{% if pageCMS['card-title'] and pageCMS['card-title'].simple_article %}
+    {% set card_title = pageCMS['card-title'].simple_article %}
+    <section class="segment-outer">
+        <section class="segment-inner global-px">
+            {{ global_header(copy = card_title.title, classes = ['general-store__bottom-title', 'global-header', 'font-ivar', 'bold']) }}
+        </section>
+    </section>
+{% endif %}
+
+{# Bottom Banners #}
+{% if pageCMS['bottom-banners'] and pageCMS['bottom-banners'].global_image_arr %}
+    {% set bottom_banners = pageCMS['bottom-banners'].global_image_arr.images %}
+    <section class="segment-outer">
+        <section class="segment-inner global-px general-store__bottom-banners">
+        {% for item in bottom_banners %}
+            <figure>
+                {{global_image(item.global_image, classes='w-full image_frame sm:33:20 lg:53:29')}}
+            </figure>
+        {% endfor %}
+        </section>
+    </section>
+{% endif %}
+
 {{newsletter()}}
 
