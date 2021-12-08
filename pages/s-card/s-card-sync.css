@@ -18,27 +18,22 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 495px;
         height: inherit;
         background-repeat: no-repeat;
         background-position: left;
         background-size: contain;
     }
     .hero-block .hero-block__inner{
-        width: 500px;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        margin-right: 6rem;
     }
     .hero-block .hero-block__inner-1{
-        width: 520px;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        margin-right: 6rem;
     }
     .hero__button{
         background-color: var(--sundance__primary3);
@@ -46,11 +41,10 @@
         border: 0;
     }
     article.hero-content{
-        width: 400px;
         margin-top: 200px;
     }
     .hero-heading {
-        font-size: 80px;
+        font-size: 55px;
         font-weight: 700;
         line-height: 1;
     }
@@ -89,11 +83,6 @@
             object-fit: contain;
         }
     }
-    .intro-text{
-        width: 500px;
-        margin-right: 6rem;
-        padding-left: 7rem;
-    }
     .intro-heading{
         font-size: 72px;
         font-weight: 700;
@@ -104,14 +93,17 @@
         line-height: 1.5;
     }
     .intro-text__buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-top: 30px;
+        gap: 1rem;
     }
     .link--plain{
         color: var(--sundance__neutral6);
         font-size: 24px;
         line-height: 35px;
         text-decoration: underline;
-        margin-left: 2rem;
     }
     /* intro block end */
 
@@ -122,7 +114,11 @@
         justify-content: center;
     }
     .lift-block__textBlock--buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-top: 2.3rem;
+        gap: 1rem;
     }
     /* end lift block */
     .icons-block{
@@ -221,6 +217,34 @@
     .lift-block{
         flex-direction: row;
         height: 600px;
+    }
+    .intro-text{
+        width: 500px;
+        margin-right: 6rem;
+        padding-left: 7rem;
+    }
+    .hero-block:before{
+        width: 495px;
+    }
+    .hero-block .hero-block__inner{
+        margin-right: 6rem;
+        width: 500px;
+    }
+    .hero-block .hero-block__inner-1{
+        width: 520px;
+        margin-right: 6rem;
+    }
+    article.hero-content{
+        width: 400px;
+    }
+    .hero-heading {
+        font-size: 80px;
+    }
+    .lift-block__textBlock--buttons{
+        flex-direction: row;
+    }
+    .intro-text__buttons{
+        flex-direction: row;
     }
 }
 

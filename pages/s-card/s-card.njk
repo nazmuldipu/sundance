@@ -23,7 +23,7 @@ h2 %}
                 <div class="hero-content__text font-calibre">
                     {{item.description | safe}}
                 </div>
-                <div class="hero-content__buttons gap-2">
+                <div class="intro-text__buttons">
                     {% if item.actions | length > 0 %}
                         {% for data in item.actions %}
                             {% set obj = data.action %}
