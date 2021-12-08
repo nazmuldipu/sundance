@@ -66,8 +66,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
-        row-gap: 28px;
+        align-items: center;
+        gap: 2rem;
     }
     .intro-images{
         z-index: 1;
@@ -109,7 +109,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        row-gap: 28px;
+        gap: 2rem;
     }
     .lift-block__textBlock--buttons{
         display: flex;
@@ -151,7 +151,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        row-gap: 28px;
+        gap: 2rem;
     }
 
 /* } */
@@ -165,8 +165,14 @@
 .lift-block__textBlock{
     order: 2;
 }
+.bottom-block__textBlock{
+    order: 1;
+}
 .lift-block__imageBlock {
     order: 1;
+}
+.bottom-block__imageBlock {
+    order: 2;
 }
 @media screen and (min-width: 768px) {
     .s-card-pb {
@@ -179,15 +185,8 @@
         background-position:left top;
         height: 1048px;
     }
-    .intro-images{
-        margin-left: 5rem;
-        margin-top: -10rem;
-    }
     .intro-block {
         flex-direction: row;
-    }
-    .intro-images__imageBlock{
-        margin-left: 5rem;
     }
     .intro-images{
         width: 520px;
@@ -200,9 +199,16 @@
         width: 582px;
         order: 1;
     }
+    .bottom-block__textBlock{
+        width: 582px;
+        order: 2;
+    }
     .lift-block__imageBlock {
         order: 2;
-        margin-right: 5rem;
+        width: 500px;
+    }
+    .bottom-block__imageBlock {
+        order: 1;
         width: 500px;
     }
     .hero-content__buttons{
@@ -221,7 +227,7 @@
         width: 495px;
     }
     .hero-block .hero-block__inner{
-        margin-right: 6rem;
+        margin-right: -13rem;
         width: 500px;
     }
     .hero-block .hero-block__inner-1{
