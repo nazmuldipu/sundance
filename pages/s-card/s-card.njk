@@ -13,7 +13,8 @@ h2 %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% if pageCMS['top-article'].vertical_card %}
     {% set item = pageCMS['top-article'].vertical_card %}
-    <section class="hero-block segment-outer container" style="background-image: url('{{item.image.global_image.src | theImgSrc}}');">
+    <section class="hero-block segment-outer container" style="background-image:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), url('{{item.image.global_image.src | theImgSrc}}');">
+        <div class="hero-block__inner-1"></div>
         <div class="hero-block__inner">
             <article class="hero-content">
                 <header>
