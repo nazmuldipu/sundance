@@ -33,11 +33,11 @@ Link %}
     <section class="segment-outer">
         <section class="">
             {{ h2( copy=pageCMS['home-sliders'].home_sliders.title, classes=['heading', 'thumbnail-slider__header', 'font-semibold', 'font-ivar'] ) }}
-            <div class="text-center">
+            <div class="text-center sm:hidden">
                 {% set actionLink = pageCMS['home-sliders'].home_sliders.action.action %}
                 {% set trg = '_self' if actionLink.internal else 
                     '_blank' %}
-                {{ a( copy=actionLink.copy, href=actionLink.url, target=trg) }}<br>
+                {{ a( copy=actionLink.copy, href=actionLink.url, target=trg, classes=['link', 'link--primary', 'font-calibre', 'text-base']) }}<br>
             </div>
             {% for slider in pageCMS['home-sliders'].home_sliders.sliders%}
                 {{ thumbnail_slider(slider.thumbnail_slider) }}
