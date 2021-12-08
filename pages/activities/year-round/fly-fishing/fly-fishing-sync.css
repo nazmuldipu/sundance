@@ -15,8 +15,8 @@
 .flyfishing__group-container{
     border: none;
 }
-.flyfishing-activities__bridge{
-    padding-bottom: 92px;
+.bridge{
+    padding-bottom: 50px;
 }
 .flyfishing-activities__bridge__top-frame {
     background-color: var(--sundance__primary1) !important;
@@ -48,8 +48,8 @@
         padding-top: 24px;
         padding-bottom: 40px;
     }
-    .flyfishing-activities__bridge{
-        padding-bottom: 36px;
+    .bridge{
+        padding-bottom: 0px;
     }
     .flyfishing__text-container{
         max-width: 821px;
