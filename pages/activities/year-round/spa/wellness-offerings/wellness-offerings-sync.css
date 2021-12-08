@@ -12,6 +12,9 @@
 .group-container{
     border: none;
 }
+.group-venues__actions a[href^="tel"]{
+    color: #fff;
+}
 .group-venues__caption{
     max-width: 608px;
     margin: auto;

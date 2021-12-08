@@ -6,7 +6,7 @@ permalinkBypassOutputDir: true
 nickname: wellness-offerings
 ---
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
-{% from 'molecules/card.njk' import horrizontalCard, card, verticalCard %}
+{% from 'molecules/card.njk' import card, verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
@@ -14,17 +14,15 @@ nickname: wellness-offerings
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'atoms/accordion.njk' import accordion %}
 
-
-
 {# Hero Image Section #}
 {% if pageCMS['group-venues'].group_venues.length and pageCMS['top-banner'].global_image %}
 {% set spa_group_venues = pageCMS['group-venues'].group_venues  %}
 <section class="group-section">
     <section class="segment-outer relative -z-1">
-        <figure class="segment-inner">
+        <figure class="banner__segment-inner">
             {{global_image(pageCMS['top-banner'].global_image, classes='w-full image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         </figure>
-    </section> 
+    </section>
     {% for event in spa_group_venues %}
         <div class="group-container">
             {{groupVenues(event)}}
