@@ -7,7 +7,6 @@
     .hero-block{
         display: flex;
         height: 1048px;
-        background-image: url("/images/ski-background.png");
         background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), url("/images/ski-background.png");
         background-position:left top;
         background-repeat: no-repeat;
@@ -176,6 +175,10 @@
         }
     }
 
+}
+.container {
+    max-width: 1920px;
+    margin: auto;
 }
 
 
