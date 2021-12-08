@@ -23,7 +23,7 @@ h2 %}
                 <div class="hero-content__text font-calibre">
                     {{item.description | safe}}
                 </div>
-                <div class="hero-content__buttons flex gap-x-2">
+                <div class="hero-content__buttons gap-2">
                     {% if item.actions | length > 0 %}
                         {% for data in item.actions %}
                             {% set obj = data.action %}
@@ -90,7 +90,7 @@ h2 %}
         </div>
     </section>
 {% endif %}
-<section class="icons-block segment-outer container">
+{# <section class="icons-block segment-outer container">
     <div class="icons-block__icons">
         <ul>
             <li class="icon icon-wifi">
@@ -111,7 +111,7 @@ h2 %}
             </li>
         </ul>
     </div>
-</section>
+</section> #}
 {% if pageCMS['bottom-article'].vertical_card %}
     {% set item = pageCMS['bottom-article'].vertical_card %}
     <section class="flex-block segment-outer container">
