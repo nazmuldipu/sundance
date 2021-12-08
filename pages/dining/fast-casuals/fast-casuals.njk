@@ -25,14 +25,14 @@ nickname: "dining/fast-casuals"
     </section>
 </section>
 <section class="segment-outer bg-sn-4 px-4 dining-fast-casuals__horizontal-cards">
-    <section class="segment-inner">
-        {{ h2(classes=['heading', 'heading--2', 'font-ivar', 'text-center'], copy = horizontal_card_title) }}
+    <section class="segment-inner sm:px-6 md:px-6 lg:px-6 pb-8">
+        {{ h2(classes=['heading', 'text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center'], copy = horizontal_card_title) }}
         {{ horrizontalCard(items = horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
         {{ horrizontalCard2(items = chefs_card_horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
     </section>
 </section>
 <section class="segment-outer bg-sn-4 px-4 pb-4">
-    <section class="segment-inner">
+    <section class="segment-inner sm:px-6 md:px-6 lg:px-6 pb-8">
         <section class="flex-card-container">
             {% for item in cardAllData %}
                 {{ singleCard(item = item.vertical_card, classes = ['card-container', 'flex__single-card']) }}

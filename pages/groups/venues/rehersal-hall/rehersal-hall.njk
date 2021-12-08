@@ -36,8 +36,8 @@ nickname: rehersal-hall
         {{ h2(copy = pageCMS['vertical-card-title'].simple_article.title, classes = ['venues__card-title', 'text-center', 'font-ivar', 'font-semibold', 'text--color__sn-6']) }}
         <article class="segment-inner__vertical-card-container grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 4xl:grid-cols-3 gap-x-12 sm:px-6 md:px-6 lg:px-6 pb-10">
             {% for item in pageCMS['vertical-card'].vertical_card_list %}
-                <a href="/groups/venues/{{item.vertical_card.slug}}" class="no-underline">
-                    {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+                <a href="/groups/venues/{{item.vertical_card.slug}}" class="no-underline card-container mb-8">
+                    {{ verticalCard(item = item.vertical_card, card_container = ['']) }}
                 </a>
             {% endfor %}
         </article>

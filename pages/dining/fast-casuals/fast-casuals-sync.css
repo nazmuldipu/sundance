@@ -4,6 +4,10 @@
 .dining-fast-casuals__horizontal-cards {
     padding: 2rem 0 0 0;
 }
+.flex-card-container {
+    margin-bottom: 0;
+    row-gap: 0;
+}
 @media screen and (min-width: 768px){
     .dining-fast-casuals__horizontal-cards {
         padding-top: 6rem;

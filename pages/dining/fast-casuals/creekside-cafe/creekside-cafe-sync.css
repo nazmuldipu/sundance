@@ -41,6 +41,10 @@
     padding: 0 1rem;
     margin: 1rem 1rem;
 }
+.flex-card-container {
+    margin-bottom: 0;
+    row-gap: 0;
+}
 @media screen and (min-width: 1024px){
     .dining-details-container {
         display: grid;

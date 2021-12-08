@@ -135,7 +135,7 @@
   }
   .group-venues__dropdown-btn {
     display: block;
-    padding: 20px 48px 20px 0px;
+    /* padding: 20px 48px 20px 0px; */
     text-align: center;
   }
   .group-venues__links {
