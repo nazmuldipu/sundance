@@ -62,21 +62,19 @@ export const addGlobalBehavior = async (pagesDir, scriptsDir) => {
             const appendData = createImportPaths( globalsCache[loadType], pageName ).join('\n');
             if ( platform() !== 'win32') {
                 try {
-                    const firstLine = (async () => {
-                        await getFirstLine(page);
-                    })();
-                    console.log(firstLine);  
-                    /* if a file has *ignore* at start, it will be ignored */
-                    if(ignorePatterns.some(pattern => firstLine.includes(pattern))) {
-                        console.log(`ignoring global behavior to ${page}`);
-                    }
-                    const pageData = readFileSync(page, 'utf-8');
-                    const content = sanitizePageData(pageData);
-                    /* will only run if appendData is not added already */
-                    if(!content.includes(appendData)){
-                        const data = content + appendData;
-                        promises.push(writeFile(page, data));
-                    }
+                    getFirstLine(page).then(firstLine => {
+                        /* if a file has ignore pattern at start, it will be ignored */
+                        if(!ignorePatterns.some(pattern => firstLine.includes(pattern))) {
+                            const pageData = readFileSync(page, 'utf-8');
+                            const content = sanitizePageData(pageData);
+                            /* will only run if appendData is not added already */
+                            if(!content.includes(appendData)){
+                                const data = content + appendData;
+                                promises.push(writeFile(page, data));
+                            }            
+                        }
+                    })            
+
                 }catch(e) {
                     console.log(e)
                 }
