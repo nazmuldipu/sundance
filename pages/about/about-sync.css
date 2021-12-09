@@ -33,6 +33,10 @@
     display: grid;
     align-items: center;
 }
+.icon-image.icon__image-about {
+    width: 160px;
+    height: 160px;
+}
 /* .accolades__item-title {
     min-height: 110px;
 } */

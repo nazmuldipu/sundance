@@ -72,7 +72,7 @@ nickname: "about"
         <section class="segment-inner px-6 pb-10 text-center">
             <figure class="grid justify-center pb-8">
                 {% set profileObj = (pageCMS['profile'].art_instructor | first) %}
-                {{ global_image(profileObj.image.global_image, classes='icon-image') }}
+                {{ global_image(profileObj.image.global_image, classes='icon-image icon__image-about') }}
             </figure>
             {{profileObj.description | safe}}
             {{ h3( copy=profileObj.title, classes=['text-lg-2', 'font-ivar', 'text-center', 'font-semibold', 'py-6'] ) }}
