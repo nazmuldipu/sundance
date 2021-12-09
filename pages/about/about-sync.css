@@ -2,6 +2,9 @@
 @import "../../styles/global.css";
 /****  end imports  ********************************/
 
+.group-venues__container{
+    max-width: 792px;
+}
 .top-banner-title {
     top: 45%;
     width: 100%;
