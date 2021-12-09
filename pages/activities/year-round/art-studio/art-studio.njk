@@ -29,9 +29,9 @@ nickname: "Art Studio"
 {# Horizontal Cards #}
 {% if pageCMS['horizontal-cards'] %}
    {% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
-   <section class="bg-sn-4 art-studio__section-outer">
-        <section class="art-studio__section-inner global-px">
-            {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-4']) }}
+   <section class="bg-sn-4 segment-outer">
+        <section class="segment-inner global-px">
+            {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-4'], imageClasses = 'image_frame sm:11:8 lg:4:3 2xl:4:3 4xl:4:3') }}
         </section>
     </section> 
 {% endif %}
@@ -39,8 +39,8 @@ nickname: "Art Studio"
 {# Vertical Cards #}
 {% if pageCMS['vertical-cards'] %}
     {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
-    <section class="bg-sn-4 art-studio__section-outer">
-        <section class="art-studio__section-inner art-studio__card global-px">
+    <section class="bg-sn-4 segment-outer">
+        <section class="segment-inner art-studio__card global-px">
             {% for item in vertical_card_list %}
                 {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-4']) }}
             {% endfor %}
