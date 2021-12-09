@@ -11,25 +11,32 @@
         display: flex;
         justify-content: center;
         background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), url("/images/ski-background.png");
-        background-position: top;
+        height: 1220px;
+        position: relative;
+        background-position: 40%;
         background-repeat: no-repeat;
         background-size: cover;
+        text-align: center;
     }
     .hero-block:before{
         content: "";
         position: absolute;
         top: 9rem;
         left: 0;
+        background: url("/images/board.svg");
         height: inherit;
         background-repeat: no-repeat;
         background-position: left;
         background-size: contain;
+        width: 200px;
     }
     .hero-block .hero-block__inner{
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: flex-start;
+        position: absolute;
+        bottom: -48%;
     }
     .hero-block .hero-block__inner-1{
         height: 100%;
@@ -42,8 +49,9 @@
         color: #fff;
         border: 0;
     }
-    article.hero-content{
+    .hero-content{
         margin-top: 200px;
+        max-width: 300px;
     }
     .hero-heading {
         font-size: 55px;
@@ -95,6 +103,17 @@
         align-items: center;
         margin-top: 30px;
         gap: 1rem;
+    }
+    .hero__buttons{
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        margin-top: 30px;
+        gap: 1rem;
+        text-align: center;
+    }
+    .hero__buttons .button {
+        font-size: 31px;
     }
     .link--plain{
         color: var(--sundance__neutral6);
@@ -152,7 +171,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 2rem;
+        gap: 3rem;
         padding-top: 11rem;
     }
 
@@ -185,7 +204,30 @@
 .hero-spacing {
     padding-bottom: 100px;
 }
+.hero__buttons .button--secondary{
+    border: solid #000 2px;
+}
+.content-max-width {
+    max-width: 600px;
+}
 @media screen and (min-width: 768px) {
+    .hero-content {
+        max-width: 550px;
+    }
+    .hero__buttons{
+        grid-template-columns: 1fr 1fr;
+    }
+    .intro-text__buttons{
+        flex-direction: row;
+    }
+    .lift-block__textBlock--buttons{
+        flex-direction: row;
+    }
+    .hero-block:before{
+        width: 300px;
+    }
+}
+@media screen and (min-width: 1365px) {
     .lift-block__bottom-spacing {
         margin-bottom: -6rem;
         padding-bottom: 0;
@@ -193,19 +235,16 @@
     .s-card-pb {
         padding-bottom: 100px;
     }
-    .hero-block:before{
-        background: url("/images/board.svg");
-    }
     .hero-block{
         background-position:left top;
         height: 1220px;
+        text-align: left;
     }
     .intro-block {
         flex-direction: row;
-        margin-top: -8rem;
     }
     .intro-images{
-        width: 520px;
+        max-width: 520px;
     }
     .flex-block {
         height: 870px;
@@ -213,7 +252,7 @@
         padding-top: 0;
     }
     .lift-block__textBlock{
-        width: 582px;
+        max-width: 582px;
         order: 1;
     }
     .bottom-block__textBlock{
@@ -222,23 +261,20 @@
     }
     .lift-block__imageBlock {
         order: 2;
-        width: 500px;
+        max-width: 500px;
     }
     .bottom-block__imageBlock {
         order: 1;
-        width: 500px;
+        max-width: 500px;
     }
     .hero-content__buttons{
         flex-direction: row;
     }
     .lift-block{
         flex-direction: row;
-        height: 600px;
     }
     .intro-text{
         width: 500px;
-        margin-right: 6rem;
-        padding-left: 7rem;
     }
     .hero-block:before{
         width: 495px;
@@ -246,22 +282,18 @@
     .hero-block .hero-block__inner{
         margin-right: -13rem;
         width: 500px;
+        right: 32%;
+        bottom: 0;
     }
     .hero-block .hero-block__inner-1{
         width: 520px;
         margin-right: 6rem;
     }
-    article.hero-content{
-        width: 400px;
+    .hero-content{
+        max-width: 600px;
     }
     .hero-heading {
         font-size: 80px;
-    }
-    .lift-block__textBlock--buttons{
-        flex-direction: row;
-    }
-    .intro-text__buttons{
-        flex-direction: row;
     }
     .intro-heading{
         font-size: 72px;
@@ -279,6 +311,27 @@
     }
     .hero-spacing {
         padding-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .intro-text {
+        max-width: 700px;
+    }
+    .intro-images {
+        max-width: 900px;
+    }
+    .lift-block__imageBlock{
+        max-width: 761px;
+    }
+    .bottom-block__imageBlock {
+        max-width: 900px;
+    }
+    .flex-block{
+        padding-top: 8rem;
+    }
+    .hero-block .hero-block__inner{
+        right: 24%;
     }
 }
 

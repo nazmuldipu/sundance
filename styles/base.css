@@ -797,16 +797,6 @@ strong {
 .h-full {
     height: 100%;
 }
-
-.global-px {
-    padding: 0 24px;
-}
-@media screen and (min-width: 1024px) {
-    .global-px {
-        padding: 0;
-    }
-}
-
 .special-background--secondary4 {
     display: block;
     font-size: 16px !important;
@@ -1050,7 +1040,7 @@ strong {
     padding-left: 24px;
     padding-right: 24px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1365px) {
     .global-px {
         padding-left: 0;
         padding-right: 0;
@@ -1060,7 +1050,7 @@ strong {
     margin-left: 24px;
     margin-right: 24px;
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1365px) {
     .global-mx {
         margin-left: 0;
         margin-right: 0;
