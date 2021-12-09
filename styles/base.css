@@ -1117,4 +1117,7 @@ a[href^="tel"] {
     padding: 1rem;
     color: white;
 }
+.font__ivar-letterspace{
+    letter-spacing: 0.76px;
+}
 /****  end base styles  ********************************/
