@@ -18,7 +18,7 @@
     .hero-block:before{
         content: "";
         position: absolute;
-        top: 0;
+        top: 9rem;
         left: 0;
         height: inherit;
         background-repeat: no-repeat;
@@ -122,6 +122,7 @@
     .icons-block{
         display: flex;
         background: url("/images/vector2.svg");
+        background-position: center;
         height: 500px;
         margin-top: -10rem;
     }
@@ -129,29 +130,30 @@
         display: flex;
         justify-content: center;
         width: 100%;
-        padding: 0 250px;
-        & ul {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            width: 100%;
-            height: inherit;
-            & li{
-                width: 200px;
-                padding: 10px;
-                text-align: center;
-            }
-        }
+        margin-top: 10rem;
+    }
+    .icons-block__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: inherit;
+        gap: 4rem;
+    }
+    .icon {
+        max-width: 200px;
+        text-align: center;
     }
 
     .flex-block{
-        background-position: center;
-        background-repeat: no-repeat;
+        background: #F5F5F5;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 2rem;
+        padding-top: 11rem;
     }
 
 /* } */
@@ -166,15 +168,28 @@
     order: 2;
 }
 .bottom-block__textBlock{
-    order: 1;
+    order: 2;
 }
 .lift-block__imageBlock {
     order: 1;
 }
 .bottom-block__imageBlock {
-    order: 2;
+    order: 1;
+}
+.lift-block__bottom-spacing {
+    padding-bottom: 22px;
+}
+.bottom-article-pb {
+    padding-bottom: 70px;
+}
+.hero-spacing {
+    padding-bottom: 100px;
 }
 @media screen and (min-width: 768px) {
+    .lift-block__bottom-spacing {
+        margin-bottom: -6rem;
+        padding-bottom: 0;
+    }
     .s-card-pb {
         padding-bottom: 100px;
     }
@@ -183,10 +198,11 @@
     }
     .hero-block{
         background-position:left top;
-        height: 1048px;
+        height: 1220px;
     }
     .intro-block {
         flex-direction: row;
+        margin-top: -8rem;
     }
     .intro-images{
         width: 520px;
@@ -194,6 +210,7 @@
     .flex-block {
         height: 870px;
         flex-direction: row;
+        padding-top: 0;
     }
     .lift-block__textBlock{
         width: 582px;
@@ -248,6 +265,20 @@
     }
     .intro-heading{
         font-size: 72px;
+    }
+    .icons-block__icons{
+        margin-top: 0;
+    }
+    .icons-block__container {
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 10rem;
+    }
+    .bottom-article-pb {
+        padding-bottom: 118px;
+    }
+    .hero-spacing {
+        padding-bottom: 0;
     }
 }
 
