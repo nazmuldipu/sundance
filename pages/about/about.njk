@@ -74,7 +74,9 @@ nickname: "about"
                 {% set profileObj = (pageCMS['profile'].art_instructor | first) %}
                 {{ global_image(profileObj.image.global_image, classes='icon-image icon__image-about') }}
             </figure>
-            {{profileObj.description | safe}}
+            <div class="art__instructor">
+                {{profileObj.description | safe}}
+            </div>    
             {{ h3( copy=profileObj.title, classes=['text-lg-2', 'font-ivar', 'text-center', 'font-semibold', 'py-6'] ) }}
         </section>
     </section>
