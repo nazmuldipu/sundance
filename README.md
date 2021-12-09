@@ -5,6 +5,11 @@
 ## Development and Environment Prerequisites
 - node v14.8+ -- we recommend installing node and npm via Node Version Manager ([windows](https://github.com/coreybutler/nvm-windows)) ([unix](https://github.com/nvm-sh/nvm))
 
+## A note on Branches
+- Dev Branch: `cms-dev`
+- Stage Branch: `cms-stage`
+- Prod Branch: `cms-prod`
+
 ## Some relevant technologies we use
 - [TailwindCSS](https://tailwindcss.com/docs) for a CSS Framework
 - [11ty](https://www.11ty.dev/docs/) for Static Site Generation
