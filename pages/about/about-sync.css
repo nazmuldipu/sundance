@@ -43,6 +43,9 @@
 .art__instructor{
     font-style: italic;
 }
+.recent__press ul li a {
+    text-decoration: none;
+}
 /* .accolades__item-title {
     min-height: 110px;
 } */

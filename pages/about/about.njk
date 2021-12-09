@@ -177,7 +177,7 @@ nickname: "about"
     <section class="segment-outer text-lg pb-10">
         <section class="segment-inner">
             {{ h3( copy = pageCMS['recent-press'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center', 'pb-10'] ) }}
-            <article class="segment-inner__text-container">
+            <article class="segment-inner__text-container recent__press">
                 {{pageCMS['recent-press'].simple_article.description | safe}}
             </article>
         </section>
