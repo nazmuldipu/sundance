@@ -4,8 +4,8 @@ import { readFileSync, readdirSync, statSync, truncateSync, createReadStream, cr
 import { appendFile, readFile, writeFile, truncate } from 'fs/promises';
 import { join, basename, extname, posix, relative, sep} from 'path';
 import { platform } from 'os'
-import readline from 'readline';
 import { rmNoExist, SCRIPTS_DIR, getPathLoadType, getPageAssets, PAGES_DIR, sanitizePageData, getFirstLine } from './lib.js';
+import { ignorePatterns } from '../config.js';
 
 const defaultPagePath = `${posix.join(PAGES_DIR.pathname, 'pagename')}`;
 const createImportPaths = (scriptsPaths, pagePath = defaultPagePath) => {
@@ -62,16 +62,20 @@ export const addGlobalBehavior = async (pagesDir, scriptsDir) => {
             const appendData = createImportPaths( globalsCache[loadType], pageName ).join('\n');
             if ( platform() !== 'win32') {
                 try {
-                    const firstLine = getFirstLine(page);    
+                    const firstLine = (async () => {
+                        await getFirstLine(page);
+                    })();
+                    console.log(firstLine);  
                     /* if a file has *ignore* at start, it will be ignored */
-                    if(!firstLine.startsWith('/*ignore*/') || !firstLine.startsWith('//ignore')) {
-                        const pageData = readFileSync(page, 'utf-8');
-                        const content = sanitizePageData(pageData);
-                        /* will only run if appendData is not added already */
-                        if(!content.includes(appendData)){
-                            const data = content + appendData;
-                            promises.push(writeFile(page, data));
-                        }
+                    if(ignorePatterns.some(pattern => firstLine.includes(pattern))) {
+                        console.log(`ignoring global behavior to ${page}`);
+                    }
+                    const pageData = readFileSync(page, 'utf-8');
+                    const content = sanitizePageData(pageData);
+                    /* will only run if appendData is not added already */
+                    if(!content.includes(appendData)){
+                        const data = content + appendData;
+                        promises.push(writeFile(page, data));
                     }
                 }catch(e) {
                     console.log(e)
