@@ -44,9 +44,9 @@ nickname: horseback-rides
 {# Horrizontal Card Section #}
 {% if pageCMS['horizontal-cards'] %}
     {% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
-    <section class="section-outer">
-        <section class="section-inner horizontal-card__wrapper global-px">
-            {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
+    <section class="segment-outer">
+        <section class="segment-inner horizontal-card__wrapper global-px">
+            {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-8'], imageClasses = 'image_frame sm:11:8 lg:4:3 2xl:4:3 4xl:4:3') }}
         </section>
     </section>
 {% endif %}

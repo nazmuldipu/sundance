@@ -27,8 +27,8 @@ nickname: scenic-provo-river-trail
 {# Vertical Card Section #}
 {% if  pageCMS['vertical-cards'] %}
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
-<section class="section-outer">
-    <section class="section-inner activities__card global-px">
+<section class="segment-outer">
+    <section class="segment-inner activities__card global-px">
         {% for item in vertical_card_list %}
             {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
         {% endfor %}
