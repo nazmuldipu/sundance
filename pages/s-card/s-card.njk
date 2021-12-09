@@ -64,8 +64,17 @@ h2 %}
                 {{item.description | safe}}
             </div>
             <div class="intro-text__buttons">
-                {{ button_primary( href='http://example.com', classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy='Buy Now', id='myButton-1', target='_blank' ) }}
-                <a class="link link--plain font-calibre" href="#" class="btn btn--primary">View Pricing</a>
+                {% if item.actions | length > 0 %}
+                    {% for data in item.actions %}
+                        {% set obj = data.action %}
+                        {% if obj.type == 'yellow-cta' %}
+                            {{ button_primary( href=obj.url, classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy=obj.copy, internal=obj.internal ) }}
+                        {% endif %}
+                        {% if obj.type == 'white-cta' %}
+                            <a class="link link--plain font-calibre" href="{{obj.url}}" class="btn btn--primary">{{obj.copy}}</a>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             </div>
         </article>
     </section>
@@ -84,8 +93,17 @@ h2 %}
                 {{item.description | safe}}
             </div>
             <div class="lift-block__textBlock--buttons">
-                {{ button_primary( href='http://example.com', classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy='Buy Now', id='myButton-1', target='_blank' ) }}
-                <a class="link link--plain font-calibre" href="#" class="btn btn--primary">View Pricing</a>
+                {% if item.actions | length > 0 %}
+                    {% for data in item.actions %}
+                        {% set obj = data.action %}
+                        {% if obj.type == 'yellow-cta' %}
+                            {{ button_primary( href=obj.url, classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy=obj.copy, internal=obj.internal ) }}
+                        {% endif %}
+                        {% if obj.type == 'white-cta' %}
+                            <a class="link link--plain font-calibre" href="{{obj.url}}" class="btn btn--primary">{{obj.copy}}</a>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             </div>
         </article>
         <div class="lift-block__imageBlock global-px">
@@ -95,6 +113,7 @@ h2 %}
         </div>
     </section>
 {% endif %}
+{% if pageCMS['icon-list'] and pageCMS['icon-list'].icon_list %}
 <section class="icons-block segment-outer container">
     <div class="icons-block__icons">
         <ul class="icons-block__container">
@@ -111,6 +130,7 @@ h2 %}
         </ul>
     </div>
 </section>
+{% endif %}
 {% if pageCMS['bottom-article'].vertical_card %}
     {% set item = pageCMS['bottom-article'].vertical_card %}
     <section class="flex-block segment-outer container bottom-article-pb">
@@ -129,8 +149,17 @@ h2 %}
                 {{item.description | safe}}
             </div>
             <div class="lift-block__textBlock--buttons">
-                {{ button_primary( href='http://example.com', classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy='Buy Now', id='myButton-1', target='_blank' ) }}
-                <a class="link link--plain font-calibre" href="#" class="btn btn--primary">View Pricing</a>
+                {% if item.actions | length > 0 %}
+                    {% for data in item.actions %}
+                        {% set obj = data.action %}
+                        {% if obj.type == 'yellow-cta' %}
+                            {{ button_primary( href=obj.url, classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy=obj.copy, internal=obj.internal ) }}
+                        {% endif %}
+                        {% if obj.type == 'white-cta' %}
+                            <a class="link link--plain font-calibre" href="{{obj.url}}" class="btn btn--primary">{{obj.copy}}</a>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             </div>
         </article>
     </section>

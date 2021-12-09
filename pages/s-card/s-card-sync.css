@@ -10,7 +10,6 @@
     .hero-block{
         display: flex;
         justify-content: center;
-        background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), url("/images/ski-background.png");
         height: 1220px;
         position: relative;
         background-position: 40%;
@@ -229,7 +228,7 @@
 }
 @media screen and (min-width: 1365px) {
     .lift-block__bottom-spacing {
-        margin-bottom: -6rem;
+        margin-bottom: -9rem;
         padding-bottom: 0;
     }
     .s-card-pb {
