@@ -72,9 +72,11 @@ nickname: "about"
         <section class="segment-inner px-6 pb-10 text-center">
             <figure class="grid justify-center pb-8">
                 {% set profileObj = (pageCMS['profile'].art_instructor | first) %}
-                {{ global_image(profileObj.image.global_image, classes='icon-image') }}
+                {{ global_image(profileObj.image.global_image, classes='icon-image icon__image-about') }}
             </figure>
-            {{profileObj.description | safe}}
+            <div class="art__instructor">
+                {{profileObj.description | safe}}
+            </div>    
             {{ h3( copy=profileObj.title, classes=['text-lg-2', 'font-ivar', 'text-center', 'font-semibold', 'py-6'] ) }}
         </section>
     </section>
@@ -175,7 +177,7 @@ nickname: "about"
     <section class="segment-outer text-lg pb-10">
         <section class="segment-inner">
             {{ h3( copy = pageCMS['recent-press'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center', 'pb-10'] ) }}
-            <article class="segment-inner__text-container">
+            <article class="segment-inner__text-container recent__press">
                 {{pageCMS['recent-press'].simple_article.description | safe}}
             </article>
         </section>
