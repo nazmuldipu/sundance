@@ -89,6 +89,7 @@
 .heading--3 {
     font-size: 1.75rem;
     line-height: 1.75rem;
+    text-transform: capitalize;
 }
 .heading--4 {
     font-size: 1.125rem;
