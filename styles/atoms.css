@@ -19,7 +19,7 @@
 .button--primary {
     background-color: #000;
     border: solid #000 1px;
-    color: #fff;
+    color: #fff !important;
     padding: 25px 70px 20px 70px;
 }
 .button--primary2 {
