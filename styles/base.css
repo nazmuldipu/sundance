@@ -288,6 +288,9 @@ strong {
     margin-left: auto;
     margin-right: auto;
 }
+.m-1{
+    margin: 0.25rem;
+}
 .mx-1 {
     margin-left: 0.25rem;
     margin-right: 0.25rem;
@@ -358,7 +361,9 @@ strong {
 .auto-cols-max {
     grid-auto-columns: max-content;
 }
-
+.object-cover {
+    object-fit: cover;
+}
 /* overflow classes */
 .overflow-y-auto {
     overflow-y: auto;

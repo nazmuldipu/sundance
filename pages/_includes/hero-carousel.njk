@@ -2,22 +2,42 @@
 {% from "atoms/a.njk" import Link %}
 
 {% macro heroCarousel(bannerObj =[])%}
-  <section class="segment-outer">
-    <section class="hero-carousel">
-      {% for banner in bannerObj %}
-        <article class="hero-carousel__frame hero-carousel__frame__left {{'active' if loop.first}}">
-          {{ global_image(banner.image.global_image, classes='image_frame') }}
-          <div class="hero-carousel__texts">
-            <header class="hero-carousel__title font-ivar bold">{{banner.title}}</header>
-            <div class="hero-carousel__sub-title font-calibre pb-2">{{banner.sub_title}}</div>
-            <div class="hero-carousel__actions flex justify-center flex-wrap">
-              {% for action in banner.actions%}
-                {{ Link( href=action.action.url, copy=action.action.copy, target='_self', classes=['button', 'button--' + action.action.type, 'font-calibre', 'hero-carousel__links', 'mx-1'] ) }}
-              {% endfor %}
+  <section class="segment-hero-flip">
+    <section class="hero-flip__frame">
+      <div class="hero-flip__frame-box">
+        <div class="hero-flip__container">
+          {% for banner in bannerObj %}
+            <div class="hero-flip__item {{'collapse' if loop.first}}" style="background-color:coral;">
+              {{ global_image(banner.image.global_image, classes='w-full h-full block', imgClass='h-full object-cover') }}
+              <div class="hero-flip__texts">
+                <header class="hero-flip__title font-ivar bold">{{banner.title}}</header>
+                <div class="hero-flip__sub-title font-calibre pb-2">{{banner.sub_title}}</div>
+                <div class="hero-flip__actions flex justify-center flex-wrap">
+                  {% for action in banner.actions%}
+                    {{ Link( href=action.action.url, copy=action.action.copy, target='_self', classes=['button', 'button--' + action.action.type, 'font-calibre', 'hero-flip__links', 'm-1'] ) }}
+                  {% endfor %}
+                </div>
+              </div>
             </div>
-          </div>
-        </article>
-      {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
     </section>
   </section>
+  <script>
+    const items = document.querySelectorAll('.hero-flip__item');
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        console.log(item);
+        items.forEach(el => {
+          el
+            .classList
+            .remove('collapse');
+        });
+        item
+          .classList
+          .add('collapse');
+      });
+    });
+  </script>
 {% endmacro %}
