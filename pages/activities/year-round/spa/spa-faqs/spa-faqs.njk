@@ -24,7 +24,7 @@ nickname: faqs
 {# Accordion Title #}
 {% if pageCMS['accordion-description'] %}
     {% set accordion_description = pageCMS['accordion-description'].simple_article %}
-    <section class="section-outer">
+    <section class="segment-outer">
         <section class="accordion-wrapper accordion__header font-ivar text-lg-2">
              {{ accordion_description.description | safe }}
         </section>
@@ -34,7 +34,7 @@ nickname: faqs
 {# Accordion #}
 {% if  pageCMS['accordion'] %}
 {% set accordions = pageCMS['accordion'].accordion %}
-<section class="section-outer">
+<section class="segment-outer">
     <section class="accordion-wrapper accordion__bottom-padding">
         {% for item in accordions %}
             {{ accordion( item = item ) }}

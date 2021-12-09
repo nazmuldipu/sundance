@@ -36,7 +36,7 @@ nickname: Massages
 {# Accordion #}
 {% if  pageCMS['accordion'] %}
 {% set accordions = pageCMS['accordion'].accordion %}
-<section class="section-outer">
+<section class="segment-outer">
     <section class="accordion-wrapper accordion__bottom-padding">
         {% for item in accordions %}
             {{ accordion( item = item ) }}
@@ -54,8 +54,8 @@ nickname: Massages
 {# Vertical Card Section #}
 {% if  pageCMS['vertical-cards'] %}
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
-<section class="section-outer">
-    <section class="section-inner spa__card">
+<section class="segment-outer">
+    <section class="segment-inner global-px spa__card">
         {% for item in vertical_card_list %}
             {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
         {% endfor %}
