@@ -153,7 +153,7 @@
                 "classes": ["form-input", "lodging-form__input"]
             },
             {
-                "label": "Check IN",
+                "label": "Check OUT",
                 "type": "datetime",
                 "placeholder": "mm/dd/yyyy",
                 "classes": ["form-input", "lodging-form__input"]

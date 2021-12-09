@@ -27,7 +27,9 @@
             
             {% if object.descriptions %}
                 {% for des in object.descriptions %}
+                    {% if not des == "" %}
                     <p class="group-venues__description font-ivar">{{des}}</p>
+                    {% endif %}
                 {% endfor %}
             {% endif %}
 
