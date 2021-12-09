@@ -9,7 +9,7 @@
 {% macro amenities( item = {}) %}
     <article class="amenities">
         <header>
-            {{ h2(copy = item.heading, classes = ['details-widget--heading', 'font-ivar']) }}
+            {{ h2(copy = item.heading, classes = ['details-widget--heading', 'font-ivar', 'text-center']) }}
         </header>
         {% for data in item.amenities %}
             <div class="amenities__features-container">
