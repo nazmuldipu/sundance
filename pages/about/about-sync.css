@@ -43,7 +43,11 @@
 .art__instructor{
     font-style: italic;
 }
-.recent__press ul li a {
+.recent__press ul{
+    word-break: break-word;
+    padding-right: 20px;    
+}
+.recent__press ul li a{
     text-decoration: none;
 }
 /* .accolades__item-title {
