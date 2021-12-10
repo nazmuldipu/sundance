@@ -189,7 +189,6 @@
 .sundance-events {
     padding: 20px;
     padding-top: 67px;
-    max-width: 335px;
 }
 .sundance-events__header {
     padding-bottom: 60px;
@@ -208,8 +207,8 @@
 .sundance-events__nav {
     display: flex;
     position: absolute;
-    width: calc(100% - 40px);
-    top: 280px;
+    width: 100%;
+    top: 50px;
     align-items: center;
     justify-content: center;
     z-index: 10;
@@ -218,8 +217,8 @@
     text-align: left;
     display: grid;
     grid-auto-flow: column;
-    /* grid-auto-columns: max-content; */
     margin-bottom: 25px;
+    padding: 0 16px;
 }
 .sundance-events__events__date {
     width: 70px;
@@ -245,11 +244,12 @@
 .sundance-events__events__action {
     display: none;
 }
-/* Desktop screen (Screen size : > 767 pts) */
+
+/* Tab screen (Screen size : > 767 pts) */
 @media screen and (min-width: 768px) {
     .sundance-events {
-        padding-top: 250px;
         max-width: 1440px;
+        padding: 250px 60px 0 60px;
     }
     .sundance-events__carousel {
         max-width: 1048px;
@@ -259,14 +259,17 @@
         padding-bottom: 40px;
     }
     .sundance-events__events {
-        grid-template-columns: 260px 1fr 161px;
+        grid-template-columns: 142px 1fr 161px;
     }
     .sundance-events__events__date {
-        width: 130px;
-        font-size: 40px;
-        line-height: 48px;
-        padding-right: 70px;
-        margin-right: 60px;
+        width: 100px;
+        font-size: 30px;
+        line-height: 34px;
+        padding-right: 20px;
+        margin-right: 20px;
+    }
+    .sundance-events__events__action .button--secondary {
+        padding: 20px 40px 15px 40px;
     }
     .sundance-events__events__title {
         font-size: 30px;
@@ -284,16 +287,43 @@
         line-height: 24px;
     }
     .sundance-events__events__action {
-        display: block;
-    }
-    .sundance-events__nav {
-        top: 415px;
+        display: grid;
+        text-align: right;
+        justify-content: right;
+        align-items: center;
     }
     .sundance-events__nav .carousel-button-prev,
     .sundance-events__nav .carousel-button-next {
-        margin: 0 140px;
+        margin: 0 130px;
     }
 }
+
+/* Desktop screen (Screen size : > 1365 pts) */
+@media screen and (min-width: 1366px) {
+    .sundance-events {
+        max-width: 1440px;
+        padding: 250px 150px 0 150px;
+    }
+    .sundance-events__events {
+        grid-template-columns: 260px 1fr 161px;
+    }
+    .sundance-events__events__date {
+        width: 130px;
+        font-size: 40px;
+        line-height: 48px;
+        padding-right: 70px;
+        margin-right: 60px;
+    }
+}
+
+/* Desktop XXL (Screen size : 1920 pts) */
+@media screen and (min-width: 1920px) {
+    .sundance-events {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+}
+
 
 /* -------------------------- End Events Styles ------------------------------ */
 
