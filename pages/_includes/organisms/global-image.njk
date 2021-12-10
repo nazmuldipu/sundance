@@ -25,7 +25,9 @@
         <img
                 src="{{ image.src | theImgSrc }}"
         {{ srcset }} = "{{ image | cmsImgObjSrcSet(image.types | last ) }}"
+        {% if image.sizes | length > 0 %}
         sizes = {{ (image.sizes | first).view }}
+        {% endif %}
         {% if not carousel %}
             loading="{{ 'lazy' if lazy else 'auto' }}"
         {% endif %}
