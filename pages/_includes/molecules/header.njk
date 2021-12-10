@@ -121,22 +121,20 @@ iconCSS %}
                     <li>
                         <a href="#" class="font-ivar" id="btn-nav-more">More</a>
                     </li>
-                    {# <span class="hidden" id="nav-more-menu"> #}
-                        {% for sec in range(4,  menuItems.sections.length)%}
-                            <li>
-                                <a href="#" class="nav-more-menus hidden font-ivar">{{menuItems.sections[sec].title}}</a>
-                                <ul class="dropdown">
-                                    {% for item in menuItems
-                                        .sections[sec]
-                                        .links %}
-                                        <li>
-                                            <a href="{{item.href}}" class="font-calibre text-lg-2">{{item.copy}}</a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                        {% endfor %}
-                    {# </span> #}
+                    {% for sec in range(4,  menuItems.sections.length)%}
+                        <li class="nav-more-menus hidden">
+                            <a href="#" class="font-ivar">{{menuItems.sections[sec].title}}</a>
+                            <ul class="dropdown">
+                                {% for item in menuItems
+                                    .sections[sec]
+                                    .links %}
+                                    <li>
+                                        <a href="{{item.href}}" class="font-calibre text-lg-2">{{item.copy}}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endfor %}
                 {% endif %}
             </ul>
         </div>
