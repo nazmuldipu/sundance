@@ -149,7 +149,7 @@ try {
         console.log(`received termination signal ${signal}. Cleaning up and exiting`);
         bs.exit();
         watcher.close();
-        removeGlobalBehavior(originalPageJSFileBytes);
+        //removeGlobalBehavior(originalPageJSFileBytes);
         console.log('watcher and browsersync safely terminated');
         process.exit(0);
     }
