@@ -45,7 +45,7 @@ export const addGlobalBehavior = async (pagesDir, scriptsDir) => {
     const fileBytePairs = []
     const pages = getPageAssets(pagesDir, (filename) => extname(filename) === '.js').flat();
     const globalsCache = {};
-    const promises = pages.reduce((promises, page) => {
+    const promises = await pages.reduce(async (promises, page) => {
         // we store original file sizes to enable restoring that file size
         // as a cleanup process
         const { size } = statSync(page);
@@ -62,18 +62,17 @@ export const addGlobalBehavior = async (pagesDir, scriptsDir) => {
             const appendData = createImportPaths( globalsCache[loadType], pageName ).join('\n');
             if ( platform() !== 'win32') {
                 try {
-                    getFirstLine(page).then(firstLine => {
-                        /* if a file has ignore pattern at start, it will be ignored */
-                        if(!ignorePatterns.some(pattern => firstLine.includes(pattern))) {
-                            const pageData = readFileSync(page, 'utf-8');
-                            const content = sanitizePageData(pageData);
-                            /* will only run if appendData is not added already */
-                            if(!content.includes(appendData)){
-                                const data = content + appendData;
-                                promises.push(writeFile(page, data));
-                            }            
-                        }
-                    })            
+                    const firstLine = await getFirstLine(page);
+                    /* if a file has ignore pattern at start, it will be ignored */
+                    if(!ignorePatterns.some(pattern => firstLine.includes(pattern))) {
+                        const pageData = readFileSync(page, 'utf-8');
+                        const content = sanitizePageData(pageData);
+                        /* will only run if appendData is not added already */
+                        if(!content.includes(appendData)){
+                            const data = content + appendData;
+                            promises.push(writeFile(page, data));
+                        }            
+                    }            
 
                 }catch(e) {
                     console.log(e)
@@ -85,7 +84,7 @@ export const addGlobalBehavior = async (pagesDir, scriptsDir) => {
         }
         return promises;
     }, []);
-    
+
     await Promise.all(promises);
 
     return fileBytePairs;
