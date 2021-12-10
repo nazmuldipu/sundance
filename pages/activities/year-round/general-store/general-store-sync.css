@@ -1,15 +1,6 @@
 /****  start imports  ********************************/
 @import "../../../../styles/global.css";
 /****  end imports  ********************************/
-.general-store__section-outer{
-    width: 100%;
-}
-.general-store__section-inner{
-    max-width: 1080px;
-    overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
-}
 .general-store__hero--caption{
     max-width: 536px;
     margin: auto;
@@ -37,7 +28,7 @@
     border-bottom: 1px solid black;
 }
 .general-store__section--text{
-    line-height: 2.5rem;
+    line-height: 110%;
     max-width: 440px;
     align-self: center;
     font-size: 42px;
@@ -77,9 +68,6 @@
     gap: 32px;
 }
 .general-store__bottom-title{
-    font-size: 42px;
-    font-family: var(--sundance__font-ivar);
-    font-weight: 600;
     padding-top: 40px;
     padding-bottom: 40px;
     text-align: center;
@@ -94,10 +82,6 @@
     padding-top: 0;
 }
 @media screen and (min-width: 320px) and (max-width: 767px){
-    .general-store__section-inner{
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
     .general-store__hero--caption{
         max-width: 230px;
         margin: auto;
@@ -119,12 +103,8 @@
     }
     .general-store__section--text{
         align-self: flex-start;
-        line-height: 2rem;
         max-width: 249px;
         font-size: 24px;
-    }
-    .general-store__section--figure{
-        width: 100%;
     }
     .general-store__flat-card{
         display: grid;
@@ -149,9 +129,6 @@
         gap: 32px;
     }
     .general-store__bottom-title{
-        font-size: 24px;
-        font-family: var(--sundance__font-ivar);
-        font-weight: 600;
         padding-top: 32px;
         padding-bottom: 32px;
     }
@@ -160,11 +137,5 @@
         grid-template-columns: repeat(1, minmax(0, 1fr));
         gap: 32px;
         padding-bottom: 40px;
-    }
-}
-@media screen and (min-width: 768px) and (max-width: 1365px){
-    .general-store__section-inner{
-        padding-left: 1rem;
-        padding-right: 1rem;
     }
 }

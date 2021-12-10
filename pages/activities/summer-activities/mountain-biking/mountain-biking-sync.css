@@ -1,17 +1,6 @@
 /****  start imports  ********************************/
 @import "../../../../styles/global.css";
 /****  end imports  ********************************/
-.activities__section-outer{
-    width: 100%;
-}
-.activities__section-inner{
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.activities__group-container{
-    border: none;
-}
 .bridge{
     padding-bottom: 50px;
 }
@@ -90,7 +79,6 @@
         font-size: 1.5rem;
     }
     .activities__card{
-        display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         padding-top: 24px;
         padding-bottom: 0px;
@@ -98,7 +86,6 @@
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
     .activities__card{
-        display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         padding-top: 24px;
         padding-bottom: 0px;
