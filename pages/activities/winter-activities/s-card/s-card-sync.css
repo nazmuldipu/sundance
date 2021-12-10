@@ -80,6 +80,7 @@
         z-index: 1;
         background-size: contain;
         background-repeat: no-repeat;
+        max-width: 330px;
     }
     .intro-images__imageBlock{
         width: 100%;
@@ -141,8 +142,7 @@
         display: flex;
         background: url("/images/vector2.svg");
         background-position: center;
-        height: 500px;
-        margin-top: -10rem;
+        height: auto;
     }
     .icons-block__icons{
         display: flex;
@@ -171,7 +171,7 @@
         align-items: center;
         justify-content: center;
         gap: 3rem;
-        padding-top: 11rem;
+        padding-top: 4rem;
     }
 
 /* } */
@@ -190,6 +190,7 @@
 }
 .lift-block__imageBlock {
     order: 1;
+    max-width: 330px;
 }
 .bottom-block__imageBlock {
     order: 1;
@@ -246,7 +247,7 @@
         max-width: 520px;
     }
     .flex-block {
-        height: 870px;
+        height: auto;
         flex-direction: row;
         padding-top: 0;
     }
@@ -310,6 +311,10 @@
     }
     .hero-spacing {
         padding-bottom: 0;
+    }
+    .icons-block{
+        height: 500px;
+        margin-top: -10rem;
     }
 }
 
