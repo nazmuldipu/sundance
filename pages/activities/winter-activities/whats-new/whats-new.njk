@@ -12,7 +12,7 @@ h2 %}
 {% from "atoms/a.njk" import a, button_primary, button_secondary%}
 {% from 'organisms/global-image.njk' import global_image %}
 
-{% macro top_section() %}
+{% macro top_section(item) %}
     <div class="hero-block__inner global-px">
         <article class="hero-content">
             <header>
@@ -25,10 +25,10 @@ h2 %}
                 {% if item.actions | length > 0 %}
                     {% for data in item.actions %}
                         {% set obj = data.action %}
-                        {% if obj.type == 'yellow-cta' %}
+                        {% if obj.type == 'primary' %}
                             {{ button_primary( href=obj.url, classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text--color__sn-6', 'hero__button'],  copy=obj.copy, internal=obj.internal ) }}
                         {% endif %}
-                        {% if obj.type == 'white-cta' %}
+                        {% if obj.type == 'transparent' %}
                             {{ button_secondary( href=obj.url, classes = ['button', 'button--secondary', 'font-calibre'],  copy=obj.copy, internal=obj.internal ) }}
                         {% endif %}
                     {% endfor %}
@@ -40,15 +40,53 @@ h2 %}
 
 {% if pageCMS['top-article'].vertical_card %}
     {% set item = pageCMS['top-article'].vertical_card %}
-    <section class="hero-block segment-outer container hero-spacing" style="background-image:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), url('{{item.image.global_image.src | theImgSrc}}');">
-        <div class="hero-block__inner-1"></div>
-        {{top_section()}}
+    <section class="hero-block segment-outer container" style="background-image:linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), url('{{item.image.global_image.src | theImgSrc}}');">
+        <section class="desktop-top-section">
+        {{top_section(item)}}
+        </section>
+    </section>
+    <section class="container mobile-top-section">
+    {{top_section(item)}}
     </section>
 {% endif %}
 
 {% if pageCMS['middle-article-1'].vertical_card %}
     {% set item = pageCMS['middle-article-1'].vertical_card %}
-    <section class="intro-block segment-outer container s-card-pb">
+    <section class="second-block segment-outer container s-card-pb">
+        <article class="second-block__textBlock global-px content-max-width">
+            <header class="second-block__textBlock--header">
+                <h2 class="intro-heading font-calibre text--color__sn-6">
+                    {{item.title}}
+                </h2>
+            </header>
+            <div class="second-block__textBlock--body intro-text__body">
+                {{item.description | safe}}
+            </div>
+            <div class="second-block__textBlock--buttons">
+                {% if item.actions | length > 0 %}
+                    {% for data in item.actions %}
+                        {% set obj = data.action %}
+                        {% if obj.type == 'primary' %}
+                            {{ button_primary( href=obj.url, classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy=obj.copy, internal=obj.internal ) }}
+                        {% endif %}
+                        {% if obj.type == 'transparent' %}
+                            <a class="link link--plain font-calibre" href="{{obj.url}}" class="btn btn--primary">{{obj.copy}}</a>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </article>
+        <div class="second-block__imageBlock global-px">
+            <figure>
+                {{global_image(item.image.global_image)}}
+            </figure>
+        </div>
+    </section>
+{% endif %}
+
+{% if pageCMS['middle-article-2'].vertical_card %}
+    {% set item = pageCMS['middle-article-2'].vertical_card %}
+    <section class="first-block segment-outer container s-card-pb">
         <div class="intro-images global-px">
             <figure class="intro-images__imageBlock">
                 {{global_image(item.image.global_image)}}
@@ -67,10 +105,10 @@ h2 %}
                 {% if item.actions | length > 0 %}
                     {% for data in item.actions %}
                         {% set obj = data.action %}
-                        {% if obj.type == 'yellow-cta' %}
+                        {% if obj.type == 'primary' %}
                             {{ button_primary( href=obj.url, classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy=obj.copy, internal=obj.internal ) }}
                         {% endif %}
-                        {% if obj.type == 'white-cta' %}
+                        {% if obj.type == 'transparent' %}
                             <a class="link link--plain font-calibre" href="{{obj.url}}" class="btn btn--primary">{{obj.copy}}</a>
                         {% endif %}
                     {% endfor %}
@@ -80,39 +118,40 @@ h2 %}
     </section>
 {% endif %}
 
-{% if pageCMS['middle-article-2'].vertical_card %}
-    {% set item = pageCMS['middle-article-2'].vertical_card %}
-    <section class="lift-block segment-outer container lift-block__bottom-spacing">
-        <article class="lift-block__textBlock global-px content-max-width">
-            <header class="lift-block__textBlock--header">
+{% if pageCMS['middle-article-3'] and pageCMS['middle-article-3'].vertical_card %}
+    {% set item = pageCMS['middle-article-3'].vertical_card %}
+    <section class="second-block segment-outer container third-block__spacing">
+        <article class="second-block__textBlock global-px content-max-width">
+            <header class="second-block__textBlock--header">
                 <h2 class="intro-heading font-calibre text--color__sn-6">
                     {{item.title}}
                 </h2>
             </header>
-            <div class="lift-block__textBlock--body intro-text__body">
+            <div class="second-block__textBlock--body intro-text__body">
                 {{item.description | safe}}
             </div>
-            <div class="lift-block__textBlock--buttons">
+            <div class="second-block__textBlock--buttons">
                 {% if item.actions | length > 0 %}
                     {% for data in item.actions %}
                         {% set obj = data.action %}
-                        {% if obj.type == 'yellow-cta' %}
+                        {% if obj.type == 'primary' %}
                             {{ button_primary( href=obj.url, classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy=obj.copy, internal=obj.internal ) }}
                         {% endif %}
-                        {% if obj.type == 'white-cta' %}
+                        {% if obj.type == 'transparent' %}
                             <a class="link link--plain font-calibre" href="{{obj.url}}" class="btn btn--primary">{{obj.copy}}</a>
                         {% endif %}
                     {% endfor %}
                 {% endif %}
             </div>
         </article>
-        <div class="lift-block__imageBlock global-px">
+        <div class="second-block__imageBlock global-px">
             <figure>
                 {{global_image(item.image.global_image)}}
             </figure>
         </div>
     </section>
 {% endif %}
+
 {% if pageCMS['icon-list'] and pageCMS['icon-list'].icon_list %}
 <section class="icons-block segment-outer container">
     <div class="icons-block__icons">
@@ -140,22 +179,22 @@ h2 %}
             </figure>
         </div>
         <article class="bottom-block__textBlock intro-text global-px content-max-width">
-            <header class="lift-block__textBlock--header">
+            <header class="second-block__textBlock--header">
                 <h2 class="intro-heading font-calibre text--color__sn-6">
                     {{item.title}}
                 </h2>
             </header>
-            <div class="lift-block__textBlock--body intro-text__body">
+            <div class="second-block__textBlock--body intro-text__body">
                 {{item.description | safe}}
             </div>
-            <div class="lift-block__textBlock--buttons">
+            <div class="second-block__textBlock--buttons">
                 {% if item.actions | length > 0 %}
                     {% for data in item.actions %}
                         {% set obj = data.action %}
-                        {% if obj.type == 'yellow-cta' %}
+                        {% if obj.type == 'primary' %}
                             {{ button_primary( href=obj.url, classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6', 'hero__button'],  copy=obj.copy, internal=obj.internal ) }}
                         {% endif %}
-                        {% if obj.type == 'white-cta' %}
+                        {% if obj.type == 'transparent' %}
                             <a class="link link--plain font-calibre" href="{{obj.url}}" class="btn btn--primary">{{obj.copy}}</a>
                         {% endif %}
                     {% endfor %}
