@@ -2,7 +2,6 @@
 const hero_image_frames = document.querySelectorAll(".hero-carousel__frame .image_frame");
 const hero_carousel__title = document.querySelectorAll(".hero-carousel__title");
 const hero_carousel__texts = document.querySelectorAll(".hero-carousel__texts");
-console.log(hero_carousel__texts);
 
 const update_active_element = (element) => {
     if(!element.classList.contains("active")){
@@ -57,3 +56,14 @@ carousel_buttons.forEach(function (button) {
 });
 
 add_image_click_event();
+
+// Nav morebutton action
+const nav_more_button = document.querySelector("#btn-nav-more");
+const nav_more_menu = document.querySelectorAll(".nav-more-menus");
+
+nav_more_button.addEventListener("click", function () {
+    nav_more_menu.forEach(function (menu) {
+        menu.classList.remove("hidden");
+    })
+    this.parentElement.classList.add("hidden");
+});
