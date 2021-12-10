@@ -7,7 +7,7 @@
       <div class="hero-flip__frame-box">
         <div class="hero-flip__container">
           {% for banner in bannerObj %}
-            <div class="hero-flip__item {{'collapse' if loop.first}}" style="background-color:coral;">
+            <div class="hero-flip__item {{'collapse' if loop.first}}">
               {{ global_image(banner.image.global_image, classes='w-full h-full block', imgClass='h-full object-cover') }}
               <div class="hero-flip__texts">
                 <header class="hero-flip__title font-ivar bold">{{banner.title}}</header>
@@ -24,20 +24,4 @@
       </div>
     </section>
   </section>
-  <script>
-    const items = document.querySelectorAll('.hero-flip__item');
-    items.forEach(item => {
-      item.addEventListener('click', () => {
-        console.log(item);
-        items.forEach(el => {
-          el
-            .classList
-            .remove('collapse');
-        });
-        item
-          .classList
-          .add('collapse');
-      });
-    });
-  </script>
 {% endmacro %}
