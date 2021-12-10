@@ -26,10 +26,10 @@
    </section>
 {% endmacro %}
 
-{% macro artStudio2(item, figureClass = '', figcaptionClass = '') %}   
+{% macro artStudio2(item, figureClass = '', figcaptionClass = '', imageClasses = 'image_frame sm:11:15 lg:43:64') %}   
     <section class="art-studio  {% if item.id %} id="{{ id }}" {% endif %}">       
         <figure class="art-studio__image {{ figureClass }}">
-            {{global_image(item.image.global_image, classes='w-full image_frame sm:3:4 lg:2:3 2xl:2:3 4xl:2:3')}}
+            {{global_image(item.image.global_image, classes=imageClasses)}}
         </figure>
         <figcaption class="art-studio__caption {{ figcaptionClass }}">                    
             {{ h3(copy = item.title, classes = ['art-studio__caption__header', 'font-ivar', 'font-semibold', 'text--color__sn-6']) }}                    

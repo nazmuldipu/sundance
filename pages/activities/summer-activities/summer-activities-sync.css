@@ -1,17 +1,8 @@
 /****  start imports  ********************************/
 @import "../../../styles/global.css";
 /****  end imports  ********************************/
-.summer-activites__section-outer{
-    width: 100%;
-}
-.summer-activites__margin-top{
-    margin-top: 8rem;
-}
-.summer-activites__section-inner{
-    max-width: 1080px;
+.segment-inner{
     overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
 }
 .summer-activites__header{
     font-weight: 600;
@@ -28,9 +19,6 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px){
-    .summer-activites__margin-top{
-        margin-top: 4rem;
-    }
     .summer-activites__header{
         font-size: 1.5rem;
         padding-top: 1.375rem;

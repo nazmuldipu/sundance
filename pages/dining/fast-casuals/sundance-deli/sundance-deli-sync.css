@@ -1,9 +1,6 @@
 /****  start imports  ********************************/
 @import "../../../../styles/global.css";
 /****  end imports  ********************************/
-.top-section {
-    margin-top: 90px;
-}
 .dining-details-container {
     display: block;
 }
@@ -30,14 +27,6 @@
     max-width: 1080px;
     margin: 0 auto;
 }
-.dining-details__card{
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    padding-top: 24px;
-    padding-bottom: 40px;
-    max-width: 1080px;
-    margin: 0 auto;
-}
 .bridge {
     padding-bottom: 36px;
 }
@@ -59,13 +48,9 @@
 .group-venues__description:nth-child(4){
     color: var(--sundance__primary1);
 }
-@media screen and (min-width: 767px){
-    .dining-details__card{
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 3rem;
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
+.flex-card-container {
+    margin-bottom: 0;
+    row-gap: 0;
 }
 @media screen and (min-width: 1024px){
     .dining-details-container {
@@ -87,12 +72,6 @@
     .dining-details__descriptions {
         font-size: 19px;
         padding-bottom: 16px;
-    }
-    .dining-details__card{
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        column-gap: 3rem;
-        padding-top: 40px;
-        padding-bottom: 40px;
     }
     .details__notice {
         padding: 64px 200px;
