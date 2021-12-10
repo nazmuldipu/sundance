@@ -28,19 +28,23 @@ nickname: winter-activities
 {% endif %}
 
 {# Simple Blog #}
-{% if pageCMS['simple-blog'] %}
+{% if pageCMS['simple-blog'] and pageCMS['simple-blog'].simple_blog %}
     {% set simple_blog = pageCMS['simple-blog'].simple_blog  %}
     <article class="winter-blog__container font-ivar">
-        <div class = "winter-blog__copy">{{ simple_blog.descriptions | safe }}</div>
-        {% for item in simple_blog.actions %}
-            {% if item.action.type == 'secondary' %}
-                {% set trg = '_self' if item.action.internal else 
-                        '_blank' %}
-                <div class="winter-blog__action">
-                    {{ button_secondary(classes = ['button', 'button--secondary', 'font-calibre', 'font-medium', 'text-base'], href = item.action.url, copy = item.action.copy, target = trg ) }}
-                </div>
-            {% endif %}
-        {% endfor %}
+        {% if simple_blog.descriptions %}
+            <div class = "winter-blog__copy">{{ simple_blog.descriptions | safe }}</div>
+        {% endif %}
+        {% if simple_blog.actions %}
+            {% for item in simple_blog.actions %}
+                {% if item.action.type == 'secondary' %}
+                    {% set trg = '_self' if item.action.internal else 
+                            '_blank' %}
+                    <div class="winter-blog__action">
+                        {{ button_secondary(classes = ['button', 'button--secondary', 'font-calibre', 'font-medium', 'text-base'], href = item.action.url, copy = item.action.copy, target = trg ) }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
     </article>
 {% endif %}
 

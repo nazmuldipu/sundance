@@ -27,14 +27,20 @@ nickname: night-skiing
 {% endif %}
 
 {# Simple Blog #}
-{% if pageCMS['simple-blog'] %}
+{% if pageCMS['simple-blog'] and pageCMS['simple-blog'].simple_blog %}
     {% set simple_blog = pageCMS['simple-blog'].simple_blog  %}
     <article class="winter-article__container font-ivar">
-        <header>
-            {{ h1(copy = simple_blog.title, classes = ['winter-article__header']) }}
-        </header>
-        <p class="winter-article__subtitle">{{ simple_blog.subtitle | safe }}</p>
-        <div class = "winter-article__copy">{{ simple_blog.descriptions | safe }}</div>
+        {% if simple_blog.title %}
+           <header>
+                {{ h1(copy = simple_blog.title, classes = ['winter-article__header']) }}
+            </header> 
+        {% endif %}
+        {% if simple_blog.subtitle %}
+            <p class="winter-article__subtitle">{{ simple_blog.subtitle | safe }}</p>
+        {% endif %}
+        {% if simple_blog.descriptions %}
+            <div class = "winter-article__copy">{{ simple_blog.descriptions | safe }}</div>
+        {% endif %}
     </article>
 {% endif %}
 

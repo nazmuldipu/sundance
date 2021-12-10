@@ -22,7 +22,7 @@ nickname: faqs
 {% endif %}
 
 {# Accordion Title #}
-{% if pageCMS['accordion-description'] %}
+{% if pageCMS['accordion-description'] and pageCMS['accordion-description'].simple_article %}
     {% set accordion_description = pageCMS['accordion-description'].simple_article %}
     <section class="segment-outer">
         <section class="accordion-wrapper accordion__header font-ivar text-lg-2">
@@ -32,7 +32,7 @@ nickname: faqs
 {% endif %}
 
 {# Accordion #}
-{% if  pageCMS['accordion'] %}
+{% if  pageCMS['accordion'] and pageCMS['accordion'].accordion %}
 {% set accordions = pageCMS['accordion'].accordion %}
 <section class="segment-outer">
     <section class="accordion-wrapper accordion__bottom-padding">
@@ -44,7 +44,7 @@ nickname: faqs
 {% endif %}
 
 {# Bridge carousal #}
-{% if pageCMS['bridge-slider'] %}
+{% if pageCMS['bridge-slider'] and pageCMS['bridge-slider'].bridge_slider %}
 {% set bridge_slider = pageCMS['bridge-slider'].bridge_slider %}
     {{ bridge(bridge_slider) }}        
 {% endif %}

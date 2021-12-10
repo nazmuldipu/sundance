@@ -22,19 +22,19 @@ nickname: body-treatments
 {% endif %}
 
 {# Bridge carousal #}
-{% if pageCMS['bridge-slider'] %}
+{% if pageCMS['bridge-slider'] and pageCMS['bridge-slider'].bridge_slider %}
 {% set bridge_slider = pageCMS['bridge-slider'].bridge_slider %}
     {{ bridge(bridge_slider) }}        
 {% endif %}
 
 {# Accordion Title #}
-{% if pageCMS['accordion-title'] %}
+{% if pageCMS['accordion-title'] and pageCMS['accordion-title'].simple_article %}
     {% set accordion_title = pageCMS['accordion-title'].simple_article %}
     {{ h2(copy = accordion_title.title, classes = ['accordion__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
 {% endif %}
 
 {# Accordion #}
-{% if  pageCMS['accordion'] %}
+{% if  pageCMS['accordion'] and pageCMS['accordion'].accordion %}
 {% set accordions = pageCMS['accordion'].accordion %}
 <section class="segment-outer">
     <section class="accordion-wrapper accordion__bottom-padding">
@@ -46,13 +46,13 @@ nickname: body-treatments
 {% endif %}  
 
 {# Card Title #}
-{% if pageCMS['card-title'] %}
+{% if pageCMS['card-title'] and pageCMS['card-title'].simple_article %}
     {% set card_title= pageCMS['card-title'].simple_article %}
     {{ h2(copy = card_title.title, classes = ['spa__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
 {% endif %}
 
 {# Vertical Card Section #}
-{% if  pageCMS['vertical-cards'] %}
+{% if  pageCMS['vertical-cards'] and pageCMS['vertical-cards'].vertical_card_list %}
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
 <section class="segment-outer">
     <section class="segment-inner global-px spa__card">
