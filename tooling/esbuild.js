@@ -83,7 +83,7 @@ export const addGlobalBehavior = async (pagesDir, scriptsDir) => {
             }
         }
         return promises;
-    }, []);
+    }, Promise.resolve([]));
 
     await Promise.all(promises);
 
