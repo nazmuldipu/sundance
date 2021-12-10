@@ -12,32 +12,55 @@ permalinkBypassOutputDir: true
 {% from 'macros.njk' import top_banner %}
 {% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
 
-{% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
-{% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
-{% set card_title= pageCMS['card-title'].simple_article %}
 
 {# Hero Image Section #}
-<section class="segment-outer">
-    <section class="banner__segment-inner">
-        {{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
-    </section>
-</section>
+{% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
+   <section class="segment-outer">
+        <section class="banner__segment-inner">
+            {{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
+        </section>
+   </section> 
+{% endif %}
+
+{# Hero Caption #}
+{% if pageCMS['hero-caption'] and pageCMS['hero-caption'].simple_article %}
+    {% set hero_caption = pageCMS['hero-caption'].simple_article %}
+    {% if hero_caption.description %}
+        <section class="segment-outer">
+            <section class="hero-caption group-section global-px">
+                <div class="font-ivar text-lg-2">{{ hero_caption.description | safe }}</div>
+            </section>
+        </section>
+    {% endif %}
+{% endif %}
+
 {# Card Title #}
-{{ h2(copy = card_title.title, classes = ['bg-sn-4', 'spa-activities__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% if pageCMS['card-title'] and pageCMS['card-title'].simple_article %}
+    {% set card_title= pageCMS['card-title'].simple_article %}
+    {{ h2(copy = card_title.title, classes = ['bg-sn-4', 'spa-activities__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
 
 {# Horrizontal Card Section #}
-<section class="bg-sn-4 spa-activities__section-outer">
-    <section class="spa-activities__section-inner">
-        {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
+{% if pageCMS['horizontal-cards'] and pageCMS['horizontal-cards'].horizontal_card_list %}
+    {% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
+    <section class="bg-sn-4 segment-outer">
+        <section class="segment-inner global-px">
+            {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-8'], imageClasses = 'image_frame sm:11:8 lg:4:3 2xl:4:3 4xl:4:3') }}
+        </section>
     </section>
-</section>
+{% endif %}
+
 {# Vertical Card Section #}
-<section class="bg-sn-4 spa-activities__section-outer">
-    <section class="spa-activities__section-inner spa-activities__card">
-        {% for item in vertical_card_list %}
-            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
-        {% endfor %}
+{% if pageCMS['vertical-cards'] and pageCMS['vertical-cards'].vertical_card_list %}
+    {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
+    <section class="bg-sn-4 segment-outer">
+        <section class="segment-inner global-px spa-activities__card">
+            {% for item in vertical_card_list %}
+                {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+            {% endfor %}
+        </section>
     </section>
-</section>
+{% endif %}
+
 
 {{newsletter()}}

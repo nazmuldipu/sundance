@@ -1,17 +1,6 @@
 /****  start imports  ********************************/
 @import "../../../../styles/global.css";
 /****  end imports  ********************************/
-.activities__section-outer{
-    width: 100%;
-}
-.activities__section-inner{
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.activities__group-container{
-    border: none;
-}
 .bridge{
     padding-bottom: 50px;
 }

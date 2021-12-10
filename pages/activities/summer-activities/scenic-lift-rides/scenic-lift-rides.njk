@@ -47,8 +47,8 @@ nickname: Scenic Lift Rides
 {# Vertical Card Section #}
 {% if pageCMS['vertical-cards'] %}
     {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}    
-    <section class="activities__section-outer">
-        <section class="activities__section-inner global-px activities__card">
+    <section class="segment-outer">
+        <section class="segment-inner global-px activities__card">
             {% for item in vertical_card_list %}
                 {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
             {% endfor %}

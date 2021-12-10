@@ -4,13 +4,9 @@ items.forEach(item => {
     item.addEventListener('click', () => {
         console.log(item);
         items.forEach(el => {
-            el
-                .classList
-                .remove('collapse');
+            el.classList.remove('collapse');
         });
-        item
-            .classList
-            .add('collapse');
+        item.classList.add('collapse');
     });
 });
 
