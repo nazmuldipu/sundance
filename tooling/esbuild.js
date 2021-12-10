@@ -85,7 +85,7 @@ export const addGlobalBehavior = async (pagesDir, scriptsDir) => {
         }
         return promises;
     }, []);
-
+    
     await Promise.all(promises);
 
     return fileBytePairs;
