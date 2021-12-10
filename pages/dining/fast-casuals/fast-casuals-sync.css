@@ -4,21 +4,13 @@
 .dining-fast-casuals__horizontal-cards {
     padding: 2rem 0 0 0;
 }
-.segment-outer__margin {
-    margin-top: 2rem;
+.flex-card-container {
+    margin-bottom: 0;
+    row-gap: 0;
 }
 @media screen and (min-width: 768px){
-    .segment-outer__margin {
-        margin-top: 6rem;
-    }
     .dining-fast-casuals__horizontal-cards {
         padding-top: 6rem;
         padding-bottom: 7rem;
     }
 }
-@media screen and (min-width: 1024px){
-    .flex__single-card {
-        width: 33.3%;
-    }
-}
-

@@ -47,8 +47,8 @@ nickname: zip-tour
 {% if pageCMS['zip-tour-action-card'] and pageCMS['zip-tour-action-card-caption'] %}
 {% set action_card = pageCMS['zip-tour-action-card'].action_card %}
 {% set action_card_caption = pageCMS['zip-tour-action-card-caption'].simple_article %}
-<section class="activities__section-outer">
-    <section class="activities__section-inner global-px activities__action-card">
+<section class="segment-outer">
+    <section class="segment-inner global-px activities__action-card">
         {% for item in action_card %}
             {{ secondBridge(item) }}
         {% endfor %}
@@ -68,8 +68,8 @@ nickname: zip-tour
 {# Vertical Card Section #}
 {% if pageCMS['vertical-cards'] %}
     {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
-    <section class="activities__section-outer">
-        <section class="activities__section-inner global-px activities__card">
+    <section class="segment-outer">
+        <section class="segment-inner global-px activities__card">
             {% for item in vertical_card_list %}
                 {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
             {% endfor %}

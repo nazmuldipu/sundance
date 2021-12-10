@@ -2,7 +2,6 @@
 const hero_image_frames = document.querySelectorAll(".hero-carousel__frame .image_frame");
 const hero_carousel__title = document.querySelectorAll(".hero-carousel__title");
 const hero_carousel__texts = document.querySelectorAll(".hero-carousel__texts");
-console.log(hero_carousel__texts);
 
 const update_active_element = (element) => {
     if(!element.classList.contains("active")){

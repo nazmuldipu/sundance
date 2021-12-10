@@ -109,6 +109,6 @@ catch (e) {
 }
 finally {
     if(originalPageJSFileBytes) {
-        removeGlobalBehavior(originalPageJSFileBytes);
+       // removeGlobalBehavior(originalPageJSFileBytes);
     }
 }

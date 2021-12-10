@@ -8,7 +8,7 @@ nickname: dining/restaurants/tree-room
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'molecules/card.njk' import verticalCard %}
-{% from 'atoms/headings.njk' import global_header %}
+{% from 'atoms/headings.njk' import h2, global_header %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
@@ -45,7 +45,7 @@ nickname: dining/restaurants/tree-room
                 </figcaption>
             </section>
             <section class="dining-details__venues">
-                {% for event in data.groupData %}
+                {% for event in pageCMS['group-venues'].group_venues %}
                     <section>
                         {{ groupVenues(event) }}
                     </section>
@@ -59,13 +59,13 @@ nickname: dining/restaurants/tree-room
         {{bridge(bridge_slider)}}
     </section>
 </section>
-<section class="segment-outer bg-sn-5 px-4">
-    <section class="segment-inner">
+<section class="segment-outer bg-sn-5">
+    <section class="segment-inner sm:px-6 md:px-6 lg:px-6">
         <section class="details__middle-banner">
             <figure class="dining-details__figure">
-                {{global_image(middleBannerImage, classes='w-full image_frame sm:3:4 lg:3:4 2xl:16:9 4xl:9:16')}}
+                {{global_image(middleBannerImage, classes='w-full image_frame sm:41:25 lg:396:265')}}
             </figure>
-            <figcaption class="dining-details__figcaption">
+            <figcaption>
                 <header>
                     <h3 class="dining-details__middle-banner--header font-ivar bold">
                         {{ middle_banner.title }}
@@ -81,7 +81,7 @@ nickname: dining/restaurants/tree-room
     </section>
 </section>
 <section class="segment-outer">
-    <section class="segment-inner">
+    <section class="segment-inner sm:px-6 md:px-6 lg:px-6">
         <article class="details__quote bg-ss-4 font-ivar">
             <div class="dining-details__middle-banner--descriptions font-ivar">
                 {{ quoteCard.description | safe }}
@@ -93,12 +93,12 @@ nickname: dining/restaurants/tree-room
     </section>
 </section>
 <section class="segment-outer">
-    <section class="segment-inner text-center">
+    <section class="segment-inner text-center sm:px-6 md:px-6 lg:px-6">
         <article class="details__card bg-sn-5 font-ivar">
-            {{ global_header(copy = card_list_title) }}
-            <section class="dining-details__card">
+            {{ h2(classes=['heading', 'text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center'], copy = card_list_title) }}
+            <section class="flex-card-container">
                 {% for item in vertical_card_list %}
-                    {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+                    {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'flex__single-card']) }}
                 {% endfor %}
             </section>
         </article>
@@ -106,5 +106,3 @@ nickname: dining/restaurants/tree-room
 </section>
 
 {{newsletter()}}
-
-{{footer(data.footer)}}

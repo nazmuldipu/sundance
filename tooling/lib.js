@@ -1,9 +1,12 @@
 'use strict';
 import path, {extname, join, sep } from 'path';
-import {accessSync, readdirSync, statSync, writeFileSync} from 'fs';
+import { accessSync, readdirSync, statSync, writeFileSync, createReadStream } from 'fs';
 import {platform} from 'os';
 import {rm, writeFile} from 'fs/promises';
+import { once } from 'events';
+import { createInterface } from 'readline';
 import compose from "just-compose";
+import beautify from 'js-beautify';
 
 export const prettyJSONStringify = json => JSON.stringify(json, null, 2);
 
@@ -273,7 +276,11 @@ export const addSemicolonIfMissing = (string) => {
     return string.lastIndexOf(';') === string.length - 1 ? string : string + ";";
 }
 
-export const sanitizePageData = compose(removeDuplicateFromPageData, addSemicolonIfMissing, addNewLineToString);
+export const formatCode = (code) => {
+    return beautify(code, { indent_size: 2, space_in_empty_paren: true, preserve_newlines: true });
+}
+
+export const sanitizePageData = compose(removeDuplicateFromPageData, addSemicolonIfMissing, addNewLineToString, formatCode);
 
 const getAllFiles = (dirPath, arrayOfFiles = [], ignorePatterns = defaultIgnorePattern) => {
     let files = readdirSync(dirPath)
@@ -295,3 +302,29 @@ const getAllFiles = (dirPath, arrayOfFiles = [], ignorePatterns = defaultIgnoreP
         return file.startsWith(pattern);
     });
   }
+
+  export const getFirstLine = async (filePath) => {
+    let result = '';
+    let counter = 0;
+    try {
+      const rl = createInterface({
+        input: createReadStream(filePath),
+        crlfDelay: Infinity
+      });
+  
+      rl.on('line', (line) => {
+        if(counter > 0){
+            rl.close();
+        }else{
+            result = line;
+        }
+        counter++;
+      });
+  
+      await once(rl, 'close');
+      
+    } catch (err) {
+      console.error(err);
+    }
+    return result;
+}

@@ -1,14 +1,6 @@
 /****  start imports  ********************************/
 @import "../../../../../styles/global.css";
 /****  end imports  ********************************/
-.section-outer{
-    width: 100%;
-}
-.section-inner{
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-}
 .group-container{
     border: none;
 }
