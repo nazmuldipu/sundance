@@ -108,7 +108,7 @@
     #   @author Sarjis
 #}
 {% macro singleCard(classes = ['card-container'], id = '', item, figureClass = '', figcaptionClass = '') %}
-    <section class="{% for class in classes %} {{ class }} {% endfor %}">        
+    <section data-card="{{item | stringify}}" class="{% for class in classes %} {{ class }} {% endfor %}">        
         <figure class="card-image {{ figureClass }}" 
             {% if id %} id="{{ id }}" {% endif %} 
         >

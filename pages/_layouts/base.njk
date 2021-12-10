@@ -205,7 +205,7 @@ pagename: base
             urls.forEach(function(url){
                 var bookhref = url.getAttribute("href");
                 bookhref.replace('&NCK=organic', '');
-                bookingLink.setAttribute('href', AppendNavisKeywordToURL(bookhref));      
+                url.setAttribute('href', AppendNavisKeywordToURL(bookhref));      
             })
         })
         </script>
