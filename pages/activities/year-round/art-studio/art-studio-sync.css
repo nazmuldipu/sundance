@@ -1,14 +1,8 @@
 /****  start imports  ********************************/
 @import "../../../../styles/global.css";
 /****  end imports  ********************************/
-.art-studio__section-outer{
-    width: 100%;
-}
-.art-studio__section-inner{
-    max-width: 1080px;
+.segment-inner{
     overflow: hidden;
-    margin-left: auto;
-    margin-right: auto;
 }
 .art-studio__header{
     font-weight: 600;

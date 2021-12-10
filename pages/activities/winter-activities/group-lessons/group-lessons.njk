@@ -20,7 +20,7 @@ nickname: group-lessons
 {% endif %}
 
 {# Video Section #}
-<section class="section-outer">
+<section class="segment-outer">
     <section class="winter-video__container pb-10">
         <div class="image_frame sm:16:9 lg:4:3 2xl:4:3 4xl:4:3">
             <iframe class="w-full h-full" src="https://www.youtube.com/embed/brqp5a8GELE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -32,7 +32,7 @@ nickname: group-lessons
 {% if pageCMS['middle-article'] %}
     {% set article_list = pageCMS['middle-article'].simple_article_list  %}
     {% for item in article_list %}
-       <section class="section-inner">
+       <section class="segment-inner global-px">
              <article class="winter-article__container font-ivar">
                 <header>
                     {{ h1(copy = item.simple_article.title, classes = ['winter-article__header']) }}
@@ -52,8 +52,8 @@ nickname: group-lessons
 {# Vertical Card Section #}
 {% if  pageCMS['vertical-cards'] %}
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
-<section class="section-outer">
-    <section class="section-inner winter__card">
+<section class="segment-outer">
+    <section class="segment-inner global-px winter__card">
         {% for item in vertical_card_list %}
             {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
         {% endfor %}

@@ -20,8 +20,8 @@
     padding-bottom: 24px;
 }
 .dining-details__descriptions {
-    font-size: 14px;
-    padding-bottom: 16px;
+    font-size: 19px;
+    padding-bottom: 0px;
 }
 .details__middle-article {
     max-width: 1080px;
@@ -37,9 +37,12 @@
     padding: 0 1rem;
 }
 .details__notice {
-    max-width: 680px;
-    padding: 0 1rem;
-    margin: 1rem 1rem;
+    padding: 40px 24px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
 }
 .flex-card-container {
     margin-bottom: 0;
@@ -64,7 +67,7 @@
     }
     .dining-details__descriptions {
         font-size: 19px;
-        padding-bottom: 16px;
+        padding-bottom: 0px;
     }
     .details__notice {
         padding: 64px 200px;

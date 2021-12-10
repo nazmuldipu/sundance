@@ -1,14 +1,6 @@
 /****  start imports  ********************************/
 @import "../../../../styles/global.css";
 /****  end imports  ********************************/
-.section-outer{
-    width: 100%;
-}
-.section-inner{
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-}
 .group-container{
     border: none;
 }
@@ -26,7 +18,6 @@
 
 @media screen and (min-width: 320px) and (max-width: 767px){
     .activities__card{
-        display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
         padding-top: 24px;
         padding-bottom: 8px;
@@ -37,7 +28,6 @@
 }
 @media screen and (min-width: 768px) and (max-width: 1023px){
     .activities__card{
-        display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         padding-top: 24px;
         padding-bottom: 8px;
