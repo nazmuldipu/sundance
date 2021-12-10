@@ -1,12 +1,11 @@
 /****  start imports  ********************************/
 @import "../../../styles/global.css";
 /****  end imports  ********************************/
-.winter-hero__padding-bottom{
-    padding-bottom: 80px;
-}
 .winter__header{
     font-weight: 600;
     font-size: 2.625rem;
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
 }
 .winter__card{
     display: grid;
@@ -23,6 +22,8 @@
     }
     .winter__header{
         font-size: 1.5rem;
+        padding-top: 1.375rem;
+        padding-bottom: 1.5rem;
     }
     .winter__card{
         display: grid;
@@ -37,5 +38,10 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         padding-top: 24px;
         padding-bottom: 0px;
+    }
+}
+@media screen and (min-width: 1024px){
+    .winter-hero__padding-bottom{
+        padding-bottom: 40px;
     }
 }
