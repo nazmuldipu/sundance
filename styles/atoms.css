@@ -186,6 +186,42 @@
     top: 43%;
     width: 16px;
 }
+/* amenities */
+.amenities-view-details {
+    color: #000;
+    display: inline-flex;
+    line-height: 40px;
+    text-decoration: none;
+}
+.amenities-view-details .icon {
+    background-color: var(--sundance__neutral4);
+    border-radius: 40px;
+    display: inline-block;
+    height: 40px;
+    margin-right: 8px;
+    position: relative;
+    width: 40px;
+}
+.amenities-view-details .icon::before {
+    border-left: solid 2px #000;
+    content: "";
+    display: block;
+    height: 16px;
+    left: 48%;
+    position: absolute;
+    top: 10px;
+    width: 0;
+}
+.amenities-view-details .icon::after {
+    border-top: solid 2px #000;
+    content: "";
+    display: block;
+    height: 0;
+    left: 12px;
+    position: absolute;
+    top: 43%;
+    width: 16px;
+}
 
 /* form fields */
 .form-label {

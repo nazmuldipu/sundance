@@ -20,9 +20,9 @@
                 {% for object in data.features %}
                     <li class="amenities__features--item">
                         {{object.icon | safe}}
-                        <a href="{{object.href}}" class="view-details font-calibre text-base pl-4">
+                        <span class="amenities-view-details font-calibre text-base pl-4">
                             {{object.copy}}
-                        </a>
+                        </span>
                     </li>
                 {% endfor %}
                 </ul>
