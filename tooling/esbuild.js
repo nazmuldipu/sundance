@@ -70,7 +70,8 @@ export const addGlobalBehavior = async (pagesDir, scriptsDir) => {
                         /* will only run if appendData is not added already */
                         if(!content.includes(appendData)){
                             const data = content + appendData;
-                            promises.push(writeFile(page, data));
+                            // needs improvement
+                            promises.then(promises => promises.push(writeFile(page, data)));
                         }            
                     }            
 
