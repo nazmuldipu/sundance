@@ -37,6 +37,12 @@
 .accordion{
     margin-bottom: .5rem;
 }
+.accordion--title{
+    padding-bottom: 0px;
+}
+.toggle-details figcaption {
+    padding-top: 15px;
+}
 .accordion__bottom-padding{
     padding-bottom: 48px;
 }
@@ -54,6 +60,12 @@
 
 
 @media screen and (min-width: 320px) and (max-width: 767px){
+    .toggle:checked ~ .toggle-details{
+        margin-left: 0px;
+        margin-top: 0px;
+        position: relative;
+        background: transparent;
+    }
     .group-venues__caption{
         padding-bottom: 40px;
     }
