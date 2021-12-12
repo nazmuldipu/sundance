@@ -3,13 +3,13 @@ import "components/MediaCarousel/index.js";
 
 const filter_container = document.querySelector('.filter__container');
 const cards = Array.from(document.querySelectorAll('.flex__single-card'));
-const cardsContainer = document.querySelector('.flex-card-container');
 
 const filters = []
 
 filter_container.addEventListener('click', (e) => {
     if(e.target.type === 'checkbox'){
-        const value = e.target.value ? e.target.value.split('-') : '';
+        const value = e.target.value & e.target.value.includes('_') ? e.target.value.split('-') : [e.target.value];
+        console.log({value});
         const type = e.target.name ? e.target.name.split('-') : '';
         const id = e.target.id;
         const checked = e.target.checked;
@@ -36,9 +36,10 @@ const getValue = object => object.value;
  * @param {array} filters 
  */
 function applyFilters(filters){
-    const appliedBedrooms = filters.filter(filter => filter.type === 'bedrooms').map(getValue);
-    const appliedSleeps = filters.filter(filter => filter.type === 'sleeps').map(getValue);
-    const appliedType = filters.filter(filter => filter.type === 'type').map(getValue); 
+    console.log({filters});
+    const appliedBedrooms = filters.filter(filter => filter.type === 'bedrooms').map(getValue).flat();
+    const appliedSleeps = filters.filter(filter => filter.type === 'sleeps').map(getValue).flat();
+    const appliedType = filters.filter(filter => filter.type === 'lodging').map(getValue).flat();
     cards.forEach(card => card.classList.remove('hidden'));
     const filteredCards = cards.filter( card => {
         const cardObject = card.dataset.card ? JSON.parse(card.dataset.card) : {};
