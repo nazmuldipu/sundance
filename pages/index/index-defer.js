@@ -1,36 +1,12 @@
 // hero-carousel
-const hero_image_frames = document.querySelectorAll(".hero-carousel__frame .image_frame");
-const hero_carousel__title = document.querySelectorAll(".hero-carousel__title");
-const hero_carousel__texts = document.querySelectorAll(".hero-carousel__texts");
-
-const update_active_element = (element) => {
-    if(!element.classList.contains("active")){
-        const active_elements = element.parentElement.querySelectorAll(".active");
-        active_elements.forEach(function (active_element) {
-            active_element.classList.remove("active");
-            element.classList.add("active");
+const items = document.querySelectorAll('.hero-flip__item');
+items.forEach(item => {
+    item.addEventListener('click', () => {
+        console.log(item);
+        items.forEach(el => {
+            el.classList.remove('collapse');
         });
-    }
-}
-
-hero_image_frames.forEach(function (slide_frame) {
-    slide_frame.addEventListener("click", function (frame) {
-        const parent_ele = frame.target.parentElement.parentElement;
-        update_active_element(parent_ele);
-    });
-});
-
-hero_carousel__texts.forEach(function (text) {
-    text.addEventListener("click", function (text) {
-        const parent_ele = text.target.parentElement;
-        update_active_element(parent_ele);
-    });
-});
-
-hero_carousel__title.forEach(function (title) {
-    title.addEventListener("click", function () {
-        const parent_ele = title.parentElement.parentElement;
-        update_active_element(parent_ele);
+        item.classList.add('collapse');
     });
 });
 

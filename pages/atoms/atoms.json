@@ -1,1 +1,1 @@
-{"sync_css":"./atoms-sync.css","defer_js":"./atoms-defer.js","module_js":"./atoms-module.js"}
+{"defer_js":"./atoms-defer.js","module_js":"./atoms-module.js","sync_css":"./atoms-sync.css"}
