@@ -960,36 +960,6 @@
     "lodgingForm": {
         "heading": "Lodging at Sundance",
         "subheading": "Face Coverings are required when checking in at the front desk.",
-        "formInputs": [
-            {
-                "label": "Check IN",
-                "type": "datetime",
-                "placeholder": "mm/dd/yyyy",
-                "classes": ["form-input", "lodging-form__input"]
-            },
-            {
-                "label": "Check IN",
-                "type": "datetime",
-                "placeholder": "mm/dd/yyyy",
-                "classes": ["form-input", "lodging-form__input"]
-            },
-            {
-                "label": "ROOMS",
-                "type": "text",
-                "placeholder": "1",
-                "classes": [
-                    "form-input",
-                    "lodging-form__input",
-                    "lodging-form__input--rooms"
-                ]
-            },
-            {
-                "label": "Promo CODE",
-                "type": "text",
-                "placeholder": "",
-                "classes": ["form-input", "lodging-form__input"]
-            }
-        ],
         "cta": {
             "copy": "Book Now",
             "id": "lodging-form-cta",
