@@ -10,9 +10,12 @@ nickname: dining/meet-our-chefs
 {% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'atoms/headings.njk' import h2 %}
 {% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/card.njk' import chefsCard %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'macros.njk' import top_banner_group_venues %}
+
+{% set horizontal_card_list = pageCMS['chefs-card'].horizontal_card_list %}
 
 <section class="group-section">
     <section class="segment-outer relative -z-1">
@@ -30,7 +33,10 @@ nickname: dining/meet-our-chefs
             </section>
         {% endfor %}
     {% endif %}
-</section>        
+</section>
+<section class="group-section">
+    {{ chefsCard(items = horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
+</section>
 
 
 {{newsletter()}}

@@ -1,3 +1,8 @@
 /****  start imports  ********************************/
 @import "../../../styles/global.css";
 /****  end imports  ********************************/
+
+.horizontal__card-container{
+    background: transparent;
+    box-shadow: none;
+}
