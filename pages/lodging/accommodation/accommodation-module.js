@@ -10,7 +10,26 @@ const cardData = cards.map(card => {
     const cardObject = card.dataset.card ? JSON.parse(card.dataset.card) : {};
     return cardObject;
 });
-let filtersObject = generateFilters(cardData);
+const filtersObject = generateFilters(cardData);
+const filterMap = {
+    'bedrooms': 'bedrooms-filter',
+    'sleeps': 'sleeps-filter',
+    'types': 'lodging-filter'
+}
+const formattedFilter = Object.keys(filtersObject).map(key => {
+    const value = filtersObject[key];
+    return {
+      title: key,
+      items: Object.keys(value).map( itemKey => {
+              return {
+                  "copy": key,
+                  "id": `bedrooms-filter-${itemKey}`,
+                  "name": filterMap[key],
+                  "quantity": value[itemKey],
+              }
+          })
+    }
+  });
 filter_container.addEventListener('click', (e) => {
     if(e.target.type === 'checkbox'){
         const value = [e.target.value];
@@ -72,5 +91,5 @@ function duplicates(array){
 }
 
 function updateFilters(){
-    
+
 }
