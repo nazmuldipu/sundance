@@ -3,13 +3,17 @@ import "components/MediaCarousel/index.js";
 
 const filter_container = document.querySelector('.filter__container');
 const cards = Array.from(document.querySelectorAll('.flex__single-card'));
-
 const filters = []
 
+const getValue = object => object.value;
+const cardData = cards.map(card => {
+    const cardObject = card.dataset.card ? JSON.parse(card.dataset.card) : {};
+    return cardObject;
+});
+let filtersObject = generateFilters(cardData);
 filter_container.addEventListener('click', (e) => {
     if(e.target.type === 'checkbox'){
-        const value = e.target.value & e.target.value.includes('_') ? e.target.value.split('-') : [e.target.value];
-        console.log({value});
+        const value = [e.target.value];
         const type = e.target.name ? e.target.name.split('-') : '';
         const id = e.target.id;
         const checked = e.target.checked;
@@ -29,14 +33,11 @@ filter_container.addEventListener('click', (e) => {
     }
 })
 
-const getValue = object => object.value;
-
 /**
  * 
  * @param {array} filters 
  */
 function applyFilters(filters){
-    console.log({filters});
     const appliedBedrooms = filters.filter(filter => filter.type === 'bedrooms').map(getValue).flat();
     const appliedSleeps = filters.filter(filter => filter.type === 'sleeps').map(getValue).flat();
     const appliedType = filters.filter(filter => filter.type === 'lodging').map(getValue).flat();
@@ -52,3 +53,24 @@ function applyFilters(filters){
     filteredCards.forEach(card => card.classList.add('hidden'));
 }
 
+function generateFilters(cardData){
+    const types = duplicates(cardData.map(card => card.Type).flat());
+    const bedrooms = duplicates(cardData.map(card => card.Bedrooms).flat());
+    const sleeps = duplicates(cardData.map(card => card.Sleeps).flat());
+    return {
+        types,
+        bedrooms,
+        sleeps
+    }
+}
+
+function duplicates(array){
+    return array.reduce(function(prev, cur) {
+        prev[cur] = (prev[cur] || 0) + 1;
+        return prev;
+      }, {});
+}
+
+function updateFilters(){
+    
+}
