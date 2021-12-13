@@ -1,14 +1,38 @@
 'use strict';
 
 const htmlmin = require('html-minifier');
-const { basename, join, parse } = require('path');
+const { basename, join, parse, relative } = require('path');
 const { copyFileSync,  readdirSync, renameSync, openSync } = require('fs');
-const { getImgSizes, getSrcSet, buildOutputDir, get_resized_image_url, getImageUrl } = require('./tooling/eleventy.cjs');
+const { getImgSizes,
+        getSrcSet,
+        buildOutputDir,
+        get_resized_image_url,
+        getImageUrl,
+        webComponent
+     } = require('./tooling/eleventy.cjs');
 const util = require('util');
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addNunjucksShortcode('access', function(array, index) {
         return array[index];
+    });
+
+    eleventyConfig.addNunjucksShortcode('webComponent', function(componentName, customElementName, pageUrl) {
+        // next will need to affix dots based on relative path from 'page'
+        console.log('PAGE AFFIX', pageUrl);
+        const relativePath = relative(pageUrl, "/build")
+        // next we affix to ComponentPath
+
+
+
+
+
+
+
+
+
+        let componentPath = `${process.env.CUSTOM_EL_PATH || ''}${customElementName}` ;
+        return webComponent(componentName, componentPath, customElementName, pageUrl, relativePath);
     });
 
     eleventyConfig.addNunjucksFilter('slideImgSrcSet', function(slide, imgext="jpg") {

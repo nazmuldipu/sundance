@@ -1,7 +1,7 @@
 "use strict";
 
 const { readdirSync } = require("fs");
-const { join } = require("path");
+const { join, relative } = require("path");
 
 const DIMENSION_SEP = "_";
 
@@ -11,6 +11,27 @@ const buildOutputDir = join(__dirname, "..", "build");
 const mediaBaseUri = () => {
   return process.env.CLOUDFRONT_URL ?? ''
 }
+/**
+ * a method for creating a Web Component string representation
+ * useful in a templating context. Assumes the 
+ * @param componentPath 
+ * @returns String
+ */
+const webComponent = (componentName, componentPath, customElementName = '', pageUrl = '', relativePath = '') => {
+  let customElement = '';
+  if(customElementName) {
+    customElement = `customElements.define("${customElementName}", ${componentName})`
+  }
+  // JSON.stringify used to wrap in quotes; strip invalid characters
+  return /*html*/`
+    <script type="module">
+      console.log("for ${componentName} on ${pageUrl} path is: ${componentPath} with rp ${relativePath}")
+      //import ${componentName} from ${JSON.stringify(componentPath)};
+      //${customElement}    
+    </script>
+  `;
+};
+
 /**
  *
  * @param imgName
@@ -71,5 +92,6 @@ module.exports = {
   getSrcSet,
   buildOutputDir,
   get_resized_image_url,
-  getImageUrl
+  getImageUrl,
+  webComponent
 };
