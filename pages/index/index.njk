@@ -16,6 +16,14 @@ Link %}
 {% from 'macros.njk' import events %}
 {% from 'organisms/thumbnail_slider.njk' import thumbnail_slider, thumbnail_slider_circle %}
 
+{% if pageCMS['image-actions'] %}
+    <section class="page-top-adjust"></section>
+    <section class="segment-outer">
+        <section class="segment-inner hidden sm:grid">
+            {{ thumbnail_slider_circle( pageCMS['image-actions'].image_action_list) }}        
+        </section>
+    </section>
+{% endif %}
 
 <section class="home-style-bg" style="--background-url: url({{pageCMS['home-sliders'].home_sliders.background | theImgSrc}}); --top-position: 200px;">
     {{heroCarousel(pageCMS['banner-carousel'].banner_carousel)}}
