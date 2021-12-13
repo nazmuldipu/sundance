@@ -538,12 +538,6 @@ strong {
 .text-white {
     color: white;
 }
-.underline {
-    text-decoration: underline;
-}
-.no-underline {
-    text-decoration: none;
-}
 /* padding class */
 .p-4 {
     padding: 1rem;
