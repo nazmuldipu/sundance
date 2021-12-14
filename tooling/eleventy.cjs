@@ -18,16 +18,16 @@ const mediaBaseUri = () => {
  * @returns String
  */
 const webComponent = (componentName, componentPath, customElementName = '', pageUrl = '', relativePath = '') => {
-  let customElement = '';
+  let customElementDefinition = '';
   if(customElementName) {
-    customElement = `customElements.define("${customElementName}", ${componentName})`
+    customElementDefinition = `customElements.define("${customElementName}", ${componentName})`
   }
   // JSON.stringify used to wrap in quotes; strip invalid characters
   return /*html*/`
     <script type="module">
       console.log("for ${componentName} on ${pageUrl} path is: ${componentPath} with rp ${relativePath}")
-      //import ${componentName} from ${JSON.stringify(componentPath)};
-      //${customElement}    
+      import ${componentName} from ${JSON.stringify(componentPath)};
+      ${customElementDefinition}    
     </script>
   `;
 };
