@@ -1,7 +1,7 @@
 'use strict';
 
 const htmlmin = require('html-minifier');
-const { basename, join, parse, relative } = require('path');
+const { basename, parse, relative, posix } = require('path');
 const { copyFileSync,  readdirSync, renameSync, openSync } = require('fs');
 const { getImgSizes,
         getSrcSet,
@@ -18,20 +18,12 @@ module.exports = function(eleventyConfig) {
     });
 
     eleventyConfig.addNunjucksShortcode('webComponent', function(componentName, customElementName, pageUrl) {
-        // next will need to affix dots based on relative path from 'page'
-        console.log('PAGE AFFIX', pageUrl);
-        const relativePath = relative(pageUrl, "/build")
-        // next we affix to ComponentPath
-
-
-
-
-
-
-
-
-
-        let componentPath = `${process.env.CUSTOM_EL_PATH || ''}${customElementName}` ;
+        // since `relative` returns a zero-length string in the case that both arguments resolve
+        // identically, we have a fallback
+        const relativePath = relative(pageUrl, "/build") || './';
+        // we assume that the custom element path descends from the root "/build" path
+        // we use posix in all cases since the path will be used within a <script> tag
+        const componentPath = posix.join(relativePath, `${process.env.CUSTOM_EL_PATH || ''}`, `${customElementName}.js`);
         return webComponent(componentName, componentPath, customElementName, pageUrl, relativePath);
     });
 
