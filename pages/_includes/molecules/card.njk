@@ -236,7 +236,7 @@
     #   @param  items           json data file
     #   @author Ashfaq
 #}
-{% macro chefsCard(id = '', items, horizontal_card_container = ['horizontal__card-container'], figureClass = '', figcaptionClass = '', imageClasses = 'image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') %}
+{% macro chefsCard(id = '', items, horizontal_card_container = ['horizontal__card-container'], figureClass = '', figcaptionClass = '', imageClasses = 'image_frame xs:2:3 sm:5:6') %}
     {% for item in items %}
         <section class="{% for class in horizontal_card_container %} {{ class }} {% endfor %}">        
             <figure class="horizontal__card-image {{ figureClass }}

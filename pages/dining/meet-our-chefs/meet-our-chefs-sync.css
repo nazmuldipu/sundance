@@ -5,4 +5,8 @@
 .horizontal__card-container{
     background: transparent;
     box-shadow: none;
+    grid-gap: 64px;
+}
+.horizontal__card-text{
+    padding: 0px;
 }
