@@ -220,7 +220,7 @@
                 </div>
                 {% for cta in item.actions %}
                     <div>
-                        {{ button_primary(classes = ['button', 'button--primary', 'font-calibre', 'font-medium', 'text-base'], href = cta.url, copy = cta.copy, target = cta.target ) }}
+                        {{ button_primary(classes = ['button', 'button--primary', 'font-calibre', 'font-medium', 'text-base'], href = cta.href, copy = cta.copy, target = cta.target ) }}
                     </div>
                 {% endfor %}
             </figcaption>
