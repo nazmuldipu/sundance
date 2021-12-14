@@ -14,9 +14,10 @@ nickname: "Art Studio"
 {% from 'macros.njk' import top_banner %}
 
 {# Hero Section #}
-{% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
+{% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image and pageCMS['hero-corner-block'].hero_corner_block %}
+   {% set hero_corner_block = pageCMS['hero-corner-block'].hero_corner_block %}
    <section class="segment-outer art-studio__hero-pb">
-        {{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
+        {{ top_banner(pageCMS['top-banner'].global_image, hero_corner_block) }}
     </section> 
 {% endif %}
 

@@ -14,10 +14,11 @@ permalinkBypassOutputDir: true
 
 
 {# Hero Image Section #}
-{% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
+{% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image and pageCMS['hero-corner-block'].hero_corner_block %}
+   {% set hero_corner_block = pageCMS['hero-corner-block'].hero_corner_block %}
    <section class="segment-outer">
         <section class="banner__segment-inner">
-            {{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
+            {{ top_banner(pageCMS['top-banner'].global_image, hero_corner_block) }}
         </section>
    </section> 
 {% endif %}

@@ -19,11 +19,15 @@ nickname: "dining/fast-casuals"
 {% set horizontal_card_list = pageCMS['horizontal-card-list'].horizontal_card_list %}
 {% set chefs_card_horizontal_card_list = pageCMS['chefs-card'].horizontal_card_list %}
 {% set horizontal_card_title = pageCMS['horizontal-card-title'].simple_article.title %}
+
+{% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image and pageCMS['hero-corner-block'].hero_corner_block %}
+{% set hero_corner_block = pageCMS['hero-corner-block'].hero_corner_block %}
 <section class="segment-outer">
     <section class="banner__segment-inner text-left">
-        {{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
+        {{ top_banner(pageCMS['top-banner'].global_image, hero_corner_block) }}
     </section>
 </section>
+{% endif %}
 <section class="segment-outer bg-sn-4 px-4 dining-fast-casuals__horizontal-cards">
     <section class="segment-inner sm:px-6 md:px-6 lg:px-6 pb-8">
         {{ h2(classes=['heading', 'text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center'], copy = horizontal_card_title) }}
