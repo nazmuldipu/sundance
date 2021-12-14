@@ -1,0 +1,12 @@
+/****  start imports  ********************************/
+@import "../../../styles/global.css";
+/****  end imports  ********************************/
+
+.horizontal__card-container{
+    background: transparent;
+    box-shadow: none;
+    grid-gap: 64px;
+}
+.horizontal__card-text{
+    padding: 0px;
+}
