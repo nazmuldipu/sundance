@@ -9,7 +9,7 @@
     #   @author Sarjis
  #}
 {% macro lodging_form(item = {}, page = {}) %}
-<synxis-lodging-form data-chain="{{ item.chainId }}" data-hotel="{{ item.hotelId }}">
+<synxis-lodging-form data-Chain="{{ item.chainId }}" data-Hotel="{{ item.hotelId }}">
     <article class="lodging-forms">
         <header>
             {{ h2(copy = item.heading, classes = ['lodging-forms--heading', 'font-ivar']) }}
@@ -80,5 +80,3 @@
 </synxis-lodging-form>
 {% webComponent "SynxisLodgingForm", "synxis-lodging-form", page.url %}
 {% endmacro %}
-
-// have Sarjis PR review this to exemplify to him over abstraction idea

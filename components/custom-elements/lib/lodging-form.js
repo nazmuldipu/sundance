@@ -1,9 +1,9 @@
 'use strict';
+// this.constructor[staticField] to get access to subclass static props
 class LodgingForm extends HTMLElement {
     constructor() {
         super();
-        console.log('LODGINGFORM CONSTRUCTOR', this.constructor)
-        // setup base booking engine url
+        // setup base booking engine url with input property and brand identifiers
         this.url = new URL(this.constructor.urlBase);
         if(this.dataset[this.constructor.identifierNames.property]) {
             this.url.searchParams.append(
@@ -24,15 +24,12 @@ class LodgingForm extends HTMLElement {
             this.ctaElem.href = this.url.href;
         }
         
-        // attach input listeners
-        // this.constructor[staticField] to get access to subclass static props
+        // attach input listeners for each inputField
         for(const prop in this.constructor.inputFields) {
-            //find el
             const fieldObject = this.constructor.inputFields[prop];
             const inputEl = this.getElementsByClassName(fieldObject.classIdentifier)?.[0];
             if(inputEl) {
                 inputEl.addEventListener('change', (e) => {
-                    console.log('LODGING FORM CHANGE EVENT', e)
                     if(e.target.value) {
                         this.url.searchParams.set(fieldObject.queryParam, e.target.value);
                     } else {
@@ -69,11 +66,5 @@ class LodgingForm extends HTMLElement {
             classIdentifier: 'lodging-form__input--checkout'
         }
     };
-    connectedCallback() {
-        console.log('LODGINGFORM CONNECTED CALLBACK')
-    }
-
-    //basic listening methods: if (value) => change according query param; else, remove
-
 };
 export default LodgingForm;

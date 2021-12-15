@@ -25,7 +25,6 @@ const webComponent = (componentName, componentPath, customElementName = '', page
   // JSON.stringify used to wrap in quotes; strip invalid characters
   return /*html*/`
     <script type="module">
-      console.log("for ${componentName} on ${pageUrl} path is: ${componentPath} with rp ${relativePath}")
       import ${componentName} from ${JSON.stringify(componentPath)};
       ${customElementDefinition}    
     </script>
