@@ -29,7 +29,7 @@ const formattedFilter = Object.keys(filtersObject).map(key => {
               }
           })
     }
-  });
+});
 filter_container.addEventListener('click', (e) => {
     if(e.target.type === 'checkbox'){
         const value = [e.target.value];
