@@ -1,1 +1,1 @@
-{"module_js":"./wasatch-module.js", "defer_js":"./wasatch-defer.js", "sync_css":"./wasatch-sync.css"}
+{"defer_js":"./wasatch-defer.js","module_js":"./wasatch-module.js","sync_css":"./wasatch-sync.css"}
