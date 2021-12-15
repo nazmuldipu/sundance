@@ -5,22 +5,13 @@ import LodgingForm from "./lib/lodging-form.js";
 class SynxisLodgingForm extends LodgingForm {
     constructor() {
         super();
-        console.log('SYNXIS LODGING FORM CONSTRUCTOR')
     }
 
     static urlBase = 'https://be.synxis.com';
-    static queryParamNames = {
-        rooms: 'Rooms',
-        promoCode: 'Promo',
-        checkIn: 'Arrive',
-        checkOut: 'Depart',
-        property: 'Hotel',
-        brand: 'Chain'
-    }
     static identifierNames = {   
         ...LodgingForm.identifierNames,    
-        property: 'Hotel',
-        brand: 'Chain'
+        property: 'hotel',
+        brand: 'chain'
     };
     static inputFields = {
         rooms: {
