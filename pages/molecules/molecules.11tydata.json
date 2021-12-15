@@ -961,10 +961,7 @@
         "heading": "Lodging at Sundance",
         "subheading": "Face Coverings are required when checking in at the front desk.",
         "cta": {
-            "copy": "Book Now",
-            "id": "lodging-form-cta",
-            "href": "http://example.com/",
-            "target": "_blank"
+            "copy": "Book Now"
         }
     },
     "amenitiesData": {
