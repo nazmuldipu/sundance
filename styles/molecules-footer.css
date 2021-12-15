@@ -95,7 +95,7 @@ footer {
 /* Tab (Screen size : 1200 pts) */
 @media screen and (min-width: 768px) and (max-width: 1365px) {
   footer {
-    padding: 90px 38px 100px 38px;
+    padding: 152px 38px 100px 38px;
   }
   .footer__col {
     margin-bottom: 4rem;
@@ -110,7 +110,7 @@ footer {
 /* Desktop (Screen size : 1440 pts) */
 @media screen and (min-width: 1366px) and (max-width: 1919px) {
   footer {
-    padding: 32px 172px 20px 172px;
+    padding: 152px 172px 20px 172px;
   }
   .footer__s_dot {
     margin-top: -263px;
