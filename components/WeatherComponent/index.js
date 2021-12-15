@@ -160,7 +160,7 @@ class WeatherComponent extends HTMLElement{
             </details>
             <details>
                 <summary class="card-widget__weather-summary font-calibre">Detailed Snow Report</summary>
-                <div class="toggle__content grid grid-cols-5 gap-x-4">
+                <div class="toggle__content grid grid-cols-5 gap-x-3">
                     ${detailSnowReport}
                 </div>
                 <div class="font-calibre text-lg text--color__sp-1 grid grid-flow-col">
