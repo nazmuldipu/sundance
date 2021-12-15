@@ -2,7 +2,6 @@
 const items = document.querySelectorAll('.hero-flip__item');
 items.forEach(item => {
     item.addEventListener('click', () => {
-        console.log(item);
         items.forEach(el => {
             el.classList.remove('collapse');
         });
