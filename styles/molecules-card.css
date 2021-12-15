@@ -23,6 +23,7 @@
 }
 .card-container{
     text-align: center;
+    cursor: pointer;
     background-color: var(--sundance__neutral5);
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.06), 0px 4px 24px rgba(0, 0, 0, 0.06);
     transition: transform 200ms ease-out, box-shadow 200ms ease-out;
@@ -30,6 +31,12 @@
 .card-container:hover {
     transform: translateY(-1rem) scale(1.03);
     box-shadow: 5px 16px 34px 0 rgb(0 0 0 / 5%), 2px 5px 6px 0 rgb(0 0 0 / 3%);
+}
+.card__sub_title{
+    transition: background-color 0.5s ease;
+}
+.card__sub_title:hover{
+    color: var(--sundance__neutral1) !important;
 }
 .card-image{
     overflow: hidden;
