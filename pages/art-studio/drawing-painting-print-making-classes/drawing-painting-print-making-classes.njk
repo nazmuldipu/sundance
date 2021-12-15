@@ -1,9 +1,9 @@
 ---
 layout: base.njk
-pagename: silversmithing-class
-permalink: "build/art-studio/silversmithing-class/index.html"
+pagename: drawing-painting-print-making-classes
+permalink: "build/art-studio/drawing-painting-print-making-classes/index.html"
 permalinkBypassOutputDir: true
-nickname: silversmithing-class
+nickname: drawing-painting-print-making-classes
 ---
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from 'molecules/card.njk' import verticalCard %}
@@ -11,7 +11,7 @@ nickname: silversmithing-class
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'macros.njk' import top_banner_group_venues %}
-{% from 'atoms/tables.njk' import tables %}
+{% from 'molecules/art-studio.njk' import artStudio2 %}
 
 {# Hero Image Section #}
 {% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
@@ -25,44 +25,25 @@ nickname: silversmithing-class
     {{ bridge(bridge_slider) }}        
 {% endif %}
 
-{# Middle Top Article #}
-{% if pageCMS['middle-top-article'] %}
-    {% set middle_top_article = pageCMS['middle-top-article'].simple_article  %}
-    <article class="middle-top__article-container font-ivar global-px">
-        {% if middle_top_article.title %}
-             <header>
-                {{ h1(copy = middle_top_article.title, classes = ['middle-top__article-header']) }}
-            </header>
-        {% endif %}
-
-        {% if middle_top_article.description %}
-            <div class = "middle-top__article-copy">{{ middle_top_article.description | safe }}</div>
-        {% endif %}        
+{# Simple Article #}
+{% if pageCMS['simple-article'] %}
+    {% set simple_article = pageCMS['simple-article'].simple_article  %}
+    <article class="art-studio__article__container font-ivar global-px">
+        <header>
+            {{ h1(copy = simple_article.title, classes = ['art-studio__article__header']) }}
+        </header>
+        <div class = "art-studio__article__copy">{{ simple_article.description | safe }}</div>
     </article>
 {% endif %}
 
-{# Middle table List #}
-{% if pageCMS['table'] and pageCMS['table'].table_list %}
-    {% set table_list = pageCMS['table'].table_list %}
-    <section class="group-section">
-        <section class="segment-outer global-contents">
-        {% for item in table_list %}
-            <div class="global-pb global-px">
-                {{ tables(tableData = item.table) }}
-            </div>
+{# Art Instructor #}
+{% if pageCMS['art-instructor'] %}
+    {% set art_instructor = pageCMS['art-instructor'].art_instructor %}
+    <section class="art-studio__instructor global-px">
+        {% for item in art_instructor %}
+            {{ artStudio2(item) }}
         {% endfor %}
-        </section>
     </section>
-{% endif %}
-
-{# Middle Bottom Article #}
-{% if pageCMS['middle-bottom-article'] %}
-    {% set middle_bottom_article = pageCMS['middle-bottom-article'].simple_article  %}
-    <article class="middle-bottom__article-container font-ivar global-px">
-        {% if middle_bottom_article.description %}
-            <div class = "middle-bottom__article-copy cms-description">{{ middle_bottom_article.description | safe }}</div>
-        {% endif %}        
-    </article>
 {% endif %}
 
 {# Card Title #}
