@@ -54,7 +54,7 @@
         {{verticalCard(item, figureClass = [], figcaptionClass = [])}}
     {% endfor %}
 {% endmacro %}
-{% macro verticalCard(item, card_container = ['card-container'], figureClass = [], figcaptionClass = []) %}
+{% macro verticalCard(item, card_container = ['card-container', 'cursor-pointer'], figureClass = [], figcaptionClass = []) %}
     <section class=" {% for class in card_container %} {{ class }} {% endfor %}">        
         <figure class="card-image {% for class in figureClass %} {{ class }} {% endfor %}" 
             {% if id %} id="{{ id }}" {% endif %} 
@@ -70,7 +70,7 @@
                 {{ h5(copy = item.title, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
             {% endif %}
             {% if item.sub_title %}
-                {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
+                {{ h3(copy = '<span class="card__sub_title" >' + item.sub_title + '</span>', classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1', '']) }}
             {% endif %}
             {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'min-h-120', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
             {% if item.criterias %}
