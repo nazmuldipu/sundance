@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return {
               title: key,
               items: Object.keys(value).map( itemKey => {
-                      const parsedItemKey = itemKey.replace(/\s/g, '-').toLowerCase().replace('&', '');
+                      const parsedItemKey = itemKey.replace(' & ', ' ').replace(/\s/g, '-').toLowerCase();
                       return {
                           "copy": itemKey,
                           "id": `${key}-filter-${parsedItemKey}`,
