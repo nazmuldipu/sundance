@@ -6,23 +6,165 @@
             "type": "font/ttf"
         }
     ],
-    "aaa" :{
-        "action_card": {
-            "title":"Title",
-            "action": {}
-        },
-        "intro": {
-            "title" : "Title",
-            "description" : "$399 Adult / $299 Child *",
-            "caption" : "Caption"
-        },
-        "list": [
+    "action_cards": ["", "", ""],
+    "tableData": {
+        "headers": [
             {
-                "title": "Best value for 5+ visits",
-                "sub_title": "Sub title best value for 5+ visits"
+                "title": "Title",
+                "des": "Title",
+                "cap": "Title"
+            },
+            {
+                "title": "Title",
+                "des": "Title",
+                "cap": "Title"
+            },
+            {
+                "title": "Title",
+                "des": "Title",
+                "cap": "Title"
+            }
+        ],
+        "bodies": [
+            {
+                "datas": [
+                    {
+                        "title":"Title",
+                        "sun_title":"Title"
+                    }
+                ]
+            },
+            {
+                "datas": [
+                    {
+                        "title":"Title",
+                        "sun_title":"Title"
+                    }
+                ]
+            }
+        ],
+        "actionCols": [
+            {
+                "actions": [
+                    {
+                        "type":"secondary",
+                        "copy":"Title",
+                        "url":"#"
+                    },
+                    {
+                        "type":"link",
+                        "copy":"Title",
+                        "url":"#"
+                    }
+                ]
+            },
+            {
+                "actions": [
+                    {
+                        "type":"secondary",
+                        "copy":"Title",
+                        "url":"#"
+                    },
+                    {
+                        "type":"link",
+                        "copy":"Title",
+                        "url":"#"
+                    }
+                ]
+            },
+            {
+                "actions": [
+                    {
+                        "type":"secondary",
+                        "copy":"Title",
+                        "url":"#"
+                    },
+                    {
+                        "type":"link",
+                        "copy":"Title",
+                        "url":"#"
+                    }
+                ]
             }
         ]
     },
+    "aaa" :[
+        {
+            "color": "#458691",
+            "action_card": {
+                "title":"Title",
+                "action": {}
+            },
+            "intro": {
+                "title" : "Title",
+                "description" : "$399 Adult / $299 Child *",
+                "caption" : "Caption"
+            },
+            "list": [
+                {
+                    "title": "Best value for 5+ visits",
+                    "sub_title": "Sub title best value for 5+ visits"
+                },
+                {
+                    "title": "Best value for 5+ visits",
+                    "sub_title": "Sub title best value for 5+ visits"
+                },
+                {
+                    "title": "Best value for 5+ visits",
+                    "sub_title": "Sub title best value for 5+ visits"
+                }
+            ]
+        },
+        {
+            "color": "red",
+            
+            "intro": {
+                "title" : "Title",
+                "description" : "$399 Adult / $299 Child *",
+                "caption" : "Caption"
+            },
+            "list": [
+                {
+                    "title": "Best value for 5+ visits",
+                    "sub_title": "Sub title best value for 5+ visits"
+                },
+                {
+                    "title": "Best value for 5+ visits",
+                    "sub_title": "Sub title best value for 5+ visits"
+                },
+                {
+                    "title": "Best value for 5+ visits",
+                    "sub_title": "Sub title best value for 5+ visits"
+                }
+            ]
+        },
+        {
+            "color": "#458691",
+            "action_card": {
+                "title":"Title",
+                "action": {}
+            },
+            "intro": {
+                "title" : "Title",
+                "description" : "$399 Adult / $299 Child *",
+                "caption" : "Caption"
+            },
+            "list": [
+                {
+                    "title": "Best value for 5+ visits",
+                    "sub_title": "Sub title best value for 5+ visits"
+                },
+                {
+                    "title": "Best value for 5+ visits",
+                    "sub_title": "Sub title best value for 5+ visits"
+                },
+                {
+                    "title": "Best value for 5+ visits",
+                    "sub_title": "Sub title best value for 5+ visits"
+                }
+            ]
+        }
+    ],
     "weatherInfo": {
         "title": "Weather",
         "weather": [
