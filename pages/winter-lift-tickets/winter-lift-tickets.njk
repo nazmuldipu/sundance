@@ -23,22 +23,12 @@ h6 %}
     {% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
     {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues) }}
 {% endif %}
-{% macro price_card() %}
+{% macro price_card(item) %}
     <article class="pricing-card card-primary">
-        {% set color = '#458691'%}
         <div class="pricing-card__body font-black font-calibre">
-            <article class="action-card" style="background-color: {{color}}">
-                <header>
-                    <h3 class="second-bridge__header font-calibre font-medium text-white">
-                        Give the perfect gift
-                    </h3>
-                </header>
-                <a href="https://store.sundanceresort.com/products/gift-cards?_ga=2.108585994.904230891.1638768790-878953537.1635851462" class="button button--primary second-bridge__button--size font-calibre font-medium text-base" target="_blank">
-                    Shop gift cards
-                </a>
-            </article>
+
             <div class="pricing-card__body--intro font-calibre">
-                <small class="block pricing-card__intro-title" style="color: {{color}}">{{item.intro.title}}</small>
+                <small class="block pricing-card__intro-title" style="color: {{item.color}}">{{item.intro.title}}</small>
                 <h5 class="pricing-card__intro-description">{{item.intro.description}}</h5>
                 <small class="block pricing-card__intro-caption">{{item.intro.caption}}</small>
             </div>
@@ -51,18 +41,92 @@ h6 %}
                 {% endfor %}
             </ul>
             <div class="pricing-card__body--footer">
-                <a class="button card--button button--primary font-calibre" style="background-color: {{color}};" href="#">Buy Now</a>
+                <a class="button card--button button--primary font-calibre" style="background-color: {{item.color}};" href="#">Buy Now</a>
             </div>
-            <a class="block pricing-card__body--link" style="color: {{color}}">Learn More</a>
+            <a class="block pricing-card__body--link" style="color: {{item.color}}">Learn More</a>
         </div>
     </article>
 {% endmacro %}
 <section class="segment-outer pricing">
-    <section class="segment-inner pricing-card__container text-center global-px">
-        {% set item = data.aaa%}
-        {{price_card()}}
-        {{price_card()}}
-        {{price_card()}}
+    <section class="segment-inner text-center global-px">
+        {% if pageCMS['colored-action-card'] and pageCMS['colored-action-card'].action_card %}
+            <div class="action-card__container">
+                {% for item in pageCMS['colored-action-card'].action_card %}
+                    <article class="action-card" style="background-color: {{item.color}}">
+                        {% if item.is_new == true %}
+                            <div class="chip font-calibre">
+                                New
+                            </div>
+                        {% endif %}
+                        <header>
+                            <h3 class="second-bridge__header font-calibre font-medium text-white">
+                                {{item.title}}
+                            </h3>
+                        </header>
+                        <a href="{{item.actions.href}}" target="{{item.actions.target}}" class="button button--primary second-bridge__button--size font-calibre font-medium text-base">
+                            {{item.actions.copy}}
+                        </a>
+                    </article>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% if pageCMS['price-card'] and pageCMS['price-card'].price_card %}
+            {% set tableData = pageCMS['price-card'].price_card %}
+            <table class="table w-full font-ivar">
+                <thead class="table--body">
+                    <tr class="table--row">
+                        {% for item in tableData.headers %}
+                            <td class="table--row__data">
+                                <div class="pricing-card__body--intro font-calibre">
+                                    <small class="block pricing-card__intro-title" style="color: {{item.color}}">
+                                        {{item.title}}
+                                    </small>
+                                    <h5 class="pricing-card__intro-description">
+                                        {{item.description}}
+                                    </h5>
+                                    <small class="block pricing-card__intro-caption">
+                                        {{item.caption}}
+                                    </small>
+                                </div>
+                            </td>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody class="table--body">
+                    {% for body in tableData.bodies %}
+                        <tr class="table--row">
+                            {% for data in body.datas %}
+                                <td class="table--row__data">
+                                    <div class="pricing-card__list-item">
+                                        {{data.title}}
+                                        <small class="block pricing-card__caption">
+                                            {{data.sub_title}}
+                                        </small>
+                                    </div>
+                                </td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+
+                    <tr class="table--row border-0">
+                        {% for col in tableData.action_cols %}
+                            <td class="table--row__data flex flex-col">
+                                {% for action in col.actions %}
+                                    {% if action.type == 'secondary' %}
+                                        <div class="pricing-card__body--footer">
+                                            <a class="button card--button button--primary font-calibre" style="background-color: {{action.color}};" href="{{action.url}}">{{action.copy}}</a>
+                                        </div>
+                                    {% endif %}
+                                    {% if action.type == 'link' %}
+                                        <a class="block pricing-card__body--link" style="color: {{action.color}}">{{action.copy}}</a>
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        {% endif %}
     </section>
 </section>
 {# Bridge carousal #}
