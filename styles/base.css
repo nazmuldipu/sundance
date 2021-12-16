@@ -1014,12 +1014,24 @@ strong {
     max-width: 792px;
     margin: 0 auto;
 }
+.global__max-width {
+    max-width: 608px;
+    margin: 0 auto;
+}
 .global-pb {
     padding-bottom: 40px;
 }
 @media screen and (min-width: 1024px) {
     .global-pb {
         padding-bottom: 48px;
+    }
+}
+.global-pt {
+    padding-top: 40px;
+}
+@media screen and (min-width: 1024px) {
+    .global-pt {
+        padding-top: 48px;
     }
 }
 
@@ -1042,13 +1054,13 @@ strong {
     }
 }
 .global-mx {
-    padding-left: 24px;
-    padding-right: 24px;
+    margin-left: 24px;
+    margin-right: 24px;
 }
 @media screen and (min-width: 1024px) {
     .global-mx {
-        padding-left: 0;
-        padding-right: 0;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 .global-py {
