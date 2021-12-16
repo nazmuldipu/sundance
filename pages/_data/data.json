@@ -6,6 +6,23 @@
             "type": "font/ttf"
         }
     ],
+    "aaa" :{
+        "action_card": {
+            "title":"Title",
+            "action": {}
+        },
+        "intro": {
+            "title" : "Title",
+            "description" : "$399 Adult / $299 Child *",
+            "caption" : "Caption"
+        },
+        "list": [
+            {
+                "title": "Best value for 5+ visits",
+                "sub_title": "Sub title best value for 5+ visits"
+            }
+        ]
+    },
     "weatherInfo": {
         "title": "Weather",
         "weather": [

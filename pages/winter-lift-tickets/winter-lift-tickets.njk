@@ -5,150 +5,72 @@ permalink: "build/winter-lift-tickets/index.html"
 permalinkBypassOutputDir: true
 nickname: winter-lift-tickets
 ---
-{% from "atoms/a.njk" import a,
-Link %}
-{% from "atoms/headings.njk" import h1, h2 %}
-{% from "atoms/a.njk" import a, button_primary, button_secondary%}
-{% from 'molecules/bridge.njk' import bridge %}
+{% from "atoms/headings.njk" import h1,
+h2,
+h3,
+h4,
+h5,
+h6 %}
 {% from 'molecules/card.njk' import verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'macros.njk' import top_banner_group_venues %}
+{% from 'molecules/bridge-2.njk' import secondBridge %}
 
-<section class="hero-section segment-outer">
-    <div class="hero-section__menu">
-        <ul class="font-ivar">
-            <li>Homepage</li>
-            <li>Winter activities</li>
-            <li>Winter lift tickets</li>
-        </ul>    
-    </div>
-</section>
-
-<section class="segment-outer intro">
-    <section class="segment-inner">
-        <article class="intro__container">
-            <header class="text-center">
-                <h2 class="intro__heading fheading heading--2 font-helvetica">Now, 3 Ways to Ride</h2>
-            </header>
-            <section class="intro__section--highlighted">
-                <p class="font-calibre"><strong>Important:</strong> Before purchasing tickets or passes, be sure to familiarize yourself with our new parking policy.</p>
-            </section>  
-            <section class="intro__section--paragraph">
-                <p class="font-ivar">
-                    With all that's new at Sundance this season, compare pass options and see which way to ride is best for you.
-                </p>
-            </section>  
-            <section class="intro__section--menu">
-                <ul class="font-ivar">
-                    <li><span>Parking</span></li>
-                    <li><span>Trail Map</span></li>
-                    <li><span>Hours</span></li>
-                    <li><span>Safety</span></li>
-                </ul>
-            </section>        
-        </article>    
-    </section>
-</section>    
-
-<section class="segment-outer pricing">
-    <section class="segment-inner pricing__container">
-        <article class="pricing-card first card-primary">
-            <header class="pricing-card__header">
-                <p class="font-ivar header__title">Season Passes</p>
-                <a class="button card--button button--white font-calibre" href="#">Buy Now</a>
-            </header>
-            <div class="pricing-card__body font-black font-calibre">
-                <div class="pricing-card__body--intro">
-                    <small class="font-calibre">Most Flexible</small>
-                    <h5 class="pricing-card__body--price">$399 Adult / $299 Child *</h5>
-                    <small class="font-calibre">* Represents starting prices.</small>
-                </div>  
-                <ul class="pricing-card__body--list"> 
-                    <li>Best value for 5+ visits</li>
-                    <li>Purchase by October 31st</li>
-                    <li class="purchase-photo-block">Purchase online (with photo)</li>
-                    <li>Renew annually online</li>
-                    <li>Direct to lift</li>
-                    <li>Payment plan available</li>
-                    <li>Includes Nordic Center</li>
-                    <li>Includes summer lift access</li>
-                    <li>Includes summer lift access</li>
-                </ul> 
-                <div class="pricing-card__body--footer">
-                    <a class="button card--button button--primary font-calibre" href="#">Buy Now</a>
-                </div>
-                <a class="pricing-card__body--link">Learn More</a>       
-            </div> 
-        </article>
-        <article class="pricing-card second card-secondary">
-            <header class="pricing-card__header">
-                <p class="font-ivar header__title">S-Card</p>
-                <a class="button card--button button--white font-calibre" href="#">Buy Now</a>
-            </header>
-            <div class="pricing-card__body font-black font-calibre">
-                <div class="pricing-card__body--intro second">
-                    <small class="font-calibre">Most Flexible</small>
-                    <h5 class="font-calibre pricing-card__body--price">$399 Adult / $299 Child *</h5>
-                    <small class="font-calibre">* One time fee. First day is free, then $89 for each additional day (adult) / $59 (child).</small>
-                </div> 
-                <ul class="pricing-card__body--list"> 
-                    <li>Best value for 2–5 visits</li>
-                    <li>Purchase by December 17th</li>
-                    <li class="purchase-photo-block">Purchase online (with photo)</li>
-                    <li>Buy online, auto-charges each visit</li>
-                    <li>Direct to lift</li>
-                    <li>Pay-as-you-go</li>
-                    <li>Nordic Center excluded</li>
-                    <li>Summer lift access excluded</li>
-                    <li>UTA pass not included</li>
-                </ul> 
-                <div class="pricing-card__body--footer">
-                    <a class="button card--button button--secondary font-calibre" href="#">Buy Now</a>
-                </div> 
-                <a class="pricing-card__body--link">Learn More</a>  
-            </div>  
-        </article>
-        <article class="pricing-card third card-tertiary">
-            <header class="pricing-card__header">
-                <p class="font-ivar header__title">Lift Tickets</p>
-                <a class="button card--button button--white font-calibre" href="#">Buy Now</a>
-            </header>
-            <div class="pricing-card__body font-black font-calibre">
-                <div class="pricing-card__body--intro">
-                    <small class="font-calibre">Most Flexible</small>
-                    <h5 class="pricing-card__body--price">$399 Adult / $299 Child *</h5>
-                    <small class="font-calibre">
-                        * Regular weekday prices. Saturdays and holidays $129 (adult) / $89 (child).
-                    </small>
-                </div>
-                <ul class="pricing-card__body--list"> 
-                    <li>Best value for 1–2 visits</li>
-                    <li>Purchase anytime</li>
-                    <li class="purchase-photo-block">
-                        Must be picked up at resort
-                        <small>Must be picked up for the first time at Sundance ticket window. Subsequent visits can be loaded onto ticket and used as direct-to-lift.</small>
-                    </li>
-                    <li>Buy + renew online</li>
-                    <li>Direct to lift, after initial purchase</li>
-                    <li>Pay-as-you-go</li>
-                    <li>Nordic Center excluded</li>
-                    <li>Summer lift access excluded</li>
-                    <li>UTA pass not included</li>
-                </ul> 
-                <div class="pricing-card__body--footer">
-                    <a class="button card--button button--tertiary font-calibre" href="#">Buy Now</a>
-                </div> 
-                <a class="pricing-card__body--link">Learn More</a>  
+{# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
+    {% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues) }}
+{% endif %}
+{% macro price_card() %}
+    <article class="pricing-card card-primary">
+        {% set color = '#458691'%}
+        <div class="pricing-card__body font-black font-calibre">
+            <article class="action-card" style="background-color: {{color}}">
+                <header>
+                    <h3 class="second-bridge__header font-calibre font-medium text-white">
+                        Give the perfect gift
+                    </h3>
+                </header>
+                <a href="https://store.sundanceresort.com/products/gift-cards?_ga=2.108585994.904230891.1638768790-878953537.1635851462" class="button button--primary second-bridge__button--size font-calibre font-medium text-base" target="_blank">
+                    Shop gift cards
+                </a>
+            </article>
+            <div class="pricing-card__body--intro font-calibre">
+                <small class="block pricing-card__intro-title" style="color: {{color}}">{{item.intro.title}}</small>
+                <h5 class="pricing-card__intro-description">{{item.intro.description}}</h5>
+                <small class="block pricing-card__intro-caption">{{item.intro.caption}}</small>
             </div>
-        </article> 
-    </section>           
-</section>    
-
-<section class="segment-outer">
-    <section>
-        <article>
-            {{bridge(bridge_slider)}}
-        </article>
-    </section>    
+            <ul class="pricing-card__list">
+                {% for li in item.list %}
+                    <li class="pricing-card__list-item">
+                        {{li.title}}
+                        <small class="block pricing-card__caption">{{li.sub_title}}</small>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="pricing-card__body--footer">
+                <a class="button card--button button--primary font-calibre" style="background-color: {{color}};" href="#">Buy Now</a>
+            </div>
+            <a class="block pricing-card__body--link" style="color: {{color}}">Learn More</a>
+        </div>
+    </article>
+{% endmacro %}
+<section class="segment-outer pricing">
+    <section class="segment-inner pricing-card__container text-center">
+        {% set item = data.aaa%}
+        {{price_card()}}
+        {{price_card()}}
+        {{price_card()}}
+    </section>
 </section>
+{# Bridge carousal #}
+{% if pageCMS['bridge-slider'] %}
+    {% set bridge_slider = pageCMS['bridge-slider'].bridge_slider %}
+    {{ bridge(bridge_slider) }}
+{% endif %}
+
 {# Card Title #}
 {% if pageCMS['card-title'] %}
     {% set card_title= pageCMS['card-title'].simple_article %}
@@ -157,12 +79,14 @@ Link %}
 
 {# Vertical Card Section #}
 {% if  pageCMS['vertical-cards'] %}
-{% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
-<section class="section-outer">
-    <section class="section-inner winter__card">
-        {% for item in vertical_card_list %}
-            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
-        {% endfor %}
+    {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
+    <section class="segment-outer">
+        <section class="segment-inner global-px  winter__card">
+            {% for item in vertical_card_list %}
+                {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+            {% endfor %}
+        </section>
     </section>
-</section>
 {% endif %}
+
+{{newsletter()}}
