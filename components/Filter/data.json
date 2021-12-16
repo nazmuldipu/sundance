@@ -129,13 +129,13 @@
             "items": [
                 {
                     "copy": "Mountain Homes",
-                    "id": "lodging-filter-mountain-homes",
+                    "id": "types-filter-mountain-homes",
                     "name": "lodging-filter",
                     "quantity": 13
                 },
                 {
                     "copy": "Rooms & Suites",
-                    "id": "lodging-filter-rooms-suites",
+                    "id": "types-filter-rooms-suites",
                     "name": "lodging-filter",
                     "quantity": 5
                 }

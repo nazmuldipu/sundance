@@ -23,9 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return {
               title: key,
               items: Object.keys(value).map( itemKey => {
+                      const parsedItemKey = itemKey.replace(/\s/g, '-').toLowerCase().replace('&', '');
                       return {
                           "copy": itemKey,
-                          "id": `bedrooms-filter-${itemKey}`,
+                          "id": `${key}-filter-${parsedItemKey}`,
                           "name": filterMap[key],
                           "quantity": value[itemKey],
                       }
@@ -91,14 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const id = e.target.id;
             const checked = e.target.checked;
             const isFilterSelected = filters.find(filter => filter.id === id);
-            if(checked){
-                if(!isFilterSelected){
-                    filters.push({
-                        id: id,
-                        type: type[0],
-                        value: value
-                    })
-                }
+            if(checked && !isFilterSelected){
+                filters.push({
+                    id: id,
+                    type: type[0],
+                    value: value
+                })
             }else{
                 filters.splice(filters.findIndex(filter => filter.id === id), 1);
             }
