@@ -1,0 +1,90 @@
+---
+layout: base.njk
+pagename: faqs
+permalink: "build/parking/index.html"
+permalinkBypassOutputDir: true
+nickname: faqs
+---
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'atoms/accordion.njk' import accordion %}
+{% from 'macros.njk' import top_banner_group_venues %}
+
+{# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
+    {% set parking_group_venues = pageCMS['group-venues'].group_venues  %}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, parking_group_venues) }}
+{% endif %}
+
+{# Parking Article #}
+{% if  pageCMS['parking-article'] and pageCMS['parking-article'].parking_article %}
+{% set parking_article = pageCMS['parking-article'].parking_article %}
+<section class="segment-outer global__max-width">
+    <section class="parking-article global-pb global-pt global-mx">
+        {% for article in parking_article %}
+            <section>
+                {% if article.title %}
+                    <header class="parking-article__title">
+                        {{ article.title | safe }}
+                    </header>
+                {% endif %}
+                
+                {% if article.descriptions %}
+                    {% for des in article.descriptions %}
+                        <div class="parking-article__description">
+                            {{ des.text |safe }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </section>
+        {% endfor %}             
+    </section>
+</section>
+{% endif %}
+
+{# Parking Middle Article #}
+{% if pageCMS['middle-top-article'] and pageCMS['middle-top-article'].simple_article and pageCMS['middle-top-article'].simple_article.description %}
+    {% set middle_top_article = pageCMS['middle-top-article'].simple_article %}
+    <div class="middle-top__article global__max-width global-px font-ivar text-lg-2">
+        {{ middle_top_article.description | safe }}
+    </div>
+{% endif %}
+
+{# Accordion Title #}
+{% if pageCMS['accordion-title'] and pageCMS['accordion-title'].simple_article and pageCMS['accordion-title'].simple_article.title %}
+    {% set accordion_title = pageCMS['accordion-title'].simple_article %}
+    {{ h2(copy = accordion_title.title, classes = ['accordion__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
+
+{# Accordion #}
+{% if  pageCMS['accordion'] and pageCMS['accordion'].accordion %}
+{% set accordions = pageCMS['accordion'].accordion %}
+<section class="segment-outer">
+    <section class="accordion-wrapper accordion__bottom-padding">
+        {% for item in accordions %}
+            {{ accordion( item = item ) }}
+        {% endfor %}             
+    </section>
+</section>
+{% endif %}
+
+{# Parking Map Note #}
+{% if pageCMS['parking-map-note'] and pageCMS['parking-map-note'].simple_article and pageCMS['parking-map-note'].simple_article.title %}
+    {% set parking_map_note = pageCMS['parking-map-note'].simple_article %}
+    <div class="parking-map__note global-px global__max-width font-ivar text-lg-2">
+        {{ parking_map_note.title | safe }}
+    </div>
+{% endif %}
+
+{# Parking Map #}
+{% if pageCMS['parking-map'] and pageCMS['parking-map'].global_image %}
+    <figure class="global__max-width global-px global-pb">
+        {{global_image(pageCMS['parking-map'].global_image, classes='image_frame sm:4:5 lg:4:5')}}
+    </figure>
+{% endif %}
+            
+{{newsletter()}}
+
