@@ -42,13 +42,12 @@ export default class FilterComponent extends HTMLElement {
     }
 
     setFilters(data){
-        this.removeChild(this._contents);
-        this._contents = document.createElement('div');
         const template = document.createElement('template');
         template.innerHTML = this.getTemplate(data);
-        this._currentChild = template.content.cloneNode(true);
-        this._contents.appendChild(this._currentChild);
-        this.render();
+        const filterContainer = template.content.querySelector('.filter__container');
+        const entries = template.content.querySelector('#entries');
+        this.querySelector('.filter__container').replaceWith(filterContainer);
+        this.querySelector('#entries').replaceWith(entries);
     }
 
     parseTitle(title){
@@ -62,7 +61,7 @@ export default class FilterComponent extends HTMLElement {
         return ` <section id="filter" class="filter">
         <input type="checkbox" id="filter_btn" class="filter__toggle" name="filter" >
         <header class="filter__header">
-            <div>${data.entries} Entries</div>
+            <div id="entries">${data.entries} Entries</div>
             <header>
                 <h2 class="heading--2 font-calibre font-medium">Find a  place to stay</h2>
             </header>
