@@ -6,30 +6,37 @@
     #   @return HTML section
     #   @author Meherab, Sarjis
  #}
+
 {% macro top_banner_right_bottom_container(heroCornerBlock) %}
   <section class="hero__corner--block">
-    {{ h2(copy = heroCornerBlock.title, classes=['heading', 'hero__corner--block__title']) }}
-    {% if heroCornerBlock.subtitle %}
-        <p class="hero__corner--block__subtitle">{{ heroCornerBlock.subtitle }}</p>
+
+    {% if heroCornerBlock.title %}
+        {{ h2(copy = heroCornerBlock.title, classes=['heading', 'hero__corner--block__title']) }}
     {% endif %}
+
     {% if heroCornerBlock.description %}
-        <p class="hero__corner--block__description">{{ heroCornerBlock.description }}</p>
+        <div class="cms-description hero__corner--block__description">{{ heroCornerBlock.description | safe }}</div>
     {% endif %}
+
     {% for action in heroCornerBlock.actions %}
+        {% set trg = '_self' if action.internal else 
+                            '_blank' %}
         {% if action.type == "view-details" %}
             <div class="hero__corner--block__cta {{ 'mt-8' if not heroCornerBlock.description }}">
-                {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = action.copy, href = action.href, target = action.target ) }}
+                {{ view_details(classes = ['view-details','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = action.copy, href = action.url, target = trg ) }}
             </div>
         {% endif %}
-        {% if action.label %}
-            <div class="hero__corner--block__nav">
-                <label class="font-ivar">{{action.label}}</label>
-                {{ a( copy=action.copy, classes=['link', 'link--primary', 'font-calibre', 'font-medium', 'text-base'], href=action.href, target=action.target) }}
+
+        {% if action.type == "nav" %}
+            <div class="hero__corner--block__nav-desktop pb-10 order-1">
+                {{ a( copy=action.copy, classes=['link--primary', 'no-underline', 'font-calibre', 'font-medium', 'text-lg-2'], href=action.url, target=trg) }}
             </div>
-        {% else %}
-            <div class="hero__corner--block__cta-primary">
-                {{ button_primary(classes = ['button', 'button--primary','font-calibre', 'font-normal', 'text-lg', 'text--color__sn-6'], copy = action.copy, href = action.href, target = action.target ) }}
-            </div>    
+
+            <div class="hero__corner--block__nav order-2">
+                <label class="font-ivar">{{action.label}}</label>
+                {{ a( copy=action.copy, classes=['link', 'link--primary', 'font-calibre', 'font-medium', 'text-base'], href=action.url, target=trg) }}
+            </div>
+
         {% endif %}        
     {% endfor %}
   </section>

@@ -13,22 +13,23 @@ nickname: winter-activities
 {% from 'macros.njk' import top_banner %}
 
 {# Hero Image Section #}
-{% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
+{% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image and pageCMS['hero-corner-block'].hero_corner_block %}
+    {% set hero_corner_block = pageCMS['hero-corner-block'].hero_corner_block %}
     <section class="segment-outer winter-hero__padding-bottom">
-        {{ top_banner(pageCMS['top-banner'].global_image, heroCornerBlock) }}
+        {{ top_banner(pageCMS['top-banner'].global_image, hero_corner_block) }}
     </section> 
 {% endif %}
 
 {# Card Title #}
 {% if pageCMS['card-title'] %}
     {% set card_title= pageCMS['card-title'].simple_article %}
-    {{ h2(copy = card_title.title, classes = ['winter__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+    {{ h2(copy = card_title.title, classes = ['bg-sn-4', 'winter__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
 {% endif %}
 
 {# Vertical Card Section #}
 {% if  pageCMS['vertical-cards'] %}
 {% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
-<section class="segment-outer">
+<section class="bg-sn-4 segment-outer">
     <section class="segment-inner global-px winter__card">
         {% for item in vertical_card_list %}
             {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}

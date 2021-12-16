@@ -7,6 +7,9 @@
     line-height: 110%;
     padding: 40px 16px 24px 16px;
 }
+.group-venues__nav a{
+    text-decoration: underline;
+}
 
 /* Desktop screen (Screen size : > 767 pts) */
 @media screen and (min-width: 768px) {

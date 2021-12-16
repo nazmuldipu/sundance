@@ -30,6 +30,10 @@ const pageEntryPoints = getPageAssets(PAGES_DIR).flat();
 // so that asynchronously loaded components can dynamically rely on the libraries
 const componentJSLibEntryPoints = getJSLibAssets(join(COMPONENT_DIR.pathname, 'lib'));
 const componentCSSLibEntryPoints = getCSSLibAssets(join(COMPONENT_DIR.pathname, 'lib'));
+// get new entry points for custom elements
+// each custom element is to be bundled independently and sent to the server so that
+// they can be asynchronously loaded
+const customElementJSEntryPoints = getJSLibAssets(join(COMPONENT_DIR.pathname, 'custom-elements'));
 const pageOutputPoints = pageEntryPoints.map(point => 
     replacePathBase(point, BUILD_DIR.pathname, basename(PAGES_DIR.pathname))); 
 const pageDataMap = getPageDataMap(pageOutputPoints);
@@ -97,9 +101,20 @@ try {
             )
         );
     }
+    // build custom element specific assets
+    if(customElementJSEntryPoints.length) {
+        buildPromises.push(
+            buildJS(
+                customElementJSEntryPoints,
+                BUILD_DIR.pathname,
+                COMPONENT_DIR.pathname,
+                metafilePath('meta-js-custom-els.json')
+            )
+        );
+    }
     await Promise.all(buildPromises);
 
-    constructSiteMap(BUILD_DIR.pathname, 'https://www.marrammontauk.com')
+    constructSiteMap(BUILD_DIR.pathname, 'https://www.sundanceresort.com')
     
     console.log('SUCCESS -- site assets built');
 }
