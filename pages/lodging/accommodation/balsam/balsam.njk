@@ -1,0 +1,127 @@
+---
+layout: base.njk
+pagename: balsam
+permalink: "build/lodging/accommodation/balsam/index.html"
+permalinkBypassOutputDir: true
+nickname: lodging/accommodation/balsam
+---
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/card.njk' import verticalCard %}
+{% from 'atoms/headings.njk' import global_header %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'organisms/thumbnail_slider.njk' import multi_slider_thumbnail %}
+{% from 'atoms/icons.njk' import iconCSS %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'organisms/amenities.njk' import amenities %}
+{% from 'molecules/accommodation-feature.njk' import accommodationFeature2 %}
+{% from "organisms/carousel.njk" import card_carousel %}
+{% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
+{% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
+{% set sliderImages = pageCMS['slider'].global_image_arr.images %}
+
+{% set top_banner = pageCMS['top-banner-left'].banner %}
+{% set topBannerImage = top_banner.global_image.global_image %}
+
+{% macro aminitiesSection() %}
+    {% if pageCMS['amenities-data'].amenities_list %}
+        <section class="mt-12">
+            {{ amenities(pageCMS['amenities-data'].amenities_list) }}
+        </section>
+        <div></div>
+    {% endif %}  
+    {% if pageCMS['amenities-bottom-title'].simple_article %}
+        <div class="mt-12 font-ivar text-lg-2 text-center">{{pageCMS['amenities-bottom-title'].simple_article.description | safe}}</div>
+        <p class="mt-12 font-ivar text-center">{{pageCMS['amenities-bottom-title'].simple_article.title}}</p>
+    {% endif %}
+{% endmacro %}
+
+{% macro features() %}
+    <section class="accommodation__features mt-12">
+        {% if pageCMS['accommodation-features'].accommodation_features %}
+            {% for item in pageCMS['accommodation-features'].accommodation_features %}
+                {{ accommodationFeature2(item) }}
+            {% endfor %}
+        {% endif %}
+    </section>
+{% endmacro %}
+
+<section class="segment-outer bg-sn-5 px-4">
+    <section class="segment-inner">
+        <section class="dining-details-container">
+            <section>
+                <article class="thumbnail-slider__images grid order-2">
+                    {{multi_slider_thumbnail(sliderImages)}}
+                </article>
+                <div class="top__accommodation-fetaures">
+                    {{ features() }}
+                </div>
+                <div class="top__aminities-section">
+                    {{ aminitiesSection() }}
+                </div>
+            </section>
+            <section class="dining-details__venues global-px">
+                {% if pageCMS['top-group-venues'] and pageCMS['top-group-venues'].group_venues %}
+                    {% set groupData = pageCMS['top-group-venues'].group_venues %}
+                    {% for event in groupData %}
+                        <section class="group-container">
+                            {{ groupVenues(event) }}
+                        </section>
+                    {% endfor %}
+                {% endif %}
+            </section>
+        </section>
+    </section>
+</section>
+</section>
+<section class="segment-outer middle__accommodation-fetaures">
+<section class="segment-inner text-center">
+    <article class="dining-details-container bg-sn-5 font-ivar">
+        {{ features() }}
+    </article>
+</section>
+</section>
+<section class="segment-outer middle__aminities-section">
+<section class="segment-inner dining-details-container global-px">
+    {{ aminitiesSection() }}
+</section>
+</section>
+<section class="segment-outer mt-12">
+<section class="segment-inner text-center overflow-hidden">
+    <article class="bg-sn-5 font-ivar">
+        {% if pageCMS['slider-card-title'] and pageCMS['slider-card-title'].simple_article.title %}
+            {% set card_list_title = pageCMS['slider-card-title'].simple_article.title %}
+            {{ global_header(copy = card_list_title) }}
+        {% endif %}
+
+        {% if pageCMS['slider-card-list'] and pageCMS['slider-card-list'].vertical_card_list %}
+            {% set slider_card_list = pageCMS['slider-card-list'].vertical_card_list %}
+            {{ card_carousel(cards = slider_card_list) }}
+        {% endif %}
+    </article>
+</section>
+</section>
+<section class="segment-outer mt-12">
+<section class="segment-inner text-center">
+    <article class="bg-sn-5 font-ivar global-px">
+        {% if pageCMS['vertical-card-title'] and pageCMS['vertical-card-title'].simple_article.title %}
+            {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
+            {{ global_header(copy = card_list_title) }}
+        {% endif %}
+
+        {% if pageCMS['vertical-card-list'] and pageCMS['vertical-card-list'].vertical_card_list %}
+            {% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
+            <section class="flex-card-container mt-8">
+                {% for item in vertical_card_list %}
+                    {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8','flex__single-card']) }}
+                {% endfor %}
+            </section>
+        {% endif %}
+    </article>
+</section>
+</section>
+
+{{newsletter()}}
+
