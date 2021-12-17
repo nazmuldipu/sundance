@@ -2,6 +2,8 @@ import '../../../scripts/lib/globalEvents.js';
 import "components/MediaCarousel/index.js";
 import "components/Filter/index.js";
 
+console.log('hello world!');
+
 const sortingOrder = ['bedrooms', 'sleeps', 'types'];
 
 document.addEventListener('DOMContentLoaded', () => {
