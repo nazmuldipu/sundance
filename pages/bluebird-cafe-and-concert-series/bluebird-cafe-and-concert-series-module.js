@@ -2,8 +2,6 @@ import '../../../scripts/lib/globalEvents.js';
 import "components/MediaCarousel/index.js";
 import "components/Filter/index.js";
 
-console.log('hello world!');
-
 const sortingOrder = ['bedrooms', 'sleeps', 'types'];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -64,8 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const filtersObject = generateFilters(updatedFilterData);
         const formattedFilter = getFormattedFilterData(filtersObject).sort((a, b) => sortingOrder.indexOf(a.title) - sortingOrder.indexOf(b.title));
         filter_container.setFilters({
-            entries: filteredCards.length,
-            filters: formattedFilter
+            activeFilters: filters,
+            filters: {
+                entries: filteredCards.length,
+                filters: formattedFilter
+            }
         });
     }
     
