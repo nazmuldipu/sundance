@@ -1,6 +1,9 @@
 /****  start imports  ********************************/
 @import "../../styles/global.css";
 /****  end imports  ********************************/
+.global__max-width{
+    max-width: 767px;
+}
 .group-venues__description a{
     text-decoration: none;
 }
