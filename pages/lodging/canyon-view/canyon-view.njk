@@ -30,10 +30,9 @@ nickname: canyon-view
         <section class="mt-12">
             {{ amenities(pageCMS['amenities-data'].amenities_list) }}
         </section>
-        <div></div>
     {% endif %}
     {% if pageCMS['amenities-bottom-title'].simple_article %}
-        <p class="mt-12">{{pageCMS['amenities-bottom-title'].simple_article.title}}</p>
+        <p class="mt-12 font-ivar text-center">{{pageCMS['amenities-bottom-title'].simple_article.title}}</p>
     {% endif %}
 {% endmacro %}
 
