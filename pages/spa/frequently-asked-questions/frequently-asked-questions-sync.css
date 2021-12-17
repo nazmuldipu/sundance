@@ -21,6 +21,13 @@
 .accordion{
     margin-bottom: .5rem;
 }
+.accordion--title{
+    padding-bottom: 0px;
+}
+
+.toggle-details figcaption{
+    padding-top: 15px;
+}
 .accordion__bottom-padding{
     padding-bottom: 48px;
 }
@@ -28,6 +35,12 @@
     .accordion-wrapper{
         padding-left: 1.5rem;
         padding-right: 1.5rem;
+    }
+    .faqs__accordion .toggle:checked ~ .toggle-details{
+        margin-left: 0px;
+        margin-top: 0px;
+        position: relative;
+        background: transparent;
     }
     .bridge{
         padding-bottom: 8px;
