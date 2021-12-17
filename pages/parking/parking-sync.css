@@ -1,0 +1,91 @@
+/****  start imports  ********************************/
+@import "../../styles/global.css";
+/****  end imports  ********************************/
+.global__max-width{
+    max-width: 767px;
+}
+.group-venues__description a{
+    text-decoration: none;
+}
+.parking-article{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 32px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    
+}
+.parking-article__title{
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 1rem;
+    font-family: var(--sundance__font-ivar);
+}
+.parking-article__description{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: var(--sundance__font-ivar);
+    padding-bottom: 2rem;
+}
+.middle-top__article{
+    text-align: left;
+    letter-spacing: 0.054em;
+    padding-bottom: 48px;
+}
+.accordion-wrapper{
+    max-width: 608px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.accordion__header{
+    font-weight: 600;
+    font-size: 2.625rem;
+    padding-bottom: 24px;
+}
+.accordion{
+    margin-bottom: .5rem;
+}
+.accordion--title{
+    padding-bottom: 0px;
+}
+
+.toggle-details figcaption{
+    padding-top: 15px;
+}
+.accordion__bottom-padding{
+    padding-bottom: 48px;
+}
+.parking-map__note{
+    letter-spacing: 0.054em;
+    text-align: left;
+    padding-bottom: 48px;
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .toggle:checked ~ .toggle-details{
+        margin-left: 0px;
+        margin-top: 0px;
+        position: relative;
+        background: transparent;
+    }
+    .accordion-wrapper{
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    .accordion__header{
+        font-size: 1.5rem;
+    }
+    .accordion__bottom-padding{
+        padding-bottom: 40px;
+    }
+    .parking-article{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .middle-top__article{
+        padding-bottom: 40px;
+    }
+    .parking-map__note{
+        padding-bottom: 40px;
+    }
+}
