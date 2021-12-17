@@ -42,11 +42,16 @@ export default class FilterComponent extends HTMLElement {
         //const obj = JSON.parse(this.data);
         this.appendChild(this._contents); 
     }
-
+    /**
+     * 
+     * @param {object} data 
+     */
     setFilters(data){
-        this._filters = JSON.parse(JSON.stringify(data));
+        const { filters, activeFilters } = data;
+        this._filters = JSON.parse(JSON.stringify(filters));
+        this._selectedFilters = JSON.parse(JSON.stringify(activeFilters));
         const template = document.createElement('template');
-        template.innerHTML = this.getTemplate(data);
+        template.innerHTML = this.getTemplate(this._filters);
         const filterContainer = template.content.querySelector('.filter__container');
         const entries = template.content.querySelector('#entries');
         this.querySelector('.filter__container').replaceWith(filterContainer);
