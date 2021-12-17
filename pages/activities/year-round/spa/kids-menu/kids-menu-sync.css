@@ -40,7 +40,7 @@
 
 
 @media screen and (min-width: 320px) and (max-width: 767px){
-    .toggle:checked ~ .toggle-details{
+    .kidz-accordion .toggle:checked ~ .toggle-details{
         margin-left: 0px;
         margin-top: 0px;
         position: relative;
