@@ -27,6 +27,9 @@
     max-width: 792px;
     margin: 0 auto;
 }
+.accordion{
+    margin-bottom: .5rem;
+}
 ol, ul {
     list-style: inside;
 }
@@ -122,7 +125,7 @@ ol, ul {
     right: 26px;
     top: 16px;
 }
-.toggle:checked ~ .toggle-details {
+.rental-demos__accordion .toggle:checked ~ .toggle-details {
     margin: 0;
     position: static;
 }

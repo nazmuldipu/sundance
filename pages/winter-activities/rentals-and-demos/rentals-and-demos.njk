@@ -33,7 +33,7 @@ nickname: rentals-and-demos
 {% if  pageCMS['accordion'] %}
 {% set accordions = pageCMS['accordion'].accordion %}
 <section class="segment-outer my-12">
-    <section class="segment-inner accordion-wrapper accordion__bottom-padding">
+    <section class="rental-demos__accordion accordion-wrapper global-px accordion__bottom-padding">
         {% for item in accordions %}
             {{ accordion2( item = item ) }}
         {% endfor %}             
@@ -44,7 +44,7 @@ nickname: rentals-and-demos
 {% if  pageCMS['bottom-content'] and pageCMS['bottom-content'].simple_article %}
 {% set description = pageCMS['bottom-content'].simple_article.description %}
 <section class="segment-outer mb-12">
-    <section class="segment-inner global-contents">
+    <section class="global-contents global-px">
         {{ description | safe }}             
     </section>
 </section>
