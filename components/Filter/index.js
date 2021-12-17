@@ -7,6 +7,8 @@ export default class FilterComponent extends HTMLElement {
         this._data = null;
         this._contents = document.createElement('div');
         this._currentChild = null;
+        this._filters = null;
+        this._selectedFilters = [];
     }
 
     connectedCallback() {
@@ -42,6 +44,7 @@ export default class FilterComponent extends HTMLElement {
     }
 
     setFilters(data){
+        this._filters = JSON.parse(JSON.stringify(data));
         const template = document.createElement('template');
         template.innerHTML = this.getTemplate(data);
         const filterContainer = template.content.querySelector('.filter__container');
@@ -55,6 +58,11 @@ export default class FilterComponent extends HTMLElement {
             return 'Lodging Type'
         }
         return title.charAt(0).toUpperCase() + title.slice(1);
+    }
+
+    isChecked(item){
+        if(!item || !this._filters) return false;
+        return this._filters.filters.find(flt => flt.items.find(i => i.id == item.id)).items.find(i => i.id == item.id);
     }
 
     getTemplate(data){
@@ -82,7 +90,7 @@ export default class FilterComponent extends HTMLElement {
                         ${flt.items.map(item => (
                           `<div class="filter__item">                            
                             <label class="checkboxes-btn font-ivar">
-                                <input type="checkbox" class="checkboxes-btn__input" id="${item.id}" name="${item.name}" value="${item.copy}">
+                                <input type="checkbox" class="checkboxes-btn__input" ${this.isChecked(item) ? 'checked': ''} id="${item.id}" name="${item.name}" value="${item.copy}">
                                 <span class="checkboxes-btn__control"></span>
                                     <span class="checkboxes-btn__label">
                                         ${item.copy} (${item.quantity})
