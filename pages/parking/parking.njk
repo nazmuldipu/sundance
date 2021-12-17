@@ -1,9 +1,9 @@
 ---
 layout: base.njk
-pagename: faqs
+pagename: parking
 permalink: "build/parking/index.html"
 permalinkBypassOutputDir: true
-nickname: faqs
+nickname: parking
 ---
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from 'molecules/newsletter.njk' import newsletter %}
@@ -63,7 +63,7 @@ nickname: faqs
 {% if  pageCMS['accordion'] and pageCMS['accordion'].accordion %}
 {% set accordions = pageCMS['accordion'].accordion %}
 <section class="segment-outer">
-    <section class="accordion-wrapper accordion__bottom-padding">
+    <section class="parking-accordion accordion-wrapper accordion__bottom-padding">
         {% for item in accordions %}
             {{ accordion( item = item ) }}
         {% endfor %}             
