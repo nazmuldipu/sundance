@@ -20,6 +20,7 @@ export default class FilterComponent extends HTMLElement {
             this._currentChild = template.content.cloneNode(true);
             this._contents.appendChild(this._currentChild);
             this.render();
+            this.initEvents();
         })
     }
 
@@ -42,14 +43,39 @@ export default class FilterComponent extends HTMLElement {
         //const obj = JSON.parse(this.data);
         this.appendChild(this._contents); 
     }
+    initEvents(){
+        this.addEventListener('click', (e) => {
+            if(e.target.type === 'checkbox' && e.target.name !== 'filter'){
+                const value = [e.target.value];
+                const type = e.target.name ? e.target.name.split('-') : '';
+                const id = e.target.id;
+                const checked = e.target.checked;
+                const isFilterSelected = this._selectedFilters.find(filter => filter.id === id);
+                if(checked && !isFilterSelected){
+                    this._selectedFilters.push({
+                        id: id,
+                        type: type[0],
+                        value: value
+                    })
+                }else{
+                    this._selectedFilters.splice(this._selectedFilters.findIndex(filter => filter.id === id), 1);
+                }
+                this.dispatchEvent(new CustomEvent('filter-change', {
+                    detail: {
+                        filters: this._selectedFilters
+                    }
+                }));
+
+            }
+        })
+    }
     /**
      * 
      * @param {object} data 
      */
     setFilters(data){
-        const { filters, activeFilters } = data;
+        const { filters } = data;
         this._filters = JSON.parse(JSON.stringify(filters));
-        this._selectedFilters = JSON.parse(JSON.stringify(activeFilters));
         const template = document.createElement('template');
         template.innerHTML = this.getTemplate(this._filters);
         const filterContainer = template.content.querySelector('.filter__container');
