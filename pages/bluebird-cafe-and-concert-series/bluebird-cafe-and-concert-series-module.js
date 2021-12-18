@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const filtersObject = generateFilters(updatedFilterData);
         const formattedFilter = getFormattedFilterData(filtersObject).sort((a, b) => sortingOrder.indexOf(a.title) - sortingOrder.indexOf(b.title));
         filter_container.setFilters({
-            activeFilters: filters,
             filters: {
                 entries: filteredCards.length,
                 filters: formattedFilter
@@ -88,24 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
           }, {});
     }
 
-    filter_container.addEventListener('click', (e) => {
-        if(e.target.type === 'checkbox' && e.target.name !== 'filter'){
-            const value = [e.target.value];
-            const type = e.target.name ? e.target.name.split('-') : '';
-            const id = e.target.id;
-            const checked = e.target.checked;
-            const isFilterSelected = filters.find(filter => filter.id === id);
-            if(checked && !isFilterSelected){
-                filters.push({
-                    id: id,
-                    type: type[0],
-                    value: value
-                })
-            }else{
-                filters.splice(filters.findIndex(filter => filter.id === id), 1);
-            }
-            applyFilters(filters);
-        }
+    filter_container.addEventListener('filter-change', (e) => {
+        //console.log(filters);
+        const { filters } = e.detail;
+        applyFilters(filters);
     })
 
 })
