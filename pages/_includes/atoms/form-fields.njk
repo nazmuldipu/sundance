@@ -40,7 +40,10 @@
     #       placeholder = '', 
     #       onkeypress= '', 
     #       pattern = '', 
-    #       maxlength = '', 
+    #       maxlength = '',
+    #       minlength = '',
+    #       min = '',
+    #       max = '',
     #       classes = ['form-input__style'], 
     #       required = true
     #   }
@@ -70,6 +73,8 @@
             {% if obj.pattern %} pattern="{{ obj.pattern }}" {% endif %} 
             {% if obj.maxlength %} maxlength="{{ obj.maxlength }}" {% endif %}
             {% if obj.minlength %} minlength="{{ obj.minlength }}" {% endif %}
+            {% if obj.max %} max="{{ obj.max }}" {% endif %}
+            {% if obj.min %} min="{{ obj.min }}" {% endif %}
             {% if obj.size %} size="{{ obj.size }}" {% endif %}
             {{ 'required' if (obj.required == true) }}/>
 

@@ -54,7 +54,7 @@
         {{verticalCard(item, figureClass = [], figcaptionClass = [])}}
     {% endfor %}
 {% endmacro %}
-{% macro verticalCard(item, card_container = ['card-container'], figureClass = [], figcaptionClass = []) %}
+{% macro verticalCard(item, card_container = ['card-container', 'cursor-pointer'], figureClass = [], figcaptionClass = []) %}
     <section class=" {% for class in card_container %} {{ class }} {% endfor %}">        
         <figure class="card-image {% for class in figureClass %} {{ class }} {% endfor %}" 
             {% if id %} id="{{ id }}" {% endif %} 
@@ -70,7 +70,7 @@
                 {{ h5(copy = item.title, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
             {% endif %}
             {% if item.sub_title %}
-                {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
+                {{ h3(copy = '<span class="card__sub_title" >' + item.sub_title + '</span>', classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1', '']) }}
             {% endif %}
             {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'min-h-120', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
             {% if item.criterias %}
@@ -220,9 +220,49 @@
                 </div>
                 {% for cta in item.actions %}
                     <div>
-                        {{ button_primary(classes = ['button', 'button--primary', 'font-calibre', 'font-medium', 'text-base'], href = cta.url, copy = cta.copy, target = cta.target ) }}
+                        {{ button_primary(classes = ['button', 'button--primary', 'font-calibre', 'font-medium', 'text-base'], href = cta.href, copy = cta.copy, target = cta.target ) }}
                     </div>
                 {% endfor %}
+            </figcaption>
+        </section>
+    {% endfor %}
+{% endmacro %}
+
+{#
+    #   @desc   a chefs card
+    #   @param  figureClass     string, image class (optional)
+    #   @param  figcaptionClass string, caption class (optional)
+    #   @param  id              string, a unique ID (optional)
+    #   @param  items           json data file
+    #   @author Ashfaq
+#}
+{% macro chefsCard(id = '', items, horizontal_card_container = ['horizontal__card-container'], figureClass = '', figcaptionClass = '', imageClasses = 'image_frame xs:2:3 sm:5:6') %}
+    {% for item in items %}
+        <section class="{% for class in horizontal_card_container %} {{ class }} {% endfor %}">        
+            <figure class="horizontal__card-image {{ figureClass }}
+                {% if item.left_image == true %}
+                    order-1
+                {% else %}
+                    order-2
+                {% endif %}" 
+                {% if id %} id="{{ id }}" {% endif %} 
+            >
+                {% if item.image %}
+                    {{global_image(item.image.global_image, classes=imageClasses)}}
+                {% endif %}
+            </figure>
+            <figcaption class="horizontal__card-text {{ figcaptionClass }}
+                {% if item.left_image == true %}
+                    order-2
+                {% else %}
+                    order-1
+                {% endif %}"
+                {% if id %} id="{{ id }}" {% endif %}
+            >
+                {{ h1(copy = item.title, classes=['group-venues__title','font-ivar']) }}
+                <div class="font-ivar text-lg-2 text--color__sn-6 mb-8">
+                    {{ item.description | safe }}
+                </div>
             </figcaption>
         </section>
     {% endfor %}

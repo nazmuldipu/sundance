@@ -3,13 +3,5 @@
 
 {% if globalCMS['top-navbar'].navbar %}
     {{ navMenu(globalCMS['top-navbar'].navbar, data.weatherInfo) }}
-{% endif %}
-
-{% if globalCMS['top-navbar'].navbar %}
     <section class="page-top-adjust"></section>
-    <section class="segment-outer">
-        <section class="segment-inner hidden sm:grid">
-            {{ thumbnail_slider_circle( globalCMS['image-actions'].image_action_list) }}        
-        </section>
-    </section>
 {% endif %}
