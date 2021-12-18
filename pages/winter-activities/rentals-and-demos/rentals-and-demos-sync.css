@@ -30,7 +30,13 @@
 .accordion{
     margin-bottom: .5rem;
 }
-ol, ul {
+.accordion--text__padding{
+    padding-bottom: 0px;
+}
+.accordion--label{
+    margin-bottom: 0.5rem;
+}
+.rental-demos__accordion ol ul {
     list-style: inside;
 }
 .global-contents p strong {
