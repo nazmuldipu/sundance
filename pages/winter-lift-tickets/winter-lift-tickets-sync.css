@@ -1,0 +1,211 @@
+/****  start imports  ********************************/
+@import "../../styles/global.css";
+/****  end imports  ********************************/
+.group-container{
+    border: none;
+}
+.bridge{
+    padding-bottom: 50px;
+}
+.bridge__nav-icon{
+    background-color: transparent;
+}
+.winter__header{
+    font-weight: 600;
+    font-size: 2.625rem;
+}
+.winter__card{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 3rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .bridge{
+        padding-bottom: 8px;
+    }
+    .winter__header{
+        font-size: 1.5rem;
+    }
+    .winter__card{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 8px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .winter__card{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 8px;
+    }
+    .group-venues__actions{
+        display: grid;
+        grid-auto-flow: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1365px){
+    .group-venues__actions{
+        display: grid;
+        grid-auto-flow: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (min-width: 1366px){
+    .group-venues__actions{
+        display: grid;
+        grid-auto-flow: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and (min-width: 1024px){
+    .pricing-card {
+        min-width: 350px;
+    }
+    .table--row__data {
+        min-width: 400px;
+    }
+    .action-card {
+        min-width: 400px;
+    }
+    .pricing-card__list-item {
+        font-size: 20.2106px;
+        line-height: 27px;
+    }
+    .pricing-card__intro-description {
+        font-size: 28px;
+        line-height: 33px;
+    }
+    .table--row__data {
+        padding: 0;
+    }
+}
+@media screen and (min-width: 768px){
+    .table--row__data {
+        min-width: 350px;
+    }
+    .action-card {
+        min-width: 350px;
+    }
+}
+.pricing {
+    padding-bottom: 100px;
+    overflow-x: auto;
+}
+.pricing-card__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.action-card__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .5rem;
+}
+.pricing-card {
+    width: 100%;
+    min-width: 200px;
+}
+.pricing-card__intro-title {
+    font-size: 18px;
+    line-height: 20px;
+    padding-bottom: 16px;
+}
+.pricing-card__intro-description {
+    font-size: 25px;
+    line-height: 30px;
+    padding-bottom: 16px;
+}
+.pricing-card__intro-caption {
+    font-size: 14px;
+    line-height: 21px;
+    padding-bottom: 16px;
+}
+.action-card .button--primary {
+    background-color: white;
+    color: black !important;
+    border: none;
+}
+.action-card {
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    width: 100%;
+    margin-bottom: 22px;
+    position: relative;
+    min-width: 200px;
+}
+.pricing-card__list-item {
+    font-size: 18px;
+    line-height: 23px;
+    padding-bottom: 32px;
+    padding-top: 32px;
+}
+.pricing-card__body--link {
+    font-size: 20.2106px;
+    line-height: 27px;
+    padding-top: 32px;
+}
+.pricing-card__body--footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 32px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.pricing-card__body--footer .button--primary {
+    color: white !important;
+    border: none !important;
+    padding: 25px 0;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    line-height: 22px;
+}
+.pricing-card__list {
+    padding-bottom: 32px;
+}
+.pricing-card__caption{
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.table--row__data {
+    justify-content: center;
+    padding: 0 1rem;
+    min-width: 200px;
+    box-sizing: border-box;
+}
+.table--row {
+    border-bottom: 0.673686px solid #D0D0D0;
+    gap: 0.5rem;
+}
+.chip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46.48px;
+    height: 46.48px;
+    background: #262624;
+    color: white;
+    border-radius: 50%;
+    font-size: 14.8211px;
+    line-height: 18px;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+.table--row:nth-last-child(2) {
+    border: none;
+    padding-bottom: 0;
+}
+.table--row:nth-last-child(2) .pricing-card__list-item {
+    padding-bottom: 0;
+}
