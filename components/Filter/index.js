@@ -66,8 +66,8 @@ export default class FilterComponent extends HTMLElement {
     }
 
     isChecked(item){
-        if(!item || !this._filters) return false;
-        return this._filters.filters.find(flt => flt.items.find(i => i.id == item.id)).items.find(i => i.id == item.id);
+        if(!item || !this._selectedFilters) return false;
+        return this._selectedFilters.find(flt => flt.id == item.id) ? true : false;
     }
 
     getTemplate(data){
