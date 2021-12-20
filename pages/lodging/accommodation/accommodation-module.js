@@ -1,7 +1,7 @@
 import '../../../scripts/lib/globalEvents.js';
 import "components/MediaCarousel/index.js";
 import "components/Filter/index.js";
-import {sortingOrder, getValue, filterByType, generateFilters, getFormattedFilterData} from 'scripts/utils/filter.js';
+import { getValue, filterByType, getFilterData} from 'scripts/utils/filter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const filter_container = document.querySelector('filter-component');
@@ -32,8 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const updatedFilterData = notFilteredCards.map(card => {
             return card.dataset.card ? JSON.parse(card.dataset.card) : {};
         })
-        const filtersObject = generateFilters(updatedFilterData);
-        const formattedFilter = getFormattedFilterData(filtersObject).sort((a, b) => sortingOrder.indexOf(a.title) - sortingOrder.indexOf(b.title));
+        const formattedFilter = getFilterData(updatedFilterData);
         
         filter_container.setFilters({
             filters: {

@@ -17,12 +17,13 @@ nickname: "lodging/accommodation"
         {{ lodging_form(item = lodgingForm, page = page) }}
     </section>
 </section>
+
 <section class="segment-outer bg-sn-4 text-left lodging-accommodation__filter">
     <section class="segment-inner filters">
-        {# {{ filter(filters) }} #}
-        <filter-component class="filter-container"></filter-component>
+        {{ filter(filters) }}
     </section>
 </section>
+
 <section class="segment-outer bg-sn-4 px-4 pb-4">
     <section class="segment-inner">
         <section class="flex-card-container">
