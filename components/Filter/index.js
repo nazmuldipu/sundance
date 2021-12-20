@@ -12,27 +12,15 @@ export default class FilterComponent extends HTMLElement {
     }
 
     connectedCallback() {
-        import('./data.json').then(module => {
-            const data = module.default;
-            data.entries = 18;
+        if(this.dataset && this.dataset.filter){
+            this._data = JSON.parse(this.dataset.filter);
             const template = document.createElement('template');
-            template.innerHTML = this.getTemplate(data);
+            template.innerHTML = this.getTemplate(this._data);
             this._currentChild = template.content.cloneNode(true);
             this._contents.appendChild(this._currentChild);
             this.render();
             this.initEvents();
-        })
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        if(attrName == 'data'){
-            this._data = newVal;
-            this.render();
         }
-    }
-
-    static get observedAttributes() {
-        return ['data'];
     }
 
     get data(){
@@ -40,9 +28,9 @@ export default class FilterComponent extends HTMLElement {
     }
 
     async render(){
-        //const obj = JSON.parse(this.data);
         this.appendChild(this._contents); 
     }
+
     initEvents(){
         this.addEventListener('click', (e) => {
             if(e.target.type === 'checkbox' && e.target.name !== 'filter'){

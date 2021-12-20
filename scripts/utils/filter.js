@@ -34,14 +34,30 @@ export function getFormattedFilterData(filtersObject){
         return {
           title: key,
           items: Object.keys(value).map( itemKey => {
-                  const parsedItemKey = itemKey.replace(' & ', ' ').replace(/\s/g, '-').toLowerCase();
+                  //const parsedItemKey = itemKey.replace(' & ', ' ').replace(/\s/g, '-').toLowerCase();
                   return {
                       "copy": itemKey,
-                      "id": `${key}-filter-${parsedItemKey}`,
+                      "id": `${key}-filter-${itemKey}`,
                       "name": filterMap[key],
                       "quantity": value[itemKey],
                   }
               })
         }
     });
+}
+
+export const getFilterData = (cardData) => {
+    const filterData = generateFilters(cardData);
+    return getFormattedFilterData(filterData).sort((a, b) => sortingOrder.indexOf(a.title) - sortingOrder.indexOf(b.title));
+}
+
+if(typeof module !== 'undefined'){
+    module.exports = {
+        sortingOrder,
+        getValue,
+        filterByType,
+        generateFilters,
+        getFormattedFilterData,
+        getFilterData
+    }
 }

@@ -6,6 +6,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -44,6 +45,7 @@
 							}
 						],
 						"sub_title": "Ponderosa",
+						"customlink": "/lodging/accommodation/ponderosa",
 						"left_image": true,
 						"description": "Escape to the forests of the Wasatch mountains in Ponderosa. The unique layout of this home, includes a separate mother-in-law apartment and bonus nook space to accommodate many styles of families and friends alike."
 					}
@@ -52,6 +54,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -90,6 +93,7 @@
 							}
 						],
 						"sub_title": "Canyon View",
+						"customlink": "/lodging/accommodation/canyon-view",
 						"left_image": true,
 						"description": "Enjoy stunning, unobstructed views of Mount Timpanogos, along with unique views of Provo Canyon. This brand new home showcases the mountain, including unique views of ski runs during the winter season, and contemporary luxury all year round."
 					}
@@ -98,6 +102,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Rooms & Suites",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -136,6 +141,7 @@
 							}
 						],
 						"sub_title": "Standard Room",
+						"customlink": "/lodging/rooms-and-suites/standard-room",
 						"left_image": true,
 						"description": "Standard Rooms feature a bedroom and a bathroom—perfect for a quick overnight stay or those spending most of their time enjoying activities or up on the mountain."
 					}
@@ -144,6 +150,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Rooms & Suites",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -182,6 +189,7 @@
 							}
 						],
 						"sub_title": "Studio Room",
+						"customlink": "/lodging/rooms-and-suites/studio-room",
 						"left_image": true,
 						"description": "Studio Rooms provide a little more living space for guests looking for a special touch of romance in their stay with a fireplace and deck or patio. Studios also feature a desk or sitting area."
 					}
@@ -190,6 +198,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Rooms & Suites",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -228,6 +237,7 @@
 							}
 						],
 						"sub_title": "Sundance Suite",
+						"customlink": "/lodging/rooms-and-suites/sundance-suite",
 						"left_image": true,
 						"description": "Sundance Suites are perfect for a romantic getaway or a little more room for an extra guest or an extended stay. Kitchenettes are available in the Sundance Suites for storing drinks and snacks or even enjoying a simple in-room meal."
 					}
@@ -236,6 +246,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Rooms & Suites",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -274,6 +285,7 @@
 							}
 						],
 						"sub_title": "Mountain Suite",
+						"customlink": "/lodging/rooms-and-suites/mountain-suite",
 						"left_image": true,
 						"description": "Mountain Suites provide plenty of extra room, with full-size kitchens, private master bedrooms and living rooms."
 					}
@@ -282,6 +294,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -320,6 +333,7 @@
 							}
 						],
 						"sub_title": "Hawk’s Nest",
+						"customlink": "/lodging/accommodation/hawks-nest",
 						"left_image": true,
 						"description": "A short hike from Stewart Falls and the Spa, Hawk’s Nest is your perfect home away from home. This rustic, private cabin features vaulted ceilings, full kitchen with bar and north-facing windows for natural light throughout the year."
 					}
@@ -328,6 +342,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -366,6 +381,7 @@
 							}
 						],
 						"sub_title": "Mountainview",
+						"customlink": "/lodging/accommodation/mountain-view",
 						"left_image": true,
 						"description": "A home ideal for those seeking solitude and perfect mountain-scapes, Mountainview lives up to its name with unparalleled vistas of the surrounding canyon."
 					}
@@ -374,6 +390,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -412,6 +429,7 @@
 							}
 						],
 						"sub_title": "Dream Catcher",
+						"customlink": "/lodging/accommodation/dream-catcher",
 						"left_image": true,
 						"description": "Dream Catcher is tucked into the hillside with privacy and mountain views. This warm and cozy cabin contains traditional western architecture combined with large ceilings and plenty of natural light. One of two “sister” cabins."
 					}
@@ -420,6 +438,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -458,6 +477,7 @@
 							}
 						],
 						"sub_title": "Owl Spirit",
+						"customlink": "/lodging/accommodation/owl-spirit",
 						"left_image": true,
 						"description": "Owl Spirit is one of the most unique cabins available at Sundance. Reclaimed wood and cozy western architecture are used throughout to offer an authentic experience. Part of a two-cabin lodge."
 					}
@@ -466,6 +486,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -504,6 +525,7 @@
 							}
 						],
 						"sub_title": "Sunstone",
+						"customlink": "/lodging/accommodation/sunstone",
 						"left_image": true,
 						"description": "Enjoy stunning views of Mt. Timpanogos from the bi-level decks that wrap around this beautiful three-story home. The unique circular shape of the home allows for a cozy and intimate layout."
 					}
@@ -512,6 +534,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -550,6 +573,7 @@
 							}
 						],
 						"sub_title": "Balsam",
+						"customlink": "/lodging/accommodation/balsam",
 						"left_image": true,
 						"description": "Enter the cozy living room of this beautiful pinewood home and cozy up in front of the big stone fireplace to view the Sundance wilderness through the three-story-high picture windows."
 					}
@@ -558,6 +582,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -596,6 +621,7 @@
 							}
 						],
 						"sub_title": "Cascade Ridge",
+						"customlink": "/lodging/accommodation/cascade-ridge",
 						"left_image": true,
 						"description": "With jaw-dropping views of Mt. Timpanogos, this unique home makes for the perfect rustic mountain getaway. Cascade Ridge is equipped with state of the art amenities and a serene alpine setting that will leave a lasting impression."
 					}
@@ -604,6 +630,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -642,6 +669,7 @@
 							}
 						],
 						"sub_title": "Turkey Ridge",
+						"customlink": "/lodging/accommodation/turkey-ridge",
 						"left_image": true,
 						"description": "Located just minutes away from our Sundance Village, Turkey Ridge provides an intimate, one-of-a-kind experience. A spacious backyard and patio with a chair swing and beautiful mountain views make this two-bedroom home perfect for a small family getaway."
 					}
@@ -650,6 +678,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -688,6 +717,7 @@
 							}
 						],
 						"sub_title": "Wild west lodge",
+						"customlink": "/lodging/accommodation/wild-west-lodge",
 						"left_image": true,
 						"description": "Wild West Lodge is unlike any other home at Sundance, with designs influenced by Native American art, early Western architecture, and architectural salvage. With a unique interior design and attention to detail, Wild West Lodge provides a one-of-a-kind mountain experience."
 					}
@@ -696,6 +726,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -734,6 +765,7 @@
 							}
 						],
 						"sub_title": "Cirque Crest",
+						"customlink": "/lodging/accommodation/cirque-crest",
 						"left_image": true,
 						"description": "One of the largest homes available on the mountain, Cirque Crest is the combination of both the Dream Catcher and Owl Spirit cabins. It’s perfect for families traveling together or large groups needing extra space. Beautiful mountain views are complemented by vaulted ceilings, multiple hot tubs, kitchens and living areas with unique western art and design."
 					}
@@ -742,6 +774,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Rooms & Suites",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -780,6 +813,7 @@
 							}
 						],
 						"sub_title": "Mountain Loft",
+						"customlink": "/lodging/rooms-and-suites/mountain-loft",
 						"left_image": true,
 						"description": "Mountain Lofts are the largest room type at Sundance, providing plenty of extra space. Each offers a full-size kitchen, private master bedroom, living room and sleeping loft with extra beds. This room type is the right choice for those planning on preparing a meal in the room or bringing the kids. Mountain Loft Suites may also be combined with adjacent Studio rooms to create a two-bedroom cottage."
 					}
@@ -788,6 +822,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -826,6 +861,7 @@
 							}
 						],
 						"sub_title": "Mountain Spring",
+						"customlink": "/lodging/accommodation/mountain-spring",
 						"left_image": true,
 						"description": "Lose yourself in the mountains of Sundance Resort in this exquisite, spacious mountain lodge. The Mountain Spring home is breathtaking from every angle. The heavy dark wood finish and décor throughout the home echo the rustically elegant feel that surrounds"
 					}
@@ -834,6 +870,7 @@
 					"vertical_card": {
 						"id": "",
 						"Type": "Mountain Homes",
+						"link": "",
 						"image": {
 							"global_image": {
 								"alt": "Accommodation",
@@ -872,6 +909,7 @@
 							}
 						],
 						"sub_title": "Timp Ridge",
+						"customlink": "/lodging/accommodation/timp-ridge",
 						"left_image": true,
 						"description": "Enjoy a spacious getaway with one of our largest homes on the mountain. Open-concept seating rooms embrace the rustic elegance of Sundance Mountain Resort and ensure renewing relaxation for any mountain escape."
 					}
@@ -885,149 +923,6 @@
 			}
 		}
 	},
-	"filters": [
-		{
-			"title": "Bedrooms",
-			"items": [
-				{
-					"copy": "1",
-					"id": "bedrooms-filter-1",
-					"name": "bedrooms-filter",
-					"quantity": 2
-				},
-				{
-					"copy": "1-2",
-					"id": "bedrooms-filter-1-2",
-					"name": "bedrooms-filter",
-					"quantity": 2
-				},
-				{
-					"copy": "2",
-					"id": "bedrooms-filter-2",
-					"name": "bedrooms-filter",
-					"quantity": 1
-				},
-				{
-					"copy": "2-3",
-					"id": "bedrooms-filter-2-3",
-					"name": "bedrooms-filter",
-					"quantity": 1
-				},
-				{
-					"copy": "3",
-					"id": "bedrooms-filter-3",
-					"name": "bedrooms-filter",
-					"quantity": 5
-				},
-				{
-					"copy": "4",
-					"id": "bedrooms-filter-4",
-					"name": "bedrooms-filter",
-					"quantity": 1
-				},
-				{
-					"copy": "6",
-					"id": "bedrooms-filter-6",
-					"name": "bedrooms-filter",
-					"quantity": 6
-				},
-				{
-					"copy": "7",
-					"id": "bedrooms-filter-7",
-					"name": "bedrooms-filter",
-					"quantity": 1
-				}
-			]
-		},
-		{
-			"title": "Sleeps",
-			"items": [
-				{
-					"copy": "11",
-					"id": "sleeps-filter-11",
-					"name": "sleeps-filter",
-					"quantity": 1
-				},
-				{
-					"copy": "12",
-					"id": "sleeps-filter-12",
-					"name": "sleeps-filter",
-					"quantity": 2
-				},
-				{
-					"copy": "14",
-					"id": "sleeps-filter-14",
-					"name": "sleeps-filter",
-					"quantity": 1
-				},
-				{
-					"copy": "15",
-					"id": "sleeps-filter-15",
-					"name": "sleeps-filter",
-					"quantity": 2
-				},
-				{
-					"copy": "16",
-					"id": "sleeps-filter-16",
-					"name": "sleeps-filter",
-					"quantity": 1
-				},
-				{
-					"copy": "2",
-					"id": "sleeps-filter-2",
-					"name": "sleeps-filter",
-					"quantity": 2
-				},
-				{
-					"copy": "2-4",
-					"id": "sleeps-filter-2-4",
-					"name": "sleeps-filter",
-					"quantity": 2
-				},
-				{
-					"copy": "4-6",
-					"id": "sleeps-filter-4-6",
-					"name": "sleeps-filter",
-					"quantity": 2
-				},
-				{
-					"copy": "6",
-					"id": "sleeps-filter-6",
-					"name": "sleeps-filter",
-					"quantity": 1
-				},
-				{
-					"copy": "8",
-					"id": "sleeps-filter-8",
-					"name": "sleeps-filter",
-					"quantity": 1
-				},
-				{
-					"copy": "9",
-					"id": "sleeps-filter-9",
-					"name": "sleeps-filter",
-					"quantity": 1
-				}
-			]
-		},
-		{
-			"title": "Lodging Type",
-			"items": [
-				{
-					"copy": "Mountain Homes",
-					"id": "lodging-filter-mountain-homes",
-					"name": "lodging-filter",
-					"quantity": 13
-				},
-				{
-					"copy": "Rooms & Suites",
-					"id": "lodging-filter-rooms-suites",
-					"name": "lodging-filter",
-					"quantity": 5
-				}
-			]
-		}
-	],
 	"lodgingForm": {
 		"heading": "Lodging at Sundance",
 		"subheading": "Face Coverings are required when checking in at the front desk.",
@@ -1076,5 +971,163 @@
 			"href": "http://example.com/",
 			"target": "_blank"
 		}
+	},
+	"filters": {
+		"filters": [
+			{
+				"title": "bedrooms",
+				"items": [
+					{
+						"copy": "1",
+						"id": "bedrooms-filter-1",
+						"name": "bedrooms-filter",
+						"quantity": 2
+					},
+					{
+						"copy": "2",
+						"id": "bedrooms-filter-2",
+						"name": "bedrooms-filter",
+						"quantity": 1
+					},
+					{
+						"copy": "3",
+						"id": "bedrooms-filter-3",
+						"name": "bedrooms-filter",
+						"quantity": 5
+					},
+					{
+						"copy": "4",
+						"id": "bedrooms-filter-4",
+						"name": "bedrooms-filter",
+						"quantity": 1
+					},
+					{
+						"copy": "6",
+						"id": "bedrooms-filter-6",
+						"name": "bedrooms-filter",
+						"quantity": 6
+					},
+					{
+						"copy": "7",
+						"id": "bedrooms-filter-7",
+						"name": "bedrooms-filter",
+						"quantity": 1
+					},
+					{
+						"copy": "1-2",
+						"id": "bedrooms-filter-1-2",
+						"name": "bedrooms-filter",
+						"quantity": 2
+					},
+					{
+						"copy": "2-3",
+						"id": "bedrooms-filter-2-3",
+						"name": "bedrooms-filter",
+						"quantity": 1
+					}
+				]
+			},
+			{
+				"title": "sleeps",
+				"items": [
+					{
+						"copy": "2",
+						"id": "sleeps-filter-2",
+						"name": "sleeps-filter",
+						"quantity": 2
+					},
+					{
+						"copy": "4",
+						"id": "sleeps-filter-4",
+						"name": "sleeps-filter",
+						"quantity": 1
+					},
+					{
+						"copy": "6",
+						"id": "sleeps-filter-6",
+						"name": "sleeps-filter",
+						"quantity": 1
+					},
+					{
+						"copy": "8",
+						"id": "sleeps-filter-8",
+						"name": "sleeps-filter",
+						"quantity": 4
+					},
+					{
+						"copy": "9",
+						"id": "sleeps-filter-9",
+						"name": "sleeps-filter",
+						"quantity": 1
+					},
+					{
+						"copy": "11",
+						"id": "sleeps-filter-11",
+						"name": "sleeps-filter",
+						"quantity": 1
+					},
+					{
+						"copy": "12",
+						"id": "sleeps-filter-12",
+						"name": "sleeps-filter",
+						"quantity": 2
+					},
+					{
+						"copy": "14",
+						"id": "sleeps-filter-14",
+						"name": "sleeps-filter",
+						"quantity": 1
+					},
+					{
+						"copy": "15",
+						"id": "sleeps-filter-15",
+						"name": "sleeps-filter",
+						"quantity": 2
+					},
+					{
+						"copy": "16",
+						"id": "sleeps-filter-16",
+						"name": "sleeps-filter",
+						"quantity": 1
+					},
+					{
+						"copy": "2-4",
+						"id": "sleeps-filter-2-4",
+						"name": "sleeps-filter",
+						"quantity": 1
+					},
+					{
+						"copy": "1-2",
+						"id": "sleeps-filter-1-2",
+						"name": "sleeps-filter",
+						"quantity": 1
+					},
+					{
+						"copy": "4-6",
+						"id": "sleeps-filter-4-6",
+						"name": "sleeps-filter",
+						"quantity": 1
+					}
+				]
+			},
+			{
+				"title": "types",
+				"items": [
+					{
+						"copy": "Mountain Homes",
+						"id": "types-filter-Mountain Homes",
+						"name": "lodging-filter",
+						"quantity": 14
+					},
+					{
+						"copy": "Rooms & Suites",
+						"id": "types-filter-Rooms & Suites",
+						"name": "lodging-filter",
+						"quantity": 5
+					}
+				]
+			}
+		],
+		"entries": 19
 	}
 }

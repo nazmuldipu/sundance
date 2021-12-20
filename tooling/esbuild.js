@@ -150,10 +150,14 @@ const getGoogleMapsApiToken = () => {
 const pathResolvePlugin = {
     name: 'pathResolver',
     setup(build){  
-      build.onResolve({ filter: /^components\// || /^scripts\// }, args => { 
+      const pathResolver = args => {   
         const rootPath = args.resolveDir.split('pages' + sep)[0];
         return { path: join(rootPath, args.path) }
-      })
+      }; 
+
+      build.onResolve({ filter: /^components\// }, pathResolver)
+
+      build.onResolve({ filter: /^scripts\// }, pathResolver)
     },
 }
 
