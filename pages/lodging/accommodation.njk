@@ -26,7 +26,9 @@ nickname: "accommodation"
     <section class="segment-inner">
         <section class="flex-card-container">
             {% for item in cardAllData %}
-                {{ singleCard(item = item.vertical_card, classes = ['card-container', 'text-left', 'flex__single-card mb-8']) }}
+                <a href="{{item.vertical_card.slug}}" class="no-underline card-container flex__single-card mb-8 mb-8">
+                    {{ singleCard(item = item.vertical_card, classes = ['']) }}
+                </a>    
             {% endfor %}
         </section>
         <div class="font-ivar text-sm card-footer-caption text-center">
