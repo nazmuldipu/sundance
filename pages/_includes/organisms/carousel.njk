@@ -1,11 +1,14 @@
 {% from 'molecules/card.njk' import verticalCard %}
+
 {% macro card_carousel(cards = []) %}
     <media-carousel>
         <div class="swiper-container mt-12">
             <div class="swiper-wrapper gap-x-4">
                 {% for item in cards %}
                     <div class="swiper-slide slider-card--max-width">
-                        {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+                        <a href="{{item.vertical_card.link}}" class="no-underline">
+                            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+                        </a>
                     </div>
                 {% endfor %}
             </div>

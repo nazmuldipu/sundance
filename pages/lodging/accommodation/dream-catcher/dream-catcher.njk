@@ -1,9 +1,9 @@
 ---
 layout: base.njk
-pagename: mountain-view
-permalink: "build/lodging/accommodation/mountain-view/index.html"
+pagename: dream-catcher
+permalink: "build/lodging/accommodation/dream-catcher/index.html"
 permalinkBypassOutputDir: true
-nickname: lodging/accommodation/mountain-view
+nickname: lodging/accommodation/dream-catcher
 ---
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
@@ -18,7 +18,12 @@ nickname: lodging/accommodation/mountain-view
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'molecules/accommodation-feature.njk' import accommodationFeature2 %}
 {% from "organisms/carousel.njk" import card_carousel %}
+{% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
+{% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
 {% set sliderImages = pageCMS['slider'].global_image_arr.images %}
+
+{% set top_banner = pageCMS['top-banner-left'].banner %}
+{% set topBannerImage = top_banner.global_image.global_image %}
 
 {% macro aminitiesSection() %}
     {% if pageCMS['amenities-data'].amenities_list %}
@@ -26,12 +31,10 @@ nickname: lodging/accommodation/mountain-view
             {{ amenities(pageCMS['amenities-data'].amenities_list) }}
         </section>
         <div></div>
-    {% endif %}
-    {% if pageCMS['amenities-bottom-description'].simple_article %}
-        <div class="mt-12 font-ivar text-lg-2 text-center cms-description">{{pageCMS['amenities-bottom-description'].simple_article.description | safe}}</div>
-    {% endif %}
-    {% if pageCMS['amenities-bottom-description'].simple_article %}
-        <p class="mt-12 font-ivar text-center">{{pageCMS['amenities-bottom-description'].simple_article.title}}</p>
+    {% endif %}  
+    {% if pageCMS['amenities-bottom-title'].simple_article %}
+        <div class="mt-12 font-ivar text-lg-2 text-center">{{pageCMS['amenities-bottom-title'].simple_article.description | safe}}</div>
+        <p class="mt-12 font-ivar text-center">{{pageCMS['amenities-bottom-title'].simple_article.title}}</p>
     {% endif %}
 {% endmacro %}
 
@@ -44,12 +47,13 @@ nickname: lodging/accommodation/mountain-view
         {% endif %}
     </section>
 {% endmacro %}
+
 <section class="segment-outer bg-sn-5 px-4">
     <section class="segment-inner">
         <section class="dining-details-container">
             <section>
-                <article  class="thumbnail-slider__images grid order-2">
-                   {{multi_slider_thumbnail(sliderImages)}}
+                <article class="thumbnail-slider__images grid order-2">
+                    {{multi_slider_thumbnail(sliderImages)}}
                 </article>
                 <div class="top__accommodation-fetaures">
                     {{ features() }}
