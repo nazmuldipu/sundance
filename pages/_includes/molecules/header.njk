@@ -109,8 +109,10 @@ iconCSS %}
                                 {% for item in menuItems
                                     .sections[sec]
                                     .links %}
+                                    {% set trg = '_blank' if not item.internal else 
+                                    '_self' %}
                                     <li>
-                                        <a href="{{item.href}}" class="font-calibre text-lg-2">{{item.copy}}</a>
+                                        <a href="{{item.href}}" class="font-calibre text-lg-2" target  = "{{trg}}">{{item.copy}}</a>
                                     </li>
                                 {% endfor %}
                             </ul>
