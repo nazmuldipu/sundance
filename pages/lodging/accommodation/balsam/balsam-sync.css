@@ -24,28 +24,24 @@
 }
 .accommodation__features {
     display: flex;
-    grid-gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    grid-gap: 2rem;
 }
 .accommodation-feature {
-    width: 210px;
-    min-height: 210px;
-    box-sizing: border-box;
-    display: block;
-    padding: 52px 34px 48px 34px;
+    flex-basis: 33.33%;
+    padding: 30px 15px;
 }
 .slider-card--max-width {
     max-width: 328px;
 }
-@media screen and (min-width: 767px){
-    .accommodation-feature{
-        padding: 52px 34px 48px 34px;
-    }
-}
 .amenities {
     margin: 0;
     max-width: 100%;
+}
+@media screen and (min-width: 320px) and (max-width: 1023px) {
+    .accommodation__features{
+        flex-direction: column;
+        padding: 0px 25px;
+    }
 }
 @media screen and (max-width: 1024px){
     .group-container {
@@ -60,12 +56,12 @@
     }
 }
 @media screen and (min-width: 1024px){
-    .accommodation-feature {
+    /* .accommodation-feature {
         width: 210px;
         min-height: 210px;
         box-sizing: border-box;
         display: block;
-    }
+    } */
     .dining-details-container {
         display: grid;
         grid-template-columns: 3fr 2fr;
