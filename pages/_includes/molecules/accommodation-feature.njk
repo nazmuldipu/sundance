@@ -26,7 +26,9 @@
 
 {% macro accommodationFeature2(item = {}) %}
     <div class="accommodation-feature no-underline" id="features-2">
-        <div class="icon-css plus-icon rotate-90 justify-self-center bg-sn-5"></div>
+        {% if item.feature_icon %}
+            <div>{{item.feature_icon | safe}}</div>
+        {% endif %}    
         {% if item.title %}
             <header class = "accommodation-feature__type--style">
                 <h6>{{ item.title | safe }}</h6>
