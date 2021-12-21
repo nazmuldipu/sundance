@@ -33,7 +33,9 @@ nickname: "lodging/plan-your-stay/specials-packages"
         {% endif %}
         <section class="flex-card-container">
             {% for item in cardAllData %}
-                {{ singleCard(item = item.vertical_card, classes = ['card-container', 'flex__single-card', 'mb-8']) }}
+                <a href="/lodging/plan-your-stay/{{item.vertical_card.customslug}}" class="no-underline card-container flex__single-card mb-8">
+                    {{ singleCard(item = item.vertical_card, classes = ['']) }}
+                </a>    
             {% endfor %}
         </section>
     </section>
