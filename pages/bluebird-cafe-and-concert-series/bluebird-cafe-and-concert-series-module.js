@@ -5,12 +5,12 @@ import { getValue, filterByType, getFilterData} from 'scripts/utils/filter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const filter_container = document.querySelector('filter-component');
-    const cards = Array.from(document.querySelectorAll('.flex__single-card'));
     /**
      * 
      * @param {array} filters 
      */
     function applyFilters(filters){
+        const cards = Array.from(document.querySelectorAll('.flex__single-card'));
         const appliedBedrooms = filters.filter(filterByType('bedrooms')).map(getValue).flat();
         const appliedSleeps = filters.filter(filterByType('sleeps')).map(getValue).flat();
         const appliedType = filters.filter(filterByType('lodging')).map(getValue).flat();
@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const isFilterAdded = card => {
             const cardObject = card.dataset.card ? JSON.parse(card.dataset.card) : {};
             const { Type: type, Sleeps: sleeps, Bedrooms: bedrooms } = cardObject;
-            const isBedroomsFilterAdded = appliedBedrooms.length > 0 && bedrooms && !appliedBedrooms.some(item => bedrooms.includes(item));
-            const isSleepsFilterAdded = appliedSleeps.length > 0 && sleeps && !appliedSleeps.some(item => sleeps.includes(item));
-            const isTypeFilterAdded = appliedType.length > 0 && type && !appliedType.some(item => type.includes(item));
+            const isBedroomsFilterAdded = appliedBedrooms.length > 0 && bedrooms && !appliedBedrooms.some(item => bedrooms === item);
+            const isSleepsFilterAdded = appliedSleeps.length > 0 && sleeps && !appliedSleeps.some(item => sleeps === item);
+            const isTypeFilterAdded = appliedType.length > 0 && type && !appliedType.some(item => type === item);
             return isBedroomsFilterAdded || isSleepsFilterAdded || isTypeFilterAdded; 
         }
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         filter_container.setFilters({
             filters: {
-                entries: filteredCards.length,
+                entries: notFilteredCards.length,
                 filters: formattedFilter
             }
         });
