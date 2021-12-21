@@ -30,10 +30,9 @@ nickname: lodging/accommodation/canyon-view
         <section class="mt-12">
             {{ amenities(pageCMS['amenities-data'].amenities_list) }}
         </section>
-        <div></div>
     {% endif %}
     {% if pageCMS['amenities-bottom-title'].simple_article %}
-        <p class="mt-12">{{pageCMS['amenities-bottom-title'].simple_article.title}}</p>
+        <p class="mt-12 font-ivar text-center">{{pageCMS['amenities-bottom-title'].simple_article.title}}</p>
     {% endif %}
 {% endmacro %}
 
@@ -112,7 +111,7 @@ nickname: lodging/accommodation/canyon-view
 
         {% if pageCMS['vertical-card-list'] and pageCMS['vertical-card-list'].vertical_card_list %}
             {% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
-            <section class="flex-card-container">
+            <section class="flex-card-container mt-8">
                 {% for item in vertical_card_list %}
                     {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8','flex__single-card']) }}
                 {% endfor %}

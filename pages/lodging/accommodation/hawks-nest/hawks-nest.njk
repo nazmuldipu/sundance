@@ -112,7 +112,7 @@ nickname: lodging/accommodation/hawks-nest
 
         {% if pageCMS['vertical-card-list'] and pageCMS['vertical-card-list'].vertical_card_list %}
             {% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
-            <section class="flex-card-container">
+            <section class="flex-card-container mt-8">
                 {% for item in vertical_card_list %}
                     {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8','flex__single-card']) }}
                 {% endfor %}

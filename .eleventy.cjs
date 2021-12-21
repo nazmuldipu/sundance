@@ -1,14 +1,30 @@
 'use strict';
 
 const htmlmin = require('html-minifier');
-const { basename, join, parse } = require('path');
+const { basename, parse, relative, posix } = require('path');
 const { copyFileSync,  readdirSync, renameSync, openSync } = require('fs');
-const { getImgSizes, getSrcSet, buildOutputDir, get_resized_image_url, getImageUrl } = require('./tooling/eleventy.cjs');
+const { getImgSizes,
+        getSrcSet,
+        buildOutputDir,
+        get_resized_image_url,
+        getImageUrl,
+        webComponent
+     } = require('./tooling/eleventy.cjs');
 const util = require('util');
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addNunjucksShortcode('access', function(array, index) {
         return array[index];
+    });
+
+    eleventyConfig.addNunjucksShortcode('webComponent', function(componentName, customElementName, pageUrl) {
+        // since `relative` returns a zero-length string in the case that both arguments resolve
+        // identically, we have a fallback
+        const relativePath = relative(pageUrl, "/build") || './';
+        // we assume that the custom element path descends from the root "/build" path
+        // we use posix in all cases since the path will be used within a <script> tag
+        const componentPath = posix.join(relativePath, `${process.env.CUSTOM_EL_PATH || ''}`, `${customElementName}.js`);
+        return webComponent(componentName, componentPath, customElementName, pageUrl, relativePath);
     });
 
     eleventyConfig.addNunjucksFilter('slideImgSrcSet', function(slide, imgext="jpg") {

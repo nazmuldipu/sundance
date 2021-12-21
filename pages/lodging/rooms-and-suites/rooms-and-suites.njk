@@ -15,7 +15,7 @@ nickname: "lodging/rooms-and-suites"
 <section class="page-top-adjust"></section>
 <section class="segment-outer">
     <section class="segment-inner text-center">
-        {{ lodging_form(item = lodgingForm) }}
+        {{ lodging_form(item = lodgingForm, page = page) }}
     </section>
 </section>
 <section class="segment-outer bg-sn-4 text-left lodging-accommodation__filter">
@@ -29,7 +29,7 @@ nickname: "lodging/rooms-and-suites"
             {% for item in cardAllData %}
                 {{ singleCard(
                     item = item.vertical_card, 
-                    classes = ['card-container', 'text-left', 'flex__single-card']) 
+                    classes = ['card-container', 'text-left', 'flex__single-card mb-8']) 
                 }}
             {% endfor %}
         </section>
