@@ -133,6 +133,7 @@
 }
 .checkboxes-btn__input:checked + .checkboxes-btn__control {
     border-color: var(--sundance__secondary2);
+    background-color: var(--sundance__secondary2);
 }
 .checkboxes-btn__input:checked .checkboxes-btn__control:after {
     background-color: var(--sundance__secondary2);
