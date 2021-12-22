@@ -2,11 +2,10 @@
 import esbuild from 'esbuild';
 import { readFileSync, readdirSync, statSync, truncateSync, createReadStream, createWriteStream} from 'fs';
 import { appendFile, readFile, writeFile, truncate } from 'fs/promises';
-import { join, basename, extname, posix, relative, sep} from 'path';
+import { join, basename, extname, posix, relative, sep, dirname, resolve} from 'path';
 import { platform } from 'os'
 import { rmNoExist, SCRIPTS_DIR, getPathLoadType, getPageAssets, PAGES_DIR, sanitizePageData, getFirstLine } from './lib.js';
 import { ignorePatterns } from '../config.js';
-
 const defaultPagePath = `${posix.join(PAGES_DIR.pathname, 'pagename')}`;
 const createImportPaths = (scriptsPaths, pagePath = defaultPagePath) => {
     //convert to array hanlding
@@ -149,10 +148,11 @@ const getGoogleMapsApiToken = () => {
 
 const pathResolvePlugin = {
     name: 'pathResolver',
-    setup(build){  
-      build.onResolve({ filter: /^components\// || /^scripts\// }, args => { 
+    async setup(build){   
+      const appRoot = resolve('./'); 
+      build.onResolve({ filter: /^components\// || /^scripts\// }, args => {  
         const rootPath = args.resolveDir.split('pages' + sep)[0];
-        return { path: join(rootPath, args.path) }
+        return { path: join(appRoot, args.path) }
       })
     },
 }

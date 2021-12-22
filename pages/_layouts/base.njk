@@ -124,6 +124,7 @@ pagename: base
             <script src="{{module_js}}" type="module"></script>
         {% endif %}
 <!-- end scripts -->
+        <link rel="stylesheet" type="text/css" href="//js.prismcam.com/violet.css">
     </head>
     <body class="preload page-{{pagename}} bg-sn-5">
         <!-- Google Tag Manager (noscript) -->
@@ -205,7 +206,7 @@ pagename: base
             urls.forEach(function(url){
                 var bookhref = url.getAttribute("href");
                 bookhref.replace('&NCK=organic', '');
-                bookingLink.setAttribute('href', AppendNavisKeywordToURL(bookhref));      
+                url.setAttribute('href', AppendNavisKeywordToURL(bookhref));      
             })
         })
         </script>
@@ -231,5 +232,6 @@ pagename: base
         -->
         <script type="text/javascript" src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
         <!-- End Fareharbor Lightframe API Tag --> 
+        <script type="text/javascript" src="//js.prismcam.com/violet.js"></script>
     </body>
 </html>
