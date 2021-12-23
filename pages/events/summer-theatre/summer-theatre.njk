@@ -31,6 +31,7 @@ nickname: summer-theatre
     </section>
 {% endif %}
 
+{# Gallery Items #}
 {% if pageCMS['theatre-gallery-item'] and pageCMS['theatre-gallery-item'].blog %}
         {% set galleryItems = pageCMS['theatre-gallery-item'].blog %}
         <section class="segment-inner global-pb global-px">
@@ -38,7 +39,7 @@ nickname: summer-theatre
                 {{ h2(copy = galleryItems.title, classes = ['heading', 'text-center', 'text-lg', 'font-ivar', 'font-medium', 'text--color__sp-7']) }}
             {% endif %}
 
-            {% if gallerItems.images %}
+            {% if galleryItems.images %}
                 {{ gallery_items(galleryItems.images) }}
             {% endif %}
 
