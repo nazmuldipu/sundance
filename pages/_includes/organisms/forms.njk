@@ -80,7 +80,7 @@
 {% webComponent "SynxisLodgingForm", "synxis-lodging-form", page.url %}
 {% endmacro %}
 
-{% macro rfpForm(obj, cta) %}
+{% macro rfpForm(obj, cta, input_class = '') %}
     {% for items in obj %}
         {% if items.header %}
             {{ h2(classes=['heading', 'text-2xl', 'wedding__rfp-header', 'font-ivar', 'font-semibold'], copy = items.header) }}
@@ -116,6 +116,12 @@
                         
                         {% else %}
 
+                            {% if formItems.type == 'file' %}
+                                {% set class = input_class %}
+                                {% else %}
+                                {% set class = 'wedding-rfp__input'%}
+                            {% endif %}
+                            
                             {% if formItems.label %}
                                 {{ form_input(obj = {
                                         label: formItems.label,
@@ -124,7 +130,8 @@
                                         id: formItems.id,
                                         classes: [
                                             "w-full",
-                                            "wedding-rfp__input"
+                                            class
+                                            
                                         ]
                                 }, classes= [
                                     "font-calibre",
@@ -162,7 +169,7 @@
         {% endif %}                     
     {% endfor %}
     {% if cta %}
-        {% set trg = '_blank' if not link.internal else '_self' %}
+        {% set trg = '_blank' if not cta.internal else '_self' %}
         {{ button_primary( 
             classes = ['button', 'button--primary','font-calibre', 'text-lg'], 
             href=cta.url, 
