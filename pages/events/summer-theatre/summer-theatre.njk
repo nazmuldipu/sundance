@@ -1,0 +1,54 @@
+---
+layout: base.njk
+pagename: summer-theatre
+permalink: "build/events/summer-theatre/index.html"
+permalinkBypassOutputDir: true
+nickname: summer-theatre
+---
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6, global_header %}
+{% from 'molecules/card.njk' import horrizontalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'macros.njk' import top_banner_group_venues, gallery_items %}
+
+{# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
+    {% set theatre_group_venues = pageCMS['group-venues'].group_venues  %}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, theatre_group_venues) }}
+{% endif %}
+
+{# Horizontal Cards #}
+{% if pageCMS['horizontal-cards'] %}
+    {% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
+    <section class="segment-outer">
+        <section class="segment-inner summer-theatre global-pb global-px">
+            {{ horrizontalCard(
+            items=horizontal_card_list,  
+            horizontal_card_container = ['horizontal__card-container', 'mb-4'],
+            imageClasses = 'image_frame sm:25:32 lg:25:32'
+            ) }}
+        </section>
+    </section>
+{% endif %}
+
+{# Gallery Items #}
+{% if pageCMS['theatre-gallery-item'] and pageCMS['theatre-gallery-item'].blog %}
+        {% set galleryItems = pageCMS['theatre-gallery-item'].blog %}
+        <section class="segment-inner global-pb global-px">
+            {% if galleryItems.title %}
+                {{ h2(copy = galleryItems.title, classes = ['heading', 'text-center', 'text-lg', 'font-ivar', 'font-medium', 'text--color__sp-7']) }}
+            {% endif %}
+
+            {% if galleryItems.images %}
+                {{ gallery_items(galleryItems.images) }}
+            {% endif %}
+
+            {% if galleryItems.description %}
+                <section class="summer-theatre__description font-ivar text-center pt-12 text-lg">
+                    <div>{{ galleryItems.description | safe }}</div>
+                </section>
+            {% endif %}
+        </section>        
+{% endif %}
+
+{{newsletter()}}

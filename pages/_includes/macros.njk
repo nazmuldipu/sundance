@@ -183,3 +183,16 @@ Link %}
         {% endfor %}
     </div>
 {% endmacro %}
+
+
+{% macro gallery_items(images, imageclasses = 'w-full gallery-item__img image_frame sm:3:2 lg:3:2') %}
+  <section class="gallery-grid">
+      {% for image in images %}
+      <section class="gallery-item">
+          <figure>   
+              {{ global_image(image.global_image, classes=imageclasses) }}
+          </figure>
+      </section>
+      {% endfor %}
+  </section>
+{% endmacro %}
