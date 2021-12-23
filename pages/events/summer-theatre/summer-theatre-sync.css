@@ -1,0 +1,31 @@
+/****  start imports  ********************************/
+@import "../../../styles/global.css";
+/****  end imports  ********************************/
+
+.horizontal__card-container{
+    box-shadow: none;
+}
+.summer-theatre .horizontal__card-text h2{
+    font-size: 24px;
+}
+
+
+@media screen and (max-width: 1024px){
+    .summer-theatre .horizontal__card-text{
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left;
+        align-items: flex-start;
+    }
+    .summer-theatre .global-pb{
+        padding-bottom: 0px;
+    }
+    .summer-theatre .horizontal__card-text .button--primary {
+        align-self: center;
+    }
+    .summer-theatre__description{
+        letter-spacing: 0.10em;
+        word-spacing: 0.24em;
+    }
+    
+}
