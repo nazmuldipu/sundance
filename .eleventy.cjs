@@ -26,6 +26,12 @@ module.exports = function(eleventyConfig) {
         const componentPath = posix.join(relativePath, `${process.env.CUSTOM_EL_PATH || ''}`, `${customElementName}.js`);
         return webComponent(componentName, componentPath, customElementName, pageUrl, relativePath);
     });
+    //{% script "camera-feed.js", page.url %}
+    eleventyConfig.addNunjucksShortcode('script', function(script, pageUrl){
+        const relativePath = relative(pageUrl, "/build") || './';
+        const scriptPath = posix.join(relativePath,`${process.env.SCRIPT_PATH|| ''}`, script);
+        return `<script src="${scriptPath}"></script>`;
+    })
 
     eleventyConfig.addNunjucksFilter('slideImgSrcSet', function(slide, imgext="jpg") {
         const name = basename(slide.image);
@@ -90,6 +96,8 @@ module.exports = function(eleventyConfig) {
         eleventyConfig.addPassthroughCopy('favicon.*');
     
         eleventyConfig.addPassthroughCopy('robots.txt');
+
+        eleventyConfig.addPassthroughCopy('scripts');
     }
     
     eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
