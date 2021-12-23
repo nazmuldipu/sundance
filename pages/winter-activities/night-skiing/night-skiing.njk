@@ -1,19 +1,18 @@
 ---
 layout: base.njk
-pagename: nordic-center-snow-shoeing
-permalink: "build/activities/winter-activities/nordic-center-snow-shoeing/index.html"
+pagename: night-skiing
+permalink: "build/winter-activities/night-skiing/index.html"
 permalinkBypassOutputDir: true
-nickname: nordic-center-snow-shoeing
+nickname: night-skiing
 ---
-{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6, global_header %}
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from 'molecules/card.njk' import verticalCard %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'organisms/global-image.njk' import global_image %}
-{% from 'molecules/group-venues.njk' import groupVenues %}
 {% from 'molecules/bridge.njk' import bridge %}
-{% from 'atoms/accordion.njk' import accordion %}
 {% from 'macros.njk' import top_banner_group_venues %}
-{% from 'atoms/tables.njk' import tables %}
+
+
 
 {# Hero Image Section #}
 {% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
@@ -21,17 +20,28 @@ nickname: nordic-center-snow-shoeing
     {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues) }}
 {% endif %}
 
-{% if pageCMS['table-list'] and pageCMS['table-list'].table_list %}
-    <section class="group-section">
-        <section class="segment-outer global-contents">
-        <div class="global-pb text-center">{{global_header(pageCMS['table-title'].simple_article.title)}}</div>
-        {% for item in pageCMS['table-list'].table_list %}
-            <div class="global-pb global-px">
-                {{ tables(tableData = item.table) }}
-            </div>
-        {% endfor %}
-        </section>
-    </section>
+{# Bridge carousal #}
+{% if pageCMS['bridge-slider'] %}
+{% set bridge_slider = pageCMS['bridge-slider'].bridge_slider %}
+    {{ bridge(bridge_slider) }}        
+{% endif %}
+
+{# Simple Blog #}
+{% if pageCMS['simple-blog'] and pageCMS['simple-blog'].simple_blog %}
+    {% set simple_blog = pageCMS['simple-blog'].simple_blog  %}
+    <article class="winter-article__container font-ivar">
+        {% if simple_blog.title %}
+           <header>
+                {{ h1(copy = simple_blog.title, classes = ['winter-article__header']) }}
+            </header> 
+        {% endif %}
+        {% if simple_blog.subtitle %}
+            <p class="winter-article__subtitle">{{ simple_blog.subtitle | safe }}</p>
+        {% endif %}
+        {% if simple_blog.descriptions %}
+            <div class = "winter-article__copy">{{ simple_blog.descriptions | safe }}</div>
+        {% endif %}
+    </article>
 {% endif %}
 
 {# Card Title #}

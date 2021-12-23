@@ -1,9 +1,9 @@
 ---
 layout: base.njk
-pagename: cross-country-ski-clinics
-permalink: "build/activities/winter-activities/cross-country-ski-clinics/index.html"
+pagename: ladies-day-ski-clinics
+permalink: "build/winter-activities/ladies-day-ski-clinics/index.html"
 permalinkBypassOutputDir: true
-nickname: cross-country-ski-clinics
+nickname: ladies-day-ski-clinics
 ---
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from 'molecules/card.njk' import verticalCard %}
@@ -11,6 +11,8 @@ nickname: cross-country-ski-clinics
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'molecules/bridge.njk' import bridge %}
 {% from 'macros.njk' import top_banner_group_venues %}
+
+
 
 {# Hero Image Section #}
 {% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
@@ -24,21 +26,14 @@ nickname: cross-country-ski-clinics
     {{ bridge(bridge_slider) }}        
 {% endif %}
 
-{# Simple Blog #}
-{% if pageCMS['simple-blog'] and pageCMS['simple-blog'].simple_blog %}
-    {% set simple_blog = pageCMS['simple-blog'].simple_blog  %}
+{# Simple Article #}
+{% if pageCMS['simple-article'] %}
+    {% set simple_article = pageCMS['simple-article'].simple_article  %}
     <article class="winter-article__container font-ivar">
-        {% if simple_blog.title %}
-            <header>
-                {{ h1(copy = simple_blog.title, classes = ['winter-article__header']) }}
-            </header>
-        {% endif %}
-        {% if simple_blog.subtitle %}
-            <p class="winter-article__subtitle">{{ simple_blog.subtitle | safe }}</p>
-        {% endif %}
-        {% if simple_blog.descriptions %}
-            <div class = "winter-article__copy">{{ simple_blog.descriptions | safe }}</div>
-        {% endif %}
+        <header>
+            {{ h1(copy = simple_article.title, classes = ['winter-article__header']) }}
+        </header>
+        <div class = "winter-article__copy">{{ simple_article.description | safe }}</div>
     </article>
 {% endif %}
 

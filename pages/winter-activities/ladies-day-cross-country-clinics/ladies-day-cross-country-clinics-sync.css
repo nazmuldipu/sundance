@@ -1,8 +1,17 @@
 /****  start imports  ********************************/
-@import "../../../../styles/global.css";
+@import "../../../styles/global.css";
 /****  end imports  ********************************/
 .group-container{
     border: none;
+}
+.bridge{
+    padding-bottom: 50px;
+}
+.bridge__top-frame {
+    background-color: var(--sundance__primary2);
+}
+.bridge__nav-icon{
+    background-color: transparent;
 }
 .winter-card__header{
     font-weight: 600;
@@ -17,6 +26,9 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px){
+    .bridge{
+        padding-bottom: 8px;
+    }
     .winter-card__header{
         font-size: 1.5rem;
     }
@@ -27,7 +39,7 @@
         padding-bottom: 8px;
     }
 }
-@media screen and (min-width: 768px) and (max-width: 1080px){
+@media screen and (min-width: 768px) and (max-width: 1023px){
     .winter__card{
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -35,33 +47,3 @@
         padding-bottom: 8px;
     }
 }
-/*Table start*/
-.table--header-row {
-    display: flex;
-    flex-flow: row nowrap;
-    width: 100%;
-    grid-gap: 0.5rem;
-}
-.table--header-row
-.table--row__head {
-    margin-right: 0;
-    background-color: var(--sundance__neutral4);
-}
-.table--row {
-    display: flex;
-    flex-flow: row nowrap;
-    width: 100%;
-    grid-gap: 0.5rem;
-}
-.table--row__data {
-    display: flex;
-    flex: 1;
-    padding: 16px;
-}
-.table--row:nth-child(odd) .table--row__data {
-    background-color: var(--sundance__neutral5);
-}
-.table--row:nth-child(even) .table--row__data {
-    background-color: var(--sundance__neutral4);
-}
-/*Table End*/
