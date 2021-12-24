@@ -88,4 +88,9 @@
                 </a>
             {% endif %} 
     </label>
+    {% if obj.caption %}
+        <div class="{% for class in classes %} {{ class }} {% endfor %}">
+            {{ obj.caption | safe }}
+        </div>
+    {% endif %}
 {% endmacro %}
