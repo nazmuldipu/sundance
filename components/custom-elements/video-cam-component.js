@@ -1,5 +1,4 @@
 import ProgressiveElement from "../progressive-element.js";
-
 export default class VideoCam extends ProgressiveElement{
     constructor() {
         super([]);
@@ -7,14 +6,11 @@ export default class VideoCam extends ProgressiveElement{
 
     connectedCallback(){
         const el = this.querySelector('#feed-container');
-/*         window.addEventListener('video-loaded', ()=> {
-            el.appendChild(window.video);
-        }) */
-        setTimeout(() => {
+        window.addEventListener('video-loaded', ()=> {
             if(window.video){
                 el.appendChild(window.video);
             }
-        }, 3000)
+        })
     }
   
 }

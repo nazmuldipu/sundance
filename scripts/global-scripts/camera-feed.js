@@ -5,6 +5,7 @@ function resizeWindow(){
 }
 window.addEventListener('DOMContentLoaded', (event) => {
     const videoContainer = document.querySelector('.video-block');
+
     const config = { attributes: true, childList: true, subtree: true };
     const callback = function(mutationsList, observer) {
         for(const mutation of mutationsList) {
@@ -12,7 +13,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 const video = videoContainer.querySelector('.video-container');
                 window.video = video;
                 videoContainer.style.display = 'none';
-                videoContainer.remove();
                 const event = new CustomEvent('video-loaded', { detail: video });
                 window.dispatchEvent(event);    
             }
@@ -22,10 +22,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
     observer.observe(videoContainer, config);
     const videoToggle = document.querySelector('#action_icon-video');
     const liveContainer = document.getElementById('ic_action_video_container');
-    videoToggle.addEventListener('change', (e)=> {
+    videoToggle && videoToggle.addEventListener('change', (e)=> {
         if(liveContainer.offsetParent && e.target.checked){
             setTimeout(() => {
+                liveContainer.classList.add('loading');
                 resizeWindow();
+                setTimeout(() => {
+                    liveContainer.classList.remove('loading');
+                }, 300)
             }, 1000);
         }
     })

@@ -30,7 +30,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addNunjucksShortcode('script', function(script, pageUrl){
         const relativePath = relative(pageUrl, "/build") || './';
         const scriptPath = posix.join(relativePath,`${process.env.SCRIPT_PATH|| ''}`, script);
-        return `<script src="${scriptPath}"></script>`;
+        return `<script src="${scriptPath}" type="module"></script>`;
     })
 
     eleventyConfig.addNunjucksFilter('slideImgSrcSet', function(slide, imgext="jpg") {
