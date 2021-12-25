@@ -5,7 +5,7 @@ function resizeWindow(){
 }
 window.addEventListener('DOMContentLoaded', (event) => {
     const videoContainer = document.querySelector('.video-block');
-
+    const videoCam = document.querySelector('video-cam');
     const config = { attributes: true, childList: true, subtree: true };
     const callback = function(mutationsList, observer) {
         for(const mutation of mutationsList) {
@@ -24,12 +24,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const liveContainer = document.getElementById('ic_action_video_container');
     videoToggle && videoToggle.addEventListener('change', (e)=> {
         if(liveContainer.offsetParent && e.target.checked){
+            videoCam.toggleLoading(true);
+            if(videoCam.isLoaded){
+                videoCam.toggleLoading(false);
+            }
             setTimeout(() => {
-                liveContainer.classList.add('loading');
                 resizeWindow();
-                setTimeout(() => {
-                    liveContainer.classList.remove('loading');
-                }, 300)
             }, 1000);
         }
     })
