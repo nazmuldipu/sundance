@@ -48,6 +48,10 @@ export default class VideoCam extends ProgressiveElement{
         this.observer = new MutationObserver(callback);
         this.observer.observe(window.video, config);
     }
+
+    disconnectedCallback(){
+        this.observer && this.observer.disconnect();
+    }
   
 }
 
