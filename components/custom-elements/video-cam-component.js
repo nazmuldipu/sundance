@@ -18,11 +18,6 @@ export default class VideoCam extends ProgressiveElement{
         })
     }
 
-    isAlreadyLoaded(){
-        const previewEl = this.querySelector('.luma-preview');
-        return previewEl && previewEl.offsetHeight > 180;
-    }
-
     toggleLoading(state){
         this.loading = Boolean(state);
         Boolean(state) ? this.liveContainer.classList.add('loading') : this.liveContainer.classList.remove('loading');

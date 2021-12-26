@@ -13,21 +13,23 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 const video = videoContainer.querySelector('.video-container');
                 window.video = video;
                 videoContainer.style.display = 'none';
+                /* dispatch a new event on video load */
                 const event = new CustomEvent('video-loaded', { detail: video });
                 window.dispatchEvent(event);    
             }
         }
     };
     const observer = new MutationObserver(callback);
+    /* observe for dom changes */
     observer.observe(videoContainer, config);
     const videoToggle = document.querySelector('#action_icon-video');
-    const liveContainer = document.getElementById('ic_action_video_container');
     videoToggle && videoToggle.addEventListener('change', (e)=> {
-        if(liveContainer.offsetParent && e.target.checked){
+        if(videoCam && videoCam.liveContainer.offsetParent && e.target.checked){
             videoCam.toggleLoading(true);
             if(videoCam.isLoaded){
                 videoCam.toggleLoading(false);
             }
+            /* resize event is required to force re-render of video feed */
             setTimeout(() => {
                 resizeWindow();
             }, 1000);
