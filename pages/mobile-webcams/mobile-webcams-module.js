@@ -6,8 +6,10 @@ function resizeWindow() {
 }
 document.addEventListener('DOMContentLoaded', (event) => {
   const feedContainer = document.querySelector('#feed-container');
-  setTimeout(() => {
-    feedContainer.appendChild(window.video);
-    resizeWindow();
-  }, 1000);
+  window.addEventListener('video-loaded', ()=> {
+    if(window.video && feedContainer){
+        feedContainer.appendChild(window.video);
+        resizeWindow();
+    }
+  })
 });
