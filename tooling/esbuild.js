@@ -150,8 +150,7 @@ const pathResolvePlugin = {
     name: 'pathResolver',
     async setup(build){   
       const appRoot = resolve('./'); 
-      build.onResolve({ filter: /^components\// || /^scripts\// }, args => {  
-        const rootPath = args.resolveDir.split('pages' + sep)[0];
+      build.onResolve({ filter: /^components\// }, args => {  
         return { path: join(appRoot, args.path) }
       })
     },
