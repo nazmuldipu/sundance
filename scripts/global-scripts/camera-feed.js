@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const config = { attributes: true, childList: true, subtree: true };
     const callback = function(mutationsList, observer) {
         for(const mutation of mutationsList) {
-            if (mutation.type === 'childList' && !window.video) {
+            if (mutation.type === 'childList' && !window.video && videoContainer) {
                 const video = videoContainer.querySelector('.video-container');
                 window.video = video;
                 videoContainer.style.display = 'none';
