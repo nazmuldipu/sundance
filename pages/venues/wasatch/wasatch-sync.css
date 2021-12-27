@@ -1,0 +1,18 @@
+/****  start imports  ********************************/
+@import "../../../styles/global.css";
+/****  end imports  ********************************/
+
+.venues__card-title {
+    font-size: 24px;
+    line-height: 110%;
+    padding: 40px 16px 24px 16px;
+}
+
+/* Desktop screen (Screen size : > 767 pts) */
+@media screen and (min-width: 768px) {
+    .venues__card-title {
+        font-size: 43px;
+        line-height: 110%;
+        padding: 48px 16px 40px 16px;
+    }
+}

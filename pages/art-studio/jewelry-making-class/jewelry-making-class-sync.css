@@ -1,0 +1,114 @@
+/****  start imports  ********************************/
+@import "../../../styles/global.css";
+/****  end imports  ********************************/
+.group-container{
+    border: none;
+}
+.bridge{
+    padding-bottom: 50px;
+}
+.bridge__top-frame {
+    background-color: var(--sundance__primary3);
+}
+.bridge__nav-icon{
+    background-color: transparent;
+}
+.middle-top__article-container{
+    max-width: 792px;
+    margin: auto;
+    padding-bottom: 48px;
+}
+.middle-top__article-header{
+    font-size: 42px;
+    font-weight: 600;
+    padding-bottom: 25px;
+    text-align: center;
+}
+.middle-top__article-copy{
+    font-size: 19px;
+    text-align: left;
+}
+.middle-bottom__article-container{
+    max-width: 792px;
+    margin: auto;
+    padding-bottom: 48px;
+}
+.middle-bottom__article-copy{
+    font-size: 19px;
+    text-align: left;
+}
+.middle-bottom__article-copy:nth-child(1) {
+    color: rgba(0, 0, 0, 0.54);
+}
+.art-studio__card-header{
+    font-weight: 600;
+    font-size: 2.625rem;
+}
+.art-studio__card{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 3rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.table--header-row {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    grid-gap: 0.5rem;
+}
+.table--header-row
+.table--row__head {
+    margin-right: 0;
+    background-color: var(--sundance__neutral4);
+}
+.table--row {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    grid-gap: 0.5rem;
+}
+.table--row__data {
+    display: flex;
+    flex: 1;
+    padding: 16px;
+}
+.table--row:nth-child(odd) .table--row__data {
+    background-color: var(--sundance__neutral5);
+}
+.table--row:nth-child(even) .table--row__data {
+    background-color: var(--sundance__neutral4);
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .bridge{
+        padding-bottom: 0px;
+    }
+    .middle-top__article-container{
+        padding-bottom: 40px;
+    }
+    .middle-top__article-header{
+        font-size: 24px;
+        padding-bottom: 16px;
+    }
+    .middle-bottom__article-container{
+        padding-bottom: 40px;
+    }
+    .art-studio__card{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 8px;
+    }
+    .art-studio__card-header{
+        font-size: 24px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .art-studio__card{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 8px;
+    }
+}

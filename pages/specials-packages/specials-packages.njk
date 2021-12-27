@@ -1,0 +1,44 @@
+---
+layout: base.njk
+pagename: specials-packages
+permalink: "build/specials-packages/index.html"
+permalinkBypassOutputDir: true
+nickname: "specials-packages"
+---
+{% from 'molecules/filter.njk' import filter %}
+{% from 'organisms/forms.njk' import lodging_form %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/card.njk' import singleCard %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'macros.njk' import top_banner %}
+{% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
+
+{% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
+
+{% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image and pageCMS['hero-corner-block'].hero_corner_block %}
+{% set hero_corner_block = pageCMS['hero-corner-block'].hero_corner_block %}
+<section class="segment-outer">
+    <section class="banner_segment-inner text-left">
+        {{ top_banner(pageCMS['top-banner'].global_image, hero_corner_block) }}
+    </section>
+</section>
+{% endif %}
+<section class="segment-outer bg-sn-4 px-4 pb-4">
+    <section class="segment-inner text-center">
+        {% if pageCMS['vertical-cards-title'] %}
+            <header class="font-ivar flex-card-container--title">
+                {{ pageCMS['vertical-cards-title'].simple_article.title | safe }}
+            </header>
+        {% endif %}
+        <section class="flex-card-container">
+            {% for item in cardAllData %}
+                <a href="/lodging/plan-your-stay/{{item.vertical_card.customslug}}" class="no-underline card-container flex__single-card mb-8">
+                    {{ singleCard(item = item.vertical_card, classes = ['']) }}
+                </a>    
+            {% endfor %}
+        </section>
+    </section>
+</section>
+
+{{newsletter()}}

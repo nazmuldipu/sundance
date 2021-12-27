@@ -1,0 +1,77 @@
+/****  start imports  ********************************/
+@import "../../../styles/global.css";
+/****  end imports  ********************************/
+.group-container{
+    border: none;
+}
+.bridge{
+    padding-bottom: 50px;
+}
+.bridge__top-frame {
+    background-color: var(--sundance__primary3);
+}
+.bridge__nav-icon{
+    background-color: transparent;
+}
+.art-studio__article__container{
+    max-width: 792px;
+    margin: auto;
+    padding-bottom: 48px;
+}
+.art-studio__article__header{
+    font-size: 42px;
+    font-weight: 600;
+    padding-bottom: 25px;
+    text-align: center;
+}
+.art-studio__article__copy{
+    font-size: 19px;
+    text-align: left;
+}
+.art-studio__instructor{
+    padding-bottom: 48px;
+}
+.art-studio__card-header{
+    font-weight: 600;
+    font-size: 2.625rem;
+}
+.art-studio__card{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 3rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .bridge{
+        padding-bottom: 0px;
+    }
+    .art-studio__article__container{
+        padding-bottom: 40px;
+    }
+    .art-studio__article__header{
+        font-size: 24px;
+        padding-bottom: 16px;
+    }
+    .art-studio__card{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 8px;
+    }
+    .art-studio__card-header{
+        font-size: 24px;
+    }
+    .art-studio__instructor{
+        padding-bottom: 40px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .art-studio__card{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 8px;
+    }
+}

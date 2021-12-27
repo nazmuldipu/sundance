@@ -1,0 +1,17 @@
+/****  start imports  ********************************/
+@import "../../styles/global.css";
+/****  end imports  ********************************/
+.lodging-accommodation__filter {
+    padding-top: 48px;
+    padding-bottom: 40px;
+}
+.card-footer-caption {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+@media screen and (min-width: 768px){
+    .card-footer-caption {
+        padding-top: 40px;
+        padding-bottom: 72px;
+    }
+}
