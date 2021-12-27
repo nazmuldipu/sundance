@@ -1,0 +1,230 @@
+---
+pagename: mobile-webcam
+---
+
+{% from "seo_tags.njk" import seo_tags with context %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-M5CLV4');</script>
+        <!-- End Google Tag Manager -->
+
+        <!-- Shift Digital Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PR7RR2F');</script>
+        <!-- End Shift Digital Google Tag Manager -->
+
+        <!-- Start of global snippet: Please do not remove
+        Place this snippet between the <head> and </head> tags on every page of your site.
+        Global site tag (gtag.js) - Google Marketing Platform -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=DC-10254307"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'DC-10254307');
+        </script>
+        <!-- End of global snippet: Please do not remove -->
+
+        <!--
+        Event snippet for Partner_Sundance on https://www.sundanceresort.com/: Please do not remove.
+        Place this snippet on pages with events you’re tracking.
+        Creation date: 16/11/2021
+        -->
+        <script>
+            gtag('event', 'conversion', {
+                'allow_custom_scripts': true,
+                'send_to': 'DC-10254307/partn0/partn00b+standard'
+            });
+        </script>
+        <noscript>
+            <img src="https://ad.doubleclick.net/ddm/activity/src=10254307;type=partn0;cat=partn00b;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ord=1?" width="1" height="1" alt=""/>
+        </noscript>
+        <!-- End of event snippet: Please do not remove -->
+
+        <script type="text/javascript" src="https://www.navistechnologies.com/JavascriptPhoneNumber/js.aspx?account=14378&jspass=SHHDYII6L0C4TAE7HPZY&dflt=8008921600"></script>
+        <script type="text/javascript">
+            ProcessNavisNCKeyword();
+        </script>
+        
+        {% if (permalink.includes('/lodging/')) %}
+                <script id="navis-fusion-loader" src="https://assets.navisperformance.com/NWRC/Fusion/navis-fusion-loader.js" data-accountid="14378" data-secret="SHHDYII6L0C4TAE7HPZY"></script>
+        {% endif %}
+
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window,document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '140931783191201');
+            fbq('track', 'PageView');
+        </script>
+        <noscript>
+            <img height="1" width="1"
+            src="https://www.facebook.com/tr?id=140931783191201&ev=PageView
+            &noscript=1"/>
+        </noscript>
+        <!-- End Facebook Pixel Code -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-site-verification" content="38HHw2FHSWgjq-tjgQ2byEdCKAIk1LRUWDRrc8xcGYA" />
+        <meta name="facebook-domain-verification" content="8h0nt9sgcoy5ncea08rjmumsbur0sc" />
+        <link rel="icon" href="favicon.svg" type="image/svg+xml">
+        {{ seo_tags(pagename, seoData) }}
+<!-- start critical css -->
+        {% if critical_css %}
+        <style>
+            {{ critical_css | include }}
+        </style>
+        {% endif %}
+<!-- end critical css -->
+<!-- start sync css -->
+        {% if sync_css %}
+            <link rel="stylesheet" type="text/css" href="{{sync_css}}">
+        {% endif %}
+<!-- end sync css -->
+<!-- start font preloads -->
+        {% if data.preload_fonts %}
+            {% for font in data.preload_fonts %}
+            <link rel="preload" href="{{ font.href | getAssetsPath(permalink) }}" as="font" type="{{font.type}}" crossorigin>
+            {% endfor %}
+        {% endif %}
+<!-- end font preloads -->
+<!-- start scripts -->
+        {% if defer_js %}
+            <script src="{{defer_js}}" defer></script>
+        {% endif %}
+        {% if async_js %}
+            <script src="{{async_js}}" async></script>
+        {% endif %}
+        {% if sync_js %}
+            <script src="{{sync_js}}"></script>
+        {% endif %}
+        {% if module_js %}
+            <script src="{{module_js}}" type="module"></script>
+        {% endif %}
+<!-- end scripts -->
+        <link rel="stylesheet" type="text/css" href="//js.prismcam.com/violet.css">
+    </head>
+    <body class="preload page-{{pagename}} bg-sn-5">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5CLV4"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        {{content | safe}}
+        <script>
+            document.body.classList.remove("preload");
+        </script>
+        <!--
+        Start of DoubleClick Floodlight Tag: Please do not remove
+        Activity name of this tag: Sundance Mountain Resort Website
+        URL of the webpage where the tag is expected to be placed: http://www.sundanceresort.com/
+        This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
+        Creation Date: 07/15/2016
+        UPDATED: 16/11/2021
+        -->
+        <script type="text/javascript">
+        var axel = Math.random() + "";
+        var a = axel * 10000000000000;
+        document.write('<iframe src="https://4167325.fls.doubleclick.net/activityi;src=4167325;type=websi536;cat=sunda084;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1;num=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+        </script>
+        <noscript>
+        <iframe src="https://4167325.fls.doubleclick.net/activityi;src=4167325;type=websi536;cat=sunda084;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1;num=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+        </noscript>
+        <!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+        <!-- Sojern Tag v6_js, Pixel Version: 2 -->
+        <script>
+        (function () {
+            var params = {};
+            /* Please do not modify the below code. */
+            var cid = [];
+            var paramsArr = [];
+            var cidParams = [];
+            var pl = document.createElement('script');
+            var defaultParams = {"vid":"hot"};
+            for(key in defaultParams) { params[key] = defaultParams[key]; };
+            for(key in cidParams) { cid.push(params[cidParams[key]]); };
+            params.cid = cid.join('|');
+            for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+            pl.type = 'text/javascript';
+            pl.async = true;
+            pl.src = 'https://beacon.sojern.com/pixel/p/2874?f_v=v6_js&p_v=2&' + paramsArr.join('&');
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(pl);
+        })();
+        </script>
+        <!-- End Sojern Tag -->
+
+        <!-- Survey Monkey START -->
+        <!-- <script>
+        function launchSurvey(t,e,s,o){var n,a,c;t.SMCX=t.SMCX||[],e.getElementById(o)||(n=e.getElementsByTagName(s),a=n[n.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=o,c.src=["https:"===location.protocol?"https://":"http://","widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgd8GPNTmUP_2Foylbhjc_2FpD1QPBc8d67zVlQOgfN9_2BBxWEg.js"].join(""),a.parentNode.insertBefore(c,a))};
+        setTimeout(function() {
+            launchSurvey(window,document,"script","smcx-sdk");
+        }, 3600)
+        </script>
+        <div class="feedbackButton">
+        <a href="https://www.surveymonkey.com/r/QVBF7MZ" target="_blank" rel="noopener">Feedback</a>
+        </div> -->
+        <!-- Survey Monkey END -->
+
+        <!-- NAVIS Tracking Snippets -->
+        <script>
+        (function () {
+            var phoneElements = document.getElementsByClassName("navisTFN");
+            var navisTFNraw =
+            NavisConvertTagToPhoneNumberBasic(ReadNavisTagCookie());
+            var navisTFNdisp = FormatPhone(navisTFNraw, "###.###.####");
+            var navisTFNhref = FormatPhone(navisTFNraw, "###-###-####");
+            for(var i = phoneElements.length - 1; i >= 0; --i) {
+                phoneElements[i].href = "tel:+1-" + navisTFNhref;
+                phoneElements[i].innerHTML = navisTFNdisp;
+            }
+        })();
+        window.addEventListener('load', function(){
+            const urls = document.querySelectorAll("a[href*='be.synxis.com']");
+            urls.forEach(function(url){
+                var bookhref = url.getAttribute("href");
+                bookhref.replace('&NCK=organic', '');
+                url.setAttribute('href', AppendNavisKeywordToURL(bookhref));      
+            })
+        })
+        </script>
+        <!-- END NAVIS Tracking Snippets -->
+        <!--
+        Start of Floodlight Tag: Please do not remove
+        Activity name of this tag: Partner_Sundance
+        URL of the webpage where the tag is expected to be placed: https://www.sundanceresort.com/
+        Creation Date: 10/29/2020
+        Updated: 16/11/2021
+        -->
+        <script type="text/javascript">
+            var axel = Math.random() + "";
+            var a = axel * 10000000000000;
+            document.write('<iframe src="https://10254307.fls.doubleclick.net/activityi;src=10254307;type=partn0;cat=partn00b;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+        </script>
+        <noscript>
+            <iframe src="https://10254307.fls.doubleclick.net/activityi;src=10254307;type=partn0;cat=partn00b;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+        </noscript>
+        <!-- End of Floodlight Tag: Please do not remove -->
+        <!-- Start of Fareharbor Lightframe API Tag:
+        This is used to bring up a Fareharbor lightframe for any valid Fareharbor booking link
+        -->
+        <script type="text/javascript" src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script>
+        <!-- End Fareharbor Lightframe API Tag --> 
+        <script type="text/javascript" src="//js.prismcam.com/violet.js"></script>
+    </body>
+</html>
