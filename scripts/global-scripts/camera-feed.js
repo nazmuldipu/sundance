@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 window.video = video;
                 videoContainer.style.display = 'none';
                 /* dispatch a new event on video load */
-                const event = new CustomEvent('video-loaded', { detail: video, bubbles: true });
+                const event = new CustomEvent('video-loaded', { detail: video });
                 window.dispatchEvent(event);    
             }
         }

@@ -9,9 +9,10 @@ export default class VideoCam extends ProgressiveElement{
     }
 
     connectedCallback(){
-        window.addEventListener('video-loaded', ()=> {
+        window.addEventListener('video-loaded', (event)=> {
             if(window.video){
-                this.appendChild(window.video);
+                const video = event.detail;
+                this.appendChild(video);
                 this.observeChange();
             }
         })
