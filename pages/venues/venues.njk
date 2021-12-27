@@ -1,0 +1,37 @@
+---
+layout: base.njk
+pagename: group-venues
+permalink: "build/venues/index.html"
+permalinkBypassOutputDir: true
+---
+
+{% from "atoms/headings.njk" import h2 %}
+{% from 'molecules/card.njk' import verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/footer.njk' import footer %}
+
+
+
+{# Page title #}
+{% if pageCMS['page-title'].simple_article %}
+    <section class="segment-outer">
+        <section class="segment-inner">
+            {{ h2(copy=pageCMS['page-title'].simple_article.title, classes=['venues-title', 'font-ivar', 'text-center','font-semibold'] ) }}
+        </section>
+    </section>
+{% endif %}
+
+<section class="segment-outer bg-sn-4">
+    <section class="segment-inner">
+        {{ h2(copy = pageCMS['vertical-card-title'].simple_article.title, classes = ['venues__card-title', 'text-center', 'font-ivar', 'font-semibold', 'text--color__sn-6']) }}
+        <article class="segment-inner__vertical-card-container grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 4xl:grid-cols-3 gap-x-12 sm:px-6 md:px-6 lg:px-6">
+            {% for item in pageCMS['vertical-card'].vertical_card_list %}
+                <a href="/groups/venues/{{item.vertical_card.slug}}" class="no-underline card-container card-hover mb-8">
+                    {{ verticalCard(item = item.vertical_card, card_container = ['']) }}
+                </a>
+            {% endfor %}
+        </article>
+    </section>
+</section>
+
+{{newsletter()}}

@@ -1,0 +1,105 @@
+---
+layout: base.njk
+pagename: the-owl-bar
+permalink: "build/dining/the-owl-bar/index.html"
+permalinkBypassOutputDir: true
+nickname: dining/the-owl-bar/owl-bar
+---
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/card.njk' import verticalCard %}
+{% from 'atoms/headings.njk' import h2, global_header %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'molecules/footer.njk' import footer %}
+{% from 'organisms/global-image.njk' import global_image %}
+
+<section class="group-section top-section">
+    <section class="segment-outer relative -z-1">
+        {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image %}
+            <figure>
+                {{global_image(pageCMS['top-banner'].global_image, classes='image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
+            </figure>
+        {% endif %}
+    </section>
+    {% if pageCMS['top-group-venues'] and pageCMS['top-group-venues'].group_venues %}
+        {% set groupData = pageCMS['top-group-venues'].group_venues %}
+        {% for event in groupData %}
+            <section class="group-container">
+                {{ groupVenues(event) }}
+            </section>
+        {% endfor %}
+    {% endif %}
+</section>
+<section class="segment-outer bg-sn-5 px-4">
+    <section>
+        {% if pageCMS['slider'] and pageCMS['slider'].bridge_slider %}
+            {% set bridge_slider = pageCMS['slider'].bridge_slider %}
+            {{bridge(bridge_slider)}}
+        {% endif %}
+    </section>
+</section>
+<section class="segment-outer bg-sn-5 px-4">
+    <section class="segment-inner">
+        {% if pageCMS['middle-article'] and pageCMS['middle-article'].simple_article_list %}
+            {% set articles = pageCMS['middle-article'].simple_article_list %}
+            <section class="details__middle-article">
+                {% for item in articles %}
+                    {% set object = item.simple_article %}
+                    <article class="dining-details__figcaption">
+                        <header>
+                            <h3 class="dining-details__middle-article--header font-ivar bold text-center">
+                                {{ object.title }}
+                            </h3>
+                        </header>
+                        <div class="dining-details__descriptions font-ivar">
+                            {{ object.description | safe }}
+                        </div>
+                    </article>
+                {% endfor %}
+            </section>
+        {% endif %}
+    </section>
+</section>
+<section class="segment-outer">
+    <section class="segment-inner">
+        <article class="details__notice bg-sn-4 font-ivar">
+            {% if pageCMS['notice'] and pageCMS['notice'].simple_article %}
+                {% set notice = pageCMS['notice'].simple_article %}
+                <div class="dining-details__descriptions font-ivar">
+                    {{ notice.description | safe }}
+                </div>
+            {% endif %}
+        </article>
+        {% if pageCMS['contact-info'] and pageCMS['contact-info'].simple_article %}
+            {% set contactInfo = pageCMS['contact-info'].simple_article %}
+            <div class="dining-details__descriptions font-ivar text-center">
+                {{ contactInfo.description | safe }}
+            </div>
+        {% endif %}
+    </section>
+</section>
+
+<section class="segment-outer">
+    <section class="segment-inner text-center sm:px-6 md:px-6 lg:px-6">
+
+        <article class="details__card bg-sn-5 font-ivar">
+            {% if pageCMS['vertical-card-title'] and pageCMS['vertical-card-title'].simple_article.title %}
+                {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
+                {{ h2(classes=['heading', 'text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center'], copy = card_list_title) }}
+            {% endif %}
+
+            {% if pageCMS['vertical-card-list'] and pageCMS['vertical-card-list'].vertical_card_list %}
+                {% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
+                <section class="flex-card-container">
+                    {% for item in vertical_card_list %}
+                        {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'flex__single-card']) }}
+                    {% endfor %}
+                </section>
+            {% endif %}
+        </article>
+
+    </section>
+</section>
+
+{{newsletter()}}
+

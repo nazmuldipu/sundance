@@ -1,0 +1,28 @@
+/****  start imports  ********************************/
+@import "../../styles/global.css";
+/****  end imports  ********************************/
+.bridge__nav-icon{
+    background-color: transparent;
+}
+
+.weddings__text-container{
+    max-width: 792px;
+    margin: 0 auto;
+}
+.weddings__text-container__header {
+    font-size: 42px;
+    line-height: 110%;
+    font-weight: 600;
+    padding-bottom: 40px;
+    text-align: center;
+}
+.weddings__text-container ul{
+    padding-inline-start: 40px;
+    list-style-type: disc;
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .weddings__text-container__header{
+        font-size: 24px;
+        padding-bottom: 16px;
+    }
+}

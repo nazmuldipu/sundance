@@ -1,0 +1,30 @@
+/****  start imports  ********************************/
+@import "../../styles/global.css";
+/****  end imports  ********************************/
+
+.bridge__nav-icon{
+    background-color: transparent;
+}
+.meetings-events__text-container{
+    max-width: 792px;
+    margin: 0 auto;
+}
+.meetings-events__text-container__header {
+    font-size: 42px;
+    line-height: 110%;
+    font-weight: 600;
+    padding-bottom: 40px;
+    text-align: center;
+}
+.meetings-events__text-container ul{
+    padding-inline-start: 40px;
+    list-style-type: disc;
+}
+.card-text p{
+    font-size: 19px;
+    line-height: 140%;
+    font-family: "Ivar Headline", Arial, sans-serif;
+}
+.no__text-decoration a{
+    text-decoration: none;
+}

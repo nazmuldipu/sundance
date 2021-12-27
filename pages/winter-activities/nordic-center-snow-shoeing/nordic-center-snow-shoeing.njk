@@ -1,0 +1,55 @@
+---
+layout: base.njk
+pagename: nordic-center-snow-shoeing
+permalink: "build/winter-activities/nordic-center-snow-shoeing/index.html"
+permalinkBypassOutputDir: true
+nickname: nordic-center-snow-shoeing
+---
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6, global_header %}
+{% from 'molecules/card.njk' import verticalCard %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'atoms/accordion.njk' import accordion %}
+{% from 'macros.njk' import top_banner_group_venues %}
+{% from 'atoms/tables.njk' import tables %}
+
+{# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
+    {% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues) }}
+{% endif %}
+
+{% if pageCMS['table-list'] and pageCMS['table-list'].table_list %}
+    <section class="group-section">
+        <section class="segment-outer global-contents">
+        <div class="global-pb text-center">{{global_header(pageCMS['table-title'].simple_article.title)}}</div>
+        {% for item in pageCMS['table-list'].table_list %}
+            <div class="global-pb global-px">
+                {{ tables(tableData = item.table) }}
+            </div>
+        {% endfor %}
+        </section>
+    </section>
+{% endif %}
+
+{# Card Title #}
+{% if pageCMS['card-title'] %}
+    {% set card_title= pageCMS['card-title'].simple_article %}
+    {{ h2(copy = card_title.title, classes = ['winter-card__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
+
+{# Vertical Card Section #}
+{% if  pageCMS['vertical-cards'] %}
+{% set vertical_card_list= pageCMS['vertical-cards'].vertical_card_list %}
+<section class="segment-outer">
+    <section class="segment-inner global-px winter__card">
+        {% for item in vertical_card_list %}
+            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
+        {% endfor %}
+    </section>
+</section>
+{% endif %}
+
+{{newsletter()}}
