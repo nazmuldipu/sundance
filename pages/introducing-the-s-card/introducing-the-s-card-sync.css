@@ -1,5 +1,5 @@
 /****  start imports  ********************************/
-@import "../../../../styles/global.css";
+@import "../../styles/global.css";
 /****  end imports  ********************************/
 
 /* @media screen and (min-width: 768px) { */
@@ -10,8 +10,9 @@
     .hero-block{
         display: flex;
         justify-content: center;
-        height: 450px;
-        background-position: 64%;
+        height: 1220px;
+        position: relative;
+        background-position: 40%;
         background-repeat: no-repeat;
         background-size: cover;
         text-align: center;
@@ -19,9 +20,9 @@
     .hero-block:before{
         content: "";
         position: absolute;
-        top: 12rem;
-        right: 0;
-        background: url("/images/whats-new-best-snow-0.svg");
+        top: 9rem;
+        left: 0;
+        background: url("/images/board.svg");
         height: inherit;
         background-repeat: no-repeat;
         background-position: left;
@@ -43,11 +44,12 @@
         align-items: flex-start;
     }
     .hero__button{
-        background-color: var(--sundance__primary1);
+        background-color: var(--sundance__primary3);
         color: #fff;
         border: 0;
     }
     .hero-content{
+        margin-top: 200px;
         max-width: 300px;
     }
     .hero-heading {
@@ -67,7 +69,7 @@
      /* hero block end */
     
     /* intro block start */
-    .first-block {
+    .intro-block {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -78,6 +80,7 @@
         z-index: 1;
         background-size: contain;
         background-repeat: no-repeat;
+        max-width: 330px;
     }
     .intro-images__imageBlock{
         width: 100%;
@@ -120,14 +123,14 @@
     }
     /* intro block end */
 
-    .second-block{
+    .lift-block{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 2rem;
     }
-    .second-block__textBlock--buttons{
+    .lift-block__textBlock--buttons{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -139,6 +142,7 @@
         display: flex;
         background: url("/images/vector2.svg");
         background-position: center;
+        height: auto;
     }
     .icons-block__icons{
         display: flex;
@@ -167,34 +171,32 @@
         align-items: center;
         justify-content: center;
         gap: 3rem;
-        padding-top: 100px;
+        padding-top: 4rem;
     }
 
 /* } */
 .container {
     max-width: 1920px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 .gap-2 {
     gap: .5rem;
 }
-.second-block__textBlock{
+.lift-block__textBlock{
     order: 2;
 }
 .bottom-block__textBlock{
     order: 2;
 }
-.second-block__imageBlock {
+.lift-block__imageBlock {
     order: 1;
     max-width: 330px;
 }
 .bottom-block__imageBlock {
     order: 1;
-    max-width: 330px;
 }
-.intro-images{
-    max-width: 330px;
+.lift-block__bottom-spacing {
+    padding-bottom: 22px;
 }
 .bottom-article-pb {
     padding-bottom: 70px;
@@ -208,15 +210,6 @@
 .content-max-width {
     max-width: 600px;
 }
-.mobile-top-section{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-bottom: 96px;
-}
-.desktop-top-section{
-    display: none;
-}
 @media screen and (min-width: 768px) {
     .hero-content {
         max-width: 550px;
@@ -227,39 +220,16 @@
     .intro-text__buttons{
         flex-direction: row;
     }
-    .second-block__textBlock--buttons{
+    .lift-block__textBlock--buttons{
         flex-direction: row;
     }
     .hero-block:before{
         width: 300px;
     }
-    .second-block__imageBlock {
-        max-width: 500px;
-    }
-    .bottom-block__imageBlock {
-        max-width: 500px;
-    }
-    .intro-images{
-        max-width: 500px;
-    }
 }
 @media screen and (min-width: 1365px) {
-    .icons-block{
-        height: 500px;
-    }
-    .third-block__spacing {
-        margin-bottom: -10rem;
-    }
-    .hero-content{
-        margin-top: 200px;
-    }
-    .desktop-top-section{
-        display: block;
-    }
-    .mobile-top-section{
-        display: none;
-    }
-    .second-block__bottom-spacing {
+    .lift-block__bottom-spacing {
+        margin-bottom: -9rem;
         padding-bottom: 0;
     }
     .s-card-pb {
@@ -269,19 +239,19 @@
         background-position:left top;
         height: 1220px;
         text-align: left;
-        position: relative;
     }
-    .first-block {
+    .intro-block {
         flex-direction: row;
     }
     .intro-images{
-        max-width: 787px;
+        max-width: 520px;
     }
     .flex-block {
         height: auto;
         flex-direction: row;
+        padding-top: 0;
     }
-    .second-block__textBlock{
+    .lift-block__textBlock{
         max-width: 582px;
         order: 1;
     }
@@ -289,7 +259,7 @@
         width: 582px;
         order: 2;
     }
-    .second-block__imageBlock {
+    .lift-block__imageBlock {
         order: 2;
         max-width: 500px;
     }
@@ -300,7 +270,7 @@
     .hero-content__buttons{
         flex-direction: row;
     }
-    .second-block{
+    .lift-block{
         flex-direction: row;
     }
     .intro-text{
@@ -308,12 +278,11 @@
     }
     .hero-block:before{
         width: 495px;
-        top: 3rem;
     }
     .hero-block .hero-block__inner{
         margin-right: -13rem;
         width: 500px;
-        left: 180px;
+        right: 32%;
         bottom: 0;
     }
     .hero-block .hero-block__inner-1{
@@ -330,7 +299,7 @@
         font-size: 72px;
     }
     .icons-block__icons{
-        margin-top: -10rem;
+        margin-top: 0;
     }
     .icons-block__container {
         flex-direction: row;
@@ -343,24 +312,31 @@
     .hero-spacing {
         padding-bottom: 0;
     }
+    .icons-block{
+        height: 500px;
+        margin-top: -10rem;
+    }
 }
 
 @media screen and (min-width: 1920px) {
     .intro-text {
         max-width: 700px;
     }
-    .second-block__imageBlock{
-        max-width: 689px;
+    .intro-images {
+        max-width: 900px;
+    }
+    .lift-block__imageBlock{
+        max-width: 761px;
     }
     .bottom-block__imageBlock {
-        max-width: 828px;
+        max-width: 900px;
     }
     .flex-block{
         padding-top: 8rem;
     }
-    /* .hero-block .hero-block__inner{
+    .hero-block .hero-block__inner{
         right: 24%;
-    } */
+    }
 }
 
 

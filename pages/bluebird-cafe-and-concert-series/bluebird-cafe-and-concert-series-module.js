@@ -1,5 +1,5 @@
 /* ignore */
-import '../../../scripts/lib/globalEvents.js';
+import '../../scripts/lib/globalEvents.js';
 import "components/MediaCarousel/index.js";
 import "components/Filter/index.js";
 import { getValue, filterByType, getFilterData} from 'scripts/utils/filter.js';
