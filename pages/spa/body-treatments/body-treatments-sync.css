@@ -52,7 +52,7 @@
     .bridge{
         padding-bottom: 8px;
     }
-    .manicures__accordion .toggle:checked ~ .toggle-details{
+    .body-treatment__accordion .toggle:checked ~ .toggle-details{
         margin-left: 0px;
         margin-top: 0px;
         position: relative;

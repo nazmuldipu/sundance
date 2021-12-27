@@ -29,7 +29,10 @@
 .accordion--title{
     padding-bottom: 0px;
 }
+<<<<<<< HEAD:pages/spa/manicures-pedicures/manicures-pedicures-sync.css
 
+=======
+>>>>>>> cms-dev:pages/activities/year-round/spa/manicures-and-pedicures/manicures-and-pedicures-sync.css
 .toggle-details figcaption{
     padding-top: 15px;
 }
@@ -53,7 +56,7 @@
     .bridge{
         padding-bottom: 8px;
     }
-    .body-treatment__accordion .toggle:checked ~ .toggle-details{
+    .manicures__accordion .toggle:checked ~ .toggle-details{
         margin-left: 0px;
         margin-top: 0px;
         position: relative;
