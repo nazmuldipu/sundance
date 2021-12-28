@@ -1,0 +1,88 @@
+---
+layout: base.njk
+pagename: mountain-bike-clinics-tours
+permalink: "build/summer-activities/mountain-bike-clinics-tours/index.html"
+permalinkBypassOutputDir: true
+nickname: mountain-bike-clinics-tours
+---
+{% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6, global_header %}
+{% from 'molecules/newsletter.njk' import newsletter %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'macros.njk' import top_banner_group_venues %}
+
+{# Hero Image Section #}
+{% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
+    {% set summer_group_venues = pageCMS['group-venues'].group_venues  %}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image,summer_group_venues) }}
+{% endif %}
+
+{# Bridge carousal #}
+{% if pageCMS['bridge-slider'] %}
+{% set bridge_slider = pageCMS['bridge-slider'].bridge_slider %}
+    {{ bridge(bridge_slider) }}        
+{% endif %}
+
+{# Bottom Top Article #}
+{% if pageCMS['bottom-top-article'] and pageCMS['bottom-top-article'].simple_article %}
+    {% set bottom_top_article = pageCMS['bottom-top-article'].simple_article %}
+    <section class= "segment-outer">
+        <section class="global-contents global-px global-pb">
+            {% if bottom_top_article.title %}
+                {{ h2(copy = bottom_top_article.title, classes = ['bottom-top__article-header', 'pb-6', 'text-center', 'font-ivar', 'font-bold', 'text--color__sn-6']) }}
+            {% endif %}
+            {% if bottom_top_article.description %}
+                <div class="font-ivar text-lg-2">
+                    {{ bottom_top_article.description | safe }}
+                </div>
+            {% endif %}
+        </section>
+    </section>
+{% endif %}
+
+{# Bottom Image #}
+{% if pageCMS['bottom-image'].global_image %}
+    <section class="segment-outer">
+        <section class="global-contents global-px global-pb">
+            {{ global_image(pageCMS['bottom-image'].global_image, classes='w-full image_frame sm:8:5 lg:16:11 2xl:16:11 4xl:16:11') }}
+        </section>
+    </section>
+{% endif %}
+
+{# Bottom Image Caption #}
+{% if pageCMS['bottom-image-caption'] and pageCMS['bottom-image-caption'].simple_article%}
+    {% set bottom_image_caption = pageCMS['bottom-image-caption'].simple_article %}
+    <section class="segment-outer">
+        <section class="global-contents global-pb global-px">
+            {% if bottom_image_caption.description %}
+                <div class="font-ivar text-lg-2">
+                    {{ bottom_image_caption.description | safe }}
+                </div>
+            {% endif %}
+        </section>
+    </section>
+{% endif %}
+
+{# Subfooter Items #}
+{% if pageCMS['subfooter-items'] and pageCMS['subfooter-items'].simple_article_list %}
+    {% set subfooter__items = pageCMS['subfooter-items'].simple_article_list %} 
+    <section class="segment-outer">
+        <section class="segment-inner global-contents global-pb global-px subfooter-items">
+            {% for item in subfooter__items %}
+                <section class="bg-sn-4 p-4">
+                    {% if item.simple_article.title %}
+                        {{ h2(copy = item.simple_article.title, classes = ['text-center', 'text-base', 'font-ivar', 'font-bold', 'text--color__sn-6']) }}
+                    {% endif %}
+                    {% if item.simple_article.description %}
+                        <div class="font-ivar text-sm text-center">
+                            {{ item.simple_article.description | safe }}
+                        </div>
+                    {% endif %}
+                </section>
+            {% endfor %}
+        </section>
+    </section>
+{% endif %}
+
+
+{{newsletter()}}

@@ -1,0 +1,86 @@
+/****  start imports  ********************************/
+@import "../../styles/global.css";
+/****  end imports  ********************************/
+.group-container{
+    border: none;
+}
+.group-venues__nav {
+    margin: 0;
+    width: 100%;
+}
+.event-date__container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+.event-date {
+    border: 1px solid black;
+    padding: 16px 16px;
+    font-size: 1rem;
+}
+.event .heading {
+    padding-bottom: 0;
+}
+.event .horizontal__card-text {
+    gap: 1rem;
+}
+.horizontal__card-container {
+    margin-bottom: 16px;
+}
+.horizontal__card-image {
+    display: grid;
+    align-items: center;
+}
+.horizontal__card-container {
+    box-shadow: none;
+}
+.grid-cols-1 {
+    grid-template-columns: 1fr;
+}
+.event__cta {
+    order:3;
+}
+.event__navs {
+    order: 4;
+}
+.event__dates {
+    order: 5;
+    padding-top: 24px;
+}
+@media screen and (min-width: 1024px) {
+    .event-date__container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .horizontal__card-text {
+        row-gap: 2rem;
+    }
+    .horizontal__card-container {
+        margin-bottom: 48px;
+    }
+    .event__cta {
+        order:4;
+    }
+    .event__navs {
+        order: 5;
+    }
+    .event__dates {
+        order: 3;
+        padding-top: 0;
+    }
+}
+@media screen and (min-width: 768px) {
+    .horizontal__card-container {
+        box-shadow: 0px 2px 10px rgb(0 0 0 / 6%), 0px 4px 24px rgb(0 0 0 / 6%);
+    }
+}
+@media screen and (max-width: 767px) {
+    .horizontal__card-text {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+.button--primary {
+    padding-right: 0;
+    padding-left: 0;
+}

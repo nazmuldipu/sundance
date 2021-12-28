@@ -14,7 +14,6 @@
         <header>
             {{ h2(copy = item.heading, classes = ['lodging-forms--heading', 'font-ivar']) }}
             {{ h6(copy = item.subheading, classes = ['lodging-forms--subheading', 'font-ivar']) }}
-            {{ page.url }}
         </header>
         <section class="lodging-forms__field--container text-left justify-center gap-x-2">
             <div class="lodging-forms__item">
@@ -79,4 +78,103 @@
     </article>
 </synxis-lodging-form>
 {% webComponent "SynxisLodgingForm", "synxis-lodging-form", page.url %}
+{% endmacro %}
+
+{% macro rfpForm(obj, cta, input_class = '') %}
+    {% for items in obj %}
+        {% if items.header %}
+            {{ h2(classes=['heading', 'text-2xl', 'wedding__rfp-header', 'font-ivar', 'font-semibold'], copy = items.header) }}
+        {% endif %}
+
+        {% if items.form_title %}
+            {{ h2(classes=['pb-1', 'uppercase', 'text-lg', 'font-ivar'], copy = items.form_title) }}
+        {% endif %}
+
+        {% set x = items.columns %}
+        {% if items.forms | length >0 %}
+            <div class="grid sm:grid-cols-1  lg:grid-cols-{{x}} gap-3.5 pb-2">
+                {% for formItems in items.forms %}
+                    <section>
+
+                        {% if formItems.type == 'dropdown' %}
+                            <section class="wedding__select">
+                                <div class="font-calibre uppercase font-medium text-lg">
+                                    <label for="{{formItems.label}}">{{formItems.label}}</label>
+                                </div>                       
+                                <select class="w-full" id="{{formItems.id}}" name="{{formItems.name}}">
+                                    {% for item in formItems.dopdown_values %}
+                                        <option {% if loop.first %} selected {% endif %} value="{{item.values}}">{{item.values}}</option>
+                                    {% endfor %}
+                                </select> 
+                            </section> 
+
+                        {% elif formItems.type == 'textarea' %}
+                            <div class="font-calibre uppercase font-medium text-lg">
+                                <label name="{{formItems.name}}">{{ formItems.label }}</label>
+                            </div>
+                            <textarea class="wedding-rfp__textarea w-full" required="required" minlength="10" name="{{formItems.name}}"></textarea>
+                        
+                        {% else %}
+
+                            {% if formItems.type == 'file' %}
+                                {% set class = input_class %}
+                                {% else %}
+                                {% set class = 'wedding-rfp__input'%}
+                            {% endif %}
+                            
+                            {% if formItems.label %}
+                                {{ form_input(obj = {
+                                        label: formItems.label,
+                                        name: formItems.name,
+                                        type: formItems.type,
+                                        id: formItems.id,
+                                        classes: [
+                                            "w-full",
+                                            class
+                                            
+                                        ]
+                                }, classes= [
+                                    "font-calibre",
+                                    "font-medium", 
+                                    "text-lg", 
+                                    "uppercase"])
+                                
+                                }}
+                            {% endif %}
+
+                            {% if formItems.caption %}
+                                {{ form_input(obj = {
+                                        caption: formItems.caption,
+                                        name: formItems.name,
+                                        type: formItems.type,
+                                        id: formItems.id,
+                                        classes: [
+                                            "w-full",
+                                            "wedding-rfp__input"
+                                        ]
+                                }, classes= [
+                                    "heading",
+                                    "pt-2",
+                                    "font-ivar", 
+                                    "text-xs", 
+                                    "uppercase"])
+                                
+                                }}
+                            {% endif %}
+
+                        {% endif %}
+                    </section>          
+                {% endfor %}
+            </div>
+        {% endif %}                     
+    {% endfor %}
+    {% if cta %}
+        {% set trg = '_blank' if not cta.internal else '_self' %}
+        {{ button_primary( 
+            classes = ['button', 'button--primary','font-calibre', 'text-lg'], 
+            href=cta.url, 
+            copy=cta.copy,  
+            target=trg ) 
+        }}
+    {% endif %}
 {% endmacro %}

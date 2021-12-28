@@ -1,0 +1,82 @@
+/****  start imports  ********************************/
+@import "../../../styles/global.css";
+/****  end imports  ********************************/
+.group-container{
+    border: none;
+}
+.bridge{
+    padding-bottom: 50px;
+}
+.bridge__top-frame {
+    background-color: var(--sundance__primary1);
+}
+.bridge__nav-icon{
+    background-color: transparent;
+}
+.winter-article__container{
+    max-width: 792px;
+    margin: auto;
+    padding-bottom: 48px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.winter-article__header{
+    font-size: 42px;
+    font-weight: 600;
+    padding-bottom: 25px;
+    text-align: center;
+}
+.winter-article__subtitle{
+    font-size: 19px;
+    font-weight: 600;
+    padding-bottom: 16px;
+    text-align: center;
+}
+.winter-article__copy{
+    font-size: 19px;
+    text-align: left;
+}
+.winter-card__header{
+    font-weight: 600;
+    font-size: 2.625rem;
+}
+.winter__card{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 3rem;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .bridge{
+        padding-bottom: 0px;
+    }
+    .winter-article__container{
+        padding-bottom: 40px;
+    }
+    .winter-article__header{
+        font-size: 24px;
+        padding-bottom: 16px;
+    }
+    .winter-article__subtitle{
+        font-size: 16px;
+    }
+    .winter-card__header{
+        font-size: 1.5rem;
+    }
+    .winter__card{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 8px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .winter__card{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding-top: 24px;
+        padding-bottom: 8px;
+    }
+}
