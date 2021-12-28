@@ -1,9 +1,9 @@
 ---
 layout: base.njk
-pagename: accommodation
+pagename: lodging
 permalink: "build/lodging/index.html"
 permalinkBypassOutputDir: true
-nickname: "accommodation"
+nickname: "lodging"
 ---
 {% from 'molecules/filter.njk' import filter %}
 {% from 'organisms/forms.njk' import lodging_form %}
@@ -24,8 +24,8 @@ nickname: "accommodation"
     </section>
 </section>
 
-<section class="segment-outer bg-sn-4 px-4 pb-4">
-    <section class="segment-inner">
+<section class="segment-outer bg-sn-4 pb-4">
+    <section class="segment-inner sm:px-6">
         <section class="flex-card-container">
             {% for item in cardAllData %}
                 <a href="{{item.vertical_card.customlink}}" class="no-underline card-container flex__single-card mb-8">
