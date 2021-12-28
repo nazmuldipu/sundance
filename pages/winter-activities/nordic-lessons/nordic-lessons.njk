@@ -32,7 +32,7 @@ h6 %}
 
 {% if pageCMS['table-list'] and pageCMS['table-list'].table_list %}
     <section class="group-section">
-        <section class="segment-outer global-contents">
+        <section class="segment-inner global-contents sm:px-6">
         {% for item in pageCMS['table-list'].table_list %}
             <div class="global-pb">
                 {{ tables(tableData = item.table) }}
@@ -44,7 +44,7 @@ h6 %}
 
 {% if pageCMS['bottom-content'] %}
 <section class="segment-outer global-pb">
-    <section class="segment-inner global-contents">
+    <section class="segment-inner global-contents sm:px-6">
         {% set article = pageCMS['bottom-content'].simple_article %}
         <div class="cms-description font-ivar">
             {{ article.description | safe }}
