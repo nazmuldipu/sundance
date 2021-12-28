@@ -1,0 +1,56 @@
+---
+layout: base.njk
+pagename: mountain-report
+permalink: "build/mountain-report/index.html"
+permalinkBypassOutputDir: true
+nickname: mountain-report
+---
+<div class="segment-outer"> 
+    <div class="segment-inner">
+        <div class="flex status">
+            {% for parking in roadsParking %}
+                {% if parking.status === 'open' %}
+                <div class="toggle__content__line">
+                    <span class="toggle__content__icon bg-sp-1">✓</span> {{parking.name}}: <span class="text--color__sp-1"> {{parking.status}} </span>
+                </div>
+                {% elif parking.status === 'closed' %}
+                <div class="toggle__content__line">
+                    <span class="toggle__content__icon bg-ssm-1">⨯</span> {{parking.name}}: <span class="text--color__ssm-1"> {{parking.status}} </span>
+                </div>
+                {% else %}
+                <div class="toggle__content__line">
+                    <span class="toggle__content__icon bg-sp-3">!</span> {{parking.name}}: <span class="text--color__sp-3"> {{parking.status}} </span>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="card-widget__weather__temp grid grid-cols-2 text-center border-b-1 border--color__sn_ss-3">
+            <div>
+                <header class="card-widget__weather__title-2 font-calibre font-normal"> Currently </header>
+                <div class="card-widget__weather__title-1 font-calibre font-semibold justify-center ">{{ snowReport.temp }}</div>
+                <img class="card-widget__weather__icon" src="https://opensnow.com/img/weather/day/bkn.png"/>
+                <div class="font-calibre card-widget__weather__icon__text">{{ snowReport.speed }}”</div>
+            </div>
+            <div>
+                <header class="card-widget__weather__title-2 font-calibre font-normal"> Snow </header>
+                <div class="card-widget__weather__title-1 font-calibre font-semibold justify-center ">{{ liftReport.base}}</div>
+                <div class="font-calibre card-widget__weather__snow__text grid grid-flow-col gap-x-4 justify-center">
+                    <div class="flex flex-col">
+                        <strong>{{liftReport.24_hour}}</strong>
+                        <span>24 hr</span></div>
+                    <div class="flex flex-col">
+                        <strong>{{liftReport.48_hour}}</strong>
+                        <span>48 hr</span></div>
+                    <div class="flex flex-col">
+                        <strong>{{liftReport.ytd}}</strong>
+                        <span>YTD</span></div>
+                </div>
+            </div>
+        </div> 
+    </div>  
+</div>
+<div class="segment-outer">
+    <div class="segment-inner">
+        <div class="video-container" id="violet-1546311408" pages></div>
+    </div>
+</div>

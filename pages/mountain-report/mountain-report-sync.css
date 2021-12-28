@@ -1,0 +1,13 @@
+/****  start imports  ********************************/
+@import "../../styles/global.css";
+/****  end imports  ********************************/
+
+.status{
+    & div{
+       margin-right: 10px; 
+    }
+    margin-bottom: 20px;
+}
+.header_icon-buttons .video{
+    display: none;
+}

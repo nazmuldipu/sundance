@@ -142,7 +142,7 @@ iconCSS %}
         </div>
         <div class="header__tab__icon-buttons grid grid-flow-col gap-x-2 align-items-center">
             {% for ic_action in menuItems.icon_actions %}
-                <div>
+                <div class="{{ic_action.slug}}">
                     <input type="radio" id="action_icon-tab-{{ic_action.slug}}" name="action_icon_radio" class="action_icon__btn hidden">
                     <label for="action_icon-tab-{{ic_action.slug}}" class="action_icon__label action_icon__label-{{ic_action.slug}}">
                         {% if ic_action.slug === 'temp'%}
@@ -165,7 +165,7 @@ iconCSS %}
         <div class="header__actions">
             <div class="header_icon-buttons grid grid-flow-col gap-x-2 align-items-center">
                 {% for ic_action in menuItems.icon_actions %}
-                    <div>
+                    <div class="{{ic_action.slug}}">
                         <input type="radio" id="action_icon-{{ic_action.slug}}" name="action_icon_radio" class="action_icon__btn hidden">
                         <label for="action_icon-{{ic_action.slug}}" class="action_icon__label action_icon__label-{{ic_action.slug}}">
                             {% if ic_action.slug === 'temp'%}

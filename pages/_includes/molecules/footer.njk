@@ -7,15 +7,17 @@
     #   @param  footer       object (footer data from data.json)
     #   @author Nazmul Alam
  #}
-{% macro footer(footer) %}
+{% macro footer(footer, pageUrl) %}
     <footer>
         <!--
         Please note: do not remove this .video-block element
         It is used to load the video feed
          -->
+        {% if pageUrl !== '/build/mountain-report/' %} 
         <div style="display:block; position:relative;" class="video-block video">
             <div class="video-container" id="violet-1546311408" pages></div>
         </div>
+        {% endif %}
         <article class="footer__container">
             {% for sec in footer.sections %}
                 <section class="footer__col font-calibre">
