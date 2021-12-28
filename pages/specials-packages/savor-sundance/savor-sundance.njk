@@ -31,7 +31,7 @@ nickname: "specials-packages/savor-sundance"
     {% endif %}
 </section>
 {% if pageCMS['gallery-image-list'] and pageCMS['gallery-image-list'].global_image_arr and pageCMS['gallery-image-list'].global_image_arr.images %}
-<section class="segment-outer bg-sn-5 px-4">
+<section class="segment-outer bg-sn-5">
     <section class="segment-inner text-center gallery--wrapper">
         {% set images = pageCMS['gallery-image-list'].global_image_arr.images %}
         {{ gallery(images) }} 

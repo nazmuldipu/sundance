@@ -32,7 +32,7 @@ nickname: dining/fast-casuals/creekside-cafe
 </section>
 {% if pageCMS['slider'] %}
 {% set bridge_slider = pageCMS['slider'].bridge_slider %}
-    <section class="segment-outer bg-sn-5 px-4">
+    <section class="segment-outer bg-sn-5">
         <section>
             {{bridge(bridge_slider)}}
         </section>
@@ -40,7 +40,7 @@ nickname: dining/fast-casuals/creekside-cafe
 {% endif %}
 
 {% if pageCMS['middle-article'] %}
-<section class="segment-outer bg-sn-5 px-4">
+<section class="segment-outer bg-sn-5">
     <section class="segment-inner">
         {% set articles = pageCMS['middle-article'].simple_article_list %}
         <section class="details__middle-article">
