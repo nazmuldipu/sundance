@@ -73,4 +73,7 @@
     .bridge-wrapper {
         grid-template-columns: 1fr 1fr;
     }
+    .global-mx{
+        margin: 0 auto;
+    }
 }
