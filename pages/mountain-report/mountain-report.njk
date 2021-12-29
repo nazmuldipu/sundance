@@ -1,0 +1,101 @@
+---
+layout: base.njk
+pagename: mountain-report
+permalink: "build/mountain-report/index.html"
+permalinkBypassOutputDir: true
+nickname: mountain-report
+---
+{% from 'molecules/group-venues.njk' import groupVenues %}
+{% from 'organisms/global-image.njk' import global_image %}
+
+{# Hero Image Section #}
+{% if pageCMS.pageData['venues'].group_venues.length and pageCMS.pageData['top-banner'].global_image %}
+    {% set event = (pageCMS.pageData['venues'].group_venues |  first )%}
+    <section class="group-section">
+        {{global_image(pageCMS.pageData['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
+        <div class="group-container">
+            {{groupVenues(event)}}
+        </div>
+    </section>
+{% endif %}
+<div class="segment-outer">
+    <div class="segment-inner px-4">
+        <div class="parking__card flex">
+            {% for parking in pageCMS.roadsParking %}
+                {% if parking.status === 'open' %}
+                    <div class="toggle__content__line">
+                        <span class="toggle__content__icon bg-sp-1">✓</span>
+                        {{parking.name}}: <span class="text--color__sp-1">
+                            {{parking.status}}
+                        </span>
+                    </div>
+                {% elif parking.status === 'closed' %}
+                    <div class="toggle__content__line">
+                        <span class="toggle__content__icon bg-ssm-1">⨯</span>
+                        {{parking.name}}: <span class="text--color__ssm-1">
+                            {{parking.status}}
+                        </span>
+                    </div>
+                {% else %}
+                    <div class="toggle__content__line">
+                        <span class="toggle__content__icon bg-sp-3">!</span>
+                        {{parking.name}}: <span class="text--color__sp-3">
+                            {{parking.status}}
+                        </span>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="weatherWidget border-b-1 border-t-1 border--color__sn_ss-3">
+            <div class="weatherWidget__snow">
+                <header> Snow Report </header>
+                <div class="inner">
+                    <div class="snowreport weatherMetrics">
+                        <div class="weatherMetrics__current">
+                            <div class="stats">
+                                <div class="value">{{ pageCMS.liftReport.base}}"</div>
+                                <div class="ytd">
+                                    <span class="value">{{pageCMS.liftReport.ytd}}"</span>
+                                    <span class="label">Season</span></div>
+                            </div>
+                        </div>
+                        <div class="weatherMetrics__low">
+                            <span class="label">24hr</span>
+                            <span class="value">{{pageCMS.liftReport.24_hour}}"</span></div>
+                        <div class="weatherMetrics__high">
+                            <span class="label">48hr</span>
+                            <span class="value">{{pageCMS.liftReport.48_hour}}"</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="weatherWidget__week">
+                {# <header> This Week </header> #}
+                <div class="inner"></div>
+            </div>
+            <div class="weatherWidget__current">
+                <header class="card-widget__weather__titleroadsParking-2 font-calibre font-normal"> Snow </header>
+                <div class="inner">
+                    <div class="currentForecast weatherMetrics" >
+                        <div class="current weatherMetrics__current">
+                            <div class="stats">
+                                <div class="value">{{ pageCMS.snowReport.temp }}F</div>
+                            </div>
+                        </div>
+                        <div class="condition weatherMetrics__detail">
+                            <div class="wind">
+                                <svg viewBox="0 0 20 20" class="icon" width="1em" height="1em">
+                                    <use href="#wind"></use>
+                                </svg>{{ pageCMS.snowReport.speed }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="segment-outer pt-24 sm:pt-4">
+    <div class="segment-inner">
+        <h3>Right Now</h3>
+        <div class="video-container" id="violet-1546311408" pages></div>
+    </div>
+</div>

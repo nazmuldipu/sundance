@@ -34,6 +34,7 @@ const componentCSSLibEntryPoints = getCSSLibAssets(join(COMPONENT_DIR.pathname, 
 // each custom element is to be bundled independently and sent to the server so that
 // they can be asynchronously loaded
 const customElementJSEntryPoints = getJSLibAssets(join(COMPONENT_DIR.pathname, 'custom-elements'));
+const globalScriptsJSEntryPoints = getJSLibAssets(join(SCRIPTS_DIR.pathname, 'global-scripts'));
 const pageOutputPoints = pageEntryPoints.map(point => 
     replacePathBase(point, BUILD_DIR.pathname, basename(PAGES_DIR.pathname))); 
 const pageDataMap = getPageDataMap(pageOutputPoints);
@@ -112,6 +113,19 @@ try {
             )
         );
     }
+
+    // build global scripts
+    if(globalScriptsJSEntryPoints.length) {
+        buildPromises.push(
+            buildJS(
+                globalScriptsJSEntryPoints,
+                BUILD_DIR.pathname,
+                SCRIPTS_DIR.pathname,
+                metafilePath('meta-global-scripts.json')
+            )
+        );
+    }
+
     await Promise.all(buildPromises);
 
     constructSiteMap(BUILD_DIR.pathname, 'https://www.sundanceresort.com')
