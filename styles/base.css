@@ -831,6 +831,12 @@ strong {
     margin-bottom: 24px;
     background-color: var(--sundance__secondary4);
 }
+.card-widget__video h3{
+    font-family: "Calibre", Arial, sans-serif;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: normal;
+}
 @media screen and (min-width: 320px) and (max-width: 767px) {
     .special-background--secondary4 {
         padding: 16px !important;

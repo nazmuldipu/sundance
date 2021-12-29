@@ -154,6 +154,18 @@ pagename: base
         <iframe src="https://4167325.fls.doubleclick.net/activityi;src=4167325;type=websi536;cat=sunda084;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1;num=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
         </noscript>
         <!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+        <!-- Remove redundance video container -->
+        <script>
+            let elId = 'ic_action_tab-video_container';
+            let width = screen.width;
+            if(width > 767 && width < 1366){
+                elId = 'ic_action_video_container';
+            }
+            const rm = document.getElementById(elId);
+            rm.remove();
+        </script>
+        <!-- End remove redundance video container -->
+        
         <!-- Sojern Tag v6_js, Pixel Version: 2 -->
         <script>
         (function () {

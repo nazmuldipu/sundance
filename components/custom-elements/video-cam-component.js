@@ -4,7 +4,12 @@ export default class VideoCam extends ProgressiveElement{
         super([]);
         this.loading = false;
         this.observer = null;
-        this.liveContainer = document.getElementById('ic_action_video_container');
+        let elId = 'ic_action_video_container';
+        let width = screen.width;
+        if(width > 767 && width < 1366){
+            elId = 'ic_action_tab-video_container';
+        }
+        this.liveContainer = document.getElementById(elId);
         this.isLoaded = false;
     }
 
@@ -12,6 +17,10 @@ export default class VideoCam extends ProgressiveElement{
         window.addEventListener('video-loaded', (event)=> {
             if(window.video){
                 const video = event.detail;
+                let h3Node = document.createElement("h3");
+                var textnode = document.createTextNode("Right Now");
+                h3Node.appendChild(textnode);
+                this.appendChild(h3Node);
                 this.appendChild(video);
                 this.observeChange();
             }
