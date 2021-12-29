@@ -1,9 +1,9 @@
 ---
 layout: base.njk
-pagename: winter-activities
-permalink: "build/winter-activities/ski-and-snowboard/index.html"
+pagename: ski-snowboard
+permalink: "build/winter-activities/ski-snowboard/index.html"
 permalinkBypassOutputDir: true
-nickname: winter-activities
+nickname: ski-snowboard
 ---
 {% from "atoms/headings.njk" import h1, h2, h3, h4, h5, h6 %}
 {% from "atoms/a.njk" import button_secondary %}
@@ -33,17 +33,6 @@ nickname: winter-activities
     <article class="winter-blog__container font-ivar">
         {% if simple_blog.descriptions %}
             <div class = "winter-blog__copy">{{ simple_blog.descriptions | safe }}</div>
-        {% endif %}
-        {% if simple_blog.actions %}
-            {% for item in simple_blog.actions %}
-                {% if item.action.type == 'secondary' %}
-                    {% set trg = '_self' if item.action.internal else 
-                            '_blank' %}
-                    <div class="winter-blog__action">
-                        {{ button_secondary(classes = ['button', 'button--secondary', 'font-calibre', 'font-medium', 'text-base'], href = item.action.url, copy = item.action.copy, target = trg ) }}
-                    </div>
-                {% endif %}
-            {% endfor %}
         {% endif %}
     </article>
 {% endif %}
