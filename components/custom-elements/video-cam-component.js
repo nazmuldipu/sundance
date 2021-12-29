@@ -5,7 +5,7 @@ export default class VideoCam extends ProgressiveElement{
         this.loading = false;
         this.observer = null;
         let elId = 'ic_action_video_container';
-        let width = screen.width;
+        let width = window.innerWidth;
         if(width > 767 && width < 1366){
             elId = 'ic_action_tab-video_container';
         }

@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const videoContainer = document.querySelector('.video-block');
     if(videoContainer){
         let elId = 'ic_action_video_container';
-        let width = screen.width;
+        let width = window.innerWidth;
         if(width > 767 && width < 1366){
             elId = 'ic_action_tab-video_container';
         }
