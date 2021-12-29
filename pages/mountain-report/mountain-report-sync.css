@@ -2,12 +2,153 @@
 @import "../../styles/global.css";
 /****  end imports  ********************************/
 
-.status{
-    & div{
-       margin-right: 10px; 
+.status {
+    & div {
+        margin-right: 10px;
     }
     margin-bottom: 20px;
 }
-.header_icon-buttons .video{
+.segment-outer h3{
+    text-align: center;
+    font-size: 40px;
+    line-height: 140%;
+    font-weight: 500;
+    font-family: "Calibre", Arial, sans-serif;
+}
+.group-venues__description{
+    text-align: left;
+}
+.group-venues__description ul {
+    padding-inline-start: 40px;
+    list-style-type: disc;
+}
+.header_icon-buttons .video {
     display: none;
+}
+.snowreport{
+    max-width: 200px;
+    margin: 0 auto;
+}
+.weatherWidget {
+    display: grid;
+    /* grid-template-columns: 1fr 3fr 1fr; */
+    column-gap: 2rem;
+    padding: 4rem 1rem;
+}
+@media screen and (max-width: 767px) {
+    .segment-outer h3{
+        font-size: 30px;
+    }
+    .parking__card{
+        flex-direction: column;
+    }
+}
+@media screen and (min-width: 767px) {
+    .toggle__content__line{
+        padding-left: 3rem;
+    }
+    .weatherWidget {
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+}
+.weatherWidget header {
+    position: absolute;
+    display: inline-block;
+    font-family: "Calibre", Arial, sans-serif;
+    font-size: 1.6rem;
+    line-height: 1;
+    transform-origin: top left;
+    transform: rotate(-90deg) translateX(-100%);
+}
+.weatherWidget .inner {
+    padding-left: calc(1.465rem + 1.82118vw);
+    min-width: 0vw;
+}
+
+.weatherMetrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.weatherMetrics.snowreport .weatherMetrics__current {
+    position: relative;
+}
+.weatherMetrics__current {
+    font-size: calc(1.485rem + 1.99059vw);
+    min-width: 0vw;
+    margin-bottom: 1rem;
+}
+.weatherMetrics__current,
+.weatherMetrics__detail {
+    grid-column: 1 / -1;
+}
+.weatherMetrics__current .stats {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    width: 100%;
+    max-width: 10rem;
+    border: 1px solid #1a1919;
+    position: relative;
+    margin: 0 auto;
+}
+.weatherMetrics__current .stats:before {
+    content: "";
+    display: block;
+    width: 1px;
+    padding-top: 100%;
+}
+.weatherMetrics__current .value {
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+    font-weight: bold;
+    transform: translate(0.06em, 0.1em);
+}
+.weatherMetrics.snowreport .weatherMetrics__current .ytd {
+    font-size: 0.9rem;
+    width: 4em;
+    height: 4em;
+    background: white;
+    border-radius: 50%;
+    border: 1px solid;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    position: absolute;
+    transform: translate(40%, -29%);
+}
+.weatherMetrics__high,
+.weatherMetrics__low {
+    display: grid;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0 0.7em;
+}
+.weatherMetrics__high .label,
+.weatherMetrics__low .label {
+    font-size: 0.8rem;
+}
+.weatherMetrics__high .value,
+.weatherMetrics__low .value {
+    transform: translateX(0.1em);
+    font-weight: bold;
+}
+.weatherMetrics__low {
+    border-right: 1px solid #f1eee4;
+}
+.currentForecast .wind {
+    display: flex;
+    justify-content: center;
+}
+@media (min-width: 1700px) {
+    .weatherWidget .inner {
+        padding-left: 3.4rem;
+    }
+    .weatherMetrics__current {
+        font-size: 3.6rem;
+    }
 }

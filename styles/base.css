@@ -936,6 +936,9 @@ strong {
     .sm\:text-center {
         text-align: center !important;
     }
+    .sm\:pt-4{
+        padding-top: 1rem;
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .md\:grid-cols-2 {
