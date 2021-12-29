@@ -12,6 +12,15 @@
 .group-container{
     border: none;
 }
+.bridge{
+    padding-bottom: 50px;
+}
+.bridge__top-frame {
+    background-color: var(--sundance__primary2);
+}
+.bridge__nav-icon{
+    background-color: transparent;
+}
 .winter-card__header{
     font-weight: 600;
     font-size: 2.625rem;

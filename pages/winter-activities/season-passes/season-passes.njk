@@ -38,4 +38,10 @@ nickname: season-passes
 </section>
 {% endif %}
 
+{# Bridge carousal #}
+{% if pageCMS['bridge-slider'] %}
+    {% set bridge_slider = pageCMS['bridge-slider'].bridge_slider %}
+    {{ bridge(bridge_slider) }}
+{% endif %}
+
 {{newsletter()}}
