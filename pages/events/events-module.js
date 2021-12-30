@@ -1,0 +1,1 @@
+console.log('events-module.js');import '../../scripts/lib/globalEvents.js';

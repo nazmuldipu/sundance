@@ -1,0 +1,28 @@
+---
+layout: base.njk
+pagename: events
+permalink: "build/events/index.html"
+permalinkBypassOutputDir: true
+nickname: "events"
+---
+{% from "atoms/headings.njk" import h2 %}
+{% from 'molecules/card.njk' import verticalCard %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+
+{# Hero Image Section #}
+{% if pageCMS['venues'].group_venues.length and pageCMS['top-banner'].global_image %}
+    {% set event = (pageCMS['venues'].group_venues |  first )%}
+    <section class="group-section">
+        {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
+        <div class="group-container">
+            {{groupVenues(event)}}
+        </div>
+    </section>
+{% endif %}
+
+{# Events Title #}
+{% if pageCMS['events-title']%}
+{{ h2(copy = pageCMS['events-title'].simple_article.title, classes = ['events__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+            
+{% endif %}
