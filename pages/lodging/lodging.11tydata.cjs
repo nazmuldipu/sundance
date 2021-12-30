@@ -1,6 +1,3 @@
-// const getAllData = require('../../scripts/utils/get-page-data.cjs')
-// module.exports  = getAllData('/lodging/accommodation')
-
 const fs = require('fs');
 const getAllData = require('../../scripts/utils/get-page-data.cjs');
 const saveData = false;
