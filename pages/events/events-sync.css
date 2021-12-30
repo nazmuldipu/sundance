@@ -1,0 +1,11 @@
+/****  start imports  ********************************/
+@import "../../styles/global.css";
+/****  end imports  ********************************/
+
+.events__text-container__header {
+    font-size: 36px;
+    line-height: 110%;
+    font-weight: 600;
+    padding-bottom: 40px;
+    text-align: center;
+}
