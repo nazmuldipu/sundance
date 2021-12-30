@@ -1,14 +1,12 @@
 .filter {
     display: block;
-    padding-top: 3rem;
-}
-.filter__header {
-    align-items: flex-end;
 }
 .filter__header,
 .filter__container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    /* align-items: center; */
     justify-content: space-between;
     padding: 0 16px;
 }

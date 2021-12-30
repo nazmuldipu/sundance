@@ -158,12 +158,10 @@ pagename: base
         <script>
             let elId = 'ic_action_tab-video_container';
             let width = window.innerWidth;
-            console.log(width);
             if(width > 767 && width < 1366){
                 elId = 'ic_action_video_container';
             }
             const rm = document.getElementById(elId);
-            console.log(rm.outerHTML);
             rm.remove();
         </script>
         <!-- End remove redundance video container -->
