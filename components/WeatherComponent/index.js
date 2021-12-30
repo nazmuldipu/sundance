@@ -1,6 +1,13 @@
 import { fetchApi } from '../../scripts/utils/http-client'
 import utils from './utils.js'
 
+const getTemp = (report) => {
+    const unit = report?.current?.temp?.slice(-2, -1);
+    let temp = Number(report?.current?.temp?.slice(0, -2) ?? '0');
+    temp = (temp >= 0 ? (temp < 10 ? ' ' : '') : '') + temp;
+    return temp + unit;
+}
+
 class WeatherComponent extends HTMLElement{
 
     constructor(){
@@ -25,8 +32,8 @@ class WeatherComponent extends HTMLElement{
         let snowReportJson = await getSnowReport.json();
         let snowReport = snowReportJson[0]
 
-        document.getElementById('navbar_icon_temp').innerHTML = snowReport?.current?.temp?.slice(0,-1) ?? '0'
-        document.getElementById('navbar_icon_temp-tab').innerHTML = snowReport?.current?.temp?.slice(0,-1) ?? '0'
+        document.getElementById('navbar_icon_temp').innerHTML = getTemp(snowReport);
+        document.getElementById('navbar_icon_temp-tab').innerHTML = getTemp(snowReport);
     
         let forecasts = snowReport.forecast.daily
         let weather = ``
