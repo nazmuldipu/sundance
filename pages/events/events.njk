@@ -23,6 +23,28 @@ nickname: "events"
 
 {# Events Title #}
 {% if pageCMS['events-title']%}
-{{ h2(copy = pageCMS['events-title'].simple_article.title, classes = ['events__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
-            
+    {{ h2(copy = pageCMS['events-title'].simple_article.title, classes = ['events__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
 {% endif %}
+
+<section class="segment-outer">
+    <section class="segment-inner events-container sm:px-4">
+        <article class="text--color__sp-1 text-lg-2">
+            <header class="text-center">Events for week of <span id="event_week_date">December 27, 2021</span></header>
+            <nav class="flex justify-content-space-between py-4">
+                <div id="event_nav_prev" class="cursor-pointer"> &#xab; Prev</div>
+                <div id="event_nav_next" class="cursor-pointer"> Next &#xbb; </div>
+            </nav>
+            <div class="week_event_container">
+                <div class="week_event border-t-1 pt-4 pb-8 text-base">
+                    <div class="">Mon 27th</div>
+                    <div class="event_card grid pl-7">
+                        <a href="/events/events-details/slug" class="text-2xl font-semibold no-underline text--color__sp-1 pb-2 hover:text-n1">Holiday Happenings</a>
+                        <div class="font-calibre">December 27 @ 3:00 pm – 7:30 pm</div>
+                    </div>
+                </div>
+            </div>
+
+        </article>
+        <article>Right</article>
+    </section>
+</section>
