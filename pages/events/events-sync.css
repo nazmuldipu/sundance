@@ -14,7 +14,11 @@
     column-gap: 6rem;
     grid-template-columns: 1fr;
 }
-
+.event_day_list_item{
+    grid-template-columns: 2rem 1fr;
+    column-gap: 1.3rem;
+    margin-bottom: 1.6rem;
+}
 @media (min-width: 768px) {
     .events__text-container__header {
         font-size: 36px;
