@@ -3,9 +3,24 @@
 /****  end imports  ********************************/
 
 .events__text-container__header {
-    font-size: 36px;
+    font-size: 24px;
     line-height: 110%;
     font-weight: 600;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
     text-align: center;
+}
+.events-container {
+    display: grid;
+    column-gap: 6rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .events__text-container__header {
+        font-size: 36px;
+        padding-bottom: 40px;
+    }
+    .events-container {
+        grid-template-columns: 3fr 1fr;
+    }
 }

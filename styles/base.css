@@ -548,9 +548,6 @@ strong {
 .capitalize{
     text-transform: capitalize;
 }
-.text--color__sp-1 {
-    color: #458691 !important;
-}
 .text--color__ss-3 {
     color: var(--sundance__secondary3) !important;
 }
@@ -576,7 +573,7 @@ strong {
     padding-bottom: 0.25rem;
 }
 .pb-2 {
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
 .pt-2 {
     padding-top: 0.5rem;
@@ -585,7 +582,7 @@ strong {
     padding-top: 1rem;
 }
 .pb-4 {
-    padding-bottom: 2rem !important;
+    padding-bottom: 1rem !important;
 }
 .px-4 {
     padding-left: 1rem;
@@ -593,6 +590,9 @@ strong {
 }
 .pb-6 {
     padding-bottom: 1.5rem;
+}
+.pl-7{
+    padding-left: 1.75rem;
 }
 .pb-8 {
     padding-bottom: 2rem;
@@ -778,6 +778,10 @@ strong {
 }
 .border-l--color__sn-5 {
     border-left-color: #fff !important;
+}
+.hover\:text-n1:hover {
+    --tw-bg-opacity: 1;
+    color: var(--sundance__neutral1);
 }
 .border-1 {
     border: 1px solid !important;
