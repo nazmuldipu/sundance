@@ -43,7 +43,7 @@ const months = [
     "November",
     "December",
 ];
-var days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+var days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 const isLeapYear = function (year) {
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 };
@@ -85,11 +85,17 @@ const getDaysInMonth = function (year, month) {
     ][month];
 };
 const getMonthNameAndDate = (date) => {
-    return `${months[date.getMonth()]} ${date.getDate()}`
+    return `${months[date.getMonth()]} ${date.getDate()}`;
 };
 const getDayNameAndDate = (date) => {
-    return `${days[date.getDay()]} ${date.getDate()}`
-}
+    return `${days[date.getDay()]} ${date.getDate()}`;
+};
+const getPreviousMonday = (d) => {
+    d = new Date(d);
+    var day = d.getDay(),
+        diff = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
+    return new Date(d.setDate(diff));
+};
 const setToStartOfDay = function (date) {
     if (isDate(date)) date.setHours(0, 0, 0, 0);
 };
@@ -130,7 +136,10 @@ const renderBody = (year, month) => {
     const now = new Date();
     setToStartOfDay(now);
     const days = getDaysInMonth(year, month);
-    const before = new Date(year, month, 1).getDay();
+    let before = new Date(year, month, 1).getDay() - 1;
+    if (before < 0) {
+        before = 6;
+    }
     let dayHtml = "";
     const totalCell = days + before;
     for (let i = 0; i < totalCell; i++) {
@@ -163,24 +172,69 @@ const renderDayEventList = (year, month, day) => {
     let eveHtml = "";
     if (eventList.length > 0) {
         eventList.forEach((e) => {
-            console.log(e);
             eveHtml += `<div class="event_day_list_item grid">
-                            <div class="font-bold text-lg">${getDayNameAndDate(new Date(e.date))}</div>
+                            <div class="font-bold text-lg">${getDayNameAndDate(
+                                new Date(e.date)
+                            )}</div>
                             <div class="event_card grid">
-                                <a href="/events/events-details/slug" class="text-xl font-semibold no-underline text--color__sp-1 pb-2 hover:text-n1">${e.title}</a>
-                                <div class="font-calibre text-xs">${getMonthNameAndDate(new Date(e.date))} @ ${e.time}</div>
+                                <a href="/events/events-details/slug" class="text-xl font-semibold no-underline text--color__sp-1 pb-2 hover:text-n1">${
+                                    e.title
+                                }</a>
+                                <div class="font-calibre text-xs">${getMonthNameAndDate(
+                                    new Date(e.date)
+                                )} @ ${e.time}</div>
                             </div>
                         </div>`;
         });
     }
     eveDayListEl.innerHTML = eveHtml;
 };
+const renderWeekCalendarTitle = (week) => {
+    const eventWeekDateEl = document.querySelector("#event_week_date");
+    eventWeekDateEl.innerHTML = `${getMonthNameAndDate(
+        week
+    )}, ${week.getFullYear()}`;
+};
+const renderWeekCalendarBody = (week) => {
+    const weekEveContainer = document.querySelector(".week_event_container");
+    let eveHtml = "";
+    for (let i = 0; i < 7; i++) {
+        const dd = new Date(week);
+        dd.setDate(dd.getDate() + i);
+        const eventList = getDayEvents(
+            dd.getFullYear(),
+            dd.getMonth(),
+            dd.getDate(),
+            events
+        );
+        if (eventList.length > 0) {
+            eventList.forEach((e) => {
+                eveHtml += `<div class="week_event border-t-1 border--color__sp-4 pt-4 pb-8 text-base">
+                <div class="">${getDayNameAndDate(
+                    new Date(e.date)
+                )}</div>
+                <div class="event_card grid pl-7">
+                    <a href="/events/events-details/slug" class="text-2xl font-semibold no-underline text--color__sp-1 pb-2 hover:text-n1">${
+                        e.title
+                    }</a>
+                    <div class="font-calibre">${getMonthNameAndDate(
+                        new Date(e.date)
+                    )} @ ${e.time}</div>
+                </div>
+            </div>`;
+            });
+        }
+    }
+    weekEveContainer.innerHTML = eveHtml;
+};
 
 let Events = function (options) {
     var self = this;
     const calendar = document.querySelector("#events_calendar");
+    const weekNext = document.querySelector("#week_next");
+    const weekPrev = document.querySelector("#week_prev");
 
-    self.gotoDate(new Date());
+    self.init();
     self._onClick = function (e) {
         e = e || window.event;
         var target = e.target || e.srcElement,
@@ -197,13 +251,31 @@ let Events = function (options) {
         if (hasClass(target, "calendar-date")) {
             self.showDayEvents(target.innerHTML);
         }
+        if (hasClass(target, "week-next")) {
+            self.nextWeek();
+        }
+        if (hasClass(target, "week-prev")) {
+            self.prevWeek();
+        }
     };
 
     // Event listeners
     addEvent(calendar, "click", self._onClick);
+    addEvent(weekNext, "click", self._onClick);
+    addEvent(weekPrev, "click", self._onClick);
 };
 
 Events.prototype = {
+    init: function () {
+        let date = new Date();
+        this.calendar = {
+            month: date.getMonth(),
+            year: date.getFullYear(),
+            week: getPreviousMonday(date),
+        };
+        this.draw();
+        this.drawWeekCalendar();
+    },
     gotoDate: function (date) {
         if (!isDate(date)) {
             return;
@@ -230,9 +302,21 @@ Events.prototype = {
         }
         this.draw();
     },
-    draw: function (force) {
+    nextWeek: function () {
+        this.calendar.week.setDate(this.calendar.week.getDate() + 7);
+        this.drawWeekCalendar();
+    },
+    prevWeek: function () {
+        this.calendar.week.setDate(this.calendar.week.getDate() - 7);
+        this.drawWeekCalendar();
+    },
+    draw: function () {
         renderTitle(this.calendar.year, this.calendar.month);
         renderBody(this.calendar.year, this.calendar.month);
+    },
+    drawWeekCalendar: function () {
+        renderWeekCalendarTitle(this.calendar.week);
+        renderWeekCalendarBody(this.calendar.week);
     },
     showDayEvents: function (day) {
         renderDayEventList(

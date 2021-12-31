@@ -52,6 +52,38 @@
 			"jsDate": "2021-12-07T18:00:00.000Z"
 		},
 		{
+			"date": "2021/12/11",
+			"time": "12:00 pm – 5:00 pm",
+			"image": {
+				"global_image": {
+					"alt": "",
+					"src": "",
+					"background": true,
+					"intrinsicwidth": 0,
+					"intrinsicheight": 0
+				}
+			},
+			"title": "Visiting Artists: Megan Ah You & Phil Ah You",
+			"description": "<p>20 years of living together will change a girl, and a guy, and their artwork…</p><p>Phil is a designer, and Megan is a painter. This is the first time they have shown their work together. This show came about when looking at their respective artworks side by side and realizing how much their artwork had evolved over the years, to resemble one another’s style. Phil’s posterized digital prints are created in the works progress style of vintage National Parks posters that became popular toward the end of the great depression era. Megan’s stylized, acrylic, landscape paintings became cleaner and more simplified throughout the last 2 years. The result is a group of artworks that carry similarities, despite difference in background and medium used by the individual artists. The paintings and the digital prints were created out of a mutual desire to express connection to the land. Specifically, connection to the rich Utah landscape that Phil and Megan enjoy, and have made their home.</p><p><br></p><p>Phil has a BFA in graphic design and works as a technician for UVU’s Art Dept.</p><p><br></p><p>Megan has a BFA in painting and works as Director of Art for Encircle, a local non-profit organization benefiting lgbtq youth. The couple both continue to utilize creating artworks, like the one’s featured here, as an outlet for expression and visual communication.</p>",
+			"jsDate": "2021-12-10T18:00:00.000Z"
+		},
+		{
+			"date": "2021/12/11",
+			"time": "8:00 pm – 11:00 pm",
+			"image": {
+				"global_image": {
+					"alt": "",
+					"src": "",
+					"background": true,
+					"intrinsicwidth": 0,
+					"intrinsicheight": 0
+				}
+			},
+			"title": "Owl Bar: Live Music",
+			"description": "<p>Live music in the Owl Bar featuring Michelle Moonshine &amp; Co.</p>",
+			"jsDate": "2021-12-10T18:00:00.000Z"
+		},
+		{
 			"date": "2022/1/1",
 			"time": "5:30 p.m. – 7:30 p.m.",
 			"image": {
