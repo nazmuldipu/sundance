@@ -45,6 +45,22 @@ nickname: "events"
             </div>
 
         </article>
-        <article>Right</article>
+        <article class="calendar" id="events_calendar">
+            <header class="flex justify-content-space-between">
+                <div class="nav-prev cursor-pointer" > &#xab; </div>
+                <h1 class="month-name text-6"></h1>
+                <div class="nav-next cursor-pointer" > &#xbb; </div>
+            </header>
+            <div class="text-base grid grid-cols-7 gap-x-2 text-center py-4">
+                <div class="font-semibold">M</div>
+                <div class="font-semibold">T</div>
+                <div class="font-semibold">W</div>
+                <div class="font-semibold">T</div>
+                <div class="font-semibold">F</div>
+                <div class="font-semibold">S</div>
+                <div class="font-semibold">S</div>
+            </div>
+            <div class="calendar-body grid grid-cols-7 gap-x-1 mb-8 text-center"></div>
+        </article>
     </section>
 </section>

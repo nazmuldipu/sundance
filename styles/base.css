@@ -234,6 +234,9 @@ strong {
 .justify-center {
     justify-content: center;
 }
+.justify-end {
+    justify-content: end;
+}
 .justify-self-center {
     justify-self: center;
 }
@@ -315,6 +318,9 @@ strong {
 .gap-2 {
     gap: 0.5rem;
 }
+.gap-x-1 {
+    column-gap: 0.25rem;
+}
 .gap-x-2 {
     column-gap: 0.5rem;
 }
@@ -362,6 +368,9 @@ strong {
 }
 .grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.grid-cols-7{
+    grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 .row-span-2 {
     grid-row: span 2 / span 2;
@@ -556,6 +565,9 @@ strong {
     color: white;
 }
 /* padding class */
+.p-1{
+    padding: 0.25rem;
+}
 .p-4 {
     padding: 1rem;
 }
@@ -627,6 +639,10 @@ strong {
 }
 .pb-28 {
     padding-bottom: 7rem;
+}
+.py-4{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 .py-5 {
     padding-top: 20px;
