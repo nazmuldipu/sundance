@@ -1,30 +1,7 @@
 "use strict";
 import * as data from "../_data/events.json";
 const events = data.events;
-// const events = [];
-// const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-// const eventWeekDateEl = document.querySelector('#event_week_date');
-// const eventPrevWeek = document.querySelector('#event_nav_prev');
-// const eventNextWeek = document.querySelector('#event_nav_next');
-// console.log(eventNextWeek.innerHTML);
-// // console.log(events);
 
-// const getMonday = (d) => {
-//     d = new Date(d);
-//     var day = d.getDay(),
-//         diff = d.getDate() - day + (day == 0 ? -6 : 1); // adjust when day is sunday
-//     return new Date(d.setDate(diff));
-// };
-// const getMonthNameAndDate = (date) =>{
-//     return `${monthNames[date.getMonth()]} ${date.getDate()}`
-// }
-// const weekFirstDay = getMonday(new Date());
-
-// // set week date
-// eventWeekDateEl.innerHTML = `${getMonthNameAndDate(weekFirstDay)}, ${weekFirstDay.getFullYear()}`;
-// console.log(weekFirstDay);
-
-// console.log('events-defer.js');
 const hasEventListeners = !!window.addEventListener;
 const hasClass = function (el, cn) {
     return (" " + el.className + " ").indexOf(" " + cn + " ") !== -1;
