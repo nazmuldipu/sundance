@@ -1,0 +1,1 @@
+console.log('events-details-defer.js');
