@@ -1,3 +1,17 @@
 /****  start imports  ********************************/
 @import "../../../styles/global.css";
 /****  end imports  ********************************/
+
+.group-venues__container {
+    max-width: 1080px;
+}
+.event-date-time {
+    font-size: 16px;
+    line-height: 100%;
+    font-weight: bold;
+}
+img, picture {
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+}
