@@ -215,6 +215,7 @@
 @media screen and (min-width: 768px) {
     .thumbnail-slider__header {
         padding-top: 72px;
+        padding-bottom: 32px;
         font-size: 60px;
         line-height: 72px;
         max-width: 768px;
