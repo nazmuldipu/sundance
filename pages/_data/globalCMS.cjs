@@ -1,6 +1,5 @@
 const fetchPageData = require('../../scripts/utils/fetch-page-data.cjs')
 const fs = require('fs');
-let saveData = false;
 /**
  * fetch data of dine page
  * 
@@ -34,10 +33,6 @@ async function getAllData() {
                 })
             }
             manipulateData.events.events.sort((a,b)=>{ return new Date(a.date).getTime() - new Date(b.date).getTime() });
-            if(manipulateData?.events && !saveData){
-                saveData = true;
-                fs.writeFileSync('./pages/_data/events.json', JSON.stringify(manipulateData.events,  null, '\t'));
-            }
         })
     }else{
         manipulateData = {}
