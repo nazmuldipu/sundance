@@ -1,0 +1,31 @@
+---
+layout: base.njk
+pagename: events-details
+permalink: "build/events/events-details/index.html"
+permalinkBypassOutputDir: true
+nickname: events-details
+---
+{% from 'molecules/group-venues.njk' import groupVenues %}
+
+<section id="events-holder" data-events="{{globalCMS.events | stringify}}" class="segment-outer">
+    <section class="group-venues">
+        <article class="group-venues__container">
+            <section class="group-venues__breadcrumbs font-calibre">
+                <a class="group-venues__breadcrumbs__link" href="/">Homepage</a>
+                <a class="group-venues__breadcrumbs__link" href="/events">Events</a>
+                <a id="breadcum-event" class="group-venues__breadcrumbs__link breadcrumbs-last" href="/events/events-details/?id="></a>
+            </section>
+            <div class="py-4 hidden" id="event-image-container">
+                <img loading="lazy" width="1400" height="1038" style="width: 500px;" id="event-image"
+                    src="{{'' | theImgSrc}}" 
+                    alt="">
+            </div>
+            <h2 id="event-title" class="group-venues__title font-ivar"></h2>
+            <h2 class="event-date-time font-calibre pb-4" id="event-date-time">
+                December 11 <span class="text--color__sp-1">@</span> 12:00 pm – 5:00 pm
+            </h2>
+            <p class="group-venues__description font-ivar text-left" id="event-description"></p>
+            <section class="group-venues__actions" id="event-actions"></section>
+        </article>
+    </section>
+</section>
