@@ -153,7 +153,7 @@ function initEvents(events){
                                     new Date(e.date)
                                 )}</div>
                                 <div class="event_card grid">
-                                    <a href="/events/events-details?id=${e._id}" class="text-xl font-semibold no-underline text--color__sp-1 pb-2 hover:text-n1">${
+                                    <a href="/events/events-details/?id=${e._id}" class="text-xl font-semibold no-underline text--color__sp-1 pb-2 hover:text-n1">${
                                         e.title
                                     }</a>
                                     <div class="font-calibre text-xs">${getMonthNameAndDate(
@@ -190,7 +190,7 @@ function initEvents(events){
                         new Date(e.date)
                     )}</div>
                     <div class="event_card grid pl-7">
-                        <a href="/events/events-details?id=${e._id}" class="text-2xl font-semibold no-underline text--color__sp-1 pb-2 hover:text-n1">${
+                        <a href="/events/events-details/?id=${e._id}" class="text-2xl font-semibold no-underline text--color__sp-1 pb-2 hover:text-n1">${
                             e.title
                         }</a>
                         <div class="font-calibre">${getMonthNameAndDate(
