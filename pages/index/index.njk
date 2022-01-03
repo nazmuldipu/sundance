@@ -59,7 +59,7 @@ thumbnail_slider_circle %}
 </section>
 
 <section class="home-style-bg" style="--background-url: url({{pageCMS['events'].sundance_events.background | theImgSrc}}); --top-position: 0;">
-    {{events(pageCMS['events'].sundance_events )}}
+    {{events(events = pageCMS['events'].sundance_events, gevents = globalCMS['events'] )}}
 </section>
 
 <section class="segment-outer">
