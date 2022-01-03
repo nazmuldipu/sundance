@@ -26,7 +26,7 @@ nickname: "events"
     {{ h2(copy = pageCMS['events-title'].simple_article.title, classes = ['events__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
 {% endif %}
 
-<section class="segment-outer">
+<section id="events-holder" data-events="{{globalCMS.events | stringify}}" class="segment-outer">
     <section class="segment-inner events-container sm:px-4">
         <article class="text--color__sp-1 text-lg-2">
             <header class="text-center">Events for week of <span id="event_week_date"></span></header>
