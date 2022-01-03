@@ -1,5 +1,6 @@
 .thumbnail-slider {
     margin: 90px;
+
     gap: 20px;
 }
 .thumbnail-slider__frame{
@@ -135,6 +136,8 @@
 @media screen and (min-width: 768px) and (max-width: 1365px) {
     .thumbnail-slider {
         margin: 16px;
+        padding-top: 32px;
+        padding-bottom: 32px;
         gap: 5px;
     }
     .thumbnail-slider__texts {
@@ -178,6 +181,8 @@
 @media screen and (min-width: 1366px) and (max-width: 1919px) {
     .thumbnail-slider {
         margin: 60px;
+        padding-top: 60px;
+        padding-bottom: 60px;
         gap: 16px;
     }
     .thumbnail-slider__texts {
