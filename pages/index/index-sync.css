@@ -329,8 +329,8 @@
         justify-content: right;
         align-items: center;
     }
-    .sundance-events__nav .carousel-button-prev,
-    .sundance-events__nav .carousel-button-next {
+    .sundance-events__nav .week_prev,
+    .sundance-events__nav .week_next {
         margin: 0 130px;
     }
 }
