@@ -49,7 +49,17 @@
                 {% if not nav.copy == "" %}
                     <div class="group-venues__nav">
                         <label class="font-ivar">{{nav.label}}</label>
-                        {{ a( copy=nav.copy, href=nav.url, target=nav.target) }}
+                        {% if nav.url !== 'modal' %}
+                            {{ a( copy=nav.copy, href=nav.url, target=nav.target) }}
+                        {% else %}
+                        <global-modal data-identifier="venues-{{nav.copy}}">
+                            <div class="text-left">
+                            {{ nav.description | safe  }}
+                            </div>
+                        </global-modal>
+                            <a class="link link--primary font-calibre text-base cursor-pointer" data-target="venues-{{nav.copy}}">{{nav.copy}}</a>
+                        {% endif %}
+                        
                     </div>
                 {% endif %}
             {% endfor %}

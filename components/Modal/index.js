@@ -60,12 +60,13 @@ class Modal extends HTMLElement {
         transform: translate(-50%, -50%);
         background-color: white;
         padding: 2.6rem;
-        min-width: 30rem;
+        min-width: 18rem;
         min-height: 10rem;
         max-height: 85vh;
         max-width: 90%;
         box-shadow: rgb(46 44 41 / 10%) 0 0 4px, rgb(46 44 41 / 10%) 0 4px 22px;
         border-radius: 0.5rem;
+        overflow-y: auto;
       }
       .modal__close {
         position: absolute;
