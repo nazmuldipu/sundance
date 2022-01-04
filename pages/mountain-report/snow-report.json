@@ -9,15 +9,15 @@
 			"url": "https://opensnow.com/state/UT"
 		},
 		"current": {
-			"temp": "27ºF",
+			"temp": "26ºF",
 			"wind": {
-				"direction": "WSW",
+				"direction": "SW",
 				"speed": "15mph"
 			},
 			"location": "Mid-Mtn",
 			"icon": "https://opensnow.com/img/weather/night/ovc.png",
 			"weather": "Cloudy",
-			"updated_at": "2022-01-04 08:00:03"
+			"updated_at": "2022-01-04 09:00:03"
 		},
 		"warnings": [
 			{
@@ -32,7 +32,7 @@
 			}
 		],
 		"forecast": {
-			"daily_updated_at": "2022-01-04 08:00:03",
+			"daily_updated_at": "2022-01-04 09:00:03",
 			"daily": [
 				{
 					"date": "2022-01-04",
@@ -61,37 +61,37 @@
 							"gust": "20mph"
 						},
 						"snow_level": "3,100ft",
-						"cloud_cover": "85%",
+						"cloud_cover": "80%",
 						"precip_chance": "75%"
 					}
 				},
 				{
 					"date": "2022-01-05",
 					"day": {
-						"temp": "32ºF",
+						"temp": "33ºF",
 						"snow": "5-9\"",
 						"icon": "https://opensnow.com/img/weather/day/snow.png",
 						"weather": "Snow",
 						"wind": {
-							"direction": "W",
+							"direction": "WSW",
 							"speed": "10mph",
 							"gust": "20mph"
 						},
 						"snow_level": "3,900ft",
-						"cloud_cover": "95%",
+						"cloud_cover": "90%",
 						"precip_chance": "100%"
 					},
 					"night": {
-						"temp": "32ºF",
+						"temp": "25ºF",
 						"snow": "2-4\"",
 						"icon": "https://opensnow.com/img/weather/night/snow.png",
 						"weather": "Snow",
 						"wind": {
-							"direction": "WSW",
+							"direction": "SW",
 							"speed": "5mph",
-							"gust": "10mph"
+							"gust": "5mph"
 						},
-						"snow_level": "5,200ft",
+						"snow_level": "5,000ft",
 						"cloud_cover": "95%",
 						"precip_chance": "100%"
 					}

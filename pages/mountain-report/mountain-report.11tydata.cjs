@@ -13,11 +13,11 @@ const getReportData = async () => {
         );
         snowReportJson = await getSnowReport.json();
         liftReportJson = await getLiftReport.json();
-        if(snowReportJson){
+        if(getSnowReport.status === 200 && getLiftReport.status === 200){
             fs.writeFileSync('./pages/mountain-report/snow-report.json', JSON.stringify(snowReportJson,  null, '\t'));
-        }
-        if(liftReportJson){
             fs.writeFileSync('./pages/mountain-report/lift-report.json', JSON.stringify(liftReportJson,  null, '\t'));
+        }else{
+            throw new Error("Failed to fetch data from API");
         }
     }catch(error){
         // error handling
@@ -40,18 +40,18 @@ module.exports = async function () {
     const roadsParking = [
         {
             name: "SR-92",
-            status: liftReport.road_92_condition,
+            status: liftReport?.road_92_condition,
         },
         {
             name: "Highway 189",
-            status: liftReport.road_189_condition,
+            status: liftReport?.road_189_condition,
         },
         {
             name: "Parking",
-            status: liftReport.parking_condition,
+            status: liftReport?.parking_condition,
         },
     ];
-    const forecasts = snowReport.forecast.daily;
+    const forecasts = snowReport?.forecast?.daily;
 
     return {
         pageCMS: {
