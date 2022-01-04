@@ -19,8 +19,9 @@ ihh1 %}
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         {% for image in obj.images %}
-                            <div class="swiper-slide !w-auto">
-                                <div class="bridge__box">
+                            <div class="swiper-slide !w-auto gallery">
+
+                                <div href="{{ image.global_image.src | theImgSrc }}" class="bridge__box cursor-pointer">
                                     {{global_image(image.global_image, classes='w-full image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1')}}
                                 </div>
                             </div>

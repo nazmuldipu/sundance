@@ -5,3 +5,4 @@ import "../../components/FormSender/index.js";
 import "components/custom-elements/video-cam-component.js";
 import "components/Modal/index.js";
 import "../utils/nav-actions.js";
+import "../../components/LightBox/index.js";
