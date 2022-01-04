@@ -1,0 +1,195 @@
+[
+	{
+		"id": 45,
+		"name": "Sundance",
+		"url": "https://opensnow.com/location/sundance",
+		"state": {
+			"id": 45,
+			"name": "Utah",
+			"url": "https://opensnow.com/state/UT"
+		},
+		"current": {
+			"temp": "27ºF",
+			"wind": {
+				"direction": "WSW",
+				"speed": "15mph"
+			},
+			"location": "Mid-Mtn",
+			"icon": "https://opensnow.com/img/weather/night/ovc.png",
+			"weather": "Cloudy",
+			"updated_at": "2022-01-04 08:00:03"
+		},
+		"warnings": [
+			{
+				"id": 645901,
+				"valid": {
+					"from": "2022-01-04 12:00:00",
+					"to": "2022-01-06 12:00:00"
+				},
+				"title": "Winter Weather Advisory issued January 03 at 10:58PM MST until January 06 at 5:00AM MST",
+				"full": "...WINTER WEATHER ADVISORY REMAINS IN EFFECT FROM 5 AM TUESDAY TO 5 AM MST THURSDAY... * WHAT...Snow expected. In the mountains, 1 to 2 feet with locally higher amounts possible. Wind gusts in excess of 50 mph will result in areas of blowing and drifting snow. * WHERE...In Wyoming, Southwest Wyoming. In Utah, Wasatch Mountains I-80 North, Wasatch Mountains South of I-80 and Western Uinta Mountains. * WHEN...From 5 AM Tuesday to 5 AM MST Thursday. * IMPACTS...Winter driving conditions including snow covered roads and greatly reduced visibility can be expected. Areas of blowing and driving snow may reduce visibility to near zero at times. * ADDITIONAL DETAILS...Strong winds in the mountains and across southwest Wyoming will lead to areas of blowing and drifting snow. In particular, Interstate 80 in southwest Wyoming and Sardine and Logan Summits in Utah will be especially prone to blowing snow.",
+				"issued_at": "2022-01-04 05:58:00"
+			}
+		],
+		"forecast": {
+			"daily_updated_at": "2022-01-04 08:00:03",
+			"daily": [
+				{
+					"date": "2022-01-04",
+					"day": {
+						"temp": "32ºF",
+						"snow": "1-2\"",
+						"icon": "https://opensnow.com/img/weather/day/snow.png",
+						"weather": "Snow",
+						"wind": {
+							"direction": "WSW",
+							"speed": "10mph",
+							"gust": "20mph"
+						},
+						"snow_level": "3,400ft",
+						"cloud_cover": "90%",
+						"precip_chance": "60%"
+					},
+					"night": {
+						"temp": "26ºF",
+						"snow": "3-5\"",
+						"icon": "https://opensnow.com/img/weather/night/snow.png",
+						"weather": "Snow",
+						"wind": {
+							"direction": "SW",
+							"speed": "10mph",
+							"gust": "20mph"
+						},
+						"snow_level": "3,100ft",
+						"cloud_cover": "85%",
+						"precip_chance": "75%"
+					}
+				},
+				{
+					"date": "2022-01-05",
+					"day": {
+						"temp": "32ºF",
+						"snow": "5-9\"",
+						"icon": "https://opensnow.com/img/weather/day/snow.png",
+						"weather": "Snow",
+						"wind": {
+							"direction": "W",
+							"speed": "10mph",
+							"gust": "20mph"
+						},
+						"snow_level": "3,900ft",
+						"cloud_cover": "95%",
+						"precip_chance": "100%"
+					},
+					"night": {
+						"temp": "32ºF",
+						"snow": "2-4\"",
+						"icon": "https://opensnow.com/img/weather/night/snow.png",
+						"weather": "Snow",
+						"wind": {
+							"direction": "WSW",
+							"speed": "5mph",
+							"gust": "10mph"
+						},
+						"snow_level": "5,200ft",
+						"cloud_cover": "95%",
+						"precip_chance": "100%"
+					}
+				},
+				{
+					"date": "2022-01-06",
+					"day": {
+						"temp": "38ºF",
+						"snow": "0\"",
+						"icon": "https://opensnow.com/img/weather/day/ovc.png",
+						"weather": "Cloudy",
+						"wind": {
+							"direction": "SW",
+							"speed": "5mph",
+							"gust": "10mph"
+						},
+						"snow_level": "6,200ft",
+						"cloud_cover": "90%",
+						"precip_chance": "60%"
+					},
+					"night": {
+						"temp": "26ºF",
+						"snow": "0\"",
+						"icon": "https://opensnow.com/img/weather/night/sct.png",
+						"weather": "Mostly Cloudy",
+						"wind": {
+							"direction": "S",
+							"speed": "5mph",
+							"gust": "5mph"
+						},
+						"snow_level": "5,500ft",
+						"cloud_cover": "55%",
+						"precip_chance": "35%"
+					}
+				},
+				{
+					"date": "2022-01-07",
+					"day": {
+						"temp": "42ºF",
+						"snow": "0\"",
+						"icon": "https://opensnow.com/img/weather/day/few.png",
+						"weather": "Partly Cloudy",
+						"wind": {
+							"direction": "SSW",
+							"speed": "5mph",
+							"gust": "10mph"
+						},
+						"snow_level": "5,900ft",
+						"cloud_cover": "50%",
+						"precip_chance": "30%"
+					},
+					"night": {
+						"temp": "32ºF",
+						"snow": "1-2\"",
+						"icon": "https://opensnow.com/img/weather/night/rain_snow.png",
+						"weather": "Rain/Snow",
+						"wind": {
+							"direction": "SW",
+							"speed": "5mph",
+							"gust": "10mph"
+						},
+						"snow_level": "5,100ft",
+						"cloud_cover": "85%",
+						"precip_chance": "80%"
+					}
+				},
+				{
+					"date": "2022-01-08",
+					"day": {
+						"temp": "31ºF",
+						"snow": "1-3\"",
+						"icon": "https://opensnow.com/img/weather/day/snow.png",
+						"weather": "Snow",
+						"wind": {
+							"direction": "W",
+							"speed": "5mph",
+							"gust": "10mph"
+						},
+						"snow_level": "3,700ft",
+						"cloud_cover": "80%",
+						"precip_chance": "75%"
+					},
+					"night": {
+						"temp": "5ºF",
+						"snow": "0\"",
+						"icon": "https://opensnow.com/img/weather/night/bkn.png",
+						"weather": "Mostly Clear",
+						"wind": {
+							"direction": "NE",
+							"speed": "5mph",
+							"gust": "5mph"
+						},
+						"snow_level": "1,300ft",
+						"cloud_cover": "25%",
+						"precip_chance": "35%"
+					}
+				}
+			]
+		}
+	}
+]
