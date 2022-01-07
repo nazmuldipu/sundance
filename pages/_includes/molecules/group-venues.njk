@@ -41,6 +41,8 @@
                         {{ Link( href=action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}
                     {% elif action.category == 'tel' %}
                         {{ Link( href="tel:"+action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}    
+                    {% elif action.category == 'document' %}
+                        {{ Link( href= (action.document | theImgSrc), copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}    
                     {% endif %}
                 {% endfor %}
             </section>
