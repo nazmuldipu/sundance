@@ -17,49 +17,53 @@ class Datepicker extends HTMLElement {
       this._calTemplate = `
       <style>
       #calContainer {
-        border:1px solid black;
-        position:absolute;
-        background-color:white;
-        z-index:1000;
+        border: 1px solid black;
+        position: absolute;
+        background-color: #fff;
+        z-index: 1000;
       }
       #calHeader {
-        display:flex;
-        align-items:center;
-        justify-content:space-around;
-        margin-top:5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 5px;
       }
       #calGrid {
-        display:grid;
+        display: grid;
         grid-template-columns: auto auto auto auto auto auto auto;
-        padding:10px;
+        padding: 10px;
       }
-      .calDayName, .calDayStyle, .calAdjacentMonthDay, #calTitle {
-        padding:5px;
-        font-size:20px;
-        text-align:center;
+      .calDayName, 
+      .calDayStyle, 
+      .calAdjacentMonthDay, 
+      #calTitle {
+        padding: .25rem;
+        font-size: 1rem;
+        text-align: center;
       }
-      .calDayStyle:hover, .calCtrl:hover {
-        color:white;
-        background-color:black;
-        cursor:default;
+      .calDayStyle:hover, 
+      .calCtrl:hover {
+        color: #fff;
+        background-color: black;
+        cursor: default;
       }
       .calHiddenRow {
-        display:none;
+        display: none;
       }
       .calAdjacentMonthDay {
-        color:lightgray;
+        color: #d3d3d3;
       }
       .calSelectedDay {
-        color:red;
-        font-weight:bold;
+        color: #ff0000;
+        font-weight: bold;
       }
       #calTitle {
-        width:110px;
+        width: 110px;
       }
       .calCtrl {
-        font-size:20px;
-        padding:0px 8px;
-        user-select:none;
+        font-size: 1rem;
+        padding: 0px 8px;
+        user-select: none;
       }
       </style>
       <div id="calContainer" tabindex="0">
@@ -71,56 +75,56 @@ class Datepicker extends HTMLElement {
           <div id="calCtrlNextYear" class="calCtrl">&#9658;&#9658;</div>
           <div id="calCtrlHideCal" class="calCtrl">&#10005;</div>
         </div>
-        <div id="calGrid">
-          <div class="calDayName"></div>
-          <div class="calDayName"></div>
-          <div class="calDayName"></div>
-          <div class="calDayName"></div>
-          <div class="calDayName"></div>
-          <div class="calDayName"></div>
-          <div class="calDayName"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
-          <div class="calDay"></div>
+        <div class="grid" id="calGrid">
+          <div class="calDayName font-semibold"></div>
+          <div class="calDayName font-semibold"></div>
+          <div class="calDayName font-semibold"></div>
+          <div class="calDayName font-semibold"></div>
+          <div class="calDayName font-semibold"></div>
+          <div class="calDayName font-semibold"></div>
+          <div class="calDayName font-semibold"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
+          <div class="calDay p-1 grid"></div>
         </div>
       </div>`
     }
@@ -132,10 +136,7 @@ class Datepicker extends HTMLElement {
         'persist-on-select',
         'show-close-icon']
     }
-  
-    disconnectedCallback () {
-    }
-  
+    
     attributeChangedCallback (name, oldValue, newValue) {
       if (name === 'init-date') {
         this.initDate = newValue
@@ -151,7 +152,8 @@ class Datepicker extends HTMLElement {
     }
   
     connectedCallback () {
-      setTimeout(() => { this.init() }, 0) // https://stackoverflow.com/questions/58676021/accessing-custom-elements-child-element-without-using-slots-shadow-dom
+      setTimeout(() => { this.init() }, 0) 
+      // https://stackoverflow.com/questions/58676021/accessing-custom-elements-child-element-without-using-slots-shadow-dom
     }
   
     init () {
@@ -175,7 +177,7 @@ class Datepicker extends HTMLElement {
       this.calTitle = this.querySelector('#calTitle')
       this.calContainer = this.querySelector('#calContainer')
       this.dateObj = new Date()
-      var obj
+      const obj
   
       if (this.initDate !== null) {
         obj = this._parseAndValidateInputStr(this.initDate)
