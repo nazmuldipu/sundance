@@ -95,6 +95,9 @@ details[open] summary ~ * {
 }
 .toggle__content__line {
     padding-bottom: 20px;
+    text-align: left;
+    font-size: 22px;
+    line-height: 26px;
 }
 
 .toggle__content__icon {
