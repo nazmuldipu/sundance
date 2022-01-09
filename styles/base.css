@@ -928,6 +928,12 @@ strong {
         padding-left: 1rem;
         padding-right: 1rem;
     }
+    .sm\:pb-0 {
+        padding-bottom: 0rem;
+    }
+    .sm\:pt-0 {
+        padding-top: 0rem;
+    }
     .sm\:pb-4 {
         padding-bottom: 1rem;
     }
