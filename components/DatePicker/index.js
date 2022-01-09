@@ -239,6 +239,7 @@ class Datepicker extends HTMLElement {
       this._setNewDateValue(event.target.innerHTML, this.displayedMonth, this.displayedYear)
       this.textInputElement.value = this._returnDateString(this.dateObj)
       this.textInputElement.dispatchEvent(new CustomEvent('dateselect'))
+      this.textInputElement.dispatchEvent(new Event('change'))
       this._renderCalendar()
       if (!this.persistOnSelect) {
         this._hideCalendar()
