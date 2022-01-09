@@ -78,8 +78,7 @@
 /* Desktop XXL (Screen size : 1920 pts) */
 @media screen and (min-width: 1920px) {
   .newsletter {
-    padding-top: 281px;
-    padding-bottom: 158px;
+    padding: 89px 0;
   }
   .newsletter__heading {
     font-size: 50px;
