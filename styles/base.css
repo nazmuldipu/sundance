@@ -945,6 +945,7 @@ strong {
     }
     .sm\:text-6 {
         font-size: 24px;
+        line-height: 26.4px;
     }
     .sm\:text-lg-2 {
         font-size: 19px !important;
@@ -1192,14 +1193,13 @@ a[href^="tel"] {
 .top-banner__center-text {
     max-width: 536px;
     margin: auto;
-    line-height: 3rem;
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 56px;
+    padding: 0px 49px;
 }
 /*For only CMS annotation purpose*/
 .background--primary2 {
