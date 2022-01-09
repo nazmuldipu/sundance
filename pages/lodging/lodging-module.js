@@ -44,7 +44,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filter_container.addEventListener('filter-change', (e) => {
         const { filters } = e.detail;
+        console.log(filters);
         applyFilters(filters);
+        updateUrl(filters);
     })
+
+    function updateUrl(filters){
+        const values = filters.map(filter => {
+            return filter.value;
+        })
+        if(values.length == 0){
+            window.history.pushState(null, null, window.location.pathname);
+        }else{
+            const url = new URL(window.location.href);
+            const queryParams = url.searchParams;
+            const filterParams = filters.map(filter => {
+                const { type, value } = filter;
+                queryParams.set(type, value);
+                return `${type}=${value}`;
+            })
+            //queryParams.set('filters', filterParams.length > 0 ? filterParams.join('&') :filterParams.join(','));
+            window.history.replaceState({}, '', url.href);
+        }
+
+    };
 
 })
