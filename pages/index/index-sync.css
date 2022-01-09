@@ -257,6 +257,8 @@
     grid-auto-flow: column;
     margin-bottom: 25px;
     padding: 0 16px;
+    align-items: center;
+    justify-content: left;
 }
 .sundance-events__events__date {
     width: 70px;
