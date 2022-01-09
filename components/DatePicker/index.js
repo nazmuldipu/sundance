@@ -168,7 +168,7 @@ class Datepicker extends HTMLElement {
       }
       this.container = this.appendChild(mainContainer) // The returned value is the appended child
   
-      const template = document.createElement('template')
+      var template = document.createElement('template')
       template.innerHTML = this._calTemplate
   
       this.container.appendChild(this.textInputElement)
@@ -177,7 +177,7 @@ class Datepicker extends HTMLElement {
       this.calTitle = this.querySelector('#calTitle')
       this.calContainer = this.querySelector('#calContainer')
       this.dateObj = new Date()
-      const obj
+      var obj
   
       if (this.initDate !== null) {
         obj = this._parseAndValidateInputStr(this.initDate)
@@ -507,10 +507,7 @@ class Datepicker extends HTMLElement {
     }
   
     _returnDateString (date) {
-      var year = date.getFullYear()
-      var month = date.getMonth() + 1
-      var day = date.getDate()
-      return day + '.' + month + '.' + year
+      return date.toLocaleDateString('en-US');
     }
   
     _populateDayNames () {

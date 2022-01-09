@@ -1,5 +1,6 @@
 import '../../scripts/lib/globalEvents.js';
-import  '../../components/Filter/index.js'
+import  '../../components/Filter/index.js';
+import '../../components/DatePicker/index.js';
 import { getValue, filterByType, getFilterData} from 'scripts/utils/filter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
