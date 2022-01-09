@@ -89,46 +89,48 @@ Link %}
   </picture>
 {% endmacro %}
 
-{% macro events(events = {}) %}
+{% macro events(events = {}, gevents) %}
   <section class="segment-outer">
-    <section class="sundance-events segment-inner relative text-center">
-      <header class="sundance-events__header text-center font-ivar bold">{{events.header}}</header>
+    <section class="sundance-events segment-inner relative text-center" data-events="{{gevents | stringify}}" id="sundance-events">
+      <header class="sundance-events__header text-center font-ivar bold">Upcoming Events</header>
       
-      <media-carousel>
+      {# <media-carousel> #}
         <div class="swiper-container overflow-hidden relative bg-sn-5">
           
           <div class="swiper-wrapper">
-            {% for sprint in events.sprint%}
+            {# {% for sprint in events.sprint%} #}
               <div class="swiper-slide">
                 <article class="sundance-events__carousel">
-                  <header class="sundance-events__carousel_title font-ivar">{{sprint.title}}</header>
-                  {% for eve in sprint.event_list%}
-                    <div class="sundance-events__events ">
-                      <div class="sundance-events__events__date">{{eve.sundance_event.date}}</div>
-                      <div class="sundance-events__events__title font-calibre">
-                        {{eve.sundance_event.title}}
-                        <br/>
-                        <span class="link">{{ a( copy=eve.sundance_event.action.action.copy, href=eve.sundance_event.action.action.url, target='_self') }}</span>
-                        <span class="time">{{eve.sundance_event.time}}</span>
-                      </div>
-                      <div class="sundance-events__events__action">
-                      {{ Link( href=eve.sundance_event.action.action.url, copy=eve.sundance_event.action.action.copy, target='_self', classes=['button', 'button--' + eve.sundance_event.action.action.type, 'font-calibre', 'sundance-events__links'] ) }}
+                  <header class="sundance-events__carousel_title font-ivar" id="event_week_date">Aug 8 - 14, 2021</header>
+                  {# {% for eve in sprint.event_list%} #}
+                    <div id="week_event_container">
+                      <div class="sundance-events__events" >
+                        <div class="sundance-events__events__date">Aug 8, 2021</div>
+                        <div class="sundance-events__events__title font-calibre">
+                          Live Music
+                          <br/>
+                          <span class="link">{{ a( copy="Details", href='/events', target='_self') }}</span>
+                          <span class="time">4:00 - 6:00 pm</span>
+                        </div>
+                        <div class="sundance-events__events__action">
+                        {{ Link( href='/events/events-details', copy='Details', target='_self', classes=['button', 'button--secondary', 'font-calibre', 'sundance-events__links'] ) }}
+                        </div>
                       </div>
                     </div>
-                  {% endfor %}
+                  {# {% endfor %} #}
                 </article>
               </div>
-            {% endfor %}
+            {# {% endfor %} #}
           </div>
           <nav class="sundance-events__nav">
-            {{ iconCSS( classes=['carousel-button-prev','icon-css', 'arrow-left', 'mx-1', 'rotate-45'] ) }}
-            {{ iconCSS( classes=['carousel-button-next', 'icon-css', 'arrow-right', 'mx-1', 'rotate-45'] ) }}
+            {{ iconCSS( classes=['week_prev','icon-css', 'arrow-left', 'mx-1', 'rotate-45'] ) }}
+            {{ iconCSS( classes=['week_next', 'icon-css', 'arrow-right', 'mx-1', 'rotate-45'] ) }}
           </nav>
         </div>
-      </media-carousel>
+      {# </media-carousel> #}
 
       {% for action in events.actions %}
-        {{ Link( href=action.action.url, copy=action.action.copy, target='_self', classes=['button', 'button--' + action.action.type, 'font-calibre', 'sundance-events__links'] ) }}
+        {{ Link( href=action.action.url, copy=action.action.copy, target='_self', classes=['button', 'button--' + action.action.type, 'font-calibre', 'sundance-events__links', 'my-10'] ) }}
       {% endfor %}
     </section>
   </section>

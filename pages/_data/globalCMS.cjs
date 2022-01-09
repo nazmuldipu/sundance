@@ -1,10 +1,19 @@
 const fetchPageData = require('../../scripts/utils/fetch-page-data.cjs')
-
 /**
  * fetch data of dine page
  * 
  * @returns {object} pageDatas
  */
+ const getId = () => {
+    return '_' + Math.random().toString(36).substr(2, 9);
+};
+
+function getslug(Text) {
+    return Text.toLowerCase()
+               .replace(/ /g, '-')
+               .replace(/[^\w-]+/g, '');
+  }
+
 async function getAllData() {
     let rawData = []
     let manipulateData = {}
@@ -27,7 +36,14 @@ async function getAllData() {
     if (rawData?.length){
         rawData.forEach((data)=>{
             manipulateData[data.name] = data.values
+            if(manipulateData?.events){
+                manipulateData.events.events.forEach((event)=>{
+                    event.jsDate = new Date(event.date)
+                    event._id = new Date(event.date).getTime() + getslug(event.title);
+                })
+            }
         })
+        manipulateData.events.events.sort((a,b)=>{ return new Date(a.date).getTime() - new Date(b.date).getTime() });
     }else{
         manipulateData = {}
     }

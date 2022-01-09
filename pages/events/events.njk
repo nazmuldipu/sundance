@@ -1,0 +1,61 @@
+---
+layout: base.njk
+pagename: events
+permalink: "build/events/index.html"
+permalinkBypassOutputDir: true
+nickname: "events"
+---
+{% from "atoms/headings.njk" import h2 %}
+{% from 'molecules/card.njk' import verticalCard %}
+{% from 'organisms/global-image.njk' import global_image %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
+
+{# Hero Image Section #}
+{% if pageCMS['venues'].group_venues.length and pageCMS['top-banner'].global_image %}
+    {% set event = (pageCMS['venues'].group_venues |  first )%}
+    <section class="group-section">
+        {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
+        <div class="group-container">
+            {{groupVenues(event)}}
+        </div>
+    </section>
+{% endif %}
+
+{# Events Title #}
+{% if pageCMS['events-title']%}
+    {{ h2(copy = pageCMS['events-title'].simple_article.title, classes = ['events__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
+
+<section id="events-holder" data-events="{{globalCMS.events | stringify}}" class="segment-outer">
+    <section class="segment-inner events-container sm:px-4">
+        <article class="text--color__sp-1 text-lg-2">
+            <header class="text-center">Events for week of <span id="event_week_date"></span></header>
+            <nav class="flex justify-content-space-between py-4">
+                <div id="week_prev" class="week-prev cursor-pointer"> &#xab; Prev</div>
+                <div id="week_next" class="week-next cursor-pointer"> Next &#xbb; </div>
+            </nav>
+            <div class="week_event_container">
+                
+            </div>
+
+        </article>
+        <article class="calendar" id="events_calendar">
+            <header class="flex justify-content-space-between">
+                <div class="nav-prev cursor-pointer" > &#xab; </div>
+                <h1 class="month-name text-6"></h1>
+                <div class="nav-next cursor-pointer" > &#xbb; </div>
+            </header>
+            <div class="text-base grid grid-cols-7 gap-x-2 text-center py-4">
+                <div class="font-semibold">M</div>
+                <div class="font-semibold">T</div>
+                <div class="font-semibold">W</div>
+                <div class="font-semibold">T</div>
+                <div class="font-semibold">F</div>
+                <div class="font-semibold">S</div>
+                <div class="font-semibold">S</div>
+            </div>
+            <div class="calendar-body grid grid-cols-7 gap-x-1 mb-8 text-center"></div>
+            <div class="events_day_list grid py-10"></div>
+        </article>
+    </section>
+</section>
