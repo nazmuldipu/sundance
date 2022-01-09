@@ -30,7 +30,6 @@ class LodgingForm extends HTMLElement {
             const inputEl = this.getElementsByClassName(fieldObject.classIdentifier)?.[0];
             if(inputEl) {
                 inputEl.addEventListener('change', (e) => {
-                    console.log(e.target.value);
                     if(e.target.value) {
                         this.url.searchParams.set(fieldObject.queryParam, e.target.value);
                     } else {
