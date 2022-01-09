@@ -85,7 +85,7 @@ nickname: "the-sundance-history"
 {#  Vision and mission #}
 {% if pageCMS['vision-mission'] %}
     <section class="group-section text-lg pb-10">
-        <section class="segment-inner grid grid-cols-2 text-center sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 pb-6 border-t-1 border-b-1">
+        <section class="segment-inner grid grid-cols-2 text-center sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 sm:pb-10 pb-6 border-t-1 border-b-1">
             {% for item in pageCMS['vision-mission'].simple_article_list %}
                 <article>
                     {{ h3( copy=item.simple_article.title, classes=['text-4xl', 'sm:text-3_axl', 'font-calibre', 'font-medium', 'pt-10', 'pb-6'] ) }}
