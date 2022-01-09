@@ -16,11 +16,13 @@ class Datepicker extends HTMLElement {
       this._longPressTimerIds = []
       this._calTemplate = `
       <style>
+      :host { all: inherit; }
       #calContainer {
-        border: 1px solid black;
+        box-shadow: 0px 0px 5px 0px #d3d3d3;
         position: absolute;
         background-color: #fff;
         z-index: 1000;
+        font-family: 'Ivar Headline', Arial, sans-serif;
       }
       #calHeader {
         display: flex;
