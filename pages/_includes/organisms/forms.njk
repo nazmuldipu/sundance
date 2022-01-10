@@ -178,23 +178,50 @@ Button %}
 
 {% macro rfp (formData)%}
     {% for formItem in formData%}
-        {{ h2(classes=['heading', 'text-2xl', 'wedding__rfp-header', 'font-ivar', 'font-semibold'], copy = formItem.title) }}
-        {% for comp in formItem.form %}
-            <div  class="grid grid-cols-2">
-                <div clas="grid">
-                    {{ h2(classes=['pb-1', 'uppercase', 'text-lg', 'font-ivar'], copy = comp.label + '*' if comp.required) }}
-                    {% for field in comp.fields %}
-                        <input type="{{field.type if field.type.length > 2 else 'text'}}" 
-                            {% if fileld.placeholder.length > 2 %} placeholder="{{field.placeholder}}" {% endif %} 
-                             {% if comp.required %} required {% endif %} 
-                            class="w-full wedding-rfp__input" name="{{field.name}}" id="{{field.name}}" />
-                        {% if field.label.length > 2 %}
-                            <div class="heading pt-2 font-ivar text-xs uppercase">{{field.label}}</div>
+        {{ h2(classes=['text-2xl', 'wedding__rfp-header', 'font-ivar', 'font-semibold'], copy = formItem.title) }}
+        <div class="grid grid-cols-2 pb-4">
+            {% for comp in formItem.form %}
+                {% set tyre = (comp.fields | first ).type === 'file' or (comp.fields | first ).type === 'textarea'%}
+                <div class="grid col-span-{{2 if (comp.fields.length > 1 or tyre) else 1}} {{tyre}}">
+                    {{ h2(classes=['pt-4', 'pb-2', 'uppercase', 'text-lg', 'font-ivar'], copy = comp.label + ('*' if comp.required)) }}
+                    {% if comp.fields.length > 1 %}
+                        <div class="grid grid-cols-2">
                         {% endif %}
-                    {% endfor %}
-                    </div>
+                        {% for field in comp.fields %}
+                            <div class="pr-4 {{'col-span-'+field.col if field.col > 1}}">
+                                {% if field.type === 'dropdown' %}
+                                <div class="wedding__select">
+                                    <div class="font-calibre uppercase font-medium text-lg">
+                                        <label for="{{field.name}}">{{field.label}}</label>
+                                    </div>
+                                    <select class="w-full" id="{{field.name}}" name="{{field.name}}">
+                                        {% for item in field.dropdown %}
+                                            <option {% if loop.first %} selected {% endif %} value="{{item.values}}">{{item.label }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                {% elif field.type==='textarea'%}
+                                    <textarea class="wedding-rfp__textarea w-full" required="required" minlength="10" name="{{field.name}}" id="{{field.name}}"></textarea>
+                                
+                                {% else %}
+                                    <input type="{{field.type if field.type.length > 2 else 'text'}}" 
+                                    {% if fileld.placeholder.length > 2 %} placeholder="{{field.placeholder}}" {% endif %} 
+                                    {% if comp.required %} required {% endif %} 
+                                    class="w-full wedding-rfp__input" name="{{field.name}}" id="{{field.name}}"/>
+                                    {% if field.label.length > 2 %}
+                                        <div class="heading pt-2 font-ivar text-xs uppercase">{{field.label}}</div>
+                                    {% endif %}
+                                {% endif %}
+
+                            </div>
+                        {% endfor %}
+                        {% if comp.fields.length > 1 %}
+                        </div>
+                    {% endif %}
                 </div>
             {% endfor %}
-        {% endfor %}
-        {{Button('Submit', type="submit", classes=['button', 'button--primary','font-calibre', 'text-lg'])}}
-    {% endmacro %}
+        </div>
+    {% endfor %}
+    {{Button('Submit', type="submit", classes=['button', 'button--primary','font-calibre', 'text-lg'])}}
+{% endmacro %}

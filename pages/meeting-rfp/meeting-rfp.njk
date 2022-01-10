@@ -7,7 +7,8 @@ nickname: "meeting-rfp"
 ---
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from "atoms/headings.njk" import h2 %}
-{% from 'organisms/forms.njk' import rfpForm,rfp %}
+{% from 'organisms/forms.njk' import rfpForm,
+rfp %}
 
 {% set rfp_form = pageCMS['rfp-form'].rfp_form %}
 {% set form_questions = pageCMS['form-questions'].simple_article %}
@@ -28,11 +29,11 @@ nickname: "meeting-rfp"
         </section>
         {% if rfp_form %}
             <section>
-                <form-sender data-type="newsletter">
-                    <form>
+                <form-sender data-type="meeting-rfp ">
+                    <form  enctype="multipart/form-data">
                         {{rfp(pageCMS['rfp'].rfp)}}
-                        {# {{ rfpForm(obj=rfp_form, cta=form_cta, input_class ='meeting-rfp__input') }} #}
                     </form>
+                    <div class="ajax__status text-mar-accent-2"></div>
                 </form-sender>
             </section>
         {% endif %}
