@@ -39,8 +39,8 @@
     line-height: 46.2px;
 }
 .meeting-rfp__padding{
-    padding-top: 13.75rem;
-    padding-bottom: 14.375rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 .meeting-rfp__input{
     background-color: white;
@@ -49,10 +49,10 @@
     .sm\:grid-cols-1 {
         grid-template-columns: repeat(1, minmax(0, 1fr));
     }
-    .meeting-rfp__padding{
-        padding-top: 5rem;
+    /* .meeting-rfp__padding{
+        padding-top: 15rem;
         padding-bottom: 17rem;
-    }
+    } */
     
 }
 @media screen and (min-width: 1025px){

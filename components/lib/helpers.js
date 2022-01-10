@@ -41,19 +41,26 @@ export const getBodyFromForm = form => {
 
 export async function sendContact(form, contactType) {
     let requestBody = getBodyFromForm(form);
-
-    if (contactType.trim() === 'meeting-rfp') {
-        requestBody = new FormData(form);
+    var reqHeaders = new Headers();
+    reqHeaders.append("Authorization",  `Bearer ${SKIPPER_WEB_API_TOKEN}`);
+    
+    let body;    
+    if (contactType.trim() === 'meetingrfp') {
+        body = new FormData();
+        body.append('data', JSON.stringify(requestBody));
+        if(form.querySelector('input[type="file"]').files.length > 0) {
+            body.append('file', form.querySelector('input[type="file"]').files[0]);
+        }
     }
-
+    else{
+        reqHeaders.append("Content-Type",  "application/json");
+        body = JSON.stringify(requestBody);
+    }    
     const response = await fetch(`${CONTACT_URL}?request_type=${contactType}`, {
         method: 'POST',
         mode: 'cors',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${SKIPPER_WEB_API_TOKEN}`
-        },
-        body: JSON.stringify(requestBody)
+        headers: reqHeaders,
+        body
     });
     return response;
 }
