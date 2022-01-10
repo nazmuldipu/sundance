@@ -7,7 +7,7 @@ nickname: "meeting-rfp"
 ---
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from "atoms/headings.njk" import h2 %}
-{% from 'organisms/forms.njk' import rfpForm %}
+{% from 'organisms/forms.njk' import rfpForm,rfp %}
 
 {% set rfp_form = pageCMS['rfp-form'].rfp_form %}
 {% set form_questions = pageCMS['form-questions'].simple_article %}
@@ -19,7 +19,7 @@ nickname: "meeting-rfp"
             {% if form_questions.title %}
                 {{ h2(classes=['heading', 'meeting-rfp__question-title', 'font-ivar', 'font-bold'], copy = form_questions.title) }}
             {% endif %}
-            
+
             {% if form_questions.description %}
                 <div class="cms-description pb-15 font-ivar text-base">
                     {{ form_questions.description | safe }}
@@ -28,7 +28,12 @@ nickname: "meeting-rfp"
         </section>
         {% if rfp_form %}
             <section>
-                {{ rfpForm(obj=rfp_form, cta=form_cta, input_class ='meeting-rfp__input') }}
+                <form-sender data-type="newsletter">
+                    <form>
+                        {{rfp(pageCMS['rfp'].rfp)}}
+                        {# {{ rfpForm(obj=rfp_form, cta=form_cta, input_class ='meeting-rfp__input') }} #}
+                    </form>
+                </form-sender>
             </section>
         {% endif %}
     </section>

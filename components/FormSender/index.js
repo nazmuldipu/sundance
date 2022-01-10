@@ -30,6 +30,7 @@ export default class FormSender extends HTMLElement {
         }
 
         this.form.onsubmit = (e) => {
+            console.log("submit");
             // validate form here -- idealy we combine the iteration of form fields
             // and the iteration of sendContact -- we will refactor later
             e.preventDefault();
