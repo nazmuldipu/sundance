@@ -29,7 +29,7 @@ nickname: "lodging"
         <section class="flex-card-container">
             {% for item in cardAllData %}
                 <a data-card="{{item.vertical_card | stringify}}" href="{{item.vertical_card.customlink}}" class="no-underline card-container flex__single-card mb-8">
-                    {{ singleCard(item = item.vertical_card, classes = ['']) }}
+                    {{ singleCard(item = item.vertical_card, classes = ['text-left']) }}
                 </a>    
             {% endfor %}
         </section>
