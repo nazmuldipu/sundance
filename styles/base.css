@@ -460,6 +460,11 @@ strong {
 .line-h-1 {
     line-height: 1rem !important;
 }
+/* letter spacing */
+.l-s-l-h {
+    letter-spacing: 0.04rem;
+    line-height: 19.6px;
+}
 
 /* font size */
 .text-base {
@@ -928,6 +933,12 @@ strong {
         padding-left: 1rem;
         padding-right: 1rem;
     }
+    .sm\:pb-0 {
+        padding-bottom: 0rem;
+    }
+    .sm\:pt-0 {
+        padding-top: 0rem;
+    }
     .sm\:pb-4 {
         padding-bottom: 1rem;
     }
@@ -948,6 +959,7 @@ strong {
     }
     .sm\:text-6 {
         font-size: 24px;
+        line-height: 26.4px;
     }
     .sm\:text-lg-2 {
         font-size: 19px !important;
@@ -1195,14 +1207,13 @@ a[href^="tel"] {
 .top-banner__center-text {
     max-width: 536px;
     margin: auto;
-    line-height: 3rem;
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 56px;
+    padding: 0px 49px;
 }
 /*For only CMS annotation purpose*/
 .background--primary2 {
