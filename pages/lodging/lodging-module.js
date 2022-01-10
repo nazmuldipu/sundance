@@ -3,7 +3,28 @@ import  '../../components/Filter/index.js'
 import { getValue, filterByType, getFilterData} from 'scripts/utils/filter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+
     const filter_container = document.querySelector('filter-component');
+    const searchParams = new URLSearchParams(window.location.search);
+    const filterArray = [];
+    const searchFilters = {
+        type: searchParams.get('lodging'),
+        bedrooms: searchParams.get('bedrooms'),
+        sleeps: searchParams.get('sleeps'),
+    }
+    Object.keys(searchFilters).forEach(key => {
+        if(searchFilters[key]) {
+            filterArray.push({
+                id: `${key}-filter-${searchFilters[key]}`,
+                type: key === 'type' ? 'lodging' : key,
+                value: searchFilters[key]
+            })
+        }
+    })
+    if(filterArray.length) {
+        applyFilters(filterArray);
+    }
+
     /**
      * 
      * @param {array} filters 
@@ -44,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filter_container.addEventListener('filter-change', (e) => {
         const { filters } = e.detail;
-        console.log(filters);
         applyFilters(filters);
         updateUrl(filters);
     })
@@ -58,15 +78,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }else{
             const url = new URL(window.location.href);
             const queryParams = url.searchParams;
-            const filterParams = filters.map(filter => {
+            filters.forEach(filter => {
                 const { type, value } = filter;
                 queryParams.set(type, value);
-                return `${type}=${value}`;
             })
             //queryParams.set('filters', filterParams.length > 0 ? filterParams.join('&') :filterParams.join(','));
             window.history.replaceState({}, '', url.href);
         }
 
     };
+
+    document.addEventListener('locationchange', (e)=> {
+        console.log(e);
+    });
+    document.addEventListener('popstate', (e)=> {
+        console.log(e);
+    })
 
 })
