@@ -19,7 +19,7 @@ nickname: "the-sundance-history"
         <section class="sm:mx-6">
             {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:4 lg:5:2 2xl:5:2 4xl:5:2')}}
         </section>
-        {{ h3( copy=pageCMS['top-banner'].global_image.alt, classes=['absolute', 'top-banner-title', 'text-white', 'text-5.5xl', 'sm:text-lg-2', 'font-ivar', 'text-center', 'font-semibold'] ) }}
+        {{ h3( copy=pageCMS['top-banner'].global_image.alt, classes=['absolute', 'top-banner-title', 'text-white', 'text-5.5xl', 'sm:text-6', 'font-ivar', 'text-center', 'font-semibold'] ) }}
     </section>
 {% endif %}
 
@@ -85,7 +85,7 @@ nickname: "the-sundance-history"
 {#  Vision and mission #}
 {% if pageCMS['vision-mission'] %}
     <section class="group-section text-lg pb-10">
-        <section class="segment-inner grid grid-cols-2 text-center sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 pb-6 border-t-1 border-b-1">
+        <section class="segment-inner grid grid-cols-2 text-center sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 sm:pb-10 pb-6 border-t-1 border-b-1">
             {% for item in pageCMS['vision-mission'].simple_article_list %}
                 <article>
                     {{ h3( copy=item.simple_article.title, classes=['text-4xl', 'sm:text-3_axl', 'font-calibre', 'font-medium', 'pt-10', 'pb-6'] ) }}

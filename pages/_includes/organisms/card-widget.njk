@@ -4,36 +4,35 @@
     #   @return HTML Card component
     #   @author Nazmul Alam
  #}
-{% macro cardWidget(cardWidgetData = {}, type = 'temp', title = 'Weather') %}
+{% macro cardWidget(locationInfo = {}, type = 'temp', title = 'Weather') %}
     <section class="card-widget bg-sn-5">
         <header class="card-widget__title bg-sp-1">{{title}}</header>
         <section class="card-widget__body">
             {% if type === 'temp'%}
-                {{weatherCardWidget(cardWidgetData)}}
+                {{weatherCardWidget()}}
             {% elif type === 'video'%}
-                {{videoCardWidget(cardWidgetData)}}
+                {{videoCardWidget()}}
             {% elif type === 'location'%}
-                {{locationCardWidget(cardWidgetData)}}
+                {{locationCardWidget(locationInfo)}}
             {% endif %}
         </section>
     </section>
 {% endmacro %}
 
-{% macro weatherCardWidget(weatherInfo)%}
+{% macro weatherCardWidget()%}
     <weather-component></weather-component>
 {% endmacro %}
 
-{% macro videoCardWidget(videoInfo)%}
+{% macro videoCardWidget()%}
     <article class="card-widget__video">
-        <video-cam>
-        </video-cam>
+        <video-cam></video-cam>
     </article>
 {% endmacro %}
 
 {% macro locationCardWidget(locationInfo)%}
     <article class="card-widget__location grid grid-flow-row font-ivar font-semibold ">
-        <a href="/images/property_map.pdf" class="no-underline text--color__sn-1 py-5" target="_blank">Property Map</a>
-        <a href="/images/trail_map.pdf" class="no-underline text--color__sn-1 py-5" target="_blank">Trail Map</a>
-        <a href="/images/parking_map.pdf" class="no-underline text--color__sn-1 py-5" target="_blank">Parking</a>
+        {% for loc in locationInfo %}
+            <a href="{{loc.document | theImgSrc}}" class="no-underline text--color__sn-1 py-5" target="_blank">{{loc.name}}</a>
+        {% endfor %}
     </article>
 {% endmacro %}
