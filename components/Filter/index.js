@@ -76,7 +76,7 @@ export default class FilterComponent extends HTMLElement {
             this.querySelector('.filter__container').replaceWith(filterContainer);
             this.querySelector('#entries').replaceWith(entries);
             this.querySelector('#filter_btn').replaceWith(filterBtn);
-        }, 500)
+        }, 100)
 
     }
 
