@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchParams = new URLSearchParams(window.location.search);
     const filterArray = [];
     const searchFilters = {
-        type: searchParams.get('lodging'),
+        types: searchParams.get('lodging'),
         bedrooms: searchParams.get('bedrooms'),
         sleeps: searchParams.get('sleeps'),
     }
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if(searchFilters[key]) {
             filterArray.push({
                 id: `${key}-filter-${searchFilters[key]}`,
-                type: key === 'type' ? 'lodging' : key,
+                type: key === 'types' ? 'lodging' : key,
                 value: searchFilters[key]
             })
         }
@@ -52,13 +52,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const updatedFilterData = notFilteredCards.map(card => {
             return card.dataset.card ? JSON.parse(card.dataset.card) : {};
         })
-        const formattedFilter = getFilterData(updatedFilterData);
-        
+        const formattedFilter = getFilterData(updatedFilterData);   
         filter_container.setFilters({
             filters: {
                 entries: notFilteredCards.length,
                 filters: formattedFilter
-            }
+            },
+            selectedFilters: filters
         });
 
     }
@@ -87,12 +87,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
     };
-
-    document.addEventListener('locationchange', (e)=> {
-        console.log(e);
-    });
-    document.addEventListener('popstate', (e)=> {
-        console.log(e);
-    })
 
 })

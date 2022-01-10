@@ -62,14 +62,22 @@ export default class FilterComponent extends HTMLElement {
      * @param {object} data 
      */
     setFilters(data){
-        const { filters } = data;
+        const { filters, selectedFilters } = data;
+        if(this._selectedFilters.length === 0){
+            this._selectedFilters = selectedFilters;
+        }
         this._filters = JSON.parse(JSON.stringify(filters));
-        const template = document.createElement('template');
-        template.innerHTML = this.getTemplate(this._filters);
-        const filterContainer = template.content.querySelector('.filter__container');
-        const entries = template.content.querySelector('#entries');
-        this.querySelector('.filter__container').replaceWith(filterContainer);
-        this.querySelector('#entries').replaceWith(entries);
+        setTimeout(() => {
+            const template = document.createElement('template');
+            template.innerHTML = this.getTemplate(this._filters, this._selectedFilters);
+            const filterContainer = template.content.querySelector('.filter__container');
+            const entries = template.content.querySelector('#entries');
+            const filterBtn = template.content.querySelector('#filter_btn');
+            this.querySelector('.filter__container').replaceWith(filterContainer);
+            this.querySelector('#entries').replaceWith(entries);
+            this.querySelector('#filter_btn').replaceWith(filterBtn);
+        }, 500)
+
     }
 
     parseTitle(title){
@@ -84,9 +92,13 @@ export default class FilterComponent extends HTMLElement {
         return this._selectedFilters.find(flt => flt.id == item.id) ? true : false;
     }
 
-    getTemplate(data){
+    isFilterSelected(selectedFilters){
+        return selectedFilters.length > 0 ? 'checked' : '';
+    }
+
+    getTemplate(data, selectedFilters=[]){
         return ` <section id="filter" class="filter">
-        <input type="checkbox" id="filter_btn" class="filter__toggle" name="filter" >
+        <input type="checkbox" id="filter_btn" ${this.isFilterSelected(selectedFilters)} class="filter__toggle toggle" name="filter" >
         <header class="filter__header align-items-center">
             <div id="entries" class="sm:order-2">${data.entries} Entries</div>
             <h2 class="heading--2 font-calibre font-medium sm:order-1 sm:pb-4">Find a  place to stay</h2>
