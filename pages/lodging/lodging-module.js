@@ -78,11 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }else{
             const url = new URL(window.location.href);
             const queryParams = url.searchParams;
+            for( key of queryParams.keys()){
+               delete queryParams.delete(key);
+            } 
             filters.forEach(filter => {
                 const { type, value } = filter;
                 queryParams.set(type, value);
             })
-            //queryParams.set('filters', filterParams.length > 0 ? filterParams.join('&') :filterParams.join(','));
             window.history.replaceState({}, '', url.href);
         }
 
