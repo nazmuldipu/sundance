@@ -51,7 +51,8 @@
                 {% if not nav.copy == "" %}
                     <div class="group-venues__nav">
                         <label class="font-ivar">{{nav.label}}</label>
-                        {{ a( copy=nav.copy, href=nav.url, target=nav.target) }}
+                        {% set ahref = (nav.document | theImgSrc) if nav.document.length > 2 else nav.url%}
+                        {{ a( copy=nav.copy, href=ahref, target=nav.target) }}
                     </div>
                 {% endif %}
             {% endfor %}

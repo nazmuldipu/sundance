@@ -154,7 +154,7 @@ iconCSS %}
                         <div class="hidden action_icon__label-cross">&#x2715;</div>
                     </label>
                     <div id="ic_action_tab-{{ic_action.slug}}_container" class="ic_action_container {{ic_action.slug}}">
-                        {{cardWidget(cardWidgetData, type = ic_action.slug, title=ic_action.title)}}
+                        {{cardWidget(menuItems.locations, type = ic_action.slug, title=ic_action.title)}}
                     </div>
                 </div>
             {% endfor %}
@@ -177,7 +177,7 @@ iconCSS %}
                             <div class="hidden action_icon__label-cross">&#x2715;</div>
                         </label>
                         <div id="ic_action_{{ic_action.slug}}_container" class="ic_action_container {{ic_action.slug}}">
-                            {{cardWidget(cardWidgetData, type = ic_action.slug, title=ic_action.title)}}
+                            {{cardWidget(menuItems.locations, type = ic_action.slug, title=ic_action.title)}}
                         </div>
                     </div>
                 {% endfor %}
