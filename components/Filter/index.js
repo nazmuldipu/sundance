@@ -95,7 +95,7 @@ export default class FilterComponent extends HTMLElement {
                     <div class="icon-css icon--filter">
                         <span></span><span></span><span></span>
                     </div>
-                    Filter
+                    <div class="filter-margin">Filter</div>
                 </label>
             </div>
         </header>
