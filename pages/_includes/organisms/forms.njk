@@ -182,7 +182,7 @@ Button %}
         <div class="grid grid-cols-2 pb-4">
             {% for comp in formItem.form %}
                 {% set tyre = (comp.fields | first ).type === 'file' or (comp.fields | first ).type === 'textarea'%}
-                <div class="grid col-span-{{2 if (comp.fields.length > 1 or tyre) else 1}} {{tyre}}">
+                <div class="grid col-span-{{2 if (comp.fields.length > 1 or tyre) else 1}}">
                     {{ h2(classes=['pt-4', 'pb-2', 'uppercase', 'text-lg', 'font-ivar'], copy = comp.label + ('*' if comp.required)) }}
                     {% if comp.fields.length > 1 %}
                         <div class="grid grid-cols-2">
@@ -190,11 +190,11 @@ Button %}
                         {% for field in comp.fields %}
                             <div class="pr-4 {{'col-span-'+field.col if field.col > 1}}">
                                 {% if field.type === 'dropdown' %}
-                                <div class="wedding__select">
+                                <div class="wedding__select {{'has-child' if field.child.length > 1 }}" data-child="{{field.child}}">
                                     <div class="font-calibre uppercase font-medium text-lg">
                                         <label for="{{field.name}}">{{field.label}}</label>
                                     </div>
-                                    <select class="w-full" id="{{field.name}}" name="{{field.name}}">
+                                    <select class="w-full" id="{{field.name}}" name="{{field.name}}" {% if field.onchange.length > 2 %}  onchange="{{field.onchange}}" {% endif %}>
                                         {% for item in field.dropdown %}
                                             <option {% if loop.first %} selected {% endif %} value="{{item.values}}">{{item.label }}</option>
                                         {% endfor %}
