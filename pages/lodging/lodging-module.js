@@ -49,10 +49,20 @@ document.addEventListener('DOMContentLoaded', () => {
         filteredCards.forEach(card => card.classList.add('hidden'));
         const notFilteredCards = cards.filter( card => !isFilterAdded(card));
 
-        const updatedFilterData = notFilteredCards.map(card => {
+        const notFilteredCardData = cards.map( card => {
+            const cardData = card.dataset.card ? JSON.parse(card.dataset.card) : {};
+            cardData.disabled = false;
+            if(isFilterAdded(card)){
+                cardData.disabled = true;
+            }
+            card.dataset.card = JSON.stringify(cardData);
+            return card;
+        });
+
+        const updatedFilterData = notFilteredCardData.map(card => {
             return card.dataset.card ? JSON.parse(card.dataset.card) : {};
         })
-        const formattedFilter = getFilterData(updatedFilterData);   
+        const formattedFilter = getFilterData(updatedFilterData);  
         filter_container.setFilters({
             filters: {
                 entries: notFilteredCards.length,
