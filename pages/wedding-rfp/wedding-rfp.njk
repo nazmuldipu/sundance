@@ -7,18 +7,18 @@ nickname: "wedding-rfp"
 ---
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from "atoms/headings.njk" import h2 %}
-{% from 'organisms/forms.njk' import rfpForm %}
+{% from 'organisms/forms.njk' import rfp %}
 
 {% set rfp_form = pageCMS['rfp-form'].rfp_form %}
 {% set form_questions = pageCMS['form-questions'].simple_article %}
 {% set form_cta = pageCMS['form-action'].action %}
-<section class="segment-outer wedding-rfp__padding">
+<section class="segment-outer">
     <section class="segment-inner global-px grid sm:grid-cols-1 lg:grid-cols-1fr-2fr">
         <section class="segment-outer">
             {% if form_questions.title %}
                 {{ h2(classes=['heading', 'wedding-rfp__question-title', 'font-ivar', 'font-bold'], copy = form_questions.title) }}
             {% endif %}
-            
+
             {% if form_questions.description %}
                 <div class="cms-description pb-15 font-ivar text-base">
                     {{ form_questions.description | safe }}
@@ -26,7 +26,12 @@ nickname: "wedding-rfp"
             {% endif %}
         </section>
         <section>
-            {{ rfpForm(obj=rfp_form, cta=form_cta) }}
+            <form-sender data-type="weddingrfp ">
+                <form  enctype="multipart/form-data">
+                    {{rfp(pageCMS['rfp'].rfp)}}
+                </form>
+                <div class="ajax__status text-mar-accent-2"></div>
+            </form-sender>
         </section>
     </section>
 </section>
