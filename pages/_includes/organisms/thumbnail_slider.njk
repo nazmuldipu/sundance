@@ -31,7 +31,7 @@
                                     <div class="thumbnail-slider__slides__box" data-frameName="thumbnail-slider__{{obj.slug}}">
                                         {{ global_image(item.image.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
                                     </div>
-                                    <a class="no-underline text--color__sn-6" href="{{item.link}}"><header class="font-calibre">{{item.title}}</header></a>
+                                    <a class="no-underline text--color__sn-6" {% if item.link %} href="{{item.link}}" {% endif %}><header class="font-calibre">{{item.title}}</header></a>
                                     <summary class="font-calibre">{{item.sub_title}}</summary>
                                 </div>
                             {% endfor %}
