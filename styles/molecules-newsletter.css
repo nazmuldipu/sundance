@@ -11,7 +11,7 @@
   width: 392px;
   text-align: center;
   margin-bottom: 16px;
-  padding: 20px 16px 16px 16px ;
+  padding: 20px 16px 11px 16px ;
   font-size: 16px;
   line-height: 140%;
   border: none;
@@ -26,6 +26,10 @@
   border: none;
   border-radius: 27px;
   padding-top: 8px;
+}
+
+.newnletter__input::placeholder {
+  color: var(--sundance__primary2);
 }
 
 /* Mobile (Screen size : 375 pts) */

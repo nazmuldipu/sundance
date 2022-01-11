@@ -1,6 +1,9 @@
-{% from "atoms/headings.njk" import h2, h6 %}
+{% from "atoms/headings.njk" import h2,
+h6 %}
 {% from 'atoms/form-fields.njk' import form_input %}
-{% from "atoms/a.njk" import a, button_primary %}
+{% from "atoms/a.njk" import a,
+button_primary,
+Button %}
 {# 
     #   @desc   lodging form. it is assumed that there will be 
     #           maximum 1 lodging_form loaded per page
@@ -9,15 +12,15 @@
     #   @author Sarjis
  #}
 {% macro lodging_form(item = {}, page = {}) %}
-<synxis-lodging-form data-Chain="{{ item.chainId }}" data-Hotel="{{ item.hotelId }}">
-    <article class="lodging-forms">
-        <header>
-            {{ h2(copy = item.heading, classes = ['lodging-forms--heading', 'font-ivar']) }}
-            {{ h6(copy = item.subheading, classes = ['lodging-forms--subheading', 'font-ivar']) }}
-        </header>
-        <section class="lodging-forms__field--container text-left justify-center gap-x-2">
-            <div class="lodging-forms__item">
-                {{ form_input(obj = {
+    <synxis-lodging-form data-Chain="{{ item.chainId }}" data-Hotel="{{ item.hotelId }}">
+        <article class="lodging-forms">
+            <header>
+                {{ h2(copy = item.heading, classes = ['lodging-forms--heading', 'font-ivar']) }}
+                {{ h6(copy = item.subheading, classes = ['lodging-forms--subheading', 'font-ivar']) }}
+            </header>
+            <section class="lodging-forms__field--container text-left justify-center gap-x-2">
+                <div class="lodging-forms__item">
+                    {{ form_input(obj = {
                     label: "Check IN",
                     type: "datetime",
                     placeholder: "mm/dd/yyyy",
@@ -27,9 +30,9 @@
                         "lodging-form__input--checkin"
                     ]
                 }) }}
-            </div>
-            <div class="lodging-forms__item">
-                {{ form_input(obj = {
+                </div>
+                <div class="lodging-forms__item">
+                    {{ form_input(obj = {
                     label: "Check OUT",
                     type: "datetime",
                     placeholder: "mm/dd/yyyy",
@@ -39,9 +42,9 @@
                         "lodging-form__input--checkout"
                     ]
                 }) }}
-            </div>
-            <div class="lodging-forms__item">
-                {{ form_input(obj = {
+                </div>
+                <div class="lodging-forms__item">
+                    {{ form_input(obj = {
                     label: "ROOMS",
                     type: "number",
                     value: "1",
@@ -51,9 +54,9 @@
                         "lodging-form__input--rooms"
                     ]
                 }) }}
-            </div>
-            <div class="lodging-forms__item">
-                {{ form_input(obj = {
+                </div>
+                <div class="lodging-forms__item">
+                    {{ form_input(obj = {
                     label: "Promo CODE",
                     type: "text",
                     placeholder: "",
@@ -63,21 +66,22 @@
                         "lodging-form__input--promo"
                     ]
                 }) }}
-            </div>
-            {% set ctaHref %}
+                </div>
+                {% set ctaHref %}
                 https://be.synxis.com/?Hotel={{item.hotelId}}&Chain={{item.chainId}}
             {% endset %}
+            {# TODO: Replace class - button--disabled by button--primary when the form is functional - Ashfaq 10/01/2022 #}
             {{ button_primary( 
-                classes = ['button', 'button--primary','font-calibre', 'text-base', 'align-self-end', 'line-h-1', 'lodging-form__cta'], 
+                classes = ['button', 'button--disabled','font-calibre', 'text-base', 'align-self-end', 'line-h-1', 'lodging-form__cta'], 
                 href=ctaHref, 
                 copy=item.cta.copy, 
                 id='lodging-form-cta', 
                 target='_blank' ) 
             }}
-        </section>
-    </article>
-</synxis-lodging-form>
-{% webComponent "SynxisLodgingForm", "synxis-lodging-form", page.url %}
+            </section>
+        </article>
+    </synxis-lodging-form>
+    {% webComponent "SynxisLodgingForm", "synxis-lodging-form", page.url %}
 {% endmacro %}
 
 {% macro rfpForm(obj, cta, input_class = '') %}
@@ -91,7 +95,7 @@
         {% endif %}
 
         {% set x = items.columns %}
-        {% if items.forms | length >0 %}
+        {% if items.forms | length > 0 %}
             <div class="grid sm:grid-cols-1  lg:grid-cols-{{x}} gap-3.5 pb-2">
                 {% for formItems in items.forms %}
                     <section>
@@ -100,28 +104,28 @@
                             <section class="wedding__select">
                                 <div class="font-calibre uppercase font-medium text-lg">
                                     <label for="{{formItems.label}}">{{formItems.label}}</label>
-                                </div>                       
+                                </div>
                                 <select class="w-full" id="{{formItems.id}}" name="{{formItems.name}}">
                                     {% for item in formItems.dopdown_values %}
                                         <option {% if loop.first %} selected {% endif %} value="{{item.values}}">{{item.values}}</option>
                                     {% endfor %}
-                                </select> 
-                            </section> 
+                                </select>
+                            </section>
 
                         {% elif formItems.type == 'textarea' %}
                             <div class="font-calibre uppercase font-medium text-lg">
                                 <label name="{{formItems.name}}">{{ formItems.label }}</label>
                             </div>
                             <textarea class="wedding-rfp__textarea w-full" required="required" minlength="10" name="{{formItems.name}}"></textarea>
-                        
+
                         {% else %}
 
                             {% if formItems.type == 'file' %}
                                 {% set class = input_class %}
-                                {% else %}
+                            {% else %}
                                 {% set class = 'wedding-rfp__input'%}
                             {% endif %}
-                            
+
                             {% if formItems.label %}
                                 {{ form_input(obj = {
                                         label: formItems.label,
@@ -163,18 +167,62 @@
                             {% endif %}
 
                         {% endif %}
-                    </section>          
+                    </section>
                 {% endfor %}
             </div>
-        {% endif %}                     
+        {% endif %}
     {% endfor %}
     {% if cta %}
-        {% set trg = '_blank' if not cta.internal else '_self' %}
-        {{ button_primary( 
-            classes = ['button', 'button--primary','font-calibre', 'text-lg'], 
-            href=cta.url, 
-            copy=cta.copy,  
-            target=trg ) 
-        }}
+        {{Button(cta.copy, type="submit", classes=['button', 'button--primary','font-calibre', 'text-lg'])}}
     {% endif %}
+{% endmacro %}
+
+{% macro rfp (formData)%}
+    {% for formItem in formData%}
+        {{ h2(classes=['text-2xl', 'wedding__rfp-header', 'font-ivar', 'font-semibold'], copy = formItem.title) }}
+        <div class="grid grid-cols-2 pb-4">
+            {% for comp in formItem.form %}
+                {% set tyre = (comp.fields | first ).type === 'file' or (comp.fields | first ).type === 'textarea'%}
+                <div class="grid col-span-{{2 if (comp.fields.length > 1 or tyre) else 1}} content-start">
+                    {{ h2(classes=['pt-4', 'pb-2', 'uppercase', 'text-lg', 'font-ivar'], copy = comp.label + ('*' if comp.required)) }}
+                    {% if comp.fields.length > 1 %}
+                        <div class="grid grid-cols-2">
+                        {% endif %}
+                        {% for field in comp.fields %}
+                            <div class="pr-4 {{'col-span-'+field.col if field.col > 1}}">
+                                {% if field.type === 'dropdown' %}
+                                <div class="wedding__select {{'has-child' if field.child.length > 1 }}" data-child="{{field.child}}">
+                                    <div class="font-calibre uppercase font-medium text-lg">
+                                        <label for="{{field.name}}">{{field.label}}</label>
+                                    </div>
+                                    <select class="w-full" id="{{field.name}}" name="{{field.name}}" {% if field.child.length > 1 %}  onchange="toggleDiv(this, '{{field.child}}')" {% endif %}>
+                                        {% for item in field.dropdown %}
+                                            <option {% if loop.first %} selected {% endif %} value="{{item.value}}">{{item.label }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                {% elif field.type==='textarea'%}
+                                    <textarea class="wedding-rfp__textarea w-full" {% if comp.required %} required {% endif %} name="{{field.name}}" id="{{field.name}}"></textarea>
+                                
+                                {% else %}
+                                    <input type="{{field.type if field.type.length > 2 else 'text'}}" 
+                                    {% if fileld.placeholder.length > 2 %} placeholder="{{field.placeholder}}" {% endif %} 
+                                    {% if comp.required %} required {% endif %} 
+                                    class="w-full wedding-rfp__input" name="{{field.name}}" id="{{field.name}}"/>
+                                    {% if field.label.length > 2 %}
+                                        <div class="heading pt-2 font-ivar text-xs uppercase">{{field.label}}</div>
+                                    {% endif %}
+                                {% endif %}
+
+                            </div>
+                        {% endfor %}
+                        {% if comp.fields.length > 1 %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+    {{Button('Submit', type="submit", classes=['button', 'button--primary','font-calibre', 'text-lg'])}}
 {% endmacro %}
