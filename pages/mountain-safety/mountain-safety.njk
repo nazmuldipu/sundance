@@ -20,7 +20,7 @@ nickname: mountain-safety
 {% if pageCMS['page-contents'].simple_article_list.length %}
     <section class="group-section text-lg pt-6">
         {% for article in pageCMS['page-contents'].simple_article_list%}
-            <section class="segment-inner__text-container px-6 pb-10">
+            <section class="segment-inner__text-container px-6 pb-10 font-ivar">
                 {{ h3( copy=article.simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'pb-6'] ) }}
                 {{ article.simple_article.description | safe }}
             </section>
