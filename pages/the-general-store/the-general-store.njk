@@ -95,7 +95,9 @@ permalinkBypassOutputDir: true
         <section class="segment-inner global-px general-store__bottom-banners">
         {% for item in bottom_banners %}
             <figure>
-                {{global_image(item.global_image, classes='w-full image_frame sm:33:20 lg:53:29')}}
+                <a href="{{item.global_image.link}}" class="no-underline" target="_blank">
+                    {{global_image(item.global_image, classes='w-full image_frame sm:33:20 lg:53:29')}}
+                </a>    
             </figure>
         {% endfor %}
         </section>
