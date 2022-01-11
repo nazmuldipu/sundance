@@ -3,7 +3,28 @@ import  '../../components/Filter/index.js'
 import { getValue, filterByType, getFilterData} from 'scripts/utils/filter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+
     const filter_container = document.querySelector('filter-component');
+    const searchParams = new URLSearchParams(window.location.search);
+    const filterArray = [];
+    const searchFilters = {
+        types: searchParams.get('lodging'),
+        bedrooms: searchParams.get('bedrooms'),
+        sleeps: searchParams.get('sleeps'),
+    }
+    Object.keys(searchFilters).forEach(key => {
+        if(searchFilters[key]) {
+            filterArray.push({
+                id: `${key}-filter-${searchFilters[key]}`,
+                type: key === 'types' ? 'lodging' : key,
+                value: searchFilters[key]
+            })
+        }
+    })
+    if(filterArray.length) {
+        applyFilters(filterArray);
+    }
+
     /**
      * 
      * @param {array} filters 
@@ -28,16 +49,26 @@ document.addEventListener('DOMContentLoaded', () => {
         filteredCards.forEach(card => card.classList.add('hidden'));
         const notFilteredCards = cards.filter( card => !isFilterAdded(card));
 
-        const updatedFilterData = notFilteredCards.map(card => {
+        const notFilteredCardData = cards.map( card => {
+            const cardData = card.dataset.card ? JSON.parse(card.dataset.card) : {};
+            cardData.disabled = false;
+            if(isFilterAdded(card)){
+                cardData.disabled = true;
+            }
+            card.dataset.card = JSON.stringify(cardData);
+            return card;
+        });
+
+        const updatedFilterData = notFilteredCardData.map(card => {
             return card.dataset.card ? JSON.parse(card.dataset.card) : {};
         })
-        const formattedFilter = getFilterData(updatedFilterData);
-        
+        const formattedFilter = getFilterData(updatedFilterData);  
         filter_container.setFilters({
             filters: {
                 entries: notFilteredCards.length,
                 filters: formattedFilter
-            }
+            },
+            selectedFilters: filters
         });
 
     }
@@ -45,6 +76,28 @@ document.addEventListener('DOMContentLoaded', () => {
     filter_container.addEventListener('filter-change', (e) => {
         const { filters } = e.detail;
         applyFilters(filters);
+        updateUrl(filters);
     })
+
+    function updateUrl(filters){
+        const values = filters.map(filter => {
+            return filter.value;
+        })
+        if(values.length == 0){
+            window.history.pushState(null, null, window.location.pathname);
+        }else{
+            const url = new URL(window.location.href);
+            const queryParams = url.searchParams;
+            for( key of queryParams.keys()){
+               delete queryParams.delete(key);
+            } 
+            filters.forEach(filter => {
+                const { type, value } = filter;
+                queryParams.set(type, value);
+            })
+            window.history.replaceState({}, '', url.href);
+        }
+
+    };
 
 })

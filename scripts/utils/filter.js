@@ -11,9 +11,9 @@ export const getValue = object => object.value;
 export const filterByType = (type) => filter => filter.type === type;
 
 export function generateFilters(cardData){
-    const types = duplicates(cardData.map(card => card.Type).flat());
-    const bedrooms = duplicates(cardData.map(card => card.Bedrooms).flat());
-    const sleeps = duplicates(cardData.map(card => card.Sleeps).flat());
+    const types = duplicates(cardData.map(card => ({value: card.Type, disabled: card.disabled})).flat());
+    const bedrooms = duplicates(cardData.map(card => ({value: card.Bedrooms, disabled: card.disabled})).flat());
+    const sleeps = duplicates(cardData.map(card => ({value: card.Sleeps, disabled: card.disabled})).flat());
     return {
         types,
         bedrooms,
@@ -23,7 +23,10 @@ export function generateFilters(cardData){
 
 export function duplicates(array){
     return array.reduce(function(prev, cur) {
-        prev[cur] = (prev[cur] || 0) + 1;
+        prev[cur.value] = {
+            value: (prev[cur.value]?.value || 0) + 1,
+            disabled: cur.disabled
+        }
         return prev;
       }, {});
 }
@@ -39,7 +42,8 @@ export function getFormattedFilterData(filtersObject){
                       "copy": itemKey,
                       "id": `${key}-filter-${itemKey}`,
                       "name": filterMap[key],
-                      "quantity": value[itemKey],
+                      "quantity": value[itemKey]?.value || 0,
+                      "disabled": value[itemKey]?.disabled || false
                   }
               })
         }
