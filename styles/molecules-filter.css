@@ -21,6 +21,12 @@
     letter-spacing: 0.12em;
     margin-bottom: 11px;
 }
+.filter__item.disabled{
+    color: var(--sundance__primary4);
+}
+.disabled .checkboxes-btn__control{
+    border-color: var(--sundance__primary4);
+}
 .filter__toggle {
     display: none;
 }

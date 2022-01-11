@@ -117,9 +117,9 @@ export default class FilterComponent extends HTMLElement {
                 `<article>
                     <h3 class="heading--3 font-calibre font-medium pb-2">${this.parseTitle(flt.title)}</h3>
                         ${flt.items.map(item => (
-                          `<div class="filter__item">                            
+                          `<div class="filter__item ${item.disabled ? 'disabled': ''}">                            
                             <label class="checkboxes-btn font-ivar">
-                                <input type="checkbox" class="checkboxes-btn__input" ${this.isChecked(item) ? 'checked': ''} id="${item.id}" name="${item.name}" value="${item.copy}">
+                                <input type="checkbox" ${item.disabled ? 'disabled': ''} class="checkboxes-btn__input" ${this.isChecked(item) ? 'checked': ''} id="${item.id}" name="${item.name}" value="${item.copy}">
                                 <span class="checkboxes-btn__control"></span>
                                     <span class="checkboxes-btn__label">
                                         ${item.copy} (${item.quantity})
