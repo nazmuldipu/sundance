@@ -194,9 +194,9 @@ Button %}
                                     <div class="font-calibre uppercase font-medium text-lg">
                                         <label for="{{field.name}}">{{field.label}}</label>
                                     </div>
-                                    <select class="w-full" id="{{field.name}}" name="{{field.name}}" {% if field.onchange.length > 2 %}  onchange="{{field.onchange}}" {% endif %}>
+                                    <select class="w-full" id="{{field.name}}" name="{{field.name}}" {% if field.child.length > 1 %}  onchange="toggleDiv(this, '{{field.child}}')" {% endif %}>
                                         {% for item in field.dropdown %}
-                                            <option {% if loop.first %} selected {% endif %} value="{{item.values}}">{{item.label }}</option>
+                                            <option {% if loop.first %} selected {% endif %} value="{{item.value}}">{{item.label }}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
