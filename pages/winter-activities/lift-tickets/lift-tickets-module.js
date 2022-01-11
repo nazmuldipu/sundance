@@ -1,23 +1,16 @@
 import '../../../scripts/lib/globalEvents.js';
+//import  "../../../components/lib/simple-lightbox.js";
 
-
-
-
-window.addEventListener('DOMContentLoaded', (event) => {
-    let test= document.querySelector('media-carousel');
-    test.addEventListener('slideChanged',function (e) {
+setTimeout(() => {
+    let changeSlider= document.querySelector('media-carousel')
+    //console.log(changeSlider["swiperInstance"])
+    changeSlider["swiperInstance"].on('slideChange',function (e) {
         console.log(e);
-    })
-});
+        if (e.realIndex === 3) {
+            let gallery = new SimpleLightbox('.gallery div');
+        }
+        
+    })   
+}, 1000);
 
-// Array.from(test).forEach(function(element) {
-//     console.log(element[0])
-// });
-// const mySwiper = new Swiper('.swiper-container', {
-//     on : {
-//         slideChange: function (e) {
-//             console.log(e);
-//          }
-//         }
-//   });
   
