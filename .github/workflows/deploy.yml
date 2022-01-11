@@ -16,6 +16,9 @@ on:
         required: true
       notification_webhook:
         description: 'Webhook to trigger after the build has finished'
+      unused_pages:
+        description: 'List of pages that have not changed since last build'
+        default: '[]'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -44,6 +47,20 @@ jobs:
       - name: Install  npm Packages
         if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm install
+      - name: Configure AWS CLI
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_DEV }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
+          aws-region: us-east-1
+      - name: Sync from s3 bucket to build directory
+        run: |
+          aws s3 sync s3://${{ github.event.inputs.bucket }} ./build
+      - name: Generate 11tyignore file
+        run: | 
+          echo "${{ github.event.inputs.unused_pages }}"
+          node tooling/generate-11tyignore.js ${{ github.event.inputs.unused_pages }}
+          cat ./.eleventyignore
       - name: Project Build (dev)
         if: ${{ github.ref == 'refs/heads/cms-dev' }}
 #         run: npm run build-dev
@@ -54,12 +71,6 @@ jobs:
       - name: Project Build (prod)
         if: ${{ github.ref == 'refs/heads/cms-prod' }}
         run: npm run build-prod
-      - name: Configure AWS CLI
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID_DEV }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
-          aws-region: us-east-1
       - name: Sync from Build Directory to s3 Bucket(Encode only .html File with UTF-8)
         run: |
           aws s3 sync ./build s3://${{ github.event.inputs.bucket }} --include "*" --exclude "*.html" --acl public-read \
