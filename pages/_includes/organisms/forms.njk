@@ -182,7 +182,7 @@ Button %}
         <div class="grid grid-cols-2 pb-4">
             {% for comp in formItem.form %}
                 {% set tyre = (comp.fields | first ).type === 'file' or (comp.fields | first ).type === 'textarea'%}
-                <div class="grid col-span-{{2 if (comp.fields.length > 1 or tyre) else 1}}">
+                <div class="grid col-span-{{2 if (comp.fields.length > 1 or tyre) else 1}} align-items-start">
                     {{ h2(classes=['pt-4', 'pb-2', 'uppercase', 'text-lg', 'font-ivar'], copy = comp.label + ('*' if comp.required)) }}
                     {% if comp.fields.length > 1 %}
                         <div class="grid grid-cols-2">
@@ -202,7 +202,7 @@ Button %}
                                 </div>
 
                                 {% elif field.type==='textarea'%}
-                                    <textarea class="wedding-rfp__textarea w-full" required="required" minlength="10" name="{{field.name}}" id="{{field.name}}"></textarea>
+                                    <textarea class="wedding-rfp__textarea w-full" {% if comp.required %} required {% endif %} name="{{field.name}}" id="{{field.name}}"></textarea>
                                 
                                 {% else %}
                                     <input type="{{field.type if field.type.length > 2 else 'text'}}" 

@@ -243,6 +243,9 @@ strong {
 .align-self-end {
     align-self: end;
 }
+.content-start {
+    align-content: start;
+}
 .align-items-center {
     align-items: center;
 }

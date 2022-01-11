@@ -1,7 +1,6 @@
-
 const getObjId = (obj) => {
     if (obj && obj.id) {
-        return obj.id + 'Number';
+        return obj.id + 'Description';
     }
     return null;
 }
@@ -16,7 +15,7 @@ function toggleDiv(obj, title) {
                 `<div class="grid col-span-1">
                 <h2 class="pt-4 pb-2 uppercase text-lg font-ivar">${title}*</h2>
                 <div class="pr-4">
-                    <input type="number" class="w-full wedding-rfp__input" name="${comId}" id="${comId}">
+                    <textarea name="${comId}" id="${comId}" class="wedding-rfp__textarea w-full" aria-required="true" aria-invalid="false" rows="10"></textarea>
                 </div>
            </div>`;
             baseElement.appendChild(newElement);
