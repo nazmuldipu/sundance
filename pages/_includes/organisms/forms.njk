@@ -69,9 +69,10 @@ Button %}
                 </div>
                 {% set ctaHref %}
                 https://be.synxis.com/?Hotel={{item.hotelId}}&Chain={{item.chainId}}
-                {% endset %}
-                {{ button_primary( 
-                classes = ['button', 'button--primary','font-calibre', 'text-base', 'align-self-end', 'line-h-1', 'lodging-form__cta'], 
+            {% endset %}
+            {# TODO: Replace class - button--disabled by button--primary when the form is functional - Ashfaq 10/01/2022 #}
+            {{ button_primary( 
+                classes = ['button', 'button--disabled','font-calibre', 'text-base', 'align-self-end', 'line-h-1', 'lodging-form__cta'], 
                 href=ctaHref, 
                 copy=item.cta.copy, 
                 id='lodging-form-cta', 
