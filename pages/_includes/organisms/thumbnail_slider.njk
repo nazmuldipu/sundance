@@ -14,7 +14,8 @@
             <div class="">
                 {{ h1( copy=obj.title ,  classes=['thumbnail-slider__title', 'font-ivar', 'font-semibold']) }}
                 <p class="thumbnail-slider__description font-calibre">{{ obj.description }}</p>
-                {{ Link( href=obj.action.href, copy=obj.action.copy, classes=['button', 'button--primary2', 'font-calibre', 'thumbnail-slider__action'] ) }}
+                {% set trg = '_blank' if obj.action.external else '_self' %}
+                {{ Link( href=obj.action.href, copy=obj.action.copy, classes=['button', 'button--primary2', 'font-calibre', 'thumbnail-slider__action'], target = trg ) }}
             </div>
         </article>
         <article class="thumbnail-slider__images grid {{'order-1' if obj.left_slider else 'order-2'}}">
@@ -31,7 +32,7 @@
                                     <div class="thumbnail-slider__slides__box" data-frameName="thumbnail-slider__{{obj.slug}}">
                                         {{ global_image(item.image.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
                                     </div>
-                                    <header class="font-calibre">{{item.title}}</header>
+                                    <a class="no-underline text--color__sn-6" {% if item.link %} href="{{item.link}}" {% endif %}><header class="font-calibre">{{item.title}}</header></a>
                                     <summary class="font-calibre">{{item.sub_title}}</summary>
                                 </div>
                             {% endfor %}

@@ -34,7 +34,7 @@
                 {% if id %} id="{{ id }}" {% endif %}
             >
                 {{ h2(copy = item.title, classes=['heading', 'heading--2', 'font-calibre', 'font-medium', 'text--color__sn-6']) }}
-                <div class="font-ivar text-lg-2 text--color__sn-6 mb-8">
+                <div class="cms-description font-ivar text-lg-2 text--color__sn-6 mb-8">
                     {{ item.description | safe }}
                 </div>
                 {% if item.actions | length > 0 %}
@@ -73,7 +73,12 @@
                 {{ h5(copy = item.title, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
             {% endif %}
             {% if item.sub_title %}
-                {{ h3(copy = '<span class="card__sub_title" >' + item.sub_title + '</span>', classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1', '']) }}
+                {% for object in item.actions %}
+                    <a {% if object.action.url %} href="{{ object.action.url }}" {% endif %} class="no-underline">
+                        {{ h3(copy = '<span class="card__sub_title" >' + item.sub_title + '</span>', classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1', '']) }}
+                    </a>
+                {% endfor %}
+                
             {% endif %}
             {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'min-h-120', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
             {% if item.criterias %}
@@ -124,9 +129,13 @@
                 {{ h5(copy = item.title, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
             {% endif %}
             {% if item.sub_title %}
-                {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
+                {% for object in item.actions %}
+                    <a {% if object.action.url %} href="{{ object.action.url }}" {% endif %} class="no-underline">
+                        {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
+                    </a>
+                {% endfor %}    
             {% endif %}
-            <div class="font-ivar text-lg-2 text--color__sn-6 mb-8">
+            <div class="font-ivar text-sm l-s-l-h text--color__sn-6 mb-8">
                 {{ item.description | safe }}
             </div>
             {% if item.criterias %}

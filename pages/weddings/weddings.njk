@@ -32,9 +32,11 @@ permalinkBypassOutputDir: true
 {# Text Container #}
 {% if pageCMS['text-container'].text_container %}
     <section class="segment-outer">
-        <section class="segment-inner weddings__text-container sm:px-6 lg:px-6">
+        <section class="segment-inner weddings__text-container sm:px-6 lg:px-6 pb-4">
             {{ h2(copy = pageCMS['text-container'].text_container.title, classes = ['weddings__text-container__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
-            {{ pageCMS['text-container'].text_container.texts | safe }}
+            <div class="font-ivar text-lg-2 font__ivar-letterspace">
+                {{ pageCMS['text-container'].text_container.texts | safe }}
+            </div>    
         </section>
     </section>
 {% endif %}

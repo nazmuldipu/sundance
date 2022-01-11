@@ -50,6 +50,11 @@
 .recent__press ul li a{
     text-decoration: none;
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {    
+    .group-venues__title {
+        padding: 16px 16px 6px 16px;    
+    }
+}    
 /* .accolades__item-title {
     min-height: 110px;
 } */

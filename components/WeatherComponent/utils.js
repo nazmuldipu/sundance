@@ -38,14 +38,16 @@ export default class Utils{
 
     /**
      * Date to day convert.
-     * 
+     * @see {@link https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#DENVER}
+     * @see {@link https://www.travelmath.com/time-change/from/Utah/to/Denver,+CO}
      * @param {string} dateStr - forecast date 
      * @returns {string}
      */
     static getDayName(dateStr)
     {
         let date = new Date(dateStr)
-        let day = date.toLocaleString('en-us', {weekday: 'short'})   
-        return day     
+        date.setDate(date.getDate() + 1)
+        let day = date.toLocaleString('en-us', {weekday: 'short',timeZone: 'America/Denver'})   
+        return day
     }
 }

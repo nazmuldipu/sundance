@@ -41,6 +41,8 @@
                         {{ Link( href=action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}
                     {% elif action.category == 'tel' %}
                         {{ Link( href="tel:"+action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}    
+                    {% elif action.category == 'document' %}
+                        {{ Link( href= (action.document | theImgSrc), copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}    
                     {% endif %}
                 {% endfor %}
             </section>
@@ -49,7 +51,8 @@
                 {% if not nav.copy == "" %}
                     <div class="group-venues__nav">
                         <label class="font-ivar">{{nav.label}}</label>
-                        {{ a( copy=nav.copy, href=nav.url, target=nav.target) }}
+                        {% set ahref = (nav.document | theImgSrc) if nav.document.length > 2 else nav.url%}
+                        {{ a( copy=nav.copy, href=ahref, target=nav.target) }}
                     </div>
                 {% endif %}
             {% endfor %}

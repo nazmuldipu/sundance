@@ -257,6 +257,8 @@
     grid-auto-flow: column;
     margin-bottom: 25px;
     padding: 0 16px;
+    align-items: center;
+    justify-content: left;
 }
 .sundance-events__events__date {
     width: 70px;
@@ -307,7 +309,10 @@
         margin-right: 20px;
     }
     .sundance-events__events__action .button--secondary {
-        padding: 24px 40px 16px 40px;
+        padding: 18px 55px 15px 55px;
+    }
+    .sundance-events__events__action .button {
+        font-size: 1.125rem;
     }
     .sundance-events__events__title {
         font-size: 30px;
