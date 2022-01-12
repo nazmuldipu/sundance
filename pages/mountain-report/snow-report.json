@@ -9,78 +9,47 @@
 			"url": "https://opensnow.com/state/UT"
 		},
 		"current": {
-			"temp": "16ºF",
+			"temp": "18ºF",
 			"wind": {
-				"direction": "NE",
+				"direction": "NNE",
 				"speed": "5mph"
 			},
 			"location": "Mid-Mtn",
-			"icon": "https://opensnow.com/img/weather/night/sct.png",
-			"weather": "Mostly Cloudy",
-			"updated_at": "2022-01-11 10:00:02"
+			"icon": "https://opensnow.com/img/weather/night/few.png",
+			"weather": "Partly Cloudy",
+			"updated_at": "2022-01-12 07:00:21"
 		},
 		"warnings": [],
 		"forecast": {
-			"daily_updated_at": "2022-01-11 10:00:02",
+			"daily_updated_at": "2022-01-12 07:00:21",
 			"daily": [
-				{
-					"date": "2022-01-11",
-					"day": {
-						"temp": "35ºF",
-						"snow": "0\"",
-						"icon": "https://opensnow.com/img/weather/day/skc.png",
-						"weather": "Sunny",
-						"wind": {
-							"direction": "NNE",
-							"speed": "5mph",
-							"gust": "5mph"
-						},
-						"snow_level": "2,900ft",
-						"cloud_cover": "10%",
-						"precip_chance": "0%"
-					},
-					"night": {
-						"temp": "20ºF",
-						"snow": "0\"",
-						"icon": "https://opensnow.com/img/weather/night/sct.png",
-						"weather": "Mostly Cloudy",
-						"wind": {
-							"direction": "NNE",
-							"speed": "5mph",
-							"gust": "5mph"
-						},
-						"snow_level": "2,800ft",
-						"cloud_cover": "60%",
-						"precip_chance": "0%"
-					}
-				},
 				{
 					"date": "2022-01-12",
 					"day": {
-						"temp": "42ºF",
+						"temp": "38ºF",
 						"snow": "0\"",
-						"icon": "https://opensnow.com/img/weather/day/bkn.png",
-						"weather": "Mostly Sunny",
+						"icon": "https://opensnow.com/img/weather/day/few.png",
+						"weather": "Partly Cloudy",
 						"wind": {
 							"direction": "NE",
 							"speed": "0mph",
 							"gust": "5mph"
 						},
 						"snow_level": "4,100ft",
-						"cloud_cover": "30%",
+						"cloud_cover": "50%",
 						"precip_chance": "0%"
 					},
 					"night": {
-						"temp": "23ºF",
+						"temp": "24ºF",
 						"snow": "0\"",
-						"icon": "https://opensnow.com/img/weather/night/bkn.png",
+						"icon": "https://opensnow.com/img/weather/day/bkn.png",
 						"weather": "Mostly Clear",
 						"wind": {
-							"direction": "ENE",
+							"direction": "NE",
 							"speed": "5mph",
 							"gust": "5mph"
 						},
-						"snow_level": "4,700ft",
+						"snow_level": "5,100ft",
 						"cloud_cover": "30%",
 						"precip_chance": "0%"
 					}
@@ -93,92 +62,257 @@
 						"icon": "https://opensnow.com/img/weather/day/ovc.png",
 						"weather": "Cloudy",
 						"wind": {
-							"direction": "SE",
+							"direction": "SSE",
 							"speed": "5mph",
 							"gust": "5mph"
 						},
-						"snow_level": "5,600ft",
-						"cloud_cover": "75%",
+						"snow_level": "5,800ft",
+						"cloud_cover": "80%",
 						"precip_chance": "0%"
 					},
 					"night": {
-						"temp": "28ºF",
+						"temp": "27ºF",
 						"snow": "0-1\"",
-						"icon": "https://opensnow.com/img/weather/night/ovc.png",
-						"weather": "Cloudy",
+						"icon": "https://opensnow.com/img/weather/day/sct.png",
+						"weather": "Mostly Cloudy",
 						"wind": {
-							"direction": "NW",
+							"direction": "WSW",
 							"speed": "0mph",
 							"gust": "5mph"
 						},
-						"snow_level": "5,300ft",
-						"cloud_cover": "75%",
+						"snow_level": "4,900ft",
+						"cloud_cover": "60%",
 						"precip_chance": "15%"
 					}
 				},
 				{
 					"date": "2022-01-14",
 					"day": {
-						"temp": "37ºF",
+						"temp": "35ºF",
 						"snow": "0-1\"",
 						"icon": "https://opensnow.com/img/weather/day/sct.png",
 						"weather": "Mostly Cloudy",
 						"wind": {
-							"direction": "N",
-							"speed": "0mph",
+							"direction": "NW",
+							"speed": "5mph",
 							"gust": "5mph"
 						},
-						"snow_level": "4,900ft",
-						"cloud_cover": "70%",
+						"snow_level": "4,200ft",
+						"cloud_cover": "55%",
 						"precip_chance": "15%"
 					},
 					"night": {
-						"temp": "22ºF",
+						"temp": "14ºF",
 						"snow": "0\"",
-						"icon": "https://opensnow.com/img/weather/night/sct.png",
-						"weather": "Mostly Cloudy",
+						"icon": "https://opensnow.com/img/weather/day/bkn.png",
+						"weather": "Mostly Clear",
 						"wind": {
 							"direction": "NE",
 							"speed": "5mph",
 							"gust": "5mph"
 						},
-						"snow_level": "3,700ft",
-						"cloud_cover": "60%",
+						"snow_level": "2,900ft",
+						"cloud_cover": "35%",
 						"precip_chance": "0%"
 					}
 				},
 				{
 					"date": "2022-01-15",
 					"day": {
-						"temp": "35ºF",
+						"temp": "31ºF",
 						"snow": "0\"",
-						"icon": "https://opensnow.com/img/weather/day/sct.png",
-						"weather": "Mostly Cloudy",
+						"icon": "https://opensnow.com/img/weather/day/bkn.png",
+						"weather": "Mostly Sunny",
+						"wind": {
+							"direction": "SSW",
+							"speed": "0mph",
+							"gust": "5mph"
+						},
+						"snow_level": "2,800ft",
+						"cloud_cover": "35%",
+						"precip_chance": "0%"
+					},
+					"night": {
+						"temp": "12ºF",
+						"snow": "0\"",
+						"icon": "https://opensnow.com/img/weather/day/few.png",
+						"weather": "Partly Cloudy",
 						"wind": {
 							"direction": "ESE",
 							"speed": "0mph",
 							"gust": "5mph"
 						},
-						"snow_level": "3,700ft",
-						"cloud_cover": "65%",
+						"snow_level": "2,900ft",
+						"cloud_cover": "40%",
 						"precip_chance": "0%"
-					},
-					"night": {
-						"temp": "20ºF",
+					}
+				},
+				{
+					"date": "2022-01-16",
+					"day": {
+						"temp": "36ºF",
 						"snow": "0\"",
-						"icon": "https://opensnow.com/img/weather/night/few.png",
-						"weather": "Partly Cloudy",
+						"icon": "https://opensnow.com/img/weather/day/bkn.png",
+						"weather": "Mostly Sunny",
 						"wind": {
 							"direction": "SW",
 							"speed": "0mph",
 							"gust": "5mph"
 						},
-						"snow_level": "3,300ft",
-						"cloud_cover": "45%",
+						"snow_level": "3,100ft",
+						"cloud_cover": "25%",
+						"precip_chance": "0%"
+					},
+					"night": {
+						"temp": "16ºF",
+						"snow": "0\"",
+						"icon": "https://opensnow.com/img/weather/day/bkn.png",
+						"weather": "Mostly Clear",
+						"wind": {
+							"direction": "ENE",
+							"speed": "0mph",
+							"gust": "5mph"
+						},
+						"snow_level": "3,100ft",
+						"cloud_cover": "25%",
 						"precip_chance": "0%"
 					}
 				}
+			],
+			"hourly_updated_at": "2022-01-12 07:00:21",
+			"hourly": [
+				{
+					"date": "2022-01-12 00:00:00",
+					"temp": "18ºF",
+					"icon": "https://opensnow.com/img/weather/day/few.png",
+					"weather": "Partly Cloudy",
+					"wind": {
+						"direction": "NNE",
+						"speed": "5mph",
+						"gust": "5mph"
+					},
+					"snow_level": "2,400ft",
+					"cloud_cover": "40%",
+					"precip_chance": "0%"
+				},
+				{
+					"date": "2022-01-12 01:00:00",
+					"temp": "18ºF",
+					"icon": "https://opensnow.com/img/weather/day/bkn.png",
+					"weather": "Mostly Clear",
+					"wind": {
+						"direction": "NNE",
+						"speed": "5mph",
+						"gust": "5mph"
+					},
+					"snow_level": "2,400ft",
+					"cloud_cover": "30%",
+					"precip_chance": "0%"
+				},
+				{
+					"date": "2022-01-12 02:00:00",
+					"temp": "17ºF",
+					"icon": "https://opensnow.com/img/weather/day/bkn.png",
+					"weather": "Mostly Clear",
+					"wind": {
+						"direction": "NNE",
+						"speed": "5mph",
+						"gust": "5mph"
+					},
+					"snow_level": "2,400ft",
+					"cloud_cover": "40%",
+					"precip_chance": "0%"
+				},
+				{
+					"date": "2022-01-12 03:00:00",
+					"temp": "17ºF",
+					"icon": "https://opensnow.com/img/weather/day/bkn.png",
+					"weather": "Mostly Clear",
+					"wind": {
+						"direction": "NNE",
+						"speed": "5mph",
+						"gust": "5mph"
+					},
+					"snow_level": "2,600ft",
+					"cloud_cover": "35%",
+					"precip_chance": "0%"
+				},
+				{
+					"date": "2022-01-12 04:00:00",
+					"temp": "17ºF",
+					"icon": "https://opensnow.com/img/weather/day/few.png",
+					"weather": "Partly Cloudy",
+					"wind": {
+						"direction": "NNE",
+						"speed": "0mph",
+						"gust": "5mph"
+					},
+					"snow_level": "2,400ft",
+					"cloud_cover": "55%",
+					"precip_chance": "0%"
+				},
+				{
+					"date": "2022-01-12 05:00:00",
+					"temp": "18ºF",
+					"icon": "https://opensnow.com/img/weather/day/few.png",
+					"weather": "Partly Cloudy",
+					"wind": {
+						"direction": "NNE",
+						"speed": "5mph",
+						"gust": "5mph"
+					},
+					"snow_level": "2,400ft",
+					"cloud_cover": "40%",
+					"precip_chance": "0%"
+				}
 			]
+		},
+		"snow_forecast_summary": {
+			"days_1to5": "0\"",
+			"days_6to10": "1\"",
+			"daily": [
+				{
+					"date": "2022-01-12",
+					"total_snow": "0\""
+				},
+				{
+					"date": "2022-01-13",
+					"total_snow": "0\""
+				},
+				{
+					"date": "2022-01-14",
+					"total_snow": "0\""
+				},
+				{
+					"date": "2022-01-15",
+					"total_snow": "0\""
+				},
+				{
+					"date": "2022-01-16",
+					"total_snow": "0\""
+				},
+				{
+					"date": "2022-01-17",
+					"total_snow": "0\""
+				},
+				{
+					"date": "2022-01-18",
+					"total_snow": "1\""
+				},
+				{
+					"date": "2022-01-19",
+					"total_snow": "0\""
+				},
+				{
+					"date": "2022-01-20",
+					"total_snow": "0\""
+				},
+				{
+					"date": "2022-01-21",
+					"total_snow": "0\""
+				}
+			],
+			"updated_at": "2022-01-12 07:00:21"
 		}
 	}
 ]

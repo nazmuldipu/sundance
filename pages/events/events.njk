@@ -16,7 +16,7 @@ nickname: "events"
     <section class="group-section">
         {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         <div class="group-container">
-            {{groupVenues(event)}}
+            {{groupVenues(event, announcementObject = (pageCMS['announcement'].announcement if pageCMS['announcement'] else {}))}}
         </div>
     </section>
 {% endif %}
