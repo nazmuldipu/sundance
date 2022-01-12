@@ -25,7 +25,7 @@ nickname: daily-wellness-offerings
     </section>
     {% for event in spa_group_venues %}
         <div class="group-container">
-            {{groupVenues(event)}}
+            {{groupVenues(event, announcementObject = (pageCMS['announcement'].announcement if pageCMS['announcement'] else {}))}}
         <div>
     {% endfor %}
     {% if pageCMS['group-venues-caption'] and pageCMS['group-venues-caption'].simple_article %}
