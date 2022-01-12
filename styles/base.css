@@ -1009,6 +1009,9 @@ strong {
     .sm\:order-3 {
         order: 3;
     }
+    .sm\:w-full {
+        width: 100%;
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .md\:grid-cols-2 {

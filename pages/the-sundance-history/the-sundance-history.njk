@@ -110,7 +110,7 @@ nickname: "the-sundance-history"
             </article>
             {% for item in accoladesObj.tabs %}
                 <div id="{{item.slug}}-container" class="accolades__container hidden {{'active' if loop.index === 1 }} ">
-                    <article class="grid grid-cols-4 sm:grid-cols-1 md:grid-cols-3 gap-x-4 py-13 sm:mx-6 sm:pb-0 md:mx-4">
+                    <article class="grid grid-cols-4 sm:grid-cols-1 md:grid-cols-3 gap-x-4 py-10 sm:mx-6 sm:pb-0 md:mx-4">
                         {% for award in item.award%}
                             <div class="accolades__item mb-4 text-center {{award.classes}}">
                                 {% if award.has_image %}
