@@ -1,11 +1,12 @@
 {% from "atoms/headings.njk" import h2 %}
 {% from "atoms/a.njk" import a, Link, dropdown %}
+{% from "molecules/announcement.njk" import announcement %}
 {#
     #   @desc   group venues form
     #   @author Nazmul Alam, Sarjis
 #}
 
-{% macro groupVenues(object)%}
+{% macro groupVenues(object, announcementObject = {})%}
     <section class="group-venues">
         <article class="group-venues__container">
             <section class="group-venues__breadcrumbs font-calibre">
@@ -16,6 +17,8 @@
             </section>
             {{ h2( copy=object.title, classes=['group-venues__title','font-ivar'] ) }}
 
+            {{announcement(obj=announcementObject)}}
+            
             {# TODO, *object.rich_description* it needs to re-think here for proper naming with Meherab, by Sarjis 11th Nov 2021 #}
             {% if object.rich_description | length > 0 %}
                 {% for item in object.rich_description %}
