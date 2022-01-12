@@ -101,7 +101,7 @@ export default class FilterComponent extends HTMLElement {
         <input type="checkbox" id="filter_btn" ${this.isFilterSelected(selectedFilters)} class="filter__toggle toggle" name="filter" >
         <header class="filter__header align-items-center">
             <div id="entries" class="sm:order-2">${data.entries} Entries</div>
-            <h2 class="heading--2 font-calibre font-medium sm:order-1 sm:pb-4">Find a  place to stay</h2>
+            <h2 class="heading--2 font-calibre font-medium sm:order-1 sm:pb-4 sm:w-full sm:text-center">Find a  place to stay</h2>
             <div class="sm:order-3" >
                 <label for="filter_btn" class="filter__toggle__label font-calibre font-medium">
                     <div class="icon-css icon--filter">
