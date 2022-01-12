@@ -180,7 +180,7 @@ function initEvents(events) {
         }
         if (empty) {
             eveHtml = ` <div class="sundance-events__events__title font-calibre text-center">
-                            Sorry, No Events found
+                            No Events Found!
                         </div>`;
         }
         weekEveContainer.innerHTML = eveHtml;
