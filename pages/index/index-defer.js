@@ -162,7 +162,7 @@ function initEvents(events) {
                 eventList.forEach((e) => {
                     eveHtml += `
                     <div class="sundance-events__events">
-                        <div class="sundance-events__events__date">${getShortMonthNameAndDate(new Date(e.date))}, ${week.getFullYear()}</div>
+                        <div class="sundance-events__events__date font-ivar">${getShortMonthNameAndDate(new Date(e.date))}, ${week.getFullYear()}</div>
                         <div class="sundance-events__events__title font-calibre">
                             ${e.title}
                             <br>
