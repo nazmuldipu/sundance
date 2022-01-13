@@ -1,6 +1,6 @@
 "use strict";
 import ProgressiveElement from "../progressive-element.js";
-import  "/../lib/simple-lightbox.js";
+import  "../lib/simple-lightbox.js";
 
 /* 
 @todo
