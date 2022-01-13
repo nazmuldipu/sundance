@@ -79,7 +79,9 @@ nickname: dining/restaurants/foundry-grill
         <article class="details__card bg-sn-5 font-ivar">
             {% if pageCMS['vertical-card-title'] %}
                 {% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
-                {{ global_header(copy = card_list_title) }}
+                <div class="global-pb">
+                    {{ global_header(copy = card_list_title) }}
+                </div>    
             {% endif %}
             
             {% if pageCMS['vertical-card-list'] %}
