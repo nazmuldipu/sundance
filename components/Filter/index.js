@@ -9,6 +9,7 @@ export default class FilterComponent extends HTMLElement {
         this._currentChild = null;
         this._filters = null;
         this._selectedFilters = [];
+        this._showFilters = false;
     }
 
     connectedCallback() {
@@ -93,12 +94,12 @@ export default class FilterComponent extends HTMLElement {
     }
 
     isFilterSelected(selectedFilters){
-        return selectedFilters.length > 0 ? 'checked' : '';
+        return selectedFilters.length > 0;
     }
 
-    getTemplate(data, selectedFilters=[]){
+    getTemplate(data){
         return ` <section id="filter" class="filter">
-        <input type="checkbox" id="filter_btn" ${this.isFilterSelected(selectedFilters)} class="filter__toggle toggle" name="filter" >
+        <input type="checkbox" id="filter_btn" ${this._showFilters ? 'checked': ''} class="filter__toggle toggle" name="filter" >
         <header class="filter__header align-items-center">
             <div id="entries" class="sm:order-2">${data.entries} Entries</div>
             <h2 class="heading--2 font-calibre font-medium sm:order-1 sm:pb-4 sm:w-full sm:text-center">Find a  place to stay</h2>
