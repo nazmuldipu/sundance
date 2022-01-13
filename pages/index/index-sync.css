@@ -158,8 +158,15 @@
         opacity: 1;
     }
 }
-/* Desktop screen (Screen size : > 767 pts) */
+/* Tablet screen (Screen size : > 767 pts) */
 @media screen and (min-width: 768px) {
+    .hero-flip__frame {
+        --fw: 8;
+        --fh: 9;
+    }
+}
+/* Desktop screen (Screen size : > 767 pts) */
+@media screen and (min-width: 1366px) {
     .hero-flip__frame {
         --fw: 16;
         --fh: 7;
