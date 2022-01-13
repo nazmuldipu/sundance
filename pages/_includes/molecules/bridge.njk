@@ -16,12 +16,11 @@ ihh1 %}
 
         <article class="bridge__container">
             <media-carousel data-lightbox="true">
-                <div class="swiper-container">
+                <div class="swiper-container relative">
                     <div class="swiper-wrapper">
                         {% for image in obj.images %}
                             <div class="swiper-slide !w-auto gallery">
-
-                                <div href="{{ image.global_image.src | theImgSrc }}" class="bridge__box cursor-pointer">
+                                <div href="{{ image.global_image.src | theImgSrc }}" class="bridge__box">
                                     {{global_image(image.global_image, classes='w-full image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1')}}
                                 </div>
                             </div>
