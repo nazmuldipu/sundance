@@ -6,6 +6,7 @@ SwiperCore.use([Navigation, Lazy, Thumbs]);
 const defaultConfig = {
   loop: true,
   preloadImages: false,
+  centeredSlides: true,
   slidesPerView: "auto",
   loopedSlides: 5,
   spaceBetween: 8,

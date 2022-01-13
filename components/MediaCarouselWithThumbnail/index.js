@@ -6,6 +6,7 @@ export default class MediaCarouselWithThumbnail extends MediaCarousel {
     this.loadStyles();  
     const config = {
         loop: true,
+        centeredSlides: false,
     } 
     this.thumbnailInstance = new mod.Swiper(
         this.getElementsByClassName("thumbnail-swiper-container")?.[0],
