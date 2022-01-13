@@ -59,7 +59,7 @@
 {% endmacro %}
 {% macro verticalCard(item, card_container = ['card-container', 'cursor-pointer'], figureClass = [], figcaptionClass = []) %}
     <section class=" {% for class in card_container %} {{ class }} {% endfor %}">        
-        <a {% if item.link %} href="{{item.link}}" {% endif %}>
+        <span {% if item.link %} onclick="location.href='{{item.link}}';" {% endif %}>
             
             <figure class="card-image {% for class in figureClass %} {{ class }} {% endfor %}" 
                 {% if id %} id="{{ id }}" {% endif %}
@@ -78,11 +78,9 @@
                 {% endif %}
 
                 {% if item.sub_title %}
-                
                     <a href="{{ item.link }}" class="no-underline">
                         {{ h3(copy = '<span class="card__sub_title" >' + item.sub_title + '</span>', classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1', '']) }}
                     </a>
-
                 {% endif %}
 
                 {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'min-h-120', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
@@ -109,7 +107,7 @@
                     {% endfor %}
                 </div>
             </figcaption>
-        </a>
+        </span>
     </section>
 {% endmacro %}
 
