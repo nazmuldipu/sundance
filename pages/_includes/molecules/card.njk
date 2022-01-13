@@ -59,51 +59,57 @@
 {% endmacro %}
 {% macro verticalCard(item, card_container = ['card-container', 'cursor-pointer'], figureClass = [], figcaptionClass = []) %}
     <section class=" {% for class in card_container %} {{ class }} {% endfor %}">        
-        <figure class="card-image {% for class in figureClass %} {{ class }} {% endfor %}" 
-            {% if id %} id="{{ id }}" {% endif %} 
-        >
-            {% if item.image %}
-                {{global_image(item.image.global_image, classes='image_frame sm:4:3 lg:4:3 2xl:4:3 4xl:4:3')}}
-            {% endif %}
-        </figure>
-        <figcaption class="card-text {% for class in figcaptionClass %} {{ class }} {% endfor %}"
-            {% if id %} id="{{ id }}" {% endif %}
-        >
-            {% if item.title %}
-                {{ h5(copy = item.title, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
-            {% endif %}
-            {% if item.sub_title %}
-                {% for object in item.actions %}
-                    <a {% if object.action.url %} href="{{ object.action.url }}" {% endif %} class="no-underline">
+        <a {% if item.link %} href="{{item.link}}" {% endif %}>
+            
+            <figure class="card-image {% for class in figureClass %} {{ class }} {% endfor %}" 
+                {% if id %} id="{{ id }}" {% endif %}
+            >
+                {% if item.image %}
+                    {{global_image(item.image.global_image, classes='image_frame sm:4:3 lg:4:3 2xl:4:3 4xl:4:3')}}
+                {% endif %}
+            </figure>
+
+            <figcaption class="card-text {% for class in figcaptionClass %} {{ class }} {% endfor %}"
+                {% if id %} id="{{ id }}" {% endif %}
+            >
+        
+                {% if item.title %}
+                    {{ h5(copy = item.title, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                {% endif %}
+
+                {% if item.sub_title %}
+                
+                    <a href="{{ item.link }}" class="no-underline">
                         {{ h3(copy = '<span class="card__sub_title" >' + item.sub_title + '</span>', classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1', '']) }}
                     </a>
-                {% endfor %}
-                
-            {% endif %}
-            {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'min-h-120', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
-            {% if item.criterias %}
-                <div>
-                    {% for criteria in item.criterias %}
-                        {{ h5(copy = criteria.text, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
+
+                {% endif %}
+
+                {{ h5(copy = item.description, classes = ['heading','heading--5', 'pb-4', 'min-h-120', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+                {% if item.criterias %}
+                    <div>
+                        {% for criteria in item.criterias %}
+                            {{ h5(copy = criteria.text, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                        {% endfor %}
+                    </div>
+                {% endif %}                                           
+                <div class="flex justify-center gap-x-2">
+                    {% for object in item.actions %}
+                        {% if object.action %}
+                            {% set action = object.action %}
+                        {% endif %}
+
+                        {% if action.type == 'view-details' %}
+                            {{ view_details2(classes = ['view-details','font-calibre', 'font-medium', 'text-lg', 'text--color__sn-6'], copy = action.copy, href = action.url, internal=action.internal ) }}
+                        {% elif action.type == 'primary' %}
+                            {{ button_primary(classes = ['button', 'button--primary', 'card-text__button--size', 'font-calibre', 'font-medium', 'text-base'], href = action.url, copy = action.copy, id = item.id, target = action.target ) }}
+                        {% elif action.type == 'secondary' %}    
+                            {{ button_secondary(classes = ['button', 'button--secondary', 'card-text__button--size', 'font-calibre', 'font-medium', 'text-base'], href = action.url, copy = action.copy, id = item.id, target = action.target ) }}
+                        {% endif %}
                     {% endfor %}
                 </div>
-            {% endif %}                                           
-            <div class="flex justify-center gap-x-2">
-                {% for object in item.actions %}
-                    {% if object.action %}
-                        {% set action = object.action %}
-                    {% endif %}
-
-                    {% if action.type == 'view-details' %}
-                        {{ view_details2(classes = ['view-details','font-calibre', 'font-medium', 'text-lg', 'text--color__sn-6'], copy = action.copy, href = action.url, internal=action.internal ) }}
-                    {% elif action.type == 'primary' %}
-                        {{ button_primary(classes = ['button', 'button--primary', 'card-text__button--size', 'font-calibre', 'font-medium', 'text-base'], href = action.url, copy = action.copy, id = item.id, target = action.target ) }}
-                    {% elif action.type == 'secondary' %}    
-                        {{ button_secondary(classes = ['button', 'button--secondary', 'card-text__button--size', 'font-calibre', 'font-medium', 'text-base'], href = action.url, copy = action.copy, id = item.id, target = action.target ) }}
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </figcaption>
+            </figcaption>
+        </a>
     </section>
 {% endmacro %}
 
@@ -128,13 +134,18 @@
             {% if item.title %}
                 {{ h5(copy = item.title, classes = ['heading','heading--5','font-calibre', 'font-medium', 'text--color__sn-6']) }}
             {% endif %}
-            {% if item.sub_title %}
-                {% for object in item.actions %}
-                    <a {% if object.action.url %} href="{{ object.action.url }}" {% endif %} class="no-underline">
+
+            {% if item.sub_title %} 
+                {% if item.link.length>2 %}
+                    <a href="{{ item.link }}" class="no-underline">
                         {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}
                     </a>
-                {% endfor %}    
+                              
+                {% else %}
+                    {{ h3(copy = item.sub_title, classes = ['heading','heading--3','font-calibre', 'font-medium', 'text--color__sp-1']) }}                    
+                {% endif %}
             {% endif %}
+
             <div class="font-ivar text-sm l-s-l-h text--color__sn-6 mb-8">
                 {{ item.description | safe }}
             </div>
