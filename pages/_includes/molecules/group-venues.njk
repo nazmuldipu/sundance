@@ -62,11 +62,11 @@ dropdown %}
                         {% else %}
                             <global-modal data-identifier="venues-{{nav.copy}}">
                                 {% if nav.modal.modal %}
-                                    <div class="text-left">
+                                    <div class="text-left font-ivar">
                                         {% if nav.modal.modal.description.length > 0 %}
                                             {% for item in nav.modal.modal.description %}
                                                 <div class="pb-10">
-                                                    <div class="group-venues__modal-title font-ivar">
+                                                    <div class="group-venues__modal-title font-ivar pb-4">
                                                         {{ item.title | safe }}
                                                     </div>
                                                     {{ item.texts | safe }}
@@ -77,7 +77,7 @@ dropdown %}
                                         {% if nav.modal.modal.table_container.length > 0 %}
                                             {% for item in nav.modal.modal.table_container %}
                                                 <div class="pb-10">
-                                                    <div class="group-venues__modal-title font-ivar">
+                                                    <div class="group-venues__modal-title font-ivar pb-4">
                                                         {{ item.title | safe }}
                                                     </div>
                                                     <div class="modal-table">
