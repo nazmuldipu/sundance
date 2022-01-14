@@ -130,7 +130,7 @@ Link %}
       {# </media-carousel> #}
 
       {% for action in events.actions %}
-        {{ Link( href=action.action.url, copy=action.action.copy, target='_self', classes=['button', 'button--' + action.action.type, 'font-calibre', 'sundance-events__links', 'my-10'] ) }}
+        {{ Link( href=action.action.url, copy=action.action.copy, target='_self', classes=['button', 'button--' + action.action.type, 'font-calibre', 'sundance-events__links-btn', 'my-10'] ) }}
       {% endfor %}
     </section>
   </section>
