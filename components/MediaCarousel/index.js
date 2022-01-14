@@ -24,6 +24,7 @@ export default class MediaCarousel extends ProgressiveElement {
     this.galleryInstance = null;
     this.swiperInstance = null;
     this.showLightbox = Boolean(this.dataset.lightbox);
+    this.type = this.dataset.type ?? 'defaultConfig';
 
     SimpleLightbox.prototype.open = function(elem) {
       elem = elem || this.elements[0];
@@ -57,7 +58,7 @@ export default class MediaCarousel extends ProgressiveElement {
     var _this = this;
     this.swiperInstance = new mod.Swiper(
       this.getSwiperInstance(),
-      Object.assign({}, mod.defaultConfig),
+      Object.assign({}, mod[this.type]),
     );
     if(this.showLightbox) {
       setTimeout(() => {
