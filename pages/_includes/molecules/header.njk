@@ -4,6 +4,7 @@ dropdown2 %}
 iconCSS %}
 {% from 'atoms/form-fields.njk' import form_input %}
 {% from 'organisms/card-widget.njk' import cardWidget %}
+{% from 'molecules/footer.njk' import footer %}
 
 {% set emailInput = {
         "type" : "email", 
@@ -84,7 +85,7 @@ iconCSS %}
     </section>
 {% endmacro %}
 
-{% macro navMenu(menuItems) %}
+{% macro navMenu(menuItems, footers, pageUrl) %}
     <nav class="header__nav fixed-top sm:px-4 md:px-5 lg:px-5 2xl:px-14 4xl:px-22" id="app_nav">
         <div class="header__burger-icon">
             <input type="checkbox" id="toggle-154" class="toggle header__toggle hidden" name="First">
@@ -122,6 +123,12 @@ iconCSS %}
                 {% if menuItems.sections.length > 4 %}
                     <li class="cursor-default">
                         <a href="#" class="font-ivar" id="btn-nav-more">More</a>
+                            <ul class="dropdown" style="left: -482%;
+    top: 98%;padding:0; min-width:991px">
+                                {% if footers %}
+                                    {{ footer(footers, pageUrl, header = true) }}
+                                {% endif %}
+                            </ul>
                     </li>
                     {% for sec in range(4,  menuItems.sections.length)%}
                         <li class="nav-more-menus hidden">

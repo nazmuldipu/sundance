@@ -367,4 +367,8 @@
     }
 }
 
+.form-input:focus {
+  outline: none;
+}
+
 /****  end header molecules  ********************************/
