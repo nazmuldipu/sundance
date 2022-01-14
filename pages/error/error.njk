@@ -28,3 +28,13 @@ nickname: error
 </section>
 
 {{newsletter()}}
+<script>
+    /*
+    * error page gets rendered if the url is not found
+    * the page url doesn't change, so manually have to redirect to error page
+    * otherwise we will see a page without any css.
+    */
+    if(window.location.href !== window.location.origin + '/error/'){
+        window.location.href = window.location.origin + '/error/'
+    }  
+</script>  
