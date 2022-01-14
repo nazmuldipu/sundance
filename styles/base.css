@@ -1273,4 +1273,18 @@ a[href^="tel"] {
         width: calc(50% - 1em);
     }
 }
+.desktop-blue-text-and-mobile-white-text-bg-yellow {
+    color: white;
+    background-color: #E2CBA5;
+    display: block;
+    padding: 26px 40px;
+}
+@media screen and (min-width: 1024px) {
+    .desktop-blue-text-and-mobile-white-text-bg-yellow {
+        color: var(--sundance__primary1);
+        background-color: var(--sundance__neutral5);
+        padding: 0;
+    }
+}
+
 /****  end base styles  ********************************/

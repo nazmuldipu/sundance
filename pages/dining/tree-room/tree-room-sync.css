@@ -85,10 +85,10 @@
 .group-venues__dropdown-btn {
     display: block;
 }
-.hidden-desktop-view-in-mobile {
+.hidden-in-desktop-view-in-mobile {
     display: block;
 }
-.hidden-mobile-view-in-desktop {
+.hidden-in-mobile-view-in-desktop {
     display: none;
 }
 @media screen and (min-width: 768px){
@@ -142,10 +142,10 @@
     .group-venues__actions {
         flex-direction: column;
     }
-    .hidden-desktop-view-in-mobile {
+    .hidden-in-desktop-view-in-mobile {
         display: none;
     }
-    .hidden-mobile-view-in-desktop {
+    .hidden-in-mobile-view-in-desktop {
         display: block;
     }
     .top-banner__figure {

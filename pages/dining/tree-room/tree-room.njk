@@ -31,11 +31,11 @@ nickname: dining/restaurants/tree-room
                 {{top_banner.title}}
             </h3>
         </header>
-        {% for item in top_banner.descriptions %}
+        {% if top_banner.custom_description %}
             <div class="dining-details__top-banner--descriptions font-ivar">
-                {{ item.text }}
+                {{ top_banner.custom_description | safe }}
             </div>
-        {% endfor %}
+        {% endif %}
     </figcaption>
 {% endmacro %}
 
@@ -46,7 +46,7 @@ nickname: dining/restaurants/tree-room
                 <figure class="top-banner__figure">
                     {{global_image(topBannerImage, classes='w-full image_frame sm:125:114 lg:14:9 2xl:14:9 4xl:14:9')}}
                 </figure>
-                <div class="hidden-mobile-view-in-desktop">
+                <div class="hidden-in-mobile-view-in-desktop">
                     {{bannerContent(top_banner)}}
                 </div>
             </section>
@@ -57,7 +57,7 @@ nickname: dining/restaurants/tree-room
                     </section>
                 {% endfor %}
             </section>
-            <div class="hidden-desktop-view-in-mobile">
+            <div class="hidden-in-desktop-view-in-mobile">
                 {{bannerContent(top_banner)}}
             </div>
         </section>
