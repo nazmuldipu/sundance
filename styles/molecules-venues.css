@@ -116,9 +116,37 @@
   font-weight: 500;
   line-height: 19px;
 }
+.group-venues__modal-title{
+    font-size: 36px;
+    line-height: 39px;
+    font-weight: 700;
+}
+.modal-table table{
+  vertical-align: top;
+  width: 100%;
 
+  margin-bottom: 1rem;
+}
+.modal-table tr:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+.modal-table th, 
+.modal-table td {
+  padding: 1rem;
+  min-width: 0vw;
+}
 /* Mobile (Screen size : 375 pts) */
 @media screen and (min-width: 320px) and (max-width: 767px) {
+  .group-venues__modal-title{
+    font-size: 25px;
+    line-height: 28px;
+  }
+
+.modal-table th, 
+.modal-table td {
+  padding: 6px;
+}
+
   .group-venues__container {
     padding: 24px 0;
   }

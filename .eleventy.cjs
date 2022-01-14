@@ -8,7 +8,8 @@ const { getImgSizes,
         buildOutputDir,
         get_resized_image_url,
         getImageUrl,
-        webComponent
+        webComponent,
+        createTable
      } = require('./tooling/eleventy.cjs');
 const util = require('util');
 
@@ -63,6 +64,11 @@ module.exports = function(eleventyConfig) {
                 return type;
         }
     });
+
+    eleventyConfig.addNunjucksFilter( 'table', function ( data ) {
+        let tableData = JSON.parse(data)
+        return createTable(tableData);
+    } )
 
     // dump object data.
     eleventyConfig.addNunjucksFilter( 'json', function ( value ) {

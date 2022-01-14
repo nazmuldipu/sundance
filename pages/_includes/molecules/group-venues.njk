@@ -53,9 +53,36 @@
                             {{ a( copy=nav.copy, href=nav.url, target=nav.target) }}
                         {% else %}
                         <global-modal data-identifier="venues-{{nav.copy}}">
-                            <div class="text-left">
-                            {{ nav.description | safe  }}
-                            </div>
+                            {% if nav.modal.modal %}
+                                <div class="text-left">
+                                    {% if nav.modal.modal.description.length > 0 %}
+                                        {% for item in nav.modal.modal.description %}
+                                            <div class="pb-10">
+                                                <div class="group-venues__modal-title font-ivar">
+                                                    {{ item.title | safe }}
+                                                </div>
+                                                {{ item.texts | safe }}
+                                            </div>
+                                        {% endfor %} 
+                                    {% endif %}
+
+                                    {% if nav.modal.modal.table_container.length > 0 %}
+                                        {% for item in nav.modal.modal.table_container %}
+                                        <div class="pb-10">
+                                                <div class="group-venues__modal-title font-ivar">
+                                                    {{ item.title | safe }}
+                                                </div>
+                                                <div class="modal-table">
+                                                    {{ (item.table | table) | safe}}
+                                                </div>
+                                                {{ item.bottom | safe }}
+                                            </div>
+                                        {% endfor %} 
+                                    {% endif %}
+
+                                    {{nav.modal.modal.footer | safe}}
+                                </div>
+                            {% endif %}
                         </global-modal>
                             <a class="link link--primary font-calibre text-base cursor-pointer" data-target="venues-{{nav.copy}}">{{nav.copy}}</a>
                         {% endif %}
