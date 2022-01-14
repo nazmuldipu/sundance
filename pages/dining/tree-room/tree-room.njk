@@ -24,25 +24,31 @@ nickname: dining/restaurants/tree-room
 {% set top_banner = pageCMS['top-banner-left'].banner %}
 {% set topBannerImage = top_banner.global_image.global_image %}
 
+{% macro bannerContent(top_banner) %}
+    <figcaption class="dining-details__figcaption">
+        <header>
+            <h3 class="dining-details__top-banner--header font-ivar bold">
+                {{top_banner.title}}
+            </h3>
+        </header>
+        {% for item in top_banner.descriptions %}
+            <div class="dining-details__top-banner--descriptions font-ivar">
+                {{ item.text }}
+            </div>
+        {% endfor %}
+    </figcaption>
+{% endmacro %}
+
 <section class="segment-outer bg-sn-5 top-section">
     <section class="segment-inner">
-        <section class="dining-details-container">
+        <section class="dining-details-container global-px">
             <section>
-                <figure class="dining-details__figure">
+                <figure class="top-banner__figure">
                     {{global_image(topBannerImage, classes='w-full image_frame sm:125:114 lg:14:9 2xl:14:9 4xl:14:9')}}
                 </figure>
-                <figcaption class="dining-details__figcaption">
-                    <header>
-                        <h3 class="dining-details__top-banner--header font-ivar bold">
-                            {{top_banner.title}}
-                        </h3>
-                    </header>
-                    {% for item in top_banner.descriptions %}
-                        <div class="dining-details__top-banner--descriptions font-ivar">
-                            {{ item.text }}
-                        </div>
-                    {% endfor %}
-                </figcaption>
+                <div class="hidden-mobile-view-in-desktop">
+                    {{bannerContent(top_banner)}}
+                </div>
             </section>
             <section class="dining-details__venues">
                 {% for event in pageCMS['group-venues'].group_venues %}
@@ -51,6 +57,9 @@ nickname: dining/restaurants/tree-room
                     </section>
                 {% endfor %}
             </section>
+            <div class="hidden-desktop-view-in-mobile">
+                {{bannerContent(top_banner)}}
+            </div>
         </section>
     </section>
 </section>

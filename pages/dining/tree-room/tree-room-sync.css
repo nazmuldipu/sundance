@@ -1,11 +1,11 @@
 /****  start imports  ********************************/
 @import "../../../styles/global.css";
 /****  end imports  ********************************/
-.dining-details-container {
-    display: block;
-}
 .dining-details__figure {
     margin-bottom: 48px;
+}
+.dining-details-container {
+    display: block;
 }
 .dining-details__top-banner--header {
     font-size: 24px;
@@ -38,7 +38,7 @@
 }
 .details__quote {
     max-width: 680px;;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
     margin: 1rem auto;
 }
 
@@ -57,14 +57,44 @@
 .group-venues__description:nth-child(4) {
     color: var(--sundance__primary1);
 }
-.group-venues__links {
-    margin-left: 0;
+.group-venues__links, 
+.group-venues__dropdown {
+    margin: 0;
 }
-.group-venues__nav {
-    margin-left: 0;
+.group-venues__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+.group-venues__actions .group-venues__dropdown {
+    margin: 0;
+    width: 100%;
 }
 .slider-container {
     margin-top: 2.5rem;
+}
+.group-venues .group-venues__title,
+.group-venues .group-venues__breadcrumbs,
+.group-venues .group-venues__description {
+    display: none;
+}
+.group-venues {
+    display: block;
+}
+.group-venues__dropdown-btn {
+    display: block;
+}
+.hidden-desktop-view-in-mobile {
+    display: block;
+}
+.hidden-mobile-view-in-desktop {
+    display: none;
+}
+@media screen and (min-width: 1024px){
+    .group-venues__actions {
+        flex-direction: row;
+    }
 }
 @media screen and (min-width: 1024px){
     .dining-details-container {
@@ -100,5 +130,22 @@
     }
     .slider-container {
         margin-top: 4rem;
+    }
+    .group-venues .group-venues__title,
+    .group-venues .group-venues__breadcrumbs,
+    .group-venues .group-venues__description {
+        display: block;
+    }
+    .group-venues__actions {
+        flex-direction: column;
+    }
+    .hidden-desktop-view-in-mobile {
+        display: none;
+    }
+    .hidden-mobile-view-in-desktop {
+        display: block;
+    }
+    .top-banner__figure {
+        margin-bottom: 48px;
     }
 }
