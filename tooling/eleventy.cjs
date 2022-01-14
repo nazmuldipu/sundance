@@ -19,7 +19,7 @@ const mediaBaseUri = () => {
  */
 const webComponent = (componentName, componentPath, customElementName = '', pageUrl = '', relativePath = '') => {
   let customElementDefinition = '';
-  if(customElementName) {
+  if (customElementName) {
     customElementDefinition = `customElements.define("${customElementName}", ${componentName})`
   }
   // JSON.stringify used to wrap in quotes; strip invalid characters
@@ -59,7 +59,7 @@ const getImgSizes = (imgName) => {
  * @param ext
  * @returns String
  */
-const getSrcSet = (imgName, sizes, originalWidth, ext, path='images') => {
+const getSrcSet = (imgName, sizes, originalWidth, ext, path = 'images') => {
   const srcSetArr = [`${path}/${imgName}.${ext} ${originalWidth}w`];
   return srcSetArr
     .concat(
@@ -72,13 +72,31 @@ const getSrcSet = (imgName, sizes, originalWidth, ext, path='images') => {
 
 
 function get_resized_image_url(url, dimensions, type) {
-    let last_index = url.lastIndexOf(".");
-    let file_name = url.substr(0, last_index).replace("/upload/", "/resized/");
-    let extension = url.substring(last_index + 1);
-    let resized_urls = dimensions.map(
-      (dim) => mediaBaseUri() + file_name + "_" + dim + "." + type + ` ${dim}w`
-    );
-    return resized_urls;
+  let last_index = url.lastIndexOf(".");
+  let file_name = url.substr(0, last_index).replace("/upload/", "/resized/");
+  let extension = url.substring(last_index + 1);
+  let resized_urls = dimensions.map(
+    (dim) => mediaBaseUri() + file_name + "_" + dim + "." + type + ` ${dim}w`
+  );
+  return resized_urls;
+}
+
+function createTable(myArray) {
+  var result = "<table>";
+  for (var i = 0; i < myArray.length; i++) {
+    result += "<tr>";
+    for (var j = 0; j < myArray[i].length; j++) {
+      if (i == 0) {
+        result += "<th>" + myArray[i][j] + "</th>";
+      } else {
+        result += "<td>" + myArray[i][j] + "</td>";
+      }
+    }
+    result += "</tr>";
+  }
+  result += "</table>";
+
+  return result;
 }
 
 const getImageUrl = (url) => {
@@ -86,11 +104,12 @@ const getImageUrl = (url) => {
   return mediaBaseUri() + url
 }
 
-module.exports = { 
+module.exports = {
   getImgSizes,
   getSrcSet,
   buildOutputDir,
   get_resized_image_url,
   getImageUrl,
-  webComponent
+  webComponent,
+  createTable
 };
