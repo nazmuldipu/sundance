@@ -54,7 +54,7 @@
     #   @param  id
     #   @author Sarjis
  #}
-{% macro form_input(obj = {}, suffix = false, classes = ['font-calibre'], id, copy, href = '#') %}
+{% macro form_input(obj = {}, suffix = false, classes = ['font-calibre', 'text-lg-2', 'uppercase', 'ls'], id, copy, href = '#') %}
     <label class="{% for class in classes %} {{ class }} {% endfor %}">
         {% if obj.label %}
             {{ obj.label }}<br>
