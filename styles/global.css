@@ -3,3 +3,4 @@
 @import "./atoms.css";
 @import "./molecules.css";
 @import "./organisms.css";
+@import "../components/LightBox/light-box-styles.css";

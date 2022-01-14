@@ -53,10 +53,10 @@ class WeatherComponent extends HTMLElement{
             detailSnowReport += `
             <div class="card-widget__weather__forcast grid grid-flow-row justify-items-center font-calibre text-lg">
                 <span class="text-2xl">${forecast?.dayname}</span>
-                <img class="card-widget__weather__icon2 pb-1" src="${forecast?.day?.icon}"/>
-                <span>D ${forecast?.day?.snow}</span>
-                <span>N ${forecast?.night?.snow}</span>
-                <span>W ${forecast?.day?.wind?.speed}</span>
+                <img class="card-widget__weather__icon2 pb-1" src="${forecast?.day?.icon ?? forecast?.night?.icon}"/>
+                <span>D ${forecast?.day?.snow ?? '0'}</span>
+                <span>N ${forecast?.night?.snow ?? '0'}</span>
+                <span>W ${forecast?.day?.wind?.speed ?? '0mph'}</span>
             </div>
             `
         });
