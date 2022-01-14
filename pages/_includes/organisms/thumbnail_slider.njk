@@ -24,7 +24,7 @@
                 {{ h1( copy=obj.title ,  classes=['thumbnail-slider__mobile__title', 'font-ivar', 'font-semibold']) }}
             </section>
             <section class="thumbnail-slider__slides">
-                <media-carousel>
+                <media-carousel data-type="thumbnailSlider">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             {% for item in obj.images %}
