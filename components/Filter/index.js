@@ -9,6 +9,7 @@ export default class FilterComponent extends HTMLElement {
         this._currentChild = null;
         this._filters = null;
         this._selectedFilters = [];
+        this._showFilters = false;
     }
 
     connectedCallback() {
@@ -62,14 +63,22 @@ export default class FilterComponent extends HTMLElement {
      * @param {object} data 
      */
     setFilters(data){
-        const { filters } = data;
+        const { filters, selectedFilters } = data;
+        if(this._selectedFilters.length === 0){
+            this._selectedFilters = selectedFilters;
+        }
         this._filters = JSON.parse(JSON.stringify(filters));
-        const template = document.createElement('template');
-        template.innerHTML = this.getTemplate(this._filters);
-        const filterContainer = template.content.querySelector('.filter__container');
-        const entries = template.content.querySelector('#entries');
-        this.querySelector('.filter__container').replaceWith(filterContainer);
-        this.querySelector('#entries').replaceWith(entries);
+        setTimeout(() => {
+            const template = document.createElement('template');
+            template.innerHTML = this.getTemplate(this._filters, this._selectedFilters);
+            const filterContainer = template.content.querySelector('.filter__container');
+            const entries = template.content.querySelector('#entries');
+            const filterBtn = template.content.querySelector('#filter_btn');
+            this.querySelector('.filter__container').replaceWith(filterContainer);
+            this.querySelector('#entries').replaceWith(entries);
+            this.querySelector('#filter_btn').replaceWith(filterBtn);
+        }, 100)
+
     }
 
     parseTitle(title){
@@ -84,18 +93,22 @@ export default class FilterComponent extends HTMLElement {
         return this._selectedFilters.find(flt => flt.id == item.id) ? true : false;
     }
 
+    isFilterSelected(selectedFilters){
+        return selectedFilters.length > 0;
+    }
+
     getTemplate(data){
         return ` <section id="filter" class="filter">
-        <input type="checkbox" id="filter_btn" class="filter__toggle" name="filter" >
+        <input type="checkbox" id="filter_btn" ${this._showFilters ? 'checked': ''} class="filter__toggle toggle" name="filter" >
         <header class="filter__header align-items-center">
-            <div id="entries" class="sm:order-2">${data.entries} Entries</div>
-            <h2 class="heading--2 font-calibre font-medium sm:order-1 sm:pb-4">Find a  place to stay</h2>
+            <div id="entries" class="sm:order-2 font-calibre">${data.entries} Entries</div>
+            <h2 class="heading--2 font-calibre font-medium sm:order-1 sm:pb-4 sm:w-full sm:text-center">Find a  place to stay</h2>
             <div class="sm:order-3" >
                 <label for="filter_btn" class="filter__toggle__label font-calibre font-medium">
                     <div class="icon-css icon--filter">
                         <span></span><span></span><span></span>
                     </div>
-                    Filter
+                    <div class="filter-margin">Filter</div>
                 </label>
             </div>
         </header>
@@ -105,9 +118,9 @@ export default class FilterComponent extends HTMLElement {
                 `<article>
                     <h3 class="heading--3 font-calibre font-medium pb-2">${this.parseTitle(flt.title)}</h3>
                         ${flt.items.map(item => (
-                          `<div class="filter__item">                            
+                          `<div class="filter__item ${item.disabled ? 'disabled': ''}">                            
                             <label class="checkboxes-btn font-ivar">
-                                <input type="checkbox" class="checkboxes-btn__input" ${this.isChecked(item) ? 'checked': ''} id="${item.id}" name="${item.name}" value="${item.copy}">
+                                <input type="checkbox" ${item.disabled ? 'disabled': ''} class="checkboxes-btn__input" ${this.isChecked(item) ? 'checked': ''} id="${item.id}" name="${item.name}" value="${item.copy}">
                                 <span class="checkboxes-btn__control"></span>
                                     <span class="checkboxes-btn__label">
                                         ${item.copy} (${item.quantity})

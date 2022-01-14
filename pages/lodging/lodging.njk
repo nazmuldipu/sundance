@@ -27,10 +27,10 @@ nickname: "lodging"
 <section class="segment-outer bg-sn-4 pb-4">
     <section class="segment-inner sm:px-6">
         <section class="flex-card-container">
-            {% for item in cardAllData %}
-                <a data-card="{{item.vertical_card | stringify}}" href="{{item.vertical_card.customlink}}" class="no-underline card-container flex__single-card mb-8">
-                    {{ singleCard(item = item.vertical_card, classes = ['']) }}
-                </a>    
+            {% for item in cardAllData %}        
+                <span data-card="{{item.vertical_card | stringify}}" class="card-container flex__single-card mb-8">
+                    {{ singleCard(item = item.vertical_card, classes = ['text-left']) }}
+                </span> 
             {% endfor %}
         </section>
         <div class="font-ivar text-sm card-footer-caption text-center">

@@ -19,14 +19,14 @@ nickname: "the-sundance-history"
         <section class="sm:mx-6">
             {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:4 lg:5:2 2xl:5:2 4xl:5:2')}}
         </section>
-        {{ h3( copy=pageCMS['top-banner'].global_image.alt, classes=['absolute', 'top-banner-title', 'text-white', 'text-5.5xl', 'sm:text-lg-2', 'font-ivar', 'text-center', 'font-semibold'] ) }}
+        {{ h3( copy=pageCMS['top-banner'].global_image.alt, classes=['absolute', 'top-banner-title', 'text-white', 'text-5.5xl', 'sm:text-6', 'font-ivar', 'text-center', 'font-semibold'] ) }}
     </section>
 {% endif %}
 
 {% if pageCMS['venues'].group_venues.length %}
     <section>
         {% set event = (pageCMS['venues'].group_venues |  first )%}
-        {{groupVenues(event)}}
+        {{groupVenues(event, announcementObject = (pageCMS['announcement'].announcement if pageCMS['announcement'] else {}))}}
     </section>
 {% endif %}
 
@@ -85,7 +85,7 @@ nickname: "the-sundance-history"
 {#  Vision and mission #}
 {% if pageCMS['vision-mission'] %}
     <section class="group-section text-lg pb-10">
-        <section class="segment-inner grid grid-cols-2 text-center sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 pb-6 border-t-1 border-b-1">
+        <section class="segment-inner grid grid-cols-2 text-center sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 sm:pb-10 pb-6 border-t-1 border-b-1">
             {% for item in pageCMS['vision-mission'].simple_article_list %}
                 <article>
                     {{ h3( copy=item.simple_article.title, classes=['text-4xl', 'sm:text-3_axl', 'font-calibre', 'font-medium', 'pt-10', 'pb-6'] ) }}
@@ -99,7 +99,7 @@ nickname: "the-sundance-history"
 {# Accolades #}
 {% if pageCMS['accolades'] %}
     {% set accoladesObj = pageCMS['accolades'].accolades %}
-    <section class="segment-outer text-lg py-10">
+    <section class="segment-outer text-lg py-10 sm:pb-0">
         <section class="segment-inner">
             {{ h3( copy = accoladesObj.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center', 'pb-16', 'pt-2'] ) }}
             <article class="flex flex-row flex-wrap justify-center">
@@ -110,7 +110,7 @@ nickname: "the-sundance-history"
             </article>
             {% for item in accoladesObj.tabs %}
                 <div id="{{item.slug}}-container" class="accolades__container hidden {{'active' if loop.index === 1 }} ">
-                    <article class="grid grid-cols-4 sm:grid-cols-1 md:grid-cols-3 gap-x-4 py-13 sm:mx-6 md:mx-4">
+                    <article class="grid grid-cols-4 sm:grid-cols-1 md:grid-cols-3 gap-x-4 py-10 sm:mx-6 sm:pb-0 md:mx-4">
                         {% for award in item.award%}
                             <div class="accolades__item mb-4 text-center {{award.classes}}">
                                 {% if award.has_image %}
@@ -149,9 +149,7 @@ nickname: "the-sundance-history"
         <section class="segment-inner">
             <article class="segment-inner__vertical-card-container grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 4xl:grid-cols-3 gap-x-12 sm:px-6 md:px-6 lg:px-6">
                 {% for item in pageCMS['family-card'].vertical_card_list %}
-                    <a href="{{item.vertical_card.url}}" target="_blank" class="no-underline">
-                        {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
-                    </a>
+                    {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
                 {% endfor %}
             </article>
         </section>
@@ -160,9 +158,9 @@ nickname: "the-sundance-history"
 
 {# Local partners #}
 {% if pageCMS['local-partners-title'].simple_article and  pageCMS['local-partners-cards'] %}
-    <section class="segment-outer py-10">
+    <section class="segment-outer py-10 sm:pt-0">
         <section class="segment-inner">
-            {{ h3( copy = pageCMS['local-partners-title'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center', 'py-10'] ) }}
+            {{ h3( copy = pageCMS['local-partners-title'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center', 'py-10', 'sm:pt-0'] ) }}
             <article class="segment-inner__vertical-card-container grid grid-cols-2 sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6">
                 {% for item in pageCMS['local-partners-cards'].vertical_card_list %}
                     {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}

@@ -123,7 +123,7 @@ nickname: "Molecules"
     <section class="group-section">
         <div class="bridge__top-frame"></div>
         <div class="group-container">
-            {{groupVenues(event)}}
+            {{groupVenues(event, announcementObject = (pageCMS['announcement'].announcement if pageCMS['announcement'] else {}))}}
         </div>
     </section>
 {% endfor %}

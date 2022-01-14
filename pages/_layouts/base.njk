@@ -9,6 +9,7 @@ pagename: base
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8" />
         <!-- begin GraphQL data dump -->
         {{ dump_data({seoDump: false}) }}
         <!-- end GraphQL data dump-->
@@ -85,11 +86,11 @@ pagename: base
             &noscript=1"/>
         </noscript>
         <!-- End Facebook Pixel Code -->
-        <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google-site-verification" content="38HHw2FHSWgjq-tjgQ2byEdCKAIk1LRUWDRrc8xcGYA" />
         <meta name="facebook-domain-verification" content="8h0nt9sgcoy5ncea08rjmumsbur0sc" />
         <link rel="icon" href="favicon.svg" type="image/svg+xml">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
         {{ seo_tags(pagename, seoData) }}
 <!-- start critical css -->
         {% if critical_css %}

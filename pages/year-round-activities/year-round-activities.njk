@@ -1,0 +1,34 @@
+---
+layout: base.njk
+pagename: year-round-activities
+permalink: "build/year-round-activities/index.html"
+permalinkBypassOutputDir: true
+---
+{% from 'macros.njk' import top_banner %}
+{% from "atoms/headings.njk" import h2 %}
+{% from 'molecules/card.njk' import horrizontalCard, verticalCard %}
+
+{# Hero Image Section #}
+{% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image and pageCMS['hero-corner-block'].hero_corner_block %}
+    {% set hero_corner_block = pageCMS['hero-corner-block'].hero_corner_block %}
+    <section class="segment-outer summer-activities__hero-pb">
+        {{ top_banner(pageCMS['top-banner'].global_image, hero_corner_block) }}
+    </section>
+{% endif %}
+
+{# Card Title #}
+{% if pageCMS['card-title'] %}
+    {% set card_title= pageCMS['card-title'].simple_article %}
+    {{ h2(copy = card_title.title, classes = ['bg-sn-4', 'year-round-activites__header', 'text-center', 'font-ivar', 'font-medium', 'text--color__sn-6']) }}
+{% endif %}
+
+
+{# Horrizontal Card Section #}
+{% if pageCMS['horizontal-cards'] %}
+    {% set horizontal_card_list= pageCMS['horizontal-cards'].horizontal_card_list %}
+    <section class="bg-sn-4 segment-outer pb-8">
+        <section class="segment-inner global-px">
+            {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-8'], imageClasses = 'image_frame sm:11:8 lg:4:3 2xl:4:3 4xl:4:3') }}
+        </section>
+    </section>
+{% endif %}

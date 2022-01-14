@@ -16,14 +16,14 @@ nickname: "conserve"
     <section class="group-section">
         {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         <div class="group-container">
-            {{groupVenues(event)}}
+            {{groupVenues(event, announcementObject = (pageCMS['announcement'].announcement if pageCMS['announcement'] else {}))}}
         </div>
     </section>
 {% endif %}
 
 {% if pageCMS['first-content'] %}
     <section class="segment-outer">
-        <section class="segment-inner__text-container px-6">
+        <section class="segment-inner__text-container px-6 font-ivar text-lg-2 font__ivar-letterspace">
             {{ h3( copy=pageCMS['first-content'].simple_article.title, classes=['heading', 'text-2xl', 'sm:text-lg-2', 'font-ivar', 'text-center', 'font-semibold'] ) }}
             {{ pageCMS['first-content'].simple_article.description | safe }}
         </section>
@@ -33,7 +33,7 @@ nickname: "conserve"
 {% if pageCMS['second-content'] %}
     <section class="segment-outer">
         {% for article in pageCMS['second-content'].simple_article_list %}
-            <section class="segment-inner__text-container px-6 pt-12">
+            <section class="segment-inner__text-container px-6 font-ivar text-lg-2 font__ivar-letterspace pt-12">
                 {{ h3( copy=article.simple_article.title, classes=['article_style', 'font-calibre', 'font-semibold'] ) }}
                 {{ article.simple_article.description | safe }}
             </section>
@@ -54,7 +54,7 @@ nickname: "conserve"
 {% if pageCMS['third-content'] %}
     <section class="segment-outer pb-10">
         {% for article in pageCMS['third-content'].simple_article_list %}
-            <section class="segment-inner__text-container px-6 pt-12">
+            <section class="segment-inner__text-container px-6 font-ivar text-lg-2 font__ivar-letterspace pt-12">
                 {{ h3( copy=article.simple_article.title, classes=['article_style', 'font-calibre', 'font-semibold'] ) }}
                 {{ article.simple_article.description | safe }}
             </section>

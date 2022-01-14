@@ -15,7 +15,7 @@ nickname: horseback-riding
 {# Hero Image Section #}
 {% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
     {% set summer_group_venues = pageCMS['group-venues'].group_venues  %}
-    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, summer_group_venues) }}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, summer_group_venues, announcementObject = (pageCMS['announcement'].announcement if pageCMS['announcement'] else {})) }}
 {% endif %}
 
 {# Bridge caption #}

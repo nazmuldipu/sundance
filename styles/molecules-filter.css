@@ -21,6 +21,17 @@
     letter-spacing: 0.12em;
     margin-bottom: 11px;
 }
+
+.filter-margin {
+    margin-top: 0.375rem;
+}
+.filter__item.disabled{
+    display: none;
+    color: var(--sundance__primary4);
+}
+.disabled .checkboxes-btn__control{
+    border-color: var(--sundance__primary4);
+}
 .filter__toggle {
     display: none;
 }
@@ -48,8 +59,9 @@
 .filter__toggle__label {
     display: flex;
     flex-direction: row;
-    padding: 20px 38px;
+    padding: 16px 48px;
     border-radius: 45px;
+    align-items: center;
     background-color: var(--sundance__neutral5);
     cursor: pointer;
     /* border: 1px dotted var(--sundance__neutral1); */

@@ -12,6 +12,11 @@
 .bridge__nav-icon {
     background-color: rgba(0, 0, 0, 0.1);
 }
+.accolades__tab {
+    font-size: 18px;
+    line-height: 21.6px;
+    letter-spacing: 0.04rem;
+}
 .accolades__tab.active {
     border-bottom: 2px solid var(--sundance__neutral1);
 }
@@ -50,6 +55,11 @@
 .recent__press ul li a{
     text-decoration: none;
 }
+@media screen and (min-width: 320px) and (max-width: 767px) {    
+    .group-venues__title {
+        padding: 16px 16px 6px 16px;    
+    }
+}    
 /* .accolades__item-title {
     min-height: 110px;
 } */

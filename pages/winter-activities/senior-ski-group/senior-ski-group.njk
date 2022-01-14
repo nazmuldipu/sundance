@@ -17,7 +17,7 @@ nickname: senior-ski-group
 {# Hero Image Section #}
 {% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
     {% set winter_group_venues = pageCMS['group-venues'].group_venues  %}
-    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues) }}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, winter_group_venues, announcementObject = (pageCMS['announcement'].announcement if pageCMS['announcement'] else {})) }}
 {% endif %}
 
 {# Card Title #}

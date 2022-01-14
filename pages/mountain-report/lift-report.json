@@ -1,0 +1,20 @@
+[
+	{
+		"base": "49",
+		"24_hour": "0",
+		"48_hour": "0",
+		"ytd": "86",
+		"road_92_condition": "open",
+		"road_189_condition": "open",
+		"parking_condition": "open",
+		"lift_ray_condition": "closed",
+		"lift_outlaw_condition": "open",
+		"lift_stairway_condition": "open",
+		"lift_jake_condition": "open",
+		"lift_red_condition": "open",
+		"lift_flathead_condition": "open",
+		"lift_beginners_condition": "open",
+		"nordic_center": "open",
+		"lift_notes": ""
+	}
+]
