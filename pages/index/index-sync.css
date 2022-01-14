@@ -51,7 +51,21 @@
     height: 70%;
     position: relative;
 }
-
+.collapse .img-gradient{
+    position:relative;
+    display:inline-block;
+}
+.collapse .img-gradient:after {
+    content:'';
+    position:absolute;
+    left:0; 
+    top:0;
+    width:100%; 
+    height:100%;
+    display:inline-block;
+    background: #262624; /* W3C */    
+    opacity: 0.35;
+}
 .hero-flip__item.collapse {
     flex-grow: 5;
     height: 100%;

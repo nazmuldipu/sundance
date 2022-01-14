@@ -8,7 +8,7 @@
         <div class="hero-flip__container">
           {% for banner in bannerObj %}
             <div class="hero-flip__item {{'collapse' if loop.first}}">
-              {{ global_image(banner.image.global_image, classes='w-full h-full block', imgClass='h-full object-cover') }}
+              {{ global_image(banner.image.global_image, classes='w-full h-full block img-gradient', imgClass='h-full object-cover') }}
               <div class="hero-flip__texts">
                 <header class="hero-flip__title font-ivar bold">{{banner.title}}</header>
                 <div class="hero-flip__sub-title font-calibre pb-2">{{banner.sub_title}}</div>
