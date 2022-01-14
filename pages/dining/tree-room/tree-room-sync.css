@@ -38,7 +38,7 @@
 }
 .details__quote {
     max-width: 680px;;
-    padding: 1rem 1rem;
+    padding: 40px 26px;
     margin: 1rem auto;
 }
 
@@ -91,9 +91,12 @@
 .hidden-mobile-view-in-desktop {
     display: none;
 }
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 768px){
     .group-venues__actions {
         flex-direction: row;
+    }
+    .group-venues__links {
+        width: 50%;
     }
 }
 @media screen and (min-width: 1024px){
@@ -147,5 +150,8 @@
     }
     .top-banner__figure {
         margin-bottom: 48px;
+    }
+    .group-venues__links {
+        width: auto;
     }
 }
