@@ -1200,7 +1200,6 @@ strong {
     text-decoration: none;
 }
 a[href^="tel"] {
-    text-decoration: none;
     color: var(--sundance__primary1);
 }
 .flex-card-container {
