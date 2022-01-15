@@ -1200,8 +1200,11 @@ strong {
     text-decoration: none;
 }
 a[href^="tel"] {
-    /* text-decoration: none; */
+    text-decoration: none;
     color: var(--sundance__primary1);
+}
+.group-venues__nav a[href^="tel"] {
+    text-decoration: underline;
 }
 .modal-list-item ol, ul {
     list-style: inherit;
