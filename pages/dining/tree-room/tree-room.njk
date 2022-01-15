@@ -42,6 +42,7 @@ nickname: dining/restaurants/tree-room
                     {{bannerContent(top_banner)}}
                 </div>
             </section>
+            {% if pageCMS['group-venues'] and pageCMS['group-venues'].group_venues %}
             <section class="dining-details__venues">
                 {% for event in pageCMS['group-venues'].group_venues %}
                     <section>
@@ -49,6 +50,7 @@ nickname: dining/restaurants/tree-room
                     </section>
                 {% endfor %}
             </section>
+            {% endif %}
             <div class="hidden-in-desktop-view-in-mobile">
                 {{bannerContent(top_banner)}}
             </div>
