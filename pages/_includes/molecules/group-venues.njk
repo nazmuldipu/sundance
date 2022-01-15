@@ -69,7 +69,9 @@ dropdown %}
                                                     <div class="group-venues__modal-title font-ivar pb-4">
                                                         {{ item.title | safe }}
                                                     </div>
-                                                    {{ item.texts | safe }}
+                                                    <div class="modal-list-item">
+                                                        {{ item.texts | safe }}
+                                                    </div>    
                                                 </div>
                                             {% endfor %}
                                         {% endif %}
