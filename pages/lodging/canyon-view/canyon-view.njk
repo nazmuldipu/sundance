@@ -18,27 +18,21 @@ nickname: canyon-view
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'molecules/accommodation-feature.njk' import accommodationFeature2 %}
 {% from "organisms/carousel.njk" import card_carousel %}
-{% set card_list_title = pageCMS['vertical-card-title'].simple_article.title %}
-{% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
-{% set sliderImages = pageCMS['slider'].global_image_arr.images %}
-
-{% set top_banner = pageCMS['top-banner-left'].banner %}
-{% set topBannerImage = top_banner.global_image.global_image %}
 
 {% macro aminitiesSection() %}
-    {% if pageCMS['amenities-data'].amenities_list %}
+    {% if pageCMS['amenities-data'] and pageCMS['amenities-data'].amenities_list %}
         <section class="mt-12">
             {{ amenities(pageCMS['amenities-data'].amenities_list) }}
         </section>
     {% endif %}
-    {% if pageCMS['amenities-bottom-title'].simple_article %}
+    {% if pageCMS['amenities-bottom-title'] and pageCMS['amenities-bottom-title'].simple_article %}
         <p class="mt-12 font-ivar text-center">{{pageCMS['amenities-bottom-title'].simple_article.title}}</p>
     {% endif %}
 {% endmacro %}
 
 {% macro features() %}
     <section class="accommodation__features mt-12">
-        {% if pageCMS['accommodation-features'].accommodation_features %}
+        {% if if pageCMS['accommodation-features'] and pageCMS['accommodation-features'].accommodation_features %}
             {% for item in pageCMS['accommodation-features'].accommodation_features %}
                 {{ accommodationFeature2(item) }}
             {% endfor %}
@@ -50,9 +44,12 @@ nickname: canyon-view
     <section class="segment-inner">
         <section class="dining-details-container">
             <section>
+                {% if pageCMS['slider'] and pageCMS['slider'].global_image_arr and pageCMS['slider'].global_image_arr.images %}
+                    {% set sliderImages = pageCMS['slider'].global_image_arr.images %}
                 <article class="thumbnail-slider__images grid order-2">
                     {{multi_slider_thumbnail(sliderImages)}}
                 </article>
+                {% endif %}
                 <div class="top__accommodation-fetaures">
                     {{ features() }}
                 </div>
