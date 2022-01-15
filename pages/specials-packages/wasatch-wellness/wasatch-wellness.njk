@@ -10,8 +10,6 @@ nickname: "specials-packages/wasatch-wellness"
 {% from 'organisms/global-image.njk' import global_image %}
 {% from 'molecules/group-venues.njk' import groupVenues %}
 
-{% set groupVenue = pageCMS['group-venues'].group_venues %}
-
 <section class="group-section">
     <section class="segment-outer relative -z-1">
         <figure>
@@ -20,7 +18,7 @@ nickname: "specials-packages/wasatch-wellness"
         {% endif %}
         </figure>
     </section>
-    {% if pageCMS['top-group-venues'] %}
+    {% if pageCMS['top-group-venues'] and pageCMS['top-group-venues'].group_venues %}
         {% set groupData = pageCMS['top-group-venues'].group_venues %}
         {% for event in groupData %}
             <section class="group-container">

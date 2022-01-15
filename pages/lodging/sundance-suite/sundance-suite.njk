@@ -18,26 +18,24 @@ nickname: undance-suite
 {% from 'organisms/amenities.njk' import amenities %}
 {% from 'molecules/accommodation-feature.njk' import accommodationFeature2 %}
 
-{% set sliderImages = pageCMS['slider'].global_image_arr.images %}
-
 {% macro aminitiesSection() %}
-    {% if pageCMS['amenities-top-description'].simple_article %}
+    {% if pageCMS['amenities-top-description'] and pageCMS['amenities-top-description'].simple_article %}
         <div class="details_amenities-top-description mt-12 font-ivar text-lg-2 text-center">
             {{pageCMS['amenities-top-description'].simple_article.title | safe}}
         </div>
     {% endif %}
     
-    {% if pageCMS['amenities-data'].amenities_list %}
+    {% if pageCMS['amenities-data'] and pageCMS['amenities-data'].amenities_list %}
         <section class="mt-12">
             {{ amenities(pageCMS['amenities-data'].amenities_list) }}
         </section>
         <div></div>
     {% endif %}
 
-    {% if pageCMS['amenities-bottom-description'].simple_article %}
+    {% if pageCMS['amenities-bottom-description'] and pageCMS['amenities-bottom-description'].simple_article %}
         <div class="mt-12 font-ivar text-lg-2 text-center">{{pageCMS['amenities-bottom-description'].simple_article.description | safe}}</div>
     {% endif %}
-    {% if pageCMS['amenities-bottom-description'].simple_article %}
+    {% if pageCMS['amenities-bottom-description'] and pageCMS['amenities-bottom-description'].simple_article %}
         <p class="mt-12 font-ivar text-center">{{pageCMS['amenities-bottom-description'].simple_article.title}}</p>
     {% endif %}
     
@@ -45,7 +43,7 @@ nickname: undance-suite
 
 {% macro features() %}
     <section class="accommodation__features mt-12">
-        {% if pageCMS['accommodation-features'].accommodation_features %}
+        {% if pageCMS['accommodation-features'] and pageCMS['accommodation-features'].accommodation_features %}
             {% for item in pageCMS['accommodation-features'].accommodation_features %}
                 {{ accommodationFeature2(item) }}
             {% endfor %}
@@ -57,9 +55,12 @@ nickname: undance-suite
     <section class="segment-inner">
         <section class="dining-details-container">
             <section>
+                {% if pageCMS['slider'] and pageCMS['slider'].global_image_arr and pageCMS['slider'].global_image_arr.images %}
+                    {% set sliderImages = pageCMS['slider'].global_image_arr.images %}
                 <article class="thumbnail-slider__images grid order-2">
                     {{multi_slider_thumbnail(sliderImages)}}
                 </article>
+                {% endif %}
                 <div class="top__accommodation-fetaures">
                     {{ features() }}
                 </div>
