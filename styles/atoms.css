@@ -690,6 +690,7 @@
     left: 1px;
     overflow: hidden;
     padding-top: 35px;
+    padding-left: 0px;
     position: absolute;
     transition: max-height 0.4s linear;
     top: 26px;
