@@ -32,7 +32,7 @@ nickname: canyon-view
 
 {% macro features() %}
     <section class="accommodation__features mt-12">
-        {% if if pageCMS['accommodation-features'] and pageCMS['accommodation-features'].accommodation_features %}
+        {% if pageCMS['accommodation-features'] and pageCMS['accommodation-features'].accommodation_features %}
             {% for item in pageCMS['accommodation-features'].accommodation_features %}
                 {{ accommodationFeature2(item) }}
             {% endfor %}

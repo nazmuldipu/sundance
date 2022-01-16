@@ -32,7 +32,7 @@ nickname: dining/meet-our-chefs
         {% endfor %}
     {% endif %}
 </section>
-{% if expr %}
+{% if pageCMS['chefs-card'] and pageCMS['chefs-card'].horizontal_card_list %}
     {% set horizontal_card_list = pageCMS['chefs-card'].horizontal_card_list %}
     <section class="group-section">
         {{ chefsCard(items = horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
