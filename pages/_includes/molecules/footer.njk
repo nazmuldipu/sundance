@@ -20,6 +20,9 @@
         {% endif %}
         <article class="footer__container">
             {% for sec in footer.sections %}
+                {% if header == true and sec.title == "Social" %}
+                    <section></section>
+                {% else %}
                 <section class="footer__col font-calibre" 
                 {% if header == true %}
                 style="margin-bottom: 1.5rem;"
@@ -37,6 +40,7 @@
                         {% endif %}
                     {% endfor %}
                 </section>
+                {% endif %}
             {% endfor %}
         </article>
         {% if header == true %}

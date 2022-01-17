@@ -2,7 +2,7 @@
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 30px;
-  padding-top: 0;
+  padding-top: 12px;
 }
 .menu__input--container {
   display: flex;
@@ -47,6 +47,9 @@
   line-height: 22px;
   margin-bottom: 6px;
   cursor: pointer;
+}
+.footer__col nav:last-child .footer__link {
+  margin: 0;
 }
 .footer__link svg{
   height: 25px;
