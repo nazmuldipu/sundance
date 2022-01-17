@@ -58,7 +58,7 @@
     {% endfor %}
 {% endmacro %}
 {% macro verticalCard(item, card_container = ['card-container', 'cursor-pointer'], figureClass = [], figcaptionClass = []) %}
-    <section {% if item.link %} onclick="location.href='{{item.link}}';" {% endif %} class="relative {% if item.criterias %} pb-10 {% elif item.actions %} pb-10 {% endif %} {% for class in card_container %} {{ class }} {% endfor %}">
+    <section {% if item.link %} onclick="location.href='{{item.link}}';" {% endif %} class="relative {% if item.criterias %} pb-16 {% elif item.actions %} pb-16 {% endif %} {% for class in card_container %} {{ class }} {% endfor %}">
             
         <figure class="card-image {% for class in figureClass %} {{ class }} {% endfor %}" 
             {% if id %} id="{{ id }}" {% endif %}
@@ -121,7 +121,7 @@
     #   @author Sarjis
 #}
 {% macro singleCard(classes = ['card-container'], id = '', item, figureClass = '', figcaptionClass = '', data ={}) %}
-    <section  {% if item.link %} onclick="location.href='{{item.link}}';" {% endif %} {% if data %} data-card="{{data | stringify}}" {% endif %} class="relative {% if item.criterias %} pb-10 {% elif item.actions %} pb-10 {% endif %} 
+    <section  {% if item.link %} onclick="location.href='{{item.link}}';" {% endif %} {% if data %} data-card="{{data | stringify}}" {% endif %} class="relative {% if item.criterias %} pb-16 {% elif item.actions %} pb-16 {% endif %} 
     {% for class in classes %} {{ class }} {% endfor %}">
         <figure class="card-image {{ figureClass }}" 
             {% if id %} id="{{ id }}" {% endif %} 
@@ -141,7 +141,7 @@
                 </a>
             {% endif %}
 
-            <div class="font-ivar text-sm l-s-l-h text--color__sn-6 mb-8">
+            <div class="font-ivar text-sm l-s-l-h text--color__sn-6 mb-4">
                 {{ item.description | safe }}
             </div>
             
