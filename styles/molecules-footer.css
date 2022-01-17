@@ -83,12 +83,20 @@ footer {
   .footer__copy__image,
   .footer__copy__image img {
     width: 100%;
+    justify-content: center;
   }
   .footer__s_dot {
     margin-top: -274px;
     width: 207px;
     height: 225px;
     /* margin-bottom: 19px; */
+  }
+}
+
+/* Tab (Screen size : 1024 */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .footer__copy__image .footer_image {
+    height: 45px;
   }
 }
 
