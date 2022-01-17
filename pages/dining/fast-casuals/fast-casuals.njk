@@ -15,11 +15,6 @@ nickname: "dining/fast-casuals"
 {% from 'macros.njk' import top_banner %}
 {% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
 
-{% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
-{% set horizontal_card_list = pageCMS['horizontal-card-list'].horizontal_card_list %}
-{% set chefs_card_horizontal_card_list = pageCMS['chefs-card'].horizontal_card_list %}
-{% set horizontal_card_title = pageCMS['horizontal-card-title'].simple_article.title %}
-
 {% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image and pageCMS['hero-corner-block'].hero_corner_block %}
 {% set hero_corner_block = pageCMS['hero-corner-block'].hero_corner_block %}
 <section class="segment-outer">
@@ -30,11 +25,24 @@ nickname: "dining/fast-casuals"
 {% endif %}
 <section class="segment-outer bg-sn-4 px-4 dining-fast-casuals__horizontal-cards">
     <section class="segment-inner sm:px-6 md:px-6 lg:px-6 pb-8">
-        {{ h2(classes=['heading', 'text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center'], copy = horizontal_card_title) }}
-        {{ horrizontalCard(items = horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
-        {{ horrizontalCard2(items = chefs_card_horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
+        {% if pageCMS['horizontal-card-title'] and pageCMS['horizontal-card-title'].simple_article and pageCMS['horizontal-card-title'].simple_article.title %}
+            {% set horizontal_card_title = pageCMS['horizontal-card-title'].simple_article.title %}
+            {{ h2(classes=['heading', 'text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center'], copy = horizontal_card_title) }}
+        {% endif %}
+
+        {% if pageCMS['horizontal-card-list'] and pageCMS['horizontal-card-list'].horizontal_card_list %}
+            {% set horizontal_card_list = pageCMS['horizontal-card-list'].horizontal_card_list %}
+            {{ horrizontalCard(items = horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
+        {% endif %}
+
+        {% if pageCMS['chefs-card'] and pageCMS['chefs-card'].horizontal_card_list %}
+            {% set chefs_card_horizontal_card_list = pageCMS['chefs-card'].horizontal_card_list %}
+            {{ horrizontalCard2(items = chefs_card_horizontal_card_list, horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
+        {% endif %}
     </section>
 </section>
+{% if pageCMS['vertical-cards'] and pageCMS['vertical-cards'].vertical_card_list %}
+    {% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
 <section class="segment-outer bg-sn-4 pb-4">
     <section class="segment-inner sm:px-6 md:px-6 lg:px-6 pb-8">
         <section class="flex-card-container">
@@ -44,4 +52,5 @@ nickname: "dining/fast-casuals"
         </section>
     </section>
 </section>
+{% endif %}
 {{newsletter()}}
