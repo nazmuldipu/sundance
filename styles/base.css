@@ -487,6 +487,10 @@ strong {
     letter-spacing: 0.04rem;
     line-height: 19.6px;
 }
+.l-s-l-h2 {
+    letter-spacing: 0.04rem;
+    line-height: 26.6px;
+}
 .ls {
     letter-spacing: 0.04rem;
 }
@@ -1202,6 +1206,13 @@ strong {
 a[href^="tel"] {
     text-decoration: none;
     color: var(--sundance__primary1);
+}
+.group-venues__nav a[href^="tel"] {
+    text-decoration: underline;
+}
+.modal-list-item ol, ul {
+    list-style: inherit;
+    padding-left: 40px;
 }
 .flex-card-container {
     display: flex;
