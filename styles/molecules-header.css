@@ -367,29 +367,4 @@
     }
 }
 
-.form-input:focus {
-  outline: none;
-}
-
-.mega-menu {
-    display: none;
-}
-.nav-more-menus {
-    display: block;
-}
-@media screen and (min-width: 1366px) {
-    .mega-menu {
-        display: block;
-    }
-    .nav-more-menus {
-        display: none;
-    }
-}
-.mega-menu__items {
-    left: -482% !important;
-    top: 98% !important;
-    padding:0 !important; 
-    min-width:991px !important;
-}
-
 /****  end header molecules  ********************************/
