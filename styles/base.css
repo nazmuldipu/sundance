@@ -612,6 +612,10 @@ strong {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
 }
+.px-8 {
+    padding-left: 32px;
+    padding-right: 32px;
+}
 .p-4 {
     padding: 1rem;
 }
