@@ -21,7 +21,7 @@
 }
 .dining-details__descriptions {
     font-size: 14px;
-    padding-bottom: 16px;
+    /* padding-bottom: 16px; */
 }
 .details__middle-article {
     max-width: 792px;
@@ -37,8 +37,8 @@
     padding: 0 1rem;
 }
 .details__notice {
-    max-width: 680px;
-    padding: 0 1rem;
+    /* max-width: 680px; */
+    padding: 1rem;
     margin: 1rem 1rem;
 }
 
@@ -64,7 +64,7 @@
     }
     .dining-details__descriptions {
         font-size: 19px;
-        padding-bottom: 16px;
+        /* padding-bottom: 16px; */
     }
     .details__notice {
         padding: 64px 200px;
