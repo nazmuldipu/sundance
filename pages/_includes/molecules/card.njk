@@ -33,7 +33,13 @@
                 {% endif %}"
                 {% if id %} id="{{ id }}" {% endif %}
             >
-                {{ h2(copy = item.title, classes=['heading', 'heading--2', 'font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                {% if item.actions.length === 1 %}
+                    <a href="{{(item.actions | first).href}}" class="no-underline cursor-pointer "> 
+                        {{ h2(copy = item.title, classes=['heading', 'heading--2', 'font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                    </a> 
+                {% else %}
+                    {{ h2(copy = item.title, classes=['heading', 'heading--2', 'font-calibre', 'font-medium', 'text--color__sn-6']) }}
+                {% endif %}           
                 <div class="cms-description font-ivar text-lg-2 text--color__sn-6 mb-8">
                     {{ item.description | safe }}
                 </div>

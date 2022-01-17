@@ -23,23 +23,19 @@ ihh1 %}
 {% from 'molecules/bridge-2.njk' import secondBridge %}
 {% from 'macros.njk' import top_banner_center_text_group_venues %}
 
-{% set generalStore_group_venues = pageCMS['group-venues'].group_venues  %}
-{% set globalImage = pageCMS['top-banner'].banner.global_image %}
-
-{% set top_action_cards = pageCMS['top-action-card'].action_card %}
-{% set middle_action_cards = pageCMS['middle-action-card'].action_card %}
-{% set bottom_action_cards = pageCMS['bottom-action-card'].action_card %}
-
-{% set card_title = pageCMS['card-title'].simple_article %}
-{% set horizontal_card_list= pageCMS['card-list'].horizontal_card_list %}
-
-{# Hero Image Section #}
-{{ top_banner_center_text_group_venues(
-    image = globalImage.global_image,
-    title = pageCMS['banner-content'].simple_article.title,
-    events = generalStore_group_venues, announcementObject = (pageCMS['announcement'].announcement if pageCMS['announcement'] else {})
-    )
-}}
+{% if pageCMS['group-venues'] and pageCMS['group-venues'].group_venues and pageCMS['banner-content'] and pageCMS['banner-content'].simple_article and pageCMS['banner-content'].simple_article.title %}
+    {% set generalStore_group_venues = pageCMS['group-venues'].group_venues  %}
+    {% if pageCMS['top-banner'] and pageCMS['top-banner'].banner and pageCMS['top-banner'].banner.global_image %}
+    {% set globalImage = pageCMS['top-banner'].banner.global_image %}
+    {# Hero Image Section #}
+        {{ top_banner_center_text_group_venues(
+            image = globalImage.global_image,
+            title = pageCMS['banner-content'].simple_article.title,
+            events = generalStore_group_venues, announcementObject = (pageCMS['announcement'].announcement if pageCMS['announcement'] else {})
+            )
+        }}
+    {% endif %}
+{% endif %}
 
 <section class="segment-outer font-ivar">
     <section class="segment-inner">
@@ -48,6 +44,8 @@ ihh1 %}
                 {{pageCMS['top-action-card-content'].simple_article.title}}
             </div>
             <div>
+                {% if pageCMS['top-action-card'] and pageCMS['top-action-card'].action_card %}
+                    {% set top_action_cards = pageCMS['top-action-card'].action_card %}
                 <div class="bridge-wrapper">
                     {% for item in top_action_cards %}
                         <article class="single-action-card">
@@ -62,6 +60,7 @@ ihh1 %}
                         </article>
                     {% endfor %}
                 </div>
+                {% endif %}
                 <div class="mt-4">
                     {{pageCMS['top-action-card-content'].simple_article.description | safe}}
                 </div>
@@ -70,6 +69,9 @@ ihh1 %}
     </section>
 </section>
 
+{% if pageCMS['middle-action-card'] and pageCMS['middle-action-card'].action_card %}
+    {% set middle_action_cards = pageCMS['middle-action-card'].action_card %}
+
 <section class="segment-outer">
     <section class="segment-inner border-t-1 action-card middle-action-card global-pb global-mx">
         {% for item in middle_action_cards %}
@@ -77,14 +79,21 @@ ihh1 %}
         {% endfor %}
     </section>
 </section>
+{% endif %}
 {% if pageCMS['accessories-image'] and pageCMS['accessories-image'].global_image %}
 <section class="segment-outer">
     <section class="segment-inner global-px">
-        <div class="global-pb text-center">{{ global_header(copy = card_title.title) }}</div>
+        {% if pageCMS['card-title'] and pageCMS['card-title'].simple_article %}
+            {% set card = pageCMS['card-title'].simple_article %}
+            <div class="global-pb text-center">{{ global_header(copy = card.title) }}</div>
+        {% endif %}
         <figure class="global-pb">{{ global_image(pageCMS['accessories-image'].global_image, classes='w-full image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1')}}</figure>
     </section>
 </section>
 {% endif %}
+
+{% if pageCMS['bottom-action-card'] and pageCMS['bottom-action-card'].action_card %}
+{% set bottom_action_cards = pageCMS['bottom-action-card'].action_card %}
 <section class="segment-outer">
     <section class="segment-inner global-pb global-px">
         {% for item in bottom_action_cards %}
@@ -101,10 +110,14 @@ ihh1 %}
         {% endfor %}
     </section>
 </section>
+{% endif %}
+{% if pageCMS['card-list'] and pageCMS['card-list'].horizontal_card_list %}
+    {% set horizontal_card_list= pageCMS['card-list'].horizontal_card_list %}
 {# Horrizontal Card Section #}
 <section class="segment-outer">
     <section class="segment-inner global-pb global-px">
         {{ horrizontalCard(items=horizontal_card_list,  horizontal_card_container = ['horizontal__card-container', 'mb-8']) }}
     </section>
 </section>
+{% endif %}
 {{newsletter()}}

@@ -10,19 +10,23 @@ nickname: dining/restaurants/room-delivery
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
 
-{% set groupData = pageCMS['top-group-venues'].group_venues %}
-
 <section class="group-section top-section">
+    {% if pageCMS['top-banner'].global_image and pageCMS['top-banner'].global_image %}
     <section class="segment-outer relative -z-1">
         <figure>
             {{global_image(pageCMS['top-banner'].global_image, classes='image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         </figure>
     </section>
+    {% endif %}
+
+    {% if pageCMS['top-group-venues'] and pageCMS['top-group-venues'].group_venues %}
+    {% set groupData = pageCMS['top-group-venues'].group_venues %}
     {% for event in groupData %}
         <section class="group-container">
             {{ groupVenues(event) }}
         </section>
     {% endfor %}
+    {% endif %}
 </section>
 
 {{newsletter()}}
