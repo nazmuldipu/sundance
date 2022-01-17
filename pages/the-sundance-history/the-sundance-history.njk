@@ -42,7 +42,7 @@ nickname: "the-sundance-history"
 {# Page content #}
 {% if pageCMS['page-content'].simple_article %}
     <section class="group-section text-lg">
-        <section class="segment-inner__text-container px-6 pb-10">
+        <section class="segment-inner__text-container px-6 pb-10 font-ivar l-s-l-h2 text-lg-2">
             {{ h3( copy=pageCMS['page-content'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'text-center', 'font-semibold', 'pb-6'] ) }}
             {{pageCMS['page-content'].simple_article.description | safe}}
         </section>
@@ -57,7 +57,7 @@ nickname: "the-sundance-history"
                 {{global_image(img.global_image, classes='-z-1 image_frame')}}
             {% endfor %}
         </section>
-        <div class="text-center">{{pageCMS['archive-images'].global_image_arr.description}}</div>
+        <div class="text-center font-ivar l-s-l-h2 text-lg-2">{{pageCMS['archive-images'].global_image_arr.description}}</div>
     </section>
 {% endif %}
 
@@ -74,7 +74,7 @@ nickname: "the-sundance-history"
                 {% set profileObj = (pageCMS['profile'].art_instructor | first) %}
                 {{ global_image(profileObj.image.global_image, classes='icon-image icon__image-about') }}
             </figure>
-            <div class="art__instructor">
+            <div class="art__instructor font-ivar l-s-l-h2 text-lg-2">
                 {{profileObj.description | safe}}
             </div>    
             {{ h3( copy=profileObj.title, classes=['text-lg-2', 'font-ivar', 'text-center', 'font-semibold', 'py-6'] ) }}
@@ -85,7 +85,7 @@ nickname: "the-sundance-history"
 {#  Vision and mission #}
 {% if pageCMS['vision-mission'] %}
     <section class="group-section text-lg pb-10">
-        <section class="segment-inner grid grid-cols-2 text-center sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 sm:pb-10 pb-6 border-t-1 border-b-1">
+        <section class="segment-inner grid grid-cols-2 text-center sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6 sm:pb-10 pb-6 border-t-1 border-b-1 font-ivar l-s-l-h2 text-lg-2">
             {% for item in pageCMS['vision-mission'].simple_article_list %}
                 <article>
                     {{ h3( copy=item.simple_article.title, classes=['text-4xl', 'sm:text-3_axl', 'font-calibre', 'font-medium', 'pt-10', 'pb-6'] ) }}
@@ -133,7 +133,7 @@ nickname: "the-sundance-history"
 
 {# family content #}
 {% if pageCMS['family-content'] %}
-    <section class="group-section text-lg py-10">
+    <section class="group-section text-lg py-10 font-ivar l-s-l-h2 text-lg-2">
         <section class="segment-inner grid grid-cols-2 sm:grid-cols-1 gap-x-8 sm:gap-x-4 sm:mx-6">
             {{ h3( copy=pageCMS['family-content'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'sm:text-center', 'pb-6'] ) }}
             <article>
@@ -172,7 +172,7 @@ nickname: "the-sundance-history"
 
 {# Recent Press #}
 {% if pageCMS['recent-press'].simple_article %}
-    <section class="segment-outer text-lg pb-10">
+    <section class="segment-outer text-lg pb-10 font-ivar l-s-l-h2 text-lg-2">
         <section class="segment-inner">
             {{ h3( copy = pageCMS['recent-press'].simple_article.title, classes=['text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center', 'pb-10'] ) }}
             <article class="segment-inner__text-container recent__press">

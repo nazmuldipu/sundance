@@ -107,7 +107,7 @@ nickname: dining/restaurants/tree-room
             {{ h2(classes=['heading', 'text-4.5xl', 'sm:text-6', 'font-ivar', 'font-semibold', 'text-center'], copy = card_list_title) }}
             <section class="flex-card-container">
                 {% for item in vertical_card_list %}
-                    {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'flex__single-card']) }}
+                    {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'flex__single-card', 'mb-8']) }}
                 {% endfor %}
             </section>
         </article>

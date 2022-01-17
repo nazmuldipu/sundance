@@ -33,9 +33,6 @@
 .bridge {
     padding-bottom: 36px;
 }
-.dining-details__venues {
-    padding: 0 1rem;
-}
 .details__quote {
     max-width: 680px;;
     padding: 40px 26px;
@@ -74,11 +71,6 @@
 .slider-container {
     margin-top: 2.5rem;
 }
-.group-venues .group-venues__title,
-.group-venues .group-venues__breadcrumbs,
-.group-venues .group-venues__description {
-    display: none;
-}
 .group-venues {
     display: block;
 }
@@ -90,6 +82,11 @@
 }
 .hidden-in-mobile-view-in-desktop {
     display: none;
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .group-venues__title {
+        padding-left: 0px;
+    }    
 }
 @media screen and (min-width: 768px){
     .group-venues__actions {
@@ -133,11 +130,6 @@
     }
     .slider-container {
         margin-top: 4rem;
-    }
-    .group-venues .group-venues__title,
-    .group-venues .group-venues__breadcrumbs,
-    .group-venues .group-venues__description {
-        display: block;
     }
     .group-venues__actions {
         flex-direction: column;
