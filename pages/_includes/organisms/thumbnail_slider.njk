@@ -24,7 +24,7 @@
                 {{ h1( copy=obj.title ,  classes=['thumbnail-slider__mobile__title', 'font-ivar', 'font-semibold']) }}
             </section>
             <section class="thumbnail-slider__slides">
-                <media-carousel>
+                <media-carousel data-type="thumbnailSlider">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
                             {% for item in obj.images %}
@@ -32,7 +32,7 @@
                                     <div class="thumbnail-slider__slides__box" data-frameName="thumbnail-slider__{{obj.slug}}">
                                         {{ global_image(item.image.global_image, classes='image_frame sm:1:1 lg:1:1 2xl:1:1 4xl:1:1') }}
                                     </div>
-                                    <header class="font-calibre">{{item.title}}</header>
+                                    <a class="no-underline text--color__sn-6" {% if item.link %} href="{{item.link}}" {% endif %}><header class="font-calibre">{{item.title}}</header></a>
                                     <summary class="font-calibre">{{item.sub_title}}</summary>
                                 </div>
                             {% endfor %}

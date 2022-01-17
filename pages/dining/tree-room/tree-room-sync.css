@@ -1,11 +1,11 @@
 /****  start imports  ********************************/
 @import "../../../styles/global.css";
 /****  end imports  ********************************/
-.dining-details-container {
-    display: block;
-}
 .dining-details__figure {
     margin-bottom: 48px;
+}
+.dining-details-container {
+    display: block;
 }
 .dining-details__top-banner--header {
     font-size: 24px;
@@ -33,12 +33,9 @@
 .bridge {
     padding-bottom: 36px;
 }
-.dining-details__venues {
-    padding: 0 1rem;
-}
 .details__quote {
     max-width: 680px;;
-    padding: 0 1rem;
+    padding: 40px 26px;
     margin: 1rem auto;
 }
 
@@ -57,14 +54,47 @@
 .group-venues__description:nth-child(4) {
     color: var(--sundance__primary1);
 }
-.group-venues__links {
-    margin-left: 0;
+.group-venues__links, 
+.group-venues__dropdown {
+    margin: 0;
 }
-.group-venues__nav {
-    margin-left: 0;
+.group-venues__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+.group-venues__actions .group-venues__dropdown {
+    margin: 0;
+    width: 100%;
 }
 .slider-container {
     margin-top: 2.5rem;
+}
+.group-venues {
+    display: block;
+}
+.group-venues__dropdown-btn {
+    display: block;
+}
+.hidden-in-desktop-view-in-mobile {
+    display: block;
+}
+.hidden-in-mobile-view-in-desktop {
+    display: none;
+}
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .group-venues__title {
+        padding-left: 0px;
+    }    
+}
+@media screen and (min-width: 768px){
+    .group-venues__actions {
+        flex-direction: row;
+    }
+    .group-venues__links {
+        width: 50%;
+    }
 }
 @media screen and (min-width: 1024px){
     .dining-details-container {
@@ -100,5 +130,20 @@
     }
     .slider-container {
         margin-top: 4rem;
+    }
+    .group-venues__actions {
+        flex-direction: column;
+    }
+    .hidden-in-desktop-view-in-mobile {
+        display: none;
+    }
+    .hidden-in-mobile-view-in-desktop {
+        display: block;
+    }
+    .top-banner__figure {
+        margin-bottom: 48px;
+    }
+    .group-venues__links {
+        width: auto;
     }
 }

@@ -16,7 +16,7 @@ nickname: dining/catering
 {# Hero Image Section #}
 {% if pageCMS['top-group-venues'] and pageCMS['top-group-venues'].group_venues %}
     {{ top_banner_group_venues(image = pageCMS['top-banner'].global_image, 
-        venuesData = pageCMS['top-group-venues'].group_venues) 
+        venuesData = pageCMS['top-group-venues'].group_venues, announcementObject = (pageCMS['announcement'].announcement if pageCMS['announcement'] else {})) 
     }}
 {% endif %}
 

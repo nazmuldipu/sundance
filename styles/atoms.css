@@ -596,6 +596,7 @@
 .dropdown-container {
     display: inline-block;
     position: relative;
+    z-index: 30;
 }
 .dropdown-button {
     padding-left: 45px;
@@ -689,6 +690,7 @@
     left: 1px;
     overflow: hidden;
     padding-top: 35px;
+    padding-left: 0px;
     position: absolute;
     transition: max-height 0.4s linear;
     top: 26px;

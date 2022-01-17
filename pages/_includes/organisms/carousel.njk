@@ -6,9 +6,7 @@
             <div class="swiper-wrapper gap-x-4">
                 {% for item in cards %}
                     <div class="swiper-slide slider-card--max-width">
-                        <a href="{{item.vertical_card.link}}" class="no-underline">
-                            {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
-                        </a>
+                        {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'mb-8']) }}
                     </div>
                 {% endfor %}
             </div>

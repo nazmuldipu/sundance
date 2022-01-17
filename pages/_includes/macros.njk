@@ -130,7 +130,7 @@ Link %}
       {# </media-carousel> #}
 
       {% for action in events.actions %}
-        {{ Link( href=action.action.url, copy=action.action.copy, target='_self', classes=['button', 'button--' + action.action.type, 'font-calibre', 'sundance-events__links', 'my-10'] ) }}
+        {{ Link( href=action.action.url, copy=action.action.copy, target='_self', classes=['button', 'button--' + action.action.type, 'font-calibre', 'sundance-events__links-btn', 'my-10'] ) }}
       {% endfor %}
     </section>
   </section>
@@ -155,7 +155,7 @@ Link %}
     </section>
 {% endmacro %}
 
-{% macro top_banner_group_venues(image, venuesData = []) %}
+{% macro top_banner_group_venues(image, venuesData = [], announcementObject = {}) %}
   <section class="group-section">
     <section class="segment-outer relative -z-1">
         <figure>
@@ -164,13 +164,13 @@ Link %}
     </section> 
     {% for event in venuesData %}
         <div class="group-container">
-            {{groupVenues(event)}}
+            {{groupVenues(event, announcementObject = announcementObject)}}
         <div>
     {% endfor %}
 </section>
 {% endmacro %}
 
-{% macro top_banner_center_text_group_venues(image, title, events) %}
+{% macro top_banner_center_text_group_venues(image, title, events, announcementObject = {}) %}
   <section class="segment-outer relative">
         <figure class="group-section banner__segment-inner">
             {{global_image(image, classes='w-full image_frame sm:41:56 lg:27:10')}}
@@ -181,7 +181,7 @@ Link %}
     </section>
     <div class="group-container general-store__group-container">
         {% for event in events %}
-            {{groupVenues(event)}}
+            {{groupVenues(event, announcementObject = announcementObject)}}
         {% endfor %}
     </div>
 {% endmacro %}

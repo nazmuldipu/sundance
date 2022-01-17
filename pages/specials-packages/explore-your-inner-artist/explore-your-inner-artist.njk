@@ -8,9 +8,7 @@ nickname: "specials-packages/explore-your-inner-artist"
 {% from 'molecules/footer.njk' import footer %}
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'organisms/global-image.njk' import global_image %}
-{% from 'molecules/group-venues.njk' import groupVenues3 %}
-
-{% set groupVenue = pageCMS['group-venues'].group_venues %}
+{% from 'molecules/group-venues.njk' import groupVenues %}
 
 <section class="group-section">
     <section class="segment-outer relative -z-1">
@@ -20,11 +18,11 @@ nickname: "specials-packages/explore-your-inner-artist"
         {% endif %}
         </figure>
     </section>
-    {% if pageCMS['top-group-venues'] %}
+    {% if pageCMS['top-group-venues'] and pageCMS['top-group-venues'].group_venues %}
         {% set groupData = pageCMS['top-group-venues'].group_venues %}
         {% for event in groupData %}
             <section class="group-container">
-                {{ groupVenues3(event) }}
+                {{ groupVenues(event) }}
             </section>
         {% endfor %}
     {% endif %}

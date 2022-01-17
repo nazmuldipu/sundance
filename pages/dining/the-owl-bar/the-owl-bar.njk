@@ -92,7 +92,7 @@ nickname: dining/the-owl-bar/owl-bar
                 {% set vertical_card_list = pageCMS['vertical-card-list'].vertical_card_list %}
                 <section class="flex-card-container">
                     {% for item in vertical_card_list %}
-                        {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'flex__single-card']) }}
+                        {{ verticalCard(item = item.vertical_card, card_container = ['card-container', 'flex__single-card', 'mb-8']) }}
                     {% endfor %}
                 </section>
             {% endif %}

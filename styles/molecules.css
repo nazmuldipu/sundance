@@ -15,3 +15,10 @@
 @import "./molecules-art_studio.css";
 @import "./molecules-header.css";
 @import url('./molecules-card-widget.css');
+
+
+.page_announcement ul {
+    -webkit-padding-start: 40px;
+    padding-inline-start: 40px;
+    list-style-type: disc;
+}

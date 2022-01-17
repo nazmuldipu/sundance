@@ -124,7 +124,12 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
+th{
+    font-weight: 600;
+}
+em{
+    font-style: italic;
+}
 /* fonts */
 @font-face {
     font-display: swap;
@@ -178,6 +183,14 @@ table {
     font-display: swap;
     font-family: "Horizon";
     src: url("/fonts/Horizon-Regular.otf");
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+000-5FF;
+}
+@font-face {
+    font-display: swap;
+    font-family: "Cutive Mono";
+    src: url("/fonts/Cutive-Mono-Regular.woff2");
     font-weight: 400;
     font-style: normal;
     unicode-range: U+000-5FF;
@@ -433,6 +446,9 @@ strong {
 .font-horizon {
     font-family: "Horizon", Arial, sans-serif;
 }
+.font-cutive-mono {
+    font-family: 'Cutive Mono', Courier, monospace;
+}
 /* text alignments */
 .text-left {
     text-align: left !important;
@@ -470,6 +486,13 @@ strong {
 .l-s-l-h {
     letter-spacing: 0.04rem;
     line-height: 19.6px;
+}
+.l-s-l-h2 {
+    letter-spacing: 0.04rem;
+    line-height: 26.6px;
+}
+.ls {
+    letter-spacing: 0.04rem;
 }
 
 /* font size */
@@ -616,6 +639,9 @@ strong {
 }
 .pb-6 {
     padding-bottom: 1.5rem;
+}
+.pt-6{
+    padding-top: 1.5rem;
 }
 .pl-7 {
     padding-left: 1.75rem;
@@ -995,6 +1021,9 @@ strong {
     .sm\:order-3 {
         order: 3;
     }
+    .sm\:w-full {
+        width: 100%;
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .md\:grid-cols-2 {
@@ -1178,6 +1207,16 @@ a[href^="tel"] {
     text-decoration: none;
     color: var(--sundance__primary1);
 }
+.group-venues__nav a[href^="tel"] {
+    text-decoration: underline;
+}
+.modal-list-item ol, ul {
+    list-style: inherit;
+    padding-left: 40px;
+}
+.modal-list-item a {
+    text-decoration: none;
+}
 .flex-card-container {
     display: flex;
     flex-wrap: wrap;
@@ -1253,4 +1292,18 @@ a[href^="tel"] {
         width: calc(50% - 1em);
     }
 }
+.desktop-blue-text-and-mobile-white-text-bg-yellow {
+    color: white;
+    background-color: #E2CBA5;
+    display: block;
+    padding: 26px 40px;
+}
+@media screen and (min-width: 1024px) {
+    .desktop-blue-text-and-mobile-white-text-bg-yellow {
+        color: var(--sundance__primary1);
+        background-color: var(--sundance__neutral5);
+        padding: 0;
+    }
+}
+
 /****  end base styles  ********************************/

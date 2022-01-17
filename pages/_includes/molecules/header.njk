@@ -105,7 +105,7 @@ iconCSS %}
                 {% for sec in range(0, length)%}
                     {% if loop.index <= 4 %}
                         <li>
-                            <a href="#" class="font-ivar">{{menuItems.sections[sec].title}}</a>
+                            <a href="{{menuItems.sections[sec].url if menuItems.sections[sec].url.length > 2 else '#'}}" class="font-ivar">{{menuItems.sections[sec].title}}</a>
                             <ul class="dropdown">
                                 {% for item in menuItems
                                     .sections[sec]

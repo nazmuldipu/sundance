@@ -21,7 +21,8 @@ permalinkBypassOutputDir: true
     {{ top_banner_center_text_group_venues(
         image = globalImage.global_image,
         title = globalImageText,
-        events = generalStore_group_venues
+        events = generalStore_group_venues,
+        announcementObject = (pageCMS['announcement'].announcement if pageCMS['announcement'] else {})
         )
     }}
 {% endif %}

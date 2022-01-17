@@ -11,7 +11,6 @@ nickname: "lodging"
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/card.njk' import singleCard %}
 
-{% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
 <section class="segment-outer segment-outer__margin">
     <section class="segment-inner text-center">
         {{ lodging_form(item = lodgingForm, page = page) }}
@@ -26,16 +25,22 @@ nickname: "lodging"
 
 <section class="segment-outer bg-sn-4 pb-4">
     <section class="segment-inner sm:px-6">
-        <section class="flex-card-container">
-            {% for item in cardAllData %}
-                <a data-card="{{item.vertical_card | stringify}}" href="{{item.vertical_card.customlink}}" class="no-underline card-container flex__single-card mb-8">
-                    {{ singleCard(item = item.vertical_card, classes = ['text-left']) }}
-                </a>    
-            {% endfor %}
-        </section>
-        <div class="font-ivar text-sm card-footer-caption text-center">
-            {{ pageCMS['card-footer-caption'].simple_article.description | safe }}
-        </div>
+        {% if pageCMS['vertical-cards'] and pageCMS['vertical-cards'].vertical_card_list %}
+           {% set cardAllData = pageCMS['vertical-cards'].vertical_card_list %}
+            <section class="flex-card-container">
+                {% for item in cardAllData %}        
+                    <span data-card="{{item.vertical_card | stringify}}" class="card-container flex__single-card mb-8">
+                        {{ singleCard(item = item.vertical_card, classes = ['text-left']) }}
+                    </span> 
+                {% endfor %}
+            </section> 
+        {% endif %}
+        
+        {% if pageCMS['card-footer-caption'] and pageCMS['card-footer-caption'].simple_article.description%}
+            <div class="font-ivar text-sm card-footer-caption text-center">
+                {{ pageCMS['card-footer-caption'].simple_article.description | safe }}
+            </div>
+        {% endif %}
     </section>
 </section>
 {{newsletter()}}

@@ -51,7 +51,21 @@
     height: 70%;
     position: relative;
 }
-
+.collapse .img-gradient{
+    position:relative;
+    display:inline-block;
+}
+.collapse .img-gradient:after {
+    content:'';
+    position:absolute;
+    left:0; 
+    top:0;
+    width:100%; 
+    height:100%;
+    display:inline-block;
+    background: #262624; /* W3C */    
+    opacity: 0.35;
+}
 .hero-flip__item.collapse {
     flex-grow: 5;
     height: 100%;
@@ -158,8 +172,15 @@
         opacity: 1;
     }
 }
-/* Desktop screen (Screen size : > 767 pts) */
+/* Tablet screen (Screen size : > 767 pts) */
 @media screen and (min-width: 768px) {
+    .hero-flip__frame {
+        --fw: 8;
+        --fh: 9;
+    }
+}
+/* Desktop screen (Screen size : > 767 pts) */
+@media screen and (min-width: 1366px) {
     .hero-flip__frame {
         --fw: 16;
         --fh: 7;
@@ -214,7 +235,7 @@
 /* Desktop screen (Screen size : > 767 pts) */
 @media screen and (min-width: 768px) {
     .thumbnail-slider__header {
-        padding-top: 72px;
+        padding-top: 85px;
         padding-bottom: 32px;
         font-size: 60px;
         line-height: 72px;
@@ -224,6 +245,13 @@
 }
 
 /* -------------------------- Events Styles ------------------------------ */
+.sundance-events__links-btn{
+    width: 224px;
+    font-size: 16px;
+    line-height: 140%;
+    padding: 20px 0 12px ;
+    border: none;
+}
 .sundance-events {
     padding: 20px;
     padding-top: 67px;

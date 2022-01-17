@@ -1,11 +1,14 @@
 {% from "atoms/headings.njk" import h2 %}
-{% from "atoms/a.njk" import a, Link, dropdown %}
+{% from "atoms/a.njk" import a,
+Link,
+dropdown %}
+{% from "molecules/announcement.njk" import announcement %}
 {#
     #   @desc   group venues form
     #   @author Nazmul Alam, Sarjis
 #}
 
-{% macro groupVenues(object)%}
+{% macro groupVenues(object, announcementObject = {})%}
     <section class="group-venues">
         <article class="group-venues__container">
             <section class="group-venues__breadcrumbs font-calibre">
@@ -16,19 +19,21 @@
             </section>
             {{ h2( copy=object.title, classes=['group-venues__title','font-ivar'] ) }}
 
+            {{announcement(obj=announcementObject)}}
+
             {# TODO, *object.rich_description* it needs to re-think here for proper naming with Meherab, by Sarjis 11th Nov 2021 #}
             {% if object.rich_description | length > 0 %}
                 {% for item in object.rich_description %}
                     <div class="group-venues__description font-ivar">
                         {{ item.text | safe }}
                     </div>
-                {% endfor %} 
+                {% endfor %}
             {% endif %}
-            
+
             {% if object.descriptions %}
                 {% for des in object.descriptions %}
                     {% if not des == "" %}
-                    <p class="group-venues__description font-ivar">{{des}}</p>
+                        <p class="group-venues__description font-ivar">{{des}}</p>
                     {% endif %}
                 {% endfor %}
             {% endif %}
@@ -40,19 +45,57 @@
                     {% elif action.category == 'link' %}
                         {{ Link( href=action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}
                     {% elif action.category == 'tel' %}
-                        {{ Link( href="tel:"+action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}    
+                        {{ Link( href="tel:"+action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}
                     {% elif action.category == 'document' %}
-                        {{ Link( href= (action.document | theImgSrc), copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}    
+                        {{ Link( href= (action.document | theImgSrc), copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}
                     {% endif %}
                 {% endfor %}
             </section>
 
-            {% for nav in object.navs %} 
+            {% for nav in object.navs %}
                 {% if not nav.copy == "" %}
                     <div class="group-venues__nav">
                         <label class="font-ivar">{{nav.label}}</label>
-                        {% set ahref = (nav.document | theImgSrc) if nav.document.length > 2 else nav.url%}
-                        {{ a( copy=nav.copy, href=ahref, target=nav.target) }}
+                        {% if nav.url !== 'modal' %}
+                            {% set ahref = (nav.document | theImgSrc) if nav.document.length > 2 else nav.url%}
+                            {{ a( copy=nav.copy, href=ahref, target=nav.target) }}
+                        {% else %}
+                            <global-modal data-identifier="venues-{{nav.copy}}">
+                                {% if nav.modal.modal %}
+                                    <div class="text-left font-ivar">
+                                        {% if nav.modal.modal.description.length > 0 %}
+                                            {% for item in nav.modal.modal.description %}
+                                                <div class="pb-10">
+                                                    <div class="group-venues__modal-title font-ivar pb-4">
+                                                        {{ item.title | safe }}
+                                                    </div>
+                                                    <div class="modal-list-item">
+                                                        {{ item.texts | safe }}
+                                                    </div>    
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+
+                                        {% if nav.modal.modal.table_container.length > 0 %}
+                                            {% for item in nav.modal.modal.table_container %}
+                                                <div class="pb-10">
+                                                    <div class="group-venues__modal-title font-ivar pb-4">
+                                                        {{ item.title | safe }}
+                                                    </div>
+                                                    <div class="modal-table">
+                                                        {{ (item.table | table) | safe}}
+                                                    </div>
+                                                    {{ item.bottom | safe }}
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+
+                                        {{nav.modal.modal.footer | safe}}
+                                    </div>
+                                {% endif %}
+                            </global-modal>
+                            <a class="link link--primary font-calibre text-base cursor-pointer" data-target="venues-{{nav.copy}}">{{nav.copy}}</a>
+                        {% endif %}
                     </div>
                 {% endif %}
             {% endfor %}
@@ -81,9 +124,9 @@
                     <div class="group-venues__description font-ivar">
                         {{ item.text | safe }}
                     </div>
-                {% endfor %} 
+                {% endfor %}
             {% endif %}
-            
+
             {% if object.descriptions %}
                 {% for des in object.descriptions %}
                     <p class="group-venues__description font-ivar">{{des}}</p>
@@ -97,7 +140,7 @@
                     {% elif action.category == 'link' %}
                         {{ Link( href=action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}
                     {% elif action.category == 'tel' %}
-                        {{ Link( href="tel:"+action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}    
+                        {{ Link( href="tel:"+action.url, copy=action.copy, target=action.target, classes=['button', 'button--' + action.type, 'font-calibre', 'group-venues__links'] ) }}
                     {% endif %}
                 {% endfor %}
             </section>

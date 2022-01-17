@@ -9,30 +9,15 @@ permalinkBypassOutputDir: true
 {% from 'molecules/newsletter.njk' import newsletter %}
 {% from 'molecules/footer.njk' import footer %}
 {% from 'organisms/global-image.njk' import global_image %}
-{% from 'macros.njk' import top_banner %}
-{% from 'organisms/hero-corner_block.njk' import top_banner_right_bottom_container %}
+{% from 'molecules/bridge-2.njk' import secondBridge %}
+{% from 'molecules/bridge.njk' import bridge %}
+{% from 'macros.njk' import top_banner_group_venues %}
 
 
 {# Hero Image Section #}
-{% if pageCMS['top-banner'] and pageCMS['top-banner'].global_image and pageCMS['hero-corner-block'].hero_corner_block %}
-   {% set hero_corner_block = pageCMS['hero-corner-block'].hero_corner_block %}
-   <section class="segment-outer">
-        <section class="banner__segment-inner">
-            {{ top_banner(pageCMS['top-banner'].global_image, hero_corner_block) }}
-        </section>
-   </section> 
-{% endif %}
-
-{# Hero Caption #}
-{% if pageCMS['hero-caption'] and pageCMS['hero-caption'].simple_article %}
-    {% set hero_caption = pageCMS['hero-caption'].simple_article %}
-    {% if hero_caption.description %}
-        <section class="segment-outer">
-            <section class="hero-caption group-section global-px">
-                <div class="font-ivar text-lg-2">{{ hero_caption.description | safe }}</div>
-            </section>
-        </section>
-    {% endif %}
+{% if pageCMS['group-venues'].group_venues and pageCMS['top-banner'].global_image %}
+    {% set summer_group_venues = pageCMS['group-venues'].group_venues  %}
+    {{ top_banner_group_venues(pageCMS['top-banner'].global_image, summer_group_venues, announcementObject = (pageCMS['announcement'].announcement if pageCMS['announcement'] else {})) }}
 {% endif %}
 
 {# Card Title #}

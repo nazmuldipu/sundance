@@ -16,7 +16,7 @@ nickname: "conserve"
     <section class="group-section">
         {{global_image(pageCMS['top-banner'].global_image, classes='-z-1 image_frame sm:3:2 lg:2:1 2xl:2:1 4xl:2:1')}}
         <div class="group-container">
-            {{groupVenues(event)}}
+            {{groupVenues(event, announcementObject = (pageCMS['announcement'].announcement if pageCMS['announcement'] else {}))}}
         </div>
     </section>
 {% endif %}
@@ -43,7 +43,7 @@ nickname: "conserve"
 
 {% if pageCMS['video-content'] %}
     <section class="section-outer">
-        <section class="segment-inner__text-container py-10">
+        <section class="segment-inner__text-container pt-10">
             <div class="image_frame sm:4:3 lg:4:3 2xl:4:3 4xl:4:3">
                 <iframe class="w-full h-full" src="{{pageCMS['video-content'].action.url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
             </div>

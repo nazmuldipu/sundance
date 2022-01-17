@@ -1,0 +1,12 @@
+/****  start imports  ********************************/
+@import "../../styles/global.css";
+/****  end imports  ********************************/
+
+.segment-inner__text-container ul {
+    padding-inline-start: 40px;
+    list-style-type: disc;
+}
+
+em {
+    font-style: italic;
+}

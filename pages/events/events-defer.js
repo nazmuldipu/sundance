@@ -174,6 +174,7 @@ function initEvents(events){
     const renderWeekCalendarBody = (week) => {
         const weekEveContainer = document.querySelector(".week_event_container");
         let eveHtml = "";
+        let empty = true;
         for (let i = 0; i < 7; i++) {
             const dd = new Date(week);
             dd.setDate(dd.getDate() + i);
@@ -184,6 +185,7 @@ function initEvents(events){
                 events
             );
             if (eventList.length > 0) {
+                empty = false;
                 eventList.forEach((e) => {
                     eveHtml += `<div class="week_event border-t-1 border--color__sp-4 pt-4 pb-8 text-base">
                     <div class="">${getDayNameAndDate(
@@ -200,6 +202,11 @@ function initEvents(events){
                 </div>`;
                 });
             }
+        }
+        if (empty) {
+            eveHtml = ` <div class="sundance-events__events__title font-calibre text-center">
+                            No Events Found!
+                        </div>`;
         }
         weekEveContainer.innerHTML = eveHtml;
     };

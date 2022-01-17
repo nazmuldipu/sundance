@@ -1,0 +1,15 @@
+{#
+    #   @desc   a basic announcement
+    #   @return HTML anchor tag
+    #   @author Nazmul Alam
+#}
+{% from "atoms/headings.njk" import h4 %}
+
+{% macro announcement( obj = {}, classes = ['font-ivar']  )%}
+    {% if obj.visible === true %}
+        <section class="page_announcement font-cutive-mono text-left pb-10">
+            {{h4(copy=obj.title, classes=['text-lg', 'font-semibold', 'py-4'])}}
+            {{obj.description | safe}}
+        </section>
+    {% endif %}
+{% endmacro %}

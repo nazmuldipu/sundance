@@ -147,6 +147,7 @@ function initEvents(events) {
             "#week_event_container"
         );
         let eveHtml = "";
+        let empty = true;
         for (let i = 0; i < 7; i++) {
             const dd = new Date(week);
             dd.setDate(dd.getDate() + i);
@@ -157,10 +158,11 @@ function initEvents(events) {
                 events
             );
             if (eventList.length > 0) {
+                empty = false;
                 eventList.forEach((e) => {
                     eveHtml += `
                     <div class="sundance-events__events">
-                        <div class="sundance-events__events__date">${getShortMonthNameAndDate(new Date(e.date))}, ${week.getFullYear()}</div>
+                        <div class="sundance-events__events__date font-ivar">${getShortMonthNameAndDate(new Date(e.date))}, ${week.getFullYear()}</div>
                         <div class="sundance-events__events__title font-calibre">
                             ${e.title}
                             <br>
@@ -172,10 +174,14 @@ function initEvents(events) {
                         <div class="sundance-events__events__action">
                             <a href="/events/events-details/?id=${e._id}" class="button button--secondary font-calibre sundance-events__links" target="_self"> Details</a>
                         </div>
-                        </div>
-`;
+                    </div>`;
                 });
             }
+        }
+        if (empty) {
+            eveHtml = ` <div class="sundance-events__events__title font-calibre text-center">
+                            No Events Found!
+                        </div>`;
         }
         weekEveContainer.innerHTML = eveHtml;
     };
@@ -232,11 +238,11 @@ function initEvents(events) {
 
 document.addEventListener("DOMContentLoaded", function () {
     const eventsDom = document.querySelector('#sundance-events');
-    if(eventsDom){
+    if (eventsDom) {
         const { events } = JSON.parse(eventsDom.dataset.events);
-        if(events && events.length > 0){
-         initEvents(events);
-         eventsDom.dataset.events = "";
+        if (events && events.length > 0) {
+            initEvents(events);
+            eventsDom.dataset.events = "";
         }
     }
- })
+})

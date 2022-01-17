@@ -1,1 +1,1 @@
-import '../../scripts/lib/globalEvents.js';
+/* ignore */
