@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.forEach(card => card.classList.remove('hidden'));
 
         const isFilterAdded = card => {
-            const cardObject = card.firstElementChild.dataset.card ? JSON.parse(card.firstElementChild.dataset.card) : {};
+            const cardObject = card.dataset.card ? JSON.parse(card.dataset.card) : {};
             const { Type: type, Sleeps: sleeps, Bedrooms: bedrooms } = cardObject;
             const isBedroomsFilterAdded = appliedBedrooms.length > 0 && bedrooms && !appliedBedrooms.some(item => bedrooms === item);
             const isSleepsFilterAdded = appliedSleeps.length > 0 && sleeps && !appliedSleeps.some(item => sleeps === item);
