@@ -2,10 +2,6 @@
 {% from 'organisms/thumbnail_slider.njk' import thumbnail_slider_circle %}
 
 {% if globalCMS['top-navbar'].navbar %}
-    {{ navMenu(
-        globalCMS['top-navbar'].navbar, 
-        footers = globalCMS['footer'].footer,
-        pageUrl = page.url
-    ) }}
+    {{ navMenu(globalCMS['top-navbar'].navbar, data.weatherInfo) }}
     <section class="page-top-adjust"></section>
 {% endif %}
