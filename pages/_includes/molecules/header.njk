@@ -121,17 +121,16 @@ iconCSS %}
                     {% endif %}
                 {% endfor %}
                 {% if menuItems.sections.length > 4 %}
-                    <li class="cursor-default">
+                    <li class="mega-menu cursor-default">
                         <a href="#" class="font-ivar" id="btn-nav-more">More</a>
-                            <ul class="dropdown" style="left: -482%;
-    top: 98%;padding:0; min-width:991px">
+                            <ul class="dropdown mega-menu__items">
                                 {% if footers %}
                                     {{ footer(footers, pageUrl, header = true) }}
                                 {% endif %}
                             </ul>
                     </li>
                     {% for sec in range(4,  menuItems.sections.length)%}
-                        <li class="nav-more-menus hidden">
+                        <li class="nav-more-menus">
                             <a href="#" class="font-ivar">{{menuItems.sections[sec].title}}</a>
                             <ul class="dropdown">
                                 {% for item in menuItems

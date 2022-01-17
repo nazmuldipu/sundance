@@ -2,7 +2,10 @@
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 30px;
-  padding-top: 12px;
+  padding-top: 17px;
+}
+.mb-6 {
+  margin-bottom: 1.5rem !important;
 }
 .menu__input--container {
   display: flex;
@@ -162,5 +165,8 @@
     margin-top: -384px;
     width: 400px;
     height: 384px;
+  }
+  .top-menu {
+    padding: 100px;
   }
 }
